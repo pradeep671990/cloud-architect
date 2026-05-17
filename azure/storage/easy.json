@@ -1,16 +1,452 @@
 [
     {
-      "question": "Which AWS service is used for object storage?",
-      "options": [
-        "EC2",
-        "S3",
-        "RDS",
-        "Lambda"
-      ],
-      "answer": "S3",
-      "explanation": "Amazon S3 is AWS object storage service used for scalable object storage.",
+      "question": "Which Azure service provides scalable object storage?",
+      "options": ["Azure Files", "Azure Blob Storage", "Azure Disk Storage", "Azure Queue Storage"],
+      "answer": "Azure Blob Storage",
+      "explanation": "Azure Blob Storage is Microsoft's object storage solution for the cloud, optimized for storing massive amounts of unstructured data.",
       "difficulty": "easy",
       "subcategory": "storage",
-      "category": "aws"
+      "category": "azure"
+    },
+    {
+      "question": "What does Blob stand for in Azure Blob Storage?",
+      "options": ["Binary Large Object", "Block Level Object", "Basic Local Object", "Binary Linked Object"],
+      "answer": "Binary Large Object",
+      "explanation": "Blob stands for Binary Large Object. Azure Blob Storage stores unstructured data such as text or binary data.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the top-level container for Azure Blob Storage?",
+      "options": ["Container", "Storage Account", "Resource Group", "Vault"],
+      "answer": "Storage Account",
+      "explanation": "An Azure Storage Account is the top-level namespace that contains all Azure Storage data objects including blobs, files, queues, and tables.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure storage service provides SMB-based shared file storage?",
+      "options": ["Azure Blob Storage", "Azure Disk Storage", "Azure Files", "Azure Queue Storage"],
+      "answer": "Azure Files",
+      "explanation": "Azure Files offers fully managed file shares in the cloud that are accessible via the SMB and NFS protocols.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which type of Azure Blob is optimized for streaming and random-access scenarios?",
+      "options": ["Block Blob", "Append Blob", "Page Blob", "Archive Blob"],
+      "answer": "Page Blob",
+      "explanation": "Page Blobs are optimized for random read/write operations and are used as OS and data disks for Azure Virtual Machines.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure Blob type is optimized for append operations such as logging?",
+      "options": ["Block Blob", "Append Blob", "Page Blob", "Archive Blob"],
+      "answer": "Append Blob",
+      "explanation": "Append Blobs are optimized for append operations, making them ideal for logging and auditing scenarios.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure Blob access tier is designed for storing data that is accessed frequently?",
+      "options": ["Cool", "Archive", "Hot", "Cold"],
+      "answer": "Hot",
+      "explanation": "The Hot access tier is optimized for data that is accessed frequently with higher storage costs but lower access costs.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure Blob access tier is best for data that is rarely accessed and stored for at least 180 days?",
+      "options": ["Hot", "Cool", "Archive", "Cold"],
+      "answer": "Archive",
+      "explanation": "The Archive tier offers the lowest storage cost and is ideal for data that can tolerate several hours of retrieval latency.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure storage redundancy option replicates data across two Azure regions?",
+      "options": ["LRS", "ZRS", "GRS", "GZRS"],
+      "answer": "GRS",
+      "explanation": "Geo-Redundant Storage (GRS) replicates data to a secondary region hundreds of miles away from the primary region.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What does LRS stand for in Azure Storage?",
+      "options": ["Large Redundant Storage", "Locally Redundant Storage", "Low-cost Redundant Storage", "Linked Redundant Storage"],
+      "answer": "Locally Redundant Storage",
+      "explanation": "LRS (Locally Redundant Storage) replicates data three times within a single data center in the primary region.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides managed disk storage for Virtual Machines?",
+      "options": ["Azure Blob Storage", "Azure Managed Disks", "Azure Files", "Azure Data Lake"],
+      "answer": "Azure Managed Disks",
+      "explanation": "Azure Managed Disks are block-level storage volumes managed by Azure and used with Azure Virtual Machines.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure storage service is used for storing messages in a queue?",
+      "options": ["Azure Blob Storage", "Azure Table Storage", "Azure Queue Storage", "Azure Files"],
+      "answer": "Azure Queue Storage",
+      "explanation": "Azure Queue Storage is a service for storing large numbers of messages accessible from anywhere via HTTP or HTTPS.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is Azure Data Lake Storage Gen2 primarily used for?",
+      "options": ["Relational database storage", "Big data analytics workloads", "Virtual machine disk storage", "Message queuing"],
+      "answer": "Big data analytics workloads",
+      "explanation": "Azure Data Lake Storage Gen2 combines the scalability of Azure Blob Storage with a hierarchical namespace for big data analytics.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure storage option stores data in a key-value NoSQL table format?",
+      "options": ["Azure Blob Storage", "Azure Queue Storage", "Azure Table Storage", "Azure Files"],
+      "answer": "Azure Table Storage",
+      "explanation": "Azure Table Storage stores structured NoSQL data in the cloud, providing a key/attribute store with a schemaless design.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the purpose of Azure Shared Access Signature (SAS)?",
+      "options": ["Encrypting data at rest", "Granting limited access to Azure Storage resources", "Replicating data across regions", "Compressing files before storage"],
+      "answer": "Granting limited access to Azure Storage resources",
+      "explanation": "A SAS token provides secure delegated access to Azure Storage resources without exposing the account key.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which tool is used to manage and browse Azure Storage resources locally?",
+      "options": ["Azure Portal", "Azure Storage Explorer", "Azure CLI only", "ARM Templates"],
+      "answer": "Azure Storage Explorer",
+      "explanation": "Azure Storage Explorer is a free, standalone app that lets you easily work with Azure Storage data on Windows, macOS, and Linux.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the maximum size of a single Azure Blob?",
+      "options": ["1 TB", "5 TB", "190.7 TB", "4.75 TB"],
+      "answer": "190.7 TB",
+      "explanation": "The maximum size for a block blob in Azure Blob Storage is approximately 190.7 TB.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is ZRS in Azure Storage?",
+      "options": ["Zone-Redundant Storage", "Zero-cost Redundant Storage", "Zonal Replicated Storage", "Zoned Resource Storage"],
+      "answer": "Zone-Redundant Storage",
+      "explanation": "ZRS (Zone-Redundant Storage) replicates data synchronously across three Azure availability zones in the primary region.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service is used to migrate data to Azure at petabyte scale using physical devices?",
+      "options": ["AzCopy", "Azure DataBox", "Azure Site Recovery", "Azure Migrate"],
+      "answer": "Azure DataBox",
+      "explanation": "Azure Data Box is a physical device used to transfer large amounts of data to Azure when uploading over the internet isn't feasible.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What command-line tool is used to copy data to and from Azure Storage?",
+      "options": ["Azure CLI", "AzCopy", "PowerShell only", "Azure Storage Explorer"],
+      "answer": "AzCopy",
+      "explanation": "AzCopy is a command-line utility designed for copying data to and from Azure Blob and File Storage.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the Azure equivalent of AWS S3 Lifecycle Policies?",
+      "options": ["Azure Storage Policies", "Azure Blob Lifecycle Management", "Azure Retention Rules", "Azure Auto-Tiering"],
+      "answer": "Azure Blob Lifecycle Management",
+      "explanation": "Azure Blob Storage Lifecycle Management lets you define rules to automatically transition blobs to cooler tiers or delete them.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure Blob type is best for storing large files like VHD disk images?",
+      "options": ["Block Blob", "Append Blob", "Page Blob", "Cold Blob"],
+      "answer": "Page Blob",
+      "explanation": "Page Blobs support random read/write access and are used for Azure VM disks (VHD files), up to 8 TB in size.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is an Azure Storage Container?",
+      "options": ["A Docker container for storage", "A logical grouping of blobs within a storage account", "An Azure VM disk", "A database in Azure SQL"],
+      "answer": "A logical grouping of blobs within a storage account",
+      "explanation": "An Azure Storage Container organizes a set of blobs, similar to a directory in a file system.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the purpose of Azure Blob Storage soft delete?",
+      "options": ["Compressing blobs", "Recovering accidentally deleted blobs within a retention period", "Archiving blobs automatically", "Encrypting blobs"],
+      "answer": "Recovering accidentally deleted blobs within a retention period",
+      "explanation": "Soft delete protects blob data from accidental deletion by retaining deleted blobs for a configurable retention period.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure storage redundancy option provides the highest availability and durability?",
+      "options": ["LRS", "ZRS", "GRS", "GZRS"],
+      "answer": "GZRS",
+      "explanation": "GZRS (Geo-Zone-Redundant Storage) combines zone redundancy in the primary region with geo-replication to a secondary region.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is Azure NetApp Files used for?",
+      "options": ["Object storage", "Enterprise-grade NFS/SMB file storage with high performance", "Queue messaging", "Block storage for VMs"],
+      "answer": "Enterprise-grade NFS/SMB file storage with high performance",
+      "explanation": "Azure NetApp Files is an enterprise-class, high-performance file storage service supporting NFS and SMB workloads.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What type of storage account provides the best performance for block blobs?",
+      "options": ["General-purpose v1", "General-purpose v2", "BlockBlobStorage", "FileStorage"],
+      "answer": "BlockBlobStorage",
+      "explanation": "BlockBlobStorage accounts offer premium performance for block blobs and are ideal for high-transaction or low-latency workloads.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides a fully managed NFS 3.0 compatible object storage?",
+      "options": ["Azure Files", "Azure Data Lake", "Azure Blob Storage with NFS 3.0", "Azure NetApp Files"],
+      "answer": "Azure Blob Storage with NFS 3.0",
+      "explanation": "Azure Blob Storage supports the NFS 3.0 protocol, allowing Linux-based clients to mount a container as a file system.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the Cool access tier in Azure Blob Storage designed for?",
+      "options": ["Frequently accessed data", "Data accessed less frequently stored for at least 30 days", "Archival data with hours of retrieval time", "Real-time streaming data"],
+      "answer": "Data accessed less frequently stored for at least 30 days",
+      "explanation": "The Cool tier is optimized for data that is infrequently accessed and stored for a minimum of 30 days.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure storage encryption is enabled by default?",
+      "options": ["Client-side encryption", "Azure Storage Service Encryption (SSE)", "Azure Key Vault encryption only", "No encryption by default"],
+      "answer": "Azure Storage Service Encryption (SSE)",
+      "explanation": "Azure Storage automatically encrypts all data at rest using Storage Service Encryption (SSE) with 256-bit AES encryption.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is Azure File Sync used for?",
+      "options": ["Syncing blob storage between regions", "Caching Azure Files shares on on-premises Windows servers", "Backing up Azure VMs", "Replicating queues"],
+      "answer": "Caching Azure Files shares on on-premises Windows servers",
+      "explanation": "Azure File Sync centralizes file shares in Azure Files while keeping the flexibility of on-premises Windows file servers.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What protocol does Azure Files support in addition to SMB?",
+      "options": ["iSCSI", "FTP", "NFS", "SFTP"],
+      "answer": "NFS",
+      "explanation": "Azure Files supports both SMB and NFS protocols, enabling both Windows and Linux clients to mount file shares.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the purpose of immutable blob storage in Azure?",
+      "options": ["Speeding up blob access", "Storing data in a WORM state to prevent modification or deletion", "Automatically tiering blobs", "Replicating blobs across regions"],
+      "answer": "Storing data in a WORM state to prevent modification or deletion",
+      "explanation": "Immutable blob storage allows you to store data in a write-once, read-many (WORM) state for regulatory compliance.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the Azure Storage firewall used for?",
+      "options": ["Encrypting data", "Restricting network access to a storage account", "Compressing files", "Replicating data"],
+      "answer": "Restricting network access to a storage account",
+      "explanation": "Azure Storage firewalls allow you to restrict access to your storage account to specific virtual networks or IP ranges.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service is used to move on-premises file servers to the cloud?",
+      "options": ["Azure DataBox", "Azure File Sync", "Azure Migrate", "AzCopy"],
+      "answer": "Azure File Sync",
+      "explanation": "Azure File Sync can be used to centralize file shares in Azure while maintaining local access through caching on-premises.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the default replication for a new Azure Storage account?",
+      "options": ["LRS", "ZRS", "GRS", "GZRS"],
+      "answer": "GRS",
+      "explanation": "By default, new Azure Storage accounts are created with Geo-Redundant Storage (GRS) replication.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the purpose of a Stored Access Policy in Azure Storage?",
+      "options": ["Encrypting containers", "Centralizing and managing SAS token permissions", "Tiering blobs automatically", "Configuring replication"],
+      "answer": "Centralizing and managing SAS token permissions",
+      "explanation": "Stored Access Policies let you centrally manage SAS permissions for a container, queue, table, or file share.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the maximum size of an Azure managed disk?",
+      "options": ["1 TB", "4 TB", "32 TB", "64 TB"],
+      "answer": "32 TB",
+      "explanation": "Azure managed disks support a maximum disk size of 32 TB for Ultra Disk, Premium SSD v2, Premium SSD, and Standard SSD.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is RA-GRS in Azure Storage?",
+      "options": ["Randomly Assigned Geo-Redundant Storage", "Read-Access Geo-Redundant Storage", "Replicated Archive Geo-Redundant Storage", "Region-Aware Geo-Redundant Storage"],
+      "answer": "Read-Access Geo-Redundant Storage",
+      "explanation": "RA-GRS replicates data to a secondary region and also provides read access to the data in the secondary region.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure disk type offers the highest IOPS and throughput for Azure VMs?",
+      "options": ["Standard HDD", "Standard SSD", "Premium SSD", "Ultra Disk"],
+      "answer": "Ultra Disk",
+      "explanation": "Azure Ultra Disk delivers the highest disk IOPS and throughput with sub-millisecond latency for demanding workloads.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "How does Azure Blob Storage charge for data?",
+      "options": ["Fixed monthly fee per account", "Based on amount stored, access tier, operations, and data transfer", "Only per operation performed", "Only based on region"],
+      "answer": "Based on amount stored, access tier, operations, and data transfer",
+      "explanation": "Azure Blob Storage pricing depends on the amount of data stored, the access tier (Hot/Cool/Archive), number of operations, and data transfer out.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the purpose of Azure Blob versioning?",
+      "options": ["Speed up blob uploads", "Automatically maintain previous versions of a blob", "Replicate blobs across regions", "Compress blobs"],
+      "answer": "Automatically maintain previous versions of a blob",
+      "explanation": "Blob versioning automatically maintains previous versions of an object so you can recover it if it's modified or deleted.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is Azure Disk Encryption used for?",
+      "options": ["Compressing disk data", "Encrypting OS and data disks using BitLocker or DM-Crypt", "Speeding up disk I/O", "Replicating disks"],
+      "answer": "Encrypting OS and data disks using BitLocker or DM-Crypt",
+      "explanation": "Azure Disk Encryption uses BitLocker (Windows) or DM-Crypt (Linux) to encrypt the OS and data disks of Azure VMs.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the Azure equivalent of AWS EFS?",
+      "options": ["Azure Blob Storage", "Azure Managed Disks", "Azure Files", "Azure Table Storage"],
+      "answer": "Azure Files",
+      "explanation": "Azure Files is the equivalent of AWS EFS, providing fully managed cloud file shares accessible via SMB and NFS.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is Azure Import/Export service used for?",
+      "options": ["Exporting databases to CSV", "Physically shipping drives to import/export large data sets", "Importing ARM templates", "Exporting VM images"],
+      "answer": "Physically shipping drives to import/export large data sets",
+      "explanation": "The Azure Import/Export service lets you transfer large amounts of data by shipping physical disk drives to an Azure datacenter.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What does Azure Blob Storage use to organize objects within a container?",
+      "options": ["Folders", "Virtual directories using slash-delimited prefixes", "Sub-containers", "Partitions"],
+      "answer": "Virtual directories using slash-delimited prefixes",
+      "explanation": "Azure Blob Storage uses slash-delimited name prefixes to simulate a virtual directory hierarchy within a flat namespace.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure storage service is cheapest for storing backup data that is rarely accessed?",
+      "options": ["Azure Blob Hot tier", "Azure Blob Cool tier", "Azure Blob Archive tier", "Azure Files"],
+      "answer": "Azure Blob Archive tier",
+      "explanation": "The Archive tier has the lowest storage cost in Azure Blob Storage and is designed for data that can tolerate retrieval latency of hours.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature allows automatic failover of storage to a secondary region?",
+      "options": ["Azure Backup", "Storage Account Failover (geo-failover)", "Azure Site Recovery", "Azure Traffic Manager"],
+      "answer": "Storage Account Failover (geo-failover)",
+      "explanation": "Azure Storage account failover allows you to initiate failover to the secondary region if the primary region becomes unavailable.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the Hierarchical Namespace feature in Azure Data Lake Storage Gen2?",
+      "options": ["Flat namespace for blobs", "Directory structure enabling atomic directory operations for analytics", "Namespace for queue messages", "Namespace for managed disks"],
+      "answer": "Directory structure enabling atomic directory operations for analytics",
+      "explanation": "Hierarchical Namespace enables true directory semantics in Azure Blob Storage, improving performance for analytics workloads.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure tool provides detailed monitoring and diagnostics for Storage accounts?",
+      "options": ["Azure Security Center", "Azure Monitor with Storage Insights", "Azure Advisor", "Azure Policy"],
+      "answer": "Azure Monitor with Storage Insights",
+      "explanation": "Azure Monitor Storage Insights provides a unified view of Azure Storage performance, capacity, and availability.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "azure"
     }
   ]

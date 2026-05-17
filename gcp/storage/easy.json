@@ -1,1 +1,443 @@
-[]
+[
+    {
+      "question": "Which GCP service provides scalable object storage?",
+      "options": ["Cloud SQL", "Cloud Storage", "Persistent Disk", "Cloud Filestore"],
+      "answer": "Cloud Storage",
+      "explanation": "Google Cloud Storage is GCP's unified object storage service for developers and enterprises.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the basic container for storing objects in Google Cloud Storage?",
+      "options": ["Folder", "Bucket", "Volume", "Repository"],
+      "answer": "Bucket",
+      "explanation": "In Google Cloud Storage, objects are stored in buckets. Buckets are the basic containers that hold your data.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP storage class is best for data accessed more than once a month?",
+      "options": ["Coldline", "Archive", "Nearline", "Standard"],
+      "answer": "Standard",
+      "explanation": "Standard storage is best for data that is frequently accessed (hot data) or stored for only brief periods of time.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP storage class is designed for data accessed less than once a year?",
+      "options": ["Standard", "Nearline", "Coldline", "Archive"],
+      "answer": "Archive",
+      "explanation": "Archive storage has the lowest storage cost and is designed for data that is accessed less than once a year, such as cold backups.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides block storage for Compute Engine virtual machines?",
+      "options": ["Cloud Storage", "Cloud Filestore", "Persistent Disk", "Cloud Bigtable"],
+      "answer": "Persistent Disk",
+      "explanation": "Google Cloud Persistent Disk provides durable block storage for Compute Engine virtual machine instances.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides managed NFS file storage?",
+      "options": ["Cloud Storage", "Persistent Disk", "Cloud Filestore", "Cloud Spanner"],
+      "answer": "Cloud Filestore",
+      "explanation": "Cloud Filestore is a managed file storage service for applications requiring a file system interface and shared filesystem.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the GCP storage class for data accessed less than once a month?",
+      "options": ["Standard", "Nearline", "Coldline", "Archive"],
+      "answer": "Nearline",
+      "explanation": "Nearline storage is a low-cost, highly durable storage service for storing infrequently accessed data accessed less than once a month.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the GCP storage class for data accessed less than once a quarter?",
+      "options": ["Standard", "Nearline", "Coldline", "Archive"],
+      "answer": "Coldline",
+      "explanation": "Coldline storage is ideal for data you plan to read or modify at most once per quarter.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "Which command-line tool is used to interact with Google Cloud Storage?",
+      "options": ["gcloud", "gsutil", "bq", "kubectl"],
+      "answer": "gsutil",
+      "explanation": "gsutil is a Python application that lets you access Cloud Storage from the command line.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the durability of Google Cloud Storage?",
+      "options": ["99.9%", "99.99%", "99.999999999%", "99.9999%"],
+      "answer": "99.999999999%",
+      "explanation": "Google Cloud Storage is designed for 99.999999999% (11 nines) annual durability.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is a GCP Cloud Storage signed URL used for?",
+      "options": ["Permanently sharing public objects", "Granting temporary access to private Cloud Storage objects", "Signing SSL certificates", "Encrypting objects"],
+      "answer": "Granting temporary access to private Cloud Storage objects",
+      "explanation": "Signed URLs provide time-limited read or write access to Cloud Storage resources without requiring Google account credentials.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is Cloud Storage Object Versioning used for?",
+      "options": ["Compressing objects", "Keeping previous versions of objects to recover from overwrites or deletions", "Replicating objects across regions", "Encrypting objects"],
+      "answer": "Keeping previous versions of objects to recover from overwrites or deletions",
+      "explanation": "Object versioning retains a noncurrent version of an object whenever the live version is overwritten or deleted.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What type of storage does GCP Persistent Disk provide?",
+      "options": ["Object storage", "File storage", "Block storage", "Archive storage"],
+      "answer": "Block storage",
+      "explanation": "Persistent Disk provides block storage for Compute Engine VMs, similar to a physical hard drive attached to a server.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service is used to transfer large amounts of data to GCP quickly?",
+      "options": ["Cloud DataSync", "Storage Transfer Service", "gsutil only", "Cloud Interconnect"],
+      "answer": "Storage Transfer Service",
+      "explanation": "Storage Transfer Service enables high-performance imports of online data from sources like AWS S3, Azure Blob Storage, or HTTP/HTTPS.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP tool is used for offline data transfers similar to AWS Snowball?",
+      "options": ["Cloud DataSync", "Storage Transfer Service", "Transfer Appliance", "Cloud Interconnect"],
+      "answer": "Transfer Appliance",
+      "explanation": "Google Transfer Appliance is a rackable, high-capacity storage device you lease from Google to migrate large amounts of data offline.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP Cloud Storage feature automatically moves objects to cheaper storage classes?",
+      "options": ["Object Versioning", "Object Lifecycle Management", "Storage Transfer", "Retention Policies"],
+      "answer": "Object Lifecycle Management",
+      "explanation": "Cloud Storage Object Lifecycle Management lets you define rules to automatically delete or change the storage class of objects.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the default encryption for Google Cloud Storage objects?",
+      "options": ["No encryption", "Client-managed encryption only", "Google-managed encryption keys (GMEK)", "Customer-supplied encryption keys (CSEK)"],
+      "answer": "Google-managed encryption keys (GMEK)",
+      "explanation": "Google Cloud Storage automatically encrypts all data at rest using Google-managed encryption keys by default.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is Cloud Storage Uniform Bucket-Level Access?",
+      "options": ["Making all objects in a bucket public", "Disabling object-level ACLs and using only bucket-level IAM permissions", "Enabling versioning uniformly", "Replicating across all regions"],
+      "answer": "Disabling object-level ACLs and using only bucket-level IAM permissions",
+      "explanation": "Uniform bucket-level access disables object-level ACLs and enforces access control exclusively through IAM, simplifying permission management.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is a GCP Cloud Storage bucket location type that provides highest availability?",
+      "options": ["Regional", "Dual-region", "Multi-region", "Single-zone"],
+      "answer": "Multi-region",
+      "explanation": "Multi-region buckets store data redundantly in at least two geographic regions, offering the highest availability.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What does GCP Cloud Storage use to control access to individual objects?",
+      "options": ["VPC firewall rules", "Access Control Lists (ACLs)", "Security groups", "Network policies"],
+      "answer": "Access Control Lists (ACLs)",
+      "explanation": "Cloud Storage uses ACLs to control who has access to your buckets and objects when not using uniform bucket-level access.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP storage product is optimized for high-performance computing and analytics workloads?",
+      "options": ["Cloud Storage Standard", "Cloud Filestore", "Parallelstore", "Persistent Disk Standard"],
+      "answer": "Parallelstore",
+      "explanation": "GCP Parallelstore is a high-performance parallel file storage service optimized for HPC and AI/ML workloads.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the purpose of Cloud Storage Retention Policies?",
+      "options": ["Speeding up access", "Preventing object deletion before a minimum retention period", "Replicating objects", "Auto-tiering storage classes"],
+      "answer": "Preventing object deletion before a minimum retention period",
+      "explanation": "Retention policies ensure objects in a bucket cannot be deleted or replaced until they've been stored for a specified minimum duration.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "Which Persistent Disk type offers the highest IOPS in GCP?",
+      "options": ["Standard Persistent Disk", "Balanced Persistent Disk", "SSD Persistent Disk", "Hyperdisk Extreme"],
+      "answer": "Hyperdisk Extreme",
+      "explanation": "Hyperdisk Extreme offers the highest IOPS and throughput for the most demanding database and analytics workloads in GCP.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is CMEK in the context of Google Cloud Storage?",
+      "options": ["Cloud Managed Encryption Key", "Customer-Managed Encryption Keys", "Centralized Multi-region Encryption Key", "Cloud Meta Encryption Keyring"],
+      "answer": "Customer-Managed Encryption Keys",
+      "explanation": "CMEK allows you to use your own encryption keys stored in Cloud KMS to encrypt Cloud Storage data.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is a GCP dual-region Cloud Storage bucket?",
+      "options": ["A bucket stored in two zones in one region", "A bucket that replicates data across two specific geographic regions", "A bucket with two storage classes", "A bucket with two encryption keys"],
+      "answer": "A bucket that replicates data across two specific geographic regions",
+      "explanation": "A dual-region bucket stores data redundantly across two specific Google Cloud regions for higher availability.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the GCP equivalent of AWS S3 Requester Pays?",
+      "options": ["Cloud Storage Requester Pays", "Cloud Storage Billing Transfer", "Cloud Storage Cost Shift", "Cloud Storage Pay-per-request"],
+      "answer": "Cloud Storage Requester Pays",
+      "explanation": "Cloud Storage also supports Requester Pays, where the requester covers the cost of downloading data instead of the bucket owner.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service is used for managing secrets and encryption keys?",
+      "options": ["Cloud Storage", "Cloud KMS", "Cloud Armor", "VPC Service Controls"],
+      "answer": "Cloud KMS",
+      "explanation": "Cloud KMS (Key Management Service) manages cryptographic keys for your cloud services.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is Cloud Storage object composition?",
+      "options": ["Splitting large objects into parts", "Combining multiple objects into a single object", "Compressing objects", "Moving objects between buckets"],
+      "answer": "Combining multiple objects into a single object",
+      "explanation": "Object composition allows you to concatenate up to 32 existing objects into a new object without downloading and re-uploading data.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the minimum storage duration for Cloud Storage Coldline?",
+      "options": ["7 days", "30 days", "90 days", "365 days"],
+      "answer": "90 days",
+      "explanation": "Coldline storage has a minimum storage duration of 90 days. You will be charged for 90 days even if you delete the object earlier.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the minimum storage duration for Cloud Storage Archive?",
+      "options": ["30 days", "90 days", "180 days", "365 days"],
+      "answer": "365 days",
+      "explanation": "Archive storage has a minimum storage duration of 365 days, making it suitable only for long-term cold storage.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is Cloud Storage Pub/Sub notification used for?",
+      "options": ["Encrypting objects", "Notifying applications when objects are created, updated, or deleted", "Replicating objects across buckets", "Tiering objects automatically"],
+      "answer": "Notifying applications when objects are created, updated, or deleted",
+      "explanation": "Cloud Storage can send Pub/Sub notifications to trigger workflows or events when changes happen to objects in a bucket.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service allows you to run SQL queries directly on data stored in Cloud Storage?",
+      "options": ["Cloud Spanner", "BigQuery", "Cloud SQL", "Datastore"],
+      "answer": "BigQuery",
+      "explanation": "BigQuery can query data directly from Cloud Storage using external tables without loading data into BigQuery first.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the Cloud Storage JSON API used for?",
+      "options": ["Monitoring bucket metrics", "Programmatically managing buckets and objects via RESTful API", "Setting up VPC firewall rules", "Viewing billing information"],
+      "answer": "Programmatically managing buckets and objects via RESTful API",
+      "explanation": "The Cloud Storage JSON API is a RESTful interface for managing buckets and objects programmatically.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature provides point-in-time recovery for Persistent Disk?",
+      "options": ["Persistent Disk Backups", "Snapshots", "Object Versioning", "Storage Transfer"],
+      "answer": "Snapshots",
+      "explanation": "Persistent Disk Snapshots capture the state of a disk at a point in time and can be used to create new disks or restore data.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is Cloud Storage HMAC Key used for?",
+      "options": ["Encrypting bucket data", "Authenticating requests to Cloud Storage using S3-compatible APIs", "Signing SSL certificates", "Configuring VPC networks"],
+      "answer": "Authenticating requests to Cloud Storage using S3-compatible APIs",
+      "explanation": "HMAC keys are credentials associated with a service account and used to authenticate requests to the S3-compatible XML API.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP storage service is best for shared file access across multiple Compute Engine VMs?",
+      "options": ["Persistent Disk", "Cloud Storage", "Cloud Filestore", "Cloud SQL"],
+      "answer": "Cloud Filestore",
+      "explanation": "Cloud Filestore provides shared NFS file storage that can be mounted by multiple Compute Engine VMs simultaneously.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the purpose of Cloud Storage bucket lock?",
+      "options": ["Preventing new objects from being added", "Locking a retention policy to make it permanent and compliant", "Encrypting the bucket", "Preventing cross-region replication"],
+      "answer": "Locking a retention policy to make it permanent and compliant",
+      "explanation": "Bucket Lock permanently locks a retention policy on a bucket, ensuring compliance with regulations that require WORM storage.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides a managed Redis or Memcached cache that can complement storage solutions?",
+      "options": ["Cloud Filestore", "Memorystore", "Cloud Bigtable", "Cloud SQL"],
+      "answer": "Memorystore",
+      "explanation": "Cloud Memorystore provides fully managed Redis and Memcached in-memory data stores for caching frequently accessed data.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What happens to objects in Cloud Storage when you delete a bucket?",
+      "options": ["Objects are moved to Archive", "Objects are permanently deleted along with the bucket", "Objects are moved to another bucket", "Objects remain accessible via URL"],
+      "answer": "Objects are permanently deleted along with the bucket",
+      "explanation": "When you delete a Cloud Storage bucket, all objects inside it are also permanently deleted.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the GCP Cloud Storage class for frequently accessed data with no retrieval fees?",
+      "options": ["Nearline", "Coldline", "Archive", "Standard"],
+      "answer": "Standard",
+      "explanation": "Standard storage has no retrieval fees and is designed for hot data that needs frequent access.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature allows Cloud Storage to trigger Cloud Functions automatically?",
+      "options": ["Pub/Sub notifications", "Cloud Storage Triggers for Cloud Functions", "Cloud Scheduler", "Eventarc"],
+      "answer": "Cloud Storage Triggers for Cloud Functions",
+      "explanation": "Cloud Functions can be triggered directly by Cloud Storage events like object creation, deletion, or metadata updates.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is a regional Cloud Storage bucket?",
+      "options": ["A bucket that spans all regions", "A bucket that stores data in a single geographic region", "A bucket with regional pricing only", "A bucket limited to one availability zone"],
+      "answer": "A bucket that stores data in a single geographic region",
+      "explanation": "A regional bucket stores data in a specific geographic region, offering lower latency for resources in the same region.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP storage product is best for high-performance AI/ML training workloads requiring a POSIX filesystem?",
+      "options": ["Cloud Storage", "Persistent Disk Standard", "Cloud Filestore", "Parallelstore"],
+      "answer": "Parallelstore",
+      "explanation": "Parallelstore is GCP's fully managed parallel filesystem designed for high-throughput AI/ML training and HPC workloads.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the main difference between Persistent Disk and Local SSD in GCP?",
+      "options": ["Persistent Disk is faster", "Local SSD is temporary and tied to the VM lifecycle; Persistent Disk is durable and independent", "Persistent Disk cannot be used with VMs", "Local SSD is more expensive"],
+      "answer": "Local SSD is temporary and tied to the VM lifecycle; Persistent Disk is durable and independent",
+      "explanation": "Local SSD offers very high performance but is ephemeral — data is lost when the VM stops. Persistent Disk survives VM deletion.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "Which IAM role gives full control over Cloud Storage buckets and objects?",
+      "options": ["roles/storage.objectViewer", "roles/storage.objectCreator", "roles/storage.admin", "roles/storage.legacyBucketReader"],
+      "answer": "roles/storage.admin",
+      "explanation": "The roles/storage.admin IAM role grants full control of Cloud Storage buckets and objects, including creating and deleting them.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is Cloud Storage Transfer Appliance used for?",
+      "options": ["Transferring data between GCP projects", "Offline bulk data migration to GCP using physical hardware", "Real-time data streaming to GCP", "Replicating data between GCP regions"],
+      "answer": "Offline bulk data migration to GCP using physical hardware",
+      "explanation": "Transfer Appliance is a high-capacity hardware device used to securely transfer large datasets to Google Cloud offline.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is Cloud Storage object metadata used for?",
+      "options": ["Storing encrypted object content", "Storing key-value pairs of information about an object", "Replicating objects across buckets", "Controlling object lifecycle"],
+      "answer": "Storing key-value pairs of information about an object",
+      "explanation": "Object metadata is a set of key-value pairs that stores descriptive information about an object, like content type or custom labels.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the Cloud Storage feature that prevents objects from being overwritten or deleted for regulatory compliance?",
+      "options": ["Object Versioning", "Retention Policy with Bucket Lock", "Object Lifecycle Management", "Signed URLs"],
+      "answer": "Retention Policy with Bucket Lock",
+      "explanation": "Retention policies combined with Bucket Lock implement WORM storage, preventing object modification or deletion for compliance.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP tool can you use to copy data from AWS S3 directly to Cloud Storage?",
+      "options": ["gsutil only", "Storage Transfer Service", "Transfer Appliance", "Cloud DataSync"],
+      "answer": "Storage Transfer Service",
+      "explanation": "Storage Transfer Service can transfer data from AWS S3, Azure Blob Storage, HTTP/HTTPS URLs, or other Cloud Storage buckets directly to GCP.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "gcp"
+    }
+  ]

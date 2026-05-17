@@ -1,14 +1,450 @@
 [
     {
       "question": "Which AWS service is used for object storage?",
-      "options": [
-        "EC2",
-        "S3",
-        "RDS",
-        "Lambda"
-      ],
+      "options": ["EC2", "S3", "RDS", "Lambda"],
       "answer": "S3",
-      "explanation": "Amazon S3 is AWS object storage service used for scalable object storage.",
+      "explanation": "Amazon S3 (Simple Storage Service) is AWS's scalable object storage service.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What does S3 stand for in AWS?",
+      "options": ["Simple Storage Service", "Secure Storage System", "Scalable Server Storage", "Standard Storage Solution"],
+      "answer": "Simple Storage Service",
+      "explanation": "S3 stands for Simple Storage Service, AWS's object storage offering.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the basic unit of storage in Amazon S3?",
+      "options": ["File", "Folder", "Object", "Volume"],
+      "answer": "Object",
+      "explanation": "Amazon S3 stores data as objects inside buckets. Each object consists of data, a key, and metadata.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the container for objects stored in Amazon S3 called?",
+      "options": ["Vault", "Bucket", "Folder", "Repository"],
+      "answer": "Bucket",
+      "explanation": "S3 stores objects in buckets. A bucket is a container for objects and must have a globally unique name.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS storage service provides block storage for EC2 instances?",
+      "options": ["S3", "Glacier", "EBS", "EFS"],
+      "answer": "EBS",
+      "explanation": "Amazon EBS (Elastic Block Store) provides persistent block-level storage volumes for use with EC2 instances.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides a managed file system that can be shared across multiple EC2 instances?",
+      "options": ["EBS", "S3", "EFS", "Glacier"],
+      "answer": "EFS",
+      "explanation": "Amazon EFS (Elastic File System) is a managed NFS file system that can be mounted by multiple EC2 instances simultaneously.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which S3 storage class is designed for infrequently accessed data that still needs rapid access?",
+      "options": ["S3 Standard", "S3 Glacier", "S3 Standard-IA", "S3 One Zone-IA"],
+      "answer": "S3 Standard-IA",
+      "explanation": "S3 Standard-IA (Infrequent Access) is for data accessed less frequently but requires rapid access when needed.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS storage service is best suited for long-term archival at the lowest cost?",
+      "options": ["S3 Standard", "EBS", "EFS", "S3 Glacier"],
+      "answer": "S3 Glacier",
+      "explanation": "Amazon S3 Glacier is a secure and durable low-cost storage class for data archiving and long-term backup.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the maximum size of a single object that can be stored in Amazon S3?",
+      "options": ["5 GB", "50 GB", "5 TB", "50 TB"],
+      "answer": "5 TB",
+      "explanation": "The maximum size of a single object in Amazon S3 is 5 TB. Objects larger than 5 GB must use multipart upload.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which feature of Amazon S3 allows you to automatically move objects to cheaper storage classes over time?",
+      "options": ["S3 Replication", "S3 Versioning", "S3 Lifecycle Policies", "S3 Transfer Acceleration"],
+      "answer": "S3 Lifecycle Policies",
+      "explanation": "S3 Lifecycle Policies let you automatically transition objects to cheaper storage classes or delete them after a defined period.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which S3 feature keeps multiple versions of an object in the same bucket?",
+      "options": ["Replication", "Versioning", "Lifecycle", "Encryption"],
+      "answer": "Versioning",
+      "explanation": "S3 Versioning lets you keep multiple versions of an object so you can recover from accidental deletes or overwrites.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What type of storage does Amazon EBS provide?",
+      "options": ["Object storage", "File storage", "Block storage", "Archive storage"],
+      "answer": "Block storage",
+      "explanation": "Amazon EBS provides block-level storage volumes that behave like raw, unformatted block devices.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used to transfer large amounts of data into AWS using physical devices?",
+      "options": ["Direct Connect", "Snowball", "Storage Gateway", "DataSync"],
+      "answer": "Snowball",
+      "explanation": "AWS Snowball is a petabyte-scale data transport solution using secure physical appliances to transfer data into and out of AWS.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the default storage class when you upload an object to S3?",
+      "options": ["S3 Standard-IA", "S3 Glacier", "S3 Standard", "S3 Intelligent-Tiering"],
+      "answer": "S3 Standard",
+      "explanation": "S3 Standard is the default storage class providing high durability, availability, and performance for frequently accessed data.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What durability does Amazon S3 provide for stored objects?",
+      "options": ["99.9%", "99.99%", "99.999999999%", "99.9999%"],
+      "answer": "99.999999999%",
+      "explanation": "Amazon S3 is designed for 99.999999999% (11 nines) of durability by redundantly storing data across multiple facilities.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is a hybrid cloud storage service that connects on-premises environments to AWS storage?",
+      "options": ["DataSync", "Snowball", "Storage Gateway", "Transfer Family"],
+      "answer": "Storage Gateway",
+      "explanation": "AWS Storage Gateway is a hybrid cloud storage service that gives on-premises access to virtually unlimited cloud storage.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What does EBS stand for?",
+      "options": ["Elastic Block Storage", "Elastic Block Store", "Extended Block Storage", "Elastic Backup Service"],
+      "answer": "Elastic Block Store",
+      "explanation": "EBS stands for Elastic Block Store, which provides block-level storage volumes for Amazon EC2 instances.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which S3 storage class automatically moves data between frequent and infrequent access tiers?",
+      "options": ["S3 Standard", "S3 Standard-IA", "S3 Intelligent-Tiering", "S3 Glacier"],
+      "answer": "S3 Intelligent-Tiering",
+      "explanation": "S3 Intelligent-Tiering automatically moves objects between access tiers based on usage patterns to optimize costs.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is an EBS Snapshot used for?",
+      "options": ["Monitoring disk performance", "Backing up EBS volumes to S3", "Encrypting EBS volumes", "Resizing EC2 instances"],
+      "answer": "Backing up EBS volumes to S3",
+      "explanation": "EBS Snapshots are point-in-time backups of EBS volumes that are stored in Amazon S3.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which protocol does Amazon EFS use?",
+      "options": ["SMB", "iSCSI", "NFS", "FTP"],
+      "answer": "NFS",
+      "explanation": "Amazon EFS uses the Network File System (NFS) protocol, supporting NFS v4.0 and NFS v4.1.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which S3 feature helps protect against accidental deletion by requiring an extra step to permanently delete objects?",
+      "options": ["Encryption", "MFA Delete", "Replication", "Lifecycle Policy"],
+      "answer": "MFA Delete",
+      "explanation": "MFA Delete requires multi-factor authentication to permanently delete an S3 object version or suspend versioning.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is Amazon S3 Transfer Acceleration used for?",
+      "options": ["Compressing files before upload", "Faster long-distance S3 uploads using CloudFront edge locations", "Auto-tiering storage classes", "Replicating data between buckets"],
+      "answer": "Faster long-distance S3 uploads using CloudFront edge locations",
+      "explanation": "S3 Transfer Acceleration uses Amazon CloudFront's globally distributed edge locations to accelerate uploads to S3.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which EBS volume type is recommended for most general-purpose workloads?",
+      "options": ["io1", "st1", "sc1", "gp3"],
+      "answer": "gp3",
+      "explanation": "gp3 (General Purpose SSD) is the latest generation and recommended default for most workloads, offering better price-performance than gp2.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service allows you to store and retrieve any amount of data from anywhere on the web?",
+      "options": ["EC2", "RDS", "S3", "VPC"],
+      "answer": "S3",
+      "explanation": "Amazon S3 is designed to store and retrieve any amount of data from anywhere — websites, mobile apps, enterprise apps, IoT devices, etc.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the minimum storage duration charge for S3 Glacier Flexible Retrieval?",
+      "options": ["30 days", "60 days", "90 days", "180 days"],
+      "answer": "90 days",
+      "explanation": "S3 Glacier Flexible Retrieval has a minimum storage duration of 90 days.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which S3 feature allows you to host a static website?",
+      "options": ["S3 Replication", "S3 Static Website Hosting", "S3 Versioning", "S3 Lifecycle"],
+      "answer": "S3 Static Website Hosting",
+      "explanation": "Amazon S3 can host static websites by serving HTML, CSS, JavaScript, and media files directly from a bucket.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is Amazon FSx used for?",
+      "options": ["Object storage", "Managed file systems (Windows/Lustre)", "Block storage for EC2", "Cold archive storage"],
+      "answer": "Managed file systems (Windows/Lustre)",
+      "explanation": "Amazon FSx provides fully managed third-party file systems, including FSx for Windows File Server and FSx for Lustre.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS storage class stores data in only a single Availability Zone?",
+      "options": ["S3 Standard", "S3 Standard-IA", "S3 One Zone-IA", "S3 Glacier"],
+      "answer": "S3 One Zone-IA",
+      "explanation": "S3 One Zone-IA stores data in a single AZ and costs 20% less than S3 Standard-IA, but data is lost if the AZ is destroyed.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is Cross-Region Replication (CRR) in Amazon S3?",
+      "options": ["Copying objects within the same bucket", "Automatically replicating objects to a bucket in another AWS region", "Moving objects to Glacier", "Replicating metadata only"],
+      "answer": "Automatically replicating objects to a bucket in another AWS region",
+      "explanation": "CRR automatically replicates objects from one S3 bucket to another in a different AWS region for compliance or low-latency access.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which of the following is NOT a valid EBS volume type?",
+      "options": ["gp3", "io2", "st1", "nfs1"],
+      "answer": "nfs1",
+      "explanation": "nfs1 is not a valid EBS volume type. Valid types include gp2, gp3, io1, io2, st1, and sc1.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the purpose of S3 Object Lock?",
+      "options": ["Encrypting objects at rest", "Preventing objects from being deleted or overwritten for a fixed period", "Locking bucket permissions", "Blocking public access"],
+      "answer": "Preventing objects from being deleted or overwritten for a fixed period",
+      "explanation": "S3 Object Lock allows you to store objects using a WORM (write-once-read-many) model to prevent deletion or modification.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used to migrate on-premises file data to AWS storage services?",
+      "options": ["Snowball", "DataSync", "Storage Gateway", "Transfer Family"],
+      "answer": "DataSync",
+      "explanation": "AWS DataSync is an online data transfer service that automates moving data between on-premises storage and AWS storage services.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What type of storage does Amazon EFS provide?",
+      "options": ["Block storage", "Object storage", "File storage", "Archive storage"],
+      "answer": "File storage",
+      "explanation": "Amazon EFS provides scalable, elastic, cloud-native NFS file storage for use with AWS cloud services and on-premises resources.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "How are S3 buckets identified globally?",
+      "options": ["By AWS account ID", "By region and account ID", "By globally unique bucket name", "By bucket ARN only"],
+      "answer": "By globally unique bucket name",
+      "explanation": "S3 bucket names must be globally unique across all AWS accounts and regions.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the cheapest S3 storage class for archival data with retrieval times of hours?",
+      "options": ["S3 Standard-IA", "S3 Glacier Deep Archive", "S3 One Zone-IA", "S3 Intelligent-Tiering"],
+      "answer": "S3 Glacier Deep Archive",
+      "explanation": "S3 Glacier Deep Archive is the lowest-cost storage class, designed for data that is retained for 7–10 years with retrieval times of 12 hours.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS storage service is best for shared file access from Windows-based EC2 instances?",
+      "options": ["EBS", "S3", "FSx for Windows File Server", "EFS"],
+      "answer": "FSx for Windows File Server",
+      "explanation": "Amazon FSx for Windows File Server provides a fully managed Windows file system with SMB protocol support.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What happens to an EBS volume when its attached EC2 instance is terminated by default?",
+      "options": ["It is automatically backed up", "The root EBS volume is deleted; additional volumes are retained", "All volumes are retained", "All volumes are deleted"],
+      "answer": "The root EBS volume is deleted; additional volumes are retained",
+      "explanation": "By default, the root EBS volume is deleted on EC2 termination, but additional attached volumes are not deleted.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What does S3 server-side encryption (SSE) protect?",
+      "options": ["Data in transit", "Data at rest", "Bucket policies", "IAM permissions"],
+      "answer": "Data at rest",
+      "explanation": "S3 Server-Side Encryption automatically encrypts data when it is written to disk (at rest) in Amazon S3.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which S3 encryption option lets AWS manage the encryption keys for you?",
+      "options": ["SSE-C", "SSE-KMS", "SSE-S3", "Client-side encryption"],
+      "answer": "SSE-S3",
+      "explanation": "SSE-S3 uses keys managed entirely by Amazon S3, making it the simplest encryption option where AWS handles everything.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the main use case for AWS Snowmobile?",
+      "options": ["Small file transfers", "Exabyte-scale data migration", "Real-time data streaming", "Backup of EC2 instances"],
+      "answer": "Exabyte-scale data migration",
+      "explanation": "AWS Snowmobile is an exabyte-scale data transfer service used to move extremely large amounts of data (up to 100 PB) to AWS.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which S3 feature can be used to control access to objects using rules based on object tags?",
+      "options": ["Bucket Policy", "S3 Access Control Lists", "S3 Object Tagging with IAM", "S3 Replication"],
+      "answer": "S3 Object Tagging with IAM",
+      "explanation": "You can use object tags combined with IAM policies to control access to S3 objects based on tag values.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the availability of S3 Standard storage class?",
+      "options": ["99%", "99.9%", "99.99%", "99.999%"],
+      "answer": "99.99%",
+      "explanation": "Amazon S3 Standard is designed for 99.99% availability over a given year.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the purpose of S3 Requester Pays?",
+      "options": ["The bucket owner pays for all requests", "The requester pays for data transfer and request costs instead of the bucket owner", "Requests are free for everyone", "Only IAM users can make requests"],
+      "answer": "The requester pays for data transfer and request costs instead of the bucket owner",
+      "explanation": "With Requester Pays buckets, the requester (not the bucket owner) pays for the data download and request costs.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides file transfer workflows using SFTP, FTPS, and FTP into S3 or EFS?",
+      "options": ["DataSync", "Storage Gateway", "Transfer Family", "Snowball"],
+      "answer": "Transfer Family",
+      "explanation": "AWS Transfer Family provides fully managed file transfers directly into and out of S3 or EFS using SFTP, FTPS, and FTP.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is S3 Select used for?",
+      "options": ["Choosing a storage class", "Retrieving subsets of data from S3 objects using SQL", "Selecting replication destinations", "Filtering bucket policies"],
+      "answer": "Retrieving subsets of data from S3 objects using SQL",
+      "explanation": "S3 Select allows you to retrieve a subset of data from an S3 object using simple SQL expressions, reducing data transfer costs.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is a pre-signed URL in Amazon S3?",
+      "options": ["A URL that never expires", "A time-limited URL that grants temporary access to a private S3 object", "A public URL for all S3 objects", "A URL used only for uploads"],
+      "answer": "A time-limited URL that grants temporary access to a private S3 object",
+      "explanation": "Pre-signed URLs provide temporary, time-limited access to private S3 objects without requiring AWS credentials.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which EBS volume type is optimized for throughput-intensive workloads like big data and log processing?",
+      "options": ["gp3", "io2", "st1", "sc1"],
+      "answer": "st1",
+      "explanation": "st1 (Throughput Optimized HDD) is designed for frequently accessed, throughput-intensive workloads like big data, data warehouses, and log processing.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What does CORS stand for in the context of S3?",
+      "options": ["Cloud Object Replication Service", "Cross-Origin Resource Sharing", "Cross-Object Retrieval System", "Cloud Origin Routing Service"],
+      "answer": "Cross-Origin Resource Sharing",
+      "explanation": "CORS (Cross-Origin Resource Sharing) in S3 allows web applications loaded from one domain to interact with resources in an S3 bucket from another domain.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which of the following S3 actions is used to upload an object?",
+      "options": ["GET", "DELETE", "PUT", "LIST"],
+      "answer": "PUT",
+      "explanation": "The HTTP PUT method is used to upload objects to Amazon S3.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the minimum file size that benefits from S3 Multipart Upload?",
+      "options": ["1 MB", "5 MB", "100 MB", "1 GB"],
+      "answer": "100 MB",
+      "explanation": "AWS recommends using Multipart Upload for files larger than 100 MB to improve upload performance and reliability.",
       "difficulty": "easy",
       "subcategory": "storage",
       "category": "aws"
