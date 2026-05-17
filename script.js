@@ -329,9 +329,12 @@ async function startQuiz() {
   catch (error) {
 
     console.error(error);
-
-    alert("Unable to load questions");
-
+  
+    alert(
+      "Unable to load questions:\n" +
+      error.message
+    );
+  
   }
 
 }
