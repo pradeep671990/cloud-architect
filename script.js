@@ -1,709 +1,575 @@
-document.addEventListener("DOMContentLoaded", () => {
+// ===============================
+// Quiz Application Script
+// ===============================
 
-  // ===============================
-  // GLOBAL VARIABLES
-  // ===============================
+let allQuestions = [];
+let selectedQuestions = [];
+let currentQuestionIndex = 0;
+let score = 0;
+let timer;
+let timeLeft = 0;
 
-  let questions = [];
-  let selectedQuestions = [];
+// ===============================
+// DOM Elements
+// ===============================
 
-  let currentQuestionIndex = 0;
-  let userAnswers = [];
+const mainCategory = document.getElementById("mainCategory");
+const subCategory = document.getElementById("subCategory");
+const difficulty = document.getElementById("difficulty");
+const questionCount = document.getElementById("questionCount");
 
-  let timer;
-  let totalSeconds = 0;
+const startBtn = document.getElementById("startQuiz");
 
-  // ===============================
-  // ELEMENTS
-  // ===============================
+const quizContainer = document.getElementById("quizContainer");
+const questionElement = document.getElementById("question");
+const optionsElement = document.getElementById("options");
 
-  const homeScreen = document.getElementById("homeScreen");
-  const quizScreen = document.getElementById("quizScreen");
-  const resultScreen = document.getElementById("resultScreen");
+const nextBtn = document.getElementById("nextBtn");
 
-  const mainCategory = document.getElementById("mainCategory");
-  const subCategory = document.getElementById("subCategory");
-  const difficulty = document.getElementById("difficulty");
-  const questionCount = document.getElementById("questionCount");
+const timerElement = document.getElementById("timer");
 
-  const totalTimeDisplay = document.getElementById("totalTimeDisplay");
+const resultContainer = document.getElementById("result");
 
-  const startQuizBtn = document.getElementById("startQuizBtn");
 
-  const questionText = document.getElementById("questionText");
-  const optionsContainer = document.getElementById("optionsContainer");
+// ===============================
+// Categories Structure
+// ===============================
 
-  const currentQuestion = document.getElementById("currentQuestion");
-  const totalQuestions = document.getElementById("totalQuestions");
+const quizStructure = {
 
-  const timerElement = document.getElementById("timer");
+  aws: [
+    "ai-ml",
+    "analytics-bigdata",
+    "backup-dr",
+    "compute",
+    "containers",
+    "cost-optimization",
+    "database",
+    "devops-automation",
+    "identity-access",
+    "logging-monitoring",
+    "management-governance",
+    "messaging-integration",
+    "migration-transfer",
+    "networking-cdn",
+    "security-compliance",
+    "serverless",
+    "storage"
+  ],
 
-  const prevBtn = document.getElementById("prevBtn");
-  const nextBtn = document.getElementById("nextBtn");
-  const submitBtn = document.getElementById("submitBtn");
+  azure: [
+    "ai-ml",
+    "analytics-bigdata",
+    "backup-dr",
+    "compute",
+    "containers",
+    "cost-optimization",
+    "database",
+    "devops-automation",
+    "identity-access",
+    "logging-monitoring",
+    "management-governance",
+    "messaging-integration",
+    "migration-transfer",
+    "networking-cdn",
+    "security-compliance",
+    "serverless",
+    "storage"
+  ],
 
-  const progressBar = document.getElementById("progressBar");
+  gcp: [
+    "ai-ml",
+    "analytics-bigdata",
+    "backup-dr",
+    "compute",
+    "containers",
+    "cost-optimization",
+    "database",
+    "devops-automation",
+    "identity-access",
+    "logging-monitoring",
+    "management-governance",
+    "messaging-integration",
+    "migration-transfer",
+    "networking-cdn",
+    "security-compliance",
+    "serverless",
+    "storage"
+  ],
 
-  const scorePercent = document.getElementById("scorePercent");
-  const resultReaction = document.getElementById("resultReaction");
+  kubernetes: [
+    "cluster-management",
+    "core-concepts",
+    "helm",
+    "ingress",
+    "monitoring",
+    "networking",
+    "rbac",
+    "scheduling",
+    "security",
+    "storage",
+    "troubleshooting",
+    "workloads"
+  ],
 
-  const correctAnswers = document.getElementById("correctAnswers");
-  const wrongAnswers = document.getElementById("wrongAnswers");
-  const finalTotal = document.getElementById("finalTotal");
+  docker: [
+    "basics",
+    "compose",
+    "containers",
+    "dockerfile",
+    "images",
+    "networking",
+    "optimization",
+    "registry",
+    "security",
+    "troubleshooting",
+    "volumes"
+  ],
 
-  const restartQuizBtn = document.getElementById("restartQuizBtn");
+  terraform: [
+    "backend",
+    "basics",
+    "best-practices",
+    "functions",
+    "modules",
+    "outputs",
+    "providers",
+    "provisioners",
+    "resources",
+    "state-management",
+    "troubleshooting",
+    "variables",
+    "workspaces"
+  ],
 
-  const themeToggle = document.getElementById("themeToggle");
+  linux: [
+    "commands",
+    "filesystem",
+    "monitoring",
+    "networking",
+    "performance",
+    "permissions",
+    "process-management",
+    "security",
+    "services",
+    "shell-scripting",
+    "troubleshooting"
+  ],
 
-  // ===============================
-  // CATEGORY MAP
-  // ===============================
+  devops: [
+    "argocd",
+    "artifact-management",
+    "azure-devops",
+    "deployment-strategies",
+    "github-actions",
+    "gitlab-ci",
+    "gitops",
+    "jenkins",
+    "monitoring",
+    "pipeline-security",
+    "testing",
+    "troubleshooting"
+  ],
 
-  const categoryMap = {
+  monitoring: [
+    "alertmanager",
+    "dashboards",
+    "elk",
+    "fluentd",
+    "grafana",
+    "logging",
+    "loki",
+    "metrics",
+    "observability",
+    "prometheus",
+    "tracing"
+  ],
 
-    aws: [
-      "ai-ml",
-      "analytics-bigdata",
-      "backup-dr",
-      "compute",
-      "containers",
-      "cost-optimization",
-      "database",
-      "devops-automation",
-      "identity-access",
-      "logging-monitoring",
-      "management-governance",
-      "messaging-integration",
-      "migration-transfer",
-      "networking-cdn",
-      "security-compliance",
-      "serverless",
-      "storage"
-    ],
+  networking: [
+    "api-gateway",
+    "dns",
+    "firewall",
+    "ingress",
+    "load-balancer",
+    "routing",
+    "service-mesh",
+    "ssl",
+    "tcp-ip",
+    "troubleshooting",
+    "vpn"
+  ],
 
-    azure: [
-      "ai-ml",
-      "analytics-bigdata",
-      "backup-dr",
-      "compute",
-      "containers",
-      "cost-optimization",
-      "database",
-      "devops-automation",
-      "identity-access",
-      "logging-monitoring",
-      "management-governance",
-      "messaging-integration",
-      "migration-transfer",
-      "networking-cdn",
-      "security-compliance",
-      "serverless",
-      "storage"
-    ],
+  security: [
+    "cloud-security",
+    "compliance",
+    "container-security",
+    "devsecops",
+    "encryption",
+    "iam",
+    "incident-response",
+    "kubernetes-security",
+    "network-security",
+    "secrets-management",
+    "vulnerability-management",
+    "zero-trust"
+  ]
 
-    gcp: [
-      "ai-ml",
-      "analytics-bigdata",
-      "backup-dr",
-      "compute",
-      "containers",
-      "cost-optimization",
-      "database",
-      "devops-automation",
-      "identity-access",
-      "logging-monitoring",
-      "management-governance",
-      "messaging-integration",
-      "migration-transfer",
-      "networking-cdn",
-      "security-compliance",
-      "serverless",
-      "storage"
-    ],
+};
 
-    devops: [
-      "argocd",
-      "artifact-management",
-      "azure-devops",
-      "deployment-strategies",
-      "github-actions",
-      "gitlab-ci",
-      "gitops",
-      "jenkins",
-      "monitoring",
-      "pipeline-security",
-      "testing",
-      "troubleshooting"
-    ],
 
-    docker: [
-      "basics",
-      "compose",
-      "containers",
-      "dockerfile",
-      "images",
-      "networking",
-      "optimization",
-      "registry",
-      "security",
-      "troubleshooting",
-      "volumes"
-    ],
+// ===============================
+// Load Main Categories
+// ===============================
 
-    kubernetes: [
-      "cluster-management",
-      "core-concepts",
-      "helm",
-      "ingress",
-      "monitoring",
-      "networking",
-      "rbac",
-      "scheduling",
-      "security",
-      "storage",
-      "troubleshooting",
-      "workloads"
-    ],
+function loadMainCategories() {
 
-    linux: [
-      "commands",
-      "filesystem",
-      "monitoring",
-      "networking",
-      "performance",
-      "permissions",
-      "process-management",
-      "security",
-      "services",
-      "shell-scripting",
-      "troubleshooting"
-    ],
+  mainCategory.innerHTML =
+    '<option value="">Select Main Category</option>';
 
-    monitoring: [
-      "alertmanager",
-      "dashboards",
-      "elk",
-      "fluentd",
-      "grafana",
-      "logging",
-      "loki",
-      "metrics",
-      "observability",
-      "prometheus",
-      "tracing"
-    ],
-
-    networking: [
-      "api-gateway",
-      "dns",
-      "firewall",
-      "ingress",
-      "load-balancer",
-      "routing",
-      "service-mesh",
-      "ssl",
-      "tcp-ip",
-      "troubleshooting",
-      "vpn"
-    ],
-
-    security: [
-      "cloud-security",
-      "compliance",
-      "container-security",
-      "devsecops",
-      "encryption",
-      "iam",
-      "incident-response",
-      "kubernetes-security",
-      "network-security",
-      "secrets-management",
-      "vulnerability-management",
-      "zero-trust"
-    ],
-
-    terraform: [
-      "backend",
-      "basics",
-      "best-practices",
-      "functions",
-      "modules",
-      "outputs",
-      "providers",
-      "provisioners",
-      "resources",
-      "state-management",
-      "troubleshooting",
-      "variables",
-      "workspaces"
-    ]
-  };
-
-  // ===============================
-  // LOAD MAIN CATEGORY
-  // ===============================
-
-  Object.keys(categoryMap).forEach(category => {
+  Object.keys(quizStructure).forEach(category => {
 
     const option = document.createElement("option");
 
     option.value = category;
 
     option.textContent =
-      category.charAt(0).toUpperCase() +
-      category.slice(1);
+      category.replace(/-/g, " ").toUpperCase();
 
     mainCategory.appendChild(option);
 
   });
 
-  // ===============================
-  // UPDATE SUB CATEGORY
-  // ===============================
+}
 
-  mainCategory.addEventListener("change", () => {
 
-    const selectedMain = mainCategory.value;
+// ===============================
+// Load Sub Categories
+// ===============================
 
-    subCategory.innerHTML =
-      `<option value="">Select Sub Category</option>`;
+mainCategory.addEventListener("change", () => {
 
-    if (!selectedMain) return;
+  const selectedMain = mainCategory.value;
 
-    categoryMap[selectedMain].forEach(category => {
+  subCategory.innerHTML =
+    '<option value="">Select Sub Category</option>';
 
-      const option = document.createElement("option");
+  if (!selectedMain) return;
 
-      option.value = category;
+  quizStructure[selectedMain].forEach(sub => {
 
-      option.textContent =
-        category
-          .replace(/-/g, " ")
-          .replace(/\b\w/g, c => c.toUpperCase());
+    const option = document.createElement("option");
 
-      subCategory.appendChild(option);
+    option.value = sub;
 
-    });
+    option.textContent =
+      sub.replace(/-/g, " ").toUpperCase();
 
-  });
-
-  // ===============================
-  // AUTO UPDATE TIME
-  // ===============================
-
-  questionCount.addEventListener("change", () => {
-
-    totalTimeDisplay.textContent =
-      questionCount.value;
-
-  });
-
-  // ===============================
-  // START QUIZ
-  // ===============================
-
-  startQuizBtn.addEventListener("click", async () => {
-
-    const main = mainCategory.value;
-    const sub = subCategory.value;
-    const level = difficulty.value;
-
-    const total =
-      parseInt(questionCount.value);
-
-    if (!main || !sub) {
-
-      alert(
-        "Please select category and sub category"
-      );
-
-      return;
-
-    }
-
-    try {
-
-      const filePath =
-        `./${main}/${sub}/${level}.json`;
-
-      const response =
-        await fetch(filePath);
-
-      if (!response.ok) {
-
-        throw new Error("JSON not found");
-
-      }
-
-      questions = await response.json();
-
-      if (!questions.length) {
-
-        alert("No questions found");
-
-        return;
-
-      }
-
-      selectedQuestions =
-        shuffleArray([...questions]).slice(0, total);
-
-      userAnswers =
-        new Array(selectedQuestions.length).fill(null);
-
-      currentQuestionIndex = 0;
-
-      totalSeconds =
-        selectedQuestions.length * 60;
-
-      homeScreen.classList.remove("active");
-      resultScreen.classList.remove("active");
-
-      quizScreen.classList.add("active");
-
-      totalQuestions.textContent =
-        selectedQuestions.length;
-
-      loadQuestion();
-
-      startTimer();
-
-    } catch (error) {
-
-      console.error(error);
-
-      alert(
-        "Unable to load questions JSON file"
-      );
-
-    }
-
-  });
-
-  // ===============================
-  // LOAD QUESTION
-  // ===============================
-
-  function loadQuestion() {
-
-    const current =
-      selectedQuestions[currentQuestionIndex];
-
-    currentQuestion.textContent =
-      currentQuestionIndex + 1;
-
-    questionText.textContent =
-      current.question;
-
-    optionsContainer.innerHTML = "";
-
-    current.options.forEach(option => {
-
-      const optionBtn =
-        document.createElement("button");
-
-      optionBtn.classList.add("option-btn");
-
-      optionBtn.textContent = option;
-
-      if (
-        userAnswers[currentQuestionIndex] === option
-      ) {
-
-        optionBtn.classList.add("selected");
-
-      }
-
-      optionBtn.addEventListener("click", () => {
-
-        userAnswers[currentQuestionIndex] = option;
-
-        loadQuestion();
-
-      });
-
-      optionsContainer.appendChild(optionBtn);
-
-    });
-
-    updateProgress();
-
-    updateButtons();
-
-  }
-
-  // ===============================
-  // UPDATE BUTTONS
-  // ===============================
-
-  function updateButtons() {
-
-    prevBtn.style.display =
-      currentQuestionIndex === 0
-        ? "none"
-        : "inline-block";
-
-    nextBtn.style.display =
-      currentQuestionIndex ===
-      selectedQuestions.length - 1
-        ? "none"
-        : "inline-block";
-
-    submitBtn.style.display =
-      currentQuestionIndex ===
-      selectedQuestions.length - 1
-        ? "inline-block"
-        : "none";
-
-  }
-
-  // ===============================
-  // NEXT BUTTON
-  // ===============================
-
-  nextBtn.addEventListener("click", () => {
-
-    if (
-      currentQuestionIndex <
-      selectedQuestions.length - 1
-    ) {
-
-      currentQuestionIndex++;
-
-      loadQuestion();
-
-    }
-
-  });
-
-  // ===============================
-  // PREVIOUS BUTTON
-  // ===============================
-
-  prevBtn.addEventListener("click", () => {
-
-    if (currentQuestionIndex > 0) {
-
-      currentQuestionIndex--;
-
-      loadQuestion();
-
-    }
-
-  });
-
-  // ===============================
-  // TIMER
-  // ===============================
-
-  function startTimer() {
-
-    updateTimerDisplay();
-
-    timer = setInterval(() => {
-
-      totalSeconds--;
-
-      updateTimerDisplay();
-
-      if (totalSeconds <= 0) {
-
-        clearInterval(timer);
-
-        submitQuiz();
-
-      }
-
-    }, 1000);
-
-  }
-
-  function updateTimerDisplay() {
-
-    const minutes =
-      Math.floor(totalSeconds / 60);
-
-    const seconds =
-      totalSeconds % 60;
-
-    timerElement.textContent =
-      `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
-
-  }
-
-  // ===============================
-  // PROGRESS BAR
-  // ===============================
-
-  function updateProgress() {
-
-    const progress =
-      ((currentQuestionIndex + 1) /
-        selectedQuestions.length) * 100;
-
-    progressBar.style.width =
-      `${progress}%`;
-
-  }
-
-  // ===============================
-  // SUBMIT QUIZ
-  // ===============================
-
-  submitBtn.addEventListener("click", () => {
-
-    submitQuiz();
-
-  });
-
-  function submitQuiz() {
-
-    clearInterval(timer);
-
-    let correct = 0;
-
-    selectedQuestions.forEach(
-      (question, index) => {
-
-        if (
-          userAnswers[index] ===
-          question.answer
-        ) {
-
-          correct++;
-
-        }
-
-      }
-    );
-
-    const wrong =
-      selectedQuestions.length - correct;
-
-    const percentage =
-      Math.round(
-        (correct / selectedQuestions.length) * 100
-      );
-
-    quizScreen.classList.remove("active");
-
-    resultScreen.classList.add("active");
-
-    scorePercent.textContent =
-      `${percentage}%`;
-
-    correctAnswers.textContent = correct;
-
-    wrongAnswers.textContent = wrong;
-
-    finalTotal.textContent =
-      selectedQuestions.length;
-
-    // REACTIONS
-
-    if (percentage < 55) {
-
-      resultReaction.innerHTML =
-        "😢 Failed! Keep Practicing";
-
-    } else if (
-      percentage >= 55 &&
-      percentage < 75
-    ) {
-
-      resultReaction.innerHTML =
-        "🙂 Good Job!";
-
-    } else if (
-      percentage >= 75 &&
-      percentage < 90
-    ) {
-
-      resultReaction.innerHTML =
-        "🔥 Excellent Work!";
-
-    } else if (
-      percentage >= 90 &&
-      percentage < 100
-    ) {
-
-      resultReaction.innerHTML =
-        "🚀 Outstanding Performance!";
-
-    } else {
-
-      resultReaction.innerHTML =
-        "🏆 Perfect Score!";
-
-    }
-
-  }
-
-  // ===============================
-  // RESTART QUIZ
-  // ===============================
-
-  restartQuizBtn.addEventListener("click", () => {
-
-    resultScreen.classList.remove("active");
-
-    homeScreen.classList.add("active");
-
-  });
-
-  // ===============================
-  // SHUFFLE ARRAY
-  // ===============================
-
-  function shuffleArray(array) {
-
-    for (
-      let i = array.length - 1;
-      i > 0;
-      i--
-    ) {
-
-      const j =
-        Math.floor(Math.random() * (i + 1));
-
-      [array[i], array[j]] =
-        [array[j], array[i]];
-
-    }
-
-    return array;
-
-  }
-
-  // ===============================
-  // DARK MODE
-  // ===============================
-
-  themeToggle.addEventListener("click", () => {
-
-    document.body.classList.toggle(
-      "dark-mode"
-    );
-
-    const icon =
-      themeToggle.querySelector("i");
-
-    if (
-      document.body.classList.contains(
-        "dark-mode"
-      )
-    ) {
-
-      icon.classList.remove("fa-moon");
-      icon.classList.add("fa-sun");
-
-    } else {
-
-      icon.classList.remove("fa-sun");
-      icon.classList.add("fa-moon");
-
-    }
+    subCategory.appendChild(option);
 
   });
 
 });
+
+
+// ===============================
+// Start Quiz
+// ===============================
+
+startBtn.addEventListener("click", async () => {
+
+  const main = mainCategory.value;
+  const sub = subCategory.value;
+  const level = difficulty.value;
+  const totalQuestions = parseInt(questionCount.value);
+
+  if (!main || !sub || !level || !totalQuestions) {
+
+    alert("Please select all fields");
+
+    return;
+  }
+
+  try {
+
+    const filePath =
+      `./${main}/${sub}/${level}.json`;
+
+    console.log("Loading:", filePath);
+
+    const response = await fetch(filePath);
+
+    if (!response.ok) {
+
+      throw new Error(
+        `Unable to load ${filePath}`
+      );
+    }
+
+    allQuestions = await response.json();
+
+    if (!Array.isArray(allQuestions)) {
+
+      throw new Error("Invalid JSON format");
+    }
+
+    shuffleArray(allQuestions);
+
+    selectedQuestions =
+      allQuestions.slice(0, totalQuestions);
+
+    currentQuestionIndex = 0;
+    score = 0;
+
+    startQuiz();
+
+  } catch (error) {
+
+    console.error(error);
+
+    alert("Failed to load questions.");
+  }
+
+});
+
+
+// ===============================
+// Start Quiz UI
+// ===============================
+
+function startQuiz() {
+
+  document.getElementById("setupContainer").style.display = "none";
+
+  quizContainer.style.display = "block";
+
+  timeLeft = selectedQuestions.length * 60;
+
+  startTimer();
+
+  showQuestion();
+
+}
+
+
+// ===============================
+// Show Question
+// ===============================
+
+function showQuestion() {
+
+  resetState();
+
+  const currentQuestion =
+    selectedQuestions[currentQuestionIndex];
+
+  questionElement.textContent =
+    `${currentQuestionIndex + 1}. ${currentQuestion.question}`;
+
+  currentQuestion.options.forEach(option => {
+
+    const button = document.createElement("button");
+
+    button.innerText = option;
+
+    button.classList.add("option-btn");
+
+    button.addEventListener("click", () =>
+      selectAnswer(button, currentQuestion.answer)
+    );
+
+    optionsElement.appendChild(button);
+
+  });
+
+}
+
+
+// ===============================
+// Reset Options
+// ===============================
+
+function resetState() {
+
+  nextBtn.style.display = "none";
+
+  while (optionsElement.firstChild) {
+
+    optionsElement.removeChild(optionsElement.firstChild);
+
+  }
+
+}
+
+
+// ===============================
+// Select Answer
+// ===============================
+
+function selectAnswer(button, correctAnswer) {
+
+  const buttons =
+    optionsElement.querySelectorAll("button");
+
+  buttons.forEach(btn => {
+
+    btn.disabled = true;
+
+    if (btn.innerText === correctAnswer) {
+
+      btn.style.backgroundColor = "green";
+
+    }
+
+  });
+
+  if (button.innerText === correctAnswer) {
+
+    score++;
+
+  } else {
+
+    button.style.backgroundColor = "red";
+
+  }
+
+  nextBtn.style.display = "block";
+
+}
+
+
+// ===============================
+// Next Question
+// ===============================
+
+nextBtn.addEventListener("click", () => {
+
+  currentQuestionIndex++;
+
+  if (currentQuestionIndex < selectedQuestions.length) {
+
+    showQuestion();
+
+  } else {
+
+    showResult();
+
+  }
+
+});
+
+
+// ===============================
+// Show Result
+// ===============================
+
+function showResult() {
+
+  clearInterval(timer);
+
+  quizContainer.style.display = "none";
+
+  resultContainer.style.display = "block";
+
+  const percentage =
+    ((score / selectedQuestions.length) * 100).toFixed(2);
+
+  let reaction = "";
+
+  if (percentage < 55) {
+
+    reaction = "❌ Failed";
+
+  } else if (percentage >= 55 && percentage < 75) {
+
+    reaction = "🙂 Good Job";
+
+  } else if (percentage >= 75 && percentage < 90) {
+
+    reaction = "🔥 Great Work";
+
+  } else if (percentage >= 90 && percentage < 100) {
+
+    reaction = "🏆 Excellent";
+
+  } else {
+
+    reaction = "🎯 Perfect Score";
+
+  }
+
+  resultContainer.innerHTML = `
+    <h2>Quiz Completed</h2>
+    <h3>${reaction}</h3>
+    <p>Score: ${score}/${selectedQuestions.length}</p>
+    <p>Percentage: ${percentage}%</p>
+  `;
+
+}
+
+
+// ===============================
+// Timer
+// ===============================
+
+function startTimer() {
+
+  timerElement.innerText =
+    `Time Left: ${formatTime(timeLeft)}`;
+
+  timer = setInterval(() => {
+
+    timeLeft--;
+
+    timerElement.innerText =
+      `Time Left: ${formatTime(timeLeft)}`;
+
+    if (timeLeft <= 0) {
+
+      clearInterval(timer);
+
+      showResult();
+
+    }
+
+  }, 1000);
+
+}
+
+
+// ===============================
+// Format Time
+// ===============================
+
+function formatTime(seconds) {
+
+  const mins = Math.floor(seconds / 60);
+
+  const secs = seconds % 60;
+
+  return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
+
+}
+
+
+// ===============================
+// Shuffle Questions
+// ===============================
+
+function shuffleArray(array) {
+
+  for (let i = array.length - 1; i > 0; i--) {
+
+    const j = Math.floor(Math.random() * (i + 1));
+
+    [array[i], array[j]] =
+      [array[j], array[i]];
+  }
+
+}
+
+
+// ===============================
+// Initialize
+// ===============================
+
+loadMainCategories();
