@@ -1,0 +1,390 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  font-family: Arial, sans-serif;
+}
+
+
+body {
+
+  background:
+    linear-gradient(
+      135deg,
+      #4facfe,
+      #00f2fe
+    );
+
+  min-height: 100vh;
+
+  padding: 30px;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.quiz-container {
+
+  max-width: 1000px;
+
+  margin: auto;
+
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.2);
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+h1 {
+
+  text-align: center;
+
+  margin-bottom: 30px;
+
+  color: #333;
+
+  font-size: 40px;
+}
+
+
+h2 {
+
+  margin-top: 20px;
+
+  margin-bottom: 15px;
+
+  color: #222;
+}
+
+
+/* =========================
+   CONTROLS
+========================= */
+
+.controls {
+
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 15px;
+
+  margin-bottom: 30px;
+}
+
+
+label {
+
+  font-weight: bold;
+
+  color: #333;
+}
+
+
+input,
+select {
+
+  padding: 12px;
+
+  border-radius: 10px;
+
+  border: 1px solid #ccc;
+
+  font-size: 16px;
+
+  width: 100%;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+
+  background: #007bff;
+
+  color: white;
+
+  border: none;
+
+  padding: 15px;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+
+button:hover {
+
+  background: #0056b3;
+
+  transform: scale(1.03);
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.top-bar {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  background: #f5f5f5;
+
+  padding: 15px;
+
+  border-radius: 12px;
+
+  margin-bottom: 20px;
+
+  font-weight: bold;
+
+  font-size: 18px;
+}
+
+
+/* =========================
+   QUESTIONS
+========================= */
+
+.question {
+
+  background: #fafafa;
+
+  padding: 20px;
+
+  border-radius: 15px;
+
+  margin-bottom: 20px;
+
+  border-left: 6px solid #007bff;
+
+  box-shadow:
+    0 5px 10px rgba(0,0,0,0.05);
+}
+
+
+.question p {
+
+  margin-bottom: 15px;
+
+  font-size: 18px;
+}
+
+
+.question label {
+
+  display: block;
+
+  margin-bottom: 10px;
+
+  cursor: pointer;
+
+  padding: 10px;
+
+  border-radius: 8px;
+
+  transition: 0.2s;
+}
+
+
+.question label:hover {
+
+  background: #eaf4ff;
+}
+
+
+.question input {
+
+  width: auto;
+
+  margin-right: 10px;
+}
+
+
+/* =========================
+   RESULT STYLES
+========================= */
+
+.correct {
+
+  color: green;
+
+  font-weight: bold;
+
+  margin-bottom: 10px;
+}
+
+
+.wrong {
+
+  color: red;
+
+  font-weight: bold;
+
+  margin-bottom: 10px;
+}
+
+
+/* =========================
+   RESULT BOX
+========================= */
+
+#result {
+
+  margin-top: 30px;
+
+  padding: 20px;
+
+  border-radius: 15px;
+
+  background: #f9f9f9;
+
+  box-shadow:
+    0 5px 15px rgba(0,0,0,0.08);
+}
+
+
+/* =========================
+   HISTORY SECTION
+========================= */
+
+#history {
+
+  margin-top: 20px;
+}
+
+
+/* =========================
+   HISTORY CARD
+========================= */
+
+#history .question {
+
+  border-left: 6px solid #28a745;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  body {
+
+    padding: 15px;
+  }
+
+  .quiz-container {
+
+    padding: 20px;
+  }
+
+  h1 {
+
+    font-size: 28px;
+  }
+
+  .top-bar {
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    text-align: center;
+  }
+
+  button {
+
+    width: 100%;
+  }
+}
+/* =========================
+   NAVIGATION BUTTONS
+========================= */
+
+.navigation-buttons {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 20px;
+
+  margin-bottom: 20px;
+
+  gap: 15px;
+}
+
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.progress-container {
+
+  width: 100%;
+
+  height: 25px;
+
+  background: #ddd;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  margin-bottom: 25px;
+}
+
+
+#progressBar {
+
+  height: 100%;
+
+  width: 0%;
+
+  background: #28a745;
+
+  text-align: center;
+
+  color: white;
+
+  font-weight: bold;
+
+  line-height: 25px;
+
+  transition: 0.3s;
+}

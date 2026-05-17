@@ -1,0 +1,56 @@
+[
+  {
+    "question": "Which AWS service is used to create virtual servers in the cloud?",
+    "options": [
+      "S3",
+      "EC2",
+      "Lambda",
+      "RDS"
+    ],
+    "answer": "EC2"
+  },
+
+  {
+    "question": "Which AWS service is mainly used for object storage?",
+    "options": [
+      "EBS",
+      "EC2",
+      "S3",
+      "CloudFront"
+    ],
+    "answer": "S3"
+  },
+
+  {
+    "question": "Which AWS service helps monitor resources and applications?",
+    "options": [
+      "CloudWatch",
+      "IAM",
+      "VPC",
+      "Route 53"
+    ],
+    "answer": "CloudWatch"
+  },
+
+  {
+    "question": "Which AWS service is used for managing user permissions and access?",
+    "options": [
+      "IAM",
+      "SQS",
+      "ECS",
+      "CloudTrail"
+    ],
+    "answer": "IAM"
+  },
+
+  {
+    "question": "Which AWS service is used to run containers?",
+    "options": [
+      "EKS",
+      "S3",
+      "RDS",
+      "DynamoDB"
+    ],
+    "answer": "EKS"
+  }
+]

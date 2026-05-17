@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>
+    DevOps / Cloud Interview Practice Portal
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+</head>
+
+<body>
+
+<div class="quiz-container">
+
+  <!-- =========================
+       PAGE TITLE
+  ========================== -->
+
+  <h1>
+    🎓 DevOps / Cloud Interview Practice Portal
+  </h1>
+  
+  <p class="subtitle">
+    Learn • Practice • Improve
+  </p>
+  .subtitle {
+
+    text-align: center;
+  
+    margin-bottom: 30px;
+  
+    color: #444;
+  
+    font-size: 18px;
+  }
+
+  <!-- =========================
+       QUIZ CONTROLS
+  ========================== -->
+
+  <div class="controls">
+
+
+    <!-- Student Name -->
+
+    <label>
+
+      Student Name:
+
+    </label>
+
+    <input
+      type="text"
+      id="studentName"
+      placeholder="Enter your name"
+    >
+
+
+    <!-- Category Selection -->
+
+    <label>
+
+      Select Category:
+
+    </label>
+
+    <select id="categorySelect">
+
+      <option value="all">
+
+        All Categories
+
+      </option>
+
+      <option value="terraform/questions.json">
+
+        terraform
+
+      </option>
+
+      <option value="k8s/questions.json">
+
+        k8s
+
+      </option>
+
+      <option value="security/questions.json">
+
+        security
+
+      </option>
+
+      <option value="cicd/questions.json">
+
+        cicd
+
+      </option>
+
+      <option value="aws/questions.json">
+
+        AWS
+
+      </option>
+
+      <option value="azure/questions.json">
+
+        Azure
+
+      </option>
+      <option value="gcp/questions.json">
+
+        GCP
+      
+      </option>
+
+    </select>
+
+
+    <!-- Question Count -->
+
+    <label>
+
+      Select Number of Questions:
+
+    </label>
+
+    <select id="questionLimit">
+
+      <option value="10">
+
+        10 Questions
+
+      </option>
+
+      <option value="20">
+
+        20 Questions
+
+      </option>
+
+      <option value="30">
+
+        30 Questions
+
+      </option>
+
+      <option value="40">
+
+        40 Questions
+
+      </option>
+
+      <option value="50">
+
+        50 Questions
+
+      </option>
+
+    </select>
+
+
+    <!-- Start Quiz Button -->
+
+    <button onclick="startQuiz()">
+
+      Start Quiz
+
+    </button>
+
+  </div>
+
+
+  <!-- =========================
+       TOP BAR
+  ========================== -->
+
+  <div class="top-bar">
+
+
+    <!-- Timer -->
+
+    <div id="timer">
+
+      Time Left: 10:00
+
+    </div>
+
+
+    <!-- Question Counter -->
+
+    <div id="questionCount">
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       QUIZ QUESTIONS
+  ========================== -->
+
+  <div id="quiz"></div>
+<!-- Navigation Buttons -->
+
+<div class="navigation-buttons">
+
+  <button onclick="previousQuestion()">
+    ⬅ Previous
+  </button>
+
+  <button onclick="nextQuestion()">
+    Next ➡
+  </button>
+
+</div>
+
+
+<!-- Progress Bar -->
+
+<div class="progress-container">
+
+  <div id="progressBar">
+
+  </div>
+
+</div>
+
+  <!-- =========================
+       SUBMIT BUTTON
+  ========================== -->
+
+  <button onclick="submitQuiz()">
+
+    Submit Quiz
+
+  </button>
+
+
+  <!-- =========================
+       RESULT SECTION
+  ========================== -->
+
+  <div id="result">
+
+  </div>
+
+
+  <!-- =========================
+       QUIZ HISTORY
+  ========================== -->
+
+  <hr>
+
+  <h2>
+
+    Quiz History
+
+  </h2>
+
+  <div id="history">
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     SCRIPT FILE
+========================== -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

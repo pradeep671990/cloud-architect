@@ -1,0 +1,56 @@
+[
+  {
+    "question": "Which GCP service is used to create virtual machines?",
+    "options": [
+      "Cloud Storage",
+      "Compute Engine",
+      "BigQuery",
+      "Cloud Functions"
+    ],
+    "answer": "Compute Engine"
+  },
+
+  {
+    "question": "Which GCP service is mainly used for object storage?",
+    "options": [
+      "Cloud SQL",
+      "Cloud Storage",
+      "GKE",
+      "Pub/Sub"
+    ],
+    "answer": "Cloud Storage"
+  },
+
+  {
+    "question": "Which GCP service is used to manage Kubernetes clusters?",
+    "options": [
+      "Compute Engine",
+      "Cloud Run",
+      "GKE",
+      "App Engine"
+    ],
+    "answer": "GKE"
+  },
+
+  {
+    "question": "Which GCP service is used for serverless functions?",
+    "options": [
+      "Cloud Functions",
+      "Bigtable",
+      "Cloud DNS",
+      "Filestore"
+    ],
+    "answer": "Cloud Functions"
+  },
+
+  {
+    "question": "Which GCP service is used for monitoring and logging?",
+    "options": [
+      "Cloud Monitoring",
+      "Cloud Build",
+      "Artifact Registry",
+      "Cloud Scheduler"
+    ],
+    "answer": "Cloud Monitoring"
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "question": "What does IAM stand for in cloud security?",
+    "options": [
+      "Internet Access Management",
+      "Identity and Access Management",
+      "Internal Account Monitoring",
+      "Identity Authentication Module"
+    ],
+    "answer": "Identity and Access Management"
+  },
+
+  {
+    "question": "Which principle means users should get only the permissions they need?",
+    "options": [
+      "Open Access",
+      "Least Privilege",
+      "Full Control",
+      "Shared Access"
+    ],
+    "answer": "Least Privilege"
+  },
+
+  {
+    "question": "Which security method requires users to verify identity using more than one method?",
+    "options": [
+      "Single Sign-On",
+      "Multi-Factor Authentication",
+      "Password Rotation",
+      "Role-Based Access"
+    ],
+    "answer": "Multi-Factor Authentication"
+  },
+
+  {
+    "question": "Which type of attack tries many password combinations automatically?",
+    "options": [
+      "Phishing",
+      "Brute Force Attack",
+      "DDoS Attack",
+      "Spoofing"
+    ],
+    "answer": "Brute Force Attack"
+  },
+
+  {
+    "question": "Which protocol is commonly used for secure communication over the internet?",
+    "options": [
+      "HTTP",
+      "FTP",
+      "HTTPS",
+      "Telnet"
+    ],
+    "answer": "HTTPS"
+  }
+]
