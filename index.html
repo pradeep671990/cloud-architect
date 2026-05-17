@@ -1,7 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>
     DevOps / Cloud Interview Practice Portal
@@ -25,20 +32,11 @@
   <h1>
     🎓 DevOps / Cloud Interview Practice Portal
   </h1>
-  
+
   <p class="subtitle">
     Learn • Practice • Improve
   </p>
-  .subtitle {
 
-    text-align: center;
-  
-    margin-bottom: 30px;
-  
-    color: #444;
-  
-    font-size: 18px;
-  }
 
   <!-- =========================
        QUIZ CONTROLS
@@ -50,9 +48,7 @@
     <!-- Student Name -->
 
     <label>
-
       Student Name:
-
     </label>
 
     <input
@@ -62,61 +58,54 @@
     >
 
 
-    <!-- Category Selection -->
+    <!-- Main Category -->
 
     <label>
-
-      Select Category:
-
+      Main Category:
     </label>
 
-    <select id="categorySelect">
+    <select id="mainCategory">
 
-      <option value="all">
-
-        All Categories
-
+      <option value="">
+        Select Category
       </option>
 
-      <option value="terraform/questions.json">
+    </select>
 
-        terraform
 
+    <!-- Sub Category -->
+
+    <label>
+      Sub Category:
+    </label>
+
+    <select id="subCategory">
+
+      <option value="">
+        Select Sub Category
       </option>
 
-      <option value="k8s/questions.json">
+    </select>
 
-        k8s
 
+    <!-- Difficulty -->
+
+    <label>
+      Difficulty:
+    </label>
+
+    <select id="difficulty">
+
+      <option value="easy">
+        Easy
       </option>
 
-      <option value="security/questions.json">
-
-        security
-
+      <option value="medium">
+        Medium
       </option>
 
-      <option value="cicd/questions.json">
-
-        cicd
-
-      </option>
-
-      <option value="aws/questions.json">
-
-        AWS
-
-      </option>
-
-      <option value="azure/questions.json">
-
-        Azure
-
-      </option>
-      <option value="gcp/questions.json">
-
-        GCP
-      
+      <option value="hard">
+        Hard
       </option>
 
     </select>
@@ -125,52 +114,38 @@
     <!-- Question Count -->
 
     <label>
-
       Select Number of Questions:
-
     </label>
 
     <select id="questionLimit">
 
       <option value="10">
-
         10 Questions
-
       </option>
 
       <option value="20">
-
         20 Questions
-
       </option>
 
       <option value="30">
-
         30 Questions
-
       </option>
 
       <option value="40">
-
         40 Questions
-
       </option>
 
       <option value="50">
-
         50 Questions
-
       </option>
 
     </select>
 
 
-    <!-- Start Quiz Button -->
+    <!-- Start Button -->
 
     <button onclick="startQuiz()">
-
-      Start Quiz
-
+      🚀 Start Quiz
     </button>
 
   </div>
@@ -186,17 +161,24 @@
     <!-- Timer -->
 
     <div id="timer">
-
-      Time Left: 10:00
-
+      Time Left: 00:00
     </div>
 
 
     <!-- Question Counter -->
 
-    <div id="questionCount">
+    <div id="questionCount"></div>
 
-    </div>
+  </div>
+
+
+  <!-- =========================
+       PROGRESS BAR
+  ========================== -->
+
+  <div class="progress-container">
+
+    <div id="progressBar"></div>
 
   </div>
 
@@ -206,39 +188,31 @@
   ========================== -->
 
   <div id="quiz"></div>
-<!-- Navigation Buttons -->
-
-<div class="navigation-buttons">
-
-  <button onclick="previousQuestion()">
-    ⬅ Previous
-  </button>
-
-  <button onclick="nextQuestion()">
-    Next ➡
-  </button>
-
-</div>
 
 
-<!-- Progress Bar -->
+  <!-- =========================
+       NAVIGATION BUTTONS
+  ========================== -->
 
-<div class="progress-container">
+  <div class="navigation-buttons">
 
-  <div id="progressBar">
+    <button onclick="previousQuestion()">
+      ⬅ Previous
+    </button>
+
+    <button onclick="nextQuestion()">
+      Next ➡
+    </button>
 
   </div>
 
-</div>
 
   <!-- =========================
        SUBMIT BUTTON
   ========================== -->
 
   <button onclick="submitQuiz()">
-
-    Submit Quiz
-
+    ✅ Submit Quiz
   </button>
 
 
@@ -246,9 +220,7 @@
        RESULT SECTION
   ========================== -->
 
-  <div id="result">
-
-  </div>
+  <div id="result"></div>
 
 
   <!-- =========================
@@ -258,14 +230,10 @@
   <hr>
 
   <h2>
-
-    Quiz History
-
+    📜 Quiz History
   </h2>
 
-  <div id="history">
-
-  </div>
+  <div id="history"></div>
 
 </div>
 

@@ -1,703 +1,650 @@
+// ===============================
+// GLOBAL VARIABLES
+// ===============================
+
+let questions = [];
 let selectedQuestions = [];
-let currentQuestion = 0;
+
+let currentQuestionIndex = 0;
 let userAnswers = [];
-let startTime;
-let totalTime = 10 * 60;
-let timerInterval;
 
+let timer;
+let totalSeconds = 0;
 
-/* =========================
-   SHUFFLE ARRAY
-========================= */
+// ===============================
+// ELEMENTS
+// ===============================
+
+const homeScreen = document.getElementById("homeScreen");
+const quizScreen = document.getElementById("quizScreen");
+const resultScreen = document.getElementById("resultScreen");
+
+const mainCategory = document.getElementById("mainCategory");
+const subCategory = document.getElementById("subCategory");
+const difficulty = document.getElementById("difficulty");
+const questionCount = document.getElementById("questionCount");
+
+const totalTimeDisplay = document.getElementById("totalTimeDisplay");
+
+const startQuizBtn = document.getElementById("startQuizBtn");
+
+const questionText = document.getElementById("questionText");
+const optionsContainer = document.getElementById("optionsContainer");
+
+const currentQuestion = document.getElementById("currentQuestion");
+const totalQuestions = document.getElementById("totalQuestions");
+
+const timerElement = document.getElementById("timer");
+
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const submitBtn = document.getElementById("submitBtn");
+
+const progressBar = document.getElementById("progressBar");
+
+const scorePercent = document.getElementById("scorePercent");
+const resultReaction = document.getElementById("resultReaction");
+
+const correctAnswers = document.getElementById("correctAnswers");
+const wrongAnswers = document.getElementById("wrongAnswers");
+const finalTotal = document.getElementById("finalTotal");
+
+const restartQuizBtn = document.getElementById("restartQuizBtn");
+
+const themeToggle = document.getElementById("themeToggle");
+
+// ===============================
+// CATEGORY MAP
+// ===============================
+
+const categoryMap = {
+
+  aws: [
+    "ai-ml",
+    "analytics-bigdata",
+    "backup-dr",
+    "compute",
+    "containers",
+    "cost-optimization",
+    "database",
+    "devops-automation",
+    "identity-access",
+    "logging-monitoring",
+    "management-governance",
+    "messaging-integration",
+    "migration-transfer",
+    "networking-cdn",
+    "security-compliance",
+    "serverless",
+    "storage"
+  ],
+
+  azure: [
+    "ai-ml",
+    "analytics-bigdata",
+    "backup-dr",
+    "compute",
+    "containers",
+    "cost-optimization",
+    "database",
+    "devops-automation",
+    "identity-access",
+    "logging-monitoring",
+    "management-governance",
+    "messaging-integration",
+    "migration-transfer",
+    "networking-cdn",
+    "security-compliance",
+    "serverless",
+    "storage"
+  ],
+
+  gcp: [
+    "ai-ml",
+    "analytics-bigdata",
+    "backup-dr",
+    "compute",
+    "containers",
+    "cost-optimization",
+    "database",
+    "devops-automation",
+    "identity-access",
+    "logging-monitoring",
+    "management-governance",
+    "messaging-integration",
+    "migration-transfer",
+    "networking-cdn",
+    "security-compliance",
+    "serverless",
+    "storage"
+  ],
+
+  devops: [
+    "argocd",
+    "artifact-management",
+    "azure-devops",
+    "deployment-strategies",
+    "github-actions",
+    "gitlab-ci",
+    "gitops",
+    "jenkins",
+    "monitoring",
+    "pipeline-security",
+    "testing",
+    "troubleshooting"
+  ],
+
+  docker: [
+    "basics",
+    "compose",
+    "containers",
+    "dockerfile",
+    "images",
+    "networking",
+    "optimization",
+    "registry",
+    "security",
+    "troubleshooting",
+    "volumes"
+  ],
+
+  kubernetes: [
+    "cluster-management",
+    "core-concepts",
+    "helm",
+    "ingress",
+    "monitoring",
+    "networking",
+    "rbac",
+    "scheduling",
+    "security",
+    "storage",
+    "troubleshooting",
+    "workloads"
+  ],
+
+  linux: [
+    "commands",
+    "filesystem",
+    "monitoring",
+    "networking",
+    "performance",
+    "permissions",
+    "process-management",
+    "security",
+    "services",
+    "shell-scripting",
+    "troubleshooting"
+  ],
+
+  monitoring: [
+    "alertmanager",
+    "dashboards",
+    "elk",
+    "fluentd",
+    "grafana",
+    "logging",
+    "loki",
+    "metrics",
+    "observability",
+    "prometheus",
+    "tracing"
+  ],
+
+  networking: [
+    "api-gateway",
+    "dns",
+    "firewall",
+    "ingress",
+    "load-balancer",
+    "routing",
+    "service-mesh",
+    "ssl",
+    "tcp-ip",
+    "troubleshooting",
+    "vpn"
+  ],
+
+  security: [
+    "cloud-security",
+    "compliance",
+    "container-security",
+    "devsecops",
+    "encryption",
+    "iam",
+    "incident-response",
+    "kubernetes-security",
+    "network-security",
+    "secrets-management",
+    "vulnerability-management",
+    "zero-trust"
+  ],
+
+  terraform: [
+    "backend",
+    "basics",
+    "best-practices",
+    "functions",
+    "modules",
+    "outputs",
+    "providers",
+    "provisioners",
+    "resources",
+    "state-management",
+    "troubleshooting",
+    "variables",
+    "workspaces"
+  ]
+};
+
+// ===============================
+// UPDATE SUB CATEGORY
+// ===============================
+
+mainCategory.addEventListener("change", () => {
+
+  const selectedMain = mainCategory.value;
+
+  subCategory.innerHTML =
+    `<option value="">Select Sub Category</option>`;
+
+  if (!selectedMain) return;
+
+  const subCategories = categoryMap[selectedMain];
+
+  subCategories.forEach(category => {
+
+    const option = document.createElement("option");
+
+    option.value = category;
+
+    option.textContent =
+      category
+        .replace(/-/g, " ")
+        .replace(/\b\w/g, c => c.toUpperCase());
+
+    subCategory.appendChild(option);
+
+  });
+
+});
+
+// ===============================
+// AUTO UPDATE TIME
+// ===============================
+
+questionCount.addEventListener("change", () => {
+
+  totalTimeDisplay.textContent = questionCount.value;
+
+});
+
+// ===============================
+// START QUIZ
+// ===============================
+
+startQuizBtn.addEventListener("click", async () => {
+
+  const main = mainCategory.value;
+  const sub = subCategory.value;
+  const level = difficulty.value;
+
+  const total = parseInt(questionCount.value);
+
+  if (!main || !sub) {
+
+    alert("Please select category and sub category");
+    return;
+
+  }
+
+  try {
+
+    const filePath =
+      `./${main}/${sub}/${level}.json`;
+
+    const response = await fetch(filePath);
+
+    questions = await response.json();
+
+    if (!questions.length) {
+
+      alert("No questions found");
+      return;
+
+    }
+
+    // RANDOMIZE
+    selectedQuestions =
+      shuffleArray(questions).slice(0, total);
+
+    userAnswers =
+      new Array(selectedQuestions.length).fill(null);
+
+    currentQuestionIndex = 0;
+
+    totalSeconds =
+      selectedQuestions.length * 60;
+
+    // SCREEN SWITCH
+    homeScreen.classList.remove("active");
+    resultScreen.classList.remove("active");
+
+    quizScreen.classList.add("active");
+
+    totalQuestions.textContent =
+      selectedQuestions.length;
+
+    loadQuestion();
+
+    startTimer();
+
+  } catch (error) {
+
+    console.error(error);
+
+    alert("Unable to load questions");
+
+  }
+
+});
+
+// ===============================
+// LOAD QUESTION
+// ===============================
+
+function loadQuestion() {
+
+  const current =
+    selectedQuestions[currentQuestionIndex];
+
+  currentQuestion.textContent =
+    currentQuestionIndex + 1;
+
+  questionText.textContent =
+    current.question;
+
+  optionsContainer.innerHTML = "";
+
+  current.options.forEach((option, index) => {
+
+    const optionBtn =
+      document.createElement("button");
+
+    optionBtn.classList.add("option-btn");
+
+    optionBtn.textContent = option;
+
+    if (userAnswers[currentQuestionIndex] === option) {
+
+      optionBtn.classList.add("selected");
+
+    }
+
+    optionBtn.addEventListener("click", () => {
+
+      userAnswers[currentQuestionIndex] = option;
+
+      loadQuestion();
+
+    });
+
+    optionsContainer.appendChild(optionBtn);
+
+  });
+
+  updateProgress();
+
+  updateButtons();
+
+}
+
+// ===============================
+// UPDATE BUTTONS
+// ===============================
+
+function updateButtons() {
+
+  prevBtn.style.display =
+    currentQuestionIndex === 0
+      ? "none"
+      : "inline-block";
+
+  nextBtn.style.display =
+    currentQuestionIndex === selectedQuestions.length - 1
+      ? "none"
+      : "inline-block";
+
+  submitBtn.style.display =
+    currentQuestionIndex === selectedQuestions.length - 1
+      ? "inline-block"
+      : "none";
+
+}
+
+// ===============================
+// NEXT BUTTON
+// ===============================
+
+nextBtn.addEventListener("click", () => {
+
+  if (
+    currentQuestionIndex <
+    selectedQuestions.length - 1
+  ) {
+
+    currentQuestionIndex++;
+
+    loadQuestion();
+
+  }
+
+});
+
+// ===============================
+// PREVIOUS BUTTON
+// ===============================
+
+prevBtn.addEventListener("click", () => {
+
+  if (currentQuestionIndex > 0) {
+
+    currentQuestionIndex--;
+
+    loadQuestion();
+
+  }
+
+});
+
+// ===============================
+// TIMER
+// ===============================
+
+function startTimer() {
+
+  updateTimerDisplay();
+
+  timer = setInterval(() => {
+
+    totalSeconds--;
+
+    updateTimerDisplay();
+
+    if (totalSeconds <= 0) {
+
+      clearInterval(timer);
+
+      submitQuiz();
+
+    }
+
+  }, 1000);
+
+}
+
+function updateTimerDisplay() {
+
+  const minutes =
+    Math.floor(totalSeconds / 60);
+
+  const seconds =
+    totalSeconds % 60;
+
+  timerElement.textContent =
+    `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+
+}
+
+// ===============================
+// PROGRESS BAR
+// ===============================
+
+function updateProgress() {
+
+  const progress =
+    ((currentQuestionIndex + 1) /
+      selectedQuestions.length) * 100;
+
+  progressBar.style.width =
+    `${progress}%`;
+
+}
+
+// ===============================
+// SUBMIT QUIZ
+// ===============================
+
+submitBtn.addEventListener("click", () => {
+
+  submitQuiz();
+
+});
+
+function submitQuiz() {
+
+  clearInterval(timer);
+
+  let correct = 0;
+
+  selectedQuestions.forEach((question, index) => {
+
+    if (userAnswers[index] === question.answer) {
+
+      correct++;
+
+    }
+
+  });
+
+  const wrong =
+    selectedQuestions.length - correct;
+
+  const percentage =
+    Math.round(
+      (correct / selectedQuestions.length) * 100
+    );
+
+  // SCREEN SWITCH
+  quizScreen.classList.remove("active");
+
+  resultScreen.classList.add("active");
+
+  // SCORE
+  scorePercent.textContent =
+    `${percentage}%`;
+
+  correctAnswers.textContent = correct;
+
+  wrongAnswers.textContent = wrong;
+
+  finalTotal.textContent =
+    selectedQuestions.length;
+
+  // REACTIONS
+  if (percentage < 55) {
+
+    resultReaction.innerHTML =
+      "😢 Failed! Keep Practicing";
+
+  } else if (percentage >= 55 && percentage < 75) {
+
+    resultReaction.innerHTML =
+      "🙂 Good Job!";
+
+  } else if (percentage >= 75 && percentage < 90) {
+
+    resultReaction.innerHTML =
+      "🔥 Excellent Work!";
+
+  } else if (percentage >= 90 && percentage < 100) {
+
+    resultReaction.innerHTML =
+      "🚀 Outstanding Performance!";
+
+  } else {
+
+    resultReaction.innerHTML =
+      "🏆 Perfect Score!";
+
+  }
+
+}
+
+// ===============================
+// RESTART QUIZ
+// ===============================
+
+restartQuizBtn.addEventListener("click", () => {
+
+  resultScreen.classList.remove("active");
+
+  homeScreen.classList.add("active");
+
+});
+
+// ===============================
+// SHUFFLE ARRAY
+// ===============================
 
 function shuffleArray(array) {
 
   for (let i = array.length - 1; i > 0; i--) {
 
-    const j =
-      Math.floor(Math.random() * (i + 1));
+    const j = Math.floor(Math.random() * (i + 1));
 
     [array[i], array[j]] =
       [array[j], array[i]];
+
   }
 
   return array;
+
 }
 
+// ===============================
+// DARK MODE
+// ===============================
 
-/* =========================
-   START QUIZ
-========================= */
+themeToggle.addEventListener("click", () => {
 
-async function startQuiz() {
+  document.body.classList.toggle("dark-mode");
 
-  const studentName =
-    document.getElementById('studentName').value;
-
-  if (studentName.trim() === "") {
-
-    alert("Please enter student name");
-
-    return;
-  }
-
-  document.getElementById('quiz').innerHTML = "";
-
-  document.getElementById('result').innerHTML = "";
-
-  clearInterval(timerInterval);
-
-  const limit =
-    parseInt(
-      document.getElementById('questionLimit').value
-    );
-
-  const selectedCategory =
-    document.getElementById('categorySelect').value;
-
-
-  /* =========================
-     TIMER
-  ========================= */
-
-  totalTime = limit * 60;
-
-  const totalMinutes = limit;
-
-
-  /* =========================
-     WARNING MESSAGE
-  ========================= */
-
-  const warningMessage = `
-
-You will get:
-
-✔ 1 minute for each question
-✔ Total Time: ${totalMinutes} Minutes
-✔ No negative marking
-
-Click OK to start quiz.
-
-`;
-
-  const confirmStart =
-    confirm(warningMessage);
-
-  if (!confirmStart) return;
-
-  startTime = new Date();
-
-  let loadedQuestions = [];
-
-
-  /* =========================
-     LOAD QUESTIONS
-  ========================= */
-
-  if (selectedCategory === "all") {
-
-    const files = [
-
-      'aws/questions.json',
-
-      'gcp/questions.json',
-
-      'azure/questions.json',
-
-      'cicd/questions.json',
-
-      'security/questions.json',
-
-      'terraform/questions.json',
-
-      'k8s/questions.json'
-    ];
-
-    for (const file of files) {
-
-      const response =
-        await fetch(file);
-
-      const data =
-        await response.json();
-
-      loadedQuestions =
-        loadedQuestions.concat(data);
-    }
-
-  }
-
-  else {
-
-    const response =
-      await fetch(selectedCategory);
-
-    loadedQuestions =
-      await response.json();
-  }
-
-
-  /* =========================
-     RANDOMIZE QUESTIONS
-  ========================= */
-
-  selectedQuestions =
-    shuffleArray(loadedQuestions)
-    .slice(
-      0,
-      Math.min(limit, loadedQuestions.length)
-    );
-
-
-  /* =========================
-     RESET TRACKING
-  ========================= */
-
-  currentQuestion = 0;
-
-  userAnswers = [];
-
-
-  /* =========================
-     LOAD QUESTIONS
-  ========================= */
-
-  loadQuestions();
-
-  startTimer();
-}
-
-
-/* =========================
-   LOAD SINGLE QUESTION
-========================= */
-
-function loadQuestions() {
-
-  const quizDiv =
-    document.getElementById('quiz');
-
-  quizDiv.innerHTML = "";
-
-  document.getElementById('questionCount').innerHTML =
-    `Question ${currentQuestion + 1}
-     of ${selectedQuestions.length}`;
-
-  const q =
-    selectedQuestions[currentQuestion];
-
-  const options =
-    shuffleArray([...q.options]);
-
-  let html = `
-
-    <div class="question">
-
-      <p>
-
-        <b>
-          Q${currentQuestion + 1}.
-          ${q.question}
-        </b>
-
-      </p>
-  `;
-
-  options.forEach((option, i) => {
-
-    const checked =
-      userAnswers[currentQuestion] === option
-      ? 'checked'
-      : '';
-
-    html += `
-
-      <label>
-
-        <input
-          type="radio"
-          name="question"
-          value="${option.replace(/"/g, '&quot;')}"
-          data-option="${i}"
-          ${checked}
-        >
-
-        ${option}
-
-      </label>
-
-      <br>
-    `;
-  });
-
-  html += `</div>`;
-
-  quizDiv.innerHTML = html;
-
-
-  /* =========================
-     ATTACH EVENT LISTENERS
-  ========================= */
-
-  quizDiv
-    .querySelectorAll('input[type="radio"]')
-    .forEach(input => {
-
-      input.addEventListener(
-        'change',
-        () => saveAnswer(input.value)
-      );
-
-    });
-
-  updateProgressBar();
-}
-
-
-/* =========================
-   SAVE ANSWER
-========================= */
-
-function saveAnswer(answer) {
-
-  userAnswers[currentQuestion] = answer;
-}
-
-
-/* =========================
-   NEXT QUESTION
-========================= */
-
-function nextQuestion() {
+  const icon =
+    themeToggle.querySelector("i");
 
   if (
-    currentQuestion <
-    selectedQuestions.length - 1
+    document.body.classList.contains("dark-mode")
   ) {
 
-    currentQuestion++;
+    icon.classList.remove("fa-moon");
+    icon.classList.add("fa-sun");
 
-    loadQuestions();
-  }
-}
+  } else {
 
-
-/* =========================
-   PREVIOUS QUESTION
-========================= */
-
-function previousQuestion() {
-
-  if (currentQuestion > 0) {
-
-    currentQuestion--;
-
-    loadQuestions();
-  }
-}
-
-
-/* =========================
-   PROGRESS BAR
-========================= */
-
-function updateProgressBar() {
-
-  const progress =
-    (
-      (currentQuestion + 1)
-      / selectedQuestions.length
-    ) * 100;
-
-  const progressBar =
-    document.getElementById('progressBar');
-
-  progressBar.style.width =
-    `${progress}%`;
-
-  progressBar.innerHTML =
-    `${Math.round(progress)}%`;
-}
-
-
-/* =========================
-   TIMER
-========================= */
-
-function startTimer() {
-
-  timerInterval = setInterval(() => {
-
-    const minutes =
-      Math.floor(totalTime / 60);
-
-    const seconds =
-      String(totalTime % 60)
-      .padStart(2, '0');
-
-    document.getElementById('timer').innerHTML =
-      `Time Left: ${minutes}:${seconds}`;
-
-    totalTime--;
-
-
-    /* =========================
-       AUTO SUBMIT
-    ========================= */
-
-    if (totalTime < 0) {
-
-      clearInterval(timerInterval);
-
-      alert(
-        "Time is over! Quiz will be submitted automatically."
-      );
-
-      submitQuiz();
-    }
-
-  }, 1000);
-}
-
-
-/* =========================
-   SUBMIT QUIZ
-========================= */
-
-function submitQuiz() {
-
-  clearInterval(timerInterval);
-
-  let score = 0;
-
-  let resultHTML = "";
-
-  const endTime = new Date();
-
-  const timeTaken =
-    Math.floor(
-      (endTime - startTime) / 1000
-    );
-
-  const selectedCategory =
-    document.getElementById('categorySelect').value;
-
-  // SHOW EXPLANATION ONLY FOR MATHS
-
-  const showExplanation =
-    selectedCategory.includes("maths");
-
-  selectedQuestions.forEach((q, index) => {
-
-    const selected =
-      userAnswers[index];
-
-    /* =========================
-       CORRECT ANSWER
-    ========================= */
-
-    if (selected) {
-
-      if (selected === q.answer) {
-
-        score++;
-
-        resultHTML += `
-
-          <div class="correct">
-
-            ✅ Q${index + 1}: Correct
-
-            ${showExplanation ? `
-
-              <br><br>
-
-              <b>Explanation:</b>
-
-              ${q.explanation || "No explanation available."}
-
-            ` : ""}
-
-          </div>
-        `;
-      }
-
-      /* =========================
-         WRONG ANSWER
-      ========================= */
-
-      else {
-
-        resultHTML += `
-
-          <div class="wrong">
-
-            ❌ Q${index + 1}: Wrong
-
-            <br><br>
-
-            <b>Your Answer:</b>
-            ${selected}
-
-            <br><br>
-
-            <b>Correct Answer:</b>
-            ${q.answer}
-
-            ${showExplanation ? `
-
-              <br><br>
-
-              <b>Explanation:</b>
-
-              ${q.explanation || "No explanation available."}
-
-            ` : ""}
-
-          </div>
-        `;
-      }
-
-    }
-
-    /* =========================
-       NOT ATTEMPTED
-    ========================= */
-
-    else {
-
-      resultHTML += `
-
-        <div class="wrong">
-
-          ⚠️ Q${index + 1}: Not Attempted
-
-          <br><br>
-
-          <b>Correct Answer:</b>
-          ${q.answer}
-
-          ${showExplanation ? `
-
-            <br><br>
-
-            <b>Explanation:</b>
-
-            ${q.explanation || "No explanation available."}
-
-          ` : ""}
-
-        </div>
-      `;
-    }
-
-  });
-
-
-  /* =========================
-     PERCENTAGE
-  ========================= */
-
-  const percentage =
-    (
-      (score / selectedQuestions.length) * 100
-    ).toFixed(2);
-
-
-  /* =========================
-     REACTIONS
-  ========================= */
-
-  let reaction = "";
-
-  const pct =
-    parseFloat(percentage);
-
-  if (pct < 55) {
-
-    reaction =
-      "😢 Fail! Keep practicing and try again.";
+    icon.classList.remove("fa-sun");
+    icon.classList.add("fa-moon");
 
   }
 
-  else if (pct < 75) {
-
-    reaction =
-      "🙂 Good Job! You can do even better.";
-
-  }
-
-  else if (pct < 90) {
-
-    reaction =
-      "😃 Very Good Performance!";
-
-  }
-
-  else if (pct < 100) {
-
-    reaction =
-      "🔥 Excellent Work! Outstanding Score!";
-  }
-
-  else {
-
-    reaction =
-      "🏆 PERFECT SCORE! GENIUS!";
-  }
-
-
-  /* =========================
-     SAVE HISTORY
-  ========================= */
-
-  const studentName =
-    document.getElementById('studentName').value;
-
-  saveHistory({
-
-    studentName: studentName,
-
-    category: selectedCategory,
-
-    score: score,
-
-    total: selectedQuestions.length,
-
-    percentage: percentage,
-
-    timeTaken:
-      `${Math.floor(timeTaken / 60)}m ${timeTaken % 60}s`,
-
-    date:
-      new Date().toLocaleString()
-  });
-
-
-  /* =========================
-     RESULT DISPLAY
-  ========================= */
-
-  document.getElementById('result').innerHTML = `
-
-    <h2>
-      Your Score:
-      ${score}/${selectedQuestions.length}
-    </h2>
-
-    <h2>
-      Percentage:
-      ${percentage}%
-    </h2>
-
-    <h2>
-      ${reaction}
-    </h2>
-
-    <h3>
-      Time Taken:
-      ${Math.floor(timeTaken / 60)}m
-      ${timeTaken % 60}s
-    </h3>
-
-    <hr>
-
-    ${resultHTML}
-  `;
-}
-
-
-/* =========================
-   SAVE HISTORY
-========================= */
-
-function saveHistory(data) {
-
-  let history =
-    JSON.parse(
-      localStorage.getItem('quizHistory')
-    ) || [];
-
-  history.push(data);
-
-  localStorage.setItem(
-    'quizHistory',
-    JSON.stringify(history)
-  );
-
-  loadHistory();
-}
-
-
-/* =========================
-   LOAD HISTORY
-========================= */
-
-function loadHistory() {
-
-  let history =
-    JSON.parse(
-      localStorage.getItem('quizHistory')
-    ) || [];
-
-  let html = "";
-
-  [...history]
-    .reverse()
-    .forEach((item, index) => {
-
-      html += `
-
-        <div class="question">
-
-          <p>
-            <b>
-              Attempt ${index + 1}
-            </b>
-          </p>
-
-          <p>
-            Student:
-            <b>${item.studentName}</b>
-          </p>
-
-          <p>
-            Category:
-            ${item.category}
-          </p>
-
-          <p>
-            Score:
-            ${item.score}/${item.total}
-          </p>
-
-          <p>
-            Percentage:
-            ${item.percentage}%
-          </p>
-
-          <p>
-            Time Taken:
-            ${item.timeTaken}
-          </p>
-
-          <p>
-            Date:
-            ${item.date}
-          </p>
-
-        </div>
-      `;
-    });
-
-  document.getElementById('history').innerHTML =
-    html;
-}
-
-
-/* =========================
-   LOAD HISTORY ON PAGE LOAD
-========================= */
-
-loadHistory();
+});
