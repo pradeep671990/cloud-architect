@@ -1,1 +1,16 @@
-[]
+[
+    {
+      "question": "Which AWS service is used for object storage?",
+      "options": [
+        "EC2",
+        "S3",
+        "RDS",
+        "Lambda"
+      ],
+      "answer": "S3",
+      "explanation": "Amazon S3 is AWS object storage service used for scalable object storage.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "aws"
+    }
+  ]
