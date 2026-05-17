@@ -346,53 +346,75 @@ async function startQuiz() {
 
 function loadQuestion() {
 
-  const quiz =
-    document.getElementById("quiz");
+  const quizContainer = document.getElementById("quiz");
 
-  const q =
-    questions[currentQuestion];
+  // Safety check
+  if (
+    !questions ||
+    questions.length === 0 ||
+    !questions[currentQuestion]
+  ) {
 
-  document.getElementById(
-    "questionCount"
-  ).innerHTML =
-    `Question ${currentQuestion + 1} of ${questions.length}`;
-
-  document.getElementById(
-    "progressBar"
-  ).style.width =
-    `${((currentQuestion + 1) / questions.length) * 100}%`;
-
-  let html =
-    `
-    <div class="question-card">
-
-      <h2>${q.question}</h2>
-  `;
-
-  q.options.forEach(option => {
-
-    html +=
-      `
-      <label class="option">
-
-        <input
-          type="radio"
-          name="answer"
-          value="${option}"
-          ${userAnswers[currentQuestion] === option ? "checked" : ""}
-        >
-
-        ${option}
-
-      </label>
+    quizContainer.innerHTML = `
+      <div class="error">
+        ❌ Unable to load questions.
+        <br><br>
+        Please check your JSON files.
+      </div>
     `;
 
+    console.error("Question object missing:", questions);
+    return;
+  }
+
+  const q = questions[currentQuestion];
+
+  let optionsHTML = "";
+
+  q.options.forEach((option, index) => {
+
+    optionsHTML += `
+      <label class="option">
+        <input
+          type="radio"
+          name="option"
+          value="${option}"
+          ${answers[currentQuestion] === option ? "checked" : ""}
+        >
+        ${option}
+      </label>
+    `;
   });
 
-  html += `</div>`;
+  quizContainer.innerHTML = `
+    <div class="question-card">
 
-  quiz.innerHTML = html;
+      <h2>
+        Question ${currentQuestion + 1}
+      </h2>
 
+      <p class="question">
+        ${q.question}
+      </p>
+
+      <div class="options">
+        ${optionsHTML}
+      </div>
+
+    </div>
+  `;
+
+  updateProgressBar();
+  updateQuestionCounter();
+
+  // Save selected answer
+  document.querySelectorAll('input[name="option"]').forEach((radio) => {
+
+    radio.addEventListener("change", (e) => {
+
+      answers[currentQuestion] = e.target.value;
+    });
+  });
 }
 
 
