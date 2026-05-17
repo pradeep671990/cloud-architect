@@ -1,1 +1,452 @@
-[]
+[
+    {
+      "question": "What is the difference between Azure Blob Storage LRS and ZRS?",
+      "options": ["LRS replicates across zones; ZRS replicates locally", "LRS replicates 3 times within one datacenter; ZRS replicates across 3 availability zones", "ZRS is cheaper than LRS", "LRS is only for premium storage accounts"],
+      "answer": "LRS replicates 3 times within one datacenter; ZRS replicates across 3 availability zones",
+      "explanation": "LRS (Locally Redundant Storage) keeps 3 copies within a single physical location. ZRS (Zone-Redundant Storage) synchronously replicates across 3 availability zones in the same region for higher availability.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the purpose of Azure Blob Storage change feed?",
+      "options": ["Notifying when blobs change tiers", "Providing an ordered, guaranteed log of all changes to blobs and blob metadata", "Feeding data to Azure Stream Analytics", "Tracking billing changes for storage accounts"],
+      "answer": "Providing an ordered, guaranteed log of all changes to blobs and blob metadata",
+      "explanation": "The change feed provides ordered, guaranteed, durable, immutable, read-only transaction logs of changes to blobs and blob metadata in a storage account.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure storage account type supports both Azure Files and Azure Blob Storage with premium performance?",
+      "options": ["General-purpose v1", "General-purpose v2", "FileStorage", "BlockBlobStorage"],
+      "answer": "FileStorage",
+      "explanation": "FileStorage accounts support Azure Files with premium SSD performance. BlockBlobStorage provides premium performance for block blobs only.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the purpose of Azure Data Lake Storage Gen2 hierarchical namespace?",
+      "options": ["Enabling multiple storage tiers", "Enabling true directory semantics and atomic directory operations for analytics performance", "Supporting multiple protocols simultaneously", "Allowing cross-region replication of files"],
+      "answer": "Enabling true directory semantics and atomic directory operations for analytics performance",
+      "explanation": "The hierarchical namespace enables true directory operations (rename, delete atomically) which are critical for big data analytics performance at scale.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the Azure Blob Storage object replication feature?",
+      "options": ["Replicating blobs within the same container", "Asynchronously copying block blobs between storage accounts across regions", "Synchronous replication within the same datacenter", "Replicating only metadata between accounts"],
+      "answer": "Asynchronously copying block blobs between storage accounts across regions",
+      "explanation": "Object replication asynchronously copies block blobs between a source and destination storage account, even across different Azure regions.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the minimum retention period for the Azure Blob Storage Cool tier?",
+      "options": ["7 days", "30 days", "60 days", "90 days"],
+      "answer": "30 days",
+      "explanation": "If you delete or move a blob from the Cool tier before 30 days, you are charged an early deletion penalty for the remaining days.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service enables centralized backup management across multiple Azure services and on-premises workloads?",
+      "options": ["Azure Site Recovery", "Azure Backup", "Azure Blob Lifecycle", "Azure File Sync"],
+      "answer": "Azure Backup",
+      "explanation": "Azure Backup provides a centralized solution to back up data across Azure VMs, SQL servers, SAP HANA, Azure Files, and on-premises machines.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the purpose of Azure Storage account private endpoints?",
+      "options": ["Making storage account publicly accessible", "Allowing secure access to a storage account over a private network using Private Link", "Restricting access by IP address only", "Enabling firewall rules for VNets"],
+      "answer": "Allowing secure access to a storage account over a private network using Private Link",
+      "explanation": "Private endpoints assign a private IP from your VNet to the storage account, allowing traffic to flow over Microsoft's backbone without public internet exposure.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the Azure Blob Storage point-in-time restore feature used for?",
+      "options": ["Restoring individual files from Azure Files", "Restoring a set of block blobs to an earlier state within a retention period", "Restoring VM disks from snapshots", "Restoring deleted storage accounts"],
+      "answer": "Restoring a set of block blobs to an earlier state within a retention period",
+      "explanation": "Point-in-time restore lets you restore block blobs to their state at an earlier point in time, protecting against accidental deletion or corruption.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What does Azure Storage geo-redundant storage (GRS) guarantee in a failover scenario?",
+      "options": ["Zero data loss always", "RPO of zero", "Data is replicated to a paired region with up to 15 minutes of potential data loss (RPO)", "Instant failover with no downtime"],
+      "answer": "Data is replicated to a paired region with up to 15 minutes of potential data loss (RPO)",
+      "explanation": "GRS asynchronously replicates data to a secondary paired region. In failover, the RPO is typically less than 15 minutes but is not guaranteed to be zero.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the Azure Blob storage lifecycle management transition action used for?",
+      "options": ["Permanently deleting blobs", "Moving blobs to a cooler storage tier automatically based on rules", "Encrypting blobs at rest", "Replicating blobs to another region"],
+      "answer": "Moving blobs to a cooler storage tier automatically based on rules",
+      "explanation": "Lifecycle management transition actions automatically move blobs from Hot → Cool → Archive based on age or last access time rules.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure managed disk type provides the best price-performance balance for most production workloads?",
+      "options": ["Standard HDD", "Standard SSD", "Premium SSD v1", "Ultra Disk"],
+      "answer": "Premium SSD v1",
+      "explanation": "Premium SSD v1 provides high performance with single-digit millisecond latency and is suitable for most I/O-intensive production workloads at reasonable cost.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the maximum size of a single Azure Queue Storage message?",
+      "options": ["4 KB", "64 KB", "1 MB", "64 MB"],
+      "answer": "64 KB",
+      "explanation": "A single message in Azure Queue Storage can be up to 64 KB in size.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the Azure equivalent of AWS S3 Object Lambda?",
+      "options": ["Azure Blob Storage Functions", "Azure API Management with Blob Storage", "Azure Functions triggered by Event Grid on Blob events", "Azure CDN with origin rewrites"],
+      "answer": "Azure Functions triggered by Event Grid on Blob events",
+      "explanation": "Azure achieves similar functionality to S3 Object Lambda by combining Event Grid blob events with Azure Functions to process or transform blob data on access.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the purpose of Azure Blob Storage index tags?",
+      "options": ["Adding metadata for billing purposes", "Enabling discovery and filtering of blobs using key-value tag attributes", "Controlling access to blobs", "Auto-tiering blobs based on tags"],
+      "answer": "Enabling discovery and filtering of blobs using key-value tag attributes",
+      "explanation": "Blob index tags are key-value attributes on blobs that enable efficient filtering and querying of blobs within a container or storage account.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the difference between Azure Blob Storage Hot and Cold tiers?",
+      "options": ["There is no Cold tier in Azure", "Cold tier requires 90 days minimum storage; Hot has no minimum", "Cold is cheaper to store but more expensive to access than Hot; Cold has a 90-day minimum", "Hot tier is for archives only"],
+      "answer": "Cold is cheaper to store but more expensive to access than Hot; Cold has a 90-day minimum",
+      "explanation": "The Cold tier (introduced in 2023) offers lower storage costs than Cool but higher access costs, with a 90-day minimum retention period.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is Azure Disk Bursting?",
+      "options": ["Exceeding disk IOPS limits permanently", "Temporarily exceeding the provisioned disk IOPS and throughput using accumulated burst credits", "Auto-scaling disk size on demand", "Increasing disk redundancy temporarily"],
+      "answer": "Temporarily exceeding the provisioned disk IOPS and throughput using accumulated burst credits",
+      "explanation": "Azure Disk Bursting allows disks to temporarily exceed their provisioned IOPS and throughput limits using burst credits accumulated during low-usage periods.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides a petabyte-scale data transfer solution using physical devices, similar to AWS Snowball?",
+      "options": ["Azure DataSync", "Azure Data Box", "Azure Import/Export", "Azure ExpressRoute"],
+      "answer": "Azure Data Box",
+      "explanation": "Azure Data Box is a physical appliance for offline bulk data transfer to Azure. Azure Import/Export is the older service that uses your own drives.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the purpose of Azure Storage Shared Key authentication?",
+      "options": ["Granting temporary access via SAS tokens", "Authenticating using the storage account name and account key for full access", "SSO authentication for Azure AD users", "Authenticating from on-premises networks only"],
+      "answer": "Authenticating using the storage account name and account key for full access",
+      "explanation": "Shared Key authentication uses the storage account name and one of two account access keys, granting full control over the storage account.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is Azure Blob Storage's last access time tracking used for?",
+      "options": ["Auditing who accessed blobs", "Enabling lifecycle policies to tier or delete blobs based on when they were last accessed", "Billing based on access frequency", "Monitoring SLA compliance"],
+      "answer": "Enabling lifecycle policies to tier or delete blobs based on when they were last accessed",
+      "explanation": "Last access time tracking records the time a blob was last read, enabling lifecycle policies to transition blobs based on actual access patterns.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the purpose of Azure Files snapshots?",
+      "options": ["Replicating file shares across regions", "Read-only point-in-time copies of an Azure file share", "Compressing files for cheaper storage", "Converting SMB shares to NFS"],
+      "answer": "Read-only point-in-time copies of an Azure file share",
+      "explanation": "Azure Files snapshots capture a point-in-time, read-only copy of your Azure file share, allowing you to restore individual files or the entire share.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure Blob storage redundancy option provides read access to the secondary region without failover?",
+      "options": ["GRS", "ZRS", "RA-GRS", "GZRS"],
+      "answer": "RA-GRS",
+      "explanation": "RA-GRS (Read-Access Geo-Redundant Storage) replicates data to a secondary region and allows read access to that secondary copy at all times.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is Azure Premium SSD v2 designed for?",
+      "options": ["Archive storage", "General-purpose workloads requiring the lowest cost", "High-performance workloads requiring granular independent control of IOPS and throughput", "VM boot disks only"],
+      "answer": "High-performance workloads requiring granular independent control of IOPS and throughput",
+      "explanation": "Premium SSD v2 allows you to independently configure IOPS and throughput at granular levels without changing disk size, ideal for demanding database workloads.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the purpose of Azure Blob Storage versioning?",
+      "options": ["Versioning storage account configurations", "Automatically maintaining previous versions of a blob when it is overwritten or deleted", "Tracking API versions used by applications", "Versioning container-level access policies"],
+      "answer": "Automatically maintaining previous versions of a blob when it is overwritten or deleted",
+      "explanation": "With blob versioning enabled, Azure Blob Storage automatically saves the state of a blob prior to any modification, allowing recovery of earlier versions.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the Azure Storage Table service suitable for?",
+      "options": ["Relational queries with joins", "Structured NoSQL data with key-attribute access patterns at massive scale", "Storing large binary files", "Message queuing"],
+      "answer": "Structured NoSQL data with key-attribute access patterns at massive scale",
+      "explanation": "Azure Table Storage is a NoSQL key-value store suitable for storing large amounts of structured, non-relational data with simple key-based lookups.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is Azure Managed Disk shared disk used for?",
+      "options": ["Sharing a managed disk between multiple resource groups", "Attaching a single managed disk to multiple VMs simultaneously for clustered workloads", "Creating shared snapshots across subscriptions", "Sharing disk images publicly"],
+      "answer": "Attaching a single managed disk to multiple VMs simultaneously for clustered workloads",
+      "explanation": "Azure Managed Disk shared disk enables a single managed disk to be concurrently attached to multiple VMs, enabling Windows Server Failover Cluster and similar workloads.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What happens to data in the Azure Archive tier before it can be accessed?",
+      "options": ["It is immediately available", "It must be rehydrated to Hot or Cool tier first, which can take hours", "It is decrypted before access", "It must be downloaded via offline request"],
+      "answer": "It must be rehydrated to Hot or Cool tier first, which can take hours",
+      "explanation": "Blobs in the Archive tier are offline and cannot be read directly. They must first be rehydrated (moved) to Hot or Cool tier, which can take up to 15 hours.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the purpose of Azure Storage Defender?",
+      "options": ["Encrypting storage accounts", "Detecting anomalous activities and potential threats to Azure Storage accounts", "Compressing blobs", "Enabling firewall rules"],
+      "answer": "Detecting anomalous activities and potential threats to Azure Storage accounts",
+      "explanation": "Microsoft Defender for Storage provides an extra layer of security intelligence that detects unusual and potentially harmful attempts to access or exploit storage accounts.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the Azure Blob Storage rehydration priority?",
+      "options": ["Standard and High", "Low, Medium, and High", "Standard and Expedited", "Economy and Premium"],
+      "answer": "Standard and High",
+      "explanation": "Archive rehydration supports Standard priority (up to 15 hours) and High priority (under 1 hour for objects under 10 GB) options.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure storage account feature prevents accidental deletion of the storage account itself?",
+      "options": ["Soft Delete for Blobs", "Resource Locks (CanNotDelete)", "Storage account firewall", "Immutability policies"],
+      "answer": "Resource Locks (CanNotDelete)",
+      "explanation": "Azure Resource Manager locks with CanNotDelete level prevent users from accidentally deleting the storage account, regardless of their permissions.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the Azure Blob NFS 3.0 support best suited for?",
+      "options": ["Windows workloads requiring SMB access", "Linux and analytics workloads requiring POSIX-compliant file system access to Blob storage", "Queue messaging workloads", "Key-value NoSQL workloads"],
+      "answer": "Linux and analytics workloads requiring POSIX-compliant file system access to Blob storage",
+      "explanation": "NFS 3.0 support in Azure Blob Storage allows Linux-based workloads to mount blob containers as file systems, enabling big data and analytics use cases.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the difference between Azure File Sync cloud tiering enabled and disabled?",
+      "options": ["Cloud tiering has no effect on File Sync", "With cloud tiering, infrequently accessed files are tiered to Azure Files; without it, all files are cached locally", "Cloud tiering enables SMB access to Azure Files", "Disabling cloud tiering removes the Azure Files endpoint"],
+      "answer": "With cloud tiering, infrequently accessed files are tiered to Azure Files; without it, all files are cached locally",
+      "explanation": "When cloud tiering is enabled, File Sync keeps frequently accessed files locally while tiering cold files to Azure Files, freeing up on-premises disk space.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the purpose of Azure Storage service-side copy?",
+      "options": ["Copying blobs client-side using AzCopy", "Copying blobs between containers or accounts entirely within Azure without data leaving Microsoft's network", "Copying blobs to on-premises via ExpressRoute", "Copying metadata only between blobs"],
+      "answer": "Copying blobs between containers or accounts entirely within Azure without data leaving Microsoft's network",
+      "explanation": "Server-side copy (Put Blob from URL) copies blobs entirely within Azure's infrastructure without requiring data to be downloaded and re-uploaded by the client.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the maximum number of stored access policies per Azure Storage container?",
+      "options": ["4", "5", "10", "Unlimited"],
+      "answer": "5",
+      "explanation": "Each Azure Blob Storage container (or queue, table, or file share) can have up to 5 stored access policies.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is Azure Storage redundancy GZRS designed to protect against?",
+      "options": ["Only disk failures", "Only datacenter failures", "Both availability zone failures within the primary region AND entire region failure", "Only network failures"],
+      "answer": "Both availability zone failures within the primary region AND entire region failure",
+      "explanation": "GZRS combines ZRS (protects against zone failures) with geo-replication (protects against full region failures), offering the highest durability and availability.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides high-performance file sharing for HPC workloads?",
+      "options": ["Azure Files Standard", "Azure NetApp Files", "Azure Blob NFS", "Azure Managed Disks"],
+      "answer": "Azure NetApp Files",
+      "explanation": "Azure NetApp Files provides enterprise-grade, ultra-high-performance NFS and SMB file storage suitable for HPC, databases, and mission-critical workloads.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the purpose of Azure Blob Storage Event Grid integration?",
+      "options": ["Triggering storage lifecycle policies", "Publishing blob creation, deletion, and modification events to subscribers for event-driven workflows", "Monitoring storage capacity", "Configuring blob replication"],
+      "answer": "Publishing blob creation, deletion, and modification events to subscribers for event-driven workflows",
+      "explanation": "Azure Blob Storage integrates with Event Grid to emit events when blobs are created, modified, or deleted, enabling reactive event-driven architectures.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the Azure Blob Storage soft delete retention period range?",
+      "options": ["1–7 days", "1–365 days", "7–30 days", "30–365 days"],
+      "answer": "1–365 days",
+      "explanation": "Azure Blob soft delete retention can be configured from 1 to 365 days, during which deleted blobs can be recovered.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the purpose of Azure Storage Mover?",
+      "options": ["Moving storage accounts between subscriptions", "A managed migration service for moving on-premises file shares to Azure Files or ADLS Gen2", "Migrating Azure VMs to new regions", "Moving blobs between storage tiers"],
+      "answer": "A managed migration service for moving on-premises file shares to Azure Files or ADLS Gen2",
+      "explanation": "Azure Storage Mover is a fully managed migration service that allows you to migrate on-premises file shares to Azure Files or Azure Data Lake Storage Gen2.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the Azure Blob Storage Copy Blob operation limit per second?",
+      "options": ["10 operations/s", "100 operations/s", "500 operations/s", "There is no limit at blob level; limits are at account level"],
+      "answer": "There is no limit at blob level; limits are at account level",
+      "explanation": "Azure Blob Storage throttling is applied at the storage account level (by egress/ingress bandwidth and IOPS), not at individual blob operation level.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure storage account feature allows you to move blobs between tiers automatically based on last access?",
+      "options": ["Blob Replication", "Lifecycle Management with last access time tracking", "Storage Insights", "Smart Tiering"],
+      "answer": "Lifecycle Management with last access time tracking",
+      "explanation": "By enabling last access time tracking and creating lifecycle management rules, Azure can automatically move blobs to Cool or Archive based on when they were last read.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the maximum retention period for Azure Blob Storage immutability policy?",
+      "options": ["1 year", "7 years", "146,000 days (approximately 400 years)", "10 years"],
+      "answer": "146,000 days (approximately 400 years)",
+      "explanation": "Azure Blob immutability policies support a maximum retention interval of 146,000 days (~400 years), suitable for long-term compliance requirements.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is Azure Disk Snapshot incremental snapshot?",
+      "options": ["Full disk copy every time", "Captures only the changes since the last snapshot, reducing cost and time", "A snapshot stored in a different region automatically", "A snapshot of only OS disk, not data disks"],
+      "answer": "Captures only the changes since the last snapshot, reducing cost and time",
+      "explanation": "Incremental snapshots store only the delta changes since the last snapshot, significantly reducing storage costs and snapshot creation time.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the Azure Storage account kind 'General Purpose v2' benefit over 'General Purpose v1'?",
+      "options": ["v2 supports only blob storage", "v2 supports all storage types plus access tiers (Hot/Cool/Archive) and lower pricing", "v1 has higher throughput than v2", "v2 is only available in premium tier"],
+      "answer": "v2 supports all storage types plus access tiers (Hot/Cool/Archive) and lower pricing",
+      "explanation": "General Purpose v2 accounts support all Azure Storage features including access tiers, all latest storage services, and offer the lowest per-GB pricing.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the purpose of Azure Files Active Directory integration?",
+      "options": ["Encrypting files using AD keys", "Enabling identity-based authentication for Azure Files SMB shares using on-premises AD DS or Azure AD DS", "Syncing files to on-premises AD servers", "Using AD groups as blob tags"],
+      "answer": "Enabling identity-based authentication for Azure Files SMB shares using on-premises AD DS or Azure AD DS",
+      "explanation": "AD integration allows Azure Files SMB shares to use Windows ACLs and identity-based authentication via on-premises Active Directory or Azure Active Directory Domain Services.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the maximum Azure Blob Storage account egress bandwidth for standard performance accounts in most regions?",
+      "options": ["1 Gbps", "5 Gbps", "50 Gbps", "200 Gbps"],
+      "answer": "50 Gbps",
+      "explanation": "Standard general-purpose v2 storage accounts support up to 50 Gbps of egress bandwidth in most Azure regions.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the purpose of Azure Blob Storage query acceleration (Blob Query)?",
+      "options": ["Querying blob tags", "Running SQL-like queries over blob data server-side to return only relevant data subsets", "Accelerating blob uploads", "Querying storage account metrics"],
+      "answer": "Running SQL-like queries over blob data server-side to return only relevant data subsets",
+      "explanation": "Blob Query (query acceleration) allows applications to filter and project CSV and JSON blob data server-side, reducing data transfer and processing costs.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the Azure Ultra Disk limitation compared to other managed disk types?",
+      "options": ["Ultra Disk does not support snapshots", "Ultra Disk can only be used as a boot disk", "Ultra Disk is cheaper than Premium SSD", "Ultra Disk supports Multi-Attach by default"],
+      "answer": "Ultra Disk does not support snapshots",
+      "explanation": "A key limitation of Azure Ultra Disk is that it does not support snapshots, Azure Disk Backup, or Azure Site Recovery as of current availability.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What does AzCopy's --recursive flag do when copying from Azure Blob Storage?",
+      "options": ["Copies only the most recently modified blobs", "Includes all blobs in subdirectories (virtual folders) during copy", "Overwrites destination blobs recursively", "Retries failed copies recursively"],
+      "answer": "Includes all blobs in subdirectories (virtual folders) during copy",
+      "explanation": "The --recursive flag in AzCopy causes it to traverse all virtual directories and copy all blobs within them, not just blobs at the top level of a container.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    },
+    {
+      "question": "What is the purpose of Azure Storage cross-tenant object replication?",
+      "options": ["Replicating within the same tenant only", "Allowing blob replication between storage accounts in different Azure AD tenants", "Replicating data to on-premises", "Cross-subscription replication within the same tenant"],
+      "answer": "Allowing blob replication between storage accounts in different Azure AD tenants",
+      "explanation": "Cross-tenant object replication enables blob replication between storage accounts that belong to different Azure Active Directory tenants, requiring explicit allow configuration.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "azure"
+    }
+  ]

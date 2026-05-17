@@ -1,1 +1,452 @@
-[]
+[
+    {
+      "question": "Which S3 storage class automatically moves objects between two access tiers based on changing access patterns?",
+      "options": ["S3 Standard-IA", "S3 Intelligent-Tiering", "S3 Glacier", "S3 One Zone-IA"],
+      "answer": "S3 Intelligent-Tiering",
+      "explanation": "S3 Intelligent-Tiering automatically moves objects between frequent and infrequent access tiers based on usage patterns, optimizing costs without performance impact.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the minimum part size for S3 Multipart Upload (except the last part)?",
+      "options": ["1 MB", "5 MB", "10 MB", "100 MB"],
+      "answer": "5 MB",
+      "explanation": "Each part in an S3 Multipart Upload must be at least 5 MB in size, except for the last part which can be any size.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which EBS volume type provides the highest IOPS for I/O-intensive workloads like databases?",
+      "options": ["gp3", "st1", "sc1", "io2 Block Express"],
+      "answer": "io2 Block Express",
+      "explanation": "io2 Block Express provides the highest performance EBS volume with up to 256,000 IOPS and 4,000 MB/s throughput for critical workloads.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the purpose of S3 Object Lambda?",
+      "options": ["Triggering Lambda when objects are deleted", "Transforming data retrieved from S3 using Lambda before returning it to the caller", "Encrypting objects using Lambda", "Replicating objects with Lambda functions"],
+      "answer": "Transforming data retrieved from S3 using Lambda before returning it to the caller",
+      "explanation": "S3 Object Lambda allows you to add custom code to process data retrieved from S3 before returning it, enabling transformations like filtering, redacting, or enriching data.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the difference between S3 Same-Region Replication (SRR) and Cross-Region Replication (CRR)?",
+      "options": ["SRR is faster than CRR", "SRR replicates within the same AWS region; CRR replicates to a different region", "CRR is free but SRR has costs", "SRR requires versioning but CRR does not"],
+      "answer": "SRR replicates within the same AWS region; CRR replicates to a different region",
+      "explanation": "SRR copies objects across buckets in the same AWS region for log aggregation or compliance, while CRR replicates across different regions for disaster recovery or latency reduction.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which S3 feature helps analyze storage access patterns to recommend the right storage class?",
+      "options": ["S3 Inventory", "S3 Storage Lens", "S3 Analytics", "S3 Access Logs"],
+      "answer": "S3 Analytics",
+      "explanation": "S3 Analytics analyzes storage access patterns and provides recommendations for when to transition data to S3 Standard-IA.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is an S3 Access Point?",
+      "options": ["A CDN endpoint for S3", "A named network endpoint with a dedicated access policy for accessing S3 bucket data at scale", "A DNS alias for an S3 bucket", "An IP address for an S3 bucket"],
+      "answer": "A named network endpoint with a dedicated access policy for accessing S3 bucket data at scale",
+      "explanation": "S3 Access Points simplify data access management at scale by creating unique access points with custom permissions and network controls per application.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What does enabling S3 Requester Pays require the requester to have?",
+      "options": ["A root AWS account", "An AWS account (cannot be anonymous)", "A specific IAM policy named RequesterPays", "An S3 access point"],
+      "answer": "An AWS account (cannot be anonymous)",
+      "explanation": "When Requester Pays is enabled, anonymous access is not allowed because the requester must be authenticated to be billed.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which EBS feature allows a volume to be attached to multiple EC2 instances simultaneously?",
+      "options": ["EBS Multi-Attach", "EBS Shared Volume", "EBS Cluster Mode", "EBS Multi-Connect"],
+      "answer": "EBS Multi-Attach",
+      "explanation": "EBS Multi-Attach enables a single Provisioned IOPS SSD (io1/io2) volume to be concurrently attached to up to 16 EC2 instances in the same AZ.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is S3 Storage Lens used for?",
+      "options": ["Zooming into object metadata", "Organization-wide visibility into object storage usage, activity trends, and cost optimization recommendations", "Encrypting objects with a lens policy", "Monitoring S3 replication lag"],
+      "answer": "Organization-wide visibility into object storage usage, activity trends, and cost optimization recommendations",
+      "explanation": "S3 Storage Lens provides a single view of object storage usage and activity across your entire AWS organization with actionable recommendations.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the retrieval time for S3 Glacier Flexible Retrieval using the Expedited option?",
+      "options": ["Immediate", "1–5 minutes", "3–5 hours", "12 hours"],
+      "answer": "1–5 minutes",
+      "explanation": "Expedited retrievals from S3 Glacier Flexible Retrieval typically complete within 1–5 minutes for objects under 250 MB.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides a fully managed Windows-compatible shared file system using SMB protocol?",
+      "options": ["EFS", "FSx for Windows File Server", "FSx for Lustre", "Storage Gateway"],
+      "answer": "FSx for Windows File Server",
+      "explanation": "Amazon FSx for Windows File Server provides a fully managed Windows file system with full SMB support, Active Directory integration, and DFS Namespaces.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is FSx for Lustre primarily used for?",
+      "options": ["Windows file sharing", "High-performance computing (HPC) and machine learning workloads", "Cold archival storage", "Backup and disaster recovery"],
+      "answer": "High-performance computing (HPC) and machine learning workloads",
+      "explanation": "FSx for Lustre is a high-performance parallel file system that integrates natively with S3, ideal for HPC, ML training, and media processing.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the purpose of S3 Inventory?",
+      "options": ["Counting the number of S3 buckets", "Providing scheduled flat-file reports of objects and metadata in a bucket", "Auditing IAM permissions on buckets", "Listing S3 access points"],
+      "answer": "Providing scheduled flat-file reports of objects and metadata in a bucket",
+      "explanation": "S3 Inventory generates daily or weekly CSV/ORC/Parquet reports listing objects, their metadata, and replication/encryption status.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which gp3 EBS volume characteristic differentiates it from gp2?",
+      "options": ["gp3 is cheaper and allows independent configuration of IOPS and throughput", "gp3 supports higher maximum storage size", "gp3 supports Multi-Attach", "gp3 is only for Windows EC2 instances"],
+      "answer": "gp3 is cheaper and allows independent configuration of IOPS and throughput",
+      "explanation": "gp3 allows you to independently provision IOPS and throughput beyond baseline without increasing volume size, and is 20% cheaper than gp2.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the S3 Glacier Instant Retrieval storage class designed for?",
+      "options": ["Data accessed several times a year requiring immediate millisecond retrieval", "Data accessed daily", "Data needing archival for compliance with hours of retrieval", "Data moved automatically from Standard"],
+      "answer": "Data accessed several times a year requiring immediate millisecond retrieval",
+      "explanation": "S3 Glacier Instant Retrieval delivers millisecond retrieval for archive data accessed once a quarter, with the same performance as S3 Standard.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the maximum retrieval time for S3 Glacier Deep Archive?",
+      "options": ["5 minutes", "3–5 hours", "12 hours", "48 hours"],
+      "answer": "12 hours",
+      "explanation": "The default retrieval option for S3 Glacier Deep Archive takes up to 12 hours. The bulk retrieval option can take up to 48 hours.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the purpose of S3 Block Public Access settings?",
+      "options": ["Blocking all S3 API calls", "Overriding bucket policies and ACLs to ensure no public access is granted", "Encrypting objects automatically", "Preventing cross-region replication"],
+      "answer": "Overriding bucket policies and ACLs to ensure no public access is granted",
+      "explanation": "S3 Block Public Access provides a central control to override any public access permissions set via bucket policies or ACLs.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS Storage Gateway mode presents cloud storage as iSCSI block storage volumes to on-premises applications?",
+      "options": ["File Gateway", "Tape Gateway", "Volume Gateway", "Object Gateway"],
+      "answer": "Volume Gateway",
+      "explanation": "Volume Gateway presents cloud-backed iSCSI block storage volumes to on-premises applications, with data stored in S3.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the EFS Infrequent Access (IA) storage class used for?",
+      "options": ["High-performance file access", "Files not accessed every day to reduce storage costs", "Archiving EFS data to Glacier", "Sharing EFS across regions"],
+      "answer": "Files not accessed every day to reduce storage costs",
+      "explanation": "EFS Infrequent Access is a lower-cost storage class for files that are not accessed every day, with a per-GB retrieval fee.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is S3 Replication Time Control (RTC)?",
+      "options": ["Scheduling replication at specific times", "An SLA that replicates 99.99% of objects within 15 minutes", "Controlling the order of object replication", "Throttling replication speed"],
+      "answer": "An SLA that replicates 99.99% of objects within 15 minutes",
+      "explanation": "S3 Replication Time Control provides an SLA to replicate 99.99% of new objects within 15 minutes, with replication metrics and notifications.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which EBS volume type is best suited for cold HDD workloads like infrequently accessed data?",
+      "options": ["gp3", "io2", "st1", "sc1"],
+      "answer": "sc1",
+      "explanation": "sc1 (Cold HDD) provides the lowest cost per GB for infrequently accessed workloads where low storage cost is most important.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is AWS Backup used for?",
+      "options": ["Only backing up S3 data", "Centralized, automated backup across multiple AWS services", "Backing up only EC2 instances", "Replicating databases across regions"],
+      "answer": "Centralized, automated backup across multiple AWS services",
+      "explanation": "AWS Backup provides a fully managed, centralized service to automate backups across AWS services like EBS, RDS, EFS, DynamoDB, and more.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the difference between an EBS snapshot and an AMI?",
+      "options": ["They are identical", "A snapshot backs up a single EBS volume; an AMI includes OS config and can launch an EC2 instance", "An AMI backs up only data volumes", "A snapshot can launch an EC2 instance directly"],
+      "answer": "A snapshot backs up a single EBS volume; an AMI includes OS config and can launch an EC2 instance",
+      "explanation": "EBS snapshots are point-in-time backups of a single volume. An AMI (Amazon Machine Image) includes one or more snapshots plus launch permissions and device mappings to launch an instance.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is S3 Batch Operations used for?",
+      "options": ["Running SQL on S3 objects", "Performing large-scale batch operations on S3 objects like copy, tag, or restore", "Bulk deleting S3 buckets", "Batch encrypting EBS volumes"],
+      "answer": "Performing large-scale batch operations on S3 objects like copy, tag, or restore",
+      "explanation": "S3 Batch Operations lets you run actions like Copy, Invoke Lambda, Replace ACL, and Restore on billions of S3 objects with a single API call.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which S3 feature allows you to receive notifications when specific events occur in a bucket?",
+      "options": ["S3 Inventory", "S3 Event Notifications", "S3 Storage Lens", "S3 Analytics"],
+      "answer": "S3 Event Notifications",
+      "explanation": "S3 Event Notifications can trigger SNS, SQS, or Lambda when events like s3:ObjectCreated or s3:ObjectRemoved occur.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the throughput limit of an EFS file system in bursting mode?",
+      "options": ["100 MB/s per TB", "50 MB/s per TB stored with a burst of 100 MB/s per TB", "500 MB/s flat", "Unlimited"],
+      "answer": "50 MB/s per TB stored with a burst of 100 MB/s per TB",
+      "explanation": "In bursting mode, EFS provides 50 MB/s per TB of storage and can burst to 100 MB/s per TB stored (minimum 100 MB/s) using burst credits.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service uses virtual tape library (VTL) to replace physical tape backups?",
+      "options": ["AWS Backup", "Storage Gateway Tape Gateway", "FSx for Lustre", "Snowball Edge"],
+      "answer": "Storage Gateway Tape Gateway",
+      "explanation": "Tape Gateway presents a virtual tape library using iSCSI, allowing existing backup software to store data on virtual tapes archived in S3 Glacier.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the maximum number of S3 buckets allowed per AWS account by default?",
+      "options": ["10", "100", "1000", "Unlimited"],
+      "answer": "100",
+      "explanation": "By default, AWS accounts can have up to 100 S3 buckets. This can be increased to 1,000 by submitting a service quota increase request.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What does S3 Strong Consistency mean (introduced in December 2020)?",
+      "options": ["S3 is eventually consistent for all operations", "Read-after-write consistency for PUTs and DELETEs of objects", "S3 guarantees ordering of all API calls", "S3 replicates synchronously across all AZs"],
+      "answer": "Read-after-write consistency for PUTs and DELETEs of objects",
+      "explanation": "Since December 2020, Amazon S3 delivers strong read-after-write consistency for PUT and DELETE requests, meaning any read after a write returns the latest version.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which EFS performance mode is recommended for latency-sensitive workloads?",
+      "options": ["Max I/O", "Bursting", "General Purpose", "Provisioned Throughput"],
+      "answer": "General Purpose",
+      "explanation": "General Purpose performance mode offers the lowest latency and is recommended for latency-sensitive workloads like web serving and content management.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the difference between S3 SSE-S3 and SSE-KMS?",
+      "options": ["SSE-S3 is faster; SSE-KMS is slower", "SSE-KMS uses AWS KMS keys giving you more control, audit trail, and key rotation; SSE-S3 uses S3-managed keys", "SSE-S3 costs more than SSE-KMS", "SSE-KMS is only for Glacier"],
+      "answer": "SSE-KMS uses AWS KMS keys giving you more control, audit trail, and key rotation; SSE-S3 uses S3-managed keys",
+      "explanation": "SSE-KMS provides additional controls including CloudTrail audit logs of key usage and the ability to use customer-managed keys (CMK) with rotation policies.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the S3 Object Expiration lifecycle action used for?",
+      "options": ["Expiring pre-signed URLs", "Automatically deleting objects after a defined number of days", "Removing object tags", "Expiring bucket policies"],
+      "answer": "Automatically deleting objects after a defined number of days",
+      "explanation": "The Expiration lifecycle action instructs S3 to automatically delete objects after a specified number of days since creation.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "How does S3 Versioning handle a DELETE request when versioning is enabled?",
+      "options": ["Permanently deletes the object", "Adds a delete marker instead of deleting the object", "Moves the object to Glacier", "Disables further writes to the object"],
+      "answer": "Adds a delete marker instead of deleting the object",
+      "explanation": "When versioning is enabled, a DELETE without specifying a version ID adds a delete marker, making the object appear deleted without removing prior versions.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the purpose of EBS Fast Snapshot Restore (FSR)?",
+      "options": ["Speeding up snapshot creation", "Eliminating latency when creating volumes from snapshots by pre-warming the data", "Automatically backing up snapshots to another region", "Compressing snapshots to reduce cost"],
+      "answer": "Eliminating latency when creating volumes from snapshots by pre-warming the data",
+      "explanation": "EBS Fast Snapshot Restore enables full performance from EBS volumes created from snapshots immediately, without I/O latency on first access.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the AWS DataSync task used for?",
+      "options": ["Syncing EC2 instance configurations", "Automating and accelerating online data transfers between on-premises and AWS storage", "Synchronizing IAM policies", "Replicating RDS databases"],
+      "answer": "Automating and accelerating online data transfers between on-premises and AWS storage",
+      "explanation": "A DataSync task defines a transfer job specifying source, destination, schedule, and transfer options for moving data to/from AWS storage services.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is Snowball Edge Storage Optimized used for?",
+      "options": ["Network-only transfers", "Edge computing and large-scale data transfers with 80 TB of HDD storage", "Exabyte-scale transfers only", "Only transferring S3 Glacier data"],
+      "answer": "Edge computing and large-scale data transfers with 80 TB of HDD storage",
+      "explanation": "Snowball Edge Storage Optimized provides 80 TB of HDD and 1 TB SSD for large-scale data migration and local edge computing workloads.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which S3 feature enables you to query object metadata without downloading the full object?",
+      "options": ["S3 Select", "S3 Metadata Query", "S3 Inventory", "S3 Analytics"],
+      "answer": "S3 Select",
+      "explanation": "S3 Select allows you to use SQL expressions to retrieve a subset of data from within an S3 object, reducing data scanned and transfer costs.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the maximum IOPS for a gp3 EBS volume?",
+      "options": ["3,000", "16,000", "64,000", "256,000"],
+      "answer": "16,000",
+      "explanation": "gp3 EBS volumes support up to 16,000 IOPS (provisioned independently of volume size), compared to gp2's maximum of 16,000 IOPS tied to volume size.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is an S3 Glacier Vault Lock policy used for?",
+      "options": ["Preventing unauthorized access to a vault", "Enforcing compliance controls on a Glacier vault that cannot be changed once locked", "Locking the encryption key for a vault", "Preventing Glacier from archiving to S3"],
+      "answer": "Enforcing compliance controls on a Glacier vault that cannot be changed once locked",
+      "explanation": "Vault Lock policies in S3 Glacier are immutable once locked, enabling WORM and time-based retention policies for regulatory compliance.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which S3 replication feature ensures replicated objects maintain the same storage class as the source?",
+      "options": ["It is not possible to maintain the same class", "Replication uses the destination bucket's default class", "You can specify the storage class in the replication rule", "Only Glacier classes are replicated"],
+      "answer": "You can specify the storage class in the replication rule",
+      "explanation": "When configuring S3 replication rules, you can choose to replicate objects with the same storage class as the source or specify a different class at the destination.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the purpose of the S3 Outposts storage class?",
+      "options": ["Archiving data from Outposts to S3", "Storing S3 objects locally on AWS Outposts for low-latency on-premises workloads", "Using Outposts as a CDN for S3", "Replicating S3 data to Outposts for DR"],
+      "answer": "Storing S3 objects locally on AWS Outposts for low-latency on-premises workloads",
+      "explanation": "S3 on Outposts delivers object storage to your on-premises Outposts environment, meeting local data residency requirements.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which EFS throughput mode allows you to specify a fixed throughput independent of file system size?",
+      "options": ["Bursting Throughput", "Elastic Throughput", "Provisioned Throughput", "Max I/O"],
+      "answer": "Provisioned Throughput",
+      "explanation": "Provisioned Throughput mode lets you specify the throughput your file system requires regardless of the amount of data stored.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What does S3 Transfer Acceleration use to speed up uploads?",
+      "options": ["Direct fiber connections to AWS DCs", "Amazon CloudFront edge locations to route data over AWS backbone network", "Dedicated VPN tunnels", "AWS Direct Connect"],
+      "answer": "Amazon CloudFront edge locations to route data over AWS backbone network",
+      "explanation": "Transfer Acceleration routes data through the nearest CloudFront edge location and then across the optimized AWS backbone network to the S3 bucket.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the AWS service that provides a petabyte-scale data migration with up to 100 PB per appliance?",
+      "options": ["Snowball Edge", "Snowcone", "Snowmobile", "DataSync"],
+      "answer": "Snowmobile",
+      "explanation": "AWS Snowmobile is an exabyte-scale transfer service using a 45-foot long shipping container that can transfer up to 100 PB per Snowmobile.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the EBS volume size limit for gp3 volumes?",
+      "options": ["1 TB", "4 TB", "16 TB", "64 TB"],
+      "answer": "16 TB",
+      "explanation": "gp3 EBS volumes support a maximum size of 16 TiB (tebibytes).",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is an S3 Bucket Policy?",
+      "options": ["A NACL for S3", "A resource-based JSON policy attached to an S3 bucket that controls access", "An IAM policy for S3 users", "A lifecycle rule for objects"],
+      "answer": "A resource-based JSON policy attached to an S3 bucket that controls access",
+      "explanation": "Bucket policies are resource-based policies that define who can access your S3 bucket and what actions they can perform, written in JSON.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What does the aws:SecureTransport condition in an S3 bucket policy enforce?",
+      "options": ["Encryption at rest", "HTTPS-only access to the S3 bucket", "VPC-only access", "MFA authentication"],
+      "answer": "HTTPS-only access to the S3 bucket",
+      "explanation": "The aws:SecureTransport condition key in an S3 bucket policy denies requests that are not sent over HTTPS (TLS), enforcing encryption in transit.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "What is the maximum throughput for a gp3 EBS volume?",
+      "options": ["125 MB/s", "250 MB/s", "1,000 MB/s", "4,000 MB/s"],
+      "answer": "1,000 MB/s",
+      "explanation": "gp3 EBS volumes support up to 1,000 MB/s of throughput, which can be provisioned independently of IOPS and volume size.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS feature enables automatic archiving of EFS files not accessed recently?",
+      "options": ["EFS Glacier Integration", "EFS Lifecycle Management", "EFS Auto Archive", "AWS Backup for EFS"],
+      "answer": "EFS Lifecycle Management",
+      "explanation": "EFS Lifecycle Management automatically moves files that haven't been accessed for a configurable period (e.g., 7, 14, 30, 60, or 90 days) to EFS Infrequent Access storage.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "aws"
+    }
+  ]
