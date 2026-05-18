@@ -11,7 +11,7 @@ let timeLeft = 0;
 // ========================================
 // Quiz Structure
 // ========================================
-const quizStructure = {
+const categoryMap = {
   aws: [
     "ai-ml", "analytics-bigdata", "backup-dr", "compute", "containers",
     "cost-optimization", "database", "devops-automation", "identity-access",
@@ -74,45 +74,54 @@ const quizStructure = {
   ]
 };
 
-// ========================================
-// FIX 1: selectCategory()
-// Called by category cards via onclick but
-// was completely missing from script.js.
-// This sets the hidden dropdown value AND
-// populates the sub-category dropdown.
-// ========================================
-function selectCategory(category) {
-  // Highlight the active card
-  document.querySelectorAll(".category-card").forEach(card => {
-    card.classList.remove("active");
-  });
-  const allCards = document.querySelectorAll(".category-card");
-  allCards.forEach(card => {
-    if (card.getAttribute("onclick") === `selectCategory('${category}')`) {
-      card.classList.add("active");
-    }
-  });
+// ===============================
+// LOAD MAIN CATEGORIES
+// ===============================
 
-  // Sync the hidden <select> so startQuiz() can read it
-  const mainCategoryEl = document.getElementById("mainCategory");
-  mainCategoryEl.value = category;
+const mainCategory = document.getElementById("mainCategory");
+const subCategory = document.getElementById("subCategory");
 
-  // Populate sub-category dropdown
-  const subCategoryEl = document.getElementById("subCategory");
-  subCategoryEl.innerHTML = '<option value="">-- Select Sub Category --</option>';
+Object.keys(categoryMap).forEach(category => {
 
-  if (!quizStructure[category]) return;
+  const option = document.createElement("option");
 
-  quizStructure[category].forEach(sub => {
+  option.value = category;
+  option.textContent =
+    category.charAt(0).toUpperCase() + category.slice(1);
+
+  mainCategory.appendChild(option);
+});
+
+
+
+// ===============================
+// UPDATE SUBCATEGORIES
+// ===============================
+
+mainCategory.addEventListener("change", () => {
+
+  const selectedCategory = mainCategory.value;
+
+  // Clear existing
+  subCategory.innerHTML =
+    '<option value="">Select Sub Category</option>';
+
+  if (!selectedCategory) return;
+
+  categoryMap[selectedCategory].forEach(sub => {
+
     const option = document.createElement("option");
+
     option.value = sub;
+
     option.textContent = sub
-      .split("-")
-      .map(w => w.charAt(0).toUpperCase() + w.slice(1))
-      .join(" ");
-    subCategoryEl.appendChild(option);
+      .replace(/-/g, " ")
+      .replace(/\b\w/g, c => c.toUpperCase());
+
+    subCategory.appendChild(option);
   });
-}
+
+});
 
 // ========================================
 // Load Main Categories on Page Load
@@ -128,22 +137,58 @@ window.onload = function () {
   displayHistory();
 };
 
+function loadSubCategories() {
+
+  const mainCategory =
+    document.getElementById("mainCategory").value;
+
+  const subCategory =
+    document.getElementById("subCategory");
+
+  // Reset dropdown
+  subCategory.innerHTML = `
+    <option value="">
+      Select Sub Category
+    </option>
+  `;
+
+  // Safety check
+  if (
+    !categoryStructure[mainCategory]
+  ) {
+    return;
+  }
+
+  // Add subcategories
+  categoryStructure[mainCategory]
+    .forEach(sub => {
+
+      const option =
+        document.createElement("option");
+
+      option.value = sub;
+
+      option.textContent =
+        sub
+          .replace(/-/g, " ")
+          .replace(/\b\w/g, c => c.toUpperCase());
+
+      subCategory.appendChild(option);
+    });
+}
+
 // ========================================
-// Also handle hidden dropdown change
-// (backward-compatible fallback)
+// Load Sub Categories on Main Category Change
 // ========================================
 document.getElementById("mainCategory").addEventListener("change", function () {
   const subCategoryEl = document.getElementById("subCategory");
-  subCategoryEl.innerHTML = '<option value="">-- Select Sub Category --</option>';
+  subCategoryEl.innerHTML = '<option value="">Select Sub Category</option>';
   const selectedMain = this.value;
   if (!selectedMain) return;
   quizStructure[selectedMain].forEach(sub => {
     const option = document.createElement("option");
     option.value = sub;
-    option.textContent = sub
-      .split("-")
-      .map(w => w.charAt(0).toUpperCase() + w.slice(1))
-      .join(" ");
+    option.textContent = sub.toUpperCase();
     subCategoryEl.appendChild(option);
   });
 });
@@ -153,19 +198,19 @@ document.getElementById("mainCategory").addEventListener("change", function () {
 // ========================================
 async function startQuiz() {
   const mainCategory = document.getElementById("mainCategory").value;
-  const subCategory  = document.getElementById("subCategory").value;
-  const difficulty   = document.getElementById("difficulty").value;
-  const limit        = parseInt(document.getElementById("questionLimit").value);
+  const subCategory = document.getElementById("subCategory").value;
+  const difficulty = document.getElementById("difficulty").value;
+  const limit = parseInt(document.getElementById("questionLimit").value);
 
   if (!mainCategory || !subCategory) {
-    alert("Please select a technology and sub category first.");
+    alert("Please select a main category and sub category.");
     return;
   }
 
+  // Clear any previous state
   clearInterval(timer);
   document.getElementById("result").innerHTML = "";
-  document.getElementById("quiz").innerHTML   =
-    "<p style='color:#94a3b8;padding:20px;text-align:center;'>⏳ Loading questions...</p>";
+  document.getElementById("quiz").innerHTML = "<p>Loading questions...</p>";
 
   try {
     const filePath = `./${mainCategory}/${subCategory}/${difficulty}.json`;
@@ -183,16 +228,20 @@ async function startQuiz() {
     const data = await response.json();
 
     if (!Array.isArray(data) || data.length === 0) {
-      throw new Error(`The file "${filePath}" is empty or not a valid JSON array.`);
+      throw new Error(
+        `The file "${filePath}" is empty or not a valid JSON array.`
+      );
     }
 
-    questions       = data;
+    questions = data;
     shuffleArray(questions);
-    questions       = questions.slice(0, limit);
+    questions = questions.slice(0, limit);
+
     currentQuestion = 0;
-    userAnswers     = new Array(questions.length).fill(null);
-    score           = 0;
-    timeLeft        = questions.length * 60;
+    // FIX: consistently use userAnswers everywhere
+    userAnswers = new Array(questions.length).fill(null);
+    score = 0;
+    timeLeft = questions.length * 60;
 
     startTimer();
     loadQuestion();
@@ -204,7 +253,8 @@ async function startQuiz() {
         ❌ Unable to load questions.<br><br>
         <strong>Reason:</strong> ${error.message}<br><br>
         Please check that your JSON file exists and is valid.
-      </div>`;
+      </div>
+    `;
   }
 }
 
@@ -214,43 +264,63 @@ async function startQuiz() {
 function loadQuestion() {
   const quizContainer = document.getElementById("quiz");
 
+  // Safety check
   if (!questions || questions.length === 0 || !questions[currentQuestion]) {
-    quizContainer.innerHTML =
-      `<div class="error">❌ Unable to load question. Please check your JSON files.</div>`;
+    quizContainer.innerHTML = `
+      <div class="error">
+        ❌ Unable to load questions.<br><br>
+        Please check your JSON files.
+      </div>
+    `;
+    console.error("Question object missing at index:", currentQuestion, questions);
     return;
   }
 
   const q = questions[currentQuestion];
 
+  // Validate question structure
   if (!q.question || !Array.isArray(q.options) || !q.answer) {
     quizContainer.innerHTML = `
       <div class="error">
-        ❌ Question #${currentQuestion + 1} has invalid structure.<br>
+        ❌ Question #${currentQuestion + 1} has invalid structure.<br><br>
         Each question must have: <code>question</code>, <code>options</code> (array), and <code>answer</code>.
-      </div>`;
+      </div>
+    `;
+    console.error("Invalid question structure:", q);
     return;
   }
 
   let optionsHTML = "";
   q.options.forEach((option) => {
+    // FIX: use userAnswers (not answers) and name="option" consistently
     const isChecked = userAnswers[currentQuestion] === option ? "checked" : "";
     optionsHTML += `
       <label class="option">
-        <input type="radio" name="option" value="${option}" ${isChecked}>
+        <input
+          type="radio"
+          name="option"
+          value="${option}"
+          ${isChecked}
+        >
         ${option}
-      </label>`;
+      </label>
+    `;
   });
 
   quizContainer.innerHTML = `
     <div class="question-card">
       <h2>Question ${currentQuestion + 1} of ${questions.length}</h2>
       <p class="question">${q.question}</p>
-      <div class="options">${optionsHTML}</div>
-    </div>`;
+      <div class="options">
+        ${optionsHTML}
+      </div>
+    </div>
+  `;
 
   updateProgressBar();
   updateQuestionCounter();
 
+  // FIX: use userAnswers (not answers) when saving selection
   document.querySelectorAll('input[name="option"]').forEach((radio) => {
     radio.addEventListener("change", (e) => {
       userAnswers[currentQuestion] = e.target.value;
@@ -259,7 +329,7 @@ function loadQuestion() {
 }
 
 // ========================================
-// Next / Previous Question
+// Next Question
 // ========================================
 function nextQuestion() {
   saveAnswer();
@@ -269,6 +339,9 @@ function nextQuestion() {
   }
 }
 
+// ========================================
+// Previous Question
+// ========================================
 function previousQuestion() {
   saveAnswer();
   if (currentQuestion > 0) {
@@ -281,6 +354,7 @@ function previousQuestion() {
 // Save Answer
 // ========================================
 function saveAnswer() {
+  // FIX: name="option" matches the radio inputs in loadQuestion()
   const selected = document.querySelector('input[name="option"]:checked');
   if (selected) {
     userAnswers[currentQuestion] = selected.value;
@@ -308,9 +382,6 @@ function updateQuestionCounter() {
 
 // ========================================
 // Submit Quiz
-// FIX 2: Show full per-question review with
-// correct / wrong / not-attempted breakdown
-// and explanation for each question.
 // ========================================
 function submitQuiz() {
   saveAnswer();
@@ -321,110 +392,39 @@ function submitQuiz() {
     return;
   }
 
-  let correctCount = 0;
-  let wrongCount   = 0;
-  let skippedCount = 0;
-
+  score = 0;
   questions.forEach((q, index) => {
-    if      (userAnswers[index] === q.answer) correctCount++;
-    else if (userAnswers[index] === null)      skippedCount++;
-    else                                       wrongCount++;
+    if (userAnswers[index] === q.answer) {
+      score++;
+    }
   });
 
-  score = correctCount;
   const percentage = ((score / questions.length) * 100).toFixed(2);
 
   let reaction = "";
-  if      (percentage < 55)  reaction = "❌ Failed";
+  if (percentage < 55)       reaction = "❌ Failed";
   else if (percentage < 75)  reaction = "🙂 Good";
   else if (percentage < 90)  reaction = "🔥 Great";
   else if (percentage < 100) reaction = "🏆 Excellent";
   else                        reaction = "🎯 Perfect";
 
-  // ── Summary ───────────────────────────────────
-  let resultHTML = `
-    <div class="result-summary">
-      <h2 class="result-reaction">${reaction}</h2>
-      <div class="result-stats">
-        <div class="stat-box stat-total">
-          <span class="stat-number">${questions.length}</span>
-          <span class="stat-label">Total</span>
-        </div>
-        <div class="stat-box stat-correct">
-          <span class="stat-number">${correctCount}</span>
-          <span class="stat-label">✅ Correct</span>
-        </div>
-        <div class="stat-box stat-wrong">
-          <span class="stat-number">${wrongCount}</span>
-          <span class="stat-label">❌ Wrong</span>
-        </div>
-        <div class="stat-box stat-skipped">
-          <span class="stat-number">${skippedCount}</span>
-          <span class="stat-label">⏭ Skipped</span>
-        </div>
-        <div class="stat-box stat-percent">
-          <span class="stat-number">${percentage}%</span>
-          <span class="stat-label">Score</span>
-        </div>
-      </div>
-    </div>
-    <h3 class="review-heading">📋 Question Review</h3>`;
+  document.getElementById("result").innerHTML = `
+    <h2>${reaction}</h2>
+    <h3>Score: ${score} / ${questions.length}</h3>
+    <h3>Percentage: ${percentage}%</h3>
+  `;
 
-  // ── Per-question review cards ─────────────────
-  questions.forEach((q, index) => {
-    const userAns   = userAnswers[index];
-    const isCorrect = userAns === q.answer;
-    const isSkipped = userAns === null;
-
-    const statusClass = isCorrect ? "review-correct" : isSkipped ? "review-skipped" : "review-wrong";
-    const statusIcon  = isCorrect ? "✅ Correct"      : isSkipped ? "⏭ Not Attempted" : "❌ Wrong";
-
-    let optionsReviewHTML = "";
-    q.options.forEach(opt => {
-      let optClass = "";
-      if (opt === q.answer)          optClass = "opt-correct";
-      else if (opt === userAns)      optClass = "opt-wrong";
-      optionsReviewHTML += `<div class="review-option ${optClass}">${opt}</div>`;
-    });
-
-    resultHTML += `
-      <div class="review-card ${statusClass}">
-        <div class="review-header">
-          <span class="review-qnum">Q${index + 1}</span>
-          <span class="review-status">${statusIcon}</span>
-        </div>
-        <p class="review-question">${q.question}</p>
-        <div class="review-options">${optionsReviewHTML}</div>
-        ${userAns && !isCorrect
-          ? `<p class="review-your-ans">Your answer: <strong>${userAns}</strong></p>`
-          : ""}
-        <p class="review-correct-ans">✅ Correct answer: <strong>${q.answer}</strong></p>
-        ${q.explanation
-          ? `<p class="review-explanation">💡 ${q.explanation}</p>`
-          : ""}
-      </div>`;
-  });
-
-  document.getElementById("result").innerHTML = resultHTML;
-  document.getElementById("result").scrollIntoView({ behavior: "smooth" });
-
-  // ── FIX 3 & 4: Save history with timestamp ────
+  // Save to history
   saveHistory({
-    name:        document.getElementById("studentName").value || "Anonymous",
-    category:    document.getElementById("mainCategory").value,
+    name: document.getElementById("studentName").value || "Anonymous",
+    category: document.getElementById("mainCategory").value,
     subCategory: document.getElementById("subCategory").value,
-    difficulty:  document.getElementById("difficulty").value,
-    score:       score,
-    total:       questions.length,
-    correct:     correctCount,
-    wrong:       wrongCount,
-    skipped:     skippedCount,
-    percentage:  percentage,
-    reaction:    reaction,
-    date:        new Date().toLocaleString("en-IN", {
-                   day: "2-digit", month: "short", year: "numeric",
-                   hour: "2-digit", minute: "2-digit", hour12: true
-                 })
+    difficulty: document.getElementById("difficulty").value,
+    score: score,
+    total: questions.length,
+    percentage: percentage,
+    reaction: reaction,
+    date: new Date().toLocaleString()
   });
 
   displayHistory();
@@ -434,7 +434,7 @@ function submitQuiz() {
 // Timer
 // ========================================
 function startTimer() {
-  clearInterval(timer);
+  clearInterval(timer); // prevent duplicate timers
   updateTimer();
   timer = setInterval(() => {
     timeLeft--;
@@ -450,7 +450,7 @@ function updateTimer() {
   const mins = Math.floor(timeLeft / 60);
   const secs = timeLeft % 60;
   document.getElementById("timer").innerHTML =
-    `⏱ ${mins}:${secs < 10 ? "0" : ""}${secs}`;
+    `Time Left: ${mins}:${secs < 10 ? "0" : ""}${secs}`;
 }
 
 // ========================================
@@ -464,81 +464,45 @@ function shuffleArray(array) {
 }
 
 // ========================================
-// FIX 3 & 4: History — save & display
-// with correct/wrong/skipped + timestamp
+// Quiz History (localStorage)
 // ========================================
 function saveHistory(entry) {
   const history = JSON.parse(localStorage.getItem("quizHistory") || "[]");
-  history.unshift(entry);
+  history.unshift(entry); // newest first
   localStorage.setItem("quizHistory", JSON.stringify(history));
 }
 
 function displayHistory() {
   const historyEl = document.getElementById("history");
   if (!historyEl) return;
-
   const history = JSON.parse(localStorage.getItem("quizHistory") || "[]");
 
   if (history.length === 0) {
-    historyEl.innerHTML =
-      "<p style='color:#94a3b8;padding:10px;'>No quiz history yet. Complete a quiz to see it here.</p>";
+    historyEl.innerHTML = "<p>No quiz history yet.</p>";
     return;
   }
 
-  let html = `
-    <div class="history-table-wrap">
-      <table class="history-table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Sub Category</th>
-            <th>Difficulty</th>
-            <th>✅ Correct</th>
-            <th>❌ Wrong</th>
-            <th>⏭ Skipped</th>
-            <th>Score</th>
-            <th>%</th>
-            <th>Result</th>
-            <th>🕒 Date &amp; Time</th>
-          </tr>
-        </thead>
-        <tbody>`;
-
-  history.forEach((h, i) => {
-    const correct = h.correct  !== undefined ? h.correct  : h.score;
-    const wrong   = h.wrong    !== undefined ? h.wrong    : (h.total - h.score);
-    const skipped = h.skipped  !== undefined ? h.skipped  : 0;
-
-    html += `
+  let html = `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse:collapse;width:100%">
+    <thead>
       <tr>
-        <td>${i + 1}</td>
-        <td>${h.name}</td>
-        <td>${h.category ? h.category.toUpperCase() : "-"}</td>
-        <td>${h.subCategory
-              ? h.subCategory.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")
-              : "-"}</td>
-        <td><span class="diff-badge diff-${h.difficulty}">${h.difficulty}</span></td>
-        <td class="td-correct">${correct}</td>
-        <td class="td-wrong">${wrong}</td>
-        <td class="td-skipped">${skipped}</td>
-        <td>${h.score}/${h.total}</td>
-        <td><strong>${h.percentage}%</strong></td>
-        <td>${h.reaction}</td>
-        <td class="td-date">${h.date}</td>
-      </tr>`;
+        <th>Name</th><th>Category</th><th>Sub Category</th>
+        <th>Difficulty</th><th>Score</th><th>%</th><th>Result</th><th>Date</th>
+      </tr>
+    </thead><tbody>`;
+
+  history.forEach(h => {
+    html += `<tr>
+      <td>${h.name}</td>
+      <td>${h.category.toUpperCase()}</td>
+      <td>${h.subCategory.toUpperCase()}</td>
+      <td>${h.difficulty}</td>
+      <td>${h.score}/${h.total}</td>
+      <td>${h.percentage}%</td>
+      <td>${h.reaction}</td>
+      <td>${h.date}</td>
+    </tr>`;
   });
 
-  html += `</tbody></table></div>
-    <button class="btn-clear-history" onclick="clearHistory()">🗑 Clear History</button>`;
-
+  html += "</tbody></table>";
   historyEl.innerHTML = html;
-}
-
-function clearHistory() {
-  if (confirm("Are you sure you want to clear all quiz history?")) {
-    localStorage.removeItem("quizHistory");
-    displayHistory();
-  }
 }
