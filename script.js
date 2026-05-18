@@ -7,6 +7,7 @@ let userAnswers = [];
 let score = 0;
 let timer;
 let timeLeft = 0;
+let quizStartTime;
 
 // ========================================
 // Quiz Structure
@@ -19,6 +20,7 @@ const quizStructure = {
     "migration-transfer", "networking-cdn", "security-compliance",
     "serverless", "storage"
   ],
+
   azure: [
     "ai-ml", "analytics-bigdata", "backup-dr", "compute", "containers",
     "cost-optimization", "database", "devops-automation", "identity-access",
@@ -26,6 +28,7 @@ const quizStructure = {
     "migration-transfer", "networking-cdn", "security-compliance",
     "serverless", "storage"
   ],
+
   gcp: [
     "ai-ml", "analytics-bigdata", "backup-dr", "compute", "containers",
     "cost-optimization", "database", "devops-automation", "identity-access",
@@ -33,387 +36,730 @@ const quizStructure = {
     "migration-transfer", "networking-cdn", "security-compliance",
     "serverless", "storage"
   ],
+
   kubernetes: [
     "cluster-management", "core-concepts", "helm", "ingress", "monitoring",
     "networking", "rbac", "scheduling", "security", "storage",
     "troubleshooting", "workloads"
   ],
+
   docker: [
     "basics", "compose", "containers", "dockerfile", "images",
     "networking", "optimization", "registry", "security",
     "troubleshooting", "volumes"
   ],
+
   terraform: [
     "backend", "basics", "best-practices", "functions", "modules",
-    "outputs", "providers", "provisioners", "resources", "state-management",
-    "troubleshooting", "variables", "workspaces"
+    "outputs", "providers", "provisioners", "resources",
+    "state-management", "troubleshooting", "variables", "workspaces"
   ],
+
   linux: [
     "commands", "filesystem", "monitoring", "networking", "performance",
     "permissions", "process-management", "security", "services",
     "shell-scripting", "troubleshooting"
   ],
+
   devops: [
-    "argocd", "artifact-management", "azure-devops", "deployment-strategies",
-    "github-actions", "gitlab-ci", "gitops", "jenkins", "monitoring",
-    "pipeline-security", "testing", "troubleshooting"
+    "argocd", "artifact-management", "azure-devops",
+    "deployment-strategies", "github-actions", "gitlab-ci",
+    "gitops", "jenkins", "monitoring", "pipeline-security",
+    "testing", "troubleshooting"
   ],
+
   monitoring: [
-    "alertmanager", "dashboards", "elk", "fluentd", "grafana", "logging",
-    "loki", "metrics", "observability", "prometheus", "tracing"
+    "alertmanager", "dashboards", "elk", "fluentd",
+    "grafana", "logging", "loki", "metrics",
+    "observability", "prometheus", "tracing"
   ],
+
   networking: [
-    "api-gateway", "dns", "firewall", "ingress", "load-balancer",
-    "routing", "service-mesh", "ssl", "tcp-ip", "troubleshooting", "vpn"
+    "api-gateway", "dns", "firewall", "ingress",
+    "load-balancer", "routing", "service-mesh",
+    "ssl", "tcp-ip", "troubleshooting", "vpn"
   ],
+
   security: [
-    "cloud-security", "compliance", "container-security", "devsecops",
-    "encryption", "iam", "incident-response", "kubernetes-security",
-    "network-security", "secrets-management", "vulnerability-management",
+    "cloud-security", "compliance", "container-security",
+    "devsecops", "encryption", "iam", "incident-response",
+    "kubernetes-security", "network-security",
+    "secrets-management", "vulnerability-management",
     "zero-trust"
   ]
 };
 
 // ========================================
-// Load Main Categories on Page Load
+// Page Load
 // ========================================
 window.onload = function () {
-  const mainCategoryEl = document.getElementById("mainCategory");
-  Object.keys(quizStructure).forEach(category => {
-    const option = document.createElement("option");
-    option.value = category;
-    option.textContent = category.toUpperCase();
-    mainCategoryEl.appendChild(option);
-  });
+
+  loadMainCategories();
   displayHistory();
+
 };
 
 // ========================================
-// Load Sub Categories on Main Category Change
+// Load Main Categories
 // ========================================
-document.getElementById("mainCategory").addEventListener("change", function () {
-  const subCategoryEl = document.getElementById("subCategory");
-  subCategoryEl.innerHTML = '<option value="">Select Sub Category</option>';
-  const selectedMain = this.value;
-  if (!selectedMain) return;
-  quizStructure[selectedMain].forEach(sub => {
+function loadMainCategories() {
+
+  const mainCategoryEl = document.getElementById("mainCategory");
+
+  mainCategoryEl.innerHTML = `
+    <option value="">Select Category</option>
+  `;
+
+  Object.keys(quizStructure).forEach(category => {
+
     const option = document.createElement("option");
-    option.value = sub;
-    option.textContent = sub.toUpperCase();
-    subCategoryEl.appendChild(option);
+
+    option.value = category;
+
+    option.textContent =
+      category.charAt(0).toUpperCase() + category.slice(1);
+
+    mainCategoryEl.appendChild(option);
+
   });
-});
+
+}
+
+// ========================================
+// Main Category Change
+// ========================================
+document
+  .getElementById("mainCategory")
+  .addEventListener("change", function () {
+
+    const selectedMain = this.value;
+
+    const subCategoryEl =
+      document.getElementById("subCategory");
+
+    subCategoryEl.innerHTML =
+      `<option value="">Select Sub Category</option>`;
+
+    if (!selectedMain || !quizStructure[selectedMain]) {
+      return;
+    }
+
+    quizStructure[selectedMain].forEach(sub => {
+
+      const option = document.createElement("option");
+
+      option.value = sub;
+
+      option.textContent =
+        sub.replace(/-/g, " ").toUpperCase();
+
+      subCategoryEl.appendChild(option);
+
+    });
+
+  });
 
 // ========================================
 // Start Quiz
 // ========================================
 async function startQuiz() {
-  const mainCategory = document.getElementById("mainCategory").value;
-  const subCategory = document.getElementById("subCategory").value;
-  const difficulty = document.getElementById("difficulty").value;
-  const limit = parseInt(document.getElementById("questionLimit").value);
+
+  const mainCategory =
+    document.getElementById("mainCategory").value;
+
+  const subCategory =
+    document.getElementById("subCategory").value;
+
+  const difficulty =
+    document.getElementById("difficulty").value;
+
+  const limit =
+    parseInt(
+      document.getElementById("questionLimit").value
+    );
 
   if (!mainCategory || !subCategory) {
-    alert("Please select a main category and sub category.");
+
+    alert(
+      "Please select both Main Category and Sub Category."
+    );
+
     return;
+
   }
 
-  // Clear any previous state
-  clearInterval(timer);
-  document.getElementById("result").innerHTML = "";
-  document.getElementById("quiz").innerHTML = "<p>Loading questions...</p>";
-
   try {
-    const filePath = `./${mainCategory}/${subCategory}/${difficulty}.json`;
-    console.log("Loading:", filePath);
+
+    clearInterval(timer);
+
+    document.getElementById("result").innerHTML = "";
+
+    document.getElementById("quiz").innerHTML =
+      "<h3>Loading Questions...</h3>";
+
+    const filePath =
+      `./${mainCategory}/${subCategory}/${difficulty}.json`;
+
+    console.log("Loading file:", filePath);
 
     const response = await fetch(filePath);
 
     if (!response.ok) {
+
       throw new Error(
-        `File not found: ${filePath} (HTTP ${response.status}). ` +
-        `Please make sure the JSON file exists at the correct path.`
+        `Unable to load file: ${filePath}`
       );
+
     }
 
     const data = await response.json();
 
     if (!Array.isArray(data) || data.length === 0) {
+
       throw new Error(
-        `The file "${filePath}" is empty or not a valid JSON array.`
+        "JSON file is empty or invalid."
       );
+
     }
 
     questions = data;
+
     shuffleArray(questions);
+
     questions = questions.slice(0, limit);
 
     currentQuestion = 0;
-    // FIX: consistently use userAnswers everywhere
-    userAnswers = new Array(questions.length).fill(null);
+
+    userAnswers =
+      new Array(questions.length).fill(null);
+
     score = 0;
+
     timeLeft = questions.length * 60;
 
+    quizStartTime = new Date();
+
     startTimer();
+
     loadQuestion();
 
-  } catch (error) {
-    console.error("Quiz load error:", error);
+  }
+
+  catch (error) {
+
+    console.error(error);
+
     document.getElementById("quiz").innerHTML = `
       <div class="error">
         ❌ Unable to load questions.<br><br>
-        <strong>Reason:</strong> ${error.message}<br><br>
-        Please check that your JSON file exists and is valid.
+        ${error.message}
       </div>
     `;
+
   }
+
 }
 
 // ========================================
 // Load Question
 // ========================================
 function loadQuestion() {
-  const quizContainer = document.getElementById("quiz");
 
-  // Safety check
-  if (!questions || questions.length === 0 || !questions[currentQuestion]) {
-    quizContainer.innerHTML = `
-      <div class="error">
-        ❌ Unable to load questions.<br><br>
-        Please check your JSON files.
-      </div>
-    `;
-    console.error("Question object missing at index:", currentQuestion, questions);
-    return;
-  }
+  const quizEl =
+    document.getElementById("quiz");
 
   const q = questions[currentQuestion];
 
-  // Validate question structure
-  if (!q.question || !Array.isArray(q.options) || !q.answer) {
-    quizContainer.innerHTML = `
-      <div class="error">
-        ❌ Question #${currentQuestion + 1} has invalid structure.<br><br>
-        Each question must have: <code>question</code>, <code>options</code> (array), and <code>answer</code>.
-      </div>
-    `;
-    console.error("Invalid question structure:", q);
+  if (!q) {
+
+    quizEl.innerHTML =
+      "<h3>Question not found.</h3>";
+
     return;
+
   }
 
   let optionsHTML = "";
-  q.options.forEach((option) => {
-    // FIX: use userAnswers (not answers) and name="option" consistently
-    const isChecked = userAnswers[currentQuestion] === option ? "checked" : "";
+
+  q.options.forEach(option => {
+
+    const checked =
+      userAnswers[currentQuestion] === option
+        ? "checked"
+        : "";
+
     optionsHTML += `
       <label class="option">
         <input
           type="radio"
           name="option"
           value="${option}"
-          ${isChecked}
+          ${checked}
         >
         ${option}
       </label>
     `;
+
   });
 
-  quizContainer.innerHTML = `
+  quizEl.innerHTML = `
     <div class="question-card">
-      <h2>Question ${currentQuestion + 1} of ${questions.length}</h2>
-      <p class="question">${q.question}</p>
+
+      <h2>
+        Question ${currentQuestion + 1}
+      </h2>
+
+      <p class="question">
+        ${q.question}
+      </p>
+
       <div class="options">
         ${optionsHTML}
       </div>
+
     </div>
   `;
 
   updateProgressBar();
+
   updateQuestionCounter();
 
-  // FIX: use userAnswers (not answers) when saving selection
-  document.querySelectorAll('input[name="option"]').forEach((radio) => {
-    radio.addEventListener("change", (e) => {
-      userAnswers[currentQuestion] = e.target.value;
+  document
+    .querySelectorAll('input[name="option"]')
+    .forEach(radio => {
+
+      radio.addEventListener("change", function () {
+
+        userAnswers[currentQuestion] = this.value;
+
+      });
+
     });
-  });
+
 }
 
 // ========================================
 // Next Question
 // ========================================
 function nextQuestion() {
+
   saveAnswer();
+
   if (currentQuestion < questions.length - 1) {
+
     currentQuestion++;
+
     loadQuestion();
+
   }
+
 }
 
 // ========================================
 // Previous Question
 // ========================================
 function previousQuestion() {
+
   saveAnswer();
+
   if (currentQuestion > 0) {
+
     currentQuestion--;
+
     loadQuestion();
+
   }
+
 }
 
 // ========================================
 // Save Answer
 // ========================================
 function saveAnswer() {
-  // FIX: name="option" matches the radio inputs in loadQuestion()
-  const selected = document.querySelector('input[name="option"]:checked');
+
+  const selected =
+    document.querySelector(
+      'input[name="option"]:checked'
+    );
+
   if (selected) {
-    userAnswers[currentQuestion] = selected.value;
+
+    userAnswers[currentQuestion] =
+      selected.value;
+
   }
-}
 
-// ========================================
-// Update Progress Bar
-// ========================================
-function updateProgressBar() {
-  const progressBar = document.getElementById("progressBar");
-  if (!progressBar) return;
-  const percent = ((currentQuestion + 1) / questions.length) * 100;
-  progressBar.style.width = percent + "%";
-}
-
-// ========================================
-// Update Question Counter
-// ========================================
-function updateQuestionCounter() {
-  const counter = document.getElementById("questionCount");
-  if (!counter) return;
-  counter.textContent = `Question ${currentQuestion + 1} / ${questions.length}`;
 }
 
 // ========================================
 // Submit Quiz
 // ========================================
 function submitQuiz() {
+
   saveAnswer();
+
   clearInterval(timer);
 
-  if (!questions || questions.length === 0) {
-    alert("No quiz is currently active.");
-    return;
-  }
-
   score = 0;
+
   questions.forEach((q, index) => {
+
     if (userAnswers[index] === q.answer) {
+
       score++;
+
     }
+
   });
 
-  const percentage = ((score / questions.length) * 100).toFixed(2);
+  const percentage =
+    ((score / questions.length) * 100)
+    .toFixed(2);
 
   let reaction = "";
-  if (percentage < 55)       reaction = "❌ Failed";
-  else if (percentage < 75)  reaction = "🙂 Good";
-  else if (percentage < 90)  reaction = "🔥 Great";
-  else if (percentage < 100) reaction = "🏆 Excellent";
-  else                        reaction = "🎯 Perfect";
 
-  document.getElementById("result").innerHTML = `
+  if (percentage < 55) {
+
+    reaction =
+      "😢 Fail! Keep practicing and try again.";
+
+  }
+
+  else if (percentage < 75) {
+
+    reaction = "🙂 Good Job";
+
+  }
+
+  else if (percentage < 90) {
+
+    reaction = "🔥 Great";
+
+  }
+
+  else if (percentage < 100) {
+
+    reaction = "🏆 Excellent";
+
+  }
+
+  else {
+
+    reaction = "🎯 Perfect Score";
+
+  }
+
+  // ====================================
+  // Time Taken
+  // ====================================
+  const quizEndTime = new Date();
+
+  const totalSeconds =
+    Math.floor(
+      (quizEndTime - quizStartTime) / 1000
+    );
+
+  const mins =
+    Math.floor(totalSeconds / 60);
+
+  const secs =
+    totalSeconds % 60;
+
+  const timeTaken =
+    `${mins}m ${secs}s`;
+
+  // ====================================
+  // Result HTML
+  // ====================================
+  let resultHTML = `
     <h2>${reaction}</h2>
-    <h3>Score: ${score} / ${questions.length}</h3>
-    <h3>Percentage: ${percentage}%</h3>
+
+    <h3>
+      Score: ${score} / ${questions.length}
+    </h3>
+
+    <h3>
+      Percentage: ${percentage}%
+    </h3>
+
+    <p>
+      ⏱ Time Taken: ${timeTaken}
+    </p>
+
+    <hr>
+
+    <h2>
+      📘 Detailed Result
+    </h2>
   `;
 
-  // Save to history
+  questions.forEach((q, index) => {
+
+    const userAnswer =
+      userAnswers[index] || "Not Answered";
+
+    const isCorrect =
+      userAnswer === q.answer;
+
+    resultHTML += `
+      <div class="result-card">
+
+        <h3>
+          ${isCorrect ? "✅" : "❌"}
+          Q${index + 1}:
+          ${isCorrect ? "Correct" : "Wrong"}
+        </h3>
+
+        <p>
+          <strong>Question:</strong>
+          ${q.question}
+        </p>
+
+        <p>
+          <strong>Your Answer:</strong>
+          ${userAnswer}
+        </p>
+
+        <p>
+          <strong>Correct Answer:</strong>
+          ${q.answer}
+        </p>
+
+        <p>
+          <strong>Explanation:</strong>
+          ${q.explanation || "No explanation available"}
+        </p>
+
+        <hr>
+
+      </div>
+    `;
+
+  });
+
+  document.getElementById("result").innerHTML =
+    resultHTML;
+
+  // ====================================
+  // Save History
+  // ====================================
   saveHistory({
-    name: document.getElementById("studentName").value || "Anonymous",
-    category: document.getElementById("mainCategory").value,
-    subCategory: document.getElementById("subCategory").value,
-    difficulty: document.getElementById("difficulty").value,
+
+    name:
+      document.getElementById("studentName").value
+      || "Anonymous",
+
+    category:
+      document.getElementById("mainCategory").value,
+
+    subCategory:
+      document.getElementById("subCategory").value,
+
+    difficulty:
+      document.getElementById("difficulty").value,
+
     score: score,
+
     total: questions.length,
+
     percentage: percentage,
+
     reaction: reaction,
+
+    timeTaken: timeTaken,
+
     date: new Date().toLocaleString()
+
   });
 
   displayHistory();
+
 }
 
 // ========================================
 // Timer
 // ========================================
 function startTimer() {
-  clearInterval(timer); // prevent duplicate timers
+
   updateTimer();
+
   timer = setInterval(() => {
+
     timeLeft--;
+
     updateTimer();
+
     if (timeLeft <= 0) {
+
       clearInterval(timer);
+
       submitQuiz();
+
     }
+
   }, 1000);
+
 }
 
 function updateTimer() {
-  const mins = Math.floor(timeLeft / 60);
-  const secs = timeLeft % 60;
+
+  const mins =
+    Math.floor(timeLeft / 60);
+
+  const secs =
+    timeLeft % 60;
+
   document.getElementById("timer").innerHTML =
     `Time Left: ${mins}:${secs < 10 ? "0" : ""}${secs}`;
+
 }
 
 // ========================================
-// Shuffle Array (Fisher-Yates)
+// Progress Bar
+// ========================================
+function updateProgressBar() {
+
+  const progress =
+    ((currentQuestion + 1) / questions.length) * 100;
+
+  document.getElementById("progressBar")
+    .style.width = progress + "%";
+
+}
+
+// ========================================
+// Question Counter
+// ========================================
+function updateQuestionCounter() {
+
+  document.getElementById("questionCount")
+    .innerHTML =
+      `Question ${currentQuestion + 1}
+       / ${questions.length}`;
+
+}
+
+// ========================================
+// Shuffle Questions
 // ========================================
 function shuffleArray(array) {
+
   for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+
+    const j =
+      Math.floor(Math.random() * (i + 1));
+
+    [array[i], array[j]] =
+      [array[j], array[i]];
+
   }
+
 }
 
 // ========================================
-// Quiz History (localStorage)
+// Save History
 // ========================================
 function saveHistory(entry) {
-  const history = JSON.parse(localStorage.getItem("quizHistory") || "[]");
-  history.unshift(entry); // newest first
-  localStorage.setItem("quizHistory", JSON.stringify(history));
+
+  const history =
+    JSON.parse(
+      localStorage.getItem("quizHistory") || "[]"
+    );
+
+  history.unshift(entry);
+
+  localStorage.setItem(
+    "quizHistory",
+    JSON.stringify(history)
+  );
+
 }
 
+// ========================================
+// Display History
+// ========================================
 function displayHistory() {
-  const historyEl = document.getElementById("history");
-  if (!historyEl) return;
-  const history = JSON.parse(localStorage.getItem("quizHistory") || "[]");
+
+  const historyEl =
+    document.getElementById("history");
+
+  const history =
+    JSON.parse(
+      localStorage.getItem("quizHistory") || "[]"
+    );
 
   if (history.length === 0) {
-    historyEl.innerHTML = "<p>No quiz history yet.</p>";
+
+    historyEl.innerHTML =
+      "<p>No quiz history available.</p>";
+
     return;
+
   }
 
-  let html = `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse:collapse;width:100%">
-    <thead>
-      <tr>
-        <th>Name</th><th>Category</th><th>Sub Category</th>
-        <th>Difficulty</th><th>Score</th><th>%</th><th>Result</th><th>Date</th>
-      </tr>
-    </thead><tbody>`;
+  let html = "";
 
-  history.forEach(h => {
-    html += `<tr>
-      <td>${h.name}</td>
-      <td>${h.category.toUpperCase()}</td>
-      <td>${h.subCategory.toUpperCase()}</td>
-      <td>${h.difficulty}</td>
-      <td>${h.score}/${h.total}</td>
-      <td>${h.percentage}%</td>
-      <td>${h.reaction}</td>
-      <td>${h.date}</td>
-    </tr>`;
+  history.forEach((h, index) => {
+
+    html += `
+      <div class="history-card">
+
+        <h3>
+          Attempt ${index + 1}
+        </h3>
+
+        <p>
+          <strong>Student:</strong>
+          ${h.name}
+        </p>
+
+        <p>
+          <strong>Category:</strong>
+          ${h.category}
+        </p>
+
+        <p>
+          <strong>Sub Category:</strong>
+          ${h.subCategory}
+        </p>
+
+        <p>
+          <strong>Difficulty:</strong>
+          ${h.difficulty}
+        </p>
+
+        <p>
+          <strong>Score:</strong>
+          ${h.score}/${h.total}
+        </p>
+
+        <p>
+          <strong>Percentage:</strong>
+          ${h.percentage}%
+        </p>
+
+        <p>
+          <strong>Result:</strong>
+          ${h.reaction}
+        </p>
+
+        <p>
+          <strong>Time Taken:</strong>
+          ${h.timeTaken}
+        </p>
+
+        <p>
+          <strong>Date:</strong>
+          ${h.date}
+        </p>
+
+      </div>
+
+      <hr>
+    `;
+
   });
 
-  html += "</tbody></table>";
   historyEl.innerHTML = html;
+
 }
