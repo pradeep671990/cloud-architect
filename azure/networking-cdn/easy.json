@@ -1,1 +1,702 @@
-[]
+[
+    {
+      "question": "Which Azure service provides CDN functionality?",
+      "options": [
+        "Azure CDN",
+        "Azure SQL",
+        "Azure VM",
+        "Azure Backup"
+      ],
+      "answer": "Azure CDN",
+      "explanation": "Azure CDN delivers content globally from edge locations.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service is used for DNS hosting?",
+      "options": [
+        "Azure DNS",
+        "Azure Monitor",
+        "Azure VM",
+        "Azure SQL"
+      ],
+      "answer": "Azure DNS",
+      "explanation": "Azure DNS hosts DNS zones and records.",
+      "difficulty": "easy",
+      "subcategory": "dns",
+      "category": "azure"
+    },
+    {
+      "question": "What is Azure's virtual networking service called?",
+      "options": [
+        "Virtual Network",
+        "Subnet",
+        "Availability Zone",
+        "Scale Set"
+      ],
+      "answer": "Virtual Network",
+      "explanation": "Azure Virtual Network provides private networking in Azure.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides global HTTP routing and CDN features?",
+      "options": [
+        "Azure Front Door",
+        "Azure Disk",
+        "Azure Files",
+        "Azure Arc"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door provides global routing, acceleration, and CDN features.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides web application firewall functionality?",
+      "options": [
+        "Azure WAF",
+        "Azure AD",
+        "Azure SQL",
+        "Azure Functions"
+      ],
+      "answer": "Azure WAF",
+      "explanation": "Azure WAF protects web applications from common attacks.",
+      "difficulty": "easy",
+      "subcategory": "security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides private dedicated connectivity to Azure?",
+      "options": [
+        "ExpressRoute",
+        "VPN Gateway",
+        "Front Door",
+        "Load Balancer"
+      ],
+      "answer": "ExpressRoute",
+      "explanation": "ExpressRoute provides private connectivity between on-premises networks and Azure.",
+      "difficulty": "easy",
+      "subcategory": "hybrid-network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides encrypted VPN connectivity?",
+      "options": [
+        "VPN Gateway",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Monitor"
+      ],
+      "answer": "VPN Gateway",
+      "explanation": "Azure VPN Gateway provides secure VPN connectivity.",
+      "difficulty": "easy",
+      "subcategory": "vpn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service distributes traffic within a region at Layer 4?",
+      "options": [
+        "Azure Load Balancer",
+        "Azure Front Door",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Load Balancer",
+      "explanation": "Azure Load Balancer distributes Layer 4 TCP and UDP traffic.",
+      "difficulty": "easy",
+      "subcategory": "load-balancer",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides Layer 7 load balancing for web applications?",
+      "options": [
+        "Application Gateway",
+        "Azure DNS",
+        "Azure Backup",
+        "Azure Files"
+      ],
+      "answer": "Application Gateway",
+      "explanation": "Azure Application Gateway provides Layer 7 load balancing.",
+      "difficulty": "easy",
+      "subcategory": "load-balancer",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides secure RDP and SSH without public IPs?",
+      "options": [
+        "Azure Bastion",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Monitor"
+      ],
+      "answer": "Azure Bastion",
+      "explanation": "Azure Bastion provides secure browser-based RDP and SSH access.",
+      "difficulty": "easy",
+      "subcategory": "security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure component acts as a firewall for VM network interfaces?",
+      "options": [
+        "Network Security Group",
+        "Route Table",
+        "Subnet",
+        "Private DNS Zone"
+      ],
+      "answer": "Network Security Group",
+      "explanation": "Network Security Groups filter inbound and outbound network traffic.",
+      "difficulty": "easy",
+      "subcategory": "security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure component is used to divide a Virtual Network?",
+      "options": [
+        "Subnet",
+        "Resource Group",
+        "Availability Set",
+        "Managed Disk"
+      ],
+      "answer": "Subnet",
+      "explanation": "Subnets divide a Virtual Network into smaller network segments.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides managed cloud firewall protection?",
+      "options": [
+        "Azure Firewall",
+        "Azure SQL",
+        "Azure Backup",
+        "Azure Storage"
+      ],
+      "answer": "Azure Firewall",
+      "explanation": "Azure Firewall is a managed network security service.",
+      "difficulty": "easy",
+      "subcategory": "security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service monitors network traffic and topology?",
+      "options": [
+        "Network Watcher",
+        "Azure DNS",
+        "Azure CDN",
+        "Azure Policy"
+      ],
+      "answer": "Network Watcher",
+      "explanation": "Network Watcher helps monitor and troubleshoot Azure networks.",
+      "difficulty": "easy",
+      "subcategory": "monitoring",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature connects two Virtual Networks privately?",
+      "options": [
+        "VNet Peering",
+        "Azure DNS",
+        "Azure Monitor",
+        "Azure Backup"
+      ],
+      "answer": "VNet Peering",
+      "explanation": "VNet Peering connects Azure Virtual Networks privately.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service is used for private DNS resolution?",
+      "options": [
+        "Azure Private DNS",
+        "Azure CDN",
+        "Azure Bastion",
+        "Azure Backup"
+      ],
+      "answer": "Azure Private DNS",
+      "explanation": "Azure Private DNS manages private DNS zones in Azure.",
+      "difficulty": "easy",
+      "subcategory": "dns",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides outbound internet access for private resources?",
+      "options": [
+        "NAT Gateway",
+        "Azure DNS",
+        "Azure Monitor",
+        "Azure Files"
+      ],
+      "answer": "NAT Gateway",
+      "explanation": "Azure NAT Gateway provides outbound internet connectivity.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service gives private access to Azure PaaS services?",
+      "options": [
+        "Private Link",
+        "Azure CDN",
+        "Azure Monitor",
+        "Azure Backup"
+      ],
+      "answer": "Private Link",
+      "explanation": "Azure Private Link provides private connectivity to Azure services.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature creates a private IP endpoint for a service?",
+      "options": [
+        "Private Endpoint",
+        "Public IP",
+        "Route Table",
+        "NSG"
+      ],
+      "answer": "Private Endpoint",
+      "explanation": "Private Endpoint connects privately to Azure services.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides DDoS protection?",
+      "options": [
+        "Azure DDoS Protection",
+        "Azure Backup",
+        "Azure Logic Apps",
+        "Azure DevTest Labs"
+      ],
+      "answer": "Azure DDoS Protection",
+      "explanation": "Azure DDoS Protection helps protect applications from DDoS attacks.",
+      "difficulty": "easy",
+      "subcategory": "security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can globally route users to healthy endpoints using DNS?",
+      "options": [
+        "Traffic Manager",
+        "Azure Disk",
+        "Azure Queue Storage",
+        "Azure SQL"
+      ],
+      "answer": "Traffic Manager",
+      "explanation": "Azure Traffic Manager uses DNS-based traffic routing.",
+      "difficulty": "easy",
+      "subcategory": "dns",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service accelerates and secures global web applications?",
+      "options": [
+        "Azure Front Door",
+        "Azure VM",
+        "Azure Files",
+        "Azure Arc"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door improves global web application performance and security.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can cache static content closer to users?",
+      "options": [
+        "Azure CDN",
+        "Azure Monitor",
+        "Azure SQL",
+        "Azure Functions"
+      ],
+      "answer": "Azure CDN",
+      "explanation": "Azure CDN caches content at edge locations.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service manages public IP DNS records?",
+      "options": [
+        "Azure DNS",
+        "Azure App Service",
+        "Azure Key Vault",
+        "Azure Backup"
+      ],
+      "answer": "Azure DNS",
+      "explanation": "Azure DNS manages public DNS zones and records.",
+      "difficulty": "easy",
+      "subcategory": "dns",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure component defines custom network routes?",
+      "options": [
+        "Route Table",
+        "NSG",
+        "Subnet",
+        "VM Scale Set"
+      ],
+      "answer": "Route Table",
+      "explanation": "Route Tables define custom routes for network traffic.",
+      "difficulty": "easy",
+      "subcategory": "routing",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure route type is manually created by users?",
+      "options": [
+        "User Defined Route",
+        "System Route",
+        "Default Route",
+        "Public Route"
+      ],
+      "answer": "User Defined Route",
+      "explanation": "User Defined Routes are custom routes created by users.",
+      "difficulty": "easy",
+      "subcategory": "routing",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service helps test connectivity between two points?",
+      "options": [
+        "Network Watcher",
+        "Azure CDN",
+        "Azure Backup",
+        "Azure SQL"
+      ],
+      "answer": "Network Watcher",
+      "explanation": "Network Watcher includes tools for connectivity troubleshooting.",
+      "difficulty": "easy",
+      "subcategory": "monitoring",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature can restrict traffic to a subnet or NIC?",
+      "options": [
+        "Network Security Group",
+        "Azure Monitor",
+        "Azure DNS",
+        "Azure Backup"
+      ],
+      "answer": "Network Security Group",
+      "explanation": "NSGs filter network traffic for subnets and NICs.",
+      "difficulty": "easy",
+      "subcategory": "security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure load balancer is commonly used for internal private traffic?",
+      "options": [
+        "Internal Load Balancer",
+        "Azure CDN",
+        "Traffic Manager",
+        "Azure DNS"
+      ],
+      "answer": "Internal Load Balancer",
+      "explanation": "Internal Load Balancer distributes private traffic inside Azure networks.",
+      "difficulty": "easy",
+      "subcategory": "load-balancer",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service is used to publish web apps globally with WAF?",
+      "options": [
+        "Azure Front Door",
+        "Azure Storage Queue",
+        "Azure Batch",
+        "Azure Data Factory"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door can publish web apps globally with WAF protection.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides SSL offload for web applications?",
+      "options": [
+        "Application Gateway",
+        "Azure DNS",
+        "Azure Monitor",
+        "Azure Files"
+      ],
+      "answer": "Application Gateway",
+      "explanation": "Application Gateway supports SSL termination for web apps.",
+      "difficulty": "easy",
+      "subcategory": "load-balancer",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service supports path-based routing for web applications?",
+      "options": [
+        "Application Gateway",
+        "Azure Load Balancer",
+        "Azure Bastion",
+        "Azure DNS"
+      ],
+      "answer": "Application Gateway",
+      "explanation": "Application Gateway supports URL path-based routing.",
+      "difficulty": "easy",
+      "subcategory": "load-balancer",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature provides service access over the Microsoft backbone network?",
+      "options": [
+        "Private Link",
+        "Public IP",
+        "Azure DNS Public Zone",
+        "Internet Gateway"
+      ],
+      "answer": "Private Link",
+      "explanation": "Private Link keeps service traffic on the Microsoft network.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service is used to protect Virtual Networks with centralized rules?",
+      "options": [
+        "Azure Firewall",
+        "Azure DevOps",
+        "Azure Backup",
+        "Azure Functions"
+      ],
+      "answer": "Azure Firewall",
+      "explanation": "Azure Firewall provides centralized network security rules.",
+      "difficulty": "easy",
+      "subcategory": "security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service is commonly placed before web applications for Layer 7 routing?",
+      "options": [
+        "Application Gateway",
+        "Managed Disk",
+        "Azure SQL",
+        "Azure Policy"
+      ],
+      "answer": "Application Gateway",
+      "explanation": "Application Gateway provides application-level routing.",
+      "difficulty": "easy",
+      "subcategory": "load-balancer",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides regional Layer 4 load balancing?",
+      "options": [
+        "Azure Load Balancer",
+        "Azure Front Door",
+        "Traffic Manager",
+        "Azure CDN"
+      ],
+      "answer": "Azure Load Balancer",
+      "explanation": "Azure Load Balancer provides Layer 4 load balancing.",
+      "difficulty": "easy",
+      "subcategory": "load-balancer",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service routes traffic using DNS rather than proxying traffic?",
+      "options": [
+        "Traffic Manager",
+        "Application Gateway",
+        "Azure Firewall",
+        "Azure Bastion"
+      ],
+      "answer": "Traffic Manager",
+      "explanation": "Traffic Manager uses DNS responses to direct users.",
+      "difficulty": "easy",
+      "subcategory": "dns",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can provide CDN and WAF together?",
+      "options": [
+        "Azure Front Door",
+        "Azure Backup",
+        "Azure Monitor",
+        "Azure VM"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door supports CDN-style acceleration and WAF.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure component is required to assign a public address to a VM?",
+      "options": [
+        "Public IP Address",
+        "Private DNS Zone",
+        "Route Table",
+        "NSG"
+      ],
+      "answer": "Public IP Address",
+      "explanation": "A Public IP Address provides internet-reachable addressing.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature allows secure access to storage over private IP?",
+      "options": [
+        "Private Endpoint",
+        "Public IP",
+        "Azure Bastion",
+        "Traffic Manager"
+      ],
+      "answer": "Private Endpoint",
+      "explanation": "Private Endpoint enables private access to services like Storage.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides firewall logs and diagnostics integration?",
+      "options": [
+        "Azure Firewall",
+        "Azure Disk",
+        "Azure SQL",
+        "Azure Storage Explorer"
+      ],
+      "answer": "Azure Firewall",
+      "explanation": "Azure Firewall supports diagnostics and logging.",
+      "difficulty": "easy",
+      "subcategory": "monitoring",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service helps view effective security rules on a network interface?",
+      "options": [
+        "Network Watcher",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Backup"
+      ],
+      "answer": "Network Watcher",
+      "explanation": "Network Watcher can show effective security rules.",
+      "difficulty": "easy",
+      "subcategory": "monitoring",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can help troubleshoot next-hop routing?",
+      "options": [
+        "Network Watcher",
+        "Azure Key Vault",
+        "Azure Files",
+        "Azure SQL"
+      ],
+      "answer": "Network Watcher",
+      "explanation": "Network Watcher includes next-hop troubleshooting tools.",
+      "difficulty": "easy",
+      "subcategory": "routing",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service supports custom domain delivery with caching?",
+      "options": [
+        "Azure CDN",
+        "Azure Backup",
+        "Azure SQL",
+        "Azure DevOps"
+      ],
+      "answer": "Azure CDN",
+      "explanation": "Azure CDN supports custom domains and content caching.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature lets two VNets communicate without a VPN gateway?",
+      "options": [
+        "VNet Peering",
+        "ExpressRoute",
+        "Traffic Manager",
+        "Azure Monitor"
+      ],
+      "answer": "VNet Peering",
+      "explanation": "VNet Peering allows direct private communication between VNets.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service connects on-premises networks using IPsec tunnels?",
+      "options": [
+        "VPN Gateway",
+        "Azure Front Door",
+        "Azure CDN",
+        "Azure Bastion"
+      ],
+      "answer": "VPN Gateway",
+      "explanation": "VPN Gateway supports IPsec/IKE VPN tunnels.",
+      "difficulty": "easy",
+      "subcategory": "vpn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides private connectivity without using the public internet?",
+      "options": [
+        "ExpressRoute",
+        "Azure CDN",
+        "Traffic Manager",
+        "Azure Backup"
+      ],
+      "answer": "ExpressRoute",
+      "explanation": "ExpressRoute provides private network connectivity to Azure.",
+      "difficulty": "easy",
+      "subcategory": "hybrid-network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can protect public IP resources from DDoS attacks?",
+      "options": [
+        "Azure DDoS Protection",
+        "Azure Monitor",
+        "Azure Files",
+        "Azure App Configuration"
+      ],
+      "answer": "Azure DDoS Protection",
+      "explanation": "Azure DDoS Protection protects public IP resources.",
+      "difficulty": "easy",
+      "subcategory": "security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service is used for centralized DNS-based global traffic routing?",
+      "options": [
+        "Traffic Manager",
+        "Azure Load Balancer",
+        "Azure Firewall",
+        "Azure Bastion"
+      ],
+      "answer": "Traffic Manager",
+      "explanation": "Traffic Manager provides DNS-based global traffic routing.",
+      "difficulty": "easy",
+      "subcategory": "dns",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can be used as a global entry point for web apps?",
+      "options": [
+        "Azure Front Door",
+        "Azure VM",
+        "Azure Disk",
+        "Azure Backup"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door can act as a global entry point for web applications.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "azure"
+    }
+  ]

@@ -1,1 +1,702 @@
-[]
+[
+    {
+      "question": "Which AWS service enables centralized cross-account VPC connectivity at scale? (1)",
+      "options": [
+        "Transit Gateway",
+        "Direct Connect",
+        "Route 53",
+        "CloudFront"
+      ],
+      "answer": "Transit Gateway",
+      "explanation": "Transit Gateway is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS routing policy supports latency-based DNS resolution? (2)",
+      "options": [
+        "Latency Routing",
+        "Failover Routing",
+        "Weighted Routing",
+        "Simple Routing"
+      ],
+      "answer": "Latency Routing",
+      "explanation": "Latency Routing is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "dns",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports TLS termination at edge locations? (3)",
+      "options": [
+        "CloudFront",
+        "Transit Gateway",
+        "NAT Gateway",
+        "VPC Peering"
+      ],
+      "answer": "CloudFront",
+      "explanation": "CloudFront is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS networking feature enables inspection of packet-level traffic? (4)",
+      "options": [
+        "Traffic Mirroring",
+        "CloudWatch",
+        "CloudTrail",
+        "Inspector"
+      ],
+      "answer": "Traffic Mirroring",
+      "explanation": "Traffic Mirroring is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "load-balancer",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service allows centralized firewall policy management across accounts? (5)",
+      "options": [
+        "Firewall Manager",
+        "Shield",
+        "IAM",
+        "CloudFormation"
+      ],
+      "answer": "Firewall Manager",
+      "explanation": "Firewall Manager is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "routing",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service enables centralized cross-account VPC connectivity at scale? (6)",
+      "options": [
+        "Transit Gateway",
+        "Direct Connect",
+        "Route 53",
+        "CloudFront"
+      ],
+      "answer": "Transit Gateway",
+      "explanation": "Transit Gateway is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS routing policy supports latency-based DNS resolution? (7)",
+      "options": [
+        "Latency Routing",
+        "Failover Routing",
+        "Weighted Routing",
+        "Simple Routing"
+      ],
+      "answer": "Latency Routing",
+      "explanation": "Latency Routing is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "vpn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports TLS termination at edge locations? (8)",
+      "options": [
+        "CloudFront",
+        "Transit Gateway",
+        "NAT Gateway",
+        "VPC Peering"
+      ],
+      "answer": "CloudFront",
+      "explanation": "CloudFront is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "hybrid-network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS networking feature enables inspection of packet-level traffic? (9)",
+      "options": [
+        "Traffic Mirroring",
+        "CloudWatch",
+        "CloudTrail",
+        "Inspector"
+      ],
+      "answer": "Traffic Mirroring",
+      "explanation": "Traffic Mirroring is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "firewall",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service allows centralized firewall policy management across accounts? (10)",
+      "options": [
+        "Firewall Manager",
+        "Shield",
+        "IAM",
+        "CloudFormation"
+      ],
+      "answer": "Firewall Manager",
+      "explanation": "Firewall Manager is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "peering",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service enables centralized cross-account VPC connectivity at scale? (11)",
+      "options": [
+        "Transit Gateway",
+        "Direct Connect",
+        "Route 53",
+        "CloudFront"
+      ],
+      "answer": "Transit Gateway",
+      "explanation": "Transit Gateway is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS routing policy supports latency-based DNS resolution? (12)",
+      "options": [
+        "Latency Routing",
+        "Failover Routing",
+        "Weighted Routing",
+        "Simple Routing"
+      ],
+      "answer": "Latency Routing",
+      "explanation": "Latency Routing is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "dns",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports TLS termination at edge locations? (13)",
+      "options": [
+        "CloudFront",
+        "Transit Gateway",
+        "NAT Gateway",
+        "VPC Peering"
+      ],
+      "answer": "CloudFront",
+      "explanation": "CloudFront is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS networking feature enables inspection of packet-level traffic? (14)",
+      "options": [
+        "Traffic Mirroring",
+        "CloudWatch",
+        "CloudTrail",
+        "Inspector"
+      ],
+      "answer": "Traffic Mirroring",
+      "explanation": "Traffic Mirroring is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "load-balancer",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service allows centralized firewall policy management across accounts? (15)",
+      "options": [
+        "Firewall Manager",
+        "Shield",
+        "IAM",
+        "CloudFormation"
+      ],
+      "answer": "Firewall Manager",
+      "explanation": "Firewall Manager is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "routing",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service enables centralized cross-account VPC connectivity at scale? (16)",
+      "options": [
+        "Transit Gateway",
+        "Direct Connect",
+        "Route 53",
+        "CloudFront"
+      ],
+      "answer": "Transit Gateway",
+      "explanation": "Transit Gateway is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS routing policy supports latency-based DNS resolution? (17)",
+      "options": [
+        "Latency Routing",
+        "Failover Routing",
+        "Weighted Routing",
+        "Simple Routing"
+      ],
+      "answer": "Latency Routing",
+      "explanation": "Latency Routing is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "vpn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports TLS termination at edge locations? (18)",
+      "options": [
+        "CloudFront",
+        "Transit Gateway",
+        "NAT Gateway",
+        "VPC Peering"
+      ],
+      "answer": "CloudFront",
+      "explanation": "CloudFront is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "hybrid-network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS networking feature enables inspection of packet-level traffic? (19)",
+      "options": [
+        "Traffic Mirroring",
+        "CloudWatch",
+        "CloudTrail",
+        "Inspector"
+      ],
+      "answer": "Traffic Mirroring",
+      "explanation": "Traffic Mirroring is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "firewall",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service allows centralized firewall policy management across accounts? (20)",
+      "options": [
+        "Firewall Manager",
+        "Shield",
+        "IAM",
+        "CloudFormation"
+      ],
+      "answer": "Firewall Manager",
+      "explanation": "Firewall Manager is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "peering",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service enables centralized cross-account VPC connectivity at scale? (21)",
+      "options": [
+        "Transit Gateway",
+        "Direct Connect",
+        "Route 53",
+        "CloudFront"
+      ],
+      "answer": "Transit Gateway",
+      "explanation": "Transit Gateway is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS routing policy supports latency-based DNS resolution? (22)",
+      "options": [
+        "Latency Routing",
+        "Failover Routing",
+        "Weighted Routing",
+        "Simple Routing"
+      ],
+      "answer": "Latency Routing",
+      "explanation": "Latency Routing is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "dns",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports TLS termination at edge locations? (23)",
+      "options": [
+        "CloudFront",
+        "Transit Gateway",
+        "NAT Gateway",
+        "VPC Peering"
+      ],
+      "answer": "CloudFront",
+      "explanation": "CloudFront is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS networking feature enables inspection of packet-level traffic? (24)",
+      "options": [
+        "Traffic Mirroring",
+        "CloudWatch",
+        "CloudTrail",
+        "Inspector"
+      ],
+      "answer": "Traffic Mirroring",
+      "explanation": "Traffic Mirroring is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "load-balancer",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service allows centralized firewall policy management across accounts? (25)",
+      "options": [
+        "Firewall Manager",
+        "Shield",
+        "IAM",
+        "CloudFormation"
+      ],
+      "answer": "Firewall Manager",
+      "explanation": "Firewall Manager is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "routing",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service enables centralized cross-account VPC connectivity at scale? (26)",
+      "options": [
+        "Transit Gateway",
+        "Direct Connect",
+        "Route 53",
+        "CloudFront"
+      ],
+      "answer": "Transit Gateway",
+      "explanation": "Transit Gateway is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS routing policy supports latency-based DNS resolution? (27)",
+      "options": [
+        "Latency Routing",
+        "Failover Routing",
+        "Weighted Routing",
+        "Simple Routing"
+      ],
+      "answer": "Latency Routing",
+      "explanation": "Latency Routing is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "vpn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports TLS termination at edge locations? (28)",
+      "options": [
+        "CloudFront",
+        "Transit Gateway",
+        "NAT Gateway",
+        "VPC Peering"
+      ],
+      "answer": "CloudFront",
+      "explanation": "CloudFront is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "hybrid-network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS networking feature enables inspection of packet-level traffic? (29)",
+      "options": [
+        "Traffic Mirroring",
+        "CloudWatch",
+        "CloudTrail",
+        "Inspector"
+      ],
+      "answer": "Traffic Mirroring",
+      "explanation": "Traffic Mirroring is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "firewall",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service allows centralized firewall policy management across accounts? (30)",
+      "options": [
+        "Firewall Manager",
+        "Shield",
+        "IAM",
+        "CloudFormation"
+      ],
+      "answer": "Firewall Manager",
+      "explanation": "Firewall Manager is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "peering",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service enables centralized cross-account VPC connectivity at scale? (31)",
+      "options": [
+        "Transit Gateway",
+        "Direct Connect",
+        "Route 53",
+        "CloudFront"
+      ],
+      "answer": "Transit Gateway",
+      "explanation": "Transit Gateway is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS routing policy supports latency-based DNS resolution? (32)",
+      "options": [
+        "Latency Routing",
+        "Failover Routing",
+        "Weighted Routing",
+        "Simple Routing"
+      ],
+      "answer": "Latency Routing",
+      "explanation": "Latency Routing is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "dns",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports TLS termination at edge locations? (33)",
+      "options": [
+        "CloudFront",
+        "Transit Gateway",
+        "NAT Gateway",
+        "VPC Peering"
+      ],
+      "answer": "CloudFront",
+      "explanation": "CloudFront is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS networking feature enables inspection of packet-level traffic? (34)",
+      "options": [
+        "Traffic Mirroring",
+        "CloudWatch",
+        "CloudTrail",
+        "Inspector"
+      ],
+      "answer": "Traffic Mirroring",
+      "explanation": "Traffic Mirroring is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "load-balancer",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service allows centralized firewall policy management across accounts? (35)",
+      "options": [
+        "Firewall Manager",
+        "Shield",
+        "IAM",
+        "CloudFormation"
+      ],
+      "answer": "Firewall Manager",
+      "explanation": "Firewall Manager is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "routing",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service enables centralized cross-account VPC connectivity at scale? (36)",
+      "options": [
+        "Transit Gateway",
+        "Direct Connect",
+        "Route 53",
+        "CloudFront"
+      ],
+      "answer": "Transit Gateway",
+      "explanation": "Transit Gateway is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS routing policy supports latency-based DNS resolution? (37)",
+      "options": [
+        "Latency Routing",
+        "Failover Routing",
+        "Weighted Routing",
+        "Simple Routing"
+      ],
+      "answer": "Latency Routing",
+      "explanation": "Latency Routing is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "vpn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports TLS termination at edge locations? (38)",
+      "options": [
+        "CloudFront",
+        "Transit Gateway",
+        "NAT Gateway",
+        "VPC Peering"
+      ],
+      "answer": "CloudFront",
+      "explanation": "CloudFront is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "hybrid-network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS networking feature enables inspection of packet-level traffic? (39)",
+      "options": [
+        "Traffic Mirroring",
+        "CloudWatch",
+        "CloudTrail",
+        "Inspector"
+      ],
+      "answer": "Traffic Mirroring",
+      "explanation": "Traffic Mirroring is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "firewall",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service allows centralized firewall policy management across accounts? (40)",
+      "options": [
+        "Firewall Manager",
+        "Shield",
+        "IAM",
+        "CloudFormation"
+      ],
+      "answer": "Firewall Manager",
+      "explanation": "Firewall Manager is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "peering",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service enables centralized cross-account VPC connectivity at scale? (41)",
+      "options": [
+        "Transit Gateway",
+        "Direct Connect",
+        "Route 53",
+        "CloudFront"
+      ],
+      "answer": "Transit Gateway",
+      "explanation": "Transit Gateway is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS routing policy supports latency-based DNS resolution? (42)",
+      "options": [
+        "Latency Routing",
+        "Failover Routing",
+        "Weighted Routing",
+        "Simple Routing"
+      ],
+      "answer": "Latency Routing",
+      "explanation": "Latency Routing is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "dns",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports TLS termination at edge locations? (43)",
+      "options": [
+        "CloudFront",
+        "Transit Gateway",
+        "NAT Gateway",
+        "VPC Peering"
+      ],
+      "answer": "CloudFront",
+      "explanation": "CloudFront is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS networking feature enables inspection of packet-level traffic? (44)",
+      "options": [
+        "Traffic Mirroring",
+        "CloudWatch",
+        "CloudTrail",
+        "Inspector"
+      ],
+      "answer": "Traffic Mirroring",
+      "explanation": "Traffic Mirroring is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "load-balancer",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service allows centralized firewall policy management across accounts? (45)",
+      "options": [
+        "Firewall Manager",
+        "Shield",
+        "IAM",
+        "CloudFormation"
+      ],
+      "answer": "Firewall Manager",
+      "explanation": "Firewall Manager is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "routing",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service enables centralized cross-account VPC connectivity at scale? (46)",
+      "options": [
+        "Transit Gateway",
+        "Direct Connect",
+        "Route 53",
+        "CloudFront"
+      ],
+      "answer": "Transit Gateway",
+      "explanation": "Transit Gateway is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS routing policy supports latency-based DNS resolution? (47)",
+      "options": [
+        "Latency Routing",
+        "Failover Routing",
+        "Weighted Routing",
+        "Simple Routing"
+      ],
+      "answer": "Latency Routing",
+      "explanation": "Latency Routing is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "vpn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports TLS termination at edge locations? (48)",
+      "options": [
+        "CloudFront",
+        "Transit Gateway",
+        "NAT Gateway",
+        "VPC Peering"
+      ],
+      "answer": "CloudFront",
+      "explanation": "CloudFront is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "hybrid-network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS networking feature enables inspection of packet-level traffic? (49)",
+      "options": [
+        "Traffic Mirroring",
+        "CloudWatch",
+        "CloudTrail",
+        "Inspector"
+      ],
+      "answer": "Traffic Mirroring",
+      "explanation": "Traffic Mirroring is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "firewall",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service allows centralized firewall policy management across accounts? (50)",
+      "options": [
+        "Firewall Manager",
+        "Shield",
+        "IAM",
+        "CloudFormation"
+      ],
+      "answer": "Firewall Manager",
+      "explanation": "Firewall Manager is an advanced networking or CDN capability in AWS.",
+      "difficulty": "hard",
+      "subcategory": "peering",
+      "category": "aws"
+    }
+  ]

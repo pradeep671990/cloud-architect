@@ -1,1 +1,702 @@
-[]
+[
+    {
+      "question": "Which Azure service provides global anycast routing? (1)",
+      "options": [
+        "Azure Front Door",
+        "Azure VM",
+        "Azure Files",
+        "Azure SQL"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature enables private connectivity to PaaS services? (2)",
+      "options": [
+        "Private Endpoint",
+        "NSG",
+        "Azure CDN",
+        "Bastion"
+      ],
+      "answer": "Private Endpoint",
+      "explanation": "Private Endpoint is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "dns",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service manages outbound internet traffic securely? (3)",
+      "options": [
+        "Azure NAT Gateway",
+        "Azure Backup",
+        "Azure Arc",
+        "Azure DNS"
+      ],
+      "answer": "Azure NAT Gateway",
+      "explanation": "Azure NAT Gateway is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure component filters traffic at subnet level? (4)",
+      "options": [
+        "NSG",
+        "Azure Firewall",
+        "Azure Front Door",
+        "Traffic Manager"
+      ],
+      "answer": "NSG",
+      "explanation": "NSG is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "load-balancer",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides DNS-based traffic distribution? (5)",
+      "options": [
+        "Traffic Manager",
+        "Azure VM",
+        "Azure Files",
+        "Azure DevOps"
+      ],
+      "answer": "Traffic Manager",
+      "explanation": "Traffic Manager is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "routing",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides global anycast routing? (6)",
+      "options": [
+        "Azure Front Door",
+        "Azure VM",
+        "Azure Files",
+        "Azure SQL"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature enables private connectivity to PaaS services? (7)",
+      "options": [
+        "Private Endpoint",
+        "NSG",
+        "Azure CDN",
+        "Bastion"
+      ],
+      "answer": "Private Endpoint",
+      "explanation": "Private Endpoint is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "vpn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service manages outbound internet traffic securely? (8)",
+      "options": [
+        "Azure NAT Gateway",
+        "Azure Backup",
+        "Azure Arc",
+        "Azure DNS"
+      ],
+      "answer": "Azure NAT Gateway",
+      "explanation": "Azure NAT Gateway is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "hybrid-network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure component filters traffic at subnet level? (9)",
+      "options": [
+        "NSG",
+        "Azure Firewall",
+        "Azure Front Door",
+        "Traffic Manager"
+      ],
+      "answer": "NSG",
+      "explanation": "NSG is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "firewall",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides DNS-based traffic distribution? (10)",
+      "options": [
+        "Traffic Manager",
+        "Azure VM",
+        "Azure Files",
+        "Azure DevOps"
+      ],
+      "answer": "Traffic Manager",
+      "explanation": "Traffic Manager is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "peering",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides global anycast routing? (11)",
+      "options": [
+        "Azure Front Door",
+        "Azure VM",
+        "Azure Files",
+        "Azure SQL"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature enables private connectivity to PaaS services? (12)",
+      "options": [
+        "Private Endpoint",
+        "NSG",
+        "Azure CDN",
+        "Bastion"
+      ],
+      "answer": "Private Endpoint",
+      "explanation": "Private Endpoint is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "dns",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service manages outbound internet traffic securely? (13)",
+      "options": [
+        "Azure NAT Gateway",
+        "Azure Backup",
+        "Azure Arc",
+        "Azure DNS"
+      ],
+      "answer": "Azure NAT Gateway",
+      "explanation": "Azure NAT Gateway is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure component filters traffic at subnet level? (14)",
+      "options": [
+        "NSG",
+        "Azure Firewall",
+        "Azure Front Door",
+        "Traffic Manager"
+      ],
+      "answer": "NSG",
+      "explanation": "NSG is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "load-balancer",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides DNS-based traffic distribution? (15)",
+      "options": [
+        "Traffic Manager",
+        "Azure VM",
+        "Azure Files",
+        "Azure DevOps"
+      ],
+      "answer": "Traffic Manager",
+      "explanation": "Traffic Manager is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "routing",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides global anycast routing? (16)",
+      "options": [
+        "Azure Front Door",
+        "Azure VM",
+        "Azure Files",
+        "Azure SQL"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature enables private connectivity to PaaS services? (17)",
+      "options": [
+        "Private Endpoint",
+        "NSG",
+        "Azure CDN",
+        "Bastion"
+      ],
+      "answer": "Private Endpoint",
+      "explanation": "Private Endpoint is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "vpn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service manages outbound internet traffic securely? (18)",
+      "options": [
+        "Azure NAT Gateway",
+        "Azure Backup",
+        "Azure Arc",
+        "Azure DNS"
+      ],
+      "answer": "Azure NAT Gateway",
+      "explanation": "Azure NAT Gateway is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "hybrid-network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure component filters traffic at subnet level? (19)",
+      "options": [
+        "NSG",
+        "Azure Firewall",
+        "Azure Front Door",
+        "Traffic Manager"
+      ],
+      "answer": "NSG",
+      "explanation": "NSG is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "firewall",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides DNS-based traffic distribution? (20)",
+      "options": [
+        "Traffic Manager",
+        "Azure VM",
+        "Azure Files",
+        "Azure DevOps"
+      ],
+      "answer": "Traffic Manager",
+      "explanation": "Traffic Manager is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "peering",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides global anycast routing? (21)",
+      "options": [
+        "Azure Front Door",
+        "Azure VM",
+        "Azure Files",
+        "Azure SQL"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature enables private connectivity to PaaS services? (22)",
+      "options": [
+        "Private Endpoint",
+        "NSG",
+        "Azure CDN",
+        "Bastion"
+      ],
+      "answer": "Private Endpoint",
+      "explanation": "Private Endpoint is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "dns",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service manages outbound internet traffic securely? (23)",
+      "options": [
+        "Azure NAT Gateway",
+        "Azure Backup",
+        "Azure Arc",
+        "Azure DNS"
+      ],
+      "answer": "Azure NAT Gateway",
+      "explanation": "Azure NAT Gateway is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure component filters traffic at subnet level? (24)",
+      "options": [
+        "NSG",
+        "Azure Firewall",
+        "Azure Front Door",
+        "Traffic Manager"
+      ],
+      "answer": "NSG",
+      "explanation": "NSG is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "load-balancer",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides DNS-based traffic distribution? (25)",
+      "options": [
+        "Traffic Manager",
+        "Azure VM",
+        "Azure Files",
+        "Azure DevOps"
+      ],
+      "answer": "Traffic Manager",
+      "explanation": "Traffic Manager is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "routing",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides global anycast routing? (26)",
+      "options": [
+        "Azure Front Door",
+        "Azure VM",
+        "Azure Files",
+        "Azure SQL"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature enables private connectivity to PaaS services? (27)",
+      "options": [
+        "Private Endpoint",
+        "NSG",
+        "Azure CDN",
+        "Bastion"
+      ],
+      "answer": "Private Endpoint",
+      "explanation": "Private Endpoint is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "vpn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service manages outbound internet traffic securely? (28)",
+      "options": [
+        "Azure NAT Gateway",
+        "Azure Backup",
+        "Azure Arc",
+        "Azure DNS"
+      ],
+      "answer": "Azure NAT Gateway",
+      "explanation": "Azure NAT Gateway is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "hybrid-network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure component filters traffic at subnet level? (29)",
+      "options": [
+        "NSG",
+        "Azure Firewall",
+        "Azure Front Door",
+        "Traffic Manager"
+      ],
+      "answer": "NSG",
+      "explanation": "NSG is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "firewall",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides DNS-based traffic distribution? (30)",
+      "options": [
+        "Traffic Manager",
+        "Azure VM",
+        "Azure Files",
+        "Azure DevOps"
+      ],
+      "answer": "Traffic Manager",
+      "explanation": "Traffic Manager is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "peering",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides global anycast routing? (31)",
+      "options": [
+        "Azure Front Door",
+        "Azure VM",
+        "Azure Files",
+        "Azure SQL"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature enables private connectivity to PaaS services? (32)",
+      "options": [
+        "Private Endpoint",
+        "NSG",
+        "Azure CDN",
+        "Bastion"
+      ],
+      "answer": "Private Endpoint",
+      "explanation": "Private Endpoint is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "dns",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service manages outbound internet traffic securely? (33)",
+      "options": [
+        "Azure NAT Gateway",
+        "Azure Backup",
+        "Azure Arc",
+        "Azure DNS"
+      ],
+      "answer": "Azure NAT Gateway",
+      "explanation": "Azure NAT Gateway is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure component filters traffic at subnet level? (34)",
+      "options": [
+        "NSG",
+        "Azure Firewall",
+        "Azure Front Door",
+        "Traffic Manager"
+      ],
+      "answer": "NSG",
+      "explanation": "NSG is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "load-balancer",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides DNS-based traffic distribution? (35)",
+      "options": [
+        "Traffic Manager",
+        "Azure VM",
+        "Azure Files",
+        "Azure DevOps"
+      ],
+      "answer": "Traffic Manager",
+      "explanation": "Traffic Manager is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "routing",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides global anycast routing? (36)",
+      "options": [
+        "Azure Front Door",
+        "Azure VM",
+        "Azure Files",
+        "Azure SQL"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature enables private connectivity to PaaS services? (37)",
+      "options": [
+        "Private Endpoint",
+        "NSG",
+        "Azure CDN",
+        "Bastion"
+      ],
+      "answer": "Private Endpoint",
+      "explanation": "Private Endpoint is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "vpn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service manages outbound internet traffic securely? (38)",
+      "options": [
+        "Azure NAT Gateway",
+        "Azure Backup",
+        "Azure Arc",
+        "Azure DNS"
+      ],
+      "answer": "Azure NAT Gateway",
+      "explanation": "Azure NAT Gateway is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "hybrid-network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure component filters traffic at subnet level? (39)",
+      "options": [
+        "NSG",
+        "Azure Firewall",
+        "Azure Front Door",
+        "Traffic Manager"
+      ],
+      "answer": "NSG",
+      "explanation": "NSG is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "firewall",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides DNS-based traffic distribution? (40)",
+      "options": [
+        "Traffic Manager",
+        "Azure VM",
+        "Azure Files",
+        "Azure DevOps"
+      ],
+      "answer": "Traffic Manager",
+      "explanation": "Traffic Manager is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "peering",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides global anycast routing? (41)",
+      "options": [
+        "Azure Front Door",
+        "Azure VM",
+        "Azure Files",
+        "Azure SQL"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature enables private connectivity to PaaS services? (42)",
+      "options": [
+        "Private Endpoint",
+        "NSG",
+        "Azure CDN",
+        "Bastion"
+      ],
+      "answer": "Private Endpoint",
+      "explanation": "Private Endpoint is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "dns",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service manages outbound internet traffic securely? (43)",
+      "options": [
+        "Azure NAT Gateway",
+        "Azure Backup",
+        "Azure Arc",
+        "Azure DNS"
+      ],
+      "answer": "Azure NAT Gateway",
+      "explanation": "Azure NAT Gateway is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure component filters traffic at subnet level? (44)",
+      "options": [
+        "NSG",
+        "Azure Firewall",
+        "Azure Front Door",
+        "Traffic Manager"
+      ],
+      "answer": "NSG",
+      "explanation": "NSG is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "load-balancer",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides DNS-based traffic distribution? (45)",
+      "options": [
+        "Traffic Manager",
+        "Azure VM",
+        "Azure Files",
+        "Azure DevOps"
+      ],
+      "answer": "Traffic Manager",
+      "explanation": "Traffic Manager is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "routing",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides global anycast routing? (46)",
+      "options": [
+        "Azure Front Door",
+        "Azure VM",
+        "Azure Files",
+        "Azure SQL"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature enables private connectivity to PaaS services? (47)",
+      "options": [
+        "Private Endpoint",
+        "NSG",
+        "Azure CDN",
+        "Bastion"
+      ],
+      "answer": "Private Endpoint",
+      "explanation": "Private Endpoint is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "vpn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service manages outbound internet traffic securely? (48)",
+      "options": [
+        "Azure NAT Gateway",
+        "Azure Backup",
+        "Azure Arc",
+        "Azure DNS"
+      ],
+      "answer": "Azure NAT Gateway",
+      "explanation": "Azure NAT Gateway is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "hybrid-network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure component filters traffic at subnet level? (49)",
+      "options": [
+        "NSG",
+        "Azure Firewall",
+        "Azure Front Door",
+        "Traffic Manager"
+      ],
+      "answer": "NSG",
+      "explanation": "NSG is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "firewall",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides DNS-based traffic distribution? (50)",
+      "options": [
+        "Traffic Manager",
+        "Azure VM",
+        "Azure Files",
+        "Azure DevOps"
+      ],
+      "answer": "Traffic Manager",
+      "explanation": "Traffic Manager is commonly used in Azure networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "peering",
+      "category": "azure"
+    }
+  ]

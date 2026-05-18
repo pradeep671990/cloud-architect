@@ -1,1 +1,702 @@
-[]
+[
+    {
+      "question": "Which AWS service provides CDN functionality?",
+      "options": [
+        "CloudFront",
+        "EC2",
+        "RDS",
+        "Lambda"
+      ],
+      "answer": "CloudFront",
+      "explanation": "Amazon CloudFront is AWS's content delivery network service.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used for DNS management?",
+      "options": [
+        "Route 53",
+        "CloudTrail",
+        "IAM",
+        "CloudWatch"
+      ],
+      "answer": "Route 53",
+      "explanation": "Amazon Route 53 is AWS's managed DNS service.",
+      "difficulty": "easy",
+      "subcategory": "dns",
+      "category": "aws"
+    },
+    {
+      "question": "What does VPC stand for in AWS?",
+      "options": [
+        "Virtual Private Cloud",
+        "Virtual Public Cloud",
+        "Verified Private Connection",
+        "Variable Private Cloud"
+      ],
+      "answer": "Virtual Private Cloud",
+      "explanation": "Amazon VPC provides isolated virtual networking in AWS.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service distributes traffic across multiple targets?",
+      "options": [
+        "Elastic Load Balancing",
+        "S3",
+        "CloudTrail",
+        "IAM"
+      ],
+      "answer": "Elastic Load Balancing",
+      "explanation": "Elastic Load Balancing distributes incoming traffic across multiple targets.",
+      "difficulty": "easy",
+      "subcategory": "load-balancer",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS load balancer works mainly at Layer 7 for HTTP and HTTPS?",
+      "options": [
+        "Application Load Balancer",
+        "Network Load Balancer",
+        "Gateway Load Balancer",
+        "NAT Gateway"
+      ],
+      "answer": "Application Load Balancer",
+      "explanation": "Application Load Balancer works at Layer 7 for HTTP and HTTPS traffic.",
+      "difficulty": "easy",
+      "subcategory": "load-balancer",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS load balancer is optimized for TCP and UDP traffic?",
+      "options": [
+        "Network Load Balancer",
+        "Application Load Balancer",
+        "Classic Load Balancer",
+        "CloudFront"
+      ],
+      "answer": "Network Load Balancer",
+      "explanation": "Network Load Balancer is optimized for TCP, UDP, and TLS traffic.",
+      "difficulty": "easy",
+      "subcategory": "load-balancer",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides DDoS protection?",
+      "options": [
+        "AWS Shield",
+        "AWS Backup",
+        "Inspector",
+        "CloudWatch"
+      ],
+      "answer": "AWS Shield",
+      "explanation": "AWS Shield helps protect AWS applications from DDoS attacks.",
+      "difficulty": "easy",
+      "subcategory": "security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service protects web applications using rules?",
+      "options": [
+        "AWS WAF",
+        "CloudTrail",
+        "Config",
+        "Trusted Advisor"
+      ],
+      "answer": "AWS WAF",
+      "explanation": "AWS WAF protects web applications by filtering web requests.",
+      "difficulty": "easy",
+      "subcategory": "security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides dedicated private connectivity to AWS?",
+      "options": [
+        "Direct Connect",
+        "CloudFront",
+        "Route 53",
+        "Lambda"
+      ],
+      "answer": "Direct Connect",
+      "explanation": "AWS Direct Connect provides dedicated private connectivity between on-premises networks and AWS.",
+      "difficulty": "easy",
+      "subcategory": "hybrid-network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides encrypted connectivity over the internet?",
+      "options": [
+        "AWS VPN",
+        "CloudFront",
+        "IAM",
+        "S3"
+      ],
+      "answer": "AWS VPN",
+      "explanation": "AWS VPN provides encrypted VPN connectivity to AWS.",
+      "difficulty": "easy",
+      "subcategory": "vpn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS component acts as a firewall for EC2 instances?",
+      "options": [
+        "Security Group",
+        "Subnet",
+        "Route Table",
+        "NACL"
+      ],
+      "answer": "Security Group",
+      "explanation": "Security Groups control inbound and outbound traffic for instances.",
+      "difficulty": "easy",
+      "subcategory": "security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS component controls traffic at the subnet level?",
+      "options": [
+        "Network ACL",
+        "Security Group",
+        "IAM Role",
+        "Route 53"
+      ],
+      "answer": "Network ACL",
+      "explanation": "Network ACLs control inbound and outbound traffic at the subnet level.",
+      "difficulty": "easy",
+      "subcategory": "security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service connects multiple VPCs and on-premises networks centrally?",
+      "options": [
+        "Transit Gateway",
+        "CloudFront",
+        "CloudWatch",
+        "Inspector"
+      ],
+      "answer": "Transit Gateway",
+      "explanation": "AWS Transit Gateway acts as a central hub for network connectivity.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS feature enables private communication between two VPCs?",
+      "options": [
+        "VPC Peering",
+        "CloudFormation",
+        "Lambda",
+        "CloudTrail"
+      ],
+      "answer": "VPC Peering",
+      "explanation": "VPC Peering allows private connectivity between two VPCs.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS feature captures IP traffic information for a VPC?",
+      "options": [
+        "VPC Flow Logs",
+        "CloudTrail",
+        "CloudWatch Alarms",
+        "Inspector"
+      ],
+      "answer": "VPC Flow Logs",
+      "explanation": "VPC Flow Logs capture information about IP traffic in a VPC.",
+      "difficulty": "easy",
+      "subcategory": "monitoring",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service improves global application availability and performance?",
+      "options": [
+        "Global Accelerator",
+        "CloudTrail",
+        "S3",
+        "Inspector"
+      ],
+      "answer": "Global Accelerator",
+      "explanation": "AWS Global Accelerator routes traffic through the AWS global network.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS gateway connects a VPC to the internet?",
+      "options": [
+        "Internet Gateway",
+        "VPN Gateway",
+        "Transit Gateway",
+        "NAT Gateway"
+      ],
+      "answer": "Internet Gateway",
+      "explanation": "An Internet Gateway enables internet connectivity for resources in a VPC.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service allows private subnet resources to access the internet outbound?",
+      "options": [
+        "NAT Gateway",
+        "CloudTrail",
+        "IAM",
+        "SQS"
+      ],
+      "answer": "NAT Gateway",
+      "explanation": "NAT Gateway allows resources in private subnets to initiate outbound internet connections.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS feature provides private access to supported AWS services from a VPC?",
+      "options": [
+        "VPC Endpoint",
+        "CloudWatch",
+        "SNS",
+        "CloudFormation"
+      ],
+      "answer": "VPC Endpoint",
+      "explanation": "VPC Endpoints provide private connectivity to supported AWS services.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides managed network firewall capabilities?",
+      "options": [
+        "AWS Network Firewall",
+        "CloudWatch",
+        "CloudTrail",
+        "S3"
+      ],
+      "answer": "AWS Network Firewall",
+      "explanation": "AWS Network Firewall provides managed firewall protection for VPC networks.",
+      "difficulty": "easy",
+      "subcategory": "security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS DNS service supports failover routing?",
+      "options": [
+        "Route 53",
+        "CloudFront",
+        "ELB",
+        "S3"
+      ],
+      "answer": "Route 53",
+      "explanation": "Route 53 supports DNS routing policies including failover routing.",
+      "difficulty": "easy",
+      "subcategory": "dns",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service caches content at edge locations?",
+      "options": [
+        "CloudFront",
+        "CloudWatch",
+        "IAM",
+        "SNS"
+      ],
+      "answer": "CloudFront",
+      "explanation": "CloudFront caches content at global edge locations.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS networking component contains subnets?",
+      "options": [
+        "VPC",
+        "Route Table",
+        "Security Group",
+        "NACL"
+      ],
+      "answer": "VPC",
+      "explanation": "Subnets are created inside an Amazon VPC.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS component defines routing rules for subnets?",
+      "options": [
+        "Route Table",
+        "IAM",
+        "CloudTrail",
+        "S3"
+      ],
+      "answer": "Route Table",
+      "explanation": "Route Tables define where network traffic is directed.",
+      "difficulty": "easy",
+      "subcategory": "routing",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS feature enables IPv6 addressing in a VPC?",
+      "options": [
+        "IPv6 CIDR Block",
+        "Elastic IP",
+        "CloudFront",
+        "NACL"
+      ],
+      "answer": "IPv6 CIDR Block",
+      "explanation": "An IPv6 CIDR block enables IPv6 addresses in a VPC.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service can route traffic based on domain names?",
+      "options": [
+        "Route 53",
+        "EC2",
+        "EBS",
+        "RDS"
+      ],
+      "answer": "Route 53",
+      "explanation": "Route 53 routes DNS queries based on domain names.",
+      "difficulty": "easy",
+      "subcategory": "dns",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS load balancer is commonly used for HTTP path-based routing?",
+      "options": [
+        "Application Load Balancer",
+        "Network Load Balancer",
+        "Gateway Load Balancer",
+        "NAT Gateway"
+      ],
+      "answer": "Application Load Balancer",
+      "explanation": "Application Load Balancer supports path-based routing.",
+      "difficulty": "easy",
+      "subcategory": "load-balancer",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service can be used in front of S3 static websites for CDN delivery?",
+      "options": [
+        "CloudFront",
+        "RDS",
+        "EFS",
+        "SQS"
+      ],
+      "answer": "CloudFront",
+      "explanation": "CloudFront can cache and deliver static website content globally.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service helps protect CloudFront distributions from web attacks?",
+      "options": [
+        "AWS WAF",
+        "AWS Backup",
+        "AWS Glue",
+        "AWS Config"
+      ],
+      "answer": "AWS WAF",
+      "explanation": "AWS WAF can be associated with CloudFront to filter web requests.",
+      "difficulty": "easy",
+      "subcategory": "security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS resource gives a public IPv4 address that can be remapped?",
+      "options": [
+        "Elastic IP",
+        "Private IP",
+        "Subnet ID",
+        "Route Table"
+      ],
+      "answer": "Elastic IP",
+      "explanation": "An Elastic IP is a static public IPv4 address for AWS resources.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS gateway is used with Site-to-Site VPN on the AWS side?",
+      "options": [
+        "Virtual Private Gateway",
+        "Internet Gateway",
+        "NAT Gateway",
+        "Storage Gateway"
+      ],
+      "answer": "Virtual Private Gateway",
+      "explanation": "A Virtual Private Gateway can be used as the AWS-side VPN endpoint.",
+      "difficulty": "easy",
+      "subcategory": "vpn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS resource represents the customer side of a VPN connection?",
+      "options": [
+        "Customer Gateway",
+        "Internet Gateway",
+        "NAT Gateway",
+        "Transit Gateway"
+      ],
+      "answer": "Customer Gateway",
+      "explanation": "Customer Gateway represents the customer-side VPN device or software.",
+      "difficulty": "easy",
+      "subcategory": "vpn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS feature is used to divide a VPC into smaller network segments?",
+      "options": [
+        "Subnet",
+        "IAM Group",
+        "S3 Bucket",
+        "CloudWatch Log Group"
+      ],
+      "answer": "Subnet",
+      "explanation": "Subnets divide a VPC into smaller network ranges.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS subnet type usually has a route to an Internet Gateway?",
+      "options": [
+        "Public Subnet",
+        "Private Subnet",
+        "Isolated Subnet",
+        "Database Subnet"
+      ],
+      "answer": "Public Subnet",
+      "explanation": "A public subnet usually has a route to an Internet Gateway.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS subnet type usually does not allow direct inbound internet access?",
+      "options": [
+        "Private Subnet",
+        "Public Subnet",
+        "Edge Subnet",
+        "Global Subnet"
+      ],
+      "answer": "Private Subnet",
+      "explanation": "Private subnets are commonly used for resources not directly exposed to the internet.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service can inspect and filter traffic entering a VPC?",
+      "options": [
+        "AWS Network Firewall",
+        "AWS Budgets",
+        "AWS Backup",
+        "AWS Glue"
+      ],
+      "answer": "AWS Network Firewall",
+      "explanation": "AWS Network Firewall can inspect and filter VPC traffic.",
+      "difficulty": "easy",
+      "subcategory": "security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides health checks for DNS routing?",
+      "options": [
+        "Route 53",
+        "CloudFront",
+        "S3",
+        "EBS"
+      ],
+      "answer": "Route 53",
+      "explanation": "Route 53 health checks help route traffic based on endpoint health.",
+      "difficulty": "easy",
+      "subcategory": "dns",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides edge locations for low-latency delivery?",
+      "options": [
+        "CloudFront",
+        "EC2 Auto Scaling",
+        "RDS",
+        "EBS"
+      ],
+      "answer": "CloudFront",
+      "explanation": "CloudFront uses edge locations to deliver content closer to users.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service can terminate HTTPS for CDN traffic?",
+      "options": [
+        "CloudFront",
+        "SQS",
+        "DynamoDB",
+        "CloudTrail"
+      ],
+      "answer": "CloudFront",
+      "explanation": "CloudFront supports HTTPS for secure content delivery.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is commonly used to expose applications using DNS names?",
+      "options": [
+        "Route 53",
+        "KMS",
+        "Secrets Manager",
+        "ECR"
+      ],
+      "answer": "Route 53",
+      "explanation": "Route 53 maps domain names to application endpoints.",
+      "difficulty": "easy",
+      "subcategory": "dns",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service can distribute traffic to EC2 instances in multiple Availability Zones?",
+      "options": [
+        "Elastic Load Balancing",
+        "CloudTrail",
+        "S3 Glacier",
+        "IAM"
+      ],
+      "answer": "Elastic Load Balancing",
+      "explanation": "Elastic Load Balancing can distribute traffic across Availability Zones.",
+      "difficulty": "easy",
+      "subcategory": "load-balancer",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides gateway-style load balancing for virtual appliances?",
+      "options": [
+        "Gateway Load Balancer",
+        "Application Load Balancer",
+        "Classic Load Balancer",
+        "NAT Gateway"
+      ],
+      "answer": "Gateway Load Balancer",
+      "explanation": "Gateway Load Balancer helps deploy and scale virtual network appliances.",
+      "difficulty": "easy",
+      "subcategory": "load-balancer",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS feature lets you assign inbound and outbound rules to instances?",
+      "options": [
+        "Security Group",
+        "Route Table",
+        "Subnet",
+        "NAT Gateway"
+      ],
+      "answer": "Security Group",
+      "explanation": "Security Groups use rules to allow inbound and outbound traffic.",
+      "difficulty": "easy",
+      "subcategory": "security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS feature can explicitly allow and deny subnet traffic?",
+      "options": [
+        "Network ACL",
+        "Security Group",
+        "Elastic IP",
+        "CloudFront"
+      ],
+      "answer": "Network ACL",
+      "explanation": "Network ACLs support allow and deny rules at subnet level.",
+      "difficulty": "easy",
+      "subcategory": "security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service can connect branch offices to AWS using VPN?",
+      "options": [
+        "AWS Site-to-Site VPN",
+        "CloudFront",
+        "S3",
+        "Lambda"
+      ],
+      "answer": "AWS Site-to-Site VPN",
+      "explanation": "AWS Site-to-Site VPN connects on-premises networks or branch offices to AWS.",
+      "difficulty": "easy",
+      "subcategory": "vpn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports content delivery for videos, images, and static files?",
+      "options": [
+        "CloudFront",
+        "CloudTrail",
+        "IAM",
+        "RDS"
+      ],
+      "answer": "CloudFront",
+      "explanation": "CloudFront is used to deliver static and dynamic content globally.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS networking feature is used to route traffic to a NAT Gateway?",
+      "options": [
+        "Route Table",
+        "Security Group",
+        "CloudTrail",
+        "IAM Policy"
+      ],
+      "answer": "Route Table",
+      "explanation": "Route Tables are configured to send outbound traffic to a NAT Gateway.",
+      "difficulty": "easy",
+      "subcategory": "routing",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service can route users to the nearest healthy endpoint using DNS?",
+      "options": [
+        "Route 53",
+        "EBS",
+        "EFS",
+        "CloudWatch"
+      ],
+      "answer": "Route 53",
+      "explanation": "Route 53 can use routing policies to send users to healthy endpoints.",
+      "difficulty": "easy",
+      "subcategory": "dns",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used to centrally manage CloudFront public certificates?",
+      "options": [
+        "AWS Certificate Manager",
+        "AWS Backup",
+        "AWS Config",
+        "AWS Glue"
+      ],
+      "answer": "AWS Certificate Manager",
+      "explanation": "AWS Certificate Manager provides SSL/TLS certificates for services like CloudFront.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS feature allows private communication without using public internet?",
+      "options": [
+        "PrivateLink",
+        "Elastic IP",
+        "CloudTrail",
+        "SNS"
+      ],
+      "answer": "PrivateLink",
+      "explanation": "AWS PrivateLink provides private connectivity between VPCs and supported services.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "aws"
+    }
+  ]

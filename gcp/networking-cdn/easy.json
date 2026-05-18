@@ -1,1 +1,702 @@
-[]
+[
+    {
+      "question": "Which GCP service provides CDN functionality?",
+      "options": [
+        "Cloud CDN",
+        "Cloud SQL",
+        "BigQuery",
+        "Cloud Run"
+      ],
+      "answer": "Cloud CDN",
+      "explanation": "Cloud CDN delivers content globally using Google's edge network.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service is used for DNS management?",
+      "options": [
+        "Cloud DNS",
+        "Cloud Armor",
+        "Cloud Build",
+        "Cloud SQL"
+      ],
+      "answer": "Cloud DNS",
+      "explanation": "Cloud DNS is Google Cloud's managed DNS service.",
+      "difficulty": "easy",
+      "subcategory": "dns",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the main virtual networking service in GCP?",
+      "options": [
+        "VPC",
+        "Cloud NAT",
+        "Cloud Armor",
+        "Cloud Router"
+      ],
+      "answer": "VPC",
+      "explanation": "Google Cloud VPC provides private networking.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service protects applications from DDoS and web attacks?",
+      "options": [
+        "Cloud Armor",
+        "Cloud Storage",
+        "Cloud SQL",
+        "Cloud Build"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor provides DDoS protection and WAF capabilities.",
+      "difficulty": "easy",
+      "subcategory": "security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service distributes traffic globally?",
+      "options": [
+        "Cloud Load Balancing",
+        "Cloud Functions",
+        "Pub/Sub",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Load Balancing",
+      "explanation": "Cloud Load Balancing distributes traffic across backends.",
+      "difficulty": "easy",
+      "subcategory": "load-balancer",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides outbound internet access for private instances?",
+      "options": [
+        "Cloud NAT",
+        "Cloud CDN",
+        "Cloud SQL",
+        "Cloud Build"
+      ],
+      "answer": "Cloud NAT",
+      "explanation": "Cloud NAT enables outbound internet access without external IPs.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides dedicated connectivity to Google Cloud?",
+      "options": [
+        "Cloud Interconnect",
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud DNS"
+      ],
+      "answer": "Cloud Interconnect",
+      "explanation": "Cloud Interconnect provides dedicated private connectivity.",
+      "difficulty": "easy",
+      "subcategory": "hybrid-network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides VPN connectivity?",
+      "options": [
+        "Cloud VPN",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud SQL"
+      ],
+      "answer": "Cloud VPN",
+      "explanation": "Cloud VPN provides encrypted connectivity to Google Cloud.",
+      "difficulty": "easy",
+      "subcategory": "vpn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service dynamically exchanges routes with on-premises networks?",
+      "options": [
+        "Cloud Router",
+        "Cloud NAT",
+        "Cloud CDN",
+        "Cloud Armor"
+      ],
+      "answer": "Cloud Router",
+      "explanation": "Cloud Router exchanges routes using BGP.",
+      "difficulty": "easy",
+      "subcategory": "routing",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature connects two VPC networks?",
+      "options": [
+        "VPC Network Peering",
+        "Cloud CDN",
+        "Cloud Storage",
+        "Cloud SQL"
+      ],
+      "answer": "VPC Network Peering",
+      "explanation": "VPC Network Peering connects VPC networks privately.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature allows private access to Google APIs from VMs?",
+      "options": [
+        "Private Google Access",
+        "External IP",
+        "Cloud CDN",
+        "Cloud DNS"
+      ],
+      "answer": "Private Google Access",
+      "explanation": "Private Google Access lets VMs without external IPs reach Google APIs.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service caches content close to users?",
+      "options": [
+        "Cloud CDN",
+        "Cloud Logging",
+        "Cloud SQL",
+        "Secret Manager"
+      ],
+      "answer": "Cloud CDN",
+      "explanation": "Cloud CDN caches content at edge locations.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service manages DNS zones and records?",
+      "options": [
+        "Cloud DNS",
+        "Cloud Build",
+        "Cloud Deploy",
+        "Cloud Trace"
+      ],
+      "answer": "Cloud DNS",
+      "explanation": "Cloud DNS manages DNS zones and records.",
+      "difficulty": "easy",
+      "subcategory": "dns",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides firewall policy protection for HTTP apps?",
+      "options": [
+        "Cloud Armor",
+        "Cloud Functions",
+        "Cloud Storage",
+        "Cloud SQL"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor protects HTTP and HTTPS workloads.",
+      "difficulty": "easy",
+      "subcategory": "security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP component controls allowed network traffic?",
+      "options": [
+        "Firewall Rules",
+        "Cloud Billing",
+        "Cloud Scheduler",
+        "Cloud Tasks"
+      ],
+      "answer": "Firewall Rules",
+      "explanation": "Firewall rules control traffic to and from resources.",
+      "difficulty": "easy",
+      "subcategory": "security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP resource divides a VPC into IP ranges?",
+      "options": [
+        "Subnet",
+        "Bucket",
+        "Dataset",
+        "Topic"
+      ],
+      "answer": "Subnet",
+      "explanation": "Subnets divide a VPC into IP address ranges.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP load balancer is used for HTTP and HTTPS traffic?",
+      "options": [
+        "HTTP(S) Load Balancer",
+        "Cloud NAT",
+        "Cloud Router",
+        "Cloud VPN"
+      ],
+      "answer": "HTTP(S) Load Balancer",
+      "explanation": "HTTP(S) Load Balancer handles web traffic.",
+      "difficulty": "easy",
+      "subcategory": "load-balancer",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP load balancer is used for TCP and UDP traffic?",
+      "options": [
+        "Network Load Balancer",
+        "Cloud CDN",
+        "Cloud SQL",
+        "Cloud DNS"
+      ],
+      "answer": "Network Load Balancer",
+      "explanation": "Network Load Balancer handles TCP and UDP traffic.",
+      "difficulty": "easy",
+      "subcategory": "load-balancer",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can be used with Cloud CDN as a backend?",
+      "options": [
+        "Cloud Load Balancing",
+        "Cloud Scheduler",
+        "Cloud Tasks",
+        "Cloud Composer"
+      ],
+      "answer": "Cloud Load Balancing",
+      "explanation": "Cloud CDN works with supported load balancing backends.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides logging for VPC network traffic?",
+      "options": [
+        "VPC Flow Logs",
+        "Cloud Build",
+        "Cloud Deploy",
+        "Cloud SQL"
+      ],
+      "answer": "VPC Flow Logs",
+      "explanation": "VPC Flow Logs record network flow information.",
+      "difficulty": "easy",
+      "subcategory": "monitoring",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides packet mirroring?",
+      "options": [
+        "Packet Mirroring",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Packet Mirroring",
+      "explanation": "Packet Mirroring copies network traffic for inspection.",
+      "difficulty": "easy",
+      "subcategory": "monitoring",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides private service connectivity?",
+      "options": [
+        "Private Service Connect",
+        "Cloud CDN",
+        "BigQuery",
+        "Pub/Sub"
+      ],
+      "answer": "Private Service Connect",
+      "explanation": "Private Service Connect enables private connectivity to services.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service helps secure public-facing apps with IP-based rules?",
+      "options": [
+        "Cloud Armor",
+        "Cloud NAT",
+        "Cloud Router",
+        "Cloud VPN"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor can allow or deny traffic based on IP rules.",
+      "difficulty": "easy",
+      "subcategory": "security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature allows custom routes in a VPC?",
+      "options": [
+        "Routes",
+        "Buckets",
+        "Topics",
+        "Datasets"
+      ],
+      "answer": "Routes",
+      "explanation": "Routes define where network traffic is directed.",
+      "difficulty": "easy",
+      "subcategory": "routing",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service routes traffic between VPC and on-premises networks using BGP?",
+      "options": [
+        "Cloud Router",
+        "Cloud DNS",
+        "Cloud CDN",
+        "Cloud Armor"
+      ],
+      "answer": "Cloud Router",
+      "explanation": "Cloud Router uses BGP for dynamic routing.",
+      "difficulty": "easy",
+      "subcategory": "routing",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP VPN option supports high availability?",
+      "options": [
+        "HA VPN",
+        "Classic VPN",
+        "Cloud NAT",
+        "Cloud CDN"
+      ],
+      "answer": "HA VPN",
+      "explanation": "HA VPN provides high-availability VPN connectivity.",
+      "difficulty": "easy",
+      "subcategory": "vpn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides CDN for static and dynamic web content?",
+      "options": [
+        "Cloud CDN",
+        "Cloud Build",
+        "Cloud SQL",
+        "Cloud Pub/Sub"
+      ],
+      "answer": "Cloud CDN",
+      "explanation": "Cloud CDN accelerates static and dynamic web content delivery.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can host DNS for a public domain?",
+      "options": [
+        "Cloud DNS",
+        "Cloud Logging",
+        "Cloud Run",
+        "Cloud Build"
+      ],
+      "answer": "Cloud DNS",
+      "explanation": "Cloud DNS can host public DNS zones.",
+      "difficulty": "easy",
+      "subcategory": "dns",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature is used to create private DNS zones?",
+      "options": [
+        "Cloud DNS Private Zone",
+        "Cloud NAT",
+        "Cloud CDN",
+        "Cloud Armor"
+      ],
+      "answer": "Cloud DNS Private Zone",
+      "explanation": "Private zones provide DNS resolution inside selected VPCs.",
+      "difficulty": "easy",
+      "subcategory": "dns",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can route users to applications using anycast IPs?",
+      "options": [
+        "Cloud Load Balancing",
+        "Cloud SQL",
+        "Cloud Storage",
+        "Cloud Tasks"
+      ],
+      "answer": "Cloud Load Balancing",
+      "explanation": "Cloud Load Balancing uses Google's global infrastructure and anycast IPs.",
+      "difficulty": "easy",
+      "subcategory": "load-balancer",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service helps protect against Layer 7 attacks?",
+      "options": [
+        "Cloud Armor",
+        "Cloud NAT",
+        "Cloud Router",
+        "Cloud VPN"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor helps protect against Layer 7 web attacks.",
+      "difficulty": "easy",
+      "subcategory": "security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides external HTTP(S) load balancing?",
+      "options": [
+        "Cloud Load Balancing",
+        "Cloud Build",
+        "Cloud SQL",
+        "Cloud DNS"
+      ],
+      "answer": "Cloud Load Balancing",
+      "explanation": "Cloud Load Balancing provides external HTTP(S) load balancing.",
+      "difficulty": "easy",
+      "subcategory": "load-balancer",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature allows instances to communicate internally by private IP?",
+      "options": [
+        "VPC Network",
+        "Cloud CDN",
+        "Cloud SQL Backup",
+        "Cloud Trace"
+      ],
+      "answer": "VPC Network",
+      "explanation": "A VPC network enables private IP communication.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature controls egress and ingress rules?",
+      "options": [
+        "Firewall Rules",
+        "Cloud Scheduler",
+        "Cloud Tasks",
+        "Cloud Composer"
+      ],
+      "answer": "Firewall Rules",
+      "explanation": "Firewall rules control ingress and egress traffic.",
+      "difficulty": "easy",
+      "subcategory": "security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can connect branch offices securely to Google Cloud?",
+      "options": [
+        "Cloud VPN",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud VPN",
+      "explanation": "Cloud VPN connects external networks securely to GCP.",
+      "difficulty": "easy",
+      "subcategory": "vpn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides low-latency content delivery?",
+      "options": [
+        "Cloud CDN",
+        "Cloud Billing",
+        "Cloud Deploy",
+        "Cloud Debugger"
+      ],
+      "answer": "Cloud CDN",
+      "explanation": "Cloud CDN provides low-latency delivery through edge caching.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature allows private connectivity to service producers?",
+      "options": [
+        "Private Service Connect",
+        "External IP",
+        "Cloud NAT",
+        "Cloud Logging"
+      ],
+      "answer": "Private Service Connect",
+      "explanation": "Private Service Connect provides private access to service producers.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can export DNS logs for monitoring?",
+      "options": [
+        "Cloud DNS",
+        "Cloud Build",
+        "Cloud Tasks",
+        "Cloud Run"
+      ],
+      "answer": "Cloud DNS",
+      "explanation": "Cloud DNS supports logging for DNS queries.",
+      "difficulty": "easy",
+      "subcategory": "monitoring",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides managed SSL certificates for load balancers?",
+      "options": [
+        "Certificate Manager",
+        "Cloud Scheduler",
+        "Cloud SQL",
+        "Cloud NAT"
+      ],
+      "answer": "Certificate Manager",
+      "explanation": "Certificate Manager manages certificates for Google Cloud load balancing.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can be used with Cloud Armor security policies?",
+      "options": [
+        "Cloud Load Balancing",
+        "Cloud SQL",
+        "Cloud Storage Bucket Only",
+        "Cloud Pub/Sub"
+      ],
+      "answer": "Cloud Load Balancing",
+      "explanation": "Cloud Armor policies are commonly applied to load balancers.",
+      "difficulty": "easy",
+      "subcategory": "security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP routing type is automatically created for subnets?",
+      "options": [
+        "Subnet Route",
+        "Static Website Route",
+        "Bucket Route",
+        "Topic Route"
+      ],
+      "answer": "Subnet Route",
+      "explanation": "GCP automatically creates routes for subnet IP ranges.",
+      "difficulty": "easy",
+      "subcategory": "routing",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides peering without using public IP addresses?",
+      "options": [
+        "VPC Network Peering",
+        "Cloud CDN",
+        "Cloud Armor",
+        "Cloud DNS"
+      ],
+      "answer": "VPC Network Peering",
+      "explanation": "VPC Network Peering allows private communication between VPCs.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can help troubleshoot network connectivity?",
+      "options": [
+        "Network Intelligence Center",
+        "Cloud SQL",
+        "Cloud Build",
+        "Cloud Deploy"
+      ],
+      "answer": "Network Intelligence Center",
+      "explanation": "Network Intelligence Center helps monitor and troubleshoot network connectivity.",
+      "difficulty": "easy",
+      "subcategory": "monitoring",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service supports URL maps for HTTP routing?",
+      "options": [
+        "Cloud Load Balancing",
+        "Cloud NAT",
+        "Cloud VPN",
+        "Cloud Router"
+      ],
+      "answer": "Cloud Load Balancing",
+      "explanation": "HTTP(S) Load Balancing uses URL maps for request routing.",
+      "difficulty": "easy",
+      "subcategory": "load-balancer",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service is used to configure DNS records like A and CNAME?",
+      "options": [
+        "Cloud DNS",
+        "Cloud CDN",
+        "Cloud Build",
+        "Cloud Run"
+      ],
+      "answer": "Cloud DNS",
+      "explanation": "Cloud DNS manages records such as A, CNAME, and MX.",
+      "difficulty": "easy",
+      "subcategory": "dns",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service lets private VMs access the internet without external IPs?",
+      "options": [
+        "Cloud NAT",
+        "Cloud CDN",
+        "Cloud Armor",
+        "Cloud DNS"
+      ],
+      "answer": "Cloud NAT",
+      "explanation": "Cloud NAT enables outbound internet access for private VMs.",
+      "difficulty": "easy",
+      "subcategory": "network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can provide both load balancing and CDN integration?",
+      "options": [
+        "Cloud Load Balancing",
+        "Cloud SQL",
+        "Cloud Storage Transfer",
+        "Cloud Composer"
+      ],
+      "answer": "Cloud Load Balancing",
+      "explanation": "Cloud CDN integrates with supported Google Cloud load balancers.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature helps restrict access by source IP range?",
+      "options": [
+        "Firewall Rule",
+        "Cloud Function",
+        "Cloud Task",
+        "Cloud Topic"
+      ],
+      "answer": "Firewall Rule",
+      "explanation": "Firewall rules can allow or deny traffic based on source IP ranges.",
+      "difficulty": "easy",
+      "subcategory": "security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service supports global external Application Load Balancer?",
+      "options": [
+        "Cloud Load Balancing",
+        "Cloud NAT",
+        "Cloud Router",
+        "Cloud VPN"
+      ],
+      "answer": "Cloud Load Balancing",
+      "explanation": "Cloud Load Balancing provides global external Application Load Balancer capabilities.",
+      "difficulty": "easy",
+      "subcategory": "load-balancer",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides edge caching for users around the world?",
+      "options": [
+        "Cloud CDN",
+        "Cloud IAM",
+        "Cloud SQL",
+        "Cloud Logging"
+      ],
+      "answer": "Cloud CDN",
+      "explanation": "Cloud CDN uses edge caching to deliver content globally.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    }
+  ]

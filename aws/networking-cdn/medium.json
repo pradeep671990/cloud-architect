@@ -1,1 +1,702 @@
-[]
+[
+    {
+      "question": "Which AWS feature allows sharing services privately between VPCs? (1)",
+      "options": [
+        "VPC Endpoint Service",
+        "CloudFront",
+        "Route 53",
+        "IAM"
+      ],
+      "answer": "VPC Endpoint Service",
+      "explanation": "VPC Endpoint Service is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS routing option is used for multi-region failover? (2)",
+      "options": [
+        "Route 53 Failover Routing",
+        "CloudTrail",
+        "Transit Gateway",
+        "S3"
+      ],
+      "answer": "Route 53 Failover Routing",
+      "explanation": "Route 53 Failover Routing is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "dns",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports anycast static IPs for applications? (3)",
+      "options": [
+        "Global Accelerator",
+        "CloudWatch",
+        "ELB",
+        "IAM"
+      ],
+      "answer": "Global Accelerator",
+      "explanation": "Global Accelerator is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS component allows centralized egress filtering? (4)",
+      "options": [
+        "AWS Network Firewall",
+        "Lambda",
+        "CloudFormation",
+        "SQS"
+      ],
+      "answer": "AWS Network Firewall",
+      "explanation": "AWS Network Firewall is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "load-balancer",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service helps inspect traffic between VPCs? (5)",
+      "options": [
+        "Traffic Mirroring",
+        "CloudTrail",
+        "Route 53",
+        "CloudFront"
+      ],
+      "answer": "Traffic Mirroring",
+      "explanation": "Traffic Mirroring is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "routing",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS feature allows sharing services privately between VPCs? (6)",
+      "options": [
+        "VPC Endpoint Service",
+        "CloudFront",
+        "Route 53",
+        "IAM"
+      ],
+      "answer": "VPC Endpoint Service",
+      "explanation": "VPC Endpoint Service is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS routing option is used for multi-region failover? (7)",
+      "options": [
+        "Route 53 Failover Routing",
+        "CloudTrail",
+        "Transit Gateway",
+        "S3"
+      ],
+      "answer": "Route 53 Failover Routing",
+      "explanation": "Route 53 Failover Routing is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "vpn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports anycast static IPs for applications? (8)",
+      "options": [
+        "Global Accelerator",
+        "CloudWatch",
+        "ELB",
+        "IAM"
+      ],
+      "answer": "Global Accelerator",
+      "explanation": "Global Accelerator is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "hybrid-network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS component allows centralized egress filtering? (9)",
+      "options": [
+        "AWS Network Firewall",
+        "Lambda",
+        "CloudFormation",
+        "SQS"
+      ],
+      "answer": "AWS Network Firewall",
+      "explanation": "AWS Network Firewall is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "firewall",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service helps inspect traffic between VPCs? (10)",
+      "options": [
+        "Traffic Mirroring",
+        "CloudTrail",
+        "Route 53",
+        "CloudFront"
+      ],
+      "answer": "Traffic Mirroring",
+      "explanation": "Traffic Mirroring is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "peering",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS feature allows sharing services privately between VPCs? (11)",
+      "options": [
+        "VPC Endpoint Service",
+        "CloudFront",
+        "Route 53",
+        "IAM"
+      ],
+      "answer": "VPC Endpoint Service",
+      "explanation": "VPC Endpoint Service is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS routing option is used for multi-region failover? (12)",
+      "options": [
+        "Route 53 Failover Routing",
+        "CloudTrail",
+        "Transit Gateway",
+        "S3"
+      ],
+      "answer": "Route 53 Failover Routing",
+      "explanation": "Route 53 Failover Routing is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "dns",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports anycast static IPs for applications? (13)",
+      "options": [
+        "Global Accelerator",
+        "CloudWatch",
+        "ELB",
+        "IAM"
+      ],
+      "answer": "Global Accelerator",
+      "explanation": "Global Accelerator is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS component allows centralized egress filtering? (14)",
+      "options": [
+        "AWS Network Firewall",
+        "Lambda",
+        "CloudFormation",
+        "SQS"
+      ],
+      "answer": "AWS Network Firewall",
+      "explanation": "AWS Network Firewall is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "load-balancer",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service helps inspect traffic between VPCs? (15)",
+      "options": [
+        "Traffic Mirroring",
+        "CloudTrail",
+        "Route 53",
+        "CloudFront"
+      ],
+      "answer": "Traffic Mirroring",
+      "explanation": "Traffic Mirroring is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "routing",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS feature allows sharing services privately between VPCs? (16)",
+      "options": [
+        "VPC Endpoint Service",
+        "CloudFront",
+        "Route 53",
+        "IAM"
+      ],
+      "answer": "VPC Endpoint Service",
+      "explanation": "VPC Endpoint Service is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS routing option is used for multi-region failover? (17)",
+      "options": [
+        "Route 53 Failover Routing",
+        "CloudTrail",
+        "Transit Gateway",
+        "S3"
+      ],
+      "answer": "Route 53 Failover Routing",
+      "explanation": "Route 53 Failover Routing is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "vpn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports anycast static IPs for applications? (18)",
+      "options": [
+        "Global Accelerator",
+        "CloudWatch",
+        "ELB",
+        "IAM"
+      ],
+      "answer": "Global Accelerator",
+      "explanation": "Global Accelerator is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "hybrid-network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS component allows centralized egress filtering? (19)",
+      "options": [
+        "AWS Network Firewall",
+        "Lambda",
+        "CloudFormation",
+        "SQS"
+      ],
+      "answer": "AWS Network Firewall",
+      "explanation": "AWS Network Firewall is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "firewall",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service helps inspect traffic between VPCs? (20)",
+      "options": [
+        "Traffic Mirroring",
+        "CloudTrail",
+        "Route 53",
+        "CloudFront"
+      ],
+      "answer": "Traffic Mirroring",
+      "explanation": "Traffic Mirroring is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "peering",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS feature allows sharing services privately between VPCs? (21)",
+      "options": [
+        "VPC Endpoint Service",
+        "CloudFront",
+        "Route 53",
+        "IAM"
+      ],
+      "answer": "VPC Endpoint Service",
+      "explanation": "VPC Endpoint Service is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS routing option is used for multi-region failover? (22)",
+      "options": [
+        "Route 53 Failover Routing",
+        "CloudTrail",
+        "Transit Gateway",
+        "S3"
+      ],
+      "answer": "Route 53 Failover Routing",
+      "explanation": "Route 53 Failover Routing is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "dns",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports anycast static IPs for applications? (23)",
+      "options": [
+        "Global Accelerator",
+        "CloudWatch",
+        "ELB",
+        "IAM"
+      ],
+      "answer": "Global Accelerator",
+      "explanation": "Global Accelerator is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS component allows centralized egress filtering? (24)",
+      "options": [
+        "AWS Network Firewall",
+        "Lambda",
+        "CloudFormation",
+        "SQS"
+      ],
+      "answer": "AWS Network Firewall",
+      "explanation": "AWS Network Firewall is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "load-balancer",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service helps inspect traffic between VPCs? (25)",
+      "options": [
+        "Traffic Mirroring",
+        "CloudTrail",
+        "Route 53",
+        "CloudFront"
+      ],
+      "answer": "Traffic Mirroring",
+      "explanation": "Traffic Mirroring is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "routing",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS feature allows sharing services privately between VPCs? (26)",
+      "options": [
+        "VPC Endpoint Service",
+        "CloudFront",
+        "Route 53",
+        "IAM"
+      ],
+      "answer": "VPC Endpoint Service",
+      "explanation": "VPC Endpoint Service is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS routing option is used for multi-region failover? (27)",
+      "options": [
+        "Route 53 Failover Routing",
+        "CloudTrail",
+        "Transit Gateway",
+        "S3"
+      ],
+      "answer": "Route 53 Failover Routing",
+      "explanation": "Route 53 Failover Routing is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "vpn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports anycast static IPs for applications? (28)",
+      "options": [
+        "Global Accelerator",
+        "CloudWatch",
+        "ELB",
+        "IAM"
+      ],
+      "answer": "Global Accelerator",
+      "explanation": "Global Accelerator is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "hybrid-network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS component allows centralized egress filtering? (29)",
+      "options": [
+        "AWS Network Firewall",
+        "Lambda",
+        "CloudFormation",
+        "SQS"
+      ],
+      "answer": "AWS Network Firewall",
+      "explanation": "AWS Network Firewall is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "firewall",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service helps inspect traffic between VPCs? (30)",
+      "options": [
+        "Traffic Mirroring",
+        "CloudTrail",
+        "Route 53",
+        "CloudFront"
+      ],
+      "answer": "Traffic Mirroring",
+      "explanation": "Traffic Mirroring is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "peering",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS feature allows sharing services privately between VPCs? (31)",
+      "options": [
+        "VPC Endpoint Service",
+        "CloudFront",
+        "Route 53",
+        "IAM"
+      ],
+      "answer": "VPC Endpoint Service",
+      "explanation": "VPC Endpoint Service is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS routing option is used for multi-region failover? (32)",
+      "options": [
+        "Route 53 Failover Routing",
+        "CloudTrail",
+        "Transit Gateway",
+        "S3"
+      ],
+      "answer": "Route 53 Failover Routing",
+      "explanation": "Route 53 Failover Routing is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "dns",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports anycast static IPs for applications? (33)",
+      "options": [
+        "Global Accelerator",
+        "CloudWatch",
+        "ELB",
+        "IAM"
+      ],
+      "answer": "Global Accelerator",
+      "explanation": "Global Accelerator is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS component allows centralized egress filtering? (34)",
+      "options": [
+        "AWS Network Firewall",
+        "Lambda",
+        "CloudFormation",
+        "SQS"
+      ],
+      "answer": "AWS Network Firewall",
+      "explanation": "AWS Network Firewall is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "load-balancer",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service helps inspect traffic between VPCs? (35)",
+      "options": [
+        "Traffic Mirroring",
+        "CloudTrail",
+        "Route 53",
+        "CloudFront"
+      ],
+      "answer": "Traffic Mirroring",
+      "explanation": "Traffic Mirroring is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "routing",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS feature allows sharing services privately between VPCs? (36)",
+      "options": [
+        "VPC Endpoint Service",
+        "CloudFront",
+        "Route 53",
+        "IAM"
+      ],
+      "answer": "VPC Endpoint Service",
+      "explanation": "VPC Endpoint Service is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS routing option is used for multi-region failover? (37)",
+      "options": [
+        "Route 53 Failover Routing",
+        "CloudTrail",
+        "Transit Gateway",
+        "S3"
+      ],
+      "answer": "Route 53 Failover Routing",
+      "explanation": "Route 53 Failover Routing is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "vpn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports anycast static IPs for applications? (38)",
+      "options": [
+        "Global Accelerator",
+        "CloudWatch",
+        "ELB",
+        "IAM"
+      ],
+      "answer": "Global Accelerator",
+      "explanation": "Global Accelerator is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "hybrid-network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS component allows centralized egress filtering? (39)",
+      "options": [
+        "AWS Network Firewall",
+        "Lambda",
+        "CloudFormation",
+        "SQS"
+      ],
+      "answer": "AWS Network Firewall",
+      "explanation": "AWS Network Firewall is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "firewall",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service helps inspect traffic between VPCs? (40)",
+      "options": [
+        "Traffic Mirroring",
+        "CloudTrail",
+        "Route 53",
+        "CloudFront"
+      ],
+      "answer": "Traffic Mirroring",
+      "explanation": "Traffic Mirroring is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "peering",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS feature allows sharing services privately between VPCs? (41)",
+      "options": [
+        "VPC Endpoint Service",
+        "CloudFront",
+        "Route 53",
+        "IAM"
+      ],
+      "answer": "VPC Endpoint Service",
+      "explanation": "VPC Endpoint Service is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS routing option is used for multi-region failover? (42)",
+      "options": [
+        "Route 53 Failover Routing",
+        "CloudTrail",
+        "Transit Gateway",
+        "S3"
+      ],
+      "answer": "Route 53 Failover Routing",
+      "explanation": "Route 53 Failover Routing is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "dns",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports anycast static IPs for applications? (43)",
+      "options": [
+        "Global Accelerator",
+        "CloudWatch",
+        "ELB",
+        "IAM"
+      ],
+      "answer": "Global Accelerator",
+      "explanation": "Global Accelerator is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS component allows centralized egress filtering? (44)",
+      "options": [
+        "AWS Network Firewall",
+        "Lambda",
+        "CloudFormation",
+        "SQS"
+      ],
+      "answer": "AWS Network Firewall",
+      "explanation": "AWS Network Firewall is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "load-balancer",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service helps inspect traffic between VPCs? (45)",
+      "options": [
+        "Traffic Mirroring",
+        "CloudTrail",
+        "Route 53",
+        "CloudFront"
+      ],
+      "answer": "Traffic Mirroring",
+      "explanation": "Traffic Mirroring is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "routing",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS feature allows sharing services privately between VPCs? (46)",
+      "options": [
+        "VPC Endpoint Service",
+        "CloudFront",
+        "Route 53",
+        "IAM"
+      ],
+      "answer": "VPC Endpoint Service",
+      "explanation": "VPC Endpoint Service is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS routing option is used for multi-region failover? (47)",
+      "options": [
+        "Route 53 Failover Routing",
+        "CloudTrail",
+        "Transit Gateway",
+        "S3"
+      ],
+      "answer": "Route 53 Failover Routing",
+      "explanation": "Route 53 Failover Routing is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "vpn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports anycast static IPs for applications? (48)",
+      "options": [
+        "Global Accelerator",
+        "CloudWatch",
+        "ELB",
+        "IAM"
+      ],
+      "answer": "Global Accelerator",
+      "explanation": "Global Accelerator is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "hybrid-network",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS component allows centralized egress filtering? (49)",
+      "options": [
+        "AWS Network Firewall",
+        "Lambda",
+        "CloudFormation",
+        "SQS"
+      ],
+      "answer": "AWS Network Firewall",
+      "explanation": "AWS Network Firewall is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "firewall",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service helps inspect traffic between VPCs? (50)",
+      "options": [
+        "Traffic Mirroring",
+        "CloudTrail",
+        "Route 53",
+        "CloudFront"
+      ],
+      "answer": "Traffic Mirroring",
+      "explanation": "Traffic Mirroring is commonly used in AWS networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "peering",
+      "category": "aws"
+    }
+  ]

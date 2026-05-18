@@ -1,1 +1,702 @@
-[]
+[
+    {
+      "question": "Which Azure service supports global Layer 7 load balancing with SSL offloading? (1)",
+      "options": [
+        "Azure Front Door",
+        "Azure Bastion",
+        "Azure CDN",
+        "Azure DNS"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure networking feature enables transitive routing between VNets? (2)",
+      "options": [
+        "Virtual WAN",
+        "NSG",
+        "ExpressRoute",
+        "Private Link"
+      ],
+      "answer": "Virtual WAN",
+      "explanation": "Virtual WAN is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "dns",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service supports secure private access to Azure PaaS services? (3)",
+      "options": [
+        "Private Link",
+        "Azure DNS",
+        "Azure Arc",
+        "Azure Backup"
+      ],
+      "answer": "Private Link",
+      "explanation": "Private Link is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature supports route propagation using BGP? (4)",
+      "options": [
+        "ExpressRoute",
+        "Azure Firewall",
+        "Traffic Manager",
+        "Application Gateway"
+      ],
+      "answer": "ExpressRoute",
+      "explanation": "ExpressRoute is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "load-balancer",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides centralized network security policy management? (5)",
+      "options": [
+        "Azure Firewall Manager",
+        "Azure Monitor",
+        "Azure VM",
+        "Azure SQL"
+      ],
+      "answer": "Azure Firewall Manager",
+      "explanation": "Azure Firewall Manager is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "routing",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service supports global Layer 7 load balancing with SSL offloading? (6)",
+      "options": [
+        "Azure Front Door",
+        "Azure Bastion",
+        "Azure CDN",
+        "Azure DNS"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure networking feature enables transitive routing between VNets? (7)",
+      "options": [
+        "Virtual WAN",
+        "NSG",
+        "ExpressRoute",
+        "Private Link"
+      ],
+      "answer": "Virtual WAN",
+      "explanation": "Virtual WAN is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "vpn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service supports secure private access to Azure PaaS services? (8)",
+      "options": [
+        "Private Link",
+        "Azure DNS",
+        "Azure Arc",
+        "Azure Backup"
+      ],
+      "answer": "Private Link",
+      "explanation": "Private Link is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "hybrid-network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature supports route propagation using BGP? (9)",
+      "options": [
+        "ExpressRoute",
+        "Azure Firewall",
+        "Traffic Manager",
+        "Application Gateway"
+      ],
+      "answer": "ExpressRoute",
+      "explanation": "ExpressRoute is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "firewall",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides centralized network security policy management? (10)",
+      "options": [
+        "Azure Firewall Manager",
+        "Azure Monitor",
+        "Azure VM",
+        "Azure SQL"
+      ],
+      "answer": "Azure Firewall Manager",
+      "explanation": "Azure Firewall Manager is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "peering",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service supports global Layer 7 load balancing with SSL offloading? (11)",
+      "options": [
+        "Azure Front Door",
+        "Azure Bastion",
+        "Azure CDN",
+        "Azure DNS"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure networking feature enables transitive routing between VNets? (12)",
+      "options": [
+        "Virtual WAN",
+        "NSG",
+        "ExpressRoute",
+        "Private Link"
+      ],
+      "answer": "Virtual WAN",
+      "explanation": "Virtual WAN is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "dns",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service supports secure private access to Azure PaaS services? (13)",
+      "options": [
+        "Private Link",
+        "Azure DNS",
+        "Azure Arc",
+        "Azure Backup"
+      ],
+      "answer": "Private Link",
+      "explanation": "Private Link is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature supports route propagation using BGP? (14)",
+      "options": [
+        "ExpressRoute",
+        "Azure Firewall",
+        "Traffic Manager",
+        "Application Gateway"
+      ],
+      "answer": "ExpressRoute",
+      "explanation": "ExpressRoute is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "load-balancer",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides centralized network security policy management? (15)",
+      "options": [
+        "Azure Firewall Manager",
+        "Azure Monitor",
+        "Azure VM",
+        "Azure SQL"
+      ],
+      "answer": "Azure Firewall Manager",
+      "explanation": "Azure Firewall Manager is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "routing",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service supports global Layer 7 load balancing with SSL offloading? (16)",
+      "options": [
+        "Azure Front Door",
+        "Azure Bastion",
+        "Azure CDN",
+        "Azure DNS"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure networking feature enables transitive routing between VNets? (17)",
+      "options": [
+        "Virtual WAN",
+        "NSG",
+        "ExpressRoute",
+        "Private Link"
+      ],
+      "answer": "Virtual WAN",
+      "explanation": "Virtual WAN is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "vpn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service supports secure private access to Azure PaaS services? (18)",
+      "options": [
+        "Private Link",
+        "Azure DNS",
+        "Azure Arc",
+        "Azure Backup"
+      ],
+      "answer": "Private Link",
+      "explanation": "Private Link is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "hybrid-network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature supports route propagation using BGP? (19)",
+      "options": [
+        "ExpressRoute",
+        "Azure Firewall",
+        "Traffic Manager",
+        "Application Gateway"
+      ],
+      "answer": "ExpressRoute",
+      "explanation": "ExpressRoute is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "firewall",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides centralized network security policy management? (20)",
+      "options": [
+        "Azure Firewall Manager",
+        "Azure Monitor",
+        "Azure VM",
+        "Azure SQL"
+      ],
+      "answer": "Azure Firewall Manager",
+      "explanation": "Azure Firewall Manager is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "peering",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service supports global Layer 7 load balancing with SSL offloading? (21)",
+      "options": [
+        "Azure Front Door",
+        "Azure Bastion",
+        "Azure CDN",
+        "Azure DNS"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure networking feature enables transitive routing between VNets? (22)",
+      "options": [
+        "Virtual WAN",
+        "NSG",
+        "ExpressRoute",
+        "Private Link"
+      ],
+      "answer": "Virtual WAN",
+      "explanation": "Virtual WAN is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "dns",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service supports secure private access to Azure PaaS services? (23)",
+      "options": [
+        "Private Link",
+        "Azure DNS",
+        "Azure Arc",
+        "Azure Backup"
+      ],
+      "answer": "Private Link",
+      "explanation": "Private Link is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature supports route propagation using BGP? (24)",
+      "options": [
+        "ExpressRoute",
+        "Azure Firewall",
+        "Traffic Manager",
+        "Application Gateway"
+      ],
+      "answer": "ExpressRoute",
+      "explanation": "ExpressRoute is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "load-balancer",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides centralized network security policy management? (25)",
+      "options": [
+        "Azure Firewall Manager",
+        "Azure Monitor",
+        "Azure VM",
+        "Azure SQL"
+      ],
+      "answer": "Azure Firewall Manager",
+      "explanation": "Azure Firewall Manager is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "routing",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service supports global Layer 7 load balancing with SSL offloading? (26)",
+      "options": [
+        "Azure Front Door",
+        "Azure Bastion",
+        "Azure CDN",
+        "Azure DNS"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure networking feature enables transitive routing between VNets? (27)",
+      "options": [
+        "Virtual WAN",
+        "NSG",
+        "ExpressRoute",
+        "Private Link"
+      ],
+      "answer": "Virtual WAN",
+      "explanation": "Virtual WAN is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "vpn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service supports secure private access to Azure PaaS services? (28)",
+      "options": [
+        "Private Link",
+        "Azure DNS",
+        "Azure Arc",
+        "Azure Backup"
+      ],
+      "answer": "Private Link",
+      "explanation": "Private Link is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "hybrid-network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature supports route propagation using BGP? (29)",
+      "options": [
+        "ExpressRoute",
+        "Azure Firewall",
+        "Traffic Manager",
+        "Application Gateway"
+      ],
+      "answer": "ExpressRoute",
+      "explanation": "ExpressRoute is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "firewall",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides centralized network security policy management? (30)",
+      "options": [
+        "Azure Firewall Manager",
+        "Azure Monitor",
+        "Azure VM",
+        "Azure SQL"
+      ],
+      "answer": "Azure Firewall Manager",
+      "explanation": "Azure Firewall Manager is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "peering",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service supports global Layer 7 load balancing with SSL offloading? (31)",
+      "options": [
+        "Azure Front Door",
+        "Azure Bastion",
+        "Azure CDN",
+        "Azure DNS"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure networking feature enables transitive routing between VNets? (32)",
+      "options": [
+        "Virtual WAN",
+        "NSG",
+        "ExpressRoute",
+        "Private Link"
+      ],
+      "answer": "Virtual WAN",
+      "explanation": "Virtual WAN is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "dns",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service supports secure private access to Azure PaaS services? (33)",
+      "options": [
+        "Private Link",
+        "Azure DNS",
+        "Azure Arc",
+        "Azure Backup"
+      ],
+      "answer": "Private Link",
+      "explanation": "Private Link is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature supports route propagation using BGP? (34)",
+      "options": [
+        "ExpressRoute",
+        "Azure Firewall",
+        "Traffic Manager",
+        "Application Gateway"
+      ],
+      "answer": "ExpressRoute",
+      "explanation": "ExpressRoute is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "load-balancer",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides centralized network security policy management? (35)",
+      "options": [
+        "Azure Firewall Manager",
+        "Azure Monitor",
+        "Azure VM",
+        "Azure SQL"
+      ],
+      "answer": "Azure Firewall Manager",
+      "explanation": "Azure Firewall Manager is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "routing",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service supports global Layer 7 load balancing with SSL offloading? (36)",
+      "options": [
+        "Azure Front Door",
+        "Azure Bastion",
+        "Azure CDN",
+        "Azure DNS"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure networking feature enables transitive routing between VNets? (37)",
+      "options": [
+        "Virtual WAN",
+        "NSG",
+        "ExpressRoute",
+        "Private Link"
+      ],
+      "answer": "Virtual WAN",
+      "explanation": "Virtual WAN is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "vpn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service supports secure private access to Azure PaaS services? (38)",
+      "options": [
+        "Private Link",
+        "Azure DNS",
+        "Azure Arc",
+        "Azure Backup"
+      ],
+      "answer": "Private Link",
+      "explanation": "Private Link is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "hybrid-network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature supports route propagation using BGP? (39)",
+      "options": [
+        "ExpressRoute",
+        "Azure Firewall",
+        "Traffic Manager",
+        "Application Gateway"
+      ],
+      "answer": "ExpressRoute",
+      "explanation": "ExpressRoute is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "firewall",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides centralized network security policy management? (40)",
+      "options": [
+        "Azure Firewall Manager",
+        "Azure Monitor",
+        "Azure VM",
+        "Azure SQL"
+      ],
+      "answer": "Azure Firewall Manager",
+      "explanation": "Azure Firewall Manager is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "peering",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service supports global Layer 7 load balancing with SSL offloading? (41)",
+      "options": [
+        "Azure Front Door",
+        "Azure Bastion",
+        "Azure CDN",
+        "Azure DNS"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure networking feature enables transitive routing between VNets? (42)",
+      "options": [
+        "Virtual WAN",
+        "NSG",
+        "ExpressRoute",
+        "Private Link"
+      ],
+      "answer": "Virtual WAN",
+      "explanation": "Virtual WAN is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "dns",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service supports secure private access to Azure PaaS services? (43)",
+      "options": [
+        "Private Link",
+        "Azure DNS",
+        "Azure Arc",
+        "Azure Backup"
+      ],
+      "answer": "Private Link",
+      "explanation": "Private Link is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature supports route propagation using BGP? (44)",
+      "options": [
+        "ExpressRoute",
+        "Azure Firewall",
+        "Traffic Manager",
+        "Application Gateway"
+      ],
+      "answer": "ExpressRoute",
+      "explanation": "ExpressRoute is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "load-balancer",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides centralized network security policy management? (45)",
+      "options": [
+        "Azure Firewall Manager",
+        "Azure Monitor",
+        "Azure VM",
+        "Azure SQL"
+      ],
+      "answer": "Azure Firewall Manager",
+      "explanation": "Azure Firewall Manager is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "routing",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service supports global Layer 7 load balancing with SSL offloading? (46)",
+      "options": [
+        "Azure Front Door",
+        "Azure Bastion",
+        "Azure CDN",
+        "Azure DNS"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure networking feature enables transitive routing between VNets? (47)",
+      "options": [
+        "Virtual WAN",
+        "NSG",
+        "ExpressRoute",
+        "Private Link"
+      ],
+      "answer": "Virtual WAN",
+      "explanation": "Virtual WAN is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "vpn",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service supports secure private access to Azure PaaS services? (48)",
+      "options": [
+        "Private Link",
+        "Azure DNS",
+        "Azure Arc",
+        "Azure Backup"
+      ],
+      "answer": "Private Link",
+      "explanation": "Private Link is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "hybrid-network",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature supports route propagation using BGP? (49)",
+      "options": [
+        "ExpressRoute",
+        "Azure Firewall",
+        "Traffic Manager",
+        "Application Gateway"
+      ],
+      "answer": "ExpressRoute",
+      "explanation": "ExpressRoute is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "firewall",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides centralized network security policy management? (50)",
+      "options": [
+        "Azure Firewall Manager",
+        "Azure Monitor",
+        "Azure VM",
+        "Azure SQL"
+      ],
+      "answer": "Azure Firewall Manager",
+      "explanation": "Azure Firewall Manager is an advanced networking or CDN capability in Azure.",
+      "difficulty": "hard",
+      "subcategory": "peering",
+      "category": "azure"
+    }
+  ]

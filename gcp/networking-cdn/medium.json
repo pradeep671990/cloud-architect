@@ -1,1 +1,702 @@
-[]
+[
+    {
+      "question": "Which GCP feature enables private access to Google APIs? (1)",
+      "options": [
+        "Private Google Access",
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud Build"
+      ],
+      "answer": "Private Google Access",
+      "explanation": "Private Google Access is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service supports hybrid connectivity with dedicated links? (2)",
+      "options": [
+        "Cloud Interconnect",
+        "Cloud DNS",
+        "Cloud NAT",
+        "Pub/Sub"
+      ],
+      "answer": "Cloud Interconnect",
+      "explanation": "Cloud Interconnect is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "dns",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service distributes HTTP traffic globally? (3)",
+      "options": [
+        "Global Load Balancer",
+        "Cloud Run",
+        "BigQuery",
+        "Cloud Storage"
+      ],
+      "answer": "Global Load Balancer",
+      "explanation": "Global Load Balancer is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature enables private communication between VPC networks? (4)",
+      "options": [
+        "VPC Peering",
+        "Cloud Armor",
+        "Cloud SQL",
+        "Cloud Functions"
+      ],
+      "answer": "VPC Peering",
+      "explanation": "VPC Peering is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "load-balancer",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service secures web applications from attacks? (5)",
+      "options": [
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud NAT",
+        "Cloud Router"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "routing",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature enables private access to Google APIs? (6)",
+      "options": [
+        "Private Google Access",
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud Build"
+      ],
+      "answer": "Private Google Access",
+      "explanation": "Private Google Access is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service supports hybrid connectivity with dedicated links? (7)",
+      "options": [
+        "Cloud Interconnect",
+        "Cloud DNS",
+        "Cloud NAT",
+        "Pub/Sub"
+      ],
+      "answer": "Cloud Interconnect",
+      "explanation": "Cloud Interconnect is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "vpn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service distributes HTTP traffic globally? (8)",
+      "options": [
+        "Global Load Balancer",
+        "Cloud Run",
+        "BigQuery",
+        "Cloud Storage"
+      ],
+      "answer": "Global Load Balancer",
+      "explanation": "Global Load Balancer is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "hybrid-network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature enables private communication between VPC networks? (9)",
+      "options": [
+        "VPC Peering",
+        "Cloud Armor",
+        "Cloud SQL",
+        "Cloud Functions"
+      ],
+      "answer": "VPC Peering",
+      "explanation": "VPC Peering is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "firewall",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service secures web applications from attacks? (10)",
+      "options": [
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud NAT",
+        "Cloud Router"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "peering",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature enables private access to Google APIs? (11)",
+      "options": [
+        "Private Google Access",
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud Build"
+      ],
+      "answer": "Private Google Access",
+      "explanation": "Private Google Access is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service supports hybrid connectivity with dedicated links? (12)",
+      "options": [
+        "Cloud Interconnect",
+        "Cloud DNS",
+        "Cloud NAT",
+        "Pub/Sub"
+      ],
+      "answer": "Cloud Interconnect",
+      "explanation": "Cloud Interconnect is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "dns",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service distributes HTTP traffic globally? (13)",
+      "options": [
+        "Global Load Balancer",
+        "Cloud Run",
+        "BigQuery",
+        "Cloud Storage"
+      ],
+      "answer": "Global Load Balancer",
+      "explanation": "Global Load Balancer is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature enables private communication between VPC networks? (14)",
+      "options": [
+        "VPC Peering",
+        "Cloud Armor",
+        "Cloud SQL",
+        "Cloud Functions"
+      ],
+      "answer": "VPC Peering",
+      "explanation": "VPC Peering is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "load-balancer",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service secures web applications from attacks? (15)",
+      "options": [
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud NAT",
+        "Cloud Router"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "routing",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature enables private access to Google APIs? (16)",
+      "options": [
+        "Private Google Access",
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud Build"
+      ],
+      "answer": "Private Google Access",
+      "explanation": "Private Google Access is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service supports hybrid connectivity with dedicated links? (17)",
+      "options": [
+        "Cloud Interconnect",
+        "Cloud DNS",
+        "Cloud NAT",
+        "Pub/Sub"
+      ],
+      "answer": "Cloud Interconnect",
+      "explanation": "Cloud Interconnect is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "vpn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service distributes HTTP traffic globally? (18)",
+      "options": [
+        "Global Load Balancer",
+        "Cloud Run",
+        "BigQuery",
+        "Cloud Storage"
+      ],
+      "answer": "Global Load Balancer",
+      "explanation": "Global Load Balancer is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "hybrid-network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature enables private communication between VPC networks? (19)",
+      "options": [
+        "VPC Peering",
+        "Cloud Armor",
+        "Cloud SQL",
+        "Cloud Functions"
+      ],
+      "answer": "VPC Peering",
+      "explanation": "VPC Peering is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "firewall",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service secures web applications from attacks? (20)",
+      "options": [
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud NAT",
+        "Cloud Router"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "peering",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature enables private access to Google APIs? (21)",
+      "options": [
+        "Private Google Access",
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud Build"
+      ],
+      "answer": "Private Google Access",
+      "explanation": "Private Google Access is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service supports hybrid connectivity with dedicated links? (22)",
+      "options": [
+        "Cloud Interconnect",
+        "Cloud DNS",
+        "Cloud NAT",
+        "Pub/Sub"
+      ],
+      "answer": "Cloud Interconnect",
+      "explanation": "Cloud Interconnect is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "dns",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service distributes HTTP traffic globally? (23)",
+      "options": [
+        "Global Load Balancer",
+        "Cloud Run",
+        "BigQuery",
+        "Cloud Storage"
+      ],
+      "answer": "Global Load Balancer",
+      "explanation": "Global Load Balancer is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature enables private communication between VPC networks? (24)",
+      "options": [
+        "VPC Peering",
+        "Cloud Armor",
+        "Cloud SQL",
+        "Cloud Functions"
+      ],
+      "answer": "VPC Peering",
+      "explanation": "VPC Peering is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "load-balancer",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service secures web applications from attacks? (25)",
+      "options": [
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud NAT",
+        "Cloud Router"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "routing",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature enables private access to Google APIs? (26)",
+      "options": [
+        "Private Google Access",
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud Build"
+      ],
+      "answer": "Private Google Access",
+      "explanation": "Private Google Access is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service supports hybrid connectivity with dedicated links? (27)",
+      "options": [
+        "Cloud Interconnect",
+        "Cloud DNS",
+        "Cloud NAT",
+        "Pub/Sub"
+      ],
+      "answer": "Cloud Interconnect",
+      "explanation": "Cloud Interconnect is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "vpn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service distributes HTTP traffic globally? (28)",
+      "options": [
+        "Global Load Balancer",
+        "Cloud Run",
+        "BigQuery",
+        "Cloud Storage"
+      ],
+      "answer": "Global Load Balancer",
+      "explanation": "Global Load Balancer is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "hybrid-network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature enables private communication between VPC networks? (29)",
+      "options": [
+        "VPC Peering",
+        "Cloud Armor",
+        "Cloud SQL",
+        "Cloud Functions"
+      ],
+      "answer": "VPC Peering",
+      "explanation": "VPC Peering is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "firewall",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service secures web applications from attacks? (30)",
+      "options": [
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud NAT",
+        "Cloud Router"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "peering",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature enables private access to Google APIs? (31)",
+      "options": [
+        "Private Google Access",
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud Build"
+      ],
+      "answer": "Private Google Access",
+      "explanation": "Private Google Access is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service supports hybrid connectivity with dedicated links? (32)",
+      "options": [
+        "Cloud Interconnect",
+        "Cloud DNS",
+        "Cloud NAT",
+        "Pub/Sub"
+      ],
+      "answer": "Cloud Interconnect",
+      "explanation": "Cloud Interconnect is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "dns",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service distributes HTTP traffic globally? (33)",
+      "options": [
+        "Global Load Balancer",
+        "Cloud Run",
+        "BigQuery",
+        "Cloud Storage"
+      ],
+      "answer": "Global Load Balancer",
+      "explanation": "Global Load Balancer is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature enables private communication between VPC networks? (34)",
+      "options": [
+        "VPC Peering",
+        "Cloud Armor",
+        "Cloud SQL",
+        "Cloud Functions"
+      ],
+      "answer": "VPC Peering",
+      "explanation": "VPC Peering is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "load-balancer",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service secures web applications from attacks? (35)",
+      "options": [
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud NAT",
+        "Cloud Router"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "routing",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature enables private access to Google APIs? (36)",
+      "options": [
+        "Private Google Access",
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud Build"
+      ],
+      "answer": "Private Google Access",
+      "explanation": "Private Google Access is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service supports hybrid connectivity with dedicated links? (37)",
+      "options": [
+        "Cloud Interconnect",
+        "Cloud DNS",
+        "Cloud NAT",
+        "Pub/Sub"
+      ],
+      "answer": "Cloud Interconnect",
+      "explanation": "Cloud Interconnect is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "vpn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service distributes HTTP traffic globally? (38)",
+      "options": [
+        "Global Load Balancer",
+        "Cloud Run",
+        "BigQuery",
+        "Cloud Storage"
+      ],
+      "answer": "Global Load Balancer",
+      "explanation": "Global Load Balancer is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "hybrid-network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature enables private communication between VPC networks? (39)",
+      "options": [
+        "VPC Peering",
+        "Cloud Armor",
+        "Cloud SQL",
+        "Cloud Functions"
+      ],
+      "answer": "VPC Peering",
+      "explanation": "VPC Peering is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "firewall",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service secures web applications from attacks? (40)",
+      "options": [
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud NAT",
+        "Cloud Router"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "peering",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature enables private access to Google APIs? (41)",
+      "options": [
+        "Private Google Access",
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud Build"
+      ],
+      "answer": "Private Google Access",
+      "explanation": "Private Google Access is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service supports hybrid connectivity with dedicated links? (42)",
+      "options": [
+        "Cloud Interconnect",
+        "Cloud DNS",
+        "Cloud NAT",
+        "Pub/Sub"
+      ],
+      "answer": "Cloud Interconnect",
+      "explanation": "Cloud Interconnect is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "dns",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service distributes HTTP traffic globally? (43)",
+      "options": [
+        "Global Load Balancer",
+        "Cloud Run",
+        "BigQuery",
+        "Cloud Storage"
+      ],
+      "answer": "Global Load Balancer",
+      "explanation": "Global Load Balancer is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature enables private communication between VPC networks? (44)",
+      "options": [
+        "VPC Peering",
+        "Cloud Armor",
+        "Cloud SQL",
+        "Cloud Functions"
+      ],
+      "answer": "VPC Peering",
+      "explanation": "VPC Peering is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "load-balancer",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service secures web applications from attacks? (45)",
+      "options": [
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud NAT",
+        "Cloud Router"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "routing",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature enables private access to Google APIs? (46)",
+      "options": [
+        "Private Google Access",
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud Build"
+      ],
+      "answer": "Private Google Access",
+      "explanation": "Private Google Access is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service supports hybrid connectivity with dedicated links? (47)",
+      "options": [
+        "Cloud Interconnect",
+        "Cloud DNS",
+        "Cloud NAT",
+        "Pub/Sub"
+      ],
+      "answer": "Cloud Interconnect",
+      "explanation": "Cloud Interconnect is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "vpn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service distributes HTTP traffic globally? (48)",
+      "options": [
+        "Global Load Balancer",
+        "Cloud Run",
+        "BigQuery",
+        "Cloud Storage"
+      ],
+      "answer": "Global Load Balancer",
+      "explanation": "Global Load Balancer is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "hybrid-network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature enables private communication between VPC networks? (49)",
+      "options": [
+        "VPC Peering",
+        "Cloud Armor",
+        "Cloud SQL",
+        "Cloud Functions"
+      ],
+      "answer": "VPC Peering",
+      "explanation": "VPC Peering is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "firewall",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service secures web applications from attacks? (50)",
+      "options": [
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud NAT",
+        "Cloud Router"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor is commonly used in GCP networking and CDN architectures.",
+      "difficulty": "medium",
+      "subcategory": "peering",
+      "category": "gcp"
+    }
+  ]

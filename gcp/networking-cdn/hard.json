@@ -1,1 +1,702 @@
-[]
+[
+    {
+      "question": "Which GCP service enables advanced DDoS protection and WAF policies? (1)",
+      "options": [
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Build"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature allows global HTTP(S) load balancing? (2)",
+      "options": [
+        "Global Load Balancer",
+        "Cloud NAT",
+        "Cloud Router",
+        "Cloud SQL"
+      ],
+      "answer": "Global Load Balancer",
+      "explanation": "Global Load Balancer is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "dns",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service enables hybrid routing with dynamic BGP exchange? (3)",
+      "options": [
+        "Cloud Router",
+        "Cloud CDN",
+        "Cloud Functions",
+        "BigQuery"
+      ],
+      "answer": "Cloud Router",
+      "explanation": "Cloud Router is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP networking feature enables shared networking across projects? (4)",
+      "options": [
+        "Shared VPC",
+        "VPC Peering",
+        "Cloud Armor",
+        "Cloud NAT"
+      ],
+      "answer": "Shared VPC",
+      "explanation": "Shared VPC is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "load-balancer",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides private dedicated enterprise connectivity? (5)",
+      "options": [
+        "Dedicated Interconnect",
+        "Cloud VPN",
+        "Cloud DNS",
+        "Cloud Build"
+      ],
+      "answer": "Dedicated Interconnect",
+      "explanation": "Dedicated Interconnect is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "routing",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service enables advanced DDoS protection and WAF policies? (6)",
+      "options": [
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Build"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature allows global HTTP(S) load balancing? (7)",
+      "options": [
+        "Global Load Balancer",
+        "Cloud NAT",
+        "Cloud Router",
+        "Cloud SQL"
+      ],
+      "answer": "Global Load Balancer",
+      "explanation": "Global Load Balancer is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "vpn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service enables hybrid routing with dynamic BGP exchange? (8)",
+      "options": [
+        "Cloud Router",
+        "Cloud CDN",
+        "Cloud Functions",
+        "BigQuery"
+      ],
+      "answer": "Cloud Router",
+      "explanation": "Cloud Router is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "hybrid-network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP networking feature enables shared networking across projects? (9)",
+      "options": [
+        "Shared VPC",
+        "VPC Peering",
+        "Cloud Armor",
+        "Cloud NAT"
+      ],
+      "answer": "Shared VPC",
+      "explanation": "Shared VPC is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "firewall",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides private dedicated enterprise connectivity? (10)",
+      "options": [
+        "Dedicated Interconnect",
+        "Cloud VPN",
+        "Cloud DNS",
+        "Cloud Build"
+      ],
+      "answer": "Dedicated Interconnect",
+      "explanation": "Dedicated Interconnect is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "peering",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service enables advanced DDoS protection and WAF policies? (11)",
+      "options": [
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Build"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature allows global HTTP(S) load balancing? (12)",
+      "options": [
+        "Global Load Balancer",
+        "Cloud NAT",
+        "Cloud Router",
+        "Cloud SQL"
+      ],
+      "answer": "Global Load Balancer",
+      "explanation": "Global Load Balancer is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "dns",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service enables hybrid routing with dynamic BGP exchange? (13)",
+      "options": [
+        "Cloud Router",
+        "Cloud CDN",
+        "Cloud Functions",
+        "BigQuery"
+      ],
+      "answer": "Cloud Router",
+      "explanation": "Cloud Router is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP networking feature enables shared networking across projects? (14)",
+      "options": [
+        "Shared VPC",
+        "VPC Peering",
+        "Cloud Armor",
+        "Cloud NAT"
+      ],
+      "answer": "Shared VPC",
+      "explanation": "Shared VPC is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "load-balancer",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides private dedicated enterprise connectivity? (15)",
+      "options": [
+        "Dedicated Interconnect",
+        "Cloud VPN",
+        "Cloud DNS",
+        "Cloud Build"
+      ],
+      "answer": "Dedicated Interconnect",
+      "explanation": "Dedicated Interconnect is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "routing",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service enables advanced DDoS protection and WAF policies? (16)",
+      "options": [
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Build"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature allows global HTTP(S) load balancing? (17)",
+      "options": [
+        "Global Load Balancer",
+        "Cloud NAT",
+        "Cloud Router",
+        "Cloud SQL"
+      ],
+      "answer": "Global Load Balancer",
+      "explanation": "Global Load Balancer is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "vpn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service enables hybrid routing with dynamic BGP exchange? (18)",
+      "options": [
+        "Cloud Router",
+        "Cloud CDN",
+        "Cloud Functions",
+        "BigQuery"
+      ],
+      "answer": "Cloud Router",
+      "explanation": "Cloud Router is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "hybrid-network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP networking feature enables shared networking across projects? (19)",
+      "options": [
+        "Shared VPC",
+        "VPC Peering",
+        "Cloud Armor",
+        "Cloud NAT"
+      ],
+      "answer": "Shared VPC",
+      "explanation": "Shared VPC is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "firewall",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides private dedicated enterprise connectivity? (20)",
+      "options": [
+        "Dedicated Interconnect",
+        "Cloud VPN",
+        "Cloud DNS",
+        "Cloud Build"
+      ],
+      "answer": "Dedicated Interconnect",
+      "explanation": "Dedicated Interconnect is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "peering",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service enables advanced DDoS protection and WAF policies? (21)",
+      "options": [
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Build"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature allows global HTTP(S) load balancing? (22)",
+      "options": [
+        "Global Load Balancer",
+        "Cloud NAT",
+        "Cloud Router",
+        "Cloud SQL"
+      ],
+      "answer": "Global Load Balancer",
+      "explanation": "Global Load Balancer is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "dns",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service enables hybrid routing with dynamic BGP exchange? (23)",
+      "options": [
+        "Cloud Router",
+        "Cloud CDN",
+        "Cloud Functions",
+        "BigQuery"
+      ],
+      "answer": "Cloud Router",
+      "explanation": "Cloud Router is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP networking feature enables shared networking across projects? (24)",
+      "options": [
+        "Shared VPC",
+        "VPC Peering",
+        "Cloud Armor",
+        "Cloud NAT"
+      ],
+      "answer": "Shared VPC",
+      "explanation": "Shared VPC is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "load-balancer",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides private dedicated enterprise connectivity? (25)",
+      "options": [
+        "Dedicated Interconnect",
+        "Cloud VPN",
+        "Cloud DNS",
+        "Cloud Build"
+      ],
+      "answer": "Dedicated Interconnect",
+      "explanation": "Dedicated Interconnect is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "routing",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service enables advanced DDoS protection and WAF policies? (26)",
+      "options": [
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Build"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature allows global HTTP(S) load balancing? (27)",
+      "options": [
+        "Global Load Balancer",
+        "Cloud NAT",
+        "Cloud Router",
+        "Cloud SQL"
+      ],
+      "answer": "Global Load Balancer",
+      "explanation": "Global Load Balancer is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "vpn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service enables hybrid routing with dynamic BGP exchange? (28)",
+      "options": [
+        "Cloud Router",
+        "Cloud CDN",
+        "Cloud Functions",
+        "BigQuery"
+      ],
+      "answer": "Cloud Router",
+      "explanation": "Cloud Router is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "hybrid-network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP networking feature enables shared networking across projects? (29)",
+      "options": [
+        "Shared VPC",
+        "VPC Peering",
+        "Cloud Armor",
+        "Cloud NAT"
+      ],
+      "answer": "Shared VPC",
+      "explanation": "Shared VPC is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "firewall",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides private dedicated enterprise connectivity? (30)",
+      "options": [
+        "Dedicated Interconnect",
+        "Cloud VPN",
+        "Cloud DNS",
+        "Cloud Build"
+      ],
+      "answer": "Dedicated Interconnect",
+      "explanation": "Dedicated Interconnect is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "peering",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service enables advanced DDoS protection and WAF policies? (31)",
+      "options": [
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Build"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature allows global HTTP(S) load balancing? (32)",
+      "options": [
+        "Global Load Balancer",
+        "Cloud NAT",
+        "Cloud Router",
+        "Cloud SQL"
+      ],
+      "answer": "Global Load Balancer",
+      "explanation": "Global Load Balancer is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "dns",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service enables hybrid routing with dynamic BGP exchange? (33)",
+      "options": [
+        "Cloud Router",
+        "Cloud CDN",
+        "Cloud Functions",
+        "BigQuery"
+      ],
+      "answer": "Cloud Router",
+      "explanation": "Cloud Router is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP networking feature enables shared networking across projects? (34)",
+      "options": [
+        "Shared VPC",
+        "VPC Peering",
+        "Cloud Armor",
+        "Cloud NAT"
+      ],
+      "answer": "Shared VPC",
+      "explanation": "Shared VPC is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "load-balancer",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides private dedicated enterprise connectivity? (35)",
+      "options": [
+        "Dedicated Interconnect",
+        "Cloud VPN",
+        "Cloud DNS",
+        "Cloud Build"
+      ],
+      "answer": "Dedicated Interconnect",
+      "explanation": "Dedicated Interconnect is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "routing",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service enables advanced DDoS protection and WAF policies? (36)",
+      "options": [
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Build"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature allows global HTTP(S) load balancing? (37)",
+      "options": [
+        "Global Load Balancer",
+        "Cloud NAT",
+        "Cloud Router",
+        "Cloud SQL"
+      ],
+      "answer": "Global Load Balancer",
+      "explanation": "Global Load Balancer is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "vpn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service enables hybrid routing with dynamic BGP exchange? (38)",
+      "options": [
+        "Cloud Router",
+        "Cloud CDN",
+        "Cloud Functions",
+        "BigQuery"
+      ],
+      "answer": "Cloud Router",
+      "explanation": "Cloud Router is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "hybrid-network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP networking feature enables shared networking across projects? (39)",
+      "options": [
+        "Shared VPC",
+        "VPC Peering",
+        "Cloud Armor",
+        "Cloud NAT"
+      ],
+      "answer": "Shared VPC",
+      "explanation": "Shared VPC is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "firewall",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides private dedicated enterprise connectivity? (40)",
+      "options": [
+        "Dedicated Interconnect",
+        "Cloud VPN",
+        "Cloud DNS",
+        "Cloud Build"
+      ],
+      "answer": "Dedicated Interconnect",
+      "explanation": "Dedicated Interconnect is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "peering",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service enables advanced DDoS protection and WAF policies? (41)",
+      "options": [
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Build"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature allows global HTTP(S) load balancing? (42)",
+      "options": [
+        "Global Load Balancer",
+        "Cloud NAT",
+        "Cloud Router",
+        "Cloud SQL"
+      ],
+      "answer": "Global Load Balancer",
+      "explanation": "Global Load Balancer is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "dns",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service enables hybrid routing with dynamic BGP exchange? (43)",
+      "options": [
+        "Cloud Router",
+        "Cloud CDN",
+        "Cloud Functions",
+        "BigQuery"
+      ],
+      "answer": "Cloud Router",
+      "explanation": "Cloud Router is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP networking feature enables shared networking across projects? (44)",
+      "options": [
+        "Shared VPC",
+        "VPC Peering",
+        "Cloud Armor",
+        "Cloud NAT"
+      ],
+      "answer": "Shared VPC",
+      "explanation": "Shared VPC is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "load-balancer",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides private dedicated enterprise connectivity? (45)",
+      "options": [
+        "Dedicated Interconnect",
+        "Cloud VPN",
+        "Cloud DNS",
+        "Cloud Build"
+      ],
+      "answer": "Dedicated Interconnect",
+      "explanation": "Dedicated Interconnect is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "routing",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service enables advanced DDoS protection and WAF policies? (46)",
+      "options": [
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Build"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature allows global HTTP(S) load balancing? (47)",
+      "options": [
+        "Global Load Balancer",
+        "Cloud NAT",
+        "Cloud Router",
+        "Cloud SQL"
+      ],
+      "answer": "Global Load Balancer",
+      "explanation": "Global Load Balancer is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "vpn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service enables hybrid routing with dynamic BGP exchange? (48)",
+      "options": [
+        "Cloud Router",
+        "Cloud CDN",
+        "Cloud Functions",
+        "BigQuery"
+      ],
+      "answer": "Cloud Router",
+      "explanation": "Cloud Router is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "hybrid-network",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP networking feature enables shared networking across projects? (49)",
+      "options": [
+        "Shared VPC",
+        "VPC Peering",
+        "Cloud Armor",
+        "Cloud NAT"
+      ],
+      "answer": "Shared VPC",
+      "explanation": "Shared VPC is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "firewall",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides private dedicated enterprise connectivity? (50)",
+      "options": [
+        "Dedicated Interconnect",
+        "Cloud VPN",
+        "Cloud DNS",
+        "Cloud Build"
+      ],
+      "answer": "Dedicated Interconnect",
+      "explanation": "Dedicated Interconnect is an advanced networking or CDN capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "peering",
+      "category": "gcp"
+    }
+  ]
