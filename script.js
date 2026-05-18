@@ -4,6 +4,7 @@
 let questions = [];
 let currentQuestion = 0;
 let userAnswers = [];
+let quizHistory = JSON.parse(localStorage.getItem("quizHistory")) || [];
 let score = 0;
 let timer;
 let timeLeft = 0;
@@ -325,51 +326,140 @@ function updateQuestionCounter() {
 // ========================================
 // Submit Quiz
 // ========================================
+// function submitQuiz() {
+//   saveAnswer();
+//   clearInterval(timer);
+
+//   if (!questions || questions.length === 0) {
+//     alert("No quiz is currently active.");
+//     return;
+//   }
+
+//   score = 0;
+//   questions.forEach((q, index) => {
+//     if (userAnswers[index] === q.answer) {
+//       score++;
+//     }
+//   });
+
+//   const percentage = ((score / questions.length) * 100).toFixed(2);
+
+//   let reaction = "";
+//   if (percentage < 55)       reaction = "❌ Failed";
+//   else if (percentage < 75)  reaction = "🙂 Good";
+//   else if (percentage < 90)  reaction = "🔥 Great";
+//   else if (percentage < 100) reaction = "🏆 Excellent";
+//   else                        reaction = "🎯 Perfect";
+
+//   document.getElementById("result").innerHTML = `
+//     <h2>${reaction}</h2>
+//     <h3>Score: ${score} / ${questions.length}</h3>
+//     <h3>Percentage: ${percentage}%</h3>
+//   `;
+
+//   // Save to history
+//   saveHistory({
+//     name: document.getElementById("studentName").value || "Anonymous",
+//     category: document.getElementById("mainCategory").value,
+//     subCategory: document.getElementById("subCategory").value,
+//     difficulty: document.getElementById("difficulty").value,
+//     score: score,
+//     total: questions.length,
+//     percentage: percentage,
+//     reaction: reaction,
+//     date: new Date().toLocaleString()
+//   });
+
+//   displayHistory();
+// }
 function submitQuiz() {
-  saveAnswer();
-  clearInterval(timer);
 
-  if (!questions || questions.length === 0) {
-    alert("No quiz is currently active.");
-    return;
-  }
+  clearInterval(timerInterval);
 
-  score = 0;
-  questions.forEach((q, index) => {
-    if (userAnswers[index] === q.answer) {
-      score++;
-    }
-  });
+  let score = 0;
 
-  const percentage = ((score / questions.length) * 100).toFixed(2);
-
-  let reaction = "";
-  if (percentage < 55)       reaction = "❌ Failed";
-  else if (percentage < 75)  reaction = "🙂 Good";
-  else if (percentage < 90)  reaction = "🔥 Great";
-  else if (percentage < 100) reaction = "🏆 Excellent";
-  else                        reaction = "🎯 Perfect";
-
-  document.getElementById("result").innerHTML = `
-    <h2>${reaction}</h2>
-    <h3>Score: ${score} / ${questions.length}</h3>
-    <h3>Percentage: ${percentage}%</h3>
+  let resultHTML = `
+      <h2>📊 Quiz Result</h2>
   `;
 
-  // Save to history
-  saveHistory({
-    name: document.getElementById("studentName").value || "Anonymous",
-    category: document.getElementById("mainCategory").value,
-    subCategory: document.getElementById("subCategory").value,
-    difficulty: document.getElementById("difficulty").value,
-    score: score,
-    total: questions.length,
-    percentage: percentage,
-    reaction: reaction,
-    date: new Date().toLocaleString()
+  questions.forEach((q, index) => {
+
+      const userAnswer = userAnswers[index];
+
+      const isCorrect = userAnswer === q.answer;
+
+      if (isCorrect) {
+          score++;
+      }
+
+      resultHTML += `
+          <div class="result-card ${isCorrect ? 'correct' : 'wrong'}">
+
+              <h3>Q${index + 1}: ${q.question}</h3>
+
+              <p>
+                  <strong>Your Answer:</strong>
+                  ${userAnswer || "Not Answered"}
+              </p>
+
+              <p>
+                  <strong>Correct Answer:</strong>
+                  ${q.answer}
+              </p>
+
+              <p>
+                  <strong>Status:</strong>
+                  ${isCorrect ? '✅ Correct' : '❌ Wrong'}
+              </p>
+
+              <p>
+                  <strong>Explanation:</strong>
+                  ${q.explanation || "No explanation available"}
+              </p>
+
+          </div>
+      `;
   });
 
-  displayHistory();
+  const percentage = Math.round((score / questions.length) * 100);
+
+  let reaction = "";
+
+  if (percentage === 100) {
+      reaction = "🏆 Outstanding!";
+  }
+  else if (percentage >= 90) {
+      reaction = "🔥 Excellent Work!";
+  }
+  else if (percentage >= 75) {
+      reaction = "👏 Great Job!";
+  }
+  else if (percentage >= 55) {
+      reaction = "🙂 Good Attempt!";
+  }
+  else {
+      reaction = "😢 Failed - Keep Practicing!";
+  }
+
+  resultHTML = `
+      <div class="final-score">
+          <h2>${reaction}</h2>
+
+          <h3>
+              Score: ${score} / ${questions.length}
+          </h3>
+
+          <h3>
+              Percentage: ${percentage}%
+          </h3>
+      </div>
+  ` + resultHTML;
+
+  document.getElementById("result").innerHTML = resultHTML;
+
+  saveHistory(score, percentage);
+
+  loadHistory();
 }
 
 // ========================================
