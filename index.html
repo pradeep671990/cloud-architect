@@ -87,17 +87,117 @@
 
     <!-- Main Category -->
 
-    <label>
-      Main Category:
-    </label>
+<!-- =========================
+     CATEGORY CARDS
+========================== -->
 
-    <select id="mainCategory">
+<label>
+  Select Technology:
+</label>
 
-      <option value="">
-        Select Category
-      </option>
+<div class="category-cards">
 
-    </select>
+  <div
+    class="category-card"
+    onclick="selectCategory('aws')"
+  >
+    ☁
+    <span>AWS</span>
+  </div>
+
+  <div
+    class="category-card"
+    onclick="selectCategory('azure')"
+  >
+    🔷
+    <span>Azure</span>
+  </div>
+
+  <div
+    class="category-card"
+    onclick="selectCategory('gcp')"
+  >
+    🌐
+    <span>GCP</span>
+  </div>
+
+  <div
+    class="category-card"
+    onclick="selectCategory('docker')"
+  >
+    🐳
+    <span>Docker</span>
+  </div>
+
+  <div
+    class="category-card"
+    onclick="selectCategory('kubernetes')"
+  >
+    ⚙
+    <span>Kubernetes</span>
+  </div>
+
+  <div
+    class="category-card"
+    onclick="selectCategory('linux')"
+  >
+    🐧
+    <span>Linux</span>
+  </div>
+
+  <div
+    class="category-card"
+    onclick="selectCategory('terraform')"
+  >
+    🏗
+    <span>Terraform</span>
+  </div>
+
+  <div
+    class="category-card"
+    onclick="selectCategory('security')"
+  >
+    🔐
+    <span>Security</span>
+  </div>
+
+  <div
+    class="category-card"
+    onclick="selectCategory('networking')"
+  >
+    🌍
+    <span>Networking</span>
+  </div>
+
+  <div
+    class="category-card"
+    onclick="selectCategory('monitoring')"
+  >
+    📊
+    <span>Monitoring</span>
+  </div>
+
+  <div
+    class="category-card"
+    onclick="selectCategory('devops')"
+  >
+    🚀
+    <span>DevOps</span>
+  </div>
+
+</div>
+
+
+<!-- Hidden Dropdown -->
+
+<select
+  id="mainCategory"
+  style="display:none;"
+>
+  <option value="">
+    Select Category
+  </option>
+</select>
 
 
     <!-- Sub Category -->

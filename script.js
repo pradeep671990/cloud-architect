@@ -74,6 +74,26 @@ const quizStructure = {
   ]
 };
 
+function selectCategory(category) {
+
+  // Set hidden dropdown value
+  document.getElementById("mainCategory").value = category;
+
+  // Remove active from all cards
+  document
+    .querySelectorAll(".category-card")
+    .forEach(card => {
+
+      card.classList.remove("active");
+    });
+
+  // Add active class to clicked card
+  event.currentTarget.classList.add("active");
+
+  // Trigger subcategory loading
+  loadSubCategories();
+}
+
 // ========================================
 // Load Main Categories on Page Load
 // ========================================
