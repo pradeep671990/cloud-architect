@@ -74,25 +74,7 @@ const quizStructure = {
   ]
 };
 
-function selectCategory(category) {
 
-  // Set hidden dropdown value
-  document.getElementById("mainCategory").value = category;
-
-  // Remove active from all cards
-  document
-    .querySelectorAll(".category-card")
-    .forEach(card => {
-
-      card.classList.remove("active");
-    });
-
-  // Add active class to clicked card
-  event.currentTarget.classList.add("active");
-
-  // Trigger subcategory loading
-  loadSubCategories();
-}
 
 // ========================================
 // Load Main Categories on Page Load
@@ -107,6 +89,35 @@ window.onload = function () {
   });
   displayHistory();
 };
+
+function loadSubCategories() {
+
+  const mainCategory =
+    document.getElementById("mainCategory").value;
+
+  const subCategory =
+    document.getElementById("subCategory");
+
+  subCategory.innerHTML =
+    '<option value="">Select Sub Category</option>';
+
+  if (!categoryStructure[mainCategory]) {
+    return;
+  }
+
+  categoryStructure[mainCategory].forEach(sub => {
+
+    const option =
+      document.createElement("option");
+
+    option.value = sub;
+
+    option.textContent =
+      sub.replace(/-/g, " ");
+
+    subCategory.appendChild(option);
+  });
+}
 
 // ========================================
 // Load Sub Categories on Main Category Change
