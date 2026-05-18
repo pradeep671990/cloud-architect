@@ -1,1 +1,702 @@
-[]
+[
+    {
+      "question": "Which Azure service is used for managed Kubernetes? (1)",
+      "options": [
+        "AKS",
+        "VMSS",
+        "Functions",
+        "Logic Apps"
+      ],
+      "answer": "AKS",
+      "explanation": "AKS is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service stores container images? (2)",
+      "options": [
+        "ACR",
+        "Blob Storage",
+        "Cosmos DB",
+        "Front Door"
+      ],
+      "answer": "ACR",
+      "explanation": "ACR is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service runs containers without managing VMs? (3)",
+      "options": [
+        "Container Instances",
+        "Virtual Machines",
+        "Azure SQL",
+        "Azure DNS"
+      ],
+      "answer": "Container Instances",
+      "explanation": "Container Instances is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service hosts microservices using containers? (4)",
+      "options": [
+        "Container Apps",
+        "App Gateway",
+        "Traffic Manager",
+        "Firewall"
+      ],
+      "answer": "Container Apps",
+      "explanation": "Container Apps is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can host Docker containers in web apps? (5)",
+      "options": [
+        "App Service",
+        "Azure AD",
+        "Azure Monitor",
+        "Azure Backup"
+      ],
+      "answer": "App Service",
+      "explanation": "App Service is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service is used for managed Kubernetes? (6)",
+      "options": [
+        "AKS",
+        "VMSS",
+        "Functions",
+        "Logic Apps"
+      ],
+      "answer": "AKS",
+      "explanation": "AKS is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service stores container images? (7)",
+      "options": [
+        "ACR",
+        "Blob Storage",
+        "Cosmos DB",
+        "Front Door"
+      ],
+      "answer": "ACR",
+      "explanation": "ACR is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service runs containers without managing VMs? (8)",
+      "options": [
+        "Container Instances",
+        "Virtual Machines",
+        "Azure SQL",
+        "Azure DNS"
+      ],
+      "answer": "Container Instances",
+      "explanation": "Container Instances is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service hosts microservices using containers? (9)",
+      "options": [
+        "Container Apps",
+        "App Gateway",
+        "Traffic Manager",
+        "Firewall"
+      ],
+      "answer": "Container Apps",
+      "explanation": "Container Apps is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can host Docker containers in web apps? (10)",
+      "options": [
+        "App Service",
+        "Azure AD",
+        "Azure Monitor",
+        "Azure Backup"
+      ],
+      "answer": "App Service",
+      "explanation": "App Service is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service is used for managed Kubernetes? (11)",
+      "options": [
+        "AKS",
+        "VMSS",
+        "Functions",
+        "Logic Apps"
+      ],
+      "answer": "AKS",
+      "explanation": "AKS is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service stores container images? (12)",
+      "options": [
+        "ACR",
+        "Blob Storage",
+        "Cosmos DB",
+        "Front Door"
+      ],
+      "answer": "ACR",
+      "explanation": "ACR is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service runs containers without managing VMs? (13)",
+      "options": [
+        "Container Instances",
+        "Virtual Machines",
+        "Azure SQL",
+        "Azure DNS"
+      ],
+      "answer": "Container Instances",
+      "explanation": "Container Instances is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service hosts microservices using containers? (14)",
+      "options": [
+        "Container Apps",
+        "App Gateway",
+        "Traffic Manager",
+        "Firewall"
+      ],
+      "answer": "Container Apps",
+      "explanation": "Container Apps is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can host Docker containers in web apps? (15)",
+      "options": [
+        "App Service",
+        "Azure AD",
+        "Azure Monitor",
+        "Azure Backup"
+      ],
+      "answer": "App Service",
+      "explanation": "App Service is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service is used for managed Kubernetes? (16)",
+      "options": [
+        "AKS",
+        "VMSS",
+        "Functions",
+        "Logic Apps"
+      ],
+      "answer": "AKS",
+      "explanation": "AKS is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service stores container images? (17)",
+      "options": [
+        "ACR",
+        "Blob Storage",
+        "Cosmos DB",
+        "Front Door"
+      ],
+      "answer": "ACR",
+      "explanation": "ACR is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service runs containers without managing VMs? (18)",
+      "options": [
+        "Container Instances",
+        "Virtual Machines",
+        "Azure SQL",
+        "Azure DNS"
+      ],
+      "answer": "Container Instances",
+      "explanation": "Container Instances is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service hosts microservices using containers? (19)",
+      "options": [
+        "Container Apps",
+        "App Gateway",
+        "Traffic Manager",
+        "Firewall"
+      ],
+      "answer": "Container Apps",
+      "explanation": "Container Apps is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can host Docker containers in web apps? (20)",
+      "options": [
+        "App Service",
+        "Azure AD",
+        "Azure Monitor",
+        "Azure Backup"
+      ],
+      "answer": "App Service",
+      "explanation": "App Service is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service is used for managed Kubernetes? (21)",
+      "options": [
+        "AKS",
+        "VMSS",
+        "Functions",
+        "Logic Apps"
+      ],
+      "answer": "AKS",
+      "explanation": "AKS is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service stores container images? (22)",
+      "options": [
+        "ACR",
+        "Blob Storage",
+        "Cosmos DB",
+        "Front Door"
+      ],
+      "answer": "ACR",
+      "explanation": "ACR is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service runs containers without managing VMs? (23)",
+      "options": [
+        "Container Instances",
+        "Virtual Machines",
+        "Azure SQL",
+        "Azure DNS"
+      ],
+      "answer": "Container Instances",
+      "explanation": "Container Instances is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service hosts microservices using containers? (24)",
+      "options": [
+        "Container Apps",
+        "App Gateway",
+        "Traffic Manager",
+        "Firewall"
+      ],
+      "answer": "Container Apps",
+      "explanation": "Container Apps is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can host Docker containers in web apps? (25)",
+      "options": [
+        "App Service",
+        "Azure AD",
+        "Azure Monitor",
+        "Azure Backup"
+      ],
+      "answer": "App Service",
+      "explanation": "App Service is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service is used for managed Kubernetes? (26)",
+      "options": [
+        "AKS",
+        "VMSS",
+        "Functions",
+        "Logic Apps"
+      ],
+      "answer": "AKS",
+      "explanation": "AKS is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service stores container images? (27)",
+      "options": [
+        "ACR",
+        "Blob Storage",
+        "Cosmos DB",
+        "Front Door"
+      ],
+      "answer": "ACR",
+      "explanation": "ACR is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service runs containers without managing VMs? (28)",
+      "options": [
+        "Container Instances",
+        "Virtual Machines",
+        "Azure SQL",
+        "Azure DNS"
+      ],
+      "answer": "Container Instances",
+      "explanation": "Container Instances is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service hosts microservices using containers? (29)",
+      "options": [
+        "Container Apps",
+        "App Gateway",
+        "Traffic Manager",
+        "Firewall"
+      ],
+      "answer": "Container Apps",
+      "explanation": "Container Apps is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can host Docker containers in web apps? (30)",
+      "options": [
+        "App Service",
+        "Azure AD",
+        "Azure Monitor",
+        "Azure Backup"
+      ],
+      "answer": "App Service",
+      "explanation": "App Service is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service is used for managed Kubernetes? (31)",
+      "options": [
+        "AKS",
+        "VMSS",
+        "Functions",
+        "Logic Apps"
+      ],
+      "answer": "AKS",
+      "explanation": "AKS is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service stores container images? (32)",
+      "options": [
+        "ACR",
+        "Blob Storage",
+        "Cosmos DB",
+        "Front Door"
+      ],
+      "answer": "ACR",
+      "explanation": "ACR is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service runs containers without managing VMs? (33)",
+      "options": [
+        "Container Instances",
+        "Virtual Machines",
+        "Azure SQL",
+        "Azure DNS"
+      ],
+      "answer": "Container Instances",
+      "explanation": "Container Instances is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service hosts microservices using containers? (34)",
+      "options": [
+        "Container Apps",
+        "App Gateway",
+        "Traffic Manager",
+        "Firewall"
+      ],
+      "answer": "Container Apps",
+      "explanation": "Container Apps is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can host Docker containers in web apps? (35)",
+      "options": [
+        "App Service",
+        "Azure AD",
+        "Azure Monitor",
+        "Azure Backup"
+      ],
+      "answer": "App Service",
+      "explanation": "App Service is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service is used for managed Kubernetes? (36)",
+      "options": [
+        "AKS",
+        "VMSS",
+        "Functions",
+        "Logic Apps"
+      ],
+      "answer": "AKS",
+      "explanation": "AKS is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service stores container images? (37)",
+      "options": [
+        "ACR",
+        "Blob Storage",
+        "Cosmos DB",
+        "Front Door"
+      ],
+      "answer": "ACR",
+      "explanation": "ACR is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service runs containers without managing VMs? (38)",
+      "options": [
+        "Container Instances",
+        "Virtual Machines",
+        "Azure SQL",
+        "Azure DNS"
+      ],
+      "answer": "Container Instances",
+      "explanation": "Container Instances is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service hosts microservices using containers? (39)",
+      "options": [
+        "Container Apps",
+        "App Gateway",
+        "Traffic Manager",
+        "Firewall"
+      ],
+      "answer": "Container Apps",
+      "explanation": "Container Apps is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can host Docker containers in web apps? (40)",
+      "options": [
+        "App Service",
+        "Azure AD",
+        "Azure Monitor",
+        "Azure Backup"
+      ],
+      "answer": "App Service",
+      "explanation": "App Service is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service is used for managed Kubernetes? (41)",
+      "options": [
+        "AKS",
+        "VMSS",
+        "Functions",
+        "Logic Apps"
+      ],
+      "answer": "AKS",
+      "explanation": "AKS is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service stores container images? (42)",
+      "options": [
+        "ACR",
+        "Blob Storage",
+        "Cosmos DB",
+        "Front Door"
+      ],
+      "answer": "ACR",
+      "explanation": "ACR is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service runs containers without managing VMs? (43)",
+      "options": [
+        "Container Instances",
+        "Virtual Machines",
+        "Azure SQL",
+        "Azure DNS"
+      ],
+      "answer": "Container Instances",
+      "explanation": "Container Instances is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service hosts microservices using containers? (44)",
+      "options": [
+        "Container Apps",
+        "App Gateway",
+        "Traffic Manager",
+        "Firewall"
+      ],
+      "answer": "Container Apps",
+      "explanation": "Container Apps is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can host Docker containers in web apps? (45)",
+      "options": [
+        "App Service",
+        "Azure AD",
+        "Azure Monitor",
+        "Azure Backup"
+      ],
+      "answer": "App Service",
+      "explanation": "App Service is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service is used for managed Kubernetes? (46)",
+      "options": [
+        "AKS",
+        "VMSS",
+        "Functions",
+        "Logic Apps"
+      ],
+      "answer": "AKS",
+      "explanation": "AKS is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service stores container images? (47)",
+      "options": [
+        "ACR",
+        "Blob Storage",
+        "Cosmos DB",
+        "Front Door"
+      ],
+      "answer": "ACR",
+      "explanation": "ACR is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service runs containers without managing VMs? (48)",
+      "options": [
+        "Container Instances",
+        "Virtual Machines",
+        "Azure SQL",
+        "Azure DNS"
+      ],
+      "answer": "Container Instances",
+      "explanation": "Container Instances is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service hosts microservices using containers? (49)",
+      "options": [
+        "Container Apps",
+        "App Gateway",
+        "Traffic Manager",
+        "Firewall"
+      ],
+      "answer": "Container Apps",
+      "explanation": "Container Apps is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can host Docker containers in web apps? (50)",
+      "options": [
+        "App Service",
+        "Azure AD",
+        "Azure Monitor",
+        "Azure Backup"
+      ],
+      "answer": "App Service",
+      "explanation": "App Service is a commonly used container or Docker-related service in Azure.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "azure"
+    }
+  ]

@@ -1,1 +1,702 @@
-[]
+[
+    {
+      "question": "Which AKS feature allows Kubernetes workloads to access Azure resources using federated identity?",
+      "options": [
+        "Workload Identity",
+        "Azure CDN",
+        "Traffic Manager",
+        "Blob Index Tags"
+      ],
+      "answer": "Workload Identity",
+      "explanation": "Workload Identity is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes-security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides managed Kubernetes clusters with node pool control?",
+      "options": [
+        "Azure Kubernetes Service",
+        "Azure Container Instances",
+        "Azure CDN",
+        "Azure DNS"
+      ],
+      "answer": "Azure Kubernetes Service",
+      "explanation": "Azure Kubernetes Service is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure Container Registry feature replicates images across multiple Azure regions?",
+      "options": [
+        "Geo-replication",
+        "Private DNS",
+        "Traffic Analytics",
+        "Azure Bastion"
+      ],
+      "answer": "Geo-replication",
+      "explanation": "Geo-replication is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "container-registry",
+      "category": "azure"
+    },
+    {
+      "question": "Which AKS networking mode assigns IP addresses from the virtual network to pods?",
+      "options": [
+        "Azure CNI",
+        "Kubenet",
+        "Azure DNS",
+        "Azure Firewall"
+      ],
+      "answer": "Azure CNI",
+      "explanation": "Azure CNI is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes-networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides event-driven autoscaling for Azure Container Apps?",
+      "options": [
+        "KEDA",
+        "Azure Advisor",
+        "Azure Cost Management",
+        "Azure DNS"
+      ],
+      "answer": "KEDA",
+      "explanation": "KEDA is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "container-scaling",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure security service can assess AKS and container image vulnerabilities?",
+      "options": [
+        "Microsoft Defender for Containers",
+        "Azure Backup",
+        "Azure Maps",
+        "Azure Search"
+      ],
+      "answer": "Microsoft Defender for Containers",
+      "explanation": "Microsoft Defender for Containers is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "container-security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can provide Layer 7 ingress integration for AKS?",
+      "options": [
+        "Application Gateway Ingress Controller",
+        "Azure Files Sync",
+        "Azure Automation",
+        "Azure Migrate"
+      ],
+      "answer": "Application Gateway Ingress Controller",
+      "explanation": "Application Gateway Ingress Controller is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes-networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service securely stores secrets used by AKS workloads?",
+      "options": [
+        "Azure Key Vault",
+        "Azure CDN",
+        "Azure SQL",
+        "Azure Front Door"
+      ],
+      "answer": "Azure Key Vault",
+      "explanation": "Azure Key Vault is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "container-security",
+      "category": "azure"
+    },
+    {
+      "question": "Which AKS feature helps automatically scale node pools based on pending pods?",
+      "options": [
+        "Cluster Autoscaler",
+        "Azure Firewall Policy",
+        "Private DNS Zone",
+        "Storage Lifecycle"
+      ],
+      "answer": "Cluster Autoscaler",
+      "explanation": "Cluster Autoscaler is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes-scaling",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides serverless Kubernetes-style app hosting for containers?",
+      "options": [
+        "Azure Container Apps",
+        "Azure DNS",
+        "Azure Load Testing",
+        "Azure Data Lake"
+      ],
+      "answer": "Azure Container Apps",
+      "explanation": "Azure Container Apps is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "serverless-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can run a single container quickly without provisioning Kubernetes?",
+      "options": [
+        "Azure Container Instances",
+        "Azure Kubernetes Service",
+        "Azure App Configuration",
+        "Azure Front Door"
+      ],
+      "answer": "Azure Container Instances",
+      "explanation": "Azure Container Instances is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "serverless-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature allows private network access to Azure Container Registry?",
+      "options": [
+        "Private Endpoint",
+        "Public IP Prefix",
+        "Traffic Manager",
+        "Azure Monitor Alert"
+      ],
+      "answer": "Private Endpoint",
+      "explanation": "Private Endpoint is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "container-security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can collect AKS container logs and metrics?",
+      "options": [
+        "Azure Monitor Container Insights",
+        "Azure DNS",
+        "Azure Firewall Manager",
+        "Azure Advisor"
+      ],
+      "answer": "Azure Monitor Container Insights",
+      "explanation": "Azure Monitor Container Insights is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "container-monitoring",
+      "category": "azure"
+    },
+    {
+      "question": "Which AKS feature can integrate Kubernetes authentication with Microsoft Entra ID?",
+      "options": [
+        "AKS-managed Microsoft Entra integration",
+        "Azure CDN compression",
+        "Storage Account SAS",
+        "Traffic Manager profile"
+      ],
+      "answer": "AKS-managed Microsoft Entra integration",
+      "explanation": "AKS-managed Microsoft Entra integration is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes-security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature can enforce policies on AKS clusters and workloads?",
+      "options": [
+        "Azure Policy for Kubernetes",
+        "Azure DNS Forwarder",
+        "Azure Cost Budget",
+        "Azure Route Server"
+      ],
+      "answer": "Azure Policy for Kubernetes",
+      "explanation": "Azure Policy for Kubernetes is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "container-security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure Container Registry feature can automate image builds when source code changes?",
+      "options": [
+        "ACR Tasks",
+        "Azure Bastion",
+        "Azure Backup Vault",
+        "Azure Service Health"
+      ],
+      "answer": "ACR Tasks",
+      "explanation": "ACR Tasks is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "container-cicd",
+      "category": "azure"
+    },
+    {
+      "question": "Which AKS object grouping allows different VM sizes or OS types in one cluster?",
+      "options": [
+        "Node pools",
+        "Resource locks",
+        "Private DNS zones",
+        "Management groups"
+      ],
+      "answer": "Node pools",
+      "explanation": "Node pools is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can host Docker containers with deployment slots?",
+      "options": [
+        "Azure App Service",
+        "Azure DNS",
+        "Azure Site Recovery",
+        "Azure Load Testing"
+      ],
+      "answer": "Azure App Service",
+      "explanation": "Azure App Service is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "container-hosting",
+      "category": "azure"
+    },
+    {
+      "question": "Which AKS configuration makes the Kubernetes API server accessible only through private networking?",
+      "options": [
+        "Private cluster",
+        "Public endpoint only",
+        "Azure CDN endpoint",
+        "Traffic Manager endpoint"
+      ],
+      "answer": "Private cluster",
+      "explanation": "Private cluster is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes-security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can control outbound traffic from AKS through centralized inspection?",
+      "options": [
+        "Azure Firewall",
+        "Azure Advisor",
+        "Azure Storage Explorer",
+        "Azure Maps"
+      ],
+      "answer": "Azure Firewall",
+      "explanation": "Azure Firewall is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "container-networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which Kubernetes feature controls pod-to-pod network communication in AKS?",
+      "options": [
+        "Network Policy",
+        "Blob lifecycle",
+        "DNS alias",
+        "Load testing engine"
+      ],
+      "answer": "Network Policy",
+      "explanation": "Network Policy is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes-networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can provide persistent shared file storage for containers?",
+      "options": [
+        "Azure Files",
+        "Azure DNS",
+        "Azure Front Door",
+        "Azure Monitor"
+      ],
+      "answer": "Azure Files",
+      "explanation": "Azure Files is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "container-storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure storage option is commonly used for persistent disks in AKS?",
+      "options": [
+        "Managed Disks",
+        "Azure CDN",
+        "Azure Firewall",
+        "Azure Policy"
+      ],
+      "answer": "Managed Disks",
+      "explanation": "Managed Disks is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "container-storage",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can run scheduled or event-triggered container executions?",
+      "options": [
+        "Azure Container Apps Jobs",
+        "Azure SQL Database",
+        "Azure DNS Private Resolver",
+        "Azure Backup Center"
+      ],
+      "answer": "Azure Container Apps Jobs",
+      "explanation": "Azure Container Apps Jobs is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "serverless-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature allows ACR access without storing registry passwords in AKS?",
+      "options": [
+        "Managed Identity",
+        "Traffic Manager",
+        "Azure Monitor Workbook",
+        "Public IP Prefix"
+      ],
+      "answer": "Managed Identity",
+      "explanation": "Managed Identity is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "container-security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can push container images to ACR from CI/CD pipelines?",
+      "options": [
+        "Azure DevOps Pipelines",
+        "Azure Cost Management",
+        "Azure Firewall Manager",
+        "Azure Advisor"
+      ],
+      "answer": "Azure DevOps Pipelines",
+      "explanation": "Azure DevOps Pipelines is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "container-cicd",
+      "category": "azure"
+    },
+    {
+      "question": "Which AKS feature helps isolate workloads by using taints and tolerations?",
+      "options": [
+        "Node scheduling controls",
+        "Azure DNS forwarding",
+        "Blob soft delete",
+        "CDN route rules"
+      ],
+      "answer": "Node scheduling controls",
+      "explanation": "Node scheduling controls is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes-scheduling",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can protect containerized apps with centralized secrets management?",
+      "options": [
+        "Azure Key Vault",
+        "Azure CDN",
+        "Azure Front Door Rules Engine",
+        "Azure Cost Analysis"
+      ],
+      "answer": "Azure Key Vault",
+      "explanation": "Azure Key Vault is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "container-security",
+      "category": "azure"
+    },
+    {
+      "question": "Which AKS feature helps expose services internally using private load balancers?",
+      "options": [
+        "Internal Load Balancer",
+        "Azure CDN",
+        "Azure Advisor",
+        "Azure Blueprints"
+      ],
+      "answer": "Internal Load Balancer",
+      "explanation": "Internal Load Balancer is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "container-networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can provide WAF protection in front of AKS ingress?",
+      "options": [
+        "Application Gateway WAF",
+        "Azure DNS",
+        "Azure Site Recovery",
+        "Azure SQL"
+      ],
+      "answer": "Application Gateway WAF",
+      "explanation": "Application Gateway WAF is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "container-security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure Container Apps feature allows revision-based traffic splitting?",
+      "options": [
+        "Revisions",
+        "Storage tiers",
+        "DNS labels only",
+        "Private DNS Resolver"
+      ],
+      "answer": "Revisions",
+      "explanation": "Revisions is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "serverless-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can store OCI artifacts such as Helm charts?",
+      "options": [
+        "Azure Container Registry",
+        "Azure Blob Archive",
+        "Azure Firewall Policy",
+        "Azure Monitor Logs"
+      ],
+      "answer": "Azure Container Registry",
+      "explanation": "Azure Container Registry is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "container-registry",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature can disable public network access to ACR?",
+      "options": [
+        "Disable public network access",
+        "Enable CDN endpoint",
+        "Enable external DNS",
+        "Create public IP"
+      ],
+      "answer": "Disable public network access",
+      "explanation": "Disable public network access is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "container-security",
+      "category": "azure"
+    },
+    {
+      "question": "Which AKS feature helps manage Kubernetes version upgrades?",
+      "options": [
+        "AKS cluster upgrade",
+        "Azure CDN purge",
+        "Azure Backup restore",
+        "DNS zone import"
+      ],
+      "answer": "AKS cluster upgrade",
+      "explanation": "AKS cluster upgrade is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure monitoring feature gives AKS workload dashboards?",
+      "options": [
+        "Container Insights",
+        "Traffic Manager",
+        "Azure DNS",
+        "Azure Firewall SNAT"
+      ],
+      "answer": "Container Insights",
+      "explanation": "Container Insights is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "container-monitoring",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can host container apps with Dapr integration?",
+      "options": [
+        "Azure Container Apps",
+        "Azure Container Registry",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Container Apps",
+      "explanation": "Azure Container Apps is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "serverless-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which AKS network feature provides pod IP planning from VNet address space?",
+      "options": [
+        "Azure CNI networking",
+        "Storage replication",
+        "CDN profile",
+        "Azure Monitor action group"
+      ],
+      "answer": "Azure CNI networking",
+      "explanation": "Azure CNI networking is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes-networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can scan ACR images through cloud security posture management?",
+      "options": [
+        "Microsoft Defender for Cloud",
+        "Azure Backup",
+        "Azure Lab Services",
+        "Azure Functions Proxy"
+      ],
+      "answer": "Microsoft Defender for Cloud",
+      "explanation": "Microsoft Defender for Cloud is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "container-security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Kubernetes object is commonly used to run stateful container workloads on AKS?",
+      "options": [
+        "StatefulSet",
+        "Route Table",
+        "Private Endpoint",
+        "Action Group"
+      ],
+      "answer": "StatefulSet",
+      "explanation": "StatefulSet is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature can assign specific system node pools for AKS system components?",
+      "options": [
+        "System node pool",
+        "Azure CDN endpoint",
+        "Storage queue",
+        "DNS delegation"
+      ],
+      "answer": "System node pool",
+      "explanation": "System node pool is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can build container images without local Docker installation?",
+      "options": [
+        "ACR Tasks",
+        "Azure DNS",
+        "Azure Backup",
+        "Azure Advisor"
+      ],
+      "answer": "ACR Tasks",
+      "explanation": "ACR Tasks is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "container-cicd",
+      "category": "azure"
+    },
+    {
+      "question": "Which AKS feature can limit container resource usage with Kubernetes objects?",
+      "options": [
+        "Resource requests and limits",
+        "Storage firewall",
+        "DNS alias",
+        "Traffic analytics"
+      ],
+      "answer": "Resource requests and limits",
+      "explanation": "Resource requests and limits is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can securely connect container apps to private VNet resources?",
+      "options": [
+        "VNet integration",
+        "Azure CDN",
+        "Azure Front Door Standard only",
+        "Azure DNS Public Zone"
+      ],
+      "answer": "VNet integration",
+      "explanation": "VNet integration is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "container-networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AKS feature helps prevent unauthorized cluster access by limiting API server exposure?",
+      "options": [
+        "Authorized IP ranges",
+        "Blob container ACL",
+        "CDN compression",
+        "Traffic Manager priority"
+      ],
+      "answer": "Authorized IP ranges",
+      "explanation": "Authorized IP ranges is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes-security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can automate container deployments from GitHub repositories?",
+      "options": [
+        "GitHub Actions",
+        "Azure DNS",
+        "Azure Firewall Manager",
+        "Azure Advisor"
+      ],
+      "answer": "GitHub Actions",
+      "explanation": "GitHub Actions is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "container-cicd",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure Container Apps concept represents a secure boundary for apps and networking?",
+      "options": [
+        "Container Apps Environment",
+        "Storage Account",
+        "DNS Zone",
+        "Public IP Prefix"
+      ],
+      "answer": "Container Apps Environment",
+      "explanation": "Container Apps Environment is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "serverless-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which AKS feature can support both Linux and Windows workloads?",
+      "options": [
+        "Multiple node pools",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Traffic Manager"
+      ],
+      "answer": "Multiple node pools",
+      "explanation": "Multiple node pools is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can provide managed ingress, scaling, and revisions for containers?",
+      "options": [
+        "Azure Container Apps",
+        "Azure Container Registry",
+        "Azure Files",
+        "Azure Monitor"
+      ],
+      "answer": "Azure Container Apps",
+      "explanation": "Azure Container Apps is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "serverless-containers",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can monitor container vulnerabilities and runtime alerts?",
+      "options": [
+        "Microsoft Defender for Containers",
+        "Azure Maps",
+        "Azure Cost Management",
+        "Azure Search"
+      ],
+      "answer": "Microsoft Defender for Containers",
+      "explanation": "Microsoft Defender for Containers is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "container-security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure container platform is most suitable for short-running isolated container tasks without Kubernetes?",
+      "options": [
+        "Azure Container Instances",
+        "AKS",
+        "Azure Arc",
+        "Azure DNS"
+      ],
+      "answer": "Azure Container Instances",
+      "explanation": "Azure Container Instances is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AZURE.",
+      "difficulty": "hard",
+      "subcategory": "serverless-containers",
+      "category": "azure"
+    }
+  ]

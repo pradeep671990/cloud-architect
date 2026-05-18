@@ -1,1 +1,702 @@
-[]
+[
+    {
+      "question": "Which GCP service provides managed Kubernetes? (1)",
+      "options": [
+        "GKE",
+        "Compute Engine",
+        "Cloud SQL",
+        "BigQuery"
+      ],
+      "answer": "GKE",
+      "explanation": "GKE is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service stores container images? (2)",
+      "options": [
+        "Artifact Registry",
+        "Cloud Storage",
+        "Pub/Sub",
+        "Cloud DNS"
+      ],
+      "answer": "Artifact Registry",
+      "explanation": "Artifact Registry is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service runs containers serverlessly? (3)",
+      "options": [
+        "Cloud Run",
+        "Cloud Functions",
+        "App Engine",
+        "Bigtable"
+      ],
+      "answer": "Cloud Run",
+      "explanation": "Cloud Run is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service builds container images automatically? (4)",
+      "options": [
+        "Cloud Build",
+        "Cloud CDN",
+        "Cloud Armor",
+        "Cloud Router"
+      ],
+      "answer": "Cloud Build",
+      "explanation": "Cloud Build is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can run Docker containers on VMs? (5)",
+      "options": [
+        "Compute Engine",
+        "BigQuery",
+        "Cloud Spanner",
+        "Cloud Tasks"
+      ],
+      "answer": "Compute Engine",
+      "explanation": "Compute Engine is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides managed Kubernetes? (6)",
+      "options": [
+        "GKE",
+        "Compute Engine",
+        "Cloud SQL",
+        "BigQuery"
+      ],
+      "answer": "GKE",
+      "explanation": "GKE is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service stores container images? (7)",
+      "options": [
+        "Artifact Registry",
+        "Cloud Storage",
+        "Pub/Sub",
+        "Cloud DNS"
+      ],
+      "answer": "Artifact Registry",
+      "explanation": "Artifact Registry is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service runs containers serverlessly? (8)",
+      "options": [
+        "Cloud Run",
+        "Cloud Functions",
+        "App Engine",
+        "Bigtable"
+      ],
+      "answer": "Cloud Run",
+      "explanation": "Cloud Run is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service builds container images automatically? (9)",
+      "options": [
+        "Cloud Build",
+        "Cloud CDN",
+        "Cloud Armor",
+        "Cloud Router"
+      ],
+      "answer": "Cloud Build",
+      "explanation": "Cloud Build is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can run Docker containers on VMs? (10)",
+      "options": [
+        "Compute Engine",
+        "BigQuery",
+        "Cloud Spanner",
+        "Cloud Tasks"
+      ],
+      "answer": "Compute Engine",
+      "explanation": "Compute Engine is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides managed Kubernetes? (11)",
+      "options": [
+        "GKE",
+        "Compute Engine",
+        "Cloud SQL",
+        "BigQuery"
+      ],
+      "answer": "GKE",
+      "explanation": "GKE is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service stores container images? (12)",
+      "options": [
+        "Artifact Registry",
+        "Cloud Storage",
+        "Pub/Sub",
+        "Cloud DNS"
+      ],
+      "answer": "Artifact Registry",
+      "explanation": "Artifact Registry is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service runs containers serverlessly? (13)",
+      "options": [
+        "Cloud Run",
+        "Cloud Functions",
+        "App Engine",
+        "Bigtable"
+      ],
+      "answer": "Cloud Run",
+      "explanation": "Cloud Run is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service builds container images automatically? (14)",
+      "options": [
+        "Cloud Build",
+        "Cloud CDN",
+        "Cloud Armor",
+        "Cloud Router"
+      ],
+      "answer": "Cloud Build",
+      "explanation": "Cloud Build is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can run Docker containers on VMs? (15)",
+      "options": [
+        "Compute Engine",
+        "BigQuery",
+        "Cloud Spanner",
+        "Cloud Tasks"
+      ],
+      "answer": "Compute Engine",
+      "explanation": "Compute Engine is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides managed Kubernetes? (16)",
+      "options": [
+        "GKE",
+        "Compute Engine",
+        "Cloud SQL",
+        "BigQuery"
+      ],
+      "answer": "GKE",
+      "explanation": "GKE is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service stores container images? (17)",
+      "options": [
+        "Artifact Registry",
+        "Cloud Storage",
+        "Pub/Sub",
+        "Cloud DNS"
+      ],
+      "answer": "Artifact Registry",
+      "explanation": "Artifact Registry is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service runs containers serverlessly? (18)",
+      "options": [
+        "Cloud Run",
+        "Cloud Functions",
+        "App Engine",
+        "Bigtable"
+      ],
+      "answer": "Cloud Run",
+      "explanation": "Cloud Run is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service builds container images automatically? (19)",
+      "options": [
+        "Cloud Build",
+        "Cloud CDN",
+        "Cloud Armor",
+        "Cloud Router"
+      ],
+      "answer": "Cloud Build",
+      "explanation": "Cloud Build is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can run Docker containers on VMs? (20)",
+      "options": [
+        "Compute Engine",
+        "BigQuery",
+        "Cloud Spanner",
+        "Cloud Tasks"
+      ],
+      "answer": "Compute Engine",
+      "explanation": "Compute Engine is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides managed Kubernetes? (21)",
+      "options": [
+        "GKE",
+        "Compute Engine",
+        "Cloud SQL",
+        "BigQuery"
+      ],
+      "answer": "GKE",
+      "explanation": "GKE is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service stores container images? (22)",
+      "options": [
+        "Artifact Registry",
+        "Cloud Storage",
+        "Pub/Sub",
+        "Cloud DNS"
+      ],
+      "answer": "Artifact Registry",
+      "explanation": "Artifact Registry is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service runs containers serverlessly? (23)",
+      "options": [
+        "Cloud Run",
+        "Cloud Functions",
+        "App Engine",
+        "Bigtable"
+      ],
+      "answer": "Cloud Run",
+      "explanation": "Cloud Run is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service builds container images automatically? (24)",
+      "options": [
+        "Cloud Build",
+        "Cloud CDN",
+        "Cloud Armor",
+        "Cloud Router"
+      ],
+      "answer": "Cloud Build",
+      "explanation": "Cloud Build is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can run Docker containers on VMs? (25)",
+      "options": [
+        "Compute Engine",
+        "BigQuery",
+        "Cloud Spanner",
+        "Cloud Tasks"
+      ],
+      "answer": "Compute Engine",
+      "explanation": "Compute Engine is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides managed Kubernetes? (26)",
+      "options": [
+        "GKE",
+        "Compute Engine",
+        "Cloud SQL",
+        "BigQuery"
+      ],
+      "answer": "GKE",
+      "explanation": "GKE is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service stores container images? (27)",
+      "options": [
+        "Artifact Registry",
+        "Cloud Storage",
+        "Pub/Sub",
+        "Cloud DNS"
+      ],
+      "answer": "Artifact Registry",
+      "explanation": "Artifact Registry is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service runs containers serverlessly? (28)",
+      "options": [
+        "Cloud Run",
+        "Cloud Functions",
+        "App Engine",
+        "Bigtable"
+      ],
+      "answer": "Cloud Run",
+      "explanation": "Cloud Run is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service builds container images automatically? (29)",
+      "options": [
+        "Cloud Build",
+        "Cloud CDN",
+        "Cloud Armor",
+        "Cloud Router"
+      ],
+      "answer": "Cloud Build",
+      "explanation": "Cloud Build is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can run Docker containers on VMs? (30)",
+      "options": [
+        "Compute Engine",
+        "BigQuery",
+        "Cloud Spanner",
+        "Cloud Tasks"
+      ],
+      "answer": "Compute Engine",
+      "explanation": "Compute Engine is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides managed Kubernetes? (31)",
+      "options": [
+        "GKE",
+        "Compute Engine",
+        "Cloud SQL",
+        "BigQuery"
+      ],
+      "answer": "GKE",
+      "explanation": "GKE is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service stores container images? (32)",
+      "options": [
+        "Artifact Registry",
+        "Cloud Storage",
+        "Pub/Sub",
+        "Cloud DNS"
+      ],
+      "answer": "Artifact Registry",
+      "explanation": "Artifact Registry is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service runs containers serverlessly? (33)",
+      "options": [
+        "Cloud Run",
+        "Cloud Functions",
+        "App Engine",
+        "Bigtable"
+      ],
+      "answer": "Cloud Run",
+      "explanation": "Cloud Run is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service builds container images automatically? (34)",
+      "options": [
+        "Cloud Build",
+        "Cloud CDN",
+        "Cloud Armor",
+        "Cloud Router"
+      ],
+      "answer": "Cloud Build",
+      "explanation": "Cloud Build is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can run Docker containers on VMs? (35)",
+      "options": [
+        "Compute Engine",
+        "BigQuery",
+        "Cloud Spanner",
+        "Cloud Tasks"
+      ],
+      "answer": "Compute Engine",
+      "explanation": "Compute Engine is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides managed Kubernetes? (36)",
+      "options": [
+        "GKE",
+        "Compute Engine",
+        "Cloud SQL",
+        "BigQuery"
+      ],
+      "answer": "GKE",
+      "explanation": "GKE is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service stores container images? (37)",
+      "options": [
+        "Artifact Registry",
+        "Cloud Storage",
+        "Pub/Sub",
+        "Cloud DNS"
+      ],
+      "answer": "Artifact Registry",
+      "explanation": "Artifact Registry is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service runs containers serverlessly? (38)",
+      "options": [
+        "Cloud Run",
+        "Cloud Functions",
+        "App Engine",
+        "Bigtable"
+      ],
+      "answer": "Cloud Run",
+      "explanation": "Cloud Run is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service builds container images automatically? (39)",
+      "options": [
+        "Cloud Build",
+        "Cloud CDN",
+        "Cloud Armor",
+        "Cloud Router"
+      ],
+      "answer": "Cloud Build",
+      "explanation": "Cloud Build is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can run Docker containers on VMs? (40)",
+      "options": [
+        "Compute Engine",
+        "BigQuery",
+        "Cloud Spanner",
+        "Cloud Tasks"
+      ],
+      "answer": "Compute Engine",
+      "explanation": "Compute Engine is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides managed Kubernetes? (41)",
+      "options": [
+        "GKE",
+        "Compute Engine",
+        "Cloud SQL",
+        "BigQuery"
+      ],
+      "answer": "GKE",
+      "explanation": "GKE is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service stores container images? (42)",
+      "options": [
+        "Artifact Registry",
+        "Cloud Storage",
+        "Pub/Sub",
+        "Cloud DNS"
+      ],
+      "answer": "Artifact Registry",
+      "explanation": "Artifact Registry is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service runs containers serverlessly? (43)",
+      "options": [
+        "Cloud Run",
+        "Cloud Functions",
+        "App Engine",
+        "Bigtable"
+      ],
+      "answer": "Cloud Run",
+      "explanation": "Cloud Run is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service builds container images automatically? (44)",
+      "options": [
+        "Cloud Build",
+        "Cloud CDN",
+        "Cloud Armor",
+        "Cloud Router"
+      ],
+      "answer": "Cloud Build",
+      "explanation": "Cloud Build is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can run Docker containers on VMs? (45)",
+      "options": [
+        "Compute Engine",
+        "BigQuery",
+        "Cloud Spanner",
+        "Cloud Tasks"
+      ],
+      "answer": "Compute Engine",
+      "explanation": "Compute Engine is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides managed Kubernetes? (46)",
+      "options": [
+        "GKE",
+        "Compute Engine",
+        "Cloud SQL",
+        "BigQuery"
+      ],
+      "answer": "GKE",
+      "explanation": "GKE is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service stores container images? (47)",
+      "options": [
+        "Artifact Registry",
+        "Cloud Storage",
+        "Pub/Sub",
+        "Cloud DNS"
+      ],
+      "answer": "Artifact Registry",
+      "explanation": "Artifact Registry is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service runs containers serverlessly? (48)",
+      "options": [
+        "Cloud Run",
+        "Cloud Functions",
+        "App Engine",
+        "Bigtable"
+      ],
+      "answer": "Cloud Run",
+      "explanation": "Cloud Run is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service builds container images automatically? (49)",
+      "options": [
+        "Cloud Build",
+        "Cloud CDN",
+        "Cloud Armor",
+        "Cloud Router"
+      ],
+      "answer": "Cloud Build",
+      "explanation": "Cloud Build is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can run Docker containers on VMs? (50)",
+      "options": [
+        "Compute Engine",
+        "BigQuery",
+        "Cloud Spanner",
+        "Cloud Tasks"
+      ],
+      "answer": "Compute Engine",
+      "explanation": "Compute Engine is a commonly used container or Docker-related service in GCP.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "gcp"
+    }
+  ]

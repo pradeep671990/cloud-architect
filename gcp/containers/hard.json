@@ -1,1 +1,702 @@
-[]
+[
+    {
+      "question": "Which GKE mode automatically manages nodes and enforces optimized cluster operations?",
+      "options": [
+        "Autopilot",
+        "Standard",
+        "Manual",
+        "Static"
+      ],
+      "answer": "Autopilot",
+      "explanation": "Autopilot is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service stores Docker images, Helm charts, and language packages?",
+      "options": [
+        "Artifact Registry",
+        "Cloud Storage",
+        "Cloud DNS",
+        "Cloud CDN"
+      ],
+      "answer": "Artifact Registry",
+      "explanation": "Artifact Registry is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "container-registry",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can enforce policy checks before container images are deployed?",
+      "options": [
+        "Binary Authorization",
+        "Cloud NAT",
+        "Cloud CDN",
+        "Cloud Router"
+      ],
+      "answer": "Binary Authorization",
+      "explanation": "Binary Authorization is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "container-security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature lets GKE workloads access Google APIs using IAM without key files?",
+      "options": [
+        "Workload Identity",
+        "Cloud DNS",
+        "Cloud NAT",
+        "Cloud Router"
+      ],
+      "answer": "Workload Identity",
+      "explanation": "Workload Identity is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes-security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides serverless execution for stateless containers?",
+      "options": [
+        "Cloud Run",
+        "Compute Engine",
+        "Cloud SQL",
+        "BigQuery"
+      ],
+      "answer": "Cloud Run",
+      "explanation": "Cloud Run is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "serverless-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can orchestrate progressive delivery to GKE and Cloud Run?",
+      "options": [
+        "Cloud Deploy",
+        "Cloud DNS",
+        "Cloud NAT",
+        "Cloud Trace"
+      ],
+      "answer": "Cloud Deploy",
+      "explanation": "Cloud Deploy is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "container-cicd",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service builds container images using build steps and source repositories?",
+      "options": [
+        "Cloud Build",
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud Router"
+      ],
+      "answer": "Cloud Build",
+      "explanation": "Cloud Build is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "container-cicd",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service scans container images and stores vulnerability metadata?",
+      "options": [
+        "Artifact Analysis",
+        "Cloud DNS",
+        "Cloud VPN",
+        "Cloud CDN"
+      ],
+      "answer": "Artifact Analysis",
+      "explanation": "Artifact Analysis is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "container-security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GKE feature restricts Kubernetes control plane access to selected IP ranges?",
+      "options": [
+        "Authorized networks",
+        "Cloud CDN cache keys",
+        "DNS forwarding",
+        "Cloud NAT logging"
+      ],
+      "answer": "Authorized networks",
+      "explanation": "Authorized networks is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes-security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GKE cluster type hides worker nodes from public internet access?",
+      "options": [
+        "Private cluster",
+        "Public cluster only",
+        "Global CDN cluster",
+        "External DNS cluster"
+      ],
+      "answer": "Private cluster",
+      "explanation": "Private cluster is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes-security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature enables pod-to-pod network traffic restrictions in GKE?",
+      "options": [
+        "Network Policy",
+        "Cloud Storage ACL",
+        "Cloud DNS Zone",
+        "Cloud NAT Gateway"
+      ],
+      "answer": "Network Policy",
+      "explanation": "Network Policy is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes-networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides centralized logging for GKE and Cloud Run workloads?",
+      "options": [
+        "Cloud Logging",
+        "Cloud DNS",
+        "Cloud VPN",
+        "Cloud NAT"
+      ],
+      "answer": "Cloud Logging",
+      "explanation": "Cloud Logging is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "container-monitoring",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides monitoring dashboards and metrics for container workloads?",
+      "options": [
+        "Cloud Monitoring",
+        "Cloud SQL",
+        "Cloud Storage",
+        "Cloud Build"
+      ],
+      "answer": "Cloud Monitoring",
+      "explanation": "Cloud Monitoring is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "container-monitoring",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides file storage that can be mounted by GKE pods?",
+      "options": [
+        "Filestore",
+        "Cloud DNS",
+        "Cloud Tasks",
+        "Cloud Scheduler"
+      ],
+      "answer": "Filestore",
+      "explanation": "Filestore is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "container-storage",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP storage type is commonly used as persistent block storage for GKE pods?",
+      "options": [
+        "Persistent Disk",
+        "Cloud CDN",
+        "Cloud Armor",
+        "Cloud Tasks"
+      ],
+      "answer": "Persistent Disk",
+      "explanation": "Persistent Disk is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "container-storage",
+      "category": "gcp"
+    },
+    {
+      "question": "Which Cloud Run feature allows gradual migration between container revisions?",
+      "options": [
+        "Traffic splitting",
+        "Cloud NAT",
+        "DNS peering",
+        "VPC firewall rule"
+      ],
+      "answer": "Traffic splitting",
+      "explanation": "Traffic splitting is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "serverless-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service connects serverless containers to private VPC resources?",
+      "options": [
+        "Serverless VPC Access",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Router"
+      ],
+      "answer": "Serverless VPC Access",
+      "explanation": "Serverless VPC Access is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "container-networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature allows Cloud Run services to require authenticated invocations?",
+      "options": [
+        "IAM-based invocation control",
+        "Cloud CDN compression",
+        "DNS forwarding",
+        "Cloud NAT port allocation"
+      ],
+      "answer": "IAM-based invocation control",
+      "explanation": "IAM-based invocation control is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "serverless-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can run containers as non-HTTP batch-style executions?",
+      "options": [
+        "Cloud Run Jobs",
+        "Cloud SQL",
+        "Cloud DNS",
+        "Cloud Armor"
+      ],
+      "answer": "Cloud Run Jobs",
+      "explanation": "Cloud Run Jobs is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "serverless-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides WAF and DDoS protection for GKE ingress?",
+      "options": [
+        "Cloud Armor",
+        "Cloud NAT",
+        "Cloud DNS",
+        "Cloud Storage"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "container-security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GKE feature allows multiple teams to share a centrally managed VPC network?",
+      "options": [
+        "Shared VPC",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Scheduler"
+      ],
+      "answer": "Shared VPC",
+      "explanation": "Shared VPC is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes-networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can manage secrets consumed by containers?",
+      "options": [
+        "Secret Manager",
+        "Cloud CDN",
+        "Cloud NAT",
+        "Cloud SQL"
+      ],
+      "answer": "Secret Manager",
+      "explanation": "Secret Manager is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "container-security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature helps automatically scale GKE node pools based on demand?",
+      "options": [
+        "Cluster Autoscaler",
+        "Cloud CDN cache policy",
+        "DNS peering",
+        "Cloud NAT drain"
+      ],
+      "answer": "Cluster Autoscaler",
+      "explanation": "Cluster Autoscaler is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes-scaling",
+      "category": "gcp"
+    },
+    {
+      "question": "Which Kubernetes autoscaling object adjusts pod replicas in GKE?",
+      "options": [
+        "Horizontal Pod Autoscaler",
+        "Cloud Router",
+        "Artifact cleanup policy",
+        "Firewall rule"
+      ],
+      "answer": "Horizontal Pod Autoscaler",
+      "explanation": "Horizontal Pod Autoscaler is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes-scaling",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service helps detect security risks in GKE environments?",
+      "options": [
+        "Security Command Center",
+        "Cloud SQL",
+        "Cloud CDN",
+        "Cloud Tasks"
+      ],
+      "answer": "Security Command Center",
+      "explanation": "Security Command Center is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "container-security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides managed certificate support for load-balanced container applications?",
+      "options": [
+        "Certificate Manager",
+        "Cloud Tasks",
+        "Cloud Spanner",
+        "Cloud Composer"
+      ],
+      "answer": "Certificate Manager",
+      "explanation": "Certificate Manager is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes-networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature helps manage services across multiple GKE clusters?",
+      "options": [
+        "GKE Multi-Cluster Services",
+        "Cloud SQL Insights",
+        "Cloud CDN Logs",
+        "Cloud Build Triggers"
+      ],
+      "answer": "GKE Multi-Cluster Services",
+      "explanation": "GKE Multi-Cluster Services is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes-networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature helps centralize configuration and policy across Kubernetes clusters?",
+      "options": [
+        "Config Sync",
+        "Cloud NAT",
+        "Cloud DNS",
+        "Cloud CDN"
+      ],
+      "answer": "Config Sync",
+      "explanation": "Config Sync is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can enforce runtime and posture protections for GKE?",
+      "options": [
+        "GKE security posture dashboard",
+        "Cloud DNS",
+        "Cloud NAT",
+        "Cloud CDN"
+      ],
+      "answer": "GKE security posture dashboard",
+      "explanation": "GKE security posture dashboard is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "container-security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature can remove old container images from Artifact Registry automatically?",
+      "options": [
+        "Cleanup policies",
+        "DNS forwarding",
+        "Cloud NAT draining",
+        "Cloud Armor preview"
+      ],
+      "answer": "Cleanup policies",
+      "explanation": "Cleanup policies is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "container-registry",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can expose GKE apps through an external HTTP(S) load balancer?",
+      "options": [
+        "GKE Ingress",
+        "Cloud VPN",
+        "Cloud Router",
+        "Cloud NAT"
+      ],
+      "answer": "GKE Ingress",
+      "explanation": "GKE Ingress is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes-networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can observe traces from microservices running in containers?",
+      "options": [
+        "Cloud Trace",
+        "Cloud DNS",
+        "Cloud VPN",
+        "Cloud CDN"
+      ],
+      "answer": "Cloud Trace",
+      "explanation": "Cloud Trace is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "container-monitoring",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can protect software supply chain by verifying trusted images?",
+      "options": [
+        "Binary Authorization",
+        "Cloud NAT",
+        "Cloud DNS",
+        "Cloud Load Balancing"
+      ],
+      "answer": "Binary Authorization",
+      "explanation": "Binary Authorization is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "container-security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GKE feature can run workloads on Spot VMs to optimize compute cost?",
+      "options": [
+        "Spot node pools",
+        "Cloud CDN",
+        "Cloud Router",
+        "Cloud DNS"
+      ],
+      "answer": "Spot node pools",
+      "explanation": "Spot node pools is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes-scaling",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service supports private container image repositories with IAM access control?",
+      "options": [
+        "Artifact Registry",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Logging"
+      ],
+      "answer": "Artifact Registry",
+      "explanation": "Artifact Registry is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "container-registry",
+      "category": "gcp"
+    },
+    {
+      "question": "Which Cloud Run feature controls the maximum number of requests handled by one container instance?",
+      "options": [
+        "Concurrency",
+        "DNS TTL",
+        "NAT timeout",
+        "Firewall priority"
+      ],
+      "answer": "Concurrency",
+      "explanation": "Concurrency is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "serverless-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can deploy container images to Cloud Run from source repositories?",
+      "options": [
+        "Cloud Build",
+        "Cloud SQL",
+        "Cloud Armor",
+        "Cloud VPN"
+      ],
+      "answer": "Cloud Build",
+      "explanation": "Cloud Build is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "container-cicd",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature helps GKE pods access Google APIs without external IPs?",
+      "options": [
+        "Private Google Access",
+        "Cloud CDN",
+        "Cloud Armor",
+        "External HTTP Load Balancer"
+      ],
+      "answer": "Private Google Access",
+      "explanation": "Private Google Access is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "container-networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can apply firewall rules around GKE node networks?",
+      "options": [
+        "VPC Firewall",
+        "Cloud Pub/Sub",
+        "Cloud Functions",
+        "Cloud Storage"
+      ],
+      "answer": "VPC Firewall",
+      "explanation": "VPC Firewall is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "container-networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can route traffic to specific Cloud Run revisions?",
+      "options": [
+        "Cloud Run",
+        "Cloud DNS only",
+        "Cloud NAT",
+        "Cloud Router"
+      ],
+      "answer": "Cloud Run",
+      "explanation": "Cloud Run is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "serverless-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GKE component is used to run stateless workloads declaratively?",
+      "options": [
+        "Deployment",
+        "Firewall Rule",
+        "DNS Record",
+        "Build Trigger"
+      ],
+      "answer": "Deployment",
+      "explanation": "Deployment is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes",
+      "category": "gcp"
+    },
+    {
+      "question": "Which Kubernetes object exposes a set of GKE pods using a stable virtual IP?",
+      "options": [
+        "Service",
+        "Artifact Repository",
+        "Cloud Router",
+        "Cloud NAT"
+      ],
+      "answer": "Service",
+      "explanation": "Service is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes-networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can manage Kubernetes applications across clusters using fleet concepts?",
+      "options": [
+        "GKE Enterprise",
+        "Cloud SQL",
+        "Cloud DNS",
+        "Cloud Tasks"
+      ],
+      "answer": "GKE Enterprise",
+      "explanation": "GKE Enterprise is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service helps secure container images by showing vulnerability findings?",
+      "options": [
+        "Artifact Analysis",
+        "Cloud CDN",
+        "Cloud Router",
+        "Cloud Scheduler"
+      ],
+      "answer": "Artifact Analysis",
+      "explanation": "Artifact Analysis is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "container-security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can automatically build images after source code changes?",
+      "options": [
+        "Cloud Build Triggers",
+        "Cloud CDN",
+        "Cloud Armor",
+        "Cloud NAT"
+      ],
+      "answer": "Cloud Build Triggers",
+      "explanation": "Cloud Build Triggers is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "container-cicd",
+      "category": "gcp"
+    },
+    {
+      "question": "Which Cloud Run feature prevents public unauthenticated access when disabled?",
+      "options": [
+        "Allow unauthenticated invocations",
+        "DNS forwarding",
+        "Cloud NAT logging",
+        "CDN cache mode"
+      ],
+      "answer": "Allow unauthenticated invocations",
+      "explanation": "Allow unauthenticated invocations is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "serverless-containers",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can provide managed Kubernetes cluster upgrades?",
+      "options": [
+        "GKE",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud SQL"
+      ],
+      "answer": "GKE",
+      "explanation": "GKE is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can provide runtime observability for Cloud Run logs?",
+      "options": [
+        "Cloud Logging",
+        "Cloud Armor",
+        "Cloud DNS",
+        "Cloud NAT"
+      ],
+      "answer": "Cloud Logging",
+      "explanation": "Cloud Logging is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "container-monitoring",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature lets GKE clusters use Google-managed control plane while users manage nodes?",
+      "options": [
+        "GKE Standard",
+        "Cloud Run",
+        "Cloud Functions",
+        "App Engine only"
+      ],
+      "answer": "GKE Standard",
+      "explanation": "GKE Standard is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "kubernetes",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service is most suitable for request-driven stateless container APIs with scale-to-zero?",
+      "options": [
+        "Cloud Run",
+        "GKE Standard only",
+        "Compute Engine only",
+        "Cloud Storage"
+      ],
+      "answer": "Cloud Run",
+      "explanation": "Cloud Run is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in GCP.",
+      "difficulty": "hard",
+      "subcategory": "serverless-containers",
+      "category": "gcp"
+    }
+  ]

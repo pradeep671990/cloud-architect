@@ -1,1 +1,702 @@
-[]
+[
+    {
+      "question": "Which AWS service is used to run Kubernetes clusters? (1)",
+      "options": [
+        "EKS",
+        "ECS",
+        "Lambda",
+        "RDS"
+      ],
+      "answer": "EKS",
+      "explanation": "EKS is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used to store Docker container images? (2)",
+      "options": [
+        "ECR",
+        "S3",
+        "IAM",
+        "CloudFront"
+      ],
+      "answer": "ECR",
+      "explanation": "ECR is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service allows running containers without managing servers? (3)",
+      "options": [
+        "Fargate",
+        "EC2",
+        "CloudTrail",
+        "Route 53"
+      ],
+      "answer": "Fargate",
+      "explanation": "Fargate is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used for container orchestration? (4)",
+      "options": [
+        "ECS",
+        "RDS",
+        "SQS",
+        "CloudWatch"
+      ],
+      "answer": "ECS",
+      "explanation": "ECS is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service deploys web apps directly from containers? (5)",
+      "options": [
+        "App Runner",
+        "IAM",
+        "GuardDuty",
+        "Inspector"
+      ],
+      "answer": "App Runner",
+      "explanation": "App Runner is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used to run Kubernetes clusters? (6)",
+      "options": [
+        "EKS",
+        "ECS",
+        "Lambda",
+        "RDS"
+      ],
+      "answer": "EKS",
+      "explanation": "EKS is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used to store Docker container images? (7)",
+      "options": [
+        "ECR",
+        "S3",
+        "IAM",
+        "CloudFront"
+      ],
+      "answer": "ECR",
+      "explanation": "ECR is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service allows running containers without managing servers? (8)",
+      "options": [
+        "Fargate",
+        "EC2",
+        "CloudTrail",
+        "Route 53"
+      ],
+      "answer": "Fargate",
+      "explanation": "Fargate is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used for container orchestration? (9)",
+      "options": [
+        "ECS",
+        "RDS",
+        "SQS",
+        "CloudWatch"
+      ],
+      "answer": "ECS",
+      "explanation": "ECS is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service deploys web apps directly from containers? (10)",
+      "options": [
+        "App Runner",
+        "IAM",
+        "GuardDuty",
+        "Inspector"
+      ],
+      "answer": "App Runner",
+      "explanation": "App Runner is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used to run Kubernetes clusters? (11)",
+      "options": [
+        "EKS",
+        "ECS",
+        "Lambda",
+        "RDS"
+      ],
+      "answer": "EKS",
+      "explanation": "EKS is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used to store Docker container images? (12)",
+      "options": [
+        "ECR",
+        "S3",
+        "IAM",
+        "CloudFront"
+      ],
+      "answer": "ECR",
+      "explanation": "ECR is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service allows running containers without managing servers? (13)",
+      "options": [
+        "Fargate",
+        "EC2",
+        "CloudTrail",
+        "Route 53"
+      ],
+      "answer": "Fargate",
+      "explanation": "Fargate is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used for container orchestration? (14)",
+      "options": [
+        "ECS",
+        "RDS",
+        "SQS",
+        "CloudWatch"
+      ],
+      "answer": "ECS",
+      "explanation": "ECS is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service deploys web apps directly from containers? (15)",
+      "options": [
+        "App Runner",
+        "IAM",
+        "GuardDuty",
+        "Inspector"
+      ],
+      "answer": "App Runner",
+      "explanation": "App Runner is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used to run Kubernetes clusters? (16)",
+      "options": [
+        "EKS",
+        "ECS",
+        "Lambda",
+        "RDS"
+      ],
+      "answer": "EKS",
+      "explanation": "EKS is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used to store Docker container images? (17)",
+      "options": [
+        "ECR",
+        "S3",
+        "IAM",
+        "CloudFront"
+      ],
+      "answer": "ECR",
+      "explanation": "ECR is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service allows running containers without managing servers? (18)",
+      "options": [
+        "Fargate",
+        "EC2",
+        "CloudTrail",
+        "Route 53"
+      ],
+      "answer": "Fargate",
+      "explanation": "Fargate is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used for container orchestration? (19)",
+      "options": [
+        "ECS",
+        "RDS",
+        "SQS",
+        "CloudWatch"
+      ],
+      "answer": "ECS",
+      "explanation": "ECS is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service deploys web apps directly from containers? (20)",
+      "options": [
+        "App Runner",
+        "IAM",
+        "GuardDuty",
+        "Inspector"
+      ],
+      "answer": "App Runner",
+      "explanation": "App Runner is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used to run Kubernetes clusters? (21)",
+      "options": [
+        "EKS",
+        "ECS",
+        "Lambda",
+        "RDS"
+      ],
+      "answer": "EKS",
+      "explanation": "EKS is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used to store Docker container images? (22)",
+      "options": [
+        "ECR",
+        "S3",
+        "IAM",
+        "CloudFront"
+      ],
+      "answer": "ECR",
+      "explanation": "ECR is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service allows running containers without managing servers? (23)",
+      "options": [
+        "Fargate",
+        "EC2",
+        "CloudTrail",
+        "Route 53"
+      ],
+      "answer": "Fargate",
+      "explanation": "Fargate is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used for container orchestration? (24)",
+      "options": [
+        "ECS",
+        "RDS",
+        "SQS",
+        "CloudWatch"
+      ],
+      "answer": "ECS",
+      "explanation": "ECS is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service deploys web apps directly from containers? (25)",
+      "options": [
+        "App Runner",
+        "IAM",
+        "GuardDuty",
+        "Inspector"
+      ],
+      "answer": "App Runner",
+      "explanation": "App Runner is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used to run Kubernetes clusters? (26)",
+      "options": [
+        "EKS",
+        "ECS",
+        "Lambda",
+        "RDS"
+      ],
+      "answer": "EKS",
+      "explanation": "EKS is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used to store Docker container images? (27)",
+      "options": [
+        "ECR",
+        "S3",
+        "IAM",
+        "CloudFront"
+      ],
+      "answer": "ECR",
+      "explanation": "ECR is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service allows running containers without managing servers? (28)",
+      "options": [
+        "Fargate",
+        "EC2",
+        "CloudTrail",
+        "Route 53"
+      ],
+      "answer": "Fargate",
+      "explanation": "Fargate is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used for container orchestration? (29)",
+      "options": [
+        "ECS",
+        "RDS",
+        "SQS",
+        "CloudWatch"
+      ],
+      "answer": "ECS",
+      "explanation": "ECS is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service deploys web apps directly from containers? (30)",
+      "options": [
+        "App Runner",
+        "IAM",
+        "GuardDuty",
+        "Inspector"
+      ],
+      "answer": "App Runner",
+      "explanation": "App Runner is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used to run Kubernetes clusters? (31)",
+      "options": [
+        "EKS",
+        "ECS",
+        "Lambda",
+        "RDS"
+      ],
+      "answer": "EKS",
+      "explanation": "EKS is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used to store Docker container images? (32)",
+      "options": [
+        "ECR",
+        "S3",
+        "IAM",
+        "CloudFront"
+      ],
+      "answer": "ECR",
+      "explanation": "ECR is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service allows running containers without managing servers? (33)",
+      "options": [
+        "Fargate",
+        "EC2",
+        "CloudTrail",
+        "Route 53"
+      ],
+      "answer": "Fargate",
+      "explanation": "Fargate is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used for container orchestration? (34)",
+      "options": [
+        "ECS",
+        "RDS",
+        "SQS",
+        "CloudWatch"
+      ],
+      "answer": "ECS",
+      "explanation": "ECS is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service deploys web apps directly from containers? (35)",
+      "options": [
+        "App Runner",
+        "IAM",
+        "GuardDuty",
+        "Inspector"
+      ],
+      "answer": "App Runner",
+      "explanation": "App Runner is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used to run Kubernetes clusters? (36)",
+      "options": [
+        "EKS",
+        "ECS",
+        "Lambda",
+        "RDS"
+      ],
+      "answer": "EKS",
+      "explanation": "EKS is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used to store Docker container images? (37)",
+      "options": [
+        "ECR",
+        "S3",
+        "IAM",
+        "CloudFront"
+      ],
+      "answer": "ECR",
+      "explanation": "ECR is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service allows running containers without managing servers? (38)",
+      "options": [
+        "Fargate",
+        "EC2",
+        "CloudTrail",
+        "Route 53"
+      ],
+      "answer": "Fargate",
+      "explanation": "Fargate is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used for container orchestration? (39)",
+      "options": [
+        "ECS",
+        "RDS",
+        "SQS",
+        "CloudWatch"
+      ],
+      "answer": "ECS",
+      "explanation": "ECS is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service deploys web apps directly from containers? (40)",
+      "options": [
+        "App Runner",
+        "IAM",
+        "GuardDuty",
+        "Inspector"
+      ],
+      "answer": "App Runner",
+      "explanation": "App Runner is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used to run Kubernetes clusters? (41)",
+      "options": [
+        "EKS",
+        "ECS",
+        "Lambda",
+        "RDS"
+      ],
+      "answer": "EKS",
+      "explanation": "EKS is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used to store Docker container images? (42)",
+      "options": [
+        "ECR",
+        "S3",
+        "IAM",
+        "CloudFront"
+      ],
+      "answer": "ECR",
+      "explanation": "ECR is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service allows running containers without managing servers? (43)",
+      "options": [
+        "Fargate",
+        "EC2",
+        "CloudTrail",
+        "Route 53"
+      ],
+      "answer": "Fargate",
+      "explanation": "Fargate is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used for container orchestration? (44)",
+      "options": [
+        "ECS",
+        "RDS",
+        "SQS",
+        "CloudWatch"
+      ],
+      "answer": "ECS",
+      "explanation": "ECS is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service deploys web apps directly from containers? (45)",
+      "options": [
+        "App Runner",
+        "IAM",
+        "GuardDuty",
+        "Inspector"
+      ],
+      "answer": "App Runner",
+      "explanation": "App Runner is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used to run Kubernetes clusters? (46)",
+      "options": [
+        "EKS",
+        "ECS",
+        "Lambda",
+        "RDS"
+      ],
+      "answer": "EKS",
+      "explanation": "EKS is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used to store Docker container images? (47)",
+      "options": [
+        "ECR",
+        "S3",
+        "IAM",
+        "CloudFront"
+      ],
+      "answer": "ECR",
+      "explanation": "ECR is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service allows running containers without managing servers? (48)",
+      "options": [
+        "Fargate",
+        "EC2",
+        "CloudTrail",
+        "Route 53"
+      ],
+      "answer": "Fargate",
+      "explanation": "Fargate is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used for container orchestration? (49)",
+      "options": [
+        "ECS",
+        "RDS",
+        "SQS",
+        "CloudWatch"
+      ],
+      "answer": "ECS",
+      "explanation": "ECS is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service deploys web apps directly from containers? (50)",
+      "options": [
+        "App Runner",
+        "IAM",
+        "GuardDuty",
+        "Inspector"
+      ],
+      "answer": "App Runner",
+      "explanation": "App Runner is a commonly used container or Docker-related service in AWS.",
+      "difficulty": "easy",
+      "subcategory": "docker-containers",
+      "category": "aws"
+    }
+  ]

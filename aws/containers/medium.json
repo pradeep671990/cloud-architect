@@ -1,1 +1,702 @@
-[]
+[
+    {
+      "question": "Which AWS service can run containers using EC2 launch type or Fargate launch type?",
+      "options": [
+        "Amazon ECS",
+        "Amazon S3",
+        "Amazon RDS",
+        "Amazon Route 53"
+      ],
+      "answer": "Amazon ECS",
+      "explanation": "Amazon ECS is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-orchestration",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS container service is best suited for running Kubernetes workloads?",
+      "options": [
+        "Amazon EKS",
+        "Amazon ECS",
+        "AWS Lambda",
+        "Amazon SQS"
+      ],
+      "answer": "Amazon EKS",
+      "explanation": "Amazon EKS is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "kubernetes",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides a private registry for Docker images?",
+      "options": [
+        "Amazon ECR",
+        "Amazon EBS",
+        "Amazon EFS",
+        "Amazon SNS"
+      ],
+      "answer": "Amazon ECR",
+      "explanation": "Amazon ECR is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-registry",
+      "category": "aws"
+    },
+    {
+      "question": "In Amazon ECS, what is a Task Definition used for?",
+      "options": [
+        "To define container configuration",
+        "To create DNS records",
+        "To create IAM users",
+        "To store logs only"
+      ],
+      "answer": "To define container configuration",
+      "explanation": "To define container configuration is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-orchestration",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service lets containers run without managing EC2 instances?",
+      "options": [
+        "AWS Fargate",
+        "Amazon EC2",
+        "Amazon VPC",
+        "AWS IAM"
+      ],
+      "answer": "AWS Fargate",
+      "explanation": "AWS Fargate is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "serverless-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which component in Amazon EKS represents the Kubernetes control plane?",
+      "options": [
+        "EKS Cluster",
+        "ECR Repository",
+        "ECS Task",
+        "CloudFront Distribution"
+      ],
+      "answer": "EKS Cluster",
+      "explanation": "EKS Cluster is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "kubernetes",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service can scan container images for vulnerabilities in ECR?",
+      "options": [
+        "Amazon Inspector",
+        "Amazon Athena",
+        "Amazon Macie",
+        "AWS Config"
+      ],
+      "answer": "Amazon Inspector",
+      "explanation": "Amazon Inspector is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service can automatically scale ECS services?",
+      "options": [
+        "Application Auto Scaling",
+        "AWS Backup",
+        "CloudTrail",
+        "Route 53"
+      ],
+      "answer": "Application Auto Scaling",
+      "explanation": "Application Auto Scaling is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-scaling",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is commonly used to collect logs from ECS containers?",
+      "options": [
+        "CloudWatch Logs",
+        "S3 Glacier",
+        "Route 53",
+        "AWS KMS"
+      ],
+      "answer": "CloudWatch Logs",
+      "explanation": "CloudWatch Logs is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-monitoring",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS load balancer is commonly used with ECS services for HTTP traffic?",
+      "options": [
+        "Application Load Balancer",
+        "Gateway Load Balancer",
+        "Classic Storage Balancer",
+        "NAT Gateway"
+      ],
+      "answer": "Application Load Balancer",
+      "explanation": "Application Load Balancer is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which Kubernetes worker nodes can be managed automatically in Amazon EKS?",
+      "options": [
+        "Managed Node Groups",
+        "Route Tables",
+        "ECR Layers",
+        "S3 Buckets"
+      ],
+      "answer": "Managed Node Groups",
+      "explanation": "Managed Node Groups is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "kubernetes",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service can deploy containerized web applications without managing infrastructure?",
+      "options": [
+        "AWS App Runner",
+        "Amazon S3",
+        "AWS Glue",
+        "Amazon Redshift"
+      ],
+      "answer": "AWS App Runner",
+      "explanation": "AWS App Runner is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "serverless-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service stores Docker image layers securely?",
+      "options": [
+        "Amazon ECR",
+        "Amazon RDS",
+        "AWS Direct Connect",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon ECR",
+      "explanation": "Amazon ECR is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-registry",
+      "category": "aws"
+    },
+    {
+      "question": "Which IAM feature is used to give permissions to an ECS task?",
+      "options": [
+        "Task Role",
+        "Hosted Zone",
+        "Security Group",
+        "NAT Gateway"
+      ],
+      "answer": "Task Role",
+      "explanation": "Task Role is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS feature gives permissions to Kubernetes pods in EKS?",
+      "options": [
+        "IAM Roles for Service Accounts",
+        "Route 53 Resolver",
+        "CloudFront Cache Policy",
+        "EBS Snapshot"
+      ],
+      "answer": "IAM Roles for Service Accounts",
+      "explanation": "IAM Roles for Service Accounts is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "kubernetes-security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service can build Docker images in CI/CD pipelines?",
+      "options": [
+        "AWS CodeBuild",
+        "AWS Budgets",
+        "AWS Organizations",
+        "Amazon SES"
+      ],
+      "answer": "AWS CodeBuild",
+      "explanation": "AWS CodeBuild is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-cicd",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service can deploy updated ECS services?",
+      "options": [
+        "AWS CodeDeploy",
+        "AWS Cost Explorer",
+        "Amazon Polly",
+        "Amazon Lex"
+      ],
+      "answer": "AWS CodeDeploy",
+      "explanation": "AWS CodeDeploy is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-cicd",
+      "category": "aws"
+    },
+    {
+      "question": "Which ECS setting controls how many task copies should run?",
+      "options": [
+        "Desired count",
+        "Hosted zone",
+        "TTL value",
+        "Bucket policy"
+      ],
+      "answer": "Desired count",
+      "explanation": "Desired count is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-orchestration",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS networking mode gives each ECS task its own elastic network interface?",
+      "options": [
+        "awsvpc",
+        "bridge",
+        "host",
+        "none"
+      ],
+      "answer": "awsvpc",
+      "explanation": "awsvpc is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used to store container secrets securely?",
+      "options": [
+        "AWS Secrets Manager",
+        "Amazon CloudFront",
+        "Amazon Route 53",
+        "AWS WAF"
+      ],
+      "answer": "AWS Secrets Manager",
+      "explanation": "AWS Secrets Manager is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service helps monitor ECS and EKS metrics?",
+      "options": [
+        "Amazon CloudWatch",
+        "Amazon SQS",
+        "Amazon SES",
+        "Amazon Lightsail"
+      ],
+      "answer": "Amazon CloudWatch",
+      "explanation": "Amazon CloudWatch is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-monitoring",
+      "category": "aws"
+    },
+    {
+      "question": "Which container orchestration service is AWS-native and not Kubernetes-based?",
+      "options": [
+        "Amazon ECS",
+        "Amazon EKS",
+        "Amazon ECR",
+        "AWS Fargate"
+      ],
+      "answer": "Amazon ECS",
+      "explanation": "Amazon ECS is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-orchestration",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS compute option can be used as worker nodes for EKS?",
+      "options": [
+        "Amazon EC2",
+        "Amazon RDS",
+        "Amazon S3",
+        "Amazon Route 53"
+      ],
+      "answer": "Amazon EC2",
+      "explanation": "Amazon EC2 is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "kubernetes",
+      "category": "aws"
+    },
+    {
+      "question": "Which ECR feature helps remove old container images automatically?",
+      "options": [
+        "Lifecycle policy",
+        "Security group",
+        "Target group",
+        "NAT rule"
+      ],
+      "answer": "Lifecycle policy",
+      "explanation": "Lifecycle policy is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-registry",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS feature can route traffic to ECS tasks behind a load balancer?",
+      "options": [
+        "Target Group",
+        "EBS Volume",
+        "S3 Bucket",
+        "Hosted Zone Only"
+      ],
+      "answer": "Target Group",
+      "explanation": "Target Group is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service can provide shared file storage to containers?",
+      "options": [
+        "Amazon EFS",
+        "Amazon Route 53",
+        "Amazon SES",
+        "Amazon Kinesis"
+      ],
+      "answer": "Amazon EFS",
+      "explanation": "Amazon EFS is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS storage service can be mounted by EKS pods using CSI drivers?",
+      "options": [
+        "Amazon EBS",
+        "Amazon SNS",
+        "Amazon EventBridge",
+        "AWS Shield"
+      ],
+      "answer": "Amazon EBS",
+      "explanation": "Amazon EBS is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-storage",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service can run containers as part of batch jobs?",
+      "options": [
+        "AWS Batch",
+        "AWS WAF",
+        "Amazon Connect",
+        "Amazon Chime"
+      ],
+      "answer": "AWS Batch",
+      "explanation": "AWS Batch is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-compute",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service can be used as an ingress controller load balancer integration for EKS?",
+      "options": [
+        "AWS Load Balancer Controller",
+        "AWS Backup Gateway",
+        "AWS License Manager",
+        "AWS Chatbot"
+      ],
+      "answer": "AWS Load Balancer Controller",
+      "explanation": "AWS Load Balancer Controller is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "kubernetes-networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service registry option can help ECS services discover each other?",
+      "options": [
+        "AWS Cloud Map",
+        "AWS Artifact",
+        "Amazon Translate",
+        "AWS Health"
+      ],
+      "answer": "AWS Cloud Map",
+      "explanation": "AWS Cloud Map is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "service-discovery",
+      "category": "aws"
+    },
+    {
+      "question": "Which ECS deployment type replaces tasks gradually by default?",
+      "options": [
+        "Rolling update",
+        "DNS failover",
+        "Image compression",
+        "Static routing"
+      ],
+      "answer": "Rolling update",
+      "explanation": "Rolling update is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-deployment",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service can manage blue/green deployment for ECS?",
+      "options": [
+        "AWS CodeDeploy",
+        "AWS Glue",
+        "AWS Backup",
+        "Amazon Pinpoint"
+      ],
+      "answer": "AWS CodeDeploy",
+      "explanation": "AWS CodeDeploy is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-deployment",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service helps protect container images by encryption at rest in ECR?",
+      "options": [
+        "AWS KMS",
+        "AWS Shield",
+        "AWS Global Accelerator",
+        "AWS Cloud Map"
+      ],
+      "answer": "AWS KMS",
+      "explanation": "AWS KMS is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS feature controls inbound traffic to ECS tasks in awsvpc mode?",
+      "options": [
+        "Security Group",
+        "IAM Policy",
+        "S3 ACL",
+        "CloudTrail Event"
+      ],
+      "answer": "Security Group",
+      "explanation": "Security Group is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service can expose an ECS service using HTTPS listener rules?",
+      "options": [
+        "Application Load Balancer",
+        "Amazon Athena",
+        "AWS Config",
+        "Amazon S3"
+      ],
+      "answer": "Application Load Balancer",
+      "explanation": "Application Load Balancer is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service can send container logs to a centralized logging destination?",
+      "options": [
+        "CloudWatch Logs",
+        "Route 53",
+        "Amazon MQ",
+        "AWS Snowball"
+      ],
+      "answer": "CloudWatch Logs",
+      "explanation": "CloudWatch Logs is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-monitoring",
+      "category": "aws"
+    },
+    {
+      "question": "Which Amazon EKS feature simplifies cluster add-on management?",
+      "options": [
+        "EKS Add-ons",
+        "ECR Tags",
+        "S3 Versioning",
+        "CloudFront Origins"
+      ],
+      "answer": "EKS Add-ons",
+      "explanation": "EKS Add-ons is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "kubernetes",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service can run container images directly from ECR with minimal setup?",
+      "options": [
+        "AWS App Runner",
+        "Amazon DynamoDB",
+        "Amazon Neptune",
+        "AWS DataSync"
+      ],
+      "answer": "AWS App Runner",
+      "explanation": "AWS App Runner is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "serverless-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service can trigger a container build after code changes?",
+      "options": [
+        "CodePipeline",
+        "AWS Backup",
+        "AWS IAM Access Analyzer",
+        "Amazon Route 53"
+      ],
+      "answer": "CodePipeline",
+      "explanation": "CodePipeline is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-cicd",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS container service supports Kubernetes manifests?",
+      "options": [
+        "Amazon EKS",
+        "Amazon ECS",
+        "Amazon ECR",
+        "AWS App Runner"
+      ],
+      "answer": "Amazon EKS",
+      "explanation": "Amazon EKS is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "kubernetes",
+      "category": "aws"
+    },
+    {
+      "question": "Which ECS object groups running tasks for long-running applications?",
+      "options": [
+        "Service",
+        "Hosted Zone",
+        "Snapshot",
+        "Origin"
+      ],
+      "answer": "Service",
+      "explanation": "Service is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-orchestration",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service helps pull private Docker images inside ECS tasks?",
+      "options": [
+        "Amazon ECR",
+        "Amazon Macie",
+        "AWS Control Tower",
+        "Amazon WorkMail"
+      ],
+      "answer": "Amazon ECR",
+      "explanation": "Amazon ECR is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-registry",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS feature helps ECS tasks communicate using private IPs?",
+      "options": [
+        "VPC networking",
+        "S3 static hosting",
+        "IAM console access",
+        "CloudTrail lookup"
+      ],
+      "answer": "VPC networking",
+      "explanation": "VPC networking is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service can run containers on Spot capacity through managed environments?",
+      "options": [
+        "AWS Batch",
+        "Amazon SES",
+        "AWS WAF",
+        "Amazon Kendra"
+      ],
+      "answer": "AWS Batch",
+      "explanation": "AWS Batch is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-compute",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service can be used to observe traces from containerized applications?",
+      "options": [
+        "AWS X-Ray",
+        "Amazon Polly",
+        "Amazon Textract",
+        "AWS Artifact"
+      ],
+      "answer": "AWS X-Ray",
+      "explanation": "AWS X-Ray is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-monitoring",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS option is commonly used to schedule pods on serverless compute in EKS?",
+      "options": [
+        "Fargate profile",
+        "Route table",
+        "Origin access control",
+        "Bucket lifecycle"
+      ],
+      "answer": "Fargate profile",
+      "explanation": "Fargate profile is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "serverless-containers",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service can manage container deployment pipelines together with CodeBuild?",
+      "options": [
+        "CodePipeline",
+        "AWS Shield",
+        "Amazon Route 53",
+        "AWS Config"
+      ],
+      "answer": "CodePipeline",
+      "explanation": "CodePipeline is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-cicd",
+      "category": "aws"
+    },
+    {
+      "question": "Which ECS feature allows containers in a task to share resources together?",
+      "options": [
+        "Task",
+        "Hosted Zone",
+        "CloudFront Function",
+        "KMS Key Alias"
+      ],
+      "answer": "Task",
+      "explanation": "Task is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-orchestration",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service can help enforce image scanning policies across accounts?",
+      "options": [
+        "Amazon Inspector",
+        "Amazon Rekognition",
+        "Amazon QuickSight",
+        "AWS DataSync"
+      ],
+      "answer": "Amazon Inspector",
+      "explanation": "Amazon Inspector is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service helps run scalable containerized APIs without Kubernetes?",
+      "options": [
+        "Amazon ECS",
+        "Amazon EKS",
+        "Amazon ECR",
+        "AWS Cloud Map"
+      ],
+      "answer": "Amazon ECS",
+      "explanation": "Amazon ECS is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AWS.",
+      "difficulty": "medium",
+      "subcategory": "container-orchestration",
+      "category": "aws"
+    }
+  ]
