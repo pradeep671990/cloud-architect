@@ -1,1 +1,452 @@
-[]
+[
+    {
+      "question": "What is the purpose of GCP Cloud Storage object lifecycle management?",
+      "options": ["Automatically encrypting objects", "Defining rules to transition objects to cheaper storage classes or delete them based on conditions", "Replicating objects across regions", "Monitoring object access patterns"],
+      "answer": "Defining rules to transition objects to cheaper storage classes or delete them based on conditions",
+      "explanation": "Cloud Storage lifecycle management lets you define rules that automatically change an object's storage class or delete it based on age, version count, or other conditions.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP Cloud Storage feature ensures objects cannot be deleted or overwritten for a specified period?",
+      "options": ["Object Versioning", "Retention Policy with Bucket Lock", "Object Lifecycle Management", "IAM Conditions"],
+      "answer": "Retention Policy with Bucket Lock",
+      "explanation": "A retention policy defines the minimum duration objects must be retained. Bucket Lock permanently locks the policy for regulatory compliance (WORM storage).",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the difference between Cloud Storage uniform bucket-level access and fine-grained access?",
+      "options": ["Uniform is faster; fine-grained is slower", "Uniform uses only IAM for access control; fine-grained allows both IAM and object-level ACLs", "Fine-grained is more secure than uniform", "Uniform allows public access; fine-grained does not"],
+      "answer": "Uniform uses only IAM for access control; fine-grained allows both IAM and object-level ACLs",
+      "explanation": "Uniform bucket-level access disables object-level ACLs and enforces IAM-only access control. Fine-grained access allows per-object ACLs in addition to IAM policies.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is GCP Cloud Storage Autoclass?",
+      "options": ["An automatic object naming feature", "A feature that automatically transitions objects to the appropriate storage class based on access patterns", "A class of storage for auto-scaling applications", "An automated backup class for GCP storage"],
+      "answer": "A feature that automatically transitions objects to the appropriate storage class based on access patterns",
+      "explanation": "Autoclass automatically moves objects to Standard, Nearline, Coldline, or Archive storage based on their access patterns, eliminating the need to manually define lifecycle rules.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the minimum storage duration for Cloud Storage Nearline?",
+      "options": ["7 days", "30 days", "60 days", "90 days"],
+      "answer": "30 days",
+      "explanation": "Nearline storage has a minimum storage duration of 30 days. Deleting an object before 30 days still incurs a charge for the full 30 days.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is Cloud Storage object hold used for?",
+      "options": ["Preventing an object from being moved to a cheaper tier", "Temporarily preventing an object from being deleted or replaced regardless of retention policy", "Holding an upload until it is complete", "Pausing lifecycle rules on an object"],
+      "answer": "Temporarily preventing an object from being deleted or replaced regardless of retention policy",
+      "explanation": "Object holds (event-based or temporary) prevent deletion or modification of an object, useful for legal holds or investigation scenarios.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the purpose of GCP Cloud Storage signed policy documents?",
+      "options": ["Signing bucket policies permanently", "Allowing browser-based uploads directly to Cloud Storage with controlled conditions", "Granting read-only signed access", "Encrypting upload metadata"],
+      "answer": "Allowing browser-based uploads directly to Cloud Storage with controlled conditions",
+      "explanation": "Signed policy documents (used with HTML form uploads) define conditions under which browser-based uploads are accepted, such as size limits and allowed content types.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP Persistent Disk type provides the best balance of performance and cost for most workloads?",
+      "options": ["Standard Persistent Disk (pd-standard)", "Balanced Persistent Disk (pd-balanced)", "SSD Persistent Disk (pd-ssd)", "Extreme Persistent Disk (pd-extreme)"],
+      "answer": "Balanced Persistent Disk (pd-balanced)",
+      "explanation": "pd-balanced offers a balance between performance and cost using SSD-backed storage at a lower price than pd-ssd, suitable for most production workloads.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the GCP Cloud Storage XML API compatible with?",
+      "options": ["Azure Blob Storage API", "Amazon S3 API", "OpenStack Swift API", "POSIX file system API"],
+      "answer": "Amazon S3 API",
+      "explanation": "Cloud Storage's XML API is largely compatible with the Amazon S3 API, making it easier to migrate applications that use S3 to GCP.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the purpose of Cloud Storage Pub/Sub notifications?",
+      "options": ["Publishing storage billing alerts", "Sending notifications to a Pub/Sub topic when objects in a bucket are created, updated, or deleted", "Publishing Cloud Storage metrics to Pub/Sub", "Notifying users when storage limits are exceeded"],
+      "answer": "Sending notifications to a Pub/Sub topic when objects in a bucket are created, updated, or deleted",
+      "explanation": "Cloud Storage Pub/Sub notifications enable event-driven architectures by publishing messages to a Pub/Sub topic whenever objects change in a bucket.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is Cloud Storage Turbo Replication used for?",
+      "options": ["Faster single-region object uploads", "Replicating new objects to a dual-region bucket's secondary region within 15 minutes", "Speeding up Archive retrieval", "Faster Nearline-to-Standard transitions"],
+      "answer": "Replicating new objects to a dual-region bucket's secondary region within 15 minutes",
+      "explanation": "Turbo Replication for dual-region buckets guarantees that newly written objects are replicated to the second region within 15 minutes, providing a stronger RPO SLA.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "Which IAM role grants read-only access to Cloud Storage objects?",
+      "options": ["roles/storage.admin", "roles/storage.objectCreator", "roles/storage.objectViewer", "roles/storage.legacyBucketOwner"],
+      "answer": "roles/storage.objectViewer",
+      "explanation": "roles/storage.objectViewer grants permission to view objects and their metadata (get and list) but not to create or delete them.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the GCP equivalent of AWS EBS Multi-Attach?",
+      "options": ["Persistent Disk shared-core mode", "Persistent Disk multi-writer mode", "Regional Persistent Disk", "Hyperdisk Multi-Attach"],
+      "answer": "Persistent Disk multi-writer mode",
+      "explanation": "Persistent Disk multi-writer mode allows a single SSD Persistent Disk to be attached to up to two VM instances simultaneously for high-availability clustered workloads.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is a GCP Regional Persistent Disk?",
+      "options": ["A disk that spans all GCP regions", "A block storage volume synchronously replicated across two zones in the same region for high availability", "A persistent disk shared across multiple projects", "A disk with regional pricing only"],
+      "answer": "A block storage volume synchronously replicated across two zones in the same region for high availability",
+      "explanation": "Regional Persistent Disks provide synchronous replication between two zones in the same region, enabling VM failover without data loss.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is Cloud Filestore used for compared to Cloud Storage?",
+      "options": ["Cloud Filestore is cheaper than Cloud Storage", "Cloud Filestore provides a shared NFS file system for applications needing POSIX semantics; Cloud Storage is object storage", "Cloud Filestore supports SQL queries; Cloud Storage does not", "Cloud Filestore provides block storage; Cloud Storage provides file storage"],
+      "answer": "Cloud Filestore provides a shared NFS file system for applications needing POSIX semantics; Cloud Storage is object storage",
+      "explanation": "Cloud Filestore is a managed NFS service for applications requiring a traditional file system interface, while Cloud Storage is flat object storage accessed via HTTP APIs.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the purpose of Cloud Storage HMAC keys?",
+      "options": ["Encrypting objects using HMAC", "Authenticating service accounts with S3-compatible tools using HMAC-based authentication", "Creating signed URLs", "Generating HMAC checksums for integrity verification"],
+      "answer": "Authenticating service accounts with S3-compatible tools using HMAC-based authentication",
+      "explanation": "HMAC keys are used with the Cloud Storage XML (S3-compatible) API to authenticate requests from tools and libraries designed for Amazon S3.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is Cloud Storage Object Versioning behavior when an object is deleted?",
+      "options": ["The object is permanently removed", "The current version becomes a noncurrent version and is retained; a new live version with a delete marker is created", "The object is moved to Archive automatically", "All versions of the object are permanently deleted"],
+      "answer": "The current version becomes a noncurrent version and is retained; a new live version with a delete marker is created",
+      "explanation": "With versioning enabled, deleting an object without specifying a generation number creates a delete marker, preserving previous versions as noncurrent.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the purpose of GCP Storage Transfer Service?",
+      "options": ["Only transferring from AWS S3 to GCP", "Managed service for transferring data from AWS S3, Azure Blob, HTTP URLs, or other GCS buckets to Cloud Storage", "Migrating VMs to GCP", "Syncing on-premises NFS to Cloud Filestore"],
+      "answer": "Managed service for transferring data from AWS S3, Azure Blob, HTTP URLs, or other GCS buckets to Cloud Storage",
+      "explanation": "Storage Transfer Service automates and schedules data transfers from various sources including AWS S3, Azure Blob Storage, HTTP/HTTPS, and other GCS buckets.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the Cloud Storage consistency model for object operations?",
+      "options": ["Eventual consistency for all operations", "Strong global consistency for read-after-write for all operations", "Strong consistency only within the same region", "Eventual consistency for list operations, strong for reads"],
+      "answer": "Strong global consistency for read-after-write for all operations",
+      "explanation": "Cloud Storage provides strong global consistency for all object operations including reads after writes, reads after deletes, and bucket listing operations.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the maximum size for a single object upload in a single HTTP request to Cloud Storage?",
+      "options": ["100 MB", "1 GB", "5 GB", "5 TB"],
+      "answer": "5 GB",
+      "explanation": "Single-request uploads are limited to 5 GB. For objects larger than 5 GB, you must use resumable uploads or multipart (parallel) uploads.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the Cloud Storage resumable upload used for?",
+      "options": ["Resuming failed downloads", "Reliably uploading large objects by allowing interrupted uploads to be resumed without starting over", "Resuming paused lifecycle transitions", "Re-encrypting objects after a failed encryption"],
+      "answer": "Reliably uploading large objects by allowing interrupted uploads to be resumed without starting over",
+      "explanation": "Resumable uploads allow large object uploads to be paused and resumed, making them resilient to network interruptions and mandatory for objects over 5 GB.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the purpose of Cloud Storage object metadata Content-Type?",
+      "options": ["Controlling who can access an object", "Telling browsers and applications how to handle the object when it is served", "Setting the storage class of the object", "Defining the encryption key for the object"],
+      "answer": "Telling browsers and applications how to handle the object when it is served",
+      "explanation": "The Content-Type metadata (e.g., image/png, application/pdf) tells clients how to interpret the object data when served from Cloud Storage.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the GCP Cloud Storage feature that allows you to copy objects between buckets without downloading them?",
+      "options": ["Object Transfer", "Server-side copy using JSON/XML API rewrite operation", "Storage Transfer Service only", "gsutil cp with --server-side flag"],
+      "answer": "Server-side copy using JSON/XML API rewrite operation",
+      "explanation": "The Cloud Storage JSON API rewrite operation copies objects between buckets entirely server-side without the data passing through the client.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is Cloud Filestore's Basic tier designed for?",
+      "options": ["High-performance HPC workloads", "File sharing for small development and test workloads with lower cost", "Global multi-region file storage", "Archive file storage with slow retrieval"],
+      "answer": "File sharing for small development and test workloads with lower cost",
+      "explanation": "Cloud Filestore Basic (HDD and SSD) is designed for cost-effective file sharing for development, test, and small production workloads.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the purpose of GCP Customer-Supplied Encryption Keys (CSEK) in Cloud Storage?",
+      "options": ["Letting Google manage your encryption keys", "Providing your own AES-256 encryption keys that you manage externally and supply with each request", "Using Cloud KMS keys for automatic encryption", "Encrypting data in transit only"],
+      "answer": "Providing your own AES-256 encryption keys that you manage externally and supply with each request",
+      "explanation": "CSEK allows you to use encryption keys that you generate and manage outside of Google. You must supply the key with every read/write request; Google does not store your keys.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the Persistent Disk snapshot schedule used for?",
+      "options": ["Scheduling disk performance tests", "Automatically creating snapshots of a persistent disk at defined intervals for backup", "Scheduling disk resizing", "Automatically deleting old disks"],
+      "answer": "Automatically creating snapshots of a persistent disk at defined intervals for backup",
+      "explanation": "Snapshot schedules automate the creation of Persistent Disk snapshots on a defined frequency (hourly, daily, weekly) and manage snapshot retention.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is Cloud Storage Dual-Region Turbo Replication RPO guarantee?",
+      "options": ["Zero RPO always", "15-minute RPO for newly written objects", "1-hour RPO", "No RPO guarantee"],
+      "answer": "15-minute RPO for newly written objects",
+      "explanation": "Cloud Storage Turbo Replication provides a Recovery Point Objective (RPO) of 15 minutes for data written to dual-region buckets.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "Which Cloud Storage class is most cost-effective for AI/ML training datasets accessed multiple times a week?",
+      "options": ["Archive", "Coldline", "Nearline", "Standard"],
+      "answer": "Standard",
+      "explanation": "For data accessed multiple times a week, Standard storage is most cost-effective because there are no retrieval fees, unlike Nearline, Coldline, or Archive.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the purpose of Cloud Storage bucket-level IAM conditions?",
+      "options": ["Setting conditions on bucket names", "Granting access to bucket resources based on attributes like resource tags, time, or request origin", "Conditionally applying lifecycle rules", "Setting conditions on object content types"],
+      "answer": "Granting access to bucket resources based on attributes like resource tags, time, or request origin",
+      "explanation": "IAM conditions allow fine-grained conditional access to Cloud Storage resources based on attributes such as object prefix, time of day, or IP address.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is a GCP Persistent Disk image used for?",
+      "options": ["Backing up only object storage data", "A compressed copy of a persistent disk used to create new disks or VM instances quickly", "An image of the Cloud Storage bucket structure", "A snapshot stored in a different project"],
+      "answer": "A compressed copy of a persistent disk used to create new disks or VM instances quickly",
+      "explanation": "Persistent Disk images are compressed, globally available copies of a disk that can be used to create new Persistent Disks or as a VM boot disk.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the Cloud Storage JSON API v1 used for?",
+      "options": ["Legacy access using XML only", "Programmatic management of buckets and objects via RESTful HTTP with JSON request/response bodies", "Accessing Cloud Storage from BigQuery only", "Managing Cloud Filestore via API"],
+      "answer": "Programmatic management of buckets and objects via RESTful HTTP with JSON request/response bodies",
+      "explanation": "The Cloud Storage JSON API provides a modern RESTful interface for programmatically creating, reading, updating, and deleting buckets and objects.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the purpose of Cloud Storage Access Logs?",
+      "options": ["Monitoring billing costs", "Recording detailed request logs for all read and write operations on buckets and objects", "Logging IAM policy changes only", "Recording replication events"],
+      "answer": "Recording detailed request logs for all read and write operations on buckets and objects",
+      "explanation": "Cloud Storage access logs capture detailed information about read and write requests to your buckets, stored as objects in a designated log bucket.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the GCP Hyperdisk Throughput storage product designed for?",
+      "options": ["High-IOPS database workloads", "Cost-effective, high-throughput workloads like data analytics that need throughput without high IOPS", "Archive storage replacement", "Boot disks for GKE nodes"],
+      "answer": "Cost-effective, high-throughput workloads like data analytics that need throughput without high IOPS",
+      "explanation": "Hyperdisk Throughput is designed for throughput-intensive workloads like Kafka, Hadoop, and analytics that need high sequential throughput at lower cost than Hyperdisk Extreme.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What does Cloud Storage object composition allow you to do?",
+      "options": ["Combining up to 32 existing objects into a single new object server-side", "Composing JSON metadata for objects", "Composing ACL rules for multiple objects", "Compressing multiple objects into a ZIP file"],
+      "answer": "Combining up to 32 existing objects into a single new object server-side",
+      "explanation": "Object composition (compose operation) merges up to 32 source objects into a single destination object entirely server-side without downloading data.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service is recommended for moving NFS data from on-premises to Cloud Filestore?",
+      "options": ["Storage Transfer Service", "Transfer Appliance", "gsutil", "Cloud DataSync"],
+      "answer": "Storage Transfer Service",
+      "explanation": "Storage Transfer Service supports transferring data from on-premises NFS sources directly to Cloud Storage or Cloud Filestore.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the purpose of Cloud Storage bucket labels?",
+      "options": ["Controlling object access", "Attaching key-value metadata to buckets for organization, cost allocation, and filtering", "Setting the storage class of all objects", "Enabling bucket versioning"],
+      "answer": "Attaching key-value metadata to buckets for organization, cost allocation, and filtering",
+      "explanation": "Bucket labels are key-value pairs you attach to buckets for organizing resources, tracking billing costs by team or project, and filtering in reports.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is GCP Cloud Storage VPC Service Controls used for?",
+      "options": ["Limiting Cloud Storage egress bandwidth", "Creating a security perimeter around Cloud Storage to prevent data exfiltration", "Enabling VPC-based pricing for storage", "Restricting Cloud Storage to private IPs only"],
+      "answer": "Creating a security perimeter around Cloud Storage to prevent data exfiltration",
+      "explanation": "VPC Service Controls allows you to define a perimeter around Cloud Storage (and other GCP services) to prevent data from being accessed or moved outside the perimeter.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the Cloud Filestore Enterprise tier designed for?",
+      "options": ["Dev/test workloads", "Mission-critical production workloads requiring high availability across zones with 99.99% SLA", "Archive file storage", "AI/ML training data storage"],
+      "answer": "Mission-critical production workloads requiring high availability across zones with 99.99% SLA",
+      "explanation": "Cloud Filestore Enterprise provides a 99.99% availability SLA with zonal replication, designed for mission-critical production workloads.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the gsutil -m flag used for?",
+      "options": ["Monitoring gsutil operations", "Enabling multithreaded and multiprocessing for parallel operations to improve performance", "Setting object metadata", "Enabling multi-region replication"],
+      "answer": "Enabling multithreaded and multiprocessing for parallel operations to improve performance",
+      "explanation": "The gsutil -m flag enables parallel (multi-threaded/multi-processing) execution for operations like cp, rsync, and rm, significantly improving performance for large transfers.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the purpose of Cloud Storage default object ACLs?",
+      "options": ["Setting ACLs on the bucket itself", "Defining access permissions automatically applied to newly created objects in a bucket", "Preventing public access to a bucket", "Overriding IAM permissions for objects"],
+      "answer": "Defining access permissions automatically applied to newly created objects in a bucket",
+      "explanation": "Default object ACLs specify the access control list that is automatically applied to new objects uploaded to a bucket when no ACL is explicitly specified.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the GCP Persistent Disk performance characteristic of pd-extreme?",
+      "options": ["Highest throughput for sequential reads", "Highest IOPS with the ability to provision IOPS independently of disk size", "Lowest cost SSD disk type", "Shared between multiple VMs"],
+      "answer": "Highest IOPS with the ability to provision IOPS independently of disk size",
+      "explanation": "pd-extreme allows you to provision IOPS independently of disk size, delivering the highest IOPS for latency-sensitive workloads like high-performance databases.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is Cloud Storage object integrity verification used for?",
+      "options": ["Verifying object encryption", "Ensuring data was not corrupted during upload or download using CRC32c or MD5 checksums", "Verifying object version integrity", "Verifying IAM policy integrity"],
+      "answer": "Ensuring data was not corrupted during upload or download using CRC32c or MD5 checksums",
+      "explanation": "Cloud Storage uses CRC32c and MD5 checksums to verify data integrity. Clients can provide checksums to detect corruption during transfers.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the purpose of the Cloud Storage requester pays feature?",
+      "options": ["The bucket owner pays for all access", "Shifting the cost of data access and retrieval to the requester instead of the bucket owner", "Making buckets free for all requesters", "Allowing only paid requesters to access a bucket"],
+      "answer": "Shifting the cost of data access and retrieval to the requester instead of the bucket owner",
+      "explanation": "With requester pays enabled, the project making the request is billed for all data retrieval and operation costs, not the bucket owner.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP storage service best supports genomics and life-sciences data pipelines?",
+      "options": ["Cloud Filestore", "Persistent Disk", "Cloud Storage with Nearline tier", "Parallelstore"],
+      "answer": "Cloud Storage with Nearline tier",
+      "explanation": "Life-sciences and genomics data is typically accessed infrequently after generation, making Cloud Storage Nearline a cost-effective option with reasonable retrieval performance.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the maximum number of lifecycle rules per Cloud Storage bucket?",
+      "options": ["10", "100", "1,000", "There is no documented limit per rule, but the configuration cannot exceed 256 KB"],
+      "answer": "There is no documented limit per rule, but the configuration cannot exceed 256 KB",
+      "explanation": "Cloud Storage allows multiple lifecycle rules per bucket. The total lifecycle configuration must not exceed 256 KB in size.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the Cloud Storage Archive class retrieval cost compared to Standard?",
+      "options": ["Archive has no retrieval cost", "Archive has a higher per-GB retrieval cost than Standard, Nearline, and Coldline", "Archive retrieval costs the same as Standard", "Archive retrieval is cheaper than Nearline"],
+      "answer": "Archive has a higher per-GB retrieval cost than Standard, Nearline, and Coldline",
+      "explanation": "Archive storage has the lowest storage cost but the highest retrieval cost per GB, making it only cost-effective for data accessed less than once a year.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is Cloud Storage Parallel Composite Upload?",
+      "options": ["Uploading objects to multiple buckets simultaneously", "Splitting a large object into parts uploaded in parallel then composed into a single object", "Using multiple GCP projects for a single upload", "Uploading composite metadata in parallel"],
+      "answer": "Splitting a large object into parts uploaded in parallel then composed into a single object",
+      "explanation": "Parallel composite uploads split large files into chunks, upload them simultaneously, then use object composition to combine them, significantly reducing upload time.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the GCP Cloud Storage feature that prevents a bucket from being deleted if it still contains objects?",
+      "options": ["Retention Policy", "Bucket Lock", "Object Hold", "Bucket deletion protection (via IAM deny or resource lock)"],
+      "answer": "Bucket deletion protection (via IAM deny or resource lock)",
+      "explanation": "Cloud Storage already prevents deletion of non-empty buckets by default. Additional protection can be added through IAM deny policies or organization resource locks.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is Cloud Storage data egress cost?",
+      "options": ["Cost to upload data to Cloud Storage", "Cost charged when data is read from Cloud Storage to the internet or another region/provider", "Cost for storing data in Coldline", "Cost for metadata operations on objects"],
+      "answer": "Cost charged when data is read from Cloud Storage to the internet or another region/provider",
+      "explanation": "Egress costs are charged when data leaves Cloud Storage to the internet, to another GCP region, or to another cloud provider. Ingress (upload) is free.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    },
+    {
+      "question": "What is the purpose of the Cloud Storage Batch Operations feature (via Storage Transfer Service)?",
+      "options": ["Batch deleting old snapshots", "Running large-scale operations like copy, delete, or metadata update across millions of objects", "Batch uploading from on-premises", "Batch converting storage classes"],
+      "answer": "Running large-scale operations like copy, delete, or metadata update across millions of objects",
+      "explanation": "Storage Transfer Service Batch Operations allow you to run large-scale actions—such as copying or deleting billions of objects—across Cloud Storage using a managed, scalable job.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "gcp"
+    }
+  ]

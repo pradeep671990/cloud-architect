@@ -1,1 +1,1248 @@
-[]
+[
+    {
+        "question": "What is Azure Virtual Machine (VM)?",
+        "options": [
+          "An on-demand scalable compute resource in Azure",
+          "A cloud storage service",
+          "A managed database service",
+          "A content delivery network"
+        ],
+        "answer": "An on-demand scalable compute resource in Azure",
+        "explanation": "Azure Virtual Machines provide on-demand, scalable computing resources. They give you the flexibility of virtualization without buying and maintaining physical hardware.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure App Service?",
+        "options": [
+          "A fully managed platform for hosting web apps, REST APIs, and mobile backends",
+          "A virtual machine service",
+          "A container registry",
+          "A serverless function service"
+        ],
+        "answer": "A fully managed platform for hosting web apps, REST APIs, and mobile backends",
+        "explanation": "Azure App Service is a PaaS offering that lets you build and host web applications, REST APIs, and mobile backends in your preferred programming language without managing infrastructure.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Functions?",
+        "options": [
+          "A serverless compute service that runs event-driven code without managing servers",
+          "A VM management service",
+          "A Kubernetes service",
+          "A container registry"
+        ],
+        "answer": "A serverless compute service that runs event-driven code without managing servers",
+        "explanation": "Azure Functions is a serverless compute service that lets you run event-triggered code without explicitly provisioning or managing infrastructure.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Kubernetes Service (AKS)?",
+        "options": [
+          "A managed Kubernetes container orchestration service",
+          "A virtual machine service",
+          "A serverless service",
+          "A database service"
+        ],
+        "answer": "A managed Kubernetes container orchestration service",
+        "explanation": "AKS is a managed Kubernetes service that simplifies deploying, managing, and scaling containerized applications using Kubernetes, with Azure handling the control plane.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Container Instances (ACI)?",
+        "options": [
+          "A service to run containers on-demand without managing any VM infrastructure",
+          "A Kubernetes cluster service",
+          "A container image registry",
+          "A virtual machine scale set"
+        ],
+        "answer": "A service to run containers on-demand without managing any VM infrastructure",
+        "explanation": "Azure Container Instances is the fastest and simplest way to run a container in Azure without managing VMs. It is ideal for simple apps, task automation, and build jobs.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is an Azure VM Scale Set?",
+        "options": [
+          "A group of identical VMs that can automatically scale based on demand",
+          "A backup solution for VMs",
+          "A managed Kubernetes cluster",
+          "A set of Azure regions"
+        ],
+        "answer": "A group of identical VMs that can automatically scale based on demand",
+        "explanation": "Azure Virtual Machine Scale Sets let you create and manage a group of load-balanced VMs that can automatically increase or decrease based on demand or a schedule.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Spot VM?",
+        "options": [
+          "A VM that uses unused Azure capacity at a discounted price but can be evicted",
+          "A reserved VM",
+          "A dedicated VM",
+          "A free-tier VM"
+        ],
+        "answer": "A VM that uses unused Azure capacity at a discounted price but can be evicted",
+        "explanation": "Azure Spot VMs use unused Azure capacity and offer significant discounts (up to 90%), but Azure can evict them when it needs the capacity back.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is an Azure Region?",
+        "options": [
+          "A geographic area containing one or more Azure data centers",
+          "A single Azure data center",
+          "A virtual network",
+          "An Azure pricing tier"
+        ],
+        "answer": "A geographic area containing one or more Azure data centers",
+        "explanation": "An Azure Region is a geographic area that contains one or more data centers. Resources deployed in a region benefit from low latency and data residency within that geography.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Availability Zone?",
+        "options": [
+          "Physically separate data centers within an Azure region for high availability",
+          "A group of Azure regions",
+          "A pricing zone",
+          "A virtual network zone"
+        ],
+        "answer": "Physically separate data centers within an Azure region for high availability",
+        "explanation": "Azure Availability Zones are physically separate locations within a region, each with independent power, cooling, and networking to protect applications from data center failures.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Container Registry (ACR)?",
+        "options": [
+          "A managed Docker container image registry",
+          "A container orchestration service",
+          "A serverless compute service",
+          "A virtual machine image store"
+        ],
+        "answer": "A managed Docker container image registry",
+        "explanation": "Azure Container Registry is a managed, private Docker registry service that stores and manages container images and artifacts for Azure container deployments.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is the Azure equivalent of AWS Lambda?",
+        "options": [
+          "Azure Functions",
+          "Azure App Service",
+          "Azure Logic Apps",
+          "Azure Batch"
+        ],
+        "answer": "Azure Functions",
+        "explanation": "Azure Functions is Microsoft's serverless compute service, equivalent to AWS Lambda. Both run event-driven code without managing servers.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Dedicated Host?",
+        "options": [
+          "A physical server dedicated to hosting VMs for a single organization",
+          "A shared VM cluster",
+          "A managed Kubernetes node pool",
+          "A reserved instance pricing model"
+        ],
+        "answer": "A physical server dedicated to hosting VMs for a single organization",
+        "explanation": "Azure Dedicated Host provides a physical server dedicated to your organization, providing hardware isolation and control over maintenance events for compliance requirements.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Batch?",
+        "options": [
+          "A managed service for running large-scale parallel and high-performance computing jobs",
+          "A serverless function service",
+          "A web app hosting service",
+          "A container orchestration service"
+        ],
+        "answer": "A managed service for running large-scale parallel and high-performance computing jobs",
+        "explanation": "Azure Batch enables running large-scale parallel and high-performance computing (HPC) batch jobs efficiently with Azure-managed compute resources.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Logic Apps?",
+        "options": [
+          "A cloud service for automating workflows and integrating apps and services",
+          "A serverless compute runtime",
+          "A container registry",
+          "A VM management tool"
+        ],
+        "answer": "A cloud service for automating workflows and integrating apps and services",
+        "explanation": "Azure Logic Apps is a cloud-based platform for creating and running automated workflows that integrate your apps, data, services, and systems.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "Which Azure service is used to deploy and manage containerized apps using Docker Compose?",
+        "options": [
+          "Azure Container Apps",
+          "Azure Kubernetes Service",
+          "Azure Container Instances",
+          "Azure App Service"
+        ],
+        "answer": "Azure Container Apps",
+        "explanation": "Azure Container Apps is a fully managed serverless container service that supports running microservices and containerized applications without managing Kubernetes infrastructure.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is an Azure VM Image?",
+        "options": [
+          "A template containing the OS and pre-installed software used to create VMs",
+          "A backup of a VM",
+          "A VM configuration file",
+          "A network snapshot"
+        ],
+        "answer": "A template containing the OS and pre-installed software used to create VMs",
+        "explanation": "An Azure VM image is a pre-configured template with an OS and optional software. It is used as the base for creating new VMs, similar to an AMI in AWS.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Reserved VM Instances?",
+        "options": [
+          "A discounted pricing model for committing to 1 or 3 years of VM usage",
+          "A spot VM pricing model",
+          "A dedicated host plan",
+          "A free-tier option"
+        ],
+        "answer": "A discounted pricing model for committing to 1 or 3 years of VM usage",
+        "explanation": "Azure Reserved VM Instances give you a discount of up to 72% over pay-as-you-go pricing in exchange for committing to a specific VM size and region for 1 or 3 years.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Service Fabric?",
+        "options": [
+          "A distributed systems platform for packaging, deploying, and managing microservices",
+          "A Kubernetes service",
+          "A virtual machine service",
+          "A serverless service"
+        ],
+        "answer": "A distributed systems platform for packaging, deploying, and managing microservices",
+        "explanation": "Azure Service Fabric is a distributed systems platform that makes it easy to package, deploy, and manage scalable and reliable microservices and containers.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is an Azure Availability Set?",
+        "options": [
+          "A logical grouping of VMs to ensure at least one VM is available during maintenance",
+          "A group of Azure regions",
+          "A type of VM pricing",
+          "A storage redundancy option"
+        ],
+        "answer": "A logical grouping of VMs to ensure at least one VM is available during maintenance",
+        "explanation": "An Availability Set distributes VMs across multiple fault domains and update domains to protect applications from hardware failures and planned maintenance downtime.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Compute Gallery (formerly Shared Image Gallery)?",
+        "options": [
+          "A service to store, share, and manage custom VM images across regions and organizations",
+          "A container image registry",
+          "A VM backup service",
+          "A marketplace for Azure images"
+        ],
+        "answer": "A service to store, share, and manage custom VM images across regions and organizations",
+        "explanation": "Azure Compute Gallery (formerly Shared Image Gallery) allows you to organize, version, and globally replicate custom VM images for use across subscriptions and tenants.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What does 'Pay-as-you-go' mean for Azure VMs?",
+        "options": [
+          "You pay only for the compute time you use with no upfront commitment",
+          "You pay a fixed monthly fee",
+          "You commit to a 1-year term",
+          "You get a free VM for 12 months"
+        ],
+        "answer": "You pay only for the compute time you use with no upfront commitment",
+        "explanation": "Pay-as-you-go (PAYG) for Azure VMs means you are billed per second for the compute resources consumed, with no upfront costs or long-term commitments required.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Spring Apps?",
+        "options": [
+          "A fully managed service for deploying Spring Boot Java applications",
+          "A container orchestration service",
+          "A virtual machine service",
+          "A serverless event platform"
+        ],
+        "answer": "A fully managed service for deploying Spring Boot Java applications",
+        "explanation": "Azure Spring Apps is a fully managed PaaS for deploying Spring Boot and Spring Cloud applications without managing any infrastructure.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is an Azure VM extension?",
+        "options": [
+          "A small application that provides post-deployment configuration and automation on VMs",
+          "A VM size upgrade",
+          "A VM pricing add-on",
+          "A networking add-on"
+        ],
+        "answer": "A small application that provides post-deployment configuration and automation on VMs",
+        "explanation": "VM extensions are small applications that provide post-deployment configuration, monitoring, or automation tasks on Azure VMs (e.g., installing antivirus or configuring settings).",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Arc for compute?",
+        "options": [
+          "A service that extends Azure management to VMs running on-premises or in other clouds",
+          "A container service",
+          "A serverless platform",
+          "A hybrid storage service"
+        ],
+        "answer": "A service that extends Azure management to VMs running on-premises or in other clouds",
+        "explanation": "Azure Arc extends Azure's management and governance capabilities to VMs, Kubernetes clusters, and servers running on-premises, in other clouds, or at the edge.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Functions Consumption Plan?",
+        "options": [
+          "A plan where you only pay when your functions execute, with automatic scaling",
+          "A plan with dedicated VMs",
+          "A fixed monthly pricing plan",
+          "A plan only for containerized functions"
+        ],
+        "answer": "A plan where you only pay when your functions execute, with automatic scaling",
+        "explanation": "The Azure Functions Consumption Plan is the default serverless plan where you pay only for execution time and resources consumed. It auto-scales and you pay nothing when idle.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "Which Azure service provides a fully managed Red Hat OpenShift cluster?",
+        "options": [
+          "Azure Red Hat OpenShift (ARO)",
+          "Azure Kubernetes Service",
+          "Azure Container Apps",
+          "Azure Service Fabric"
+        ],
+        "answer": "Azure Red Hat OpenShift (ARO)",
+        "explanation": "Azure Red Hat OpenShift provides a fully managed OpenShift cluster co-engineered and supported by Microsoft and Red Hat for enterprise Kubernetes workloads.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure CycleCloud?",
+        "options": [
+          "A tool for creating and managing HPC clusters in Azure",
+          "A serverless compute service",
+          "A VM pricing model",
+          "A container service"
+        ],
+        "answer": "A tool for creating and managing HPC clusters in Azure",
+        "explanation": "Azure CycleCloud provides a way to create, manage, operate, and optimize HPC and big compute clusters of any scale in Azure.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is the purpose of Azure VM auto-shutdown?",
+        "options": [
+          "To automatically shut down VMs at a scheduled time to save costs",
+          "To automatically scale VMs",
+          "To restart VMs after updates",
+          "To back up VMs automatically"
+        ],
+        "answer": "To automatically shut down VMs at a scheduled time to save costs",
+        "explanation": "Azure VM auto-shutdown allows you to configure a daily shutdown time for your VMs to prevent unnecessary charges during off-hours (e.g., dev/test environments).",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Spot Eviction Policy?",
+        "options": [
+          "The action Azure takes (deallocate or delete) when it reclaims a Spot VM",
+          "The policy for auto-scaling",
+          "The billing policy for Spot VMs",
+          "The SLA for Spot VMs"
+        ],
+        "answer": "The action Azure takes (deallocate or delete) when it reclaims a Spot VM",
+        "explanation": "When Azure needs capacity back, Spot VMs are evicted. The eviction policy defines whether the VM is deallocated (stopped and preserved) or deleted when evicted.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Virtual Desktop (AVD)?",
+        "options": [
+          "A cloud-based desktop and app virtualization service",
+          "A virtual machine service",
+          "A container orchestration platform",
+          "A serverless compute service"
+        ],
+        "answer": "A cloud-based desktop and app virtualization service",
+        "explanation": "Azure Virtual Desktop (formerly Windows Virtual Desktop) is a cloud-based service that delivers Windows desktops and applications hosted in Azure to any device.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is the Azure equivalent of AWS EC2 Auto Scaling Group?",
+        "options": [
+          "Azure Virtual Machine Scale Sets (VMSS)",
+          "Azure App Service autoscale",
+          "Azure Availability Sets",
+          "Azure Load Balancer"
+        ],
+        "answer": "Azure Virtual Machine Scale Sets (VMSS)",
+        "explanation": "Azure VMSS automatically increases or decreases the number of VM instances based on demand or schedules, equivalent to AWS EC2 Auto Scaling Groups.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Confidential Computing?",
+        "options": [
+          "Computing that protects data in use by running workloads in hardware-based trusted execution environments",
+          "Encrypted storage for VMs",
+          "A private cloud offering",
+          "A compliance certification"
+        ],
+        "answer": "Computing that protects data in use by running workloads in hardware-based trusted execution environments",
+        "explanation": "Azure Confidential Computing protects sensitive data while it's being processed using hardware-based Trusted Execution Environments (TEEs) like Intel SGX and AMD SEV.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is the Azure Compute pricing model called for short-term, no-commitment usage?",
+        "options": [
+          "Pay-as-you-go",
+          "Reserved Instances",
+          "Spot Instances",
+          "Hybrid Benefit"
+        ],
+        "answer": "Pay-as-you-go",
+        "explanation": "Pay-as-you-go (PAYG) is Azure's on-demand pricing with no upfront cost or long-term commitment. You are billed per second of compute consumption.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Hybrid Benefit?",
+        "options": [
+          "A benefit that allows using existing Windows Server or SQL Server licenses in Azure to save costs",
+          "A free tier for Azure VMs",
+          "A discount for nonprofit organizations",
+          "A pricing plan for hybrid cloud storage"
+        ],
+        "answer": "A benefit that allows using existing Windows Server or SQL Server licenses in Azure to save costs",
+        "explanation": "Azure Hybrid Benefit lets you use your on-premises Windows Server or SQL Server licenses with Software Assurance on Azure, providing significant cost savings on VMs.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Google Compute Engine (GCE)?",
+        "options": [
+          "GCP's service for running virtual machines in the cloud",
+          "GCP's serverless function service",
+          "GCP's container orchestration service",
+          "GCP's managed database service"
+        ],
+        "answer": "GCP's service for running virtual machines in the cloud",
+        "explanation": "Google Compute Engine is GCP's IaaS offering that provides customizable virtual machines running in Google's global infrastructure.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Google Cloud Functions?",
+        "options": [
+          "A serverless compute service that runs event-driven code without managing infrastructure",
+          "A VM management service",
+          "A container registry",
+          "A Kubernetes service"
+        ],
+        "answer": "A serverless compute service that runs event-driven code without managing infrastructure",
+        "explanation": "Google Cloud Functions is a serverless execution environment for building and connecting cloud services. Your code executes in response to events without provisioning servers.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Google Kubernetes Engine (GKE)?",
+        "options": [
+          "A managed Kubernetes service for deploying containerized applications on GCP",
+          "A serverless function service",
+          "A VM auto-scaling service",
+          "A container image registry"
+        ],
+        "answer": "A managed Kubernetes service for deploying containerized applications on GCP",
+        "explanation": "GKE is a managed, production-ready Kubernetes environment on GCP. It handles cluster management, patching, scaling, and monitoring so you can focus on applications.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Google App Engine?",
+        "options": [
+          "A fully managed PaaS for building and hosting web applications",
+          "A virtual machine service",
+          "A serverless function service",
+          "A container orchestration service"
+        ],
+        "answer": "A fully managed PaaS for building and hosting web applications",
+        "explanation": "Google App Engine is a PaaS that lets developers build and deploy applications without managing infrastructure. It automatically handles scaling and infrastructure management.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Google Cloud Run?",
+        "options": [
+          "A fully managed serverless platform for running containerized applications",
+          "A Kubernetes cluster service",
+          "A virtual machine service",
+          "A function-as-a-service platform"
+        ],
+        "answer": "A fully managed serverless platform for running containerized applications",
+        "explanation": "Cloud Run is a fully managed compute platform that automatically scales your stateless containers. It abstracts away all infrastructure management.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is a GCP Zone?",
+        "options": [
+          "A deployment area for resources within a GCP Region",
+          "A group of GCP Regions",
+          "A virtual private cloud",
+          "A pricing tier"
+        ],
+        "answer": "A deployment area for resources within a GCP Region",
+        "explanation": "A GCP Zone is a deployment area within a Region. Zones are isolated locations within a region providing fault tolerance. Example: us-central1-a is a zone in us-central1.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is a GCP Region?",
+        "options": [
+          "A specific geographic location containing multiple zones",
+          "A single data center",
+          "A virtual network",
+          "A billing unit"
+        ],
+        "answer": "A specific geographic location containing multiple zones",
+        "explanation": "A GCP Region is a specific geographic location (e.g., us-central1, europe-west1) that contains multiple zones. Deploying across zones provides high availability.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is a Google Compute Engine custom machine type?",
+        "options": [
+          "A VM with user-defined vCPU and memory configurations",
+          "A predefined VM size",
+          "A managed instance group",
+          "A serverless compute option"
+        ],
+        "answer": "A VM with user-defined vCPU and memory configurations",
+        "explanation": "GCE custom machine types let you create VMs with a specific number of vCPUs and custom amounts of memory, so you only pay for exactly what your workload needs.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is a Managed Instance Group (MIG) in GCP?",
+        "options": [
+          "A group of identical VM instances managed as a single entity that can auto-scale",
+          "A group of different VM types",
+          "A Kubernetes node pool",
+          "A serverless compute group"
+        ],
+        "answer": "A group of identical VM instances managed as a single entity that can auto-scale",
+        "explanation": "A Managed Instance Group (MIG) maintains a set of identical VM instances. MIGs support auto-scaling, auto-healing, rolling updates, and load balancing.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Google Cloud's equivalent of AWS Lambda or Azure Functions?",
+        "options": [
+          "Google Cloud Functions",
+          "Google App Engine",
+          "Google Cloud Run",
+          "Google Compute Engine"
+        ],
+        "answer": "Google Cloud Functions",
+        "explanation": "Google Cloud Functions is GCP's serverless, event-driven compute service, equivalent to AWS Lambda and Azure Functions. You deploy code and Google manages the infrastructure.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is a GCE Preemptible VM?",
+        "options": [
+          "A low-cost VM that GCP can stop at any time when it needs the resources back",
+          "A reserved VM instance",
+          "A dedicated physical host VM",
+          "A free-tier VM"
+        ],
+        "answer": "A low-cost VM that GCP can stop at any time when it needs the resources back",
+        "explanation": "Preemptible VMs are highly affordable Compute Engine VMs that may be preempted (stopped) by GCP when it needs the capacity. They run for at most 24 hours.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is a GCE Spot VM?",
+        "options": [
+          "A low-cost VM using excess GCP capacity that can be preempted at any time",
+          "A reserved VM",
+          "A dedicated host VM",
+          "A high-performance VM"
+        ],
+        "answer": "A low-cost VM using excess GCP capacity that can be preempted at any time",
+        "explanation": "Spot VMs are the successor to Preemptible VMs in GCP. They offer significant discounts for using spare compute capacity but can be preempted when GCP needs the resources.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Google Artifact Registry used for?",
+        "options": [
+          "Storing and managing container images and other build artifacts",
+          "Running containers",
+          "Managing Kubernetes clusters",
+          "Deploying cloud functions"
+        ],
+        "answer": "Storing and managing container images and other build artifacts",
+        "explanation": "Google Artifact Registry is a fully managed service for storing, managing, and securing container images and other build artifacts like Maven and npm packages.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Google Cloud's Committed Use Discount?",
+        "options": [
+          "A discount for committing to use a specific amount of compute resources for 1 or 3 years",
+          "A discount for using Spot VMs",
+          "A discount for non-profit organizations",
+          "A free compute quota"
+        ],
+        "answer": "A discount for committing to use a specific amount of compute resources for 1 or 3 years",
+        "explanation": "Committed Use Discounts (CUDs) in GCP provide up to 57% discount for vCPU and memory in exchange for committing to use a minimum level of resources for 1 or 3 years.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Google Cloud's Sustained Use Discount?",
+        "options": [
+          "An automatic discount applied when VMs run for a significant portion of a billing month",
+          "A discount for using reserved instances",
+          "A discount for high-memory machines",
+          "A discount for dev/test environments"
+        ],
+        "answer": "An automatic discount applied when VMs run for a significant portion of a billing month",
+        "explanation": "Sustained Use Discounts are automatic discounts applied to Compute Engine VMs the longer they run in a month. Running a VM the full month gives up to 30% discount with no commitment.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is the GCP equivalent of AWS EC2 Auto Scaling Group?",
+        "options": [
+          "Managed Instance Group (MIG) with autoscaler",
+          "GKE node pool",
+          "Cloud Run autoscaling",
+          "App Engine automatic scaling"
+        ],
+        "answer": "Managed Instance Group (MIG) with autoscaler",
+        "explanation": "In GCP, a Managed Instance Group (MIG) with an autoscaler automatically adds or removes VM instances based on CPU load, HTTP load, or custom metrics.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Google Cloud's sole-tenant node?",
+        "options": [
+          "A physical Compute Engine server dedicated to a single customer",
+          "A shared virtual machine",
+          "A managed Kubernetes node",
+          "A serverless compute resource"
+        ],
+        "answer": "A physical Compute Engine server dedicated to a single customer",
+        "explanation": "Sole-tenant nodes are physical servers dedicated to hosting VMs only for your project. They help meet compliance requirements and allow you to bring existing per-core licenses.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Google App Engine Standard Environment?",
+        "options": [
+          "A serverless environment that runs apps in sandboxed instances with automatic scaling",
+          "A VM-based hosting environment",
+          "A Kubernetes-based environment",
+          "A container-only environment"
+        ],
+        "answer": "A serverless environment that runs apps in sandboxed instances with automatic scaling",
+        "explanation": "App Engine Standard Environment runs applications in sandboxed instances, automatically scales from zero, and supports specific runtimes (Python, Java, Go, PHP, Ruby, Node.js).",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Google App Engine Flexible Environment?",
+        "options": [
+          "An environment that runs Dockerized apps on VMs with more flexibility in runtime and configuration",
+          "A serverless sandbox environment",
+          "A Kubernetes-only environment",
+          "A bare-metal compute service"
+        ],
+        "answer": "An environment that runs Dockerized apps on VMs with more flexibility in runtime and configuration",
+        "explanation": "App Engine Flexible Environment runs applications in Docker containers on Compute Engine VMs, giving more control over the runtime and allowing custom dependencies.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Cloud Run for Anthos?",
+        "options": [
+          "A service that lets you run Cloud Run workloads on your own Kubernetes clusters via Anthos",
+          "A managed VM service",
+          "A serverless database",
+          "A container registry"
+        ],
+        "answer": "A service that lets you run Cloud Run workloads on your own Kubernetes clusters via Anthos",
+        "explanation": "Cloud Run for Anthos (now called Cloud Run on GKE) allows you to deploy serverless-style container workloads to GKE clusters, including on-premises through Anthos.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What GCE machine series is optimized for memory-intensive workloads?",
+        "options": [
+          "M-series (M2, M3)",
+          "C-series",
+          "N-series",
+          "E-series"
+        ],
+        "answer": "M-series (M2, M3)",
+        "explanation": "The M-series (M2, M3) machine types in GCP are memory-optimized VMs offering the highest memory-to-vCPU ratio, ideal for SAP HANA, in-memory databases, and analytics.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is a GCE instance template?",
+        "options": [
+          "A reusable resource that defines VM configuration for creating VM instances and MIGs",
+          "A VM pricing model",
+          "A Kubernetes pod template",
+          "A cloud function configuration"
+        ],
+        "answer": "A reusable resource that defines VM configuration for creating VM instances and MIGs",
+        "explanation": "Instance templates in GCE define the machine type, disk image, labels, startup scripts, and other VM properties. They are required to create Managed Instance Groups.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is a GCE startup script?",
+        "options": [
+          "A script that runs automatically when a VM instance starts",
+          "A Kubernetes init container",
+          "A cloud function trigger",
+          "A deployment configuration file"
+        ],
+        "answer": "A script that runs automatically when a VM instance starts",
+        "explanation": "A GCE startup script is a shell script or batch file specified in the instance metadata that runs automatically when the VM starts, used for bootstrapping configuration.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Cloud Run's key difference from Google Cloud Functions?",
+        "options": [
+          "Cloud Run runs containers while Cloud Functions runs individual functions from code",
+          "Cloud Run is cheaper than Cloud Functions",
+          "Cloud Run only runs on Kubernetes",
+          "Cloud Functions supports containers"
+        ],
+        "answer": "Cloud Run runs containers while Cloud Functions runs individual functions from code",
+        "explanation": "Cloud Run deploys full container images and gives more flexibility in runtime and dependencies. Cloud Functions deploys individual function code with Google-managed runtimes.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is GKE Autopilot?",
+        "options": [
+          "A GKE mode where Google fully manages the cluster's node infrastructure",
+          "A Kubernetes auto-scaling feature",
+          "A serverless Kubernetes offering",
+          "A GKE pricing model"
+        ],
+        "answer": "A GKE mode where Google fully manages the cluster's node infrastructure",
+        "explanation": "GKE Autopilot is a mode of operation for GKE where Google manages all the cluster configuration, scaling, and node infrastructure, so you only define and pay for workloads.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Google Cloud's equivalent of AWS Elastic Beanstalk?",
+        "options": [
+          "Google App Engine",
+          "Google Cloud Run",
+          "Google Kubernetes Engine",
+          "Google Compute Engine"
+        ],
+        "answer": "Google App Engine",
+        "explanation": "Google App Engine is GCP's PaaS equivalent to AWS Elastic Beanstalk. Both allow developers to deploy applications without managing infrastructure.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What does GKE standard mode provide compared to Autopilot?",
+        "options": [
+          "More control over node configuration and management",
+          "Fully managed nodes with no configuration",
+          "A cheaper pricing model",
+          "Serverless containers only"
+        ],
+        "answer": "More control over node configuration and management",
+        "explanation": "GKE Standard mode gives users full control over node configuration, machine types, and cluster settings. Autopilot mode abstracts all node management away.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Google Cloud Bare Metal Solution?",
+        "options": [
+          "A service to run specialized workloads on dedicated bare-metal servers in Google's data centers",
+          "A standard VM offering",
+          "A Kubernetes service",
+          "A container registry"
+        ],
+        "answer": "A service to run specialized workloads on dedicated bare-metal servers in Google's data centers",
+        "explanation": "Bare Metal Solution provides dedicated physical servers in Google's data centers for specialized workloads (like Oracle databases) requiring direct hardware access.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is the purpose of Cloud Run min-instances setting?",
+        "options": [
+          "To keep a minimum number of container instances running to avoid cold starts",
+          "To limit the maximum scaling",
+          "To configure CPU allocation",
+          "To set the request timeout"
+        ],
+        "answer": "To keep a minimum number of container instances running to avoid cold starts",
+        "explanation": "Cloud Run's min-instances setting keeps a minimum number of container instances warm and ready to serve requests, eliminating cold start latency for latency-sensitive applications.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Google Cloud VMware Engine?",
+        "options": [
+          "A service that lets you run VMware workloads natively on Google Cloud infrastructure",
+          "A VM migration tool",
+          "A container orchestration service",
+          "A virtual desktop service"
+        ],
+        "answer": "A service that lets you run VMware workloads natively on Google Cloud infrastructure",
+        "explanation": "Google Cloud VMware Engine provides a fully managed VMware environment (vSphere, NSX-T, vSAN) running on dedicated bare-metal nodes in GCP for lift-and-shift migration.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is the free tier compute offering in GCP?",
+        "options": [
+          "One e2-micro VM instance per month in select regions at no charge",
+          "One n1-standard-1 VM for 12 months",
+          "Unlimited Cloud Functions executions",
+          "Free GKE cluster for 1 year"
+        ],
+        "answer": "One e2-micro VM instance per month in select regions at no charge",
+        "explanation": "GCP's Always Free tier includes one e2-micro VM instance per month in specific US regions at no charge, along with 30 GB of standard persistent disk storage.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Anthos in GCP?",
+        "options": [
+          "A managed application platform for running containerized apps across GCP, on-premises, and other clouds",
+          "A VM migration tool",
+          "A serverless platform",
+          "A container image registry"
+        ],
+        "answer": "A managed application platform for running containerized apps across GCP, on-premises, and other clouds",
+        "explanation": "Anthos is GCP's modern application management platform that enables you to run and manage containerized applications consistently across GCP, on-premises, and multi-cloud environments.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Cloud Batch in GCP?",
+        "options": [
+          "A fully managed batch computing service for running HPC and large-scale batch workloads",
+          "A serverless function service",
+          "A Kubernetes job manager",
+          "A data pipeline service"
+        ],
+        "answer": "A fully managed batch computing service for running HPC and large-scale batch workloads",
+        "explanation": "Google Cloud Batch is a fully managed service that plans, schedules, and executes batch workloads on GCP's infrastructure, automatically provisioning resources.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What does 'cold start' mean in serverless computing (Cloud Functions / Lambda)?",
+        "options": [
+          "The delay when a new instance is initialized to handle a request after being idle",
+          "Starting a VM from a snapshot",
+          "Restarting a crashed function",
+          "A slow database query"
+        ],
+        "answer": "The delay when a new instance is initialized to handle a request after being idle",
+        "explanation": "A cold start is the latency experienced when a serverless function is invoked after being idle and a new execution environment must be initialized before handling the request.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is GCE's Live Migration feature?",
+        "options": [
+          "Automatically moving running VMs to healthy hardware without downtime during host maintenance",
+          "Migrating VMs between regions",
+          "Moving VMs to another cloud provider",
+          "Migrating VM data to Cloud Storage"
+        ],
+        "answer": "Automatically moving running VMs to healthy hardware without downtime during host maintenance",
+        "explanation": "GCE Live Migration keeps your VM instances running during host system maintenance events by transparently migrating the running VM to another host with no downtime.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "Which GCP compute service is best for running stateless HTTP containerized microservices with zero infrastructure management?",
+        "options": [
+          "Google Cloud Run",
+          "Google Compute Engine",
+          "Google Kubernetes Engine Standard",
+          "Google App Engine Flexible"
+        ],
+        "answer": "Google Cloud Run",
+        "explanation": "Cloud Run is the best fit for stateless HTTP containerized microservices as it is fully managed, scales to zero, and requires zero infrastructure management.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is the C3 machine series in Google Compute Engine optimized for?",
+        "options": [
+          "Compute-intensive workloads requiring high performance CPUs",
+          "Memory-intensive in-memory databases",
+          "GPU-accelerated machine learning",
+          "Low-cost general-purpose computing"
+        ],
+        "answer": "Compute-intensive workloads requiring high performance CPUs",
+        "explanation": "The C3 machine series in GCE uses Intel Sapphire Rapids processors and is optimized for compute-intensive workloads such as HPC, gaming servers, and large web serving.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is the N2D machine series in GCP based on?",
+        "options": [
+          "AMD EPYC processors",
+          "Intel Xeon processors",
+          "ARM processors",
+          "NVIDIA GPUs"
+        ],
+        "answer": "AMD EPYC processors",
+        "explanation": "N2D machine series are general-purpose VMs running on AMD EPYC processors. They offer a good balance of price and performance for various workloads.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Cloud Functions 2nd generation based on?",
+        "options": [
+          "Cloud Run, providing longer timeouts and more CPU/memory options",
+          "Compute Engine VMs",
+          "GKE pods",
+          "App Engine instances"
+        ],
+        "answer": "Cloud Run, providing longer timeouts and more CPU/memory options",
+        "explanation": "Cloud Functions 2nd gen is built on Cloud Run and Eventarc, offering up to 60-minute timeouts, up to 32 GB memory, and improved scalability over 1st gen.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Azure Migrate?",
+        "options": [
+          "A service to discover, assess, and migrate on-premises workloads to Azure",
+          "A VM live migration tool",
+          "A container migration tool",
+          "A database migration service only"
+        ],
+        "answer": "A service to discover, assess, and migrate on-premises workloads to Azure",
+        "explanation": "Azure Migrate provides a centralized hub to discover, assess, and migrate on-premises servers, VMs, databases, and apps to Azure.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure VM Proximity Placement Group?",
+        "options": [
+          "A logical grouping that places Azure VMs physically close together to reduce latency",
+          "A group of VMs in the same availability set",
+          "A regional VM cluster",
+          "A billing group for VMs"
+        ],
+        "answer": "A logical grouping that places Azure VMs physically close together to reduce latency",
+        "explanation": "Proximity Placement Groups ensure Azure VMs are physically located close to each other in the same Azure data center to achieve the lowest possible latency between instances.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is the Azure B-series VM family used for?",
+        "options": [
+          "Burstable, cost-effective workloads with variable CPU usage",
+          "High-performance computing",
+          "Memory-intensive workloads",
+          "GPU workloads"
+        ],
+        "answer": "Burstable, cost-effective workloads with variable CPU usage",
+        "explanation": "Azure B-series VMs are burstable general-purpose VMs ideal for workloads that don't need full CPU performance continuously, such as web servers and dev/test environments.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Functions Premium Plan?",
+        "options": [
+          "A plan offering pre-warmed instances, VNet integration, and unlimited execution duration",
+          "The default consumption plan",
+          "A plan for running Functions on dedicated VMs",
+          "A plan for running container-based functions only"
+        ],
+        "answer": "A plan offering pre-warmed instances, VNet integration, and unlimited execution duration",
+        "explanation": "The Azure Functions Premium Plan provides pre-warmed workers to avoid cold starts, VNet integration, unlimited execution duration, and more powerful instances.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure VM Disk Encryption?",
+        "options": [
+          "Encrypting OS and data disks of Azure VMs using Azure Disk Encryption (ADE)",
+          "Encrypting network traffic to VMs",
+          "A backup encryption feature",
+          "Encrypting VM images in ACR"
+        ],
+        "answer": "Encrypting OS and data disks of Azure VMs using Azure Disk Encryption (ADE)",
+        "explanation": "Azure Disk Encryption (ADE) uses BitLocker (Windows) or DM-Crypt (Linux) to encrypt OS and data disks attached to Azure VMs for data security compliance.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure VM Generalization?",
+        "options": [
+          "Removing machine-specific data from a VM to create a reusable image",
+          "Scaling a VM to a larger size",
+          "Moving a VM to another region",
+          "Resetting a VM password"
+        ],
+        "answer": "Removing machine-specific data from a VM to create a reusable image",
+        "explanation": "Generalizing a VM (using sysprep on Windows or waagent on Linux) removes machine-specific information so the VM can be captured as an image and reused to create new VMs.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Spot Instance eviction policy?",
+        "options": [
+          "The action taken (deallocate or delete) when Azure reclaims a Spot VM",
+          "The SLA guarantee for Spot VMs",
+          "The pricing policy for Spot VMs",
+          "The maximum duration a Spot VM can run"
+        ],
+        "answer": "The action taken (deallocate or delete) when Azure reclaims a Spot VM",
+        "explanation": "When Azure needs capacity back, Spot VMs are evicted according to the eviction policy: Deallocate (VM is stopped and preserved) or Delete (VM is permanently removed).",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Container Apps environment?",
+        "options": [
+          "A secure boundary around a group of container apps sharing networking and logging",
+          "A Kubernetes namespace",
+          "A container registry environment",
+          "A virtual network for containers"
+        ],
+        "answer": "A secure boundary around a group of container apps sharing networking and logging",
+        "explanation": "An Azure Container Apps environment is an isolated secure boundary for a group of container apps. Apps within the same environment share a VNet and Log Analytics workspace.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Dev/Test pricing?",
+        "options": [
+          "Discounted VM pricing available to Visual Studio subscribers for development and testing workloads",
+          "A free-tier plan for Azure VMs",
+          "A reserved instance for dev environments",
+          "A pricing tier for student accounts"
+        ],
+        "answer": "Discounted VM pricing available to Visual Studio subscribers for development and testing workloads",
+        "explanation": "Azure Dev/Test pricing offers significantly reduced rates on VMs for development and testing purposes, available to Visual Studio subscribers through Azure DevTest Labs.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is the HB-series Azure VM family optimized for?",
+        "options": [
+          "High-performance computing (HPC) workloads like CFD, weather simulation, and seismic analysis",
+          "General-purpose web hosting",
+          "Memory-intensive databases",
+          "GPU-accelerated deep learning"
+        ],
+        "answer": "High-performance computing (HPC) workloads like CFD, weather simulation, and seismic analysis",
+        "explanation": "Azure HB-series VMs are optimized for HPC applications such as fluid dynamics, finite element analysis, and weather modeling using AMD EPYC processors with high memory bandwidth.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Kubernetes Service (AKS) node pool?",
+        "options": [
+          "A group of VMs within an AKS cluster that share the same configuration",
+          "A group of AKS clusters",
+          "A Kubernetes namespace",
+          "A container group in ACI"
+        ],
+        "answer": "A group of VMs within an AKS cluster that share the same configuration",
+        "explanation": "An AKS node pool is a set of nodes (VMs) in a cluster that share the same VM size, OS, and configuration. Clusters can have multiple node pools for different workload types.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is the Dv5 series Azure VM family?",
+        "options": [
+          "General-purpose VMs with balanced CPU-to-memory ratio using 3rd Gen Intel Xeon",
+          "Memory-optimized VMs",
+          "Compute-optimized VMs",
+          "Storage-optimized VMs"
+        ],
+        "answer": "General-purpose VMs with balanced CPU-to-memory ratio using 3rd Gen Intel Xeon",
+        "explanation": "The Dv5 series are general-purpose Azure VMs powered by 3rd Generation Intel Xeon Scalable processors, providing a balanced CPU-to-memory ratio suitable for most production workloads.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure VM Resize?",
+        "options": [
+          "Changing the size (CPU/memory) of an existing VM to a different VM SKU",
+          "Moving a VM to another region",
+          "Adding more disks to a VM",
+          "Changing the VM image"
+        ],
+        "answer": "Changing the size (CPU/memory) of an existing VM to a different VM SKU",
+        "explanation": "Azure VM Resize (vertical scaling) allows you to change the VM size (more or fewer vCPUs and memory) to match your workload needs. The VM must be stopped/deallocated first.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Kubernetes Service (AKS) Virtual Node?",
+        "options": [
+          "An AKS feature using Azure Container Instances to burst pods without managing VM nodes",
+          "A virtual VM in AKS",
+          "A serverless Kubernetes pod",
+          "An AKS node type for Windows containers"
+        ],
+        "answer": "An AKS feature using Azure Container Instances to burst pods without managing VM nodes",
+        "explanation": "AKS Virtual Nodes integrate with Azure Container Instances to allow pods to run on ACI when the cluster needs to scale rapidly, without provisioning additional VMs.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure App Service Plan?",
+        "options": [
+          "The compute resource that defines the region, number of workers, and pricing tier for App Service apps",
+          "A deployment pipeline",
+          "A network plan for web apps",
+          "A pricing tier for Azure Functions"
+        ],
+        "answer": "The compute resource that defines the region, number of workers, and pricing tier for App Service apps",
+        "explanation": "An App Service Plan defines the underlying compute (VM size, OS, region, and instance count) for your App Service apps. Multiple apps can share the same plan.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is the Azure NC-series VM family used for?",
+        "options": [
+          "GPU-accelerated compute for AI, machine learning, and simulation workloads",
+          "High-memory workloads",
+          "General-purpose computing",
+          "High-performance networking"
+        ],
+        "answer": "GPU-accelerated compute for AI, machine learning, and simulation workloads",
+        "explanation": "Azure NC-series VMs are equipped with NVIDIA GPUs and are designed for compute-intensive tasks like training deep learning models, simulation, and rendering.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "azure"
+      }
+    ]

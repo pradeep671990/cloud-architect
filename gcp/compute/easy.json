@@ -1,1 +1,156 @@
-[]
+[
+    {
+        "question": "What is Shielded VM in GCP?",
+        "options": [
+          "VMs hardened with Secure Boot, vTPM, and Integrity Monitoring to protect against rootkits and bootkits",
+          "A VM with dedicated hardware",
+          "A preemptible VM with extra security",
+          "A VM with encrypted disks only"
+        ],
+        "answer": "VMs hardened with Secure Boot, vTPM, and Integrity Monitoring to protect against rootkits and bootkits",
+        "explanation": "Shielded VMs in GCE offer verifiable integrity to ensure your VM hasn't been compromised by boot-level or kernel-level malware, using Secure Boot, vTPM, and Integrity Monitoring.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Confidential VM in GCP?",
+        "options": [
+          "VMs that encrypt data in use during processing using AMD SEV technology",
+          "A VM with end-to-end network encryption",
+          "A VM with only disk encryption",
+          "A sole-tenant node with extra privacy"
+        ],
+        "answer": "VMs that encrypt data in use during processing using AMD SEV technology",
+        "explanation": "GCP Confidential VMs encrypt data while it is being processed (in-memory) using AMD Secure Encrypted Virtualization (SEV), keeping data encrypted even from Google.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is a GCE disk snapshot?",
+        "options": [
+          "A point-in-time backup of a Persistent Disk stored in Cloud Storage",
+          "A VM image backup",
+          "A full VM configuration backup",
+          "A network configuration snapshot"
+        ],
+        "answer": "A point-in-time backup of a Persistent Disk stored in Cloud Storage",
+        "explanation": "GCE disk snapshots capture the state of a Persistent Disk at a specific point in time. They are stored in Cloud Storage and can be used to restore disks or create new disks.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is the T2A machine series in GCP based on?",
+        "options": [
+          "Ampere Altra ARM-based processors",
+          "Intel Xeon processors",
+          "AMD EPYC processors",
+          "NVIDIA GPUs"
+        ],
+        "answer": "Ampere Altra ARM-based processors",
+        "explanation": "The T2A machine series in GCP is powered by Ampere Altra ARM-based processors, offering high single-threaded performance and energy efficiency for scale-out workloads.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is GKE cluster autoscaler?",
+        "options": [
+          "A feature that automatically resizes the number of nodes in a node pool based on resource demands",
+          "A feature that scales pod replicas",
+          "A cluster upgrade feature",
+          "A load balancing feature"
+        ],
+        "answer": "A feature that automatically resizes the number of nodes in a node pool based on resource demands",
+        "explanation": "GKE Cluster Autoscaler automatically adjusts the size of a node pool by adding nodes when pods can't be scheduled due to resource constraints or removing underutilized nodes.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Google Cloud's Vertical Pod Autoscaler (VPA) for GKE?",
+        "options": [
+          "Automatically adjusts CPU and memory requests/limits of containers based on usage",
+          "Adds more pods based on CPU load",
+          "Adds more nodes to the cluster",
+          "Scales services based on HTTP traffic"
+        ],
+        "answer": "Automatically adjusts CPU and memory requests/limits of containers based on usage",
+        "explanation": "VPA in GKE automatically adjusts resource requests and limits for containers running in a cluster based on historical usage data to improve resource efficiency.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is a GCE Custom Image?",
+        "options": [
+          "A user-created disk image that can be used to create new VM instances",
+          "A Google-provided OS image",
+          "A container image",
+          "A machine learning model image"
+        ],
+        "answer": "A user-created disk image that can be used to create new VM instances",
+        "explanation": "Custom images in GCE are disk images you create from your own disks, snapshots, or other images. They allow you to provision VMs with your specific OS configuration and software.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is the A2 machine series in GCP optimized for?",
+        "options": [
+          "GPU-accelerated workloads powered by NVIDIA A100 GPUs for machine learning and HPC",
+          "General-purpose computing",
+          "Memory-intensive databases",
+          "Compute-optimized batch jobs"
+        ],
+        "answer": "GPU-accelerated workloads powered by NVIDIA A100 GPUs for machine learning and HPC",
+        "explanation": "The A2 machine series in GCP is powered by NVIDIA A100 GPUs and is designed for the most demanding ML training, inference, and HPC workloads.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Cloud Run's concurrency setting?",
+        "options": [
+          "The maximum number of requests a single Cloud Run container instance can handle simultaneously",
+          "The number of instances that can run in parallel",
+          "The number of vCPUs per instance",
+          "The timeout for each request"
+        ],
+        "answer": "The maximum number of requests a single Cloud Run container instance can handle simultaneously",
+        "explanation": "Cloud Run's concurrency setting controls how many requests a single container instance can handle at the same time. Default is 80, max is 1000 for HTTP services.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is GCP's Cloud Workstations?",
+        "options": [
+          "A fully managed cloud-based developer workstation service",
+          "A VM service for graphic designers",
+          "A container-based IDE service",
+          "A remote desktop service for end users"
+        ],
+        "answer": "A fully managed cloud-based developer workstation service",
+        "explanation": "Cloud Workstations provides fully managed, secure, and configurable cloud-based development environments that developers access remotely, preconfigured with dev tools.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is a GCE Persistent Disk?",
+        "options": [
+          "A network-attached block storage device for GCE VMs that persists independently of the VM",
+          "Temporary local storage for a VM",
+          "A Cloud Storage bucket",
+          "A distributed file system"
+        ],
+        "answer": "A network-attached block storage device for GCE VMs that persists independently of the VM",
+        "explanation": "GCE Persistent Disks are durable, high-performance block storage that are network-attached to VMs. Unlike instance storage, data persists even after the VM is deleted.",
+        "difficulty": "easy",
+        "subcategory": "compute",
+        "category": "gcp"
+      }
+    ]

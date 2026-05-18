@@ -1,1 +1,434 @@
-[]
+[
+  {
+    "question": "Which S3 API operation must be used to complete a multipart upload after all parts have been uploaded?",
+    "options": ["PutObject", "CompleteMultipartUpload", "FinalizeMultipartUpload", "MergeMultipartUpload"],
+    "answer": "CompleteMultipartUpload",
+    "explanation": "After uploading all parts using UploadPart, you must call CompleteMultipartUpload with the list of part numbers and ETags to assemble the final object.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the maximum number of parts allowed in an S3 Multipart Upload?",
+    "options": ["100", "1,000", "10,000", "100,000"],
+    "answer": "10,000",
+    "explanation": "Amazon S3 supports a maximum of 10,000 parts per multipart upload, with each part being between 5 MB and 5 GB (except the last part).",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "Which S3 consistency model applies to bucket listing operations after deleting objects?",
+    "options": ["Eventual consistency", "Strong consistency", "Read-after-write consistency only for new objects", "Weak consistency for list operations"],
+    "answer": "Strong consistency",
+    "explanation": "Since December 2020, Amazon S3 provides strong consistency for all operations including LIST after DELETE, meaning deleted objects will not appear in subsequent list operations.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the purpose of S3 Object Lock Compliance mode versus Governance mode?",
+    "options": ["Compliance mode can be overridden by root user; Governance mode cannot", "Governance mode allows users with special IAM permissions to override; Compliance mode cannot be overridden by any user including root", "They are identical in behavior", "Compliance mode is for Glacier only; Governance mode is for S3 Standard"],
+    "answer": "Governance mode allows users with special IAM permissions to override; Compliance mode cannot be overridden by any user including root",
+    "explanation": "In Governance mode, users with s3:BypassGovernanceRetention permission can modify or delete objects. In Compliance mode, no user — including the AWS root account — can shorten the retention period or delete the object.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "When using SSE-C encryption in S3, what is the customer responsible for?",
+    "options": ["Nothing; AWS manages everything", "Providing the encryption key with every request and managing key rotation externally", "Storing the key in AWS KMS", "Only managing the key policy, not the key itself"],
+    "answer": "Providing the encryption key with every request and managing key rotation externally",
+    "explanation": "With SSE-C, the customer provides the AES-256 encryption key with each PUT and GET request. AWS uses the key to encrypt/decrypt but does not store it. Key management is entirely the customer's responsibility.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What happens to S3 replication when the source object is encrypted with SSE-KMS?",
+    "options": ["Replication fails for SSE-KMS objects", "Replication works automatically without any additional configuration", "You must explicitly enable SSE-KMS replication and specify the KMS key for the destination region", "SSE-KMS objects are replicated as unencrypted objects"],
+    "answer": "You must explicitly enable SSE-KMS replication and specify the KMS key for the destination region",
+    "explanation": "SSE-KMS encrypted objects require explicit configuration in the replication rule, including specifying the destination KMS key ARN and granting the S3 replication role permissions to use both source and destination KMS keys.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "Which EBS volume type supports up to 256,000 IOPS per volume?",
+    "options": ["gp3", "io1", "io2", "io2 Block Express"],
+    "answer": "io2 Block Express",
+    "explanation": "io2 Block Express is the highest-performance EBS volume, supporting up to 256,000 IOPS, 4,000 MB/s throughput, and up to 64 TB per volume.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the maximum throughput supported by Amazon EFS with Elastic Throughput mode?",
+    "options": ["1 GB/s read, 256 MB/s write", "3 GB/s read, 1 GB/s write", "10 GB/s read, 5 GB/s write", "Unlimited, scales automatically"],
+    "answer": "3 GB/s read, 1 GB/s write",
+    "explanation": "EFS Elastic Throughput mode automatically scales to meet workload demands up to 3 GB/s for reads and 1 GB/s for writes per file system.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the S3 Batch Operations manifest file used for?",
+    "options": ["Defining batch IAM policies", "Listing the objects to be processed in the batch job, specified as an S3 Inventory report or a CSV file", "Manifesting compliance requirements for Object Lock", "Providing encryption keys for batch operations"],
+    "answer": "Listing the objects to be processed in the batch job, specified as an S3 Inventory report or a CSV file",
+    "explanation": "The S3 Batch Operations manifest is a file (S3 Inventory report or CSV) that lists the objects to be processed by the batch job, specifying bucket name, object key, and optionally version ID.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the impact of enabling S3 Versioning on lifecycle transition actions?",
+    "options": ["Lifecycle rules do not apply to versioned buckets", "Lifecycle rules can independently manage current and noncurrent versions with separate actions", "Lifecycle rules only apply to the latest version", "Versioning disables lifecycle rules for Glacier transitions"],
+    "answer": "Lifecycle rules can independently manage current and noncurrent versions with separate actions",
+    "explanation": "When versioning is enabled, S3 lifecycle rules can define separate actions for current versions and noncurrent versions, allowing independent management of their transitions and expirations.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "Which condition must be true for S3 Cross-Region Replication to work?",
+    "options": ["Both buckets must be in the same account", "Versioning must be enabled on both source and destination buckets", "Both buckets must use the same storage class", "The source bucket must be public"],
+    "answer": "Versioning must be enabled on both source and destination buckets",
+    "explanation": "S3 replication (both CRR and SRR) requires versioning to be enabled on both the source and destination buckets. Without versioning, replication cannot be configured.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the S3 Glacier Vault Lock initiation process?",
+    "options": ["Apply policy and it is immediately locked", "Initiate lock (24-hour window to validate), then complete lock to make it immutable", "Submit a ticket to AWS Support to lock the vault", "Lock is automatic after 7 days of inactivity"],
+    "answer": "Initiate lock (24-hour window to validate), then complete lock to make it immutable",
+    "explanation": "Vault Lock is a two-step process: first initiate the lock (entering an in-progress state with a 24-hour validation window), then complete the lock to make the policy permanent and immutable.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the AWS shared responsibility model for S3 data encryption?",
+    "options": ["AWS is fully responsible for all encryption", "Customer is responsible for enabling and managing encryption; AWS provides the tools and infrastructure", "AWS encrypts automatically; customer cannot control encryption", "Encryption is not available in the shared responsibility model"],
+    "answer": "Customer is responsible for enabling and managing encryption; AWS provides the tools and infrastructure",
+    "explanation": "Under the shared responsibility model, AWS secures the S3 infrastructure. The customer is responsible for enabling encryption (SSE-S3, SSE-KMS, SSE-C, or client-side), managing KMS keys, and setting appropriate policies.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the behavior of an S3 lifecycle rule with a transition to Glacier when versioning is suspended?",
+    "options": ["The rule applies only to new objects uploaded after suspension", "Objects uploaded while versioning is suspended get a null version ID and lifecycle rules apply to them", "Lifecycle rules are permanently disabled when versioning is suspended", "Objects are immediately transitioned to Glacier upon suspension"],
+    "answer": "Objects uploaded while versioning is suspended get a null version ID and lifecycle rules apply to them",
+    "explanation": "When versioning is suspended, new objects receive a null version ID. Lifecycle rules still apply to these null-version objects based on their age and configured actions.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "How does S3 Strong Consistency affect performance compared to eventual consistency?",
+    "options": ["Strong consistency significantly degrades S3 performance", "Strong consistency provides the same performance and availability with no extra cost or latency", "Strong consistency is only available in us-east-1", "Strong consistency adds 50ms latency per request"],
+    "answer": "Strong consistency provides the same performance and availability with no extra cost or latency",
+    "explanation": "AWS implemented strong consistency in S3 with no additional cost, performance impact, or availability trade-offs, unlike traditional distributed systems where consistency often has performance costs.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the EBS io2 Block Express maximum volume size?",
+    "options": ["16 TB", "32 TB", "64 TB", "128 TB"],
+    "answer": "64 TB",
+    "explanation": "io2 Block Express volumes support up to 64 TB in size, compared to 16 TB for standard io2, gp2, and gp3 volumes.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the S3 Object Lambda access point architecture?",
+    "options": ["Lambda directly modifies S3 objects permanently", "Requests go to an S3 Object Lambda access point, which calls Lambda to transform data before returning it to the caller without modifying the original object", "Lambda is triggered by S3 event to transform and re-upload the object", "S3 Object Lambda replaces IAM for access control"],
+    "answer": "Requests go to an S3 Object Lambda access point, which calls Lambda to transform data before returning it to the caller without modifying the original object",
+    "explanation": "S3 Object Lambda intercepts GetObject requests via a special access point, invokes a Lambda function to transform the data in-flight, and returns the modified response to the caller without altering the original stored object.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the purpose of the S3 aws:PrincipalOrgID condition key in bucket policies?",
+    "options": ["Restricting access by AWS region", "Granting access only to principals that belong to a specific AWS Organization", "Restricting access to the bucket owner's account only", "Granting access based on the principal's IP organization"],
+    "answer": "Granting access only to principals that belong to a specific AWS Organization",
+    "explanation": "The aws:PrincipalOrgID condition allows you to restrict S3 bucket access to only AWS accounts or IAM principals that are members of your AWS Organization, simplifying cross-account policies.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the EBS volume initialization (pre-warming) behavior for volumes created from snapshots?",
+    "options": ["Volumes from snapshots perform at full speed immediately", "Volumes from snapshots have higher latency on first access of each block until all blocks are pulled from S3", "Volumes require 24 hours to fully initialize regardless of access", "Only io2 volumes require initialization from snapshots"],
+    "answer": "Volumes from snapshots have higher latency on first access of each block until all blocks are pulled from S3",
+    "explanation": "EBS volumes restored from snapshots must pull data from S3 on first access of each block (lazy loading), causing higher latency until the volume is fully initialized. EBS Fast Snapshot Restore eliminates this.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service can analyze S3 storage access patterns at the AWS Organization level across all accounts?",
+    "options": ["S3 Analytics", "S3 Access Analyzer", "S3 Storage Lens", "AWS Cost Explorer"],
+    "answer": "S3 Storage Lens",
+    "explanation": "S3 Storage Lens provides organization-wide visibility into S3 storage usage and activity metrics across all accounts, regions, and buckets with recommendations for cost optimization.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the purpose of the S3 x-amz-server-side-encryption-context header?",
+    "options": ["Setting the encryption algorithm for SSE-S3", "Providing additional authenticated data (AAD) for SSE-KMS encryption context, used for audit and key policy conditions", "Specifying the customer-provided encryption key for SSE-C", "Disabling server-side encryption for specific objects"],
+    "answer": "Providing additional authenticated data (AAD) for SSE-KMS encryption context, used for audit and key policy conditions",
+    "explanation": "The encryption context is a set of key-value pairs used with SSE-KMS that is recorded in CloudTrail for auditing and can be used in KMS key policy conditions.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the FSx for Lustre data repository association used for?",
+    "options": ["Linking FSx to an Active Directory", "Synchronizing data between an FSx for Lustre file system and an S3 bucket transparently", "Connecting multiple FSx clusters together", "Associating FSx with a VPC endpoint"],
+    "answer": "Synchronizing data between an FSx for Lustre file system and an S3 bucket transparently",
+    "explanation": "Data repository associations link FSx for Lustre file systems to S3 buckets, enabling automatic lazy-loading of S3 data into Lustre and automatic export of new/changed files back to S3.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the S3 Intelligent-Tiering Archive Instant Access tier minimum storage duration?",
+    "options": ["30 days", "60 days", "90 days", "180 days"],
+    "answer": "90 days",
+    "explanation": "The Archive Instant Access tier within S3 Intelligent-Tiering has a minimum storage duration of 90 days. Objects are automatically moved there if not accessed for 90 days.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the behavior of S3 replication for objects that existed before replication was enabled?",
+    "options": ["Existing objects are automatically replicated", "Existing objects are not replicated by default; S3 Batch Replication must be used to replicate existing objects", "Existing objects are replicated only if they are accessed after replication is enabled", "Existing objects are replicated within 24 hours automatically"],
+    "answer": "Existing objects are not replicated by default; S3 Batch Replication must be used to replicate existing objects",
+    "explanation": "S3 replication only applies to new objects written after the replication rule is configured. To replicate pre-existing objects, you must use S3 Batch Replication.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the maximum size of an S3 bucket policy document?",
+    "options": ["4 KB", "20 KB", "100 KB", "1 MB"],
+    "answer": "20 KB",
+    "explanation": "An S3 bucket policy document can be a maximum of 20 KB in size. For more complex access requirements, combine bucket policies with IAM policies.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the EBS Elastic Volumes feature used for?",
+    "options": ["Stretching EBS volumes across AZs", "Dynamically increasing volume size, changing volume type, or adjusting IOPS without detaching the volume", "Automatically tiering data between EBS and S3", "Replicating EBS volumes across regions"],
+    "answer": "Dynamically increasing volume size, changing volume type, or adjusting IOPS without detaching the volume",
+    "explanation": "EBS Elastic Volumes allows you to modify an in-use EBS volume's size, type, or IOPS on the fly without needing to stop the instance or detach the volume.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the difference between S3 Access Points and S3 bucket policies for access control?",
+    "options": ["Access Points replace bucket policies entirely", "Access Points provide per-application network and permission boundaries in addition to bucket policies; both must grant access", "Bucket policies cannot be used with Access Points", "Access Points are only for cross-account access"],
+    "answer": "Access Points provide per-application network and permission boundaries in addition to bucket policies; both must grant access",
+    "explanation": "S3 Access Points allow you to create unique access points with dedicated IAM policies and optional VPC restrictions. Both the access point policy and bucket policy must grant the requested permissions.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the AWS Storage Gateway File Gateway caching behavior?",
+    "options": ["All data is stored locally with no cloud backup", "Recently written and accessed files are cached locally; the full dataset is stored in S3", "Only metadata is cached locally; data is always fetched from S3", "Data is compressed and stored in Glacier automatically"],
+    "answer": "Recently written and accessed files are cached locally; the full dataset is stored in S3",
+    "explanation": "File Gateway caches the most recently written and read files locally for low-latency access while storing the full dataset durably in Amazon S3 as objects.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the maximum IOPS-to-GB ratio for EBS io2 volumes?",
+    "options": ["50:1", "500:1", "1000:1", "No ratio limit"],
+    "answer": "500:1",
+    "explanation": "EBS io2 volumes support a maximum IOPS-to-GB ratio of 500:1, allowing a 1 GB io2 volume to be provisioned with up to 500 IOPS.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "How does S3 handle concurrent PUT requests to the same key?",
+    "options": ["S3 rejects all but one concurrent PUT", "The last writer wins; S3 uses a timestamp to determine the final object version", "S3 merges concurrent PUTs into a single object", "All concurrent PUTs result in multiple versions regardless of versioning setting"],
+    "answer": "The last writer wins; S3 uses a timestamp to determine the final object version",
+    "explanation": "For concurrent PUT requests to the same key, S3 uses a last-writer-wins model based on timestamp. All requests succeed but only the last write is reflected in subsequent GETs.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is S3 Multi-Region Access Points used for?",
+    "options": ["Accessing multiple S3 buckets with a single API key", "Providing a single global endpoint that routes requests to the closest S3 bucket replica for lowest latency", "Replicating data across multiple regions automatically without configuration", "Restricting S3 access to multiple AWS regions simultaneously"],
+    "answer": "Providing a single global endpoint that routes requests to the closest S3 bucket replica for lowest latency",
+    "explanation": "S3 Multi-Region Access Points provide a global endpoint that uses AWS Global Accelerator to route requests to the nearest S3 bucket in a replication group, minimizing latency.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the role of the EBS volume attachment state 'detaching' versus 'available'?",
+    "options": ["They are the same state", "Detaching means the OS is still writing to the volume; available means it is fully detached and can be attached elsewhere", "Available means the volume is being initialized from a snapshot", "Detaching automatically triggers a snapshot"],
+    "answer": "Detaching means the OS is still writing to the volume; available means it is fully detached and can be attached elsewhere",
+    "explanation": "'Detaching' is a transitional state while the volume is being unmounted and disconnected. 'Available' confirms the volume is fully detached and ready to be attached to another instance.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the purpose of the S3 Intelligent-Tiering monitoring and automation charge?",
+    "options": ["A charge for enabling S3 Intelligent-Tiering at all", "A small per-object per-month monitoring charge for objects >= 128 KB to analyze access patterns and move between tiers", "A charge for replicating Intelligent-Tiering objects", "A charge for retrieving objects from the Archive tier"],
+    "answer": "A small per-object per-month monitoring charge for objects >= 128 KB to analyze access patterns and move between tiers",
+    "explanation": "S3 Intelligent-Tiering charges a small monitoring and automation fee per object per month for objects 128 KB or larger in exchange for automatic cost optimization.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "Which S3 feature allows you to define a custom domain for an S3 static website with HTTPS?",
+    "options": ["S3 Transfer Acceleration", "S3 Website Endpoint with SSL certificate", "CloudFront distribution with S3 origin and ACM certificate", "S3 Access Point with custom domain"],
+    "answer": "CloudFront distribution with S3 origin and ACM certificate",
+    "explanation": "S3 static website endpoints do not natively support HTTPS. You must use a CloudFront distribution with an ACM SSL certificate in front of S3 to serve a custom domain over HTTPS.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the EFS One Zone storage class tradeoff compared to EFS Standard?",
+    "options": ["One Zone is faster but more expensive", "One Zone stores data in a single AZ offering lower cost but loss of data if the AZ fails", "One Zone supports only Windows instances", "One Zone does not support encryption"],
+    "answer": "One Zone stores data in a single AZ offering lower cost but loss of data if the AZ fails",
+    "explanation": "EFS One Zone stores data in a single Availability Zone, reducing cost by approximately 47% compared to EFS Standard, but data is permanently lost if the AZ is destroyed.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the AWS DataSync agent used for?",
+    "options": ["A cloud-only component for S3 to S3 transfers", "A VM deployed on-premises or in other clouds to connect self-managed storage to DataSync tasks", "An IAM agent for DataSync permissions", "A monitoring agent for DataSync job metrics"],
+    "answer": "A VM deployed on-premises or in other clouds to connect self-managed storage to DataSync tasks",
+    "explanation": "The DataSync agent is a VMware/KVM/Hyper-V appliance or EC2 instance deployed at the source location that connects on-premises NFS/SMB storage or self-managed object storage to AWS DataSync.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the maximum retention period for S3 Object Lock?",
+    "options": ["1 year", "10 years", "100 years", "No maximum limit"],
+    "answer": "No maximum limit",
+    "explanation": "S3 Object Lock has no maximum retention period. You can set any retention date in the future, allowing indefinite retention for compliance requirements.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the purpose of the S3 Glacier Select feature?",
+    "options": ["Selecting which Glacier vault to use", "Running SQL queries directly on data stored in Glacier without restoring the entire archive", "Selecting the retrieval speed for Glacier restores", "Filtering Glacier Vault Lock policies"],
+    "answer": "Running SQL queries directly on data stored in Glacier without restoring the entire archive",
+    "explanation": "S3 Glacier Select allows you to run SQL expressions against Glacier Flexible Retrieval archived objects, retrieving only the needed data subset, reducing retrieval cost and time.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the gp3 EBS baseline IOPS without any additional provisioning?",
+    "options": ["1,000 IOPS", "3,000 IOPS", "6,000 IOPS", "16,000 IOPS"],
+    "answer": "3,000 IOPS",
+    "explanation": "gp3 volumes provide a free baseline of 3,000 IOPS regardless of volume size. Additional IOPS (up to 16,000) can be provisioned at an extra cost.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the purpose of S3 Storage Lens free metrics versus advanced metrics?",
+    "options": ["Free metrics cover only one account; advanced covers all", "Free metrics provide 28 usage and activity metrics with 14 days retention; advanced adds 35+ metrics, prefix-level aggregation, and CloudWatch publishing with 15-month retention", "Advanced metrics are free for enterprise customers", "Free metrics include cost optimization recommendations; advanced does not"],
+    "answer": "Free metrics provide 28 usage and activity metrics with 14 days retention; advanced adds 35+ metrics, prefix-level aggregation, and CloudWatch publishing with 15-month retention",
+    "explanation": "S3 Storage Lens free tier includes 28 metrics with 14-day data retention. Advanced metrics add prefix-level analysis, activity metrics, CloudWatch integration, and 15-month retention at an additional cost.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What happens when you copy an encrypted S3 object without specifying encryption headers?",
+    "options": ["The copy inherits the source encryption settings automatically", "The copy is stored unencrypted", "The CopyObject operation fails with an error", "The copy uses SSE-S3 by default regardless of source encryption"],
+    "answer": "The copy inherits the source encryption settings automatically",
+    "explanation": "When using CopyObject without specifying new encryption headers, the copied object inherits the encryption configuration of the source object by default.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS tool can be used to identify publicly accessible S3 buckets across an organization?",
+    "options": ["AWS Config with s3-bucket-public-read-prohibited rule", "S3 Block Public Access dashboard only", "AWS Trusted Advisor only", "Amazon Inspector"],
+    "answer": "AWS Config with s3-bucket-public-read-prohibited rule",
+    "explanation": "AWS Config managed rule s3-bucket-public-read-prohibited checks if S3 buckets have public read access and can flag non-compliant buckets across the organization using AWS Organizations.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the S3 Event Notification delivery guarantee?",
+    "options": ["Exactly-once delivery guaranteed", "At-least-once delivery; duplicate notifications are possible", "At-most-once delivery; some events may be missed", "No delivery guarantee; best-effort only"],
+    "answer": "At-least-once delivery; duplicate notifications are possible",
+    "explanation": "S3 Event Notifications provide at-least-once delivery, meaning the same event can occasionally generate more than one notification. Applications must handle potential duplicates.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the maximum number of S3 Access Points per account per region?",
+    "options": ["100", "1,000", "10,000", "Unlimited"],
+    "answer": "10,000",
+    "explanation": "AWS allows up to 10,000 S3 Access Points per account per region by default, supporting large-scale multi-tenant or microservice architectures.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "Which EBS feature allows you to create a volume in one AZ and use it in another AZ?",
+    "options": ["EBS Cross-AZ replication", "Creating a snapshot and restoring it in the target AZ", "EBS Multi-Attach across AZs", "EBS Elastic Volume cross-AZ migration"],
+    "answer": "Creating a snapshot and restoring it in the target AZ",
+    "explanation": "EBS volumes are AZ-specific and cannot be directly moved. To use a volume in a different AZ, you must create a snapshot and restore it as a new volume in the target AZ.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the S3 Requester Pays bucket limitation for anonymous users?",
+    "options": ["Anonymous users pay using a shared pool", "Anonymous users cannot access Requester Pays buckets", "Anonymous users are charged to the bucket owner", "Anonymous users can only download, not upload"],
+    "answer": "Anonymous users cannot access Requester Pays buckets",
+    "explanation": "Requester Pays buckets do not allow anonymous access. All requesters must be authenticated AWS users so they can be billed for data transfer and request costs.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the maximum throughput for Amazon FSx for Lustre (Scratch file system)?",
+    "options": ["200 MB/s per TiB", "500 MB/s per TiB", "1,000 MB/s per TiB", "2,000 MB/s per TiB"],
+    "answer": "200 MB/s per TiB",
+    "explanation": "FSx for Lustre Scratch file systems provide up to 200 MB/s per TiB of storage provisioned. Persistent file systems provide 50, 100, or 200 MB/s per TiB depending on the tier.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  },
+  {
+    "question": "What is the purpose of the S3 ChecksumAlgorithm header introduced in 2022?",
+    "options": ["Replacing SSE-S3 encryption", "Specifying additional checksum algorithms (CRC32, CRC32C, SHA1, SHA256) for end-to-end data integrity validation", "Providing a checksum for bucket policies", "Validating S3 access point configurations"],
+    "answer": "Specifying additional checksum algorithms (CRC32, CRC32C, SHA1, SHA256) for end-to-end data integrity validation",
+    "explanation": "S3 additional checksum support allows clients to specify CRC32, CRC32C, SHA-1, or SHA-256 checksums at upload time. S3 stores and validates these checksums, providing stronger end-to-end data integrity guarantees.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "aws"
+  }
+]

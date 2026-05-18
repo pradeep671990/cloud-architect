@@ -1,1 +1,703 @@
-[]
+[
+    {
+      "question": "What does EC2 stand for in AWS?",
+      "options": [
+        "Elastic Compute Cloud",
+        "Extended Cloud Compute",
+        "Enterprise Cloud Cluster",
+        "Elastic Cloud Computing"
+      ],
+      "answer": "Elastic Compute Cloud",
+      "explanation": "EC2 stands for Elastic Compute Cloud. It is AWS's core compute service that provides resizable virtual servers (instances) in the cloud.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is an Amazon EC2 instance?",
+      "options": [
+        "A virtual server in the cloud",
+        "A cloud storage bucket",
+        "A managed database",
+        "A DNS service"
+      ],
+      "answer": "A virtual server in the cloud",
+      "explanation": "An EC2 instance is a virtual server hosted in the AWS cloud. It provides compute capacity that you can launch and terminate as needed.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "Which EC2 pricing model charges you by the second with no long-term commitment?",
+      "options": [
+        "On-Demand",
+        "Reserved",
+        "Spot",
+        "Dedicated Host"
+      ],
+      "answer": "On-Demand",
+      "explanation": "On-Demand instances let you pay for compute capacity by the second with no long-term commitment or upfront payment, making them ideal for unpredictable workloads.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "Which EC2 pricing model can offer up to 90% savings compared to On-Demand but can be interrupted?",
+      "options": [
+        "Spot Instances",
+        "Reserved Instances",
+        "Dedicated Hosts",
+        "Savings Plans"
+      ],
+      "answer": "Spot Instances",
+      "explanation": "Spot Instances use spare AWS capacity and can offer up to 90% discount over On-Demand prices, but AWS can reclaim them with a 2-minute warning.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is an Amazon Machine Image (AMI)?",
+      "options": [
+        "A template used to launch EC2 instances",
+        "A type of storage volume",
+        "A network configuration file",
+        "A database snapshot"
+      ],
+      "answer": "A template used to launch EC2 instances",
+      "explanation": "An AMI is a pre-configured template containing the OS, application server, and applications required to launch an EC2 instance.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is AWS Lambda?",
+      "options": [
+        "A serverless compute service that runs code without managing servers",
+        "A virtual machine service",
+        "A container orchestration service",
+        "A managed database"
+      ],
+      "answer": "A serverless compute service that runs code without managing servers",
+      "explanation": "AWS Lambda is a serverless compute service. You upload code and Lambda runs it in response to events, automatically managing the underlying infrastructure.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is the maximum execution timeout for an AWS Lambda function?",
+      "options": [
+        "15 minutes",
+        "5 minutes",
+        "1 hour",
+        "30 minutes"
+      ],
+      "answer": "15 minutes",
+      "explanation": "AWS Lambda functions have a maximum execution timeout of 15 minutes (900 seconds). For longer workloads, you should use EC2 or other services.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is used to run containerized applications using Docker?",
+      "options": [
+        "Amazon ECS",
+        "Amazon EC2",
+        "AWS Lambda",
+        "Amazon RDS"
+      ],
+      "answer": "Amazon ECS",
+      "explanation": "Amazon ECS (Elastic Container Service) is a fully managed container orchestration service that supports Docker containers, making it easy to run and scale containerized applications.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is Amazon EKS used for?",
+      "options": [
+        "Running Kubernetes clusters on AWS",
+        "Running serverless functions",
+        "Storing container images",
+        "Managing EC2 Auto Scaling"
+      ],
+      "answer": "Running Kubernetes clusters on AWS",
+      "explanation": "Amazon EKS (Elastic Kubernetes Service) is a managed Kubernetes service that makes it easy to run Kubernetes on AWS without needing to install or manage the control plane.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What does Auto Scaling do in AWS?",
+      "options": [
+        "Automatically adjusts the number of EC2 instances based on demand",
+        "Automatically backs up your data",
+        "Automatically creates AMIs",
+        "Automatically patches EC2 instances"
+      ],
+      "answer": "Automatically adjusts the number of EC2 instances based on demand",
+      "explanation": "AWS Auto Scaling automatically adjusts the number of EC2 instances in your application to maintain performance and minimize cost based on defined conditions.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is an EC2 Security Group?",
+      "options": [
+        "A virtual firewall controlling inbound and outbound traffic to EC2 instances",
+        "A group of EC2 instances",
+        "An IAM role for EC2",
+        "An EC2 pricing tier"
+      ],
+      "answer": "A virtual firewall controlling inbound and outbound traffic to EC2 instances",
+      "explanation": "A Security Group acts as a virtual firewall for your EC2 instance, controlling the traffic that is allowed to reach and leave your instance.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is an EC2 key pair used for?",
+      "options": [
+        "Securely connecting (SSH) to EC2 instances",
+        "Encrypting S3 data",
+        "Accessing the AWS console",
+        "Billing authentication"
+      ],
+      "answer": "Securely connecting (SSH) to EC2 instances",
+      "explanation": "EC2 key pairs consist of a public key (stored by AWS) and a private key (kept by the user) to enable secure SSH connections to Linux EC2 instances.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "Which EC2 instance family is optimized for memory-intensive workloads?",
+      "options": [
+        "R family",
+        "C family",
+        "T family",
+        "G family"
+      ],
+      "answer": "R family",
+      "explanation": "The R (memory-optimized) instance family is designed for workloads that require large amounts of RAM, such as in-memory databases and big data analytics.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "Which EC2 instance family is optimized for compute-intensive workloads?",
+      "options": [
+        "C family",
+        "R family",
+        "T family",
+        "S family"
+      ],
+      "answer": "C family",
+      "explanation": "The C (compute-optimized) instance family is ideal for compute-bound applications, such as batch processing, media transcoding, and high-performance web servers.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is Elastic Beanstalk in AWS?",
+      "options": [
+        "A PaaS service that deploys and manages web applications automatically",
+        "A serverless compute service",
+        "A container registry",
+        "A virtual private cloud"
+      ],
+      "answer": "A PaaS service that deploys and manages web applications automatically",
+      "explanation": "AWS Elastic Beanstalk is a PaaS that lets you deploy web applications without worrying about the infrastructure. You upload your code and Beanstalk handles provisioning, load balancing, and scaling.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is AWS Fargate?",
+      "options": [
+        "A serverless compute engine for containers that eliminates server management",
+        "A container image registry",
+        "A virtual machine service",
+        "A storage service for containers"
+      ],
+      "answer": "A serverless compute engine for containers that eliminates server management",
+      "explanation": "AWS Fargate is a serverless compute engine for ECS and EKS that lets you run containers without managing EC2 instances. AWS handles all the underlying infrastructure.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is Amazon Lightsail?",
+      "options": [
+        "A simplified cloud platform for simple applications and websites",
+        "A high-performance compute service",
+        "A serverless service",
+        "A container service"
+      ],
+      "answer": "A simplified cloud platform for simple applications and websites",
+      "explanation": "Amazon Lightsail provides easy-to-use virtual private servers (VPS), storage, databases, and networking at low, predictable prices, designed for simpler workloads.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is the purpose of an EC2 Placement Group?",
+      "options": [
+        "To control how EC2 instances are placed on underlying hardware",
+        "To group instances for billing",
+        "To assign security groups to multiple instances",
+        "To create AMIs automatically"
+      ],
+      "answer": "To control how EC2 instances are placed on underlying hardware",
+      "explanation": "EC2 Placement Groups let you influence how instances are placed on underlying hardware to meet latency, throughput, or fault tolerance requirements.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is Amazon ECR used for?",
+      "options": [
+        "Storing and managing Docker container images",
+        "Running containers",
+        "Orchestrating containers",
+        "Managing EC2 fleets"
+      ],
+      "answer": "Storing and managing Docker container images",
+      "explanation": "Amazon ECR (Elastic Container Registry) is a fully managed Docker container registry that makes it easy to store, manage, and deploy Docker container images.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service lets you run code in response to HTTP requests without provisioning servers?",
+      "options": [
+        "AWS Lambda with API Gateway",
+        "Amazon EC2",
+        "Amazon ECS",
+        "AWS Batch"
+      ],
+      "answer": "AWS Lambda with API Gateway",
+      "explanation": "AWS Lambda combined with Amazon API Gateway allows you to build serverless REST APIs that run your code in response to HTTP requests without managing any servers.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is an EC2 instance type?",
+      "options": [
+        "A combination of CPU, memory, storage, and networking capacity",
+        "A type of AMI",
+        "A security configuration",
+        "A billing plan"
+      ],
+      "answer": "A combination of CPU, memory, storage, and networking capacity",
+      "explanation": "EC2 instance types define the hardware configuration (vCPU, RAM, storage, and network) of the virtual server. Examples include t3.micro, m5.large, and c5.xlarge.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is AWS Batch used for?",
+      "options": [
+        "Running batch computing jobs at any scale",
+        "Processing real-time streaming data",
+        "Managing Lambda functions",
+        "Deploying web applications"
+      ],
+      "answer": "Running batch computing jobs at any scale",
+      "explanation": "AWS Batch dynamically provisions compute resources and runs batch computing jobs at scale, removing the need to manage job queues or compute clusters.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is the T-series EC2 instance family known for?",
+      "options": [
+        "Burstable performance at low cost",
+        "High memory capacity",
+        "GPU computing",
+        "High compute performance"
+      ],
+      "answer": "Burstable performance at low cost",
+      "explanation": "T-series instances (t2, t3, t4g) offer burstable CPU performance using CPU credits, making them cost-effective for workloads with variable CPU usage.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What happens to data on an EC2 instance store when the instance is stopped or terminated?",
+      "options": [
+        "The data is lost",
+        "The data is saved automatically",
+        "The data is moved to S3",
+        "The data is archived to Glacier"
+      ],
+      "answer": "The data is lost",
+      "explanation": "EC2 instance store is temporary storage. Data on instance store volumes is lost when an instance is stopped, hibernated, or terminated.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is Amazon EC2 Dedicated Host?",
+      "options": [
+        "A physical server fully dedicated to a single customer",
+        "A shared EC2 instance",
+        "A managed EC2 cluster",
+        "A reserved instance type"
+      ],
+      "answer": "A physical server fully dedicated to a single customer",
+      "explanation": "EC2 Dedicated Hosts are physical servers dedicated for your use, allowing you to use your existing server-bound software licenses and meet compliance requirements.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is the purpose of EC2 User Data?",
+      "options": [
+        "To run scripts automatically when an instance first starts",
+        "To store user credentials",
+        "To configure billing",
+        "To set up key pairs"
+      ],
+      "answer": "To run scripts automatically when an instance first starts",
+      "explanation": "EC2 User Data allows you to pass a shell script or cloud-init directives that are automatically executed during the first launch of an instance for bootstrapping.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is AWS AppRunner?",
+      "options": [
+        "A fully managed service to deploy containerized web apps and APIs quickly",
+        "A serverless function service",
+        "A virtual machine service",
+        "A batch processing service"
+      ],
+      "answer": "A fully managed service to deploy containerized web apps and APIs quickly",
+      "explanation": "AWS App Runner is a fully managed service that makes it easy to deploy containerized web applications and APIs at scale without managing infrastructure.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What type of compute does AWS Lambda provide?",
+      "options": [
+        "Serverless compute",
+        "Bare-metal compute",
+        "Container compute",
+        "Virtual machine compute"
+      ],
+      "answer": "Serverless compute",
+      "explanation": "AWS Lambda is a serverless compute service, meaning AWS manages all the underlying infrastructure. You only write and run code without provisioning servers.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is the free tier EC2 instance type available to new AWS accounts?",
+      "options": [
+        "t2.micro or t3.micro",
+        "m5.large",
+        "c5.xlarge",
+        "r5.large"
+      ],
+      "answer": "t2.micro or t3.micro",
+      "explanation": "The AWS Free Tier includes 750 hours/month of t2.micro (or t3.micro in regions where t2.micro is unavailable) EC2 usage for the first 12 months.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is a Launch Template in EC2?",
+      "options": [
+        "A reusable configuration for launching EC2 instances",
+        "A type of AMI",
+        "An Auto Scaling policy",
+        "A pricing model"
+      ],
+      "answer": "A reusable configuration for launching EC2 instances",
+      "explanation": "A Launch Template contains the instance configuration (AMI, instance type, key pair, security groups) so you can consistently launch EC2 instances without re-specifying settings each time.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS compute service is best suited for high-performance computing (HPC) workloads?",
+      "options": [
+        "AWS HPC Clusters on EC2 with placement groups",
+        "AWS Lambda",
+        "Amazon Lightsail",
+        "AWS Elastic Beanstalk"
+      ],
+      "answer": "AWS HPC Clusters on EC2 with placement groups",
+      "explanation": "For HPC workloads, EC2 instances with Cluster Placement Groups and high-speed networking (EFA) provide low-latency, high-throughput compute for tightly coupled parallel jobs.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is Amazon EC2 Reserved Instance?",
+      "options": [
+        "A discounted pricing model for committing to 1 or 3 years of usage",
+        "A spot instance with a reservation",
+        "A dedicated physical host",
+        "An instance with reserved memory"
+      ],
+      "answer": "A discounted pricing model for committing to 1 or 3 years of usage",
+      "explanation": "Reserved Instances provide significant discounts (up to 72%) over On-Demand pricing in exchange for committing to use a specific instance configuration for 1 or 3 years.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is AWS Outposts?",
+      "options": [
+        "AWS infrastructure and services deployed on-premises in your own data center",
+        "A remote region of AWS",
+        "An edge computing location",
+        "A dedicated internet gateway"
+      ],
+      "answer": "AWS infrastructure and services deployed on-premises in your own data center",
+      "explanation": "AWS Outposts brings native AWS services, infrastructure, and operating models to virtually any data center or on-premises facility for a truly consistent hybrid experience.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is an EC2 Elastic IP address?",
+      "options": [
+        "A static, persistent public IPv4 address for EC2 instances",
+        "A dynamic private IP",
+        "A load balancer IP",
+        "An IP for VPC peering"
+      ],
+      "answer": "A static, persistent public IPv4 address for EC2 instances",
+      "explanation": "An Elastic IP is a static public IPv4 address that remains associated with your AWS account. You can remap it to any EC2 instance in case of instance failure.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is the purpose of EC2 Instance Metadata?",
+      "options": [
+        "To provide information about the running instance accessible from within the instance",
+        "To store instance billing data",
+        "To configure security groups",
+        "To set up DNS records"
+      ],
+      "answer": "To provide information about the running instance accessible from within the instance",
+      "explanation": "Instance Metadata is data about your EC2 instance (instance ID, AMI ID, IP address, etc.) accessible at 169.254.169.254 from within the running instance.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides managed Kubernetes without needing to install the control plane?",
+      "options": [
+        "Amazon EKS",
+        "Amazon ECS",
+        "AWS Fargate",
+        "Amazon ECR"
+      ],
+      "answer": "Amazon EKS",
+      "explanation": "Amazon EKS (Elastic Kubernetes Service) is a managed service that handles the Kubernetes control plane for you, so you only manage your worker nodes and applications.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is an EC2 Snapshot?",
+      "options": [
+        "A point-in-time backup of an EBS volume",
+        "A backup of the EC2 instance configuration",
+        "An AMI copy",
+        "A security group export"
+      ],
+      "answer": "A point-in-time backup of an EBS volume",
+      "explanation": "An EC2 Snapshot is a point-in-time backup of an EBS (Elastic Block Store) volume stored in Amazon S3, which can be used to restore data or create new volumes.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is EC2 Hibernation?",
+      "options": [
+        "Saving the instance memory (RAM) state to EBS so it can resume from where it left off",
+        "Permanently stopping an instance",
+        "Rebooting an instance",
+        "Pausing billing temporarily"
+      ],
+      "answer": "Saving the instance memory (RAM) state to EBS so it can resume from where it left off",
+      "explanation": "EC2 Hibernation saves the in-memory (RAM) contents to the EBS root volume. When restarted, the instance resumes its previous state, reducing startup time.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is AWS Lambda's event-driven execution model?",
+      "options": [
+        "Lambda runs code only when triggered by an event such as an S3 upload or API call",
+        "Lambda runs continuously like a server",
+        "Lambda runs on a scheduled cron basis only",
+        "Lambda runs only in response to database changes"
+      ],
+      "answer": "Lambda runs code only when triggered by an event such as an S3 upload or API call",
+      "explanation": "Lambda is event-driven — it executes code only in response to triggers such as S3 events, API Gateway calls, DynamoDB streams, or CloudWatch Events.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is the G-series EC2 instance family used for?",
+      "options": [
+        "GPU-accelerated workloads like machine learning and graphics rendering",
+        "General-purpose computing",
+        "Memory-intensive applications",
+        "Storage-intensive applications"
+      ],
+      "answer": "GPU-accelerated workloads like machine learning and graphics rendering",
+      "explanation": "G-series instances (G4, G5) include NVIDIA GPUs and are optimized for machine learning inference, graphics-intensive applications, and video transcoding.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What does 'stopping' an EC2 instance do?",
+      "options": [
+        "Shuts it down but retains the EBS volume data",
+        "Permanently deletes the instance",
+        "Removes the Elastic IP",
+        "Deletes all attached volumes"
+      ],
+      "answer": "Shuts it down but retains the EBS volume data",
+      "explanation": "Stopping an EC2 instance powers it off and halts billing for compute, but the EBS root volume is retained and you continue to be billed for storage.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What does 'terminating' an EC2 instance do?",
+      "options": [
+        "Permanently deletes the instance and by default deletes the root EBS volume",
+        "Stops the instance temporarily",
+        "Creates a snapshot automatically",
+        "Moves the instance to another region"
+      ],
+      "answer": "Permanently deletes the instance and by default deletes the root EBS volume",
+      "explanation": "Terminating an EC2 instance permanently deletes it. By default, the root EBS volume is also deleted, though additional volumes may be kept.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service helps you build and deploy machine learning models using managed compute?",
+      "options": [
+        "Amazon SageMaker",
+        "AWS Lambda",
+        "Amazon EC2 only",
+        "AWS Batch"
+      ],
+      "answer": "Amazon SageMaker",
+      "explanation": "Amazon SageMaker is a fully managed ML service that provides compute instances optimized for training and deploying machine learning models at scale.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is AWS Wavelength?",
+      "options": [
+        "AWS compute infrastructure embedded in telecom networks for ultra-low latency at the edge",
+        "A serverless function service",
+        "A dedicated hardware service",
+        "A content delivery network"
+      ],
+      "answer": "AWS compute infrastructure embedded in telecom networks for ultra-low latency at the edge",
+      "explanation": "AWS Wavelength embeds AWS compute and storage within 5G networks, enabling applications that require single-digit millisecond latency for mobile and edge use cases.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is Amazon EC2 Image Builder?",
+      "options": [
+        "A service to automate the creation, maintenance, and testing of AMIs",
+        "A service to build Docker images",
+        "A CI/CD pipeline tool",
+        "A machine learning image service"
+      ],
+      "answer": "A service to automate the creation, maintenance, and testing of AMIs",
+      "explanation": "EC2 Image Builder simplifies the creation, maintenance, validation, and sharing of Linux or Windows AMIs, automating the process with pipelines.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What does 'scale out' mean in cloud computing?",
+      "options": [
+        "Adding more instances to handle increased load",
+        "Making an existing instance larger",
+        "Removing instances to save cost",
+        "Migrating to a larger region"
+      ],
+      "answer": "Adding more instances to handle increased load",
+      "explanation": "Scaling out (horizontal scaling) means adding more compute instances to distribute the load, as opposed to scaling up (vertical scaling) which means making an existing instance bigger.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is AWS Compute Optimizer?",
+      "options": [
+        "A service that recommends optimal AWS compute resources based on usage data",
+        "A pricing calculator",
+        "A monitoring service",
+        "A load balancing service"
+      ],
+      "answer": "A service that recommends optimal AWS compute resources based on usage data",
+      "explanation": "AWS Compute Optimizer analyzes your workload metrics and recommends optimal EC2 instance types, Lambda memory sizes, and EBS volume configurations to reduce cost and improve performance.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is AWS Local Zones?",
+      "options": [
+        "Extensions of AWS Regions that place compute closer to large population centers",
+        "Small data centers at the edge",
+        "A serverless compute type",
+        "A dedicated zone for enterprise customers"
+      ],
+      "answer": "Extensions of AWS Regions that place compute closer to large population centers",
+      "explanation": "AWS Local Zones are extensions of a parent AWS Region placed in metropolitan areas, providing low-latency access to AWS compute for users in those cities.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What runtime languages does AWS Lambda natively support?",
+      "options": [
+        "Python, Node.js, Java, Go, Ruby, .NET, and custom runtimes",
+        "Only Python and JavaScript",
+        "Only Java and .NET",
+        "Only Go and Rust"
+      ],
+      "answer": "Python, Node.js, Java, Go, Ruby, .NET, and custom runtimes",
+      "explanation": "AWS Lambda natively supports multiple runtimes including Python, Node.js, Java, Go, Ruby, and .NET. You can also bring custom runtimes via Lambda layers.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is the purpose of an EC2 Auto Scaling Group?",
+      "options": [
+        "To automatically add or remove EC2 instances based on demand or schedules",
+        "To automatically back up EC2 instances",
+        "To manage EC2 key pairs",
+        "To monitor EC2 billing"
+      ],
+      "answer": "To automatically add or remove EC2 instances based on demand or schedules",
+      "explanation": "An Auto Scaling Group (ASG) maintains a desired number of EC2 instances and automatically launches or terminates instances based on scaling policies or health checks.",
+      "difficulty": "easy",
+      "subcategory": "compute",
+      "category": "aws"
+    }
+  ]
+  

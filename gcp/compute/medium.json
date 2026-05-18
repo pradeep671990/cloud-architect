@@ -1,1 +1,263 @@
-[]
+[
+    {
+        "question": "What is GKE Autopilot pricing model vs GKE Standard?",
+        "options": ["Autopilot bills per pod resource requests (CPU/memory/ephemeral storage); Standard bills per node (VM) regardless of pod utilization", "Standard bills per pod; Autopilot bills per cluster", "Both billing models are identical", "Autopilot is free; Standard is paid"],
+        "answer": "Autopilot bills per pod resource requests (CPU/memory/ephemeral storage); Standard bills per node (VM) regardless of pod utilization",
+        "explanation": "GKE Autopilot charges based on the CPU, memory, and ephemeral storage requested by running pods. GKE Standard charges for the underlying GCE VM nodes regardless of how much pod resource utilization occurs on them.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is GCE Sole-Tenant Node Group?",
+        "options": ["A group of sole-tenant nodes that share affinity labels, allowing VMs to be scheduled on specific nodes for license compliance or hardware isolation", "A group of VMs sharing the same physical server randomly", "A managed instance group for dedicated hardware", "A reservation of physical servers across multiple zones"],
+        "answer": "A group of sole-tenant nodes that share affinity labels, allowing VMs to be scheduled on specific nodes for license compliance or hardware isolation",
+        "explanation": "Sole-tenant Node Groups organize sole-tenant nodes with affinity labels. VMs use node affinity labels to be placed on specific node groups, enabling per-socket/per-core software license tracking and workload isolation.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is GKE Binary Authorization?",
+        "options": ["A policy enforcement mechanism that only allows deployment of trusted container images that have been cryptographically signed and verified", "A Kubernetes RBAC authorization system", "A binary file deployment feature for GKE", "A feature to authorize GKE cluster creation"],
+        "answer": "A policy enforcement mechanism that only allows deployment of trusted container images that have been cryptographically signed and verified",
+        "explanation": "GKE Binary Authorization integrates with Container Analysis and Artifact Registry to enforce policies ensuring only cryptographically signed and attested container images are deployed to GKE clusters.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is the difference between Cloud Run min-instances and max-instances?",
+        "options": ["min-instances keeps a floor of warm instances to avoid cold starts; max-instances caps the number of instances to control cost and downstream traffic", "max-instances sets the minimum; min-instances sets the maximum", "Both settings configure the same scaling boundary", "min-instances is for CPU; max-instances is for memory"],
+        "answer": "min-instances keeps a floor of warm instances to avoid cold starts; max-instances caps the number of instances to control cost and downstream traffic",
+        "explanation": "min-instances ensures a minimum number of Cloud Run instances stay warm to serve requests instantly (avoiding cold starts). max-instances limits the maximum number of instances to protect downstream services and control costs.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is GCE Live Migration and which instance types does NOT support it?",
+        "options": ["Live Migration moves running VMs to new hosts during maintenance with no downtime; GPU and preemptible instances do not support it", "All GCE instance types support Live Migration including GPU instances", "Live Migration only works for Windows VMs", "Live Migration requires the VM to be stopped first"],
+        "answer": "Live Migration moves running VMs to new hosts during maintenance with no downtime; GPU and preemptible instances do not support it",
+        "explanation": "GCE Live Migration transparently migrates running VMs to healthy hosts during maintenance events. GPU instances, TPU instances, and preemptible/Spot VMs do not support Live Migration and are instead terminated during host maintenance.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is GKE Workload Identity and why is it important?",
+        "options": ["It allows GKE workloads to authenticate to GCP services using Kubernetes service accounts mapped to Google service accounts, eliminating the need for key files", "It provides network identity for Kubernetes services", "It is a node pool identity configuration", "It manages RBAC roles within GKE clusters"],
+        "answer": "It allows GKE workloads to authenticate to GCP services using Kubernetes service accounts mapped to Google service accounts, eliminating the need for key files",
+        "explanation": "GKE Workload Identity federates Kubernetes service accounts with IAM Google service accounts. Pods can call GCP APIs (Cloud Storage, BigQuery) using short-lived tokens without downloading service account key files.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Google Cloud's Spot VM compared to Preemptible VM?",
+        "options": ["Spot VMs have no maximum runtime limit unlike Preemptible VMs which run for at most 24 hours; both can be preempted at any time", "Preemptible VMs have no time limit; Spot VMs run for 24 hours maximum", "They are identical with only a naming difference", "Spot VMs cannot be preempted; Preemptible VMs can"],
+        "answer": "Spot VMs have no maximum runtime limit unlike Preemptible VMs which run for at most 24 hours; both can be preempted at any time",
+        "explanation": "Preemptible VMs are limited to 24 hours maximum runtime. Spot VMs (the successor) have no time limit but can still be preempted at any time when GCP needs the capacity. Both offer similar discounts.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is GCE Managed Instance Group (MIG) autohealing?",
+        "options": ["Automatically detecting unhealthy instances via health checks and recreating them to maintain application availability", "Automatically scaling the MIG based on CPU usage", "Automatically updating instances with new images", "Automatically migrating instances between zones"],
+        "answer": "Automatically detecting unhealthy instances via health checks and recreating them to maintain application availability",
+        "explanation": "MIG autohealing uses health checks (HTTP/HTTPS/TCP) to monitor instance health. When an instance fails health checks for a specified period, MIG automatically deletes and recreates it to restore the desired state.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Google Cloud's Committed Use Discount (CUD) difference between resource-based and spend-based?",
+        "options": ["Resource-based commits to specific vCPU/memory amounts for up to 57% discount; spend-based commits to a dollar amount for services like Cloud SQL and VMware Engine for up to 70% discount", "Spend-based is for vCPU and memory; resource-based is for dollar amounts", "Both types offer identical discounts", "Resource-based only applies to GPU instances"],
+        "answer": "Resource-based commits to specific vCPU/memory amounts for up to 57% discount; spend-based commits to a dollar amount for services like Cloud SQL and VMware Engine for up to 70% discount",
+        "explanation": "Resource-based CUDs commit to specific amounts of vCPU and memory for Compute Engine at up to 57% discount. Spend-based CUDs commit to a spend amount for certain services (Cloud SQL, Cloud Run, GKE) for up to 70% discount.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is GKE cluster autoscaler's scale-down behavior?",
+        "options": ["Cluster autoscaler removes a node when its pods can be rescheduled on other nodes and it has been underutilized for a configurable period (default 10 minutes)", "Cluster autoscaler removes nodes immediately when any node is underutilized", "Cluster autoscaler never removes nodes, only adds them", "Cluster autoscaler removes nodes based on billing cost only"],
+        "answer": "Cluster autoscaler removes a node when its pods can be rescheduled on other nodes and it has been underutilized for a configurable period (default 10 minutes)",
+        "explanation": "GKE Cluster Autoscaler gracefully removes underutilized nodes by first checking if all pods on the node can be safely moved to other nodes, then draining the node after it's been below the utilization threshold for the scale-down delay (default 10 min).",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Google Cloud Armor and how does it relate to GCE compute workloads?",
+        "options": ["A DDoS protection and WAF service that protects internet-facing workloads running on GCE, GKE, and Cloud Run through Google Cloud Load Balancing", "An encryption service for GCE disks", "A firewall for internal GCE network traffic", "A monitoring service for GCE instances"],
+        "answer": "A DDoS protection and WAF service that protects internet-facing workloads running on GCE, GKE, and Cloud Run through Google Cloud Load Balancing",
+        "explanation": "Cloud Armor works at the Google Cloud load balancer layer to provide DDoS protection and WAF policies (including OWASP ModSecurity CRS rules) for backend services running on GCE, GKE, Cloud Run, and App Engine.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is GCE instance group stateful configuration?",
+        "options": ["Configuration that preserves per-instance state (disk, IP, metadata) during updates and auto-healing for stateful workloads like databases", "A configuration for read-only instances", "A setting that prevents instance updates", "A network configuration for stateful firewall rules"],
+        "answer": "Configuration that preserves per-instance state (disk, IP, metadata) during updates and auto-healing for stateful workloads like databases",
+        "explanation": "Stateful MIGs preserve instance-specific state (persistent disks, IP addresses, metadata) across auto-healing and update operations, making them suitable for stateful workloads like databases that need persistent identity.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Google Cloud Run's request-based vs CPU-always-on billing model?",
+        "options": ["Request-based bills only during request processing (CPU throttled when idle); CPU-always-on bills for CPU even when no requests are being handled", "CPU-always-on is cheaper; request-based is more expensive", "They are identical billing models with different names", "Request-based is only for HTTP services; CPU-always-on is for background jobs"],
+        "answer": "Request-based bills only during request processing (CPU throttled when idle); CPU-always-on bills for CPU even when no requests are being handled",
+        "explanation": "Cloud Run's request-based (default) billing charges only while processing requests and throttles CPU otherwise. CPU-always-on keeps CPU available even between requests (useful for background tasks) but bills continuously.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is GKE Sandbox (gVisor)?",
+        "options": ["An additional layer of security using gVisor to intercept and handle kernel system calls from containers, providing stronger isolation than standard containers", "A Kubernetes namespace sandbox for development", "A network sandbox for testing GKE network policies", "A VM-level sandbox for running untrusted VMs"],
+        "answer": "An additional layer of security using gVisor to intercept and handle kernel system calls from containers, providing stronger isolation than standard containers",
+        "explanation": "GKE Sandbox uses gVisor (an open-source user-space kernel) to intercept container system calls before they reach the host kernel, providing a strong isolation boundary for running untrusted or multi-tenant workloads.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Google Cloud's VM Manager?",
+        "options": ["A suite of tools (OS Patch Management, OS Configuration, OS Inventory) to manage operating systems on fleets of Compute Engine VMs at scale", "A service to manage VM lifecycle (start/stop/delete)", "A pricing management tool for VMs", "A VM migration and assessment tool"],
+        "answer": "A suite of tools (OS Patch Management, OS Configuration, OS Inventory) to manage operating systems on fleets of Compute Engine VMs at scale",
+        "explanation": "VM Manager provides OS Patch Management (automated patching), OS Configuration (define and enforce desired OS state using policies), and OS Inventory (collect installed packages and OS details) for GCE VM fleets.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is GKE release channels and what are the available options?",
+        "options": ["Managed upgrade tracks (Rapid, Regular, Stable) that automatically upgrade GKE cluster versions at different cadences based on stability requirements", "A feature to select the Kubernetes API version only", "A billing option for GKE cluster updates", "A feature to choose between paid and free GKE tiers"],
+        "answer": "Managed upgrade tracks (Rapid, Regular, Stable) that automatically upgrade GKE cluster versions at different cadences based on stability requirements",
+        "explanation": "GKE Release Channels automate Kubernetes version upgrades. Rapid gets newest versions quickest. Regular (default) provides balance of new features and stability. Stable prioritizes stability for production workloads.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is GCE OS Login?",
+        "options": ["A feature that uses IAM roles to control SSH access to GCE instances by linking Linux accounts to Google accounts, replacing SSH key management in metadata", "A feature to log in to the GCE console", "A password-based authentication for GCE instances", "A feature to restrict OS access to specific IP addresses"],
+        "answer": "A feature that uses IAM roles to control SSH access to GCE instances by linking Linux accounts to Google accounts, replacing SSH key management in metadata",
+        "explanation": "OS Login links an IAM account to a Linux user account. IAM roles (roles/compute.osLogin or roles/compute.osAdminLogin) control who can SSH to instances, replacing instance-level or project-level SSH key management.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is GCE's custom machine type advantage over predefined machine types?",
+        "options": ["Custom machine types let you specify exact vCPU and memory to match workload needs, avoiding paying for unused resources in oversized predefined types", "Custom machine types are always cheaper than predefined types of any size", "Custom machine types support more features than predefined types", "Custom machine types have higher network bandwidth than predefined types"],
+        "answer": "Custom machine types let you specify exact vCPU and memory to match workload needs, avoiding paying for unused resources in oversized predefined types",
+        "explanation": "Custom machine types allow right-sizing VMs to the exact CPU and memory your workload needs, preventing over-provisioning and unnecessary costs when no predefined type closely matches your requirements.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is the difference between GKE Ingress and Cloud Load Balancing for GKE?",
+        "options": ["GKE Ingress is a Kubernetes resource that provisions a Google Cloud HTTP(S) Load Balancer; Cloud Load Balancing refers to the underlying GCP infrastructure it creates", "Ingress is for internal traffic; Cloud Load Balancing is for external traffic", "They are completely separate systems with no relation", "Cloud Load Balancing is cheaper than GKE Ingress"],
+        "answer": "GKE Ingress is a Kubernetes resource that provisions a Google Cloud HTTP(S) Load Balancer; Cloud Load Balancing refers to the underlying GCP infrastructure it creates",
+        "explanation": "GKE Ingress is the Kubernetes-native way to expose HTTP(S) services. When you create a GKE Ingress, GCP automatically provisions a Cloud HTTP(S) Load Balancer with URL maps, backend services, and health checks.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Google Cloud Batch's job and task model?",
+        "options": ["A Job is the top-level unit containing one or more task groups; each task group runs multiple identical tasks in parallel on provisioned VMs or containers", "A Task is the top-level unit containing multiple jobs", "A Job runs a single script; a Task runs multiple scripts simultaneously", "They are interchangeable terms in Cloud Batch"],
+        "answer": "A Job is the top-level unit containing one or more task groups; each task group runs multiple identical tasks in parallel on provisioned VMs or containers",
+        "explanation": "In GCP Cloud Batch, a Job defines the work to be done and contains task groups. Each task group specifies the runnable (script/container), parallelism count, and the compute environment on which tasks execute.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is GCE Persistent Disk snapshot scheduling?",
+        "options": ["Automated snapshot policies that create Persistent Disk snapshots on a defined schedule and automatically delete old snapshots based on retention rules", "A feature to schedule VM backups weekly", "A manual snapshot trigger at defined intervals", "A feature to replicate disks across regions on a schedule"],
+        "answer": "Automated snapshot policies that create Persistent Disk snapshots on a defined schedule and automatically delete old snapshots based on retention rules",
+        "explanation": "GCE Snapshot Schedules define hourly, daily, or weekly snapshot policies for Persistent Disks with configurable retention periods, automating disk backup without manual intervention.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is the purpose of GKE Config Connector?",
+        "options": ["Allows managing GCP resources (Cloud SQL, Pub/Sub, IAM) as Kubernetes resources using custom resource definitions (CRDs) and kubectl", "A tool to synchronize Kubernetes configurations across clusters", "A backup solution for GKE ConfigMaps and Secrets", "A GitOps tool for GKE deployments"],
+        "answer": "Allows managing GCP resources (Cloud SQL, Pub/Sub, IAM) as Kubernetes resources using custom resource definitions (CRDs) and kubectl",
+        "explanation": "GKE Config Connector is a Kubernetes addon that allows you to manage GCP resources through Kubernetes-style APIs and manifests. You can create and manage Cloud SQL instances, Pub/Sub topics, and IAM bindings using kubectl.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is GCE Accelerator-Optimized VM (A3 series)?",
+        "options": ["VMs featuring NVIDIA H100 GPUs interconnected via NVLink and NVSwitch for large-scale AI training and HPC workloads", "General-purpose VMs with GPU acceleration for gaming", "VMs with AMD GPUs for rendering workloads", "VMs with Google TPUs for inference workloads"],
+        "answer": "VMs featuring NVIDIA H100 GPUs interconnected via NVLink and NVSwitch for large-scale AI training and HPC workloads",
+        "explanation": "A3 VMs come with 8 NVIDIA H100 80GB GPUs connected via NVLink and NVSwitch for high-bandwidth GPU-to-GPU communication, 200 Gbps networking, making them ideal for LLM training and large-scale AI research.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is the difference between Cloud Functions 1st and 2nd generation trigger types?",
+        "options": ["1st gen uses direct GCS/Pub/Sub triggers; 2nd gen uses Eventarc for broader event support including Audit Logs and third-party sources", "2nd gen has fewer trigger types than 1st gen", "They support identical trigger sources", "1st gen supports Eventarc; 2nd gen uses direct triggers"],
+        "answer": "1st gen uses direct GCS/Pub/Sub triggers; 2nd gen uses Eventarc for broader event support including Audit Logs and third-party sources",
+        "explanation": "Cloud Functions 2nd gen leverages Eventarc for triggers, providing a much wider set of event sources including over 90 GCP services via Audit Logs, direct GCP sources, and third-party services via Cloud Pub/Sub.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is GKE Multi-cluster Ingress?",
+        "options": ["A controller that provides a single global HTTP(S) load balancer frontend across multiple GKE clusters in different regions for traffic distribution and failover", "A feature to run multiple Ingress controllers within a single cluster", "An Ingress controller for internal-only cluster traffic", "A tool to synchronize Ingress configurations across clusters"],
+        "answer": "A controller that provides a single global HTTP(S) load balancer frontend across multiple GKE clusters in different regions for traffic distribution and failover",
+        "explanation": "GKE Multi-cluster Ingress (now called Gateway API Multi-cluster) deploys a global Cloud Load Balancer that routes traffic across backend services in multiple GKE clusters across regions for high availability and global reach.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is GCE Hyperdisk and how does it differ from standard Persistent Disk?",
+        "options": ["Hyperdisk separates compute and storage performance allowing independently configurable IOPS and throughput; standard PD ties performance to disk size", "Hyperdisk is a local SSD; standard PD is network-attached", "Standard PD outperforms Hyperdisk in IOPS", "Hyperdisk is only available for sole-tenant nodes"],
+        "answer": "Hyperdisk separates compute and storage performance allowing independently configurable IOPS and throughput; standard PD ties performance to disk size",
+        "explanation": "GCE Hyperdisk is a next-generation block storage that lets you set IOPS and throughput independently of capacity. Unlike standard Persistent Disk where performance scales with size, Hyperdisk decouples performance from storage.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is GKE Dataplane V2?",
+        "options": ["An eBPF-based dataplane using Cilium that replaces iptables for more efficient networking, better NetworkPolicy enforcement, and built-in observability", "A second version of the GKE control plane", "A data processing layer for GKE workloads", "A storage backend for GKE persistent volumes"],
+        "answer": "An eBPF-based dataplane using Cilium that replaces iptables for more efficient networking, better NetworkPolicy enforcement, and built-in observability",
+        "explanation": "GKE Dataplane V2 replaces the iptables-based kube-proxy with Cilium, an eBPF-based networking plugin. It provides more efficient packet processing, enhanced NetworkPolicy enforcement, and built-in network observability.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is Google Cloud TPU and how does it compare to GPU for ML workloads?",
+        "options": ["TPU is Google's custom ASIC optimized for matrix multiplication in ML training/inference; GPU is a general-purpose parallel processor. TPUs offer higher throughput for large models at lower cost", "GPU outperforms TPU for all ML workloads", "TPU is used for CPU workloads; GPU is used for ML", "They are identical hardware with different names"],
+        "answer": "TPU is Google's custom ASIC optimized for matrix multiplication in ML training/inference; GPU is a general-purpose parallel processor. TPUs offer higher throughput for large models at lower cost",
+        "explanation": "Cloud TPUs are custom ASICs designed specifically for TensorFlow/JAX matrix math operations in ML. They excel at large-batch training and inference for neural networks. GPUs are more flexible for diverse parallel workloads including graphics and ML.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      },
+      {
+        "question": "What is GKE Autopilot's resource management difference from Standard mode?",
+        "options": ["Autopilot enforces minimum pod resource requests, manages node taints/labels automatically, and bills per pod; Standard lets you configure all node and pod settings manually", "Standard enforces minimum resource requests; Autopilot has no resource requirements", "Both modes have identical resource management", "Autopilot doesn't support resource limits; Standard does"],
+        "answer": "Autopilot enforces minimum pod resource requests, manages node taints/labels automatically, and bills per pod; Standard lets you configure all node and pod settings manually",
+        "explanation": "GKE Autopilot enforces best-practice pod resource requests (minimum 250m CPU, 512Mi memory), manages node infrastructure automatically, restricts privileged pods, and bills per pod. Standard provides full node control and flexibility.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "gcp"
+      }
+    ]

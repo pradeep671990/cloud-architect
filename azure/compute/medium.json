@@ -1,1 +1,227 @@
-[]
+[
+    {
+        "question": "What is the difference between an Azure VM 'Stop (Deallocated)' and 'Stop' state?",
+        "options": ["Stop (Deallocated) releases compute resources and stops billing for compute; Stop just pauses the OS but keeps compute allocated and still incurs charges", "Both states release compute resources and stop billing", "Stop releases resources; Stop (Deallocated) keeps resources allocated", "They are identical states with different names"],
+        "answer": "Stop (Deallocated) releases compute resources and stops billing for compute; Stop just pauses the OS but keeps compute allocated and still incurs charges",
+        "explanation": "When you Stop (Deallocate) an Azure VM, it releases the underlying compute resources and you are no longer billed for compute. A plain OS-level stop retains compute allocation and continues billing. Storage charges apply in both states.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure VM Ephemeral OS Disk?",
+        "options": ["An OS disk stored locally on the VM host node rather than on remote Azure Storage, providing lower latency and faster reimage operations", "A temporary data disk attached to the VM", "An OS disk that deletes itself after VM shutdown", "A read-only OS disk shared across VMs"],
+        "answer": "An OS disk stored locally on the VM host node rather than on remote Azure Storage, providing lower latency and faster reimage operations",
+        "explanation": "Ephemeral OS Disks store the OS disk in local VM host storage (cache or temp disk). This provides near-zero read/write latency, faster VM scaling, and quicker reimaging — but data is lost when the VM is deallocated.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is the difference between Azure VMSS Uniform and Flexible orchestration modes?",
+        "options": ["Uniform uses identical VM instances for auto-scaling; Flexible supports heterogeneous VMs and integrates with standard VM management APIs", "Flexible mode only supports Linux VMs; Uniform supports all OS types", "Uniform supports heterogeneous VMs; Flexible requires identical VMs", "They are different names for the same VMSS feature"],
+        "answer": "Uniform uses identical VM instances for auto-scaling; Flexible supports heterogeneous VMs and integrates with standard VM management APIs",
+        "explanation": "VMSS Uniform orchestration uses identical VM instances optimized for stateless scale-out. Flexible orchestration supports mixing VM configurations, provides VM-level management APIs, and supports availability zones for higher resiliency.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Durable Functions?",
+        "options": ["An extension of Azure Functions for writing stateful serverless workflows using orchestrator, activity, and entity functions", "A long-running Azure Function with persistent storage", "Azure Functions with dedicated compute resources", "A batch processing extension for Azure Functions"],
+        "answer": "An extension of Azure Functions for writing stateful serverless workflows using orchestrator, activity, and entity functions",
+        "explanation": "Azure Durable Functions is an extension that lets you write stateful workflows in a serverless environment. It uses orchestrator functions to coordinate activity functions, with state automatically checkpointed to durable storage.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Kubernetes Service (AKS) KEDA integration?",
+        "options": ["KEDA (Kubernetes Event-Driven Autoscaling) scales Kubernetes workloads based on event sources like queues, topics, and custom metrics beyond CPU/memory", "KEDA is a key management service for AKS secrets", "KEDA is Azure's DNS solution for AKS", "KEDA provides GPU scheduling for AKS workloads"],
+        "answer": "KEDA (Kubernetes Event-Driven Autoscaling) scales Kubernetes workloads based on event sources like queues, topics, and custom metrics beyond CPU/memory",
+        "explanation": "KEDA is an open-source Kubernetes autoscaler that extends HPA to scale pods based on external event sources (Azure Service Bus, Event Hubs, Kafka, HTTP requests) rather than just CPU and memory metrics.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure VM Application?",
+        "options": ["A feature to package, store, and deploy applications to Azure VMs through the Compute Gallery without baking them into the VM image", "An App Service application running on a VM", "A VM extension for application monitoring", "A marketplace application deployed on a VM"],
+        "answer": "A feature to package, store, and deploy applications to Azure VMs through the Compute Gallery without baking them into the VM image",
+        "explanation": "Azure VM Applications let you store application packages in the Compute Gallery and deploy them to VMs separately from the base OS image. This simplifies application lifecycle management without creating new images for each update.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Spot VM's eviction rate and how should architects handle it?",
+        "options": ["Spot VMs can be evicted at any time with a 30-second notice; architects should build fault-tolerant apps that checkpoint state and handle interruptions gracefully", "Spot VMs are evicted only during planned maintenance with 24-hour notice", "Spot VMs have a guaranteed SLA of 99.9% uptime", "Spot VMs are evicted weekly on a fixed schedule"],
+        "answer": "Spot VMs can be evicted at any time with a 30-second notice; architects should build fault-tolerant apps that checkpoint state and handle interruptions gracefully",
+        "explanation": "Azure Spot VMs provide a 30-second eviction notice via Scheduled Events. Workloads should be stateless or checkpoint-enabled (like ML training, batch jobs) to safely handle evictions without data loss.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is the Azure HBv3 VM series and what workloads is it designed for?",
+        "options": ["HPC VMs powered by AMD EPYC Milan with 448 GB DDR4 memory and 200 Gb/s InfiniBand for MPI workloads like CFD and molecular dynamics", "GPU VMs for deep learning training", "General-purpose VMs with high memory", "Storage-optimized VMs for big data analytics"],
+        "answer": "HPC VMs powered by AMD EPYC Milan with 448 GB DDR4 memory and 200 Gb/s InfiniBand for MPI workloads like CFD and molecular dynamics",
+        "explanation": "Azure HBv3-series VMs feature AMD EPYC 7V73X (Milan-X) processors with 3D V-Cache, 448 GB DDR4, and 200 Gb/s HDR InfiniBand networking for tightly coupled HPC workloads requiring massive memory bandwidth.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Container Apps Dapr integration?",
+        "options": ["Built-in Dapr (Distributed Application Runtime) sidecar support providing service discovery, state management, and pub/sub for microservices", "A debugging tool for container apps", "A deployment pipeline for container apps", "A monitoring solution for container apps"],
+        "answer": "Built-in Dapr (Distributed Application Runtime) sidecar support providing service discovery, state management, and pub/sub for microservices",
+        "explanation": "Azure Container Apps natively integrates with Dapr, enabling microservices to use Dapr's building blocks (service invocation, state management, pub/sub, bindings) without code changes by enabling the Dapr sidecar.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is the difference between AKS System Node Pool and User Node Pool?",
+        "options": ["System node pools run critical system pods like CoreDNS and metrics-server; user node pools run application workloads", "User node pools run system pods; system node pools run applications", "They are interchangeable and serve the same purpose", "System node pools only support Windows; user node pools only support Linux"],
+        "answer": "System node pools run critical system pods like CoreDNS and metrics-server; user node pools run application workloads",
+        "explanation": "AKS System node pools host critical Kubernetes system components (CoreDNS, tunnel-front, metrics-server) and must run Linux. User node pools are for application workloads and can run Linux or Windows.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure VM Automatic Extension Upgrade?",
+        "options": ["Automatically upgrading VM extensions to the latest version without requiring manual intervention or VM reimage", "Auto-scaling VM extensions based on demand", "Automatically installing new extensions when a new VM is created", "Upgrading the VM OS automatically"],
+        "answer": "Automatically upgrading VM extensions to the latest version without requiring manual intervention or VM reimage",
+        "explanation": "Automatic Extension Upgrade keeps VM extensions (like monitoring agents, antivirus) updated to their latest minor versions automatically, reducing operational overhead for fleet management.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Kubernetes Fleet Manager?",
+        "options": ["A service to manage multiple AKS clusters as a fleet, enabling cross-cluster workload orchestration and consistent configuration", "A VM fleet management service", "A node pool management service within a single AKS cluster", "An Azure load balancer for Kubernetes"],
+        "answer": "A service to manage multiple AKS clusters as a fleet, enabling cross-cluster workload orchestration and consistent configuration",
+        "explanation": "Azure Kubernetes Fleet Manager allows you to group and manage multiple AKS clusters (a fleet) to propagate configurations, orchestrate multi-cluster workloads, and perform cross-cluster updates.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Functions deployment slots?",
+        "options": ["Live environments for a Function App enabling swap-based deployments for zero-downtime releases and A/B testing", "Slots in a function's execution schedule", "Reserved execution environments for warm functions", "Time windows for scheduled function executions"],
+        "answer": "Live environments for a Function App enabling swap-based deployments for zero-downtime releases and A/B testing",
+        "explanation": "Deployment slots in Azure Functions (Premium and Dedicated plans) are live environments (staging, production) that can be swapped for zero-downtime deployments, rollbacks, and pre-production validation.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure VM Capacity Reservation?",
+        "options": ["Reserving a specific quantity of VM compute capacity in an Azure region/AZ to guarantee availability when needed", "A discounted pricing model for VMs", "A disaster recovery reservation for VMs", "A reserved IP address for a VM"],
+        "answer": "Reserving a specific quantity of VM compute capacity in an Azure region/AZ to guarantee availability when needed",
+        "explanation": "Azure VM Capacity Reservation guarantees that a specified quantity of VM instances of a chosen SKU will be available in a region or availability zone when you need to deploy them, without a long-term commitment.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Confidential VMs based on?",
+        "options": ["AMD SEV-SNP (Secure Encrypted Virtualization - Secure Nested Paging) technology to encrypt VM memory and protect against hypervisor access", "Intel TDX technology exclusively", "A software-based memory encryption", "Azure-proprietary hardware security modules"],
+        "answer": "AMD SEV-SNP (Secure Encrypted Virtualization - Secure Nested Paging) technology to encrypt VM memory and protect against hypervisor access",
+        "explanation": "Azure Confidential VMs use AMD SEV-SNP hardware to encrypt VM memory with keys controlled by the VM, protecting data in use from the hypervisor, host OS, and Microsoft operators.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is the difference between Azure App Service Free and Consumption plan for Azure Functions?",
+        "options": ["App Service runs on always-on dedicated VMs; Consumption auto-scales and bills per execution with scale-to-zero", "Consumption always has dedicated VMs; App Service scales to zero", "They are identical with different pricing names", "Free plan never scales; Consumption doesn't scale automatically"],
+        "answer": "App Service runs on always-on dedicated VMs; Consumption auto-scales and bills per execution with scale-to-zero",
+        "explanation": "The App Service plan runs Functions on dedicated, always-running VMs (no cold starts). The Consumption plan auto-scales from zero based on events and bills per execution — you pay nothing when idle.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure VM Run Command?",
+        "options": ["A feature to execute scripts or shell commands on Azure VMs remotely via the Azure portal, CLI, or API without SSH/RDP access", "A feature to run VMs on a schedule", "A command to restart VMs remotely", "A command to capture a VM image"],
+        "answer": "A feature to execute scripts or shell commands on Azure VMs remotely via the Azure portal, CLI, or API without SSH/RDP access",
+        "explanation": "Azure VM Run Command allows you to run shell scripts (PowerShell or Bash) on a VM directly through Azure's management plane, useful for troubleshooting or automation without requiring network access to the VM.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Trusted Launch for VMs?",
+        "options": ["A security feature combining Secure Boot, vTPM, and boot integrity monitoring to protect Gen2 VMs against advanced persistent threats", "A feature to launch VMs with trusted Azure images only", "An encryption feature for VM disks", "A compliance certification for Azure VMs"],
+        "answer": "A security feature combining Secure Boot, vTPM, and boot integrity monitoring to protect Gen2 VMs against advanced persistent threats",
+        "explanation": "Azure Trusted Launch provides Secure Boot (preventing unauthorized bootloaders), vTPM (stores boot secrets and enables measured boot), and boot integrity monitoring for Generation 2 Azure VMs.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure VMSS Automatic Repair policy?",
+        "options": ["Automatically detects and replaces unhealthy VM instances in a scale set based on health probes or application health extension", "A policy to automatically upgrade VM OS versions", "An auto-backup policy for VMSS instances", "A policy to automatically right-size VMSS instances"],
+        "answer": "Automatically detects and replaces unhealthy VM instances in a scale set based on health probes or application health extension",
+        "explanation": "VMSS Automatic Repair monitors VM health via health probes (load balancer) or Application Health Extension. If a VM is unhealthy for a grace period, the unhealthy VM is deleted and replaced with a new one.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Kubernetes Service (AKS) Workload Identity?",
+        "options": ["A feature allowing Kubernetes pods to use Azure AD identities to access Azure resources without managing secrets or credentials", "A feature assigning VM identities to AKS nodes", "A network identity for AKS services", "An RBAC feature for AKS cluster access"],
+        "answer": "A feature allowing Kubernetes pods to use Azure AD identities to access Azure resources without managing secrets or credentials",
+        "explanation": "AKS Workload Identity federates Kubernetes service accounts with Azure AD, allowing pods to authenticate to Azure services (Key Vault, Storage) using OIDC tokens instead of managing secrets or service principal credentials.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is the difference between Azure Container Instances and Azure Container Apps?",
+        "options": ["ACI is for simple, short-lived container tasks with no built-in scaling; Container Apps is for microservices with event-driven autoscaling and Dapr integration", "Container Apps is for single containers; ACI is for microservices", "They are identical with different pricing models", "ACI supports Kubernetes; Container Apps does not"],
+        "answer": "ACI is for simple, short-lived container tasks with no built-in scaling; Container Apps is for microservices with event-driven autoscaling and Dapr integration",
+        "explanation": "ACI is ideal for simple batch jobs or isolated containers without orchestration. Container Apps is a higher-level service built on Kubernetes providing scale-to-zero, KEDA event-driven scaling, Dapr, and ingress management.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure VM Hibernate?",
+        "options": ["Saving the VM's in-memory state to the OS disk so it can be restored to the same state without a full boot cycle, stopping compute billing", "Stopping a VM without preserving state", "A low-power state where the VM runs on reduced CPU", "A backup operation for VM memory"],
+        "answer": "Saving the VM's in-memory state to the OS disk so it can be restored to the same state without a full boot cycle, stopping compute billing",
+        "explanation": "Azure VM Hibernate saves RAM contents to the OS disk, then deallocates compute. On resume, memory is restored from disk, preserving application state while stopping compute billing during the hibernation period.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Compute Gallery Image Versioning?",
+        "options": ["A versioning system for VM images in the Compute Gallery supporting semantic versioning, replication, and deprecation policies", "A version control system for VM code", "A changelog tracking feature for Azure VMs", "A rollback mechanism for VM configurations"],
+        "answer": "A versioning system for VM images in the Compute Gallery supporting semantic versioning, replication, and deprecation policies",
+        "explanation": "Azure Compute Gallery stores image versions using semantic versioning (major.minor.patch). Each version can be replicated to multiple regions, has replication counts, end-of-life dates, and exclusion from latest settings.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure Container Apps revision management?",
+        "options": ["An immutable snapshot of a container app version allowing traffic splitting between multiple revisions for blue/green or canary deployments", "A configuration rollback feature", "A container image version tag", "A scheduled revision deployment feature"],
+        "answer": "An immutable snapshot of a container app version allowing traffic splitting between multiple revisions for blue/green or canary deployments",
+        "explanation": "In Azure Container Apps, a revision is an immutable snapshot of your app version. Multiple revisions can run simultaneously with traffic split between them, enabling canary releases, A/B testing, and blue-green deployments.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "azure"
+      },
+      {
+        "question": "What is Azure AKS cluster upgrade strategy and how does it minimize downtime?",
+        "options": ["AKS upgrades nodes in a rolling fashion, cordoning and draining one node at a time and adding a surge node (node surge upgrade) to maintain capacity", "AKS upgrades all nodes simultaneously for speed", "AKS creates a new cluster and migrates workloads automatically", "AKS requires manual drain and upgrade of each node"],
+        "answer": "AKS upgrades nodes in a rolling fashion, cordoning and draining one node at a time and adding a surge node (node surge upgrade) to maintain capacity",
+        "explanation": "AKS performs rolling upgrades by adding surge nodes (configurable max-surge), then cordoning and draining existing nodes one at a time. This ensures application pods are rescheduled on updated nodes while maintaining cluster capacity.",
+        "difficulty": "medium",
+        "subcategory": "compute",
+        "category": "azure"
+      }
+    ]

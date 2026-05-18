@@ -1,1 +1,444 @@
-[]
+[
+    {
+      "question": "Which EC2 instance purchasing option provides the largest discount but requires a 1 or 3-year commitment with full upfront payment?",
+      "options": ["Reserved Instance (All Upfront)", "Spot Instance", "On-Demand Instance", "Savings Plan"],
+      "answer": "Reserved Instance (All Upfront)",
+      "explanation": "Reserved Instances with All Upfront payment offer the highest discount (up to 72%) over On-Demand pricing. You pay the full amount at the start of the term for maximum savings.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is the difference between EC2 Instance Store and EBS volume?",
+      "options": ["Instance Store is ephemeral local storage; EBS is persistent network-attached storage", "Both are persistent but Instance Store is faster", "EBS is local storage; Instance Store is network storage", "They are identical in functionality"],
+      "answer": "Instance Store is ephemeral local storage; EBS is persistent network-attached storage",
+      "explanation": "EC2 Instance Store provides temporary block-level storage physically attached to the host — data is lost when the instance stops or terminates. EBS is persistent network-attached storage that survives instance lifecycle events.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is EC2 Nitro System?",
+      "options": ["The next-generation hypervisor and hardware platform underlying modern EC2 instances", "A type of GPU instance", "An EC2 networking enhancement only", "A dedicated hardware offering"],
+      "answer": "The next-generation hypervisor and hardware platform underlying modern EC2 instances",
+      "explanation": "The AWS Nitro System is a collection of custom hardware (Nitro Cards, Nitro Security Chip) and a lightweight hypervisor that offloads virtualization functions, delivering near bare-metal performance and enhanced security.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is the difference between a Cluster Placement Group and a Spread Placement Group in EC2?",
+      "options": ["Cluster packs instances close together for low latency; Spread places instances on distinct hardware for fault tolerance", "Cluster distributes across AZs; Spread keeps them in one AZ", "They are functionally identical", "Cluster is for GPU instances only; Spread is for general instances"],
+      "answer": "Cluster packs instances close together for low latency; Spread places instances on distinct hardware for fault tolerance",
+      "explanation": "Cluster Placement Groups place instances physically close together within a single AZ for high-bandwidth, low-latency networking (HPC). Spread Placement Groups place each instance on distinct underlying hardware to reduce simultaneous hardware failures.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "In EC2 Auto Scaling, what is the difference between a target tracking policy and a step scaling policy?",
+      "options": ["Target tracking automatically adjusts to maintain a metric at a target value; step scaling adds/removes instances in steps based on alarm thresholds", "They are the same policy type", "Step scaling is only for scheduled scaling", "Target tracking only scales in, not out"],
+      "answer": "Target tracking automatically adjusts to maintain a metric at a target value; step scaling adds/removes instances in steps based on alarm thresholds",
+      "explanation": "Target tracking scaling adjusts capacity to keep a specific metric (e.g., 50% CPU) at a target value automatically. Step scaling defines specific capacity adjustments triggered by CloudWatch alarm thresholds in discrete steps.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is the purpose of EC2 Enhanced Networking (ENA)?",
+      "options": ["To provide higher bandwidth, lower latency, and lower jitter using SR-IOV", "To encrypt network traffic between instances", "To enable IPv6 on EC2 instances", "To connect EC2 instances to on-premises networks"],
+      "answer": "To provide higher bandwidth, lower latency, and lower jitter using SR-IOV",
+      "explanation": "Enhanced Networking uses SR-IOV (Single Root I/O Virtualization) to provide high-performance networking capabilities including higher PPS, lower latency, and lower CPU utilization on supported instance types.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is AWS Lambda Layers?",
+      "options": ["A way to share common code, libraries, and dependencies across multiple Lambda functions", "Additional memory layers for Lambda", "Lambda's concurrency configuration", "A way to chain Lambda functions"],
+      "answer": "A way to share common code, libraries, and dependencies across multiple Lambda functions",
+      "explanation": "Lambda Layers allow you to package libraries, custom runtimes, or other dependencies separately from your function code. Multiple functions can reference the same layer, reducing deployment package size and promoting code reuse.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is Lambda Provisioned Concurrency?",
+      "options": ["Pre-initializing a specified number of Lambda execution environments to eliminate cold starts", "The maximum number of concurrent Lambda invocations", "Lambda's auto-scaling configuration", "A reserved capacity for Lambda executions"],
+      "answer": "Pre-initializing a specified number of Lambda execution environments to eliminate cold starts",
+      "explanation": "Provisioned Concurrency keeps a specified number of Lambda function instances initialized and ready to respond instantly, eliminating cold start latency for latency-sensitive applications.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is the difference between ECS with EC2 launch type and ECS with Fargate launch type?",
+      "options": ["EC2 launch type requires managing the underlying EC2 instances; Fargate is serverless and AWS manages the infrastructure", "Fargate requires managing EC2 instances; EC2 launch type is serverless", "Both require managing EC2 instances", "Both are serverless with no infrastructure management"],
+      "answer": "EC2 launch type requires managing the underlying EC2 instances; Fargate is serverless and AWS manages the infrastructure",
+      "explanation": "With ECS EC2 launch type, you provision and manage EC2 instances in your cluster. With Fargate, AWS manages all the underlying compute infrastructure — you only define task resources (CPU/memory) and pay per task.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is an EC2 Capacity Reservation?",
+      "options": ["Reserving compute capacity in a specific AZ without a billing commitment", "A type of Reserved Instance", "A way to reserve Spot capacity", "A dedicated host reservation"],
+      "answer": "Reserving compute capacity in a specific AZ without a billing commitment",
+      "explanation": "On-Demand Capacity Reservations allow you to reserve EC2 capacity in a specific AZ for any duration without a term commitment, ensuring capacity is available when needed for critical workloads.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is the difference between horizontal and vertical scaling in AWS EC2?",
+      "options": ["Horizontal scaling adds more instances; vertical scaling increases the size of existing instances", "Horizontal scaling increases instance size; vertical scaling adds more instances", "Both mean the same thing in AWS", "Horizontal scaling is only for databases"],
+      "answer": "Horizontal scaling adds more instances; vertical scaling increases the size of existing instances",
+      "explanation": "Horizontal scaling (scale out/in) adds or removes EC2 instances to handle changing load. Vertical scaling (scale up/down) changes the instance type to a larger or smaller size, requiring a restart.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is EC2 Spot Instance interruption?",
+      "options": ["A 2-minute warning before AWS reclaims a Spot Instance due to capacity or price changes", "A permanent termination with no warning", "A scheduled maintenance window", "A voluntary stop requested by the user"],
+      "answer": "A 2-minute warning before AWS reclaims a Spot Instance due to capacity or price changes",
+      "explanation": "When AWS needs to reclaim Spot capacity, it sends a 2-minute interruption notice via instance metadata and EventBridge. Your application should handle graceful shutdown within this window.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is AWS Lambda's concurrency model?",
+      "options": ["Each Lambda invocation runs in its own isolated execution environment; concurrent invocations run in separate environments", "Multiple invocations share the same execution environment simultaneously", "Lambda is single-threaded and cannot handle concurrent invocations", "Concurrency is managed by the caller application only"],
+      "answer": "Each Lambda invocation runs in its own isolated execution environment; concurrent invocations run in separate environments",
+      "explanation": "Lambda scales by running multiple instances of your function in parallel. Each concurrent invocation gets its own isolated execution environment — they do not share memory or state.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is AWS Graviton and why is it significant?",
+      "options": ["AWS-designed ARM-based processors offering better price-performance than x86 for most workloads", "AWS's GPU processor for machine learning", "A dedicated bare-metal processor type", "AWS's custom FPGA chip"],
+      "answer": "AWS-designed ARM-based processors offering better price-performance than x86 for most workloads",
+      "explanation": "AWS Graviton (G1/G2/G3/G4) are custom ARM-based processors designed by AWS. Graviton3 instances deliver up to 40% better price-performance than comparable x86 instances for a variety of workloads.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is EC2 Fleet?",
+      "options": ["A configuration to launch a fleet of EC2 instances across multiple instance types, AZs, and purchasing options simultaneously", "A group of identical EC2 instances", "A dedicated EC2 cluster", "An Auto Scaling Group alias"],
+      "answer": "A configuration to launch a fleet of EC2 instances across multiple instance types, AZs, and purchasing options simultaneously",
+      "explanation": "EC2 Fleet lets you provision capacity across multiple EC2 instance types, purchase options (On-Demand, Spot, Reserved), and AZs in a single API call to optimize cost and availability.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is Elastic Fabric Adapter (EFA) in AWS?",
+      "options": ["A network interface that enables high-performance inter-node communication for HPC and ML workloads", "An enhanced VPC network interface", "A type of enhanced networking for all EC2 instances", "A dedicated bandwidth allocation for EC2"],
+      "answer": "A network interface that enables high-performance inter-node communication for HPC and ML workloads",
+      "explanation": "EFA is a network device you can attach to EC2 instances to accelerate High Performance Computing (HPC) and ML applications with OS-bypass capabilities for ultra-low latency inter-node communication.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is the purpose of EC2 Instance Connect?",
+      "options": ["A way to connect to EC2 Linux instances via SSH through the browser or CLI without managing SSH keys long-term", "A VPN service for EC2 connections", "A dedicated management network for EC2", "A way to connect to Windows instances via RDP through AWS Console"],
+      "answer": "A way to connect to EC2 Linux instances via SSH through the browser or CLI without managing SSH keys long-term",
+      "explanation": "EC2 Instance Connect pushes a temporary one-time SSH public key to the instance for 60 seconds via the metadata service, allowing browser or CLI-based SSH access without persistent key pairs.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is AWS Compute Savings Plans and how does it differ from EC2 Reserved Instances?",
+      "options": ["Savings Plans offer flexibility across instance families and regions; Reserved Instances are locked to a specific instance type and region", "Reserved Instances are more flexible than Savings Plans", "Both are identical in flexibility and discount", "Savings Plans only apply to Lambda, not EC2"],
+      "answer": "Savings Plans offer flexibility across instance families and regions; Reserved Instances are locked to a specific instance type and region",
+      "explanation": "Compute Savings Plans apply automatically to any EC2 instance, Lambda, or Fargate usage regardless of instance family, size, AZ, OS, or region. Reserved Instances are locked to specific instance types and regions.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is the difference between ECS Task Definition and ECS Service?",
+      "options": ["Task Definition is a blueprint defining container specs; ECS Service ensures a specified number of task instances run continuously", "Task Definition runs containers; Service defines the container configuration", "They are interchangeable terms", "Service is for batch jobs; Task Definition is for long-running apps"],
+      "answer": "Task Definition is a blueprint defining container specs; ECS Service ensures a specified number of task instances run continuously",
+      "explanation": "An ECS Task Definition is a JSON template describing containers (image, CPU, memory, ports). An ECS Service uses a task definition to run and maintain a specified number of task instances, handling restarts and load balancing.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "How does AWS Lambda handle the /tmp directory?",
+      "options": ["Each execution environment has a /tmp directory (512 MB–10 GB) that persists across invocations in the same execution environment", "The /tmp directory is shared across all Lambda invocations globally", "Lambda has no writable file system", "The /tmp directory is cleared after every single invocation"],
+      "answer": "Each execution environment has a /tmp directory (512 MB–10 GB) that persists across invocations in the same execution environment",
+      "explanation": "Lambda provides a /tmp directory with 512 MB to 10 GB of ephemeral storage per execution environment. It persists across warm invocations within the same execution environment but is not shared between different environments.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is EC2 Image Builder and how does it differ from creating an AMI manually?",
+      "options": ["Image Builder automates the build, test, and distribution pipeline for AMIs; manual AMI creation requires scripting and coordination", "Image Builder creates Docker images; manual AMI creation creates EC2 images", "They are functionally identical", "Image Builder only creates Windows AMIs"],
+      "answer": "Image Builder automates the build, test, and distribution pipeline for AMIs; manual AMI creation requires scripting and coordination",
+      "explanation": "EC2 Image Builder provides a managed pipeline to automate AMI creation, including applying updates, running tests, and distributing to multiple regions/accounts on a schedule — eliminating manual effort.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is AWS Step Functions and how does it relate to Lambda?",
+      "options": ["Step Functions orchestrates multiple Lambda functions and services into visual serverless workflows with error handling", "Step Functions replaces Lambda for long-running tasks", "Step Functions is a Lambda runtime feature", "They are unrelated services"],
+      "answer": "Step Functions orchestrates multiple Lambda functions and services into visual serverless workflows with error handling",
+      "explanation": "AWS Step Functions is a serverless orchestration service that sequences Lambda functions and other AWS services into workflows (state machines) with built-in error handling, retries, and parallel execution.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is EKS Fargate Profile?",
+      "options": ["A configuration that defines which Kubernetes pods run on Fargate (serverless) instead of EC2 nodes in EKS", "A node group configuration for EKS", "A networking profile for EKS clusters", "A security profile for EKS workloads"],
+      "answer": "A configuration that defines which Kubernetes pods run on Fargate (serverless) instead of EC2 nodes in EKS",
+      "explanation": "An EKS Fargate Profile specifies which pod namespaces and labels should run on Fargate. Matching pods are scheduled on Fargate compute without requiring EC2 worker node management.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is EC2 Auto Scaling Warm Pool?",
+      "options": ["A pool of pre-initialized EC2 instances that reduce scale-out time by having instances ready in a stopped or hibernated state", "A pool of Spot Instances for cost savings", "A pre-warmed Lambda pool", "A group of standby Reserved Instances"],
+      "answer": "A pool of pre-initialized EC2 instances that reduce scale-out time by having instances ready in a stopped or hibernated state",
+      "explanation": "Warm Pools allow you to maintain pre-initialized EC2 instances in a stopped or hibernated state. When scale-out occurs, these instances launch faster because they've already completed the initialization process.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is the significance of EC2 Nitro Enclaves?",
+      "options": ["Isolated compute environments within EC2 instances for processing highly sensitive data with no persistent storage or external network access", "A type of GPU partition within an EC2 instance", "A secure boot mechanism for EC2", "An isolated VPC environment for EC2"],
+      "answer": "Isolated compute environments within EC2 instances for processing highly sensitive data with no persistent storage or external network access",
+      "explanation": "Nitro Enclaves create isolated, hardened virtual machines within an EC2 instance to protect highly sensitive data (PII, credentials, cryptographic keys) with no persistent storage, no SSH access, and no external networking.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is the difference between Multi-AZ and Multi-Region deployment for EC2 workloads?",
+      "options": ["Multi-AZ protects against data center failures within a region; Multi-Region protects against entire regional outages", "Multi-Region is only for database deployments", "Multi-AZ spans multiple AWS accounts", "They provide identical levels of fault tolerance"],
+      "answer": "Multi-AZ protects against data center failures within a region; Multi-Region protects against entire regional outages",
+      "explanation": "Deploying EC2 across multiple AZs protects against single data center failures within a region. Multi-Region deployment protects against region-level disasters and can also reduce latency for global users.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is AWS Lambda SnapStart?",
+      "options": ["A feature that takes a snapshot of the initialized Lambda execution environment to dramatically reduce cold start latency", "A backup feature for Lambda functions", "A Lambda deployment rollback feature", "A Lambda code versioning feature"],
+      "answer": "A feature that takes a snapshot of the initialized Lambda execution environment to dramatically reduce cold start latency",
+      "explanation": "Lambda SnapStart (available for Java) takes a snapshot of the initialized execution environment after the init phase. When a cold start occurs, Lambda restores from the snapshot instead of reinitializing, reducing latency by up to 10x.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is the purpose of EC2 Systems Manager Session Manager?",
+      "options": ["To connect to EC2 instances via an interactive shell without opening SSH ports or managing bastion hosts", "To manage EC2 Auto Scaling sessions", "To monitor EC2 performance sessions", "To manage IAM sessions for EC2"],
+      "answer": "To connect to EC2 instances via an interactive shell without opening SSH ports or managing bastion hosts",
+      "explanation": "Session Manager provides secure, browser-based shell access to EC2 instances without requiring open inbound SSH/RDP ports, bastion hosts, or managing SSH keys. All session activity is logged.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is EC2 Hibernation and what are its requirements?",
+      "options": ["Saves RAM contents to the EBS root volume and requires the root EBS volume to be encrypted and large enough to hold RAM", "Pauses the instance without saving state and requires no special configuration", "A feature available for all instance types and sizes", "Saves state to S3 and requires S3 access"],
+      "answer": "Saves RAM contents to the EBS root volume and requires the root EBS volume to be encrypted and large enough to hold RAM",
+      "explanation": "EC2 Hibernation saves the in-memory (RAM) state to the encrypted EBS root volume. Requirements include: encrypted EBS root volume, RAM ≤ 150 GB, supported instance families, and the instance must be On-Demand or Reserved.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is the difference between AWS Lambda reserved concurrency and provisioned concurrency?",
+      "options": ["Reserved concurrency caps the maximum concurrent executions for a function; provisioned concurrency pre-warms execution environments to eliminate cold starts", "Provisioned concurrency limits executions; reserved concurrency pre-warms environments", "They are different names for the same feature", "Reserved concurrency is for API Gateway triggers only"],
+      "answer": "Reserved concurrency caps the maximum concurrent executions for a function; provisioned concurrency pre-warms execution environments to eliminate cold starts",
+      "explanation": "Reserved concurrency guarantees and caps the max concurrent executions for a specific function (throttling excess). Provisioned concurrency keeps a set number of environments initialized and warm to serve requests instantly.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is the use of EC2 Partition Placement Groups?",
+      "options": ["To spread instances across logical partitions so groups of instances don't share underlying hardware, suitable for large distributed workloads like Hadoop and Kafka", "To place instances in separate AZs automatically", "To group instances for lower latency communication", "To partition EC2 storage across multiple disks"],
+      "answer": "To spread instances across logical partitions so groups of instances don't share underlying hardware, suitable for large distributed workloads like Hadoop and Kafka",
+      "explanation": "Partition Placement Groups divide instances into logical partitions. Each partition does not share underlying hardware with other partitions. This reduces correlated hardware failures for large distributed workloads.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is EKS Managed Node Group?",
+      "options": ["An EKS feature that automates provisioning, lifecycle management, and updates of EC2 worker nodes", "A Kubernetes operator for managing node configuration", "A Fargate-based node group", "A node group managed by the customer entirely"],
+      "answer": "An EKS feature that automates provisioning, lifecycle management, and updates of EC2 worker nodes",
+      "explanation": "EKS Managed Node Groups automate the provisioning and lifecycle management of EC2 nodes. AWS handles node updates, draining, and termination while following the Kubernetes rolling update strategy.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is AWS Batch job queue priority?",
+      "options": ["A setting that determines the order in which jobs are scheduled from a queue to a compute environment when multiple queues compete", "The execution priority within a single job", "The network priority for batch data transfer", "A billing priority for cost allocation"],
+      "answer": "A setting that determines the order in which jobs are scheduled from a queue to a compute environment when multiple queues compete",
+      "explanation": "AWS Batch job queues have a priority value. When multiple queues are connected to the same compute environment, the scheduler processes jobs from higher-priority queues first.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is AWS Lambda Destinations?",
+      "options": ["A feature to route Lambda invocation results (success or failure) to services like SQS, SNS, EventBridge, or another Lambda", "The target services Lambda can invoke", "Lambda's VPC endpoint configuration", "Lambda's dead-letter queue configuration"],
+      "answer": "A feature to route Lambda invocation results (success or failure) to services like SQS, SNS, EventBridge, or another Lambda",
+      "explanation": "Lambda Destinations allow you to route asynchronous invocation results to different AWS services based on success or failure, providing better observability than dead-letter queues (DLQ) by including event and response context.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is an EC2 Spot Fleet?",
+      "options": ["A collection of Spot Instances (and optionally On-Demand) launched based on specified criteria to meet a target capacity at the lowest cost", "A group of identical Spot Instances in one AZ", "An Auto Scaling Group using only Spot Instances", "A Reserved Instance pool for Spot capacity"],
+      "answer": "A collection of Spot Instances (and optionally On-Demand) launched based on specified criteria to meet a target capacity at the lowest cost",
+      "explanation": "Spot Fleet automatically requests Spot Instances from multiple pools (instance type, AZ) to fulfill target capacity. It can mix Spot and On-Demand instances and maintains capacity by replacing interrupted instances.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "How does AWS Lambda integrate with Amazon VPC?",
+      "options": ["Lambda can be configured with a VPC to access private resources like RDS, but this adds latency and requires ENIs", "Lambda always runs inside a VPC by default", "Lambda cannot access VPC resources at all", "Lambda VPC integration only works with private subnets in us-east-1"],
+      "answer": "Lambda can be configured with a VPC to access private resources like RDS, but this adds latency and requires ENIs",
+      "explanation": "When Lambda is configured to run inside a VPC, AWS creates Hyperplane ENIs to connect your Lambda to the VPC. This allows access to private resources but adds networking overhead. Lambda uses the Hyperplane ENI to avoid per-invocation ENI creation latency.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is EC2 Auto Scaling lifecycle hooks?",
+      "options": ["Pausing instance launch or termination to allow custom actions (like draining connections) before the instance enters or leaves service", "Hooks that trigger Lambda during Auto Scaling events", "Automated health checks during scaling events", "Notifications sent during scaling activities"],
+      "answer": "Pausing instance launch or termination to allow custom actions (like draining connections) before the instance enters or leaves service",
+      "explanation": "Lifecycle hooks pause the Auto Scaling process during launch (Pending:Wait) or termination (Terminating:Wait) states, allowing time to run custom scripts, install software, or drain connections before the instance completes its transition.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is the difference between ECS Task Role and ECS Execution Role?",
+      "options": ["Task Role grants permissions to the running application code; Execution Role grants permissions to ECS agent to pull images and publish logs", "Execution Role is for the application; Task Role is for ECS infrastructure", "Both grant the same permissions to the container", "Task Role is only needed for Fargate; Execution Role is for EC2"],
+      "answer": "Task Role grants permissions to the running application code; Execution Role grants permissions to ECS agent to pull images and publish logs",
+      "explanation": "The ECS Task Role is an IAM role assumed by the containers in the task (e.g., to access S3 or DynamoDB). The ECS Execution Role is used by the ECS/Fargate agent to pull container images from ECR and send logs to CloudWatch.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is AWS Lambda function URL?",
+      "options": ["A dedicated HTTPS endpoint for invoking a Lambda function directly without API Gateway", "The ARN URL of a Lambda function", "A Lambda alias URL", "The URL of Lambda's management console"],
+      "answer": "A dedicated HTTPS endpoint for invoking a Lambda function directly without API Gateway",
+      "explanation": "Lambda Function URLs provide a built-in HTTPS endpoint for your Lambda function. You can invoke functions directly via HTTPS without needing to configure API Gateway, useful for simple web hooks.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is the EC2 metadata service IMDSv2 and why is it more secure than IMDSv1?",
+      "options": ["IMDSv2 uses session-oriented requests requiring a token, protecting against SSRF attacks that could exploit IMDSv1's open access", "IMDSv2 encrypts metadata in transit while IMDSv1 does not", "IMDSv2 requires IAM credentials while IMDSv1 does not", "IMDSv2 is only available for Nitro instances"],
+      "answer": "IMDSv2 uses session-oriented requests requiring a token, protecting against SSRF attacks that could exploit IMDSv1's open access",
+      "explanation": "IMDSv2 uses PUT requests to first obtain a session token, then uses that token for subsequent GET requests. This session-oriented approach prevents Server-Side Request Forgery (SSRF) attacks that could steal IAM credentials via IMDSv1.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is AWS App Mesh and how does it relate to ECS/EKS?",
+      "options": ["A service mesh that provides application-level networking, traffic management, and observability for microservices running on ECS and EKS", "A load balancer for ECS services", "A container image management service", "A deployment pipeline for EKS"],
+      "answer": "A service mesh that provides application-level networking, traffic management, and observability for microservices running on ECS and EKS",
+      "explanation": "AWS App Mesh is a service mesh using Envoy proxy sidecars to standardize how microservices communicate. It provides traffic routing, retries, circuit breaking, and end-to-end visibility for services on ECS, EKS, and EC2.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is Amazon EC2 Dedicated Instance vs Dedicated Host?",
+      "options": ["Dedicated Instances run on hardware dedicated to you but don't give control over physical host placement; Dedicated Hosts give visibility and control over the specific physical server", "They are identical offerings at different price points", "Dedicated Hosts are shared hardware; Dedicated Instances are exclusive", "Dedicated Instances are for Windows only; Dedicated Hosts for Linux"],
+      "answer": "Dedicated Instances run on hardware dedicated to you but don't give control over physical host placement; Dedicated Hosts give visibility and control over the specific physical server",
+      "explanation": "Dedicated Instances guarantee your VMs run on hardware not shared with other AWS customers but you don't control which physical server. Dedicated Hosts provide a specific physical server ID, enabling server-bound license compliance (e.g., per-socket, per-core).",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is AWS Graviton3 and what improvement does it offer over Graviton2?",
+      "options": ["Graviton3 uses DDR5 memory and delivers up to 25% better performance, 60% better floating-point performance, and twice the crypto performance over Graviton2", "Graviton3 is a GPU chip; Graviton2 is a CPU chip", "Graviton3 only supports Linux while Graviton2 supports all OS", "Graviton3 is cheaper but slower than Graviton2"],
+      "answer": "Graviton3 uses DDR5 memory and delivers up to 25% better performance, 60% better floating-point performance, and twice the crypto performance over Graviton2",
+      "explanation": "AWS Graviton3 (C7g, M7g, R7g instances) offers up to 25% better compute performance, 60% improvement in floating-point performance, 2x higher crypto performance, and 3x better ML performance versus Graviton2, using DDR5 memory.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is the difference between AWS Lambda synchronous and asynchronous invocation?",
+      "options": ["Synchronous invocation waits for the function response; asynchronous queues the event and Lambda retries on failure automatically", "Asynchronous invocation is faster than synchronous", "Synchronous invocation retries automatically; asynchronous does not", "They are identical in behavior"],
+      "answer": "Synchronous invocation waits for the function response; asynchronous queues the event and Lambda retries on failure automatically",
+      "explanation": "Synchronous invocations (API Gateway, SDK) wait for Lambda to complete and return the response. Asynchronous invocations (S3 events, SNS) queue the event; Lambda automatically retries twice on failure and supports DLQ/Destinations.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is AWS ParallelCluster?",
+      "options": ["An open-source tool for deploying and managing HPC clusters on AWS with automated setup of schedulers and compute nodes", "A managed batch processing service", "A parallel database cluster service", "A multi-region EC2 deployment tool"],
+      "answer": "An open-source tool for deploying and managing HPC clusters on AWS with automated setup of schedulers and compute nodes",
+      "explanation": "AWS ParallelCluster is an open-source cluster management tool that simplifies deploying and managing HPC clusters on AWS, automatically configuring schedulers (Slurm, SGE), networking, and storage.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is the purpose of EC2 Network Access Analyzer?",
+      "options": ["Identifying unintended network access paths to EC2 resources by analyzing VPC networking configurations", "Monitoring network throughput of EC2 instances", "Optimizing network routes between EC2 instances", "Configuring security group rules automatically"],
+      "answer": "Identifying unintended network access paths to EC2 resources by analyzing VPC networking configurations",
+      "explanation": "EC2 Network Access Analyzer helps identify unintended network access to your AWS resources by analyzing network configurations and identifying paths that don't meet your security requirements.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is the difference between GP2 and GP3 EBS volumes for EC2?",
+      "options": ["GP3 provides independently configurable IOPS and throughput at lower cost; GP2 ties IOPS to volume size at 3 IOPS/GB", "GP2 is newer and higher performance than GP3", "They are identical in performance and pricing", "GP3 is only for Windows EC2 instances"],
+      "answer": "GP3 provides independently configurable IOPS and throughput at lower cost; GP2 ties IOPS to volume size at 3 IOPS/GB",
+      "explanation": "GP3 volumes let you provision IOPS (up to 16,000) and throughput (up to 1,000 MB/s) independently of storage size, at 20% lower cost than GP2. GP2 automatically scales IOPS with size (3 IOPS/GB, max 16,000 IOPS at 5.3 TB).",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is AWS Lambda Power Tuning?",
+      "options": ["An open-source tool that runs Lambda at different memory settings to find the optimal balance between cost and performance", "Lambda's built-in memory auto-configuration", "A Lambda pricing calculator", "A Lambda monitoring dashboard"],
+      "answer": "An open-source tool that runs Lambda at different memory settings to find the optimal balance between cost and performance",
+      "explanation": "AWS Lambda Power Tuning is an open-source Step Functions state machine that invokes your Lambda at various memory configurations and generates a visualization to identify the optimal memory setting for cost, speed, or balance.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    },
+    {
+      "question": "What is the significance of the EC2 'instance profile'?",
+      "options": ["A container for an IAM role that allows EC2 instances to call AWS services without embedding credentials", "A configuration file for EC2 instance settings", "A performance profile for EC2 instance types", "A billing profile for EC2 cost allocation"],
+      "answer": "A container for an IAM role that allows EC2 instances to call AWS services without embedding credentials",
+      "explanation": "An instance profile is the mechanism by which an IAM role is attached to an EC2 instance. The EC2 instance retrieves temporary credentials from the metadata service, allowing it to call AWS APIs without hardcoded credentials.",
+      "difficulty": "medium",
+      "subcategory": "compute",
+      "category": "aws"
+    }
+  ]
+  

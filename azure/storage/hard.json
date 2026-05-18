@@ -1,1 +1,425 @@
-[]
+[
+  {
+    "question": "What is the Azure Blob Storage consistency model for read operations after a write?",
+    "options": ["Eventual consistency for all regions", "Strong consistency within the primary region; eventual consistency for RA-GRS secondary reads", "Strong consistency globally for all redundancy options", "Eventual consistency within the same datacenter"],
+    "answer": "Strong consistency within the primary region; eventual consistency for RA-GRS secondary reads",
+    "explanation": "Azure Blob Storage provides strong consistency for reads and writes within the primary region. Reads from the RA-GRS secondary endpoint are eventually consistent as replication is asynchronous.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Blob Storage lease mechanism used for?",
+    "options": ["Leasing storage capacity for a fixed period", "Acquiring an exclusive write lock on a blob or container to prevent concurrent modifications", "Temporarily sharing blobs with external users", "Leasing encryption keys from Azure Key Vault"],
+    "answer": "Acquiring an exclusive write lock on a blob or container to prevent concurrent modifications",
+    "explanation": "A blob lease grants exclusive write and delete access to a blob for a renewable period (15–60 seconds or infinite), preventing concurrent write conflicts in distributed applications.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the maximum block size for a Block Blob in Azure Blob Storage using the Put Block API?",
+    "options": ["4 MB", "100 MB", "4,000 MB", "5 GB"],
+    "answer": "4,000 MB",
+    "explanation": "Using REST API version 2019-12-12 and later, a single block in a Block Blob can be up to 4,000 MiB (approximately 4 GB) in size.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Blob Storage object replication prerequisite?",
+    "options": ["Both accounts must use LRS redundancy", "Blob versioning and change feed must be enabled on the source account; versioning must be enabled on the destination", "Both accounts must be in the same region", "Source must be a Premium storage account"],
+    "answer": "Blob versioning and change feed must be enabled on the source account; versioning must be enabled on the destination",
+    "explanation": "Object replication requires blob versioning and change feed enabled on the source storage account, and blob versioning enabled on the destination storage account.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the purpose of Azure Blob Storage put block list operation?",
+    "options": ["Listing all blocks in a blob", "Committing a set of staged blocks into a final blob by specifying the block list in the desired order", "Putting metadata on a list of blobs", "Blocking access to a set of blobs"],
+    "answer": "Committing a set of staged blocks into a final blob by specifying the block list in the desired order",
+    "explanation": "After uploading individual blocks using Put Block, the Put Block List operation commits those blocks into a final blob, specifying the order in which they should be assembled.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "How does Azure Managed Disk handle zone redundancy?",
+    "options": ["All managed disks are zone-redundant by default", "Zone-redundant storage (ZRS) for managed disks synchronously replicates data across three availability zones", "Managed disks are only replicated within a single zone", "Zone redundancy is only available for Ultra Disks"],
+    "answer": "Zone-redundant storage (ZRS) for managed disks synchronously replicates data across three availability zones",
+    "explanation": "Azure supports ZRS for Premium SSD, Standard SSD, and Premium SSD v2 managed disks, synchronously replicating disk data across three availability zones for resilience against zone failures.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Data Lake Storage Gen2 access control model?",
+    "options": ["Only Azure RBAC is supported", "Only POSIX-like ACLs are supported", "Both Azure RBAC and POSIX-like ACLs (access ACLs and default ACLs) are supported and evaluated together", "Only SAS tokens are supported for ADLS Gen2 access"],
+    "answer": "Both Azure RBAC and POSIX-like ACLs (access ACLs and default ACLs) are supported and evaluated together",
+    "explanation": "ADLS Gen2 supports both Azure RBAC for coarse-grained access and POSIX-like ACLs for fine-grained file and directory level permissions, evaluated in a specific precedence order.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the difference between Azure Storage account-level encryption scope and container-level encryption scope?",
+    "options": ["They are identical in behavior", "Account-level scope applies the same encryption key to all blobs; container-level scope allows different keys per container, overriding the account default", "Container-level scope only supports Microsoft-managed keys", "Account-level scope does not support BYOK"],
+    "answer": "Account-level scope applies the same encryption key to all blobs; container-level scope allows different keys per container, overriding the account default",
+    "explanation": "Encryption scopes allow different customer-managed keys (CMK) to be applied at the container or blob level, overriding the storage account's default encryption scope for data isolation.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Blob Storage append blob maximum size?",
+    "options": ["4.75 TB", "195 GB", "8 TB", "100 GB"],
+    "answer": "195 GB",
+    "explanation": "An append blob can be a maximum of approximately 195 GB (50,000 blocks x 4 MB per block). This makes them suitable for log files but not very large binary files.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Storage shared access signature (SAS) user delegation SAS?",
+    "options": ["A SAS signed with the storage account key", "A SAS signed with Azure AD credentials for a service principal, providing better security than account-key SAS", "A SAS that delegates access to another Azure AD user", "A SAS that can only be used for blob downloads"],
+    "answer": "A SAS signed with Azure AD credentials for a service principal, providing better security than account-key SAS",
+    "explanation": "User delegation SAS is signed with an Azure AD user's credentials (obtained via GetUserDelegationKey) rather than the storage account key, providing superior security and auditability.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Blob Storage change feed retention period?",
+    "options": ["7 days only", "30 days only", "1 to 7 years, or infinite (never delete)", "Configurable from 1 day to 365 days"],
+    "answer": "1 to 7 years, or infinite (never delete)",
+    "explanation": "The change feed retention can be configured between 1 and 7 years, or set to null for infinite retention (never delete), making it suitable for compliance and audit scenarios.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the purpose of Azure Blob Storage static website $web container?",
+    "options": ["A system container for web access logs", "The special container that serves as the origin for Azure Blob static website hosting", "A container restricted to Azure CDN access only", "A container for storing web application firewall rules"],
+    "answer": "The special container that serves as the origin for Azure Blob static website hosting",
+    "explanation": "When static website hosting is enabled, Azure creates a $web container. Objects placed in this container are served as static website content at the primary static website endpoint.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Managed Disk bursting model for on-demand bursting vs credit-based bursting?",
+    "options": ["They are the same mechanism", "Credit-based bursting accumulates credits during low usage and uses them to burst; on-demand bursting allows exceeding limits instantly without pre-accumulated credits at additional cost", "On-demand bursting is only for Ultra Disks; credit-based is for Standard SSD", "Credit-based bursting requires a separate license"],
+    "answer": "Credit-based bursting accumulates credits during low usage and uses them to burst; on-demand bursting allows exceeding limits instantly without pre-accumulated credits at additional cost",
+    "explanation": "Credit-based bursting (available on smaller Premium SSD and Standard SSD) accumulates burst credits. On-demand bursting (Premium SSD >= 512 GiB) allows instant burst without pre-accumulated credits, charged at a per-hour rate.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Storage account soft delete for containers behavior?",
+    "options": ["Only blobs inside the container are soft-deleted", "The container and all its blobs are soft-deleted together and can be restored within the retention period", "Container soft delete only restores the container structure without blobs", "Soft delete for containers is not supported"],
+    "answer": "The container and all its blobs are soft-deleted together and can be restored within the retention period",
+    "explanation": "Container soft delete retains the deleted container and all its blobs for the configured retention period (1–365 days), allowing full recovery of accidentally deleted containers.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the difference between Azure Files SMB multichannel and standard SMB?",
+    "options": ["SMB multichannel uses UDP instead of TCP", "SMB multichannel allows a single SMB session to use multiple network connections simultaneously for higher throughput and fault tolerance", "Standard SMB supports encryption; multichannel does not", "Multichannel SMB is only for NFS shares"],
+    "answer": "SMB multichannel allows a single SMB session to use multiple network connections simultaneously for higher throughput and fault tolerance",
+    "explanation": "SMB multichannel enables Azure Files Premium shares to aggregate bandwidth across multiple network paths, significantly increasing throughput and providing connection fault tolerance.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Blob Storage tiering limitation for accounts with hierarchical namespace (ADLS Gen2)?",
+    "options": ["All tiers are fully supported with hierarchical namespace", "Archive tier is not supported with hierarchical namespace enabled; only Hot and Cool are available", "Hierarchical namespace only supports Hot tier", "Cool tier is not available for hierarchical namespace accounts"],
+    "answer": "Archive tier is not supported with hierarchical namespace enabled; only Hot and Cool are available",
+    "explanation": "Azure Data Lake Storage Gen2 (hierarchical namespace enabled) does not support the Archive access tier. Tiering in ADLS Gen2 is limited to Hot and Cool tiers.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the maximum Azure Queue Storage message visibility timeout?",
+    "options": ["30 seconds", "5 minutes", "7 days", "24 hours"],
+    "answer": "7 days",
+    "explanation": "The visibility timeout for an Azure Queue Storage message can be set up to 7 days (604,800 seconds), during which the message is invisible to other consumers after being read.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is Azure Blob Storage point-in-time restore prerequisite?",
+    "options": ["Only LRS accounts support point-in-time restore", "Blob versioning, blob soft delete, and change feed must all be enabled", "Only Premium storage accounts support point-in-time restore", "Point-in-time restore requires GRS redundancy"],
+    "answer": "Blob versioning, blob soft delete, and change feed must all be enabled",
+    "explanation": "Azure Blob Storage point-in-time restore requires blob versioning, blob soft delete, and change feed to all be enabled on the storage account before it can be configured.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the purpose of Azure Storage Mover agent?",
+    "options": ["A cloud agent in Azure managing migration jobs", "An on-premises agent VM that performs the actual data transfer between source and Azure target", "An agent that monitors Azure Storage Mover billing", "A PowerShell agent for automating AzCopy jobs"],
+    "answer": "An on-premises agent VM that performs the actual data transfer between source and Azure target",
+    "explanation": "The Storage Mover agent is a VM deployed on-premises (on Hyper-V or VMware) that connects to the Storage Mover service and performs the actual data transfer from on-premises NFS sources to Azure.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Blob Storage index tag query capability?",
+    "options": ["SQL queries across all blob content", "Filtering and finding blobs across a storage account using tag key-value conditions via the Find Blobs by Tags API", "Querying only blob metadata, not tags", "Index tags can only be queried at container level"],
+    "answer": "Filtering and finding blobs across a storage account using tag key-value conditions via the Find Blobs by Tags API",
+    "explanation": "Blob index tags support a secondary index that enables efficient blob discovery using tag-based queries (e.g., find all blobs where Status='Active') across an entire storage account.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure NetApp Files capacity pool?",
+    "options": ["A shared pool of storage from multiple accounts", "A provisioned block of storage capacity from which ANF volumes are created and billed", "An auto-scaling pool of NFS storage", "A pool of available IP addresses for ANF volumes"],
+    "answer": "A provisioned block of storage capacity from which ANF volumes are created and billed",
+    "explanation": "An Azure NetApp Files capacity pool is a fixed-size (min 4 TiB) provisioned resource with a chosen service level (Standard, Premium, Ultra) from which individual ANF volumes are allocated.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Storage account customer-managed key (CMK) rotation behavior?",
+    "options": ["CMK rotation requires manual re-encryption of all blobs", "Azure Storage automatically re-encrypts data with the new key version when CMK is rotated in Key Vault", "CMK rotation causes data to become temporarily inaccessible", "CMK rotation is not supported; a new storage account must be created"],
+    "answer": "Azure Storage automatically re-encrypts data with the new key version when CMK is rotated in Key Vault",
+    "explanation": "When a CMK is rotated in Azure Key Vault, Azure Storage automatically detects the new key version and re-encrypts the account encryption key with the new CMK version without any data downtime.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Blob Storage concurrent write conflict resolution for page blobs?",
+    "options": ["Last writer wins for all page blob writes", "Page blob writes to non-overlapping byte ranges are atomic and concurrent; overlapping ranges result in undefined behavior", "Page blobs support optimistic concurrency using ETags only", "Page blobs are single-writer only; concurrent writes are rejected"],
+    "answer": "Page blob writes to non-overlapping byte ranges are atomic and concurrent; overlapping ranges result in undefined behavior",
+    "explanation": "Azure Page Blobs allow concurrent writes to non-overlapping byte ranges safely. Writes to overlapping ranges are not serialized and can result in data corruption.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Storage account firewall 'Allow Azure services and resources to access this storage account' setting risk?",
+    "options": ["It has no security risk", "It allows any Azure service in any customer's tenant to access the storage account, not just services in your own tenant", "It only allows Microsoft internal services to access the account", "It requires a managed identity to be configured"],
+    "answer": "It allows any Azure service in any customer's tenant to access the storage account, not just services in your own tenant",
+    "explanation": "The 'Allow trusted Microsoft services' exception bypasses the firewall for Azure services using their service tags, which could include services from other tenants. For stricter security, use resource instance rules or private endpoints.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Blob Storage ETag used for?",
+    "options": ["Encrypting blob transfers", "Implementing optimistic concurrency by representing the current state of a blob; operations can be conditioned on ETag match", "Tracking blob billing usage", "Tagging blobs with an enterprise tag"],
+    "answer": "Implementing optimistic concurrency by representing the current state of a blob; operations can be conditioned on ETag match",
+    "explanation": "The ETag is a unique identifier for the current version of a blob. You can use If-Match or If-None-Match conditions with ETags to implement optimistic concurrency control, preventing lost updates.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Blob Storage cold tier minimum storage duration introduced in 2023?",
+    "options": ["30 days", "60 days", "90 days", "180 days"],
+    "answer": "90 days",
+    "explanation": "The Cold tier introduced in 2023 has a minimum storage duration of 90 days. Early deletion within 90 days incurs a prorated early deletion charge.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Files DFS-N (Distributed File System Namespaces) integration used for?",
+    "options": ["Enabling NFS access to Azure Files", "Providing a unified namespace to transparently redirect clients between Azure file shares and on-premises shares during migration", "Encrypting Azure Files with DFS keys", "Distributing file shares across multiple Azure regions"],
+    "answer": "Providing a unified namespace to transparently redirect clients between Azure file shares and on-premises shares during migration",
+    "explanation": "DFS Namespaces integration allows Azure Files to be placed behind existing DFS namespace paths, enabling transparent cutover from on-premises file servers to Azure Files without changing client paths.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Storage account Resource Instance rule used for?",
+    "options": ["Granting access to a specific Azure resource instance (e.g., a specific Azure Synapse workspace) without allowing all Azure services", "Allowing access from a specific VM instance by IP", "Restricting access to a specific storage container", "Granting access to a specific Azure subscription"],
+    "answer": "Granting access to a specific Azure resource instance (e.g., a specific Azure Synapse workspace) without allowing all Azure services",
+    "explanation": "Resource instance rules allow you to grant firewall exceptions to specific named Azure resource instances (identified by resource ID and tenant ID), providing more granular control than the broad 'Allow trusted services' exception.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Blob Storage maximum number of blocks in a Block Blob?",
+    "options": ["1,000", "10,000", "50,000", "100,000"],
+    "answer": "50,000",
+    "explanation": "A Block Blob can contain a maximum of 50,000 blocks. With a maximum block size of 4,000 MiB, this allows a maximum block blob size of approximately 190.7 TiB.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Premium SSD v2 differentiator from Premium SSD v1 for IOPS provisioning?",
+    "options": ["Premium SSD v2 has fixed IOPS tiers like v1", "Premium SSD v2 allows granular IOPS provisioning in increments of 1 IOPS independently of disk size, unlike v1 which has fixed IOPS per size tier", "Premium SSD v2 only supports higher IOPS with larger disk sizes", "Premium SSD v2 does not support IOPS provisioning"],
+    "answer": "Premium SSD v2 allows granular IOPS provisioning in increments of 1 IOPS independently of disk size, unlike v1 which has fixed IOPS per size tier",
+    "explanation": "Premium SSD v2 allows you to independently configure IOPS in 1-IOPS increments and throughput in 1-MB/s increments, regardless of disk size, providing precise and cost-effective performance tuning.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Blob Storage Copy From URL operation benefit?",
+    "options": ["It is faster than regular copy operations", "It triggers a server-side copy from any accessible URL to Azure Blob Storage without data passing through the client", "It supports copying from on-premises only", "It is used only for copying between Azure regions"],
+    "answer": "It triggers a server-side copy from any accessible URL to Azure Blob Storage without data passing through the client",
+    "explanation": "Put Blob From URL / Copy Blob From URL initiates a server-side copy from any publicly accessible or SAS-authenticated URL, keeping data within Azure's network and not consuming client bandwidth.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Blob Storage immutable storage legal hold state?",
+    "options": ["A time-based retention that cannot be changed", "A tag-based hold that prevents deletion indefinitely regardless of retention period, until explicitly removed", "A hold that requires court approval to remove", "A Microsoft-controlled hold for compliance investigations"],
+    "answer": "A tag-based hold that prevents deletion indefinitely regardless of retention period, until explicitly removed",
+    "explanation": "Legal holds place an indefinite WORM lock on blobs using a tag. Unlike time-based retention, there is no expiry; the hold must be explicitly cleared by an authorized user before the blob can be modified or deleted.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Storage analytics logging version 2.0 capability over version 1.0?",
+    "options": ["Version 2.0 supports only Blob storage; version 1.0 supports all services", "Version 2.0 adds support for logging read operations, which were not available in version 1.0", "Version 2.0 stores logs in a different format incompatible with version 1.0", "Version 2.0 has shorter retention and version 1.0 has longer retention"],
+    "answer": "Version 2.0 adds support for logging read operations, which were not available in version 1.0",
+    "explanation": "Storage Analytics logging version 2.0 extends logging to include read operations in addition to write and delete operations that were available in version 1.0.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Data Box Heavy storage capacity?",
+    "options": ["8 TB", "80 TB", "100 TB", "1 PB"],
+    "answer": "1 PB",
+    "explanation": "Azure Data Box Heavy is a self-managed physical device with approximately 1 PB of usable storage capacity, designed for very large-scale offline data migrations.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the purpose of Azure Blob Storage object replication policy versioning requirement?",
+    "options": ["Versioning tracks replication progress", "Object replication uses versioning to identify and track which object versions have been replicated to the destination", "Versioning is required for billing purposes only", "Versioning enables change feed which drives replication"],
+    "answer": "Object replication uses versioning to identify and track which object versions have been replicated to the destination",
+    "explanation": "Object replication relies on blob versioning to uniquely identify and track each version of a blob, using the change feed to determine which new or modified versions need to be replicated.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Storage account key rotation best practice using Azure Key Vault?",
+    "options": ["Manually rotating keys every 90 days", "Using Key Vault managed storage account keys to automatically rotate storage account access keys on a defined schedule", "Disabling storage account keys and using SAS only", "Using Azure Policy to enforce key rotation"],
+    "answer": "Using Key Vault managed storage account keys to automatically rotate storage account access keys on a defined schedule",
+    "explanation": "Azure Key Vault can manage and automatically rotate Azure Storage account access keys on a configurable schedule, generating SAS tokens from the managed keys for applications.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Blob Storage network rule set default action impact?",
+    "options": ["Default action only applies to blob storage, not files or queues", "If set to Deny, all traffic not matching allow rules (VNet rules, IP rules) is denied, including Azure portal access", "Default Deny only applies to external internet traffic", "Default action cannot be changed after account creation"],
+    "answer": "If set to Deny, all traffic not matching allow rules (VNet rules, IP rules) is denied, including Azure portal access",
+    "explanation": "When the network rule set default action is set to Deny, all access is blocked unless explicitly allowed by VNet rules, IP rules, or resource instance rules. This includes Azure portal access, requiring additional allow rules.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Files Kerberos authentication requirement for on-premises AD DS integration?",
+    "options": ["Azure AD Connect is required", "The storage account must be joined to the on-premises AD DS domain by creating a computer account or service logon account representing the storage account", "Azure AD Kerberos must be enabled in Azure AD", "On-premises AD DS must be running on Azure VMs"],
+    "answer": "The storage account must be joined to the on-premises AD DS domain by creating a computer account or service logon account representing the storage account",
+    "explanation": "For Azure Files AD DS Kerberos authentication, you must register the storage account as an identity in on-premises AD DS (as a computer or service account), enabling Kerberos ticket issuance for SMB access.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Blob Storage batch API capability?",
+    "options": ["Uploading multiple blobs simultaneously", "Executing multiple delete or set tier sub-requests against blobs in a single HTTP request to reduce overhead", "Batching replication rules together", "Creating multiple containers in a single API call"],
+    "answer": "Executing multiple delete or set tier sub-requests against blobs in a single HTTP request to reduce overhead",
+    "explanation": "The Blob Batch API allows up to 256 sub-requests (delete blob or set blob tier operations) to be combined into a single HTTP multipart/mixed request, reducing per-request overhead for bulk operations.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Storage account minimum TLS version enforcement used for?",
+    "options": ["Enforcing TLS only for premium storage accounts", "Requiring all connections to use at least a specified TLS version (e.g., TLS 1.2), rejecting connections using older versions", "Encrypting data at rest using TLS", "Configuring TLS for Azure Files only"],
+    "answer": "Requiring all connections to use at least a specified TLS version (e.g., TLS 1.2), rejecting connections using older versions",
+    "explanation": "Setting a minimum TLS version on a storage account rejects connections from clients using older TLS versions, enforcing security compliance by ensuring all data in transit uses modern encryption.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Data Lake Storage Gen2 super-user concept?",
+    "options": ["A user with all Azure RBAC roles", "A user or service principal with the Storage Blob Data Owner role, which can modify ACLs regardless of existing permissions", "An Azure AD Global Administrator", "A user with Owner role at the subscription level"],
+    "answer": "A user or service principal with the Storage Blob Data Owner role, which can modify ACLs regardless of existing permissions",
+    "explanation": "In ADLS Gen2, the Storage Blob Data Owner role acts as a super-user that can read, write, and modify ACLs on all files and directories, bypassing existing ACL checks.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Blob Storage uncommitted block behavior?",
+    "options": ["Uncommitted blocks are immediately visible to GET requests", "Uncommitted blocks are staged temporarily and automatically deleted after 7 days if not committed", "Uncommitted blocks are billed at double the storage rate", "Uncommitted blocks are immediately replicated to the secondary region"],
+    "answer": "Uncommitted blocks are staged temporarily and automatically deleted after 7 days if not committed",
+    "explanation": "Blocks uploaded via Put Block but not committed via Put Block List are considered uncommitted. Azure automatically deletes uncommitted blocks after 7 days to prevent orphaned storage.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Storage account AllowSharedKeyAccess property used for?",
+    "options": ["Enabling shared access between storage accounts", "Disabling authentication via storage account keys, forcing the use of Azure AD authentication only", "Allowing shared VNet access to storage", "Configuring shared key for encryption purposes"],
+    "answer": "Disabling authentication via storage account keys, forcing the use of Azure AD authentication only",
+    "explanation": "Setting AllowSharedKeyAccess to false prevents any requests authenticated with the storage account key (including SAS tokens derived from the account key), enforcing Azure AD-only authentication.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Blob Storage maximum page blob size?",
+    "options": ["1 TB", "4 TB", "8 TB", "64 TB"],
+    "answer": "8 TB",
+    "explanation": "Azure Page Blobs support a maximum size of 8 TiB (8,191 GiB). They are used as VHD disks for Azure VMs and require 512-byte aligned writes.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the purpose of Azure Blob Storage snapshot promotion?",
+    "options": ["Promoting a snapshot to a higher storage tier", "Overwriting the base blob with the content of a snapshot to revert the blob to a previous state", "Promoting a snapshot to become a version", "Moving a snapshot from one container to another"],
+    "answer": "Overwriting the base blob with the content of a snapshot to revert the blob to a previous state",
+    "explanation": "You can promote a snapshot over its base blob using the Copy Blob operation with the snapshot as the source, effectively reverting the blob to the state captured in the snapshot.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Ultra Disk maximum IOPS as of current specifications?",
+    "options": ["64,000 IOPS", "160,000 IOPS", "400,000 IOPS", "1,000,000 IOPS"],
+    "answer": "400,000 IOPS",
+    "explanation": "Azure Ultra Disk supports up to 400,000 IOPS per disk for the largest disk sizes, making it the highest-performance option for the most demanding database workloads.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  },
+  {
+    "question": "What is the Azure Storage account cross-tenant replication security consideration?",
+    "options": ["Cross-tenant replication is fully secure by default", "Cross-tenant replication must be explicitly allowed on the destination account; organizations can disable it to prevent data exfiltration to other tenants", "Cross-tenant replication requires Microsoft approval", "Cross-tenant replication is only allowed for Government tenants"],
+    "answer": "Cross-tenant replication must be explicitly allowed on the destination account; organizations can disable it to prevent data exfiltration to other tenants",
+    "explanation": "By default, object replication can occur across tenants if enabled. Organizations can set AllowCrossTenantReplication to false to prevent data from being replicated to storage accounts in other Azure AD tenants.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "azure"
+  }
+]
