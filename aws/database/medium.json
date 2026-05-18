@@ -1,1 +1,702 @@
-[]
+[
+    {
+      "question": "In AWS, which service or feature is primarily used for managed relational database workloads?",
+      "options": [
+        "Amazon RDS",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon RDS",
+      "explanation": "Amazon RDS is commonly used in AWS for managed relational database workloads.",
+      "difficulty": "medium",
+      "subcategory": "rds",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for high-performance MySQL/PostgreSQL-compatible databases?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is commonly used in AWS for high-performance MySQL/PostgreSQL-compatible databases.",
+      "difficulty": "medium",
+      "subcategory": "aurora",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for serverless NoSQL key-value storage?",
+      "options": [
+        "Amazon DynamoDB",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon DynamoDB",
+      "explanation": "Amazon DynamoDB is commonly used in AWS for serverless NoSQL key-value storage.",
+      "difficulty": "medium",
+      "subcategory": "dynamodb",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for petabyte-scale analytics and warehousing?",
+      "options": [
+        "Amazon Redshift",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Redshift",
+      "explanation": "Amazon Redshift is commonly used in AWS for petabyte-scale analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "redshift",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for Redis and Memcached caching?",
+      "options": [
+        "Amazon ElastiCache",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon ElastiCache",
+      "explanation": "Amazon ElastiCache is commonly used in AWS for Redis and Memcached caching.",
+      "difficulty": "medium",
+      "subcategory": "elasticache",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for managed relational database workloads?",
+      "options": [
+        "Amazon RDS",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon RDS",
+      "explanation": "Amazon RDS is commonly used in AWS for managed relational database workloads.",
+      "difficulty": "medium",
+      "subcategory": "rds",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for high-performance MySQL/PostgreSQL-compatible databases?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is commonly used in AWS for high-performance MySQL/PostgreSQL-compatible databases.",
+      "difficulty": "medium",
+      "subcategory": "aurora",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for serverless NoSQL key-value storage?",
+      "options": [
+        "Amazon DynamoDB",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon DynamoDB",
+      "explanation": "Amazon DynamoDB is commonly used in AWS for serverless NoSQL key-value storage.",
+      "difficulty": "medium",
+      "subcategory": "dynamodb",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for petabyte-scale analytics and warehousing?",
+      "options": [
+        "Amazon Redshift",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Redshift",
+      "explanation": "Amazon Redshift is commonly used in AWS for petabyte-scale analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "redshift",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for Redis and Memcached caching?",
+      "options": [
+        "Amazon ElastiCache",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon ElastiCache",
+      "explanation": "Amazon ElastiCache is commonly used in AWS for Redis and Memcached caching.",
+      "difficulty": "medium",
+      "subcategory": "elasticache",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for managed relational database workloads?",
+      "options": [
+        "Amazon RDS",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon RDS",
+      "explanation": "Amazon RDS is commonly used in AWS for managed relational database workloads.",
+      "difficulty": "medium",
+      "subcategory": "rds",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for high-performance MySQL/PostgreSQL-compatible databases?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is commonly used in AWS for high-performance MySQL/PostgreSQL-compatible databases.",
+      "difficulty": "medium",
+      "subcategory": "aurora",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for serverless NoSQL key-value storage?",
+      "options": [
+        "Amazon DynamoDB",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon DynamoDB",
+      "explanation": "Amazon DynamoDB is commonly used in AWS for serverless NoSQL key-value storage.",
+      "difficulty": "medium",
+      "subcategory": "dynamodb",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for petabyte-scale analytics and warehousing?",
+      "options": [
+        "Amazon Redshift",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Redshift",
+      "explanation": "Amazon Redshift is commonly used in AWS for petabyte-scale analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "redshift",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for Redis and Memcached caching?",
+      "options": [
+        "Amazon ElastiCache",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon ElastiCache",
+      "explanation": "Amazon ElastiCache is commonly used in AWS for Redis and Memcached caching.",
+      "difficulty": "medium",
+      "subcategory": "elasticache",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for managed relational database workloads?",
+      "options": [
+        "Amazon RDS",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon RDS",
+      "explanation": "Amazon RDS is commonly used in AWS for managed relational database workloads.",
+      "difficulty": "medium",
+      "subcategory": "rds",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for high-performance MySQL/PostgreSQL-compatible databases?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is commonly used in AWS for high-performance MySQL/PostgreSQL-compatible databases.",
+      "difficulty": "medium",
+      "subcategory": "aurora",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for serverless NoSQL key-value storage?",
+      "options": [
+        "Amazon DynamoDB",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon DynamoDB",
+      "explanation": "Amazon DynamoDB is commonly used in AWS for serverless NoSQL key-value storage.",
+      "difficulty": "medium",
+      "subcategory": "dynamodb",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for petabyte-scale analytics and warehousing?",
+      "options": [
+        "Amazon Redshift",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Redshift",
+      "explanation": "Amazon Redshift is commonly used in AWS for petabyte-scale analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "redshift",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for Redis and Memcached caching?",
+      "options": [
+        "Amazon ElastiCache",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon ElastiCache",
+      "explanation": "Amazon ElastiCache is commonly used in AWS for Redis and Memcached caching.",
+      "difficulty": "medium",
+      "subcategory": "elasticache",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for managed relational database workloads?",
+      "options": [
+        "Amazon RDS",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon RDS",
+      "explanation": "Amazon RDS is commonly used in AWS for managed relational database workloads.",
+      "difficulty": "medium",
+      "subcategory": "rds",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for high-performance MySQL/PostgreSQL-compatible databases?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is commonly used in AWS for high-performance MySQL/PostgreSQL-compatible databases.",
+      "difficulty": "medium",
+      "subcategory": "aurora",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for serverless NoSQL key-value storage?",
+      "options": [
+        "Amazon DynamoDB",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon DynamoDB",
+      "explanation": "Amazon DynamoDB is commonly used in AWS for serverless NoSQL key-value storage.",
+      "difficulty": "medium",
+      "subcategory": "dynamodb",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for petabyte-scale analytics and warehousing?",
+      "options": [
+        "Amazon Redshift",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Redshift",
+      "explanation": "Amazon Redshift is commonly used in AWS for petabyte-scale analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "redshift",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for Redis and Memcached caching?",
+      "options": [
+        "Amazon ElastiCache",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon ElastiCache",
+      "explanation": "Amazon ElastiCache is commonly used in AWS for Redis and Memcached caching.",
+      "difficulty": "medium",
+      "subcategory": "elasticache",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for managed relational database workloads?",
+      "options": [
+        "Amazon RDS",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon RDS",
+      "explanation": "Amazon RDS is commonly used in AWS for managed relational database workloads.",
+      "difficulty": "medium",
+      "subcategory": "rds",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for high-performance MySQL/PostgreSQL-compatible databases?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is commonly used in AWS for high-performance MySQL/PostgreSQL-compatible databases.",
+      "difficulty": "medium",
+      "subcategory": "aurora",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for serverless NoSQL key-value storage?",
+      "options": [
+        "Amazon DynamoDB",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon DynamoDB",
+      "explanation": "Amazon DynamoDB is commonly used in AWS for serverless NoSQL key-value storage.",
+      "difficulty": "medium",
+      "subcategory": "dynamodb",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for petabyte-scale analytics and warehousing?",
+      "options": [
+        "Amazon Redshift",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Redshift",
+      "explanation": "Amazon Redshift is commonly used in AWS for petabyte-scale analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "redshift",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for Redis and Memcached caching?",
+      "options": [
+        "Amazon ElastiCache",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon ElastiCache",
+      "explanation": "Amazon ElastiCache is commonly used in AWS for Redis and Memcached caching.",
+      "difficulty": "medium",
+      "subcategory": "elasticache",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for managed relational database workloads?",
+      "options": [
+        "Amazon RDS",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon RDS",
+      "explanation": "Amazon RDS is commonly used in AWS for managed relational database workloads.",
+      "difficulty": "medium",
+      "subcategory": "rds",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for high-performance MySQL/PostgreSQL-compatible databases?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is commonly used in AWS for high-performance MySQL/PostgreSQL-compatible databases.",
+      "difficulty": "medium",
+      "subcategory": "aurora",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for serverless NoSQL key-value storage?",
+      "options": [
+        "Amazon DynamoDB",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon DynamoDB",
+      "explanation": "Amazon DynamoDB is commonly used in AWS for serverless NoSQL key-value storage.",
+      "difficulty": "medium",
+      "subcategory": "dynamodb",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for petabyte-scale analytics and warehousing?",
+      "options": [
+        "Amazon Redshift",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Redshift",
+      "explanation": "Amazon Redshift is commonly used in AWS for petabyte-scale analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "redshift",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for Redis and Memcached caching?",
+      "options": [
+        "Amazon ElastiCache",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon ElastiCache",
+      "explanation": "Amazon ElastiCache is commonly used in AWS for Redis and Memcached caching.",
+      "difficulty": "medium",
+      "subcategory": "elasticache",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for managed relational database workloads?",
+      "options": [
+        "Amazon RDS",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon RDS",
+      "explanation": "Amazon RDS is commonly used in AWS for managed relational database workloads.",
+      "difficulty": "medium",
+      "subcategory": "rds",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for high-performance MySQL/PostgreSQL-compatible databases?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is commonly used in AWS for high-performance MySQL/PostgreSQL-compatible databases.",
+      "difficulty": "medium",
+      "subcategory": "aurora",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for serverless NoSQL key-value storage?",
+      "options": [
+        "Amazon DynamoDB",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon DynamoDB",
+      "explanation": "Amazon DynamoDB is commonly used in AWS for serverless NoSQL key-value storage.",
+      "difficulty": "medium",
+      "subcategory": "dynamodb",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for petabyte-scale analytics and warehousing?",
+      "options": [
+        "Amazon Redshift",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Redshift",
+      "explanation": "Amazon Redshift is commonly used in AWS for petabyte-scale analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "redshift",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for Redis and Memcached caching?",
+      "options": [
+        "Amazon ElastiCache",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon ElastiCache",
+      "explanation": "Amazon ElastiCache is commonly used in AWS for Redis and Memcached caching.",
+      "difficulty": "medium",
+      "subcategory": "elasticache",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for managed relational database workloads?",
+      "options": [
+        "Amazon RDS",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon RDS",
+      "explanation": "Amazon RDS is commonly used in AWS for managed relational database workloads.",
+      "difficulty": "medium",
+      "subcategory": "rds",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for high-performance MySQL/PostgreSQL-compatible databases?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is commonly used in AWS for high-performance MySQL/PostgreSQL-compatible databases.",
+      "difficulty": "medium",
+      "subcategory": "aurora",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for serverless NoSQL key-value storage?",
+      "options": [
+        "Amazon DynamoDB",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon DynamoDB",
+      "explanation": "Amazon DynamoDB is commonly used in AWS for serverless NoSQL key-value storage.",
+      "difficulty": "medium",
+      "subcategory": "dynamodb",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for petabyte-scale analytics and warehousing?",
+      "options": [
+        "Amazon Redshift",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Redshift",
+      "explanation": "Amazon Redshift is commonly used in AWS for petabyte-scale analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "redshift",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for Redis and Memcached caching?",
+      "options": [
+        "Amazon ElastiCache",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon ElastiCache",
+      "explanation": "Amazon ElastiCache is commonly used in AWS for Redis and Memcached caching.",
+      "difficulty": "medium",
+      "subcategory": "elasticache",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for managed relational database workloads?",
+      "options": [
+        "Amazon RDS",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon RDS",
+      "explanation": "Amazon RDS is commonly used in AWS for managed relational database workloads.",
+      "difficulty": "medium",
+      "subcategory": "rds",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for high-performance MySQL/PostgreSQL-compatible databases?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is commonly used in AWS for high-performance MySQL/PostgreSQL-compatible databases.",
+      "difficulty": "medium",
+      "subcategory": "aurora",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for serverless NoSQL key-value storage?",
+      "options": [
+        "Amazon DynamoDB",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon DynamoDB",
+      "explanation": "Amazon DynamoDB is commonly used in AWS for serverless NoSQL key-value storage.",
+      "difficulty": "medium",
+      "subcategory": "dynamodb",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for petabyte-scale analytics and warehousing?",
+      "options": [
+        "Amazon Redshift",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Redshift",
+      "explanation": "Amazon Redshift is commonly used in AWS for petabyte-scale analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "redshift",
+      "category": "aws"
+    },
+    {
+      "question": "In AWS, which service or feature is primarily used for Redis and Memcached caching?",
+      "options": [
+        "Amazon ElastiCache",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon ElastiCache",
+      "explanation": "Amazon ElastiCache is commonly used in AWS for Redis and Memcached caching.",
+      "difficulty": "medium",
+      "subcategory": "elasticache",
+      "category": "aws"
+    }
+  ]

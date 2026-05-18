@@ -1,1 +1,702 @@
-[]
+[
+    {
+      "question": "Which AWS database service supports globally distributed relational databases with MySQL and PostgreSQL compatibility? (1)",
+      "options": [
+        "Amazon Aurora Global Database",
+        "Amazon DynamoDB",
+        "Amazon Neptune",
+        "Amazon ElastiCache"
+      ],
+      "answer": "Amazon Aurora Global Database",
+      "explanation": "Amazon Aurora Global Database is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "global-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides a managed ledger database with immutable transaction logs? (2)",
+      "options": [
+        "Amazon QLDB",
+        "Amazon RDS",
+        "Amazon Redshift",
+        "Amazon Athena"
+      ],
+      "answer": "Amazon QLDB",
+      "explanation": "Amazon QLDB is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "ledger-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is best suited for graph database workloads such as fraud detection? (3)",
+      "options": [
+        "Amazon Neptune",
+        "Amazon DynamoDB",
+        "Amazon Aurora",
+        "Amazon Keyspaces"
+      ],
+      "answer": "Amazon Neptune",
+      "explanation": "Amazon Neptune is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "graph-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service offers Cassandra-compatible managed NoSQL database functionality? (4)",
+      "options": [
+        "Amazon Keyspaces",
+        "Amazon ElastiCache",
+        "Amazon Timestream",
+        "Amazon Redshift"
+      ],
+      "answer": "Amazon Keyspaces",
+      "explanation": "Amazon Keyspaces is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "nosql-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database service is specifically optimized for time-series data? (5)",
+      "options": [
+        "Amazon Timestream",
+        "Amazon DocumentDB",
+        "Amazon Neptune",
+        "Amazon QLDB"
+      ],
+      "answer": "Amazon Timestream",
+      "explanation": "Amazon Timestream is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "time-series-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database service supports globally distributed relational databases with MySQL and PostgreSQL compatibility? (6)",
+      "options": [
+        "Amazon Aurora Global Database",
+        "Amazon DynamoDB",
+        "Amazon Neptune",
+        "Amazon ElastiCache"
+      ],
+      "answer": "Amazon Aurora Global Database",
+      "explanation": "Amazon Aurora Global Database is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "global-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides a managed ledger database with immutable transaction logs? (7)",
+      "options": [
+        "Amazon QLDB",
+        "Amazon RDS",
+        "Amazon Redshift",
+        "Amazon Athena"
+      ],
+      "answer": "Amazon QLDB",
+      "explanation": "Amazon QLDB is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "ledger-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is best suited for graph database workloads such as fraud detection? (8)",
+      "options": [
+        "Amazon Neptune",
+        "Amazon DynamoDB",
+        "Amazon Aurora",
+        "Amazon Keyspaces"
+      ],
+      "answer": "Amazon Neptune",
+      "explanation": "Amazon Neptune is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "graph-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service offers Cassandra-compatible managed NoSQL database functionality? (9)",
+      "options": [
+        "Amazon Keyspaces",
+        "Amazon ElastiCache",
+        "Amazon Timestream",
+        "Amazon Redshift"
+      ],
+      "answer": "Amazon Keyspaces",
+      "explanation": "Amazon Keyspaces is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "nosql-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database service is specifically optimized for time-series data? (10)",
+      "options": [
+        "Amazon Timestream",
+        "Amazon DocumentDB",
+        "Amazon Neptune",
+        "Amazon QLDB"
+      ],
+      "answer": "Amazon Timestream",
+      "explanation": "Amazon Timestream is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "time-series-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database service supports globally distributed relational databases with MySQL and PostgreSQL compatibility? (11)",
+      "options": [
+        "Amazon Aurora Global Database",
+        "Amazon DynamoDB",
+        "Amazon Neptune",
+        "Amazon ElastiCache"
+      ],
+      "answer": "Amazon Aurora Global Database",
+      "explanation": "Amazon Aurora Global Database is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "global-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides a managed ledger database with immutable transaction logs? (12)",
+      "options": [
+        "Amazon QLDB",
+        "Amazon RDS",
+        "Amazon Redshift",
+        "Amazon Athena"
+      ],
+      "answer": "Amazon QLDB",
+      "explanation": "Amazon QLDB is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "ledger-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is best suited for graph database workloads such as fraud detection? (13)",
+      "options": [
+        "Amazon Neptune",
+        "Amazon DynamoDB",
+        "Amazon Aurora",
+        "Amazon Keyspaces"
+      ],
+      "answer": "Amazon Neptune",
+      "explanation": "Amazon Neptune is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "graph-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service offers Cassandra-compatible managed NoSQL database functionality? (14)",
+      "options": [
+        "Amazon Keyspaces",
+        "Amazon ElastiCache",
+        "Amazon Timestream",
+        "Amazon Redshift"
+      ],
+      "answer": "Amazon Keyspaces",
+      "explanation": "Amazon Keyspaces is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "nosql-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database service is specifically optimized for time-series data? (15)",
+      "options": [
+        "Amazon Timestream",
+        "Amazon DocumentDB",
+        "Amazon Neptune",
+        "Amazon QLDB"
+      ],
+      "answer": "Amazon Timestream",
+      "explanation": "Amazon Timestream is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "time-series-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database service supports globally distributed relational databases with MySQL and PostgreSQL compatibility? (16)",
+      "options": [
+        "Amazon Aurora Global Database",
+        "Amazon DynamoDB",
+        "Amazon Neptune",
+        "Amazon ElastiCache"
+      ],
+      "answer": "Amazon Aurora Global Database",
+      "explanation": "Amazon Aurora Global Database is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "global-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides a managed ledger database with immutable transaction logs? (17)",
+      "options": [
+        "Amazon QLDB",
+        "Amazon RDS",
+        "Amazon Redshift",
+        "Amazon Athena"
+      ],
+      "answer": "Amazon QLDB",
+      "explanation": "Amazon QLDB is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "ledger-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is best suited for graph database workloads such as fraud detection? (18)",
+      "options": [
+        "Amazon Neptune",
+        "Amazon DynamoDB",
+        "Amazon Aurora",
+        "Amazon Keyspaces"
+      ],
+      "answer": "Amazon Neptune",
+      "explanation": "Amazon Neptune is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "graph-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service offers Cassandra-compatible managed NoSQL database functionality? (19)",
+      "options": [
+        "Amazon Keyspaces",
+        "Amazon ElastiCache",
+        "Amazon Timestream",
+        "Amazon Redshift"
+      ],
+      "answer": "Amazon Keyspaces",
+      "explanation": "Amazon Keyspaces is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "nosql-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database service is specifically optimized for time-series data? (20)",
+      "options": [
+        "Amazon Timestream",
+        "Amazon DocumentDB",
+        "Amazon Neptune",
+        "Amazon QLDB"
+      ],
+      "answer": "Amazon Timestream",
+      "explanation": "Amazon Timestream is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "time-series-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database service supports globally distributed relational databases with MySQL and PostgreSQL compatibility? (21)",
+      "options": [
+        "Amazon Aurora Global Database",
+        "Amazon DynamoDB",
+        "Amazon Neptune",
+        "Amazon ElastiCache"
+      ],
+      "answer": "Amazon Aurora Global Database",
+      "explanation": "Amazon Aurora Global Database is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "global-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides a managed ledger database with immutable transaction logs? (22)",
+      "options": [
+        "Amazon QLDB",
+        "Amazon RDS",
+        "Amazon Redshift",
+        "Amazon Athena"
+      ],
+      "answer": "Amazon QLDB",
+      "explanation": "Amazon QLDB is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "ledger-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is best suited for graph database workloads such as fraud detection? (23)",
+      "options": [
+        "Amazon Neptune",
+        "Amazon DynamoDB",
+        "Amazon Aurora",
+        "Amazon Keyspaces"
+      ],
+      "answer": "Amazon Neptune",
+      "explanation": "Amazon Neptune is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "graph-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service offers Cassandra-compatible managed NoSQL database functionality? (24)",
+      "options": [
+        "Amazon Keyspaces",
+        "Amazon ElastiCache",
+        "Amazon Timestream",
+        "Amazon Redshift"
+      ],
+      "answer": "Amazon Keyspaces",
+      "explanation": "Amazon Keyspaces is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "nosql-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database service is specifically optimized for time-series data? (25)",
+      "options": [
+        "Amazon Timestream",
+        "Amazon DocumentDB",
+        "Amazon Neptune",
+        "Amazon QLDB"
+      ],
+      "answer": "Amazon Timestream",
+      "explanation": "Amazon Timestream is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "time-series-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database service supports globally distributed relational databases with MySQL and PostgreSQL compatibility? (26)",
+      "options": [
+        "Amazon Aurora Global Database",
+        "Amazon DynamoDB",
+        "Amazon Neptune",
+        "Amazon ElastiCache"
+      ],
+      "answer": "Amazon Aurora Global Database",
+      "explanation": "Amazon Aurora Global Database is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "global-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides a managed ledger database with immutable transaction logs? (27)",
+      "options": [
+        "Amazon QLDB",
+        "Amazon RDS",
+        "Amazon Redshift",
+        "Amazon Athena"
+      ],
+      "answer": "Amazon QLDB",
+      "explanation": "Amazon QLDB is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "ledger-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is best suited for graph database workloads such as fraud detection? (28)",
+      "options": [
+        "Amazon Neptune",
+        "Amazon DynamoDB",
+        "Amazon Aurora",
+        "Amazon Keyspaces"
+      ],
+      "answer": "Amazon Neptune",
+      "explanation": "Amazon Neptune is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "graph-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service offers Cassandra-compatible managed NoSQL database functionality? (29)",
+      "options": [
+        "Amazon Keyspaces",
+        "Amazon ElastiCache",
+        "Amazon Timestream",
+        "Amazon Redshift"
+      ],
+      "answer": "Amazon Keyspaces",
+      "explanation": "Amazon Keyspaces is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "nosql-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database service is specifically optimized for time-series data? (30)",
+      "options": [
+        "Amazon Timestream",
+        "Amazon DocumentDB",
+        "Amazon Neptune",
+        "Amazon QLDB"
+      ],
+      "answer": "Amazon Timestream",
+      "explanation": "Amazon Timestream is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "time-series-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database service supports globally distributed relational databases with MySQL and PostgreSQL compatibility? (31)",
+      "options": [
+        "Amazon Aurora Global Database",
+        "Amazon DynamoDB",
+        "Amazon Neptune",
+        "Amazon ElastiCache"
+      ],
+      "answer": "Amazon Aurora Global Database",
+      "explanation": "Amazon Aurora Global Database is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "global-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides a managed ledger database with immutable transaction logs? (32)",
+      "options": [
+        "Amazon QLDB",
+        "Amazon RDS",
+        "Amazon Redshift",
+        "Amazon Athena"
+      ],
+      "answer": "Amazon QLDB",
+      "explanation": "Amazon QLDB is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "ledger-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is best suited for graph database workloads such as fraud detection? (33)",
+      "options": [
+        "Amazon Neptune",
+        "Amazon DynamoDB",
+        "Amazon Aurora",
+        "Amazon Keyspaces"
+      ],
+      "answer": "Amazon Neptune",
+      "explanation": "Amazon Neptune is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "graph-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service offers Cassandra-compatible managed NoSQL database functionality? (34)",
+      "options": [
+        "Amazon Keyspaces",
+        "Amazon ElastiCache",
+        "Amazon Timestream",
+        "Amazon Redshift"
+      ],
+      "answer": "Amazon Keyspaces",
+      "explanation": "Amazon Keyspaces is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "nosql-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database service is specifically optimized for time-series data? (35)",
+      "options": [
+        "Amazon Timestream",
+        "Amazon DocumentDB",
+        "Amazon Neptune",
+        "Amazon QLDB"
+      ],
+      "answer": "Amazon Timestream",
+      "explanation": "Amazon Timestream is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "time-series-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database service supports globally distributed relational databases with MySQL and PostgreSQL compatibility? (36)",
+      "options": [
+        "Amazon Aurora Global Database",
+        "Amazon DynamoDB",
+        "Amazon Neptune",
+        "Amazon ElastiCache"
+      ],
+      "answer": "Amazon Aurora Global Database",
+      "explanation": "Amazon Aurora Global Database is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "global-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides a managed ledger database with immutable transaction logs? (37)",
+      "options": [
+        "Amazon QLDB",
+        "Amazon RDS",
+        "Amazon Redshift",
+        "Amazon Athena"
+      ],
+      "answer": "Amazon QLDB",
+      "explanation": "Amazon QLDB is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "ledger-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is best suited for graph database workloads such as fraud detection? (38)",
+      "options": [
+        "Amazon Neptune",
+        "Amazon DynamoDB",
+        "Amazon Aurora",
+        "Amazon Keyspaces"
+      ],
+      "answer": "Amazon Neptune",
+      "explanation": "Amazon Neptune is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "graph-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service offers Cassandra-compatible managed NoSQL database functionality? (39)",
+      "options": [
+        "Amazon Keyspaces",
+        "Amazon ElastiCache",
+        "Amazon Timestream",
+        "Amazon Redshift"
+      ],
+      "answer": "Amazon Keyspaces",
+      "explanation": "Amazon Keyspaces is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "nosql-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database service is specifically optimized for time-series data? (40)",
+      "options": [
+        "Amazon Timestream",
+        "Amazon DocumentDB",
+        "Amazon Neptune",
+        "Amazon QLDB"
+      ],
+      "answer": "Amazon Timestream",
+      "explanation": "Amazon Timestream is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "time-series-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database service supports globally distributed relational databases with MySQL and PostgreSQL compatibility? (41)",
+      "options": [
+        "Amazon Aurora Global Database",
+        "Amazon DynamoDB",
+        "Amazon Neptune",
+        "Amazon ElastiCache"
+      ],
+      "answer": "Amazon Aurora Global Database",
+      "explanation": "Amazon Aurora Global Database is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "global-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides a managed ledger database with immutable transaction logs? (42)",
+      "options": [
+        "Amazon QLDB",
+        "Amazon RDS",
+        "Amazon Redshift",
+        "Amazon Athena"
+      ],
+      "answer": "Amazon QLDB",
+      "explanation": "Amazon QLDB is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "ledger-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is best suited for graph database workloads such as fraud detection? (43)",
+      "options": [
+        "Amazon Neptune",
+        "Amazon DynamoDB",
+        "Amazon Aurora",
+        "Amazon Keyspaces"
+      ],
+      "answer": "Amazon Neptune",
+      "explanation": "Amazon Neptune is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "graph-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service offers Cassandra-compatible managed NoSQL database functionality? (44)",
+      "options": [
+        "Amazon Keyspaces",
+        "Amazon ElastiCache",
+        "Amazon Timestream",
+        "Amazon Redshift"
+      ],
+      "answer": "Amazon Keyspaces",
+      "explanation": "Amazon Keyspaces is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "nosql-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database service is specifically optimized for time-series data? (45)",
+      "options": [
+        "Amazon Timestream",
+        "Amazon DocumentDB",
+        "Amazon Neptune",
+        "Amazon QLDB"
+      ],
+      "answer": "Amazon Timestream",
+      "explanation": "Amazon Timestream is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "time-series-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database service supports globally distributed relational databases with MySQL and PostgreSQL compatibility? (46)",
+      "options": [
+        "Amazon Aurora Global Database",
+        "Amazon DynamoDB",
+        "Amazon Neptune",
+        "Amazon ElastiCache"
+      ],
+      "answer": "Amazon Aurora Global Database",
+      "explanation": "Amazon Aurora Global Database is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "global-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides a managed ledger database with immutable transaction logs? (47)",
+      "options": [
+        "Amazon QLDB",
+        "Amazon RDS",
+        "Amazon Redshift",
+        "Amazon Athena"
+      ],
+      "answer": "Amazon QLDB",
+      "explanation": "Amazon QLDB is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "ledger-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service is best suited for graph database workloads such as fraud detection? (48)",
+      "options": [
+        "Amazon Neptune",
+        "Amazon DynamoDB",
+        "Amazon Aurora",
+        "Amazon Keyspaces"
+      ],
+      "answer": "Amazon Neptune",
+      "explanation": "Amazon Neptune is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "graph-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service offers Cassandra-compatible managed NoSQL database functionality? (49)",
+      "options": [
+        "Amazon Keyspaces",
+        "Amazon ElastiCache",
+        "Amazon Timestream",
+        "Amazon Redshift"
+      ],
+      "answer": "Amazon Keyspaces",
+      "explanation": "Amazon Keyspaces is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "nosql-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database service is specifically optimized for time-series data? (50)",
+      "options": [
+        "Amazon Timestream",
+        "Amazon DocumentDB",
+        "Amazon Neptune",
+        "Amazon QLDB"
+      ],
+      "answer": "Amazon Timestream",
+      "explanation": "Amazon Timestream is an advanced database-related service or feature in AWS.",
+      "difficulty": "hard",
+      "subcategory": "time-series-database",
+      "category": "aws"
+    }
+  ]

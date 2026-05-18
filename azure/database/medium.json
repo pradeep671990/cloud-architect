@@ -1,1 +1,702 @@
-[]
+[
+    {
+      "question": "In AZURE, which service or feature is primarily used for managed SQL Server workloads?",
+      "options": [
+        "Azure SQL Database",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure SQL Database",
+      "explanation": "Azure SQL Database is commonly used in AZURE for managed SQL Server workloads.",
+      "difficulty": "medium",
+      "subcategory": "azure-sql",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for globally distributed NoSQL applications?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is commonly used in AZURE for globally distributed NoSQL applications.",
+      "difficulty": "medium",
+      "subcategory": "cosmos-db",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for distributed in-memory caching?",
+      "options": [
+        "Azure Cache for Redis",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Cache for Redis",
+      "explanation": "Azure Cache for Redis is commonly used in AZURE for distributed in-memory caching.",
+      "difficulty": "medium",
+      "subcategory": "redis",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for enterprise analytics and warehousing?",
+      "options": [
+        "Azure Synapse Analytics",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Synapse Analytics",
+      "explanation": "Azure Synapse Analytics is commonly used in AZURE for enterprise analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "synapse",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for managed PostgreSQL hosting?",
+      "options": [
+        "Azure Database for PostgreSQL",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Database for PostgreSQL",
+      "explanation": "Azure Database for PostgreSQL is commonly used in AZURE for managed PostgreSQL hosting.",
+      "difficulty": "medium",
+      "subcategory": "postgresql",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for managed SQL Server workloads?",
+      "options": [
+        "Azure SQL Database",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure SQL Database",
+      "explanation": "Azure SQL Database is commonly used in AZURE for managed SQL Server workloads.",
+      "difficulty": "medium",
+      "subcategory": "azure-sql",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for globally distributed NoSQL applications?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is commonly used in AZURE for globally distributed NoSQL applications.",
+      "difficulty": "medium",
+      "subcategory": "cosmos-db",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for distributed in-memory caching?",
+      "options": [
+        "Azure Cache for Redis",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Cache for Redis",
+      "explanation": "Azure Cache for Redis is commonly used in AZURE for distributed in-memory caching.",
+      "difficulty": "medium",
+      "subcategory": "redis",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for enterprise analytics and warehousing?",
+      "options": [
+        "Azure Synapse Analytics",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Synapse Analytics",
+      "explanation": "Azure Synapse Analytics is commonly used in AZURE for enterprise analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "synapse",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for managed PostgreSQL hosting?",
+      "options": [
+        "Azure Database for PostgreSQL",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Database for PostgreSQL",
+      "explanation": "Azure Database for PostgreSQL is commonly used in AZURE for managed PostgreSQL hosting.",
+      "difficulty": "medium",
+      "subcategory": "postgresql",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for managed SQL Server workloads?",
+      "options": [
+        "Azure SQL Database",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure SQL Database",
+      "explanation": "Azure SQL Database is commonly used in AZURE for managed SQL Server workloads.",
+      "difficulty": "medium",
+      "subcategory": "azure-sql",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for globally distributed NoSQL applications?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is commonly used in AZURE for globally distributed NoSQL applications.",
+      "difficulty": "medium",
+      "subcategory": "cosmos-db",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for distributed in-memory caching?",
+      "options": [
+        "Azure Cache for Redis",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Cache for Redis",
+      "explanation": "Azure Cache for Redis is commonly used in AZURE for distributed in-memory caching.",
+      "difficulty": "medium",
+      "subcategory": "redis",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for enterprise analytics and warehousing?",
+      "options": [
+        "Azure Synapse Analytics",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Synapse Analytics",
+      "explanation": "Azure Synapse Analytics is commonly used in AZURE for enterprise analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "synapse",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for managed PostgreSQL hosting?",
+      "options": [
+        "Azure Database for PostgreSQL",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Database for PostgreSQL",
+      "explanation": "Azure Database for PostgreSQL is commonly used in AZURE for managed PostgreSQL hosting.",
+      "difficulty": "medium",
+      "subcategory": "postgresql",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for managed SQL Server workloads?",
+      "options": [
+        "Azure SQL Database",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure SQL Database",
+      "explanation": "Azure SQL Database is commonly used in AZURE for managed SQL Server workloads.",
+      "difficulty": "medium",
+      "subcategory": "azure-sql",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for globally distributed NoSQL applications?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is commonly used in AZURE for globally distributed NoSQL applications.",
+      "difficulty": "medium",
+      "subcategory": "cosmos-db",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for distributed in-memory caching?",
+      "options": [
+        "Azure Cache for Redis",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Cache for Redis",
+      "explanation": "Azure Cache for Redis is commonly used in AZURE for distributed in-memory caching.",
+      "difficulty": "medium",
+      "subcategory": "redis",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for enterprise analytics and warehousing?",
+      "options": [
+        "Azure Synapse Analytics",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Synapse Analytics",
+      "explanation": "Azure Synapse Analytics is commonly used in AZURE for enterprise analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "synapse",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for managed PostgreSQL hosting?",
+      "options": [
+        "Azure Database for PostgreSQL",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Database for PostgreSQL",
+      "explanation": "Azure Database for PostgreSQL is commonly used in AZURE for managed PostgreSQL hosting.",
+      "difficulty": "medium",
+      "subcategory": "postgresql",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for managed SQL Server workloads?",
+      "options": [
+        "Azure SQL Database",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure SQL Database",
+      "explanation": "Azure SQL Database is commonly used in AZURE for managed SQL Server workloads.",
+      "difficulty": "medium",
+      "subcategory": "azure-sql",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for globally distributed NoSQL applications?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is commonly used in AZURE for globally distributed NoSQL applications.",
+      "difficulty": "medium",
+      "subcategory": "cosmos-db",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for distributed in-memory caching?",
+      "options": [
+        "Azure Cache for Redis",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Cache for Redis",
+      "explanation": "Azure Cache for Redis is commonly used in AZURE for distributed in-memory caching.",
+      "difficulty": "medium",
+      "subcategory": "redis",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for enterprise analytics and warehousing?",
+      "options": [
+        "Azure Synapse Analytics",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Synapse Analytics",
+      "explanation": "Azure Synapse Analytics is commonly used in AZURE for enterprise analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "synapse",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for managed PostgreSQL hosting?",
+      "options": [
+        "Azure Database for PostgreSQL",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Database for PostgreSQL",
+      "explanation": "Azure Database for PostgreSQL is commonly used in AZURE for managed PostgreSQL hosting.",
+      "difficulty": "medium",
+      "subcategory": "postgresql",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for managed SQL Server workloads?",
+      "options": [
+        "Azure SQL Database",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure SQL Database",
+      "explanation": "Azure SQL Database is commonly used in AZURE for managed SQL Server workloads.",
+      "difficulty": "medium",
+      "subcategory": "azure-sql",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for globally distributed NoSQL applications?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is commonly used in AZURE for globally distributed NoSQL applications.",
+      "difficulty": "medium",
+      "subcategory": "cosmos-db",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for distributed in-memory caching?",
+      "options": [
+        "Azure Cache for Redis",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Cache for Redis",
+      "explanation": "Azure Cache for Redis is commonly used in AZURE for distributed in-memory caching.",
+      "difficulty": "medium",
+      "subcategory": "redis",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for enterprise analytics and warehousing?",
+      "options": [
+        "Azure Synapse Analytics",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Synapse Analytics",
+      "explanation": "Azure Synapse Analytics is commonly used in AZURE for enterprise analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "synapse",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for managed PostgreSQL hosting?",
+      "options": [
+        "Azure Database for PostgreSQL",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Database for PostgreSQL",
+      "explanation": "Azure Database for PostgreSQL is commonly used in AZURE for managed PostgreSQL hosting.",
+      "difficulty": "medium",
+      "subcategory": "postgresql",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for managed SQL Server workloads?",
+      "options": [
+        "Azure SQL Database",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure SQL Database",
+      "explanation": "Azure SQL Database is commonly used in AZURE for managed SQL Server workloads.",
+      "difficulty": "medium",
+      "subcategory": "azure-sql",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for globally distributed NoSQL applications?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is commonly used in AZURE for globally distributed NoSQL applications.",
+      "difficulty": "medium",
+      "subcategory": "cosmos-db",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for distributed in-memory caching?",
+      "options": [
+        "Azure Cache for Redis",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Cache for Redis",
+      "explanation": "Azure Cache for Redis is commonly used in AZURE for distributed in-memory caching.",
+      "difficulty": "medium",
+      "subcategory": "redis",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for enterprise analytics and warehousing?",
+      "options": [
+        "Azure Synapse Analytics",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Synapse Analytics",
+      "explanation": "Azure Synapse Analytics is commonly used in AZURE for enterprise analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "synapse",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for managed PostgreSQL hosting?",
+      "options": [
+        "Azure Database for PostgreSQL",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Database for PostgreSQL",
+      "explanation": "Azure Database for PostgreSQL is commonly used in AZURE for managed PostgreSQL hosting.",
+      "difficulty": "medium",
+      "subcategory": "postgresql",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for managed SQL Server workloads?",
+      "options": [
+        "Azure SQL Database",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure SQL Database",
+      "explanation": "Azure SQL Database is commonly used in AZURE for managed SQL Server workloads.",
+      "difficulty": "medium",
+      "subcategory": "azure-sql",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for globally distributed NoSQL applications?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is commonly used in AZURE for globally distributed NoSQL applications.",
+      "difficulty": "medium",
+      "subcategory": "cosmos-db",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for distributed in-memory caching?",
+      "options": [
+        "Azure Cache for Redis",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Cache for Redis",
+      "explanation": "Azure Cache for Redis is commonly used in AZURE for distributed in-memory caching.",
+      "difficulty": "medium",
+      "subcategory": "redis",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for enterprise analytics and warehousing?",
+      "options": [
+        "Azure Synapse Analytics",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Synapse Analytics",
+      "explanation": "Azure Synapse Analytics is commonly used in AZURE for enterprise analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "synapse",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for managed PostgreSQL hosting?",
+      "options": [
+        "Azure Database for PostgreSQL",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Database for PostgreSQL",
+      "explanation": "Azure Database for PostgreSQL is commonly used in AZURE for managed PostgreSQL hosting.",
+      "difficulty": "medium",
+      "subcategory": "postgresql",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for managed SQL Server workloads?",
+      "options": [
+        "Azure SQL Database",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure SQL Database",
+      "explanation": "Azure SQL Database is commonly used in AZURE for managed SQL Server workloads.",
+      "difficulty": "medium",
+      "subcategory": "azure-sql",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for globally distributed NoSQL applications?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is commonly used in AZURE for globally distributed NoSQL applications.",
+      "difficulty": "medium",
+      "subcategory": "cosmos-db",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for distributed in-memory caching?",
+      "options": [
+        "Azure Cache for Redis",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Cache for Redis",
+      "explanation": "Azure Cache for Redis is commonly used in AZURE for distributed in-memory caching.",
+      "difficulty": "medium",
+      "subcategory": "redis",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for enterprise analytics and warehousing?",
+      "options": [
+        "Azure Synapse Analytics",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Synapse Analytics",
+      "explanation": "Azure Synapse Analytics is commonly used in AZURE for enterprise analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "synapse",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for managed PostgreSQL hosting?",
+      "options": [
+        "Azure Database for PostgreSQL",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Database for PostgreSQL",
+      "explanation": "Azure Database for PostgreSQL is commonly used in AZURE for managed PostgreSQL hosting.",
+      "difficulty": "medium",
+      "subcategory": "postgresql",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for managed SQL Server workloads?",
+      "options": [
+        "Azure SQL Database",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure SQL Database",
+      "explanation": "Azure SQL Database is commonly used in AZURE for managed SQL Server workloads.",
+      "difficulty": "medium",
+      "subcategory": "azure-sql",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for globally distributed NoSQL applications?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is commonly used in AZURE for globally distributed NoSQL applications.",
+      "difficulty": "medium",
+      "subcategory": "cosmos-db",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for distributed in-memory caching?",
+      "options": [
+        "Azure Cache for Redis",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Cache for Redis",
+      "explanation": "Azure Cache for Redis is commonly used in AZURE for distributed in-memory caching.",
+      "difficulty": "medium",
+      "subcategory": "redis",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for enterprise analytics and warehousing?",
+      "options": [
+        "Azure Synapse Analytics",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Synapse Analytics",
+      "explanation": "Azure Synapse Analytics is commonly used in AZURE for enterprise analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "synapse",
+      "category": "azure"
+    },
+    {
+      "question": "In AZURE, which service or feature is primarily used for managed PostgreSQL hosting?",
+      "options": [
+        "Azure Database for PostgreSQL",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Functions"
+      ],
+      "answer": "Azure Database for PostgreSQL",
+      "explanation": "Azure Database for PostgreSQL is commonly used in AZURE for managed PostgreSQL hosting.",
+      "difficulty": "medium",
+      "subcategory": "postgresql",
+      "category": "azure"
+    }
+  ]

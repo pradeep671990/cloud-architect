@@ -1,1 +1,702 @@
-[]
+[
+    {
+      "question": "Which GCP database service provides globally distributed strongly consistent SQL databases? (1)",
+      "options": [
+        "Cloud Spanner",
+        "Cloud SQL",
+        "Firestore",
+        "Bigtable"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database service is optimized for low-latency NoSQL wide-column workloads? (2)",
+      "options": [
+        "Bigtable",
+        "BigQuery",
+        "Cloud SQL",
+        "Firestore"
+      ],
+      "answer": "Bigtable",
+      "explanation": "Bigtable is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "nosql-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides serverless petabyte-scale analytics? (3)",
+      "options": [
+        "BigQuery",
+        "Cloud SQL",
+        "Cloud Spanner",
+        "Memorystore"
+      ],
+      "answer": "BigQuery",
+      "explanation": "BigQuery is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "analytics-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service is best suited for real-time mobile/web NoSQL document storage? (4)",
+      "options": [
+        "Firestore",
+        "Cloud SQL",
+        "Bigtable",
+        "Cloud CDN"
+      ],
+      "answer": "Firestore",
+      "explanation": "Firestore is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "document-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides managed Redis and Memcached caching? (5)",
+      "options": [
+        "Memorystore",
+        "Cloud SQL",
+        "Cloud DNS",
+        "Cloud Armor"
+      ],
+      "answer": "Memorystore",
+      "explanation": "Memorystore is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "cache-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database service provides globally distributed strongly consistent SQL databases? (6)",
+      "options": [
+        "Cloud Spanner",
+        "Cloud SQL",
+        "Firestore",
+        "Bigtable"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database service is optimized for low-latency NoSQL wide-column workloads? (7)",
+      "options": [
+        "Bigtable",
+        "BigQuery",
+        "Cloud SQL",
+        "Firestore"
+      ],
+      "answer": "Bigtable",
+      "explanation": "Bigtable is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "nosql-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides serverless petabyte-scale analytics? (8)",
+      "options": [
+        "BigQuery",
+        "Cloud SQL",
+        "Cloud Spanner",
+        "Memorystore"
+      ],
+      "answer": "BigQuery",
+      "explanation": "BigQuery is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "analytics-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service is best suited for real-time mobile/web NoSQL document storage? (9)",
+      "options": [
+        "Firestore",
+        "Cloud SQL",
+        "Bigtable",
+        "Cloud CDN"
+      ],
+      "answer": "Firestore",
+      "explanation": "Firestore is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "document-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides managed Redis and Memcached caching? (10)",
+      "options": [
+        "Memorystore",
+        "Cloud SQL",
+        "Cloud DNS",
+        "Cloud Armor"
+      ],
+      "answer": "Memorystore",
+      "explanation": "Memorystore is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "cache-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database service provides globally distributed strongly consistent SQL databases? (11)",
+      "options": [
+        "Cloud Spanner",
+        "Cloud SQL",
+        "Firestore",
+        "Bigtable"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database service is optimized for low-latency NoSQL wide-column workloads? (12)",
+      "options": [
+        "Bigtable",
+        "BigQuery",
+        "Cloud SQL",
+        "Firestore"
+      ],
+      "answer": "Bigtable",
+      "explanation": "Bigtable is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "nosql-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides serverless petabyte-scale analytics? (13)",
+      "options": [
+        "BigQuery",
+        "Cloud SQL",
+        "Cloud Spanner",
+        "Memorystore"
+      ],
+      "answer": "BigQuery",
+      "explanation": "BigQuery is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "analytics-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service is best suited for real-time mobile/web NoSQL document storage? (14)",
+      "options": [
+        "Firestore",
+        "Cloud SQL",
+        "Bigtable",
+        "Cloud CDN"
+      ],
+      "answer": "Firestore",
+      "explanation": "Firestore is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "document-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides managed Redis and Memcached caching? (15)",
+      "options": [
+        "Memorystore",
+        "Cloud SQL",
+        "Cloud DNS",
+        "Cloud Armor"
+      ],
+      "answer": "Memorystore",
+      "explanation": "Memorystore is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "cache-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database service provides globally distributed strongly consistent SQL databases? (16)",
+      "options": [
+        "Cloud Spanner",
+        "Cloud SQL",
+        "Firestore",
+        "Bigtable"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database service is optimized for low-latency NoSQL wide-column workloads? (17)",
+      "options": [
+        "Bigtable",
+        "BigQuery",
+        "Cloud SQL",
+        "Firestore"
+      ],
+      "answer": "Bigtable",
+      "explanation": "Bigtable is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "nosql-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides serverless petabyte-scale analytics? (18)",
+      "options": [
+        "BigQuery",
+        "Cloud SQL",
+        "Cloud Spanner",
+        "Memorystore"
+      ],
+      "answer": "BigQuery",
+      "explanation": "BigQuery is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "analytics-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service is best suited for real-time mobile/web NoSQL document storage? (19)",
+      "options": [
+        "Firestore",
+        "Cloud SQL",
+        "Bigtable",
+        "Cloud CDN"
+      ],
+      "answer": "Firestore",
+      "explanation": "Firestore is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "document-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides managed Redis and Memcached caching? (20)",
+      "options": [
+        "Memorystore",
+        "Cloud SQL",
+        "Cloud DNS",
+        "Cloud Armor"
+      ],
+      "answer": "Memorystore",
+      "explanation": "Memorystore is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "cache-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database service provides globally distributed strongly consistent SQL databases? (21)",
+      "options": [
+        "Cloud Spanner",
+        "Cloud SQL",
+        "Firestore",
+        "Bigtable"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database service is optimized for low-latency NoSQL wide-column workloads? (22)",
+      "options": [
+        "Bigtable",
+        "BigQuery",
+        "Cloud SQL",
+        "Firestore"
+      ],
+      "answer": "Bigtable",
+      "explanation": "Bigtable is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "nosql-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides serverless petabyte-scale analytics? (23)",
+      "options": [
+        "BigQuery",
+        "Cloud SQL",
+        "Cloud Spanner",
+        "Memorystore"
+      ],
+      "answer": "BigQuery",
+      "explanation": "BigQuery is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "analytics-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service is best suited for real-time mobile/web NoSQL document storage? (24)",
+      "options": [
+        "Firestore",
+        "Cloud SQL",
+        "Bigtable",
+        "Cloud CDN"
+      ],
+      "answer": "Firestore",
+      "explanation": "Firestore is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "document-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides managed Redis and Memcached caching? (25)",
+      "options": [
+        "Memorystore",
+        "Cloud SQL",
+        "Cloud DNS",
+        "Cloud Armor"
+      ],
+      "answer": "Memorystore",
+      "explanation": "Memorystore is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "cache-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database service provides globally distributed strongly consistent SQL databases? (26)",
+      "options": [
+        "Cloud Spanner",
+        "Cloud SQL",
+        "Firestore",
+        "Bigtable"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database service is optimized for low-latency NoSQL wide-column workloads? (27)",
+      "options": [
+        "Bigtable",
+        "BigQuery",
+        "Cloud SQL",
+        "Firestore"
+      ],
+      "answer": "Bigtable",
+      "explanation": "Bigtable is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "nosql-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides serverless petabyte-scale analytics? (28)",
+      "options": [
+        "BigQuery",
+        "Cloud SQL",
+        "Cloud Spanner",
+        "Memorystore"
+      ],
+      "answer": "BigQuery",
+      "explanation": "BigQuery is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "analytics-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service is best suited for real-time mobile/web NoSQL document storage? (29)",
+      "options": [
+        "Firestore",
+        "Cloud SQL",
+        "Bigtable",
+        "Cloud CDN"
+      ],
+      "answer": "Firestore",
+      "explanation": "Firestore is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "document-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides managed Redis and Memcached caching? (30)",
+      "options": [
+        "Memorystore",
+        "Cloud SQL",
+        "Cloud DNS",
+        "Cloud Armor"
+      ],
+      "answer": "Memorystore",
+      "explanation": "Memorystore is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "cache-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database service provides globally distributed strongly consistent SQL databases? (31)",
+      "options": [
+        "Cloud Spanner",
+        "Cloud SQL",
+        "Firestore",
+        "Bigtable"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database service is optimized for low-latency NoSQL wide-column workloads? (32)",
+      "options": [
+        "Bigtable",
+        "BigQuery",
+        "Cloud SQL",
+        "Firestore"
+      ],
+      "answer": "Bigtable",
+      "explanation": "Bigtable is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "nosql-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides serverless petabyte-scale analytics? (33)",
+      "options": [
+        "BigQuery",
+        "Cloud SQL",
+        "Cloud Spanner",
+        "Memorystore"
+      ],
+      "answer": "BigQuery",
+      "explanation": "BigQuery is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "analytics-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service is best suited for real-time mobile/web NoSQL document storage? (34)",
+      "options": [
+        "Firestore",
+        "Cloud SQL",
+        "Bigtable",
+        "Cloud CDN"
+      ],
+      "answer": "Firestore",
+      "explanation": "Firestore is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "document-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides managed Redis and Memcached caching? (35)",
+      "options": [
+        "Memorystore",
+        "Cloud SQL",
+        "Cloud DNS",
+        "Cloud Armor"
+      ],
+      "answer": "Memorystore",
+      "explanation": "Memorystore is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "cache-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database service provides globally distributed strongly consistent SQL databases? (36)",
+      "options": [
+        "Cloud Spanner",
+        "Cloud SQL",
+        "Firestore",
+        "Bigtable"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database service is optimized for low-latency NoSQL wide-column workloads? (37)",
+      "options": [
+        "Bigtable",
+        "BigQuery",
+        "Cloud SQL",
+        "Firestore"
+      ],
+      "answer": "Bigtable",
+      "explanation": "Bigtable is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "nosql-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides serverless petabyte-scale analytics? (38)",
+      "options": [
+        "BigQuery",
+        "Cloud SQL",
+        "Cloud Spanner",
+        "Memorystore"
+      ],
+      "answer": "BigQuery",
+      "explanation": "BigQuery is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "analytics-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service is best suited for real-time mobile/web NoSQL document storage? (39)",
+      "options": [
+        "Firestore",
+        "Cloud SQL",
+        "Bigtable",
+        "Cloud CDN"
+      ],
+      "answer": "Firestore",
+      "explanation": "Firestore is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "document-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides managed Redis and Memcached caching? (40)",
+      "options": [
+        "Memorystore",
+        "Cloud SQL",
+        "Cloud DNS",
+        "Cloud Armor"
+      ],
+      "answer": "Memorystore",
+      "explanation": "Memorystore is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "cache-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database service provides globally distributed strongly consistent SQL databases? (41)",
+      "options": [
+        "Cloud Spanner",
+        "Cloud SQL",
+        "Firestore",
+        "Bigtable"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database service is optimized for low-latency NoSQL wide-column workloads? (42)",
+      "options": [
+        "Bigtable",
+        "BigQuery",
+        "Cloud SQL",
+        "Firestore"
+      ],
+      "answer": "Bigtable",
+      "explanation": "Bigtable is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "nosql-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides serverless petabyte-scale analytics? (43)",
+      "options": [
+        "BigQuery",
+        "Cloud SQL",
+        "Cloud Spanner",
+        "Memorystore"
+      ],
+      "answer": "BigQuery",
+      "explanation": "BigQuery is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "analytics-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service is best suited for real-time mobile/web NoSQL document storage? (44)",
+      "options": [
+        "Firestore",
+        "Cloud SQL",
+        "Bigtable",
+        "Cloud CDN"
+      ],
+      "answer": "Firestore",
+      "explanation": "Firestore is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "document-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides managed Redis and Memcached caching? (45)",
+      "options": [
+        "Memorystore",
+        "Cloud SQL",
+        "Cloud DNS",
+        "Cloud Armor"
+      ],
+      "answer": "Memorystore",
+      "explanation": "Memorystore is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "cache-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database service provides globally distributed strongly consistent SQL databases? (46)",
+      "options": [
+        "Cloud Spanner",
+        "Cloud SQL",
+        "Firestore",
+        "Bigtable"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database service is optimized for low-latency NoSQL wide-column workloads? (47)",
+      "options": [
+        "Bigtable",
+        "BigQuery",
+        "Cloud SQL",
+        "Firestore"
+      ],
+      "answer": "Bigtable",
+      "explanation": "Bigtable is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "nosql-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides serverless petabyte-scale analytics? (48)",
+      "options": [
+        "BigQuery",
+        "Cloud SQL",
+        "Cloud Spanner",
+        "Memorystore"
+      ],
+      "answer": "BigQuery",
+      "explanation": "BigQuery is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "analytics-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service is best suited for real-time mobile/web NoSQL document storage? (49)",
+      "options": [
+        "Firestore",
+        "Cloud SQL",
+        "Bigtable",
+        "Cloud CDN"
+      ],
+      "answer": "Firestore",
+      "explanation": "Firestore is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "document-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides managed Redis and Memcached caching? (50)",
+      "options": [
+        "Memorystore",
+        "Cloud SQL",
+        "Cloud DNS",
+        "Cloud Armor"
+      ],
+      "answer": "Memorystore",
+      "explanation": "Memorystore is an advanced database-related service or feature in GCP.",
+      "difficulty": "hard",
+      "subcategory": "cache-database",
+      "category": "gcp"
+    }
+  ]

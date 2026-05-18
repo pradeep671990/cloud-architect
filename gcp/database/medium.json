@@ -1,1 +1,702 @@
-[]
+[
+    {
+      "question": "In GCP, which service or feature is primarily used for managed MySQL/PostgreSQL/SQL Server hosting?",
+      "options": [
+        "Cloud SQL",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud SQL",
+      "explanation": "Cloud SQL is commonly used in GCP for managed MySQL/PostgreSQL/SQL Server hosting.",
+      "difficulty": "medium",
+      "subcategory": "cloud-sql",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for serverless analytics and warehousing?",
+      "options": [
+        "BigQuery",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "BigQuery",
+      "explanation": "BigQuery is commonly used in GCP for serverless analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "bigquery",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for NoSQL document storage for applications?",
+      "options": [
+        "Firestore",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Firestore",
+      "explanation": "Firestore is commonly used in GCP for NoSQL document storage for applications.",
+      "difficulty": "medium",
+      "subcategory": "firestore",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for globally distributed relational databases?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is commonly used in GCP for globally distributed relational databases.",
+      "difficulty": "medium",
+      "subcategory": "spanner",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for managed Redis caching?",
+      "options": [
+        "Memorystore",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Memorystore",
+      "explanation": "Memorystore is commonly used in GCP for managed Redis caching.",
+      "difficulty": "medium",
+      "subcategory": "memorystore",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for managed MySQL/PostgreSQL/SQL Server hosting?",
+      "options": [
+        "Cloud SQL",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud SQL",
+      "explanation": "Cloud SQL is commonly used in GCP for managed MySQL/PostgreSQL/SQL Server hosting.",
+      "difficulty": "medium",
+      "subcategory": "cloud-sql",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for serverless analytics and warehousing?",
+      "options": [
+        "BigQuery",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "BigQuery",
+      "explanation": "BigQuery is commonly used in GCP for serverless analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "bigquery",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for NoSQL document storage for applications?",
+      "options": [
+        "Firestore",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Firestore",
+      "explanation": "Firestore is commonly used in GCP for NoSQL document storage for applications.",
+      "difficulty": "medium",
+      "subcategory": "firestore",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for globally distributed relational databases?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is commonly used in GCP for globally distributed relational databases.",
+      "difficulty": "medium",
+      "subcategory": "spanner",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for managed Redis caching?",
+      "options": [
+        "Memorystore",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Memorystore",
+      "explanation": "Memorystore is commonly used in GCP for managed Redis caching.",
+      "difficulty": "medium",
+      "subcategory": "memorystore",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for managed MySQL/PostgreSQL/SQL Server hosting?",
+      "options": [
+        "Cloud SQL",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud SQL",
+      "explanation": "Cloud SQL is commonly used in GCP for managed MySQL/PostgreSQL/SQL Server hosting.",
+      "difficulty": "medium",
+      "subcategory": "cloud-sql",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for serverless analytics and warehousing?",
+      "options": [
+        "BigQuery",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "BigQuery",
+      "explanation": "BigQuery is commonly used in GCP for serverless analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "bigquery",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for NoSQL document storage for applications?",
+      "options": [
+        "Firestore",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Firestore",
+      "explanation": "Firestore is commonly used in GCP for NoSQL document storage for applications.",
+      "difficulty": "medium",
+      "subcategory": "firestore",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for globally distributed relational databases?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is commonly used in GCP for globally distributed relational databases.",
+      "difficulty": "medium",
+      "subcategory": "spanner",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for managed Redis caching?",
+      "options": [
+        "Memorystore",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Memorystore",
+      "explanation": "Memorystore is commonly used in GCP for managed Redis caching.",
+      "difficulty": "medium",
+      "subcategory": "memorystore",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for managed MySQL/PostgreSQL/SQL Server hosting?",
+      "options": [
+        "Cloud SQL",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud SQL",
+      "explanation": "Cloud SQL is commonly used in GCP for managed MySQL/PostgreSQL/SQL Server hosting.",
+      "difficulty": "medium",
+      "subcategory": "cloud-sql",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for serverless analytics and warehousing?",
+      "options": [
+        "BigQuery",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "BigQuery",
+      "explanation": "BigQuery is commonly used in GCP for serverless analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "bigquery",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for NoSQL document storage for applications?",
+      "options": [
+        "Firestore",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Firestore",
+      "explanation": "Firestore is commonly used in GCP for NoSQL document storage for applications.",
+      "difficulty": "medium",
+      "subcategory": "firestore",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for globally distributed relational databases?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is commonly used in GCP for globally distributed relational databases.",
+      "difficulty": "medium",
+      "subcategory": "spanner",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for managed Redis caching?",
+      "options": [
+        "Memorystore",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Memorystore",
+      "explanation": "Memorystore is commonly used in GCP for managed Redis caching.",
+      "difficulty": "medium",
+      "subcategory": "memorystore",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for managed MySQL/PostgreSQL/SQL Server hosting?",
+      "options": [
+        "Cloud SQL",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud SQL",
+      "explanation": "Cloud SQL is commonly used in GCP for managed MySQL/PostgreSQL/SQL Server hosting.",
+      "difficulty": "medium",
+      "subcategory": "cloud-sql",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for serverless analytics and warehousing?",
+      "options": [
+        "BigQuery",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "BigQuery",
+      "explanation": "BigQuery is commonly used in GCP for serverless analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "bigquery",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for NoSQL document storage for applications?",
+      "options": [
+        "Firestore",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Firestore",
+      "explanation": "Firestore is commonly used in GCP for NoSQL document storage for applications.",
+      "difficulty": "medium",
+      "subcategory": "firestore",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for globally distributed relational databases?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is commonly used in GCP for globally distributed relational databases.",
+      "difficulty": "medium",
+      "subcategory": "spanner",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for managed Redis caching?",
+      "options": [
+        "Memorystore",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Memorystore",
+      "explanation": "Memorystore is commonly used in GCP for managed Redis caching.",
+      "difficulty": "medium",
+      "subcategory": "memorystore",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for managed MySQL/PostgreSQL/SQL Server hosting?",
+      "options": [
+        "Cloud SQL",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud SQL",
+      "explanation": "Cloud SQL is commonly used in GCP for managed MySQL/PostgreSQL/SQL Server hosting.",
+      "difficulty": "medium",
+      "subcategory": "cloud-sql",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for serverless analytics and warehousing?",
+      "options": [
+        "BigQuery",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "BigQuery",
+      "explanation": "BigQuery is commonly used in GCP for serverless analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "bigquery",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for NoSQL document storage for applications?",
+      "options": [
+        "Firestore",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Firestore",
+      "explanation": "Firestore is commonly used in GCP for NoSQL document storage for applications.",
+      "difficulty": "medium",
+      "subcategory": "firestore",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for globally distributed relational databases?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is commonly used in GCP for globally distributed relational databases.",
+      "difficulty": "medium",
+      "subcategory": "spanner",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for managed Redis caching?",
+      "options": [
+        "Memorystore",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Memorystore",
+      "explanation": "Memorystore is commonly used in GCP for managed Redis caching.",
+      "difficulty": "medium",
+      "subcategory": "memorystore",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for managed MySQL/PostgreSQL/SQL Server hosting?",
+      "options": [
+        "Cloud SQL",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud SQL",
+      "explanation": "Cloud SQL is commonly used in GCP for managed MySQL/PostgreSQL/SQL Server hosting.",
+      "difficulty": "medium",
+      "subcategory": "cloud-sql",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for serverless analytics and warehousing?",
+      "options": [
+        "BigQuery",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "BigQuery",
+      "explanation": "BigQuery is commonly used in GCP for serverless analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "bigquery",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for NoSQL document storage for applications?",
+      "options": [
+        "Firestore",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Firestore",
+      "explanation": "Firestore is commonly used in GCP for NoSQL document storage for applications.",
+      "difficulty": "medium",
+      "subcategory": "firestore",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for globally distributed relational databases?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is commonly used in GCP for globally distributed relational databases.",
+      "difficulty": "medium",
+      "subcategory": "spanner",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for managed Redis caching?",
+      "options": [
+        "Memorystore",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Memorystore",
+      "explanation": "Memorystore is commonly used in GCP for managed Redis caching.",
+      "difficulty": "medium",
+      "subcategory": "memorystore",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for managed MySQL/PostgreSQL/SQL Server hosting?",
+      "options": [
+        "Cloud SQL",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud SQL",
+      "explanation": "Cloud SQL is commonly used in GCP for managed MySQL/PostgreSQL/SQL Server hosting.",
+      "difficulty": "medium",
+      "subcategory": "cloud-sql",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for serverless analytics and warehousing?",
+      "options": [
+        "BigQuery",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "BigQuery",
+      "explanation": "BigQuery is commonly used in GCP for serverless analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "bigquery",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for NoSQL document storage for applications?",
+      "options": [
+        "Firestore",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Firestore",
+      "explanation": "Firestore is commonly used in GCP for NoSQL document storage for applications.",
+      "difficulty": "medium",
+      "subcategory": "firestore",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for globally distributed relational databases?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is commonly used in GCP for globally distributed relational databases.",
+      "difficulty": "medium",
+      "subcategory": "spanner",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for managed Redis caching?",
+      "options": [
+        "Memorystore",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Memorystore",
+      "explanation": "Memorystore is commonly used in GCP for managed Redis caching.",
+      "difficulty": "medium",
+      "subcategory": "memorystore",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for managed MySQL/PostgreSQL/SQL Server hosting?",
+      "options": [
+        "Cloud SQL",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud SQL",
+      "explanation": "Cloud SQL is commonly used in GCP for managed MySQL/PostgreSQL/SQL Server hosting.",
+      "difficulty": "medium",
+      "subcategory": "cloud-sql",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for serverless analytics and warehousing?",
+      "options": [
+        "BigQuery",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "BigQuery",
+      "explanation": "BigQuery is commonly used in GCP for serverless analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "bigquery",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for NoSQL document storage for applications?",
+      "options": [
+        "Firestore",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Firestore",
+      "explanation": "Firestore is commonly used in GCP for NoSQL document storage for applications.",
+      "difficulty": "medium",
+      "subcategory": "firestore",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for globally distributed relational databases?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is commonly used in GCP for globally distributed relational databases.",
+      "difficulty": "medium",
+      "subcategory": "spanner",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for managed Redis caching?",
+      "options": [
+        "Memorystore",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Memorystore",
+      "explanation": "Memorystore is commonly used in GCP for managed Redis caching.",
+      "difficulty": "medium",
+      "subcategory": "memorystore",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for managed MySQL/PostgreSQL/SQL Server hosting?",
+      "options": [
+        "Cloud SQL",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud SQL",
+      "explanation": "Cloud SQL is commonly used in GCP for managed MySQL/PostgreSQL/SQL Server hosting.",
+      "difficulty": "medium",
+      "subcategory": "cloud-sql",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for serverless analytics and warehousing?",
+      "options": [
+        "BigQuery",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "BigQuery",
+      "explanation": "BigQuery is commonly used in GCP for serverless analytics and warehousing.",
+      "difficulty": "medium",
+      "subcategory": "bigquery",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for NoSQL document storage for applications?",
+      "options": [
+        "Firestore",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Firestore",
+      "explanation": "Firestore is commonly used in GCP for NoSQL document storage for applications.",
+      "difficulty": "medium",
+      "subcategory": "firestore",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for globally distributed relational databases?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is commonly used in GCP for globally distributed relational databases.",
+      "difficulty": "medium",
+      "subcategory": "spanner",
+      "category": "gcp"
+    },
+    {
+      "question": "In GCP, which service or feature is primarily used for managed Redis caching?",
+      "options": [
+        "Memorystore",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Memorystore",
+      "explanation": "Memorystore is commonly used in GCP for managed Redis caching.",
+      "difficulty": "medium",
+      "subcategory": "memorystore",
+      "category": "gcp"
+    }
+  ]

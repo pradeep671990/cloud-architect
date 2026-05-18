@@ -1,1 +1,702 @@
-[]
+[
+    {
+      "question": "Which Azure service provides managed relational databases for SQL Server?",
+      "options": [
+        "Azure SQL Database",
+        "Azure Blob Storage",
+        "Azure CDN",
+        "Azure DNS"
+      ],
+      "answer": "Azure SQL Database",
+      "explanation": "Azure SQL Database is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "relational-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides managed MySQL databases?",
+      "options": [
+        "Azure Database for MySQL",
+        "Azure Kubernetes Service",
+        "Azure Monitor",
+        "Azure Files"
+      ],
+      "answer": "Azure Database for MySQL",
+      "explanation": "Azure Database for MySQL is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "relational-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides managed PostgreSQL databases?",
+      "options": [
+        "Azure Database for PostgreSQL",
+        "Azure App Service",
+        "Azure Front Door",
+        "Azure DevOps"
+      ],
+      "answer": "Azure Database for PostgreSQL",
+      "explanation": "Azure Database for PostgreSQL is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "relational-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database service is globally distributed and NoSQL?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure Files",
+        "Azure Backup"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "nosql-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides managed Redis cache?",
+      "options": [
+        "Azure Cache for Redis",
+        "Azure SQL Database",
+        "Azure Blob Storage",
+        "Azure Monitor"
+      ],
+      "answer": "Azure Cache for Redis",
+      "explanation": "Azure Cache for Redis is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "cache-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service is used for enterprise data warehousing?",
+      "options": [
+        "Azure Synapse Analytics",
+        "Azure DNS",
+        "Azure Firewall",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Synapse Analytics",
+      "explanation": "Azure Synapse Analytics is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "data-warehouse",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service helps migrate databases to Azure?",
+      "options": [
+        "Azure Database Migration Service",
+        "Azure CDN",
+        "Azure Advisor",
+        "Azure Policy"
+      ],
+      "answer": "Azure Database Migration Service",
+      "explanation": "Azure Database Migration Service is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "database-migration",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database service is compatible with MongoDB API?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure Files",
+        "Azure Data Factory"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "document-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can store database secrets securely?",
+      "options": [
+        "Azure Key Vault",
+        "Azure Monitor",
+        "Azure CDN",
+        "Azure Front Door"
+      ],
+      "answer": "Azure Key Vault",
+      "explanation": "Azure Key Vault is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "database-security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service monitors database metrics and alerts?",
+      "options": [
+        "Azure Monitor",
+        "Azure DNS",
+        "Azure Storage Explorer",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Monitor",
+      "explanation": "Azure Monitor is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "database-monitoring",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database service supports serverless SQL compute?",
+      "options": [
+        "Azure SQL Database",
+        "Azure Files",
+        "Azure Firewall",
+        "Azure CDN"
+      ],
+      "answer": "Azure SQL Database",
+      "explanation": "Azure SQL Database is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "serverless-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service is closest to a fully managed SQL Server instance?",
+      "options": [
+        "Azure SQL Managed Instance",
+        "Azure Blob Storage",
+        "Azure Table Storage",
+        "Azure CDN"
+      ],
+      "answer": "Azure SQL Managed Instance",
+      "explanation": "Azure SQL Managed Instance is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "relational-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database service supports Cassandra API?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure Monitor",
+        "Azure Backup"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "nosql-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database service supports Gremlin graph API?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure Database for MySQL",
+        "Azure SQL Managed Instance",
+        "Azure Files"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "graph-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database service supports Table API?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure Synapse",
+        "Azure Key Vault"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "nosql-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides in-memory caching?",
+      "options": [
+        "Azure Cache for Redis",
+        "Azure SQL Database",
+        "Azure Synapse",
+        "Azure Data Factory"
+      ],
+      "answer": "Azure Cache for Redis",
+      "explanation": "Azure Cache for Redis is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "cache-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service helps create backups for SQL databases?",
+      "options": [
+        "Azure Backup",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Firewall"
+      ],
+      "answer": "Azure Backup",
+      "explanation": "Azure Backup is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "backup",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database service is used for analytics and big data queries?",
+      "options": [
+        "Azure Synapse Analytics",
+        "Azure Cache for Redis",
+        "Azure Key Vault",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Synapse Analytics",
+      "explanation": "Azure Synapse Analytics is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "analytics-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service provides NoSQL document database capability?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure Database for MySQL",
+        "Azure DNS"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "document-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure SQL feature helps restore a database to an earlier time?",
+      "options": [
+        "Point-in-time restore",
+        "Traffic Manager",
+        "Private DNS",
+        "Application Gateway"
+      ],
+      "answer": "Point-in-time restore",
+      "explanation": "Point-in-time restore is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "backup",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database service provides built-in high availability for SQL workloads?",
+      "options": [
+        "Azure SQL Database",
+        "Azure Container Apps",
+        "Azure Functions",
+        "Azure DNS"
+      ],
+      "answer": "Azure SQL Database",
+      "explanation": "Azure SQL Database is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "high-availability",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database service can be used for globally distributed applications?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure SQL Managed Instance",
+        "Azure Cache for Redis",
+        "Azure Monitor"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can provide private access to databases inside a VNet?",
+      "options": [
+        "Private Endpoint",
+        "Traffic Manager",
+        "Azure CDN",
+        "Public IP"
+      ],
+      "answer": "Private Endpoint",
+      "explanation": "Private Endpoint is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "database-networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature helps restrict database network access?",
+      "options": [
+        "Firewall rules",
+        "CDN endpoint",
+        "Managed identity only",
+        "Traffic Manager"
+      ],
+      "answer": "Firewall rules",
+      "explanation": "Firewall rules is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "database-security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database service supports automatic backups?",
+      "options": [
+        "Azure SQL Database",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Front Door"
+      ],
+      "answer": "Azure SQL Database",
+      "explanation": "Azure SQL Database is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "backup",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service is used to analyze large datasets using SQL pools?",
+      "options": [
+        "Azure Synapse Analytics",
+        "Azure Key Vault",
+        "Azure DNS",
+        "Azure Advisor"
+      ],
+      "answer": "Azure Synapse Analytics",
+      "explanation": "Azure Synapse Analytics is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "data-warehouse",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database supports multiple consistency levels?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure Cache for Redis",
+        "Azure Database for MySQL"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "nosql-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database service provides PostgreSQL as a managed service?",
+      "options": [
+        "Azure Database for PostgreSQL",
+        "Azure Cosmos DB",
+        "Azure SQL Managed Instance",
+        "Azure Synapse"
+      ],
+      "answer": "Azure Database for PostgreSQL",
+      "explanation": "Azure Database for PostgreSQL is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "relational-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database service provides MySQL as a managed service?",
+      "options": [
+        "Azure Database for MySQL",
+        "Azure Cosmos DB",
+        "Azure Data Explorer",
+        "Azure Cache for Redis"
+      ],
+      "answer": "Azure Database for MySQL",
+      "explanation": "Azure Database for MySQL is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "relational-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database service is used for time-series and telemetry analytics?",
+      "options": [
+        "Azure Data Explorer",
+        "Azure SQL Database",
+        "Azure DNS",
+        "Azure Files"
+      ],
+      "answer": "Azure Data Explorer",
+      "explanation": "Azure Data Explorer is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "analytics-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can help audit SQL database activity?",
+      "options": [
+        "Microsoft Defender for SQL",
+        "Azure CDN",
+        "Azure Bastion",
+        "Azure Maps"
+      ],
+      "answer": "Microsoft Defender for SQL",
+      "explanation": "Microsoft Defender for SQL is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "database-security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database service supports managed SQL Server compatibility?",
+      "options": [
+        "Azure SQL Managed Instance",
+        "Azure Cosmos DB",
+        "Azure Cache for Redis",
+        "Azure Monitor"
+      ],
+      "answer": "Azure SQL Managed Instance",
+      "explanation": "Azure SQL Managed Instance is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "relational-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can create alerts for database CPU usage?",
+      "options": [
+        "Azure Monitor",
+        "Azure Key Vault",
+        "Azure Front Door",
+        "Azure Advisor"
+      ],
+      "answer": "Azure Monitor",
+      "explanation": "Azure Monitor is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "database-monitoring",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature helps secure database access without public exposure?",
+      "options": [
+        "Private Link",
+        "Azure CDN",
+        "Traffic Manager",
+        "Public DNS"
+      ],
+      "answer": "Private Link",
+      "explanation": "Private Link is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "database-networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database service provides managed PostgreSQL backups?",
+      "options": [
+        "Azure Database for PostgreSQL",
+        "Azure DNS",
+        "Azure CDN",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Database for PostgreSQL",
+      "explanation": "Azure Database for PostgreSQL is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "backup",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database service provides managed MySQL backups?",
+      "options": [
+        "Azure Database for MySQL",
+        "Azure Files",
+        "Azure Monitor",
+        "Azure Firewall"
+      ],
+      "answer": "Azure Database for MySQL",
+      "explanation": "Azure Database for MySQL is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "backup",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service helps identify security recommendations for databases?",
+      "options": [
+        "Microsoft Defender for Cloud",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Maps"
+      ],
+      "answer": "Microsoft Defender for Cloud",
+      "explanation": "Microsoft Defender for Cloud is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "database-security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database service can support graph data through Gremlin API?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure Synapse",
+        "Azure SQL Database",
+        "Azure Data Factory"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "graph-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service is commonly used to cache session data?",
+      "options": [
+        "Azure Cache for Redis",
+        "Azure Synapse Analytics",
+        "Azure SQL Managed Instance",
+        "Azure Data Explorer"
+      ],
+      "answer": "Azure Cache for Redis",
+      "explanation": "Azure Cache for Redis is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "cache-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure SQL feature protects data at rest?",
+      "options": [
+        "Transparent Data Encryption",
+        "Traffic Manager",
+        "Azure CDN",
+        "Public IP Prefix"
+      ],
+      "answer": "Transparent Data Encryption",
+      "explanation": "Transparent Data Encryption is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "database-security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service supports managed Apache Cassandra workloads through Cosmos DB API?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure Data Factory",
+        "Azure Monitor"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "nosql-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database service is best for relational SQL workloads?",
+      "options": [
+        "Azure SQL Database",
+        "Azure Cosmos DB",
+        "Azure Cache for Redis",
+        "Azure Table Storage"
+      ],
+      "answer": "Azure SQL Database",
+      "explanation": "Azure SQL Database is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "relational-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database service is best for low-latency cache workloads?",
+      "options": [
+        "Azure Cache for Redis",
+        "Azure Synapse Analytics",
+        "Azure SQL Database",
+        "Azure Database for PostgreSQL"
+      ],
+      "answer": "Azure Cache for Redis",
+      "explanation": "Azure Cache for Redis is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "cache-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service can run analytical queries over large log and telemetry datasets?",
+      "options": [
+        "Azure Data Explorer",
+        "Azure Key Vault",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Data Explorer",
+      "explanation": "Azure Data Explorer is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "analytics-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure feature enables geo-replication for globally distributed NoSQL databases?",
+      "options": [
+        "Cosmos DB global distribution",
+        "Azure CDN purge",
+        "Traffic Manager profile",
+        "Azure Firewall SNAT"
+      ],
+      "answer": "Cosmos DB global distribution",
+      "explanation": "Cosmos DB global distribution is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database service can be deployed as a flexible server for PostgreSQL?",
+      "options": [
+        "Azure Database for PostgreSQL",
+        "Azure SQL Managed Instance",
+        "Azure Cosmos DB",
+        "Azure Cache for Redis"
+      ],
+      "answer": "Azure Database for PostgreSQL",
+      "explanation": "Azure Database for PostgreSQL is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "relational-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database service can be deployed as a flexible server for MySQL?",
+      "options": [
+        "Azure Database for MySQL",
+        "Azure Data Explorer",
+        "Azure SQL Database",
+        "Azure Cosmos DB"
+      ],
+      "answer": "Azure Database for MySQL",
+      "explanation": "Azure Database for MySQL is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "relational-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service helps centrally manage database credentials and keys?",
+      "options": [
+        "Azure Key Vault",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Policy"
+      ],
+      "answer": "Azure Key Vault",
+      "explanation": "Azure Key Vault is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "database-security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure SQL feature helps improve read performance using replicas?",
+      "options": [
+        "Read scale-out",
+        "Private DNS",
+        "WAF policy",
+        "Public IP"
+      ],
+      "answer": "Read scale-out",
+      "explanation": "Read scale-out is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "read-scaling",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database service is suitable for distributed NoSQL applications?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure SQL Managed Instance",
+        "Azure Cache for Redis",
+        "Azure Data Factory"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is a database-related service or feature used in AZURE.",
+      "difficulty": "easy",
+      "subcategory": "nosql-database",
+      "category": "azure"
+    }
+  ]

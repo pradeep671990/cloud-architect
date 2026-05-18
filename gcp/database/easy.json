@@ -1,1 +1,702 @@
-[]
+[
+    {
+      "question": "Which GCP service provides managed relational databases?",
+      "options": [
+        "Cloud SQL",
+        "Cloud Storage",
+        "Cloud CDN",
+        "Cloud DNS"
+      ],
+      "answer": "Cloud SQL",
+      "explanation": "Cloud SQL is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "relational-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides globally distributed relational database?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud SQL",
+        "Cloud Memorystore",
+        "Cloud NAT"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "relational-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides NoSQL document database?",
+      "options": [
+        "Firestore",
+        "Cloud SQL",
+        "Cloud Spanner",
+        "Cloud CDN"
+      ],
+      "answer": "Firestore",
+      "explanation": "Firestore is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "nosql-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides managed Redis and Memcached?",
+      "options": [
+        "Memorystore",
+        "Cloud SQL",
+        "Cloud DNS",
+        "BigQuery"
+      ],
+      "answer": "Memorystore",
+      "explanation": "Memorystore is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "cache-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service is used for data warehousing?",
+      "options": [
+        "BigQuery",
+        "Cloud SQL",
+        "Cloud Run",
+        "Cloud NAT"
+      ],
+      "answer": "BigQuery",
+      "explanation": "BigQuery is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "data-warehouse",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides MySQL as a managed database?",
+      "options": [
+        "Cloud SQL",
+        "Firestore",
+        "Bigtable",
+        "Cloud Storage"
+      ],
+      "answer": "Cloud SQL",
+      "explanation": "Cloud SQL is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "relational-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides PostgreSQL as a managed database?",
+      "options": [
+        "Cloud SQL",
+        "Cloud Armor",
+        "Cloud CDN",
+        "Cloud Functions"
+      ],
+      "answer": "Cloud SQL",
+      "explanation": "Cloud SQL is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "relational-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides SQL Server as a managed database?",
+      "options": [
+        "Cloud SQL",
+        "BigQuery",
+        "Firestore",
+        "Memorystore"
+      ],
+      "answer": "Cloud SQL",
+      "explanation": "Cloud SQL is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "relational-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides wide-column NoSQL database?",
+      "options": [
+        "Bigtable",
+        "Cloud SQL",
+        "Cloud DNS",
+        "Cloud CDN"
+      ],
+      "answer": "Bigtable",
+      "explanation": "Bigtable is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "nosql-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database is often used for analytics at massive scale?",
+      "options": [
+        "BigQuery",
+        "Cloud SQL",
+        "Memorystore",
+        "Firestore"
+      ],
+      "answer": "BigQuery",
+      "explanation": "BigQuery is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "analytics-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can be used for mobile and web app NoSQL data?",
+      "options": [
+        "Firestore",
+        "Cloud SQL",
+        "Cloud Spanner",
+        "BigQuery"
+      ],
+      "answer": "Firestore",
+      "explanation": "Firestore is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "document-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides in-memory cache?",
+      "options": [
+        "Memorystore",
+        "Cloud SQL",
+        "Bigtable",
+        "Cloud Storage"
+      ],
+      "answer": "Memorystore",
+      "explanation": "Memorystore is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "cache-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service is suitable for globally consistent relational transactions?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud SQL",
+        "Firestore",
+        "Memorystore"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "relational-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service is commonly used for serverless analytics queries?",
+      "options": [
+        "BigQuery",
+        "Cloud CDN",
+        "Cloud NAT",
+        "Cloud VPN"
+      ],
+      "answer": "BigQuery",
+      "explanation": "BigQuery is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "serverless-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service helps migrate databases to Google Cloud?",
+      "options": [
+        "Database Migration Service",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud NAT"
+      ],
+      "answer": "Database Migration Service",
+      "explanation": "Database Migration Service is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "database-migration",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service stores database secrets securely?",
+      "options": [
+        "Secret Manager",
+        "Cloud CDN",
+        "Cloud Armor",
+        "Cloud Router"
+      ],
+      "answer": "Secret Manager",
+      "explanation": "Secret Manager is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "database-security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service monitors database metrics?",
+      "options": [
+        "Cloud Monitoring",
+        "Cloud DNS",
+        "Cloud Build",
+        "Cloud CDN"
+      ],
+      "answer": "Cloud Monitoring",
+      "explanation": "Cloud Monitoring is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "database-monitoring",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service stores logs for database troubleshooting?",
+      "options": [
+        "Cloud Logging",
+        "Cloud NAT",
+        "Cloud DNS",
+        "Cloud Tasks"
+      ],
+      "answer": "Cloud Logging",
+      "explanation": "Cloud Logging is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "database-monitoring",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides managed Redis?",
+      "options": [
+        "Memorystore",
+        "Cloud SQL",
+        "BigQuery",
+        "Cloud Spanner"
+      ],
+      "answer": "Memorystore",
+      "explanation": "Memorystore is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "cache-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides managed Memcached?",
+      "options": [
+        "Memorystore",
+        "Cloud SQL",
+        "Firestore",
+        "Bigtable"
+      ],
+      "answer": "Memorystore",
+      "explanation": "Memorystore is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "cache-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database is suitable for very large analytical datasets?",
+      "options": [
+        "BigQuery",
+        "Cloud SQL",
+        "Firestore",
+        "Memorystore"
+      ],
+      "answer": "BigQuery",
+      "explanation": "BigQuery is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "data-warehouse",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database is best known as a managed NoSQL document database?",
+      "options": [
+        "Firestore",
+        "Cloud SQL",
+        "BigQuery",
+        "Cloud Spanner"
+      ],
+      "answer": "Firestore",
+      "explanation": "Firestore is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "document-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database service is used for high-throughput low-latency NoSQL workloads?",
+      "options": [
+        "Bigtable",
+        "Cloud SQL",
+        "Cloud Spanner",
+        "Cloud DNS"
+      ],
+      "answer": "Bigtable",
+      "explanation": "Bigtable is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "nosql-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database service supports relational scale across regions?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud SQL",
+        "Firestore",
+        "Bigtable"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP feature helps connect privately to managed databases?",
+      "options": [
+        "Private IP",
+        "Cloud CDN",
+        "Cloud Armor",
+        "Cloud Build"
+      ],
+      "answer": "Private IP",
+      "explanation": "Private IP is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "database-networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can create alerts for database CPU usage?",
+      "options": [
+        "Cloud Monitoring",
+        "Cloud Storage",
+        "Cloud DNS",
+        "Cloud CDN"
+      ],
+      "answer": "Cloud Monitoring",
+      "explanation": "Cloud Monitoring is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "database-monitoring",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can export and import relational database data?",
+      "options": [
+        "Cloud SQL",
+        "Cloud NAT",
+        "Cloud DNS",
+        "Cloud Armor"
+      ],
+      "answer": "Cloud SQL",
+      "explanation": "Cloud SQL is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "backup",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database service supports point-in-time recovery?",
+      "options": [
+        "Cloud SQL",
+        "Cloud CDN",
+        "Cloud VPN",
+        "Cloud Router"
+      ],
+      "answer": "Cloud SQL",
+      "explanation": "Cloud SQL is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "backup",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service is a good fit for cache-based session storage?",
+      "options": [
+        "Memorystore",
+        "BigQuery",
+        "Cloud SQL",
+        "Cloud Spanner"
+      ],
+      "answer": "Memorystore",
+      "explanation": "Memorystore is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "cache-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides serverless document database for apps?",
+      "options": [
+        "Firestore",
+        "Cloud SQL",
+        "Cloud Spanner",
+        "Cloud Router"
+      ],
+      "answer": "Firestore",
+      "explanation": "Firestore is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "serverless-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can analyze structured data using SQL without managing servers?",
+      "options": [
+        "BigQuery",
+        "Cloud SQL",
+        "Memorystore",
+        "Cloud DNS"
+      ],
+      "answer": "BigQuery",
+      "explanation": "BigQuery is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "analytics-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service is often used for IoT and time-series style large-scale data?",
+      "options": [
+        "Bigtable",
+        "Cloud SQL",
+        "Cloud CDN",
+        "Cloud Run"
+      ],
+      "answer": "Bigtable",
+      "explanation": "Bigtable is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "nosql-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database service supports strong consistency and horizontal scale?",
+      "options": [
+        "Cloud Spanner",
+        "Memorystore",
+        "Cloud SQL only",
+        "Cloud Storage"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "relational-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can be used for relational database read replicas?",
+      "options": [
+        "Cloud SQL",
+        "Firestore",
+        "Cloud CDN",
+        "Cloud NAT"
+      ],
+      "answer": "Cloud SQL",
+      "explanation": "Cloud SQL is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "read-scaling",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database service supports automatic storage increase?",
+      "options": [
+        "Cloud SQL",
+        "Cloud DNS",
+        "Cloud CDN",
+        "Cloud Armor"
+      ],
+      "answer": "Cloud SQL",
+      "explanation": "Cloud SQL is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "database-scaling",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service helps manage database migration from MySQL and PostgreSQL?",
+      "options": [
+        "Database Migration Service",
+        "Cloud Load Balancing",
+        "Cloud Build",
+        "Cloud Pub/Sub"
+      ],
+      "answer": "Database Migration Service",
+      "explanation": "Database Migration Service is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "database-migration",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides a NoSQL database in Native mode and Datastore mode?",
+      "options": [
+        "Firestore",
+        "Cloud SQL",
+        "Bigtable",
+        "Memorystore"
+      ],
+      "answer": "Firestore",
+      "explanation": "Firestore is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "nosql-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service is mainly used as a managed cache rather than a primary database?",
+      "options": [
+        "Memorystore",
+        "BigQuery",
+        "Cloud Spanner",
+        "Cloud SQL"
+      ],
+      "answer": "Memorystore",
+      "explanation": "Memorystore is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "cache-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service is used for petabyte-scale analytics?",
+      "options": [
+        "BigQuery",
+        "Cloud SQL",
+        "Cloud DNS",
+        "Cloud NAT"
+      ],
+      "answer": "BigQuery",
+      "explanation": "BigQuery is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "data-warehouse",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database service can support global applications needing relational consistency?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud SQL",
+        "Firestore",
+        "Memorystore"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can restrict database access to private network paths?",
+      "options": [
+        "Private IP",
+        "Cloud CDN",
+        "Cloud Functions",
+        "Cloud Scheduler"
+      ],
+      "answer": "Private IP",
+      "explanation": "Private IP is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "database-networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can help view slow query and performance information for Cloud SQL?",
+      "options": [
+        "Query Insights",
+        "Cloud CDN",
+        "Cloud NAT",
+        "Cloud Composer"
+      ],
+      "answer": "Query Insights",
+      "explanation": "Query Insights is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "database-monitoring",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service helps centralize database audit and admin logs?",
+      "options": [
+        "Cloud Logging",
+        "Cloud DNS",
+        "Cloud NAT",
+        "Cloud Build"
+      ],
+      "answer": "Cloud Logging",
+      "explanation": "Cloud Logging is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "database-security",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can provide managed backups for databases and workloads?",
+      "options": [
+        "Backup and DR Service",
+        "Cloud CDN",
+        "Cloud Armor",
+        "Cloud Run"
+      ],
+      "answer": "Backup and DR Service",
+      "explanation": "Backup and DR Service is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "backup",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service is a managed database option for applications needing Redis compatibility?",
+      "options": [
+        "Memorystore",
+        "Cloud SQL",
+        "Cloud Spanner",
+        "BigQuery"
+      ],
+      "answer": "Memorystore",
+      "explanation": "Memorystore is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "cache-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database service is suitable for real-time application synchronization?",
+      "options": [
+        "Firestore",
+        "BigQuery",
+        "Cloud SQL",
+        "Cloud DNS"
+      ],
+      "answer": "Firestore",
+      "explanation": "Firestore is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "document-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database service can be used for relational OLTP applications?",
+      "options": [
+        "Cloud SQL",
+        "BigQuery",
+        "Cloud Storage",
+        "Cloud Logging"
+      ],
+      "answer": "Cloud SQL",
+      "explanation": "Cloud SQL is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "relational-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database service supports globally distributed SQL workloads?",
+      "options": [
+        "Cloud Spanner",
+        "Firestore",
+        "Memorystore",
+        "Cloud CDN"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service provides SQL analytics over massive datasets?",
+      "options": [
+        "BigQuery",
+        "Cloud SQL",
+        "Cloud NAT",
+        "Cloud Armor"
+      ],
+      "answer": "BigQuery",
+      "explanation": "BigQuery is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "analytics-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service can help protect database passwords and API keys?",
+      "options": [
+        "Secret Manager",
+        "Cloud Trace",
+        "Cloud Scheduler",
+        "Cloud CDN"
+      ],
+      "answer": "Secret Manager",
+      "explanation": "Secret Manager is a database-related service or feature used in GCP.",
+      "difficulty": "easy",
+      "subcategory": "database-security",
+      "category": "gcp"
+    }
+  ]
