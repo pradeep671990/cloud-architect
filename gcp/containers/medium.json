@@ -1,702 +1,702 @@
 [
-    {
-      "question": "Which GCP service provides managed Kubernetes clusters?",
-      "options": [
-        "Google Kubernetes Engine",
-        "Cloud Run",
-        "Cloud SQL",
-        "BigQuery"
-      ],
-      "answer": "Google Kubernetes Engine",
-      "explanation": "Google Kubernetes Engine is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service stores container images and artifacts?",
-      "options": [
-        "Artifact Registry",
-        "Cloud Storage",
-        "Cloud DNS",
-        "Cloud NAT"
-      ],
-      "answer": "Artifact Registry",
-      "explanation": "Artifact Registry is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "container-registry",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service runs containers without managing servers?",
-      "options": [
-        "Cloud Run",
-        "Compute Engine",
-        "Cloud SQL",
-        "Pub/Sub"
-      ],
-      "answer": "Cloud Run",
-      "explanation": "Cloud Run is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "serverless-containers",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service builds Docker images from source code?",
-      "options": [
-        "Cloud Build",
-        "Cloud Armor",
-        "Cloud CDN",
-        "Cloud Router"
-      ],
-      "answer": "Cloud Build",
-      "explanation": "Cloud Build is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "container-cicd",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP compute service can run Docker containers on virtual machines?",
-      "options": [
-        "Compute Engine",
-        "BigQuery",
-        "Cloud Spanner",
-        "Cloud Tasks"
-      ],
-      "answer": "Compute Engine",
-      "explanation": "Compute Engine is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "container-hosting",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GKE mode manages nodes automatically for users?",
-      "options": [
-        "Autopilot",
-        "Standard",
-        "Manual",
-        "Static"
-      ],
-      "answer": "Autopilot",
-      "explanation": "Autopilot is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GKE mode gives more control over worker nodes?",
-      "options": [
-        "Standard",
-        "Autopilot",
-        "Cloud Run",
-        "Cloud Functions"
-      ],
-      "answer": "Standard",
-      "explanation": "Standard is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service can scan container images for vulnerabilities?",
-      "options": [
-        "Artifact Analysis",
-        "Cloud DNS",
-        "Cloud CDN",
-        "Dataflow"
-      ],
-      "answer": "Artifact Analysis",
-      "explanation": "Artifact Analysis is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "container-security",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service collects logs from GKE workloads?",
-      "options": [
-        "Cloud Logging",
-        "Cloud NAT",
-        "Cloud VPN",
-        "Cloud DNS"
-      ],
-      "answer": "Cloud Logging",
-      "explanation": "Cloud Logging is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "container-monitoring",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service collects metrics from GKE and Cloud Run?",
-      "options": [
-        "Cloud Monitoring",
-        "Cloud Storage",
-        "Cloud SQL",
-        "Cloud Build"
-      ],
-      "answer": "Cloud Monitoring",
-      "explanation": "Cloud Monitoring is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "container-monitoring",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service can deploy containers from Artifact Registry serverlessly?",
-      "options": [
-        "Cloud Run",
-        "Cloud SQL",
-        "Cloud DNS",
-        "Cloud VPN"
-      ],
-      "answer": "Cloud Run",
-      "explanation": "Cloud Run is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "serverless-containers",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service provides private Kubernetes clusters?",
-      "options": [
-        "GKE",
-        "Cloud CDN",
-        "Cloud Armor",
-        "Cloud Tasks"
-      ],
-      "answer": "GKE",
-      "explanation": "GKE is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes-security",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP feature allows GKE workloads to use IAM permissions?",
-      "options": [
-        "Workload Identity",
-        "Cloud NAT",
-        "Cloud DNS",
-        "Cloud Interconnect"
-      ],
-      "answer": "Workload Identity",
-      "explanation": "Workload Identity is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes-security",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service can run Kubernetes workloads across clusters?",
-      "options": [
-        "GKE",
-        "Cloud Functions",
-        "BigQuery",
-        "Cloud Tasks"
-      ],
-      "answer": "GKE",
-      "explanation": "GKE is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service can store Docker images in regional repositories?",
-      "options": [
-        "Artifact Registry",
-        "Cloud Router",
-        "Cloud SQL",
-        "Cloud Load Balancing"
-      ],
-      "answer": "Artifact Registry",
-      "explanation": "Artifact Registry is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "container-registry",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service can trigger container builds from repository changes?",
-      "options": [
-        "Cloud Build Triggers",
-        "Cloud CDN",
-        "Cloud Armor",
-        "Cloud NAT"
-      ],
-      "answer": "Cloud Build Triggers",
-      "explanation": "Cloud Build Triggers is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "container-cicd",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service can expose GKE applications using HTTP(S) load balancing?",
-      "options": [
-        "GKE Ingress",
-        "Cloud DNS only",
-        "Cloud Pub/Sub",
-        "Cloud Composer"
-      ],
-      "answer": "GKE Ingress",
-      "explanation": "GKE Ingress is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes-networking",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP feature controls pod-to-pod traffic in Kubernetes?",
-      "options": [
-        "Network Policy",
-        "Cloud Storage Bucket",
-        "Cloud DNS Zone",
-        "Cloud NAT Gateway"
-      ],
-      "answer": "Network Policy",
-      "explanation": "Network Policy is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes-networking",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP storage option can provide persistent disks to GKE pods?",
-      "options": [
-        "Persistent Disk",
-        "Cloud CDN",
-        "Cloud Armor",
-        "Cloud Tasks"
-      ],
-      "answer": "Persistent Disk",
-      "explanation": "Persistent Disk is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "container-storage",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service can provide file storage for GKE workloads?",
-      "options": [
-        "Filestore",
-        "Cloud DNS",
-        "Cloud NAT",
-        "Cloud Scheduler"
-      ],
-      "answer": "Filestore",
-      "explanation": "Filestore is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "container-storage",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service can manage secrets for container applications?",
-      "options": [
-        "Secret Manager",
-        "Cloud CDN",
-        "Cloud NAT",
-        "Cloud SQL"
-      ],
-      "answer": "Secret Manager",
-      "explanation": "Secret Manager is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "container-security",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP serverless container service automatically scales to zero?",
-      "options": [
-        "Cloud Run",
-        "Compute Engine",
-        "GKE Standard",
-        "Cloud VPN"
-      ],
-      "answer": "Cloud Run",
-      "explanation": "Cloud Run is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "serverless-containers",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service can run containers as jobs without serving HTTP traffic?",
-      "options": [
-        "Cloud Run Jobs",
-        "Cloud SQL",
-        "Cloud DNS",
-        "Cloud Armor"
-      ],
-      "answer": "Cloud Run Jobs",
-      "explanation": "Cloud Run Jobs is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "serverless-containers",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP feature helps autoscale GKE nodes?",
-      "options": [
-        "Cluster Autoscaler",
-        "Cloud CDN Cache Key",
-        "DNS Peering",
-        "Cloud NAT Port"
-      ],
-      "answer": "Cluster Autoscaler",
-      "explanation": "Cluster Autoscaler is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes-scaling",
-      "category": "gcp"
-    },
-    {
-      "question": "Which Kubernetes feature autos-scales pods in GKE?",
-      "options": [
-        "Horizontal Pod Autoscaler",
-        "Cloud Router",
-        "Artifact Cleanup",
-        "Firewall Rule"
-      ],
-      "answer": "Horizontal Pod Autoscaler",
-      "explanation": "Horizontal Pod Autoscaler is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes-scaling",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service can enforce binary authorization for container deployments?",
-      "options": [
-        "Binary Authorization",
-        "Cloud DNS",
-        "Cloud NAT",
-        "Cloud Scheduler"
-      ],
-      "answer": "Binary Authorization",
-      "explanation": "Binary Authorization is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "container-security",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service helps secure GKE clusters with posture and threat detection?",
-      "options": [
-        "Security Command Center",
-        "Cloud CDN",
-        "Cloud SQL",
-        "Cloud Tasks"
-      ],
-      "answer": "Security Command Center",
-      "explanation": "Security Command Center is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "container-security",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP load balancing option is commonly used for public GKE ingress?",
-      "options": [
-        "External HTTP(S) Load Balancer",
-        "Cloud VPN",
-        "Cloud Router",
-        "Cloud NAT"
-      ],
-      "answer": "External HTTP(S) Load Balancer",
-      "explanation": "External HTTP(S) Load Balancer is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes-networking",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service can keep container images private inside a project?",
-      "options": [
-        "Artifact Registry",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Logging"
-      ],
-      "answer": "Artifact Registry",
-      "explanation": "Artifact Registry is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "container-registry",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP feature can restrict GKE control plane access?",
-      "options": [
-        "Authorized networks",
-        "Cloud Storage versioning",
-        "Cloud CDN signed URL",
-        "Cloud NAT logging"
-      ],
-      "answer": "Authorized networks",
-      "explanation": "Authorized networks is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes-security",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service can deploy container workloads using YAML configuration?",
-      "options": [
-        "Cloud Deploy",
-        "Cloud DNS",
-        "Cloud NAT",
-        "Cloud Trace"
-      ],
-      "answer": "Cloud Deploy",
-      "explanation": "Cloud Deploy is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "container-cicd",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service supports progressive delivery to GKE and Cloud Run?",
-      "options": [
-        "Cloud Deploy",
-        "Cloud Functions",
-        "Cloud SQL",
-        "Cloud Armor"
-      ],
-      "answer": "Cloud Deploy",
-      "explanation": "Cloud Deploy is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "container-cicd",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GKE object is used to run stateless applications?",
-      "options": [
-        "Deployment",
-        "Firewall Rule",
-        "DNS Record",
-        "Cloud Build Trigger"
-      ],
-      "answer": "Deployment",
-      "explanation": "Deployment is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes",
-      "category": "gcp"
-    },
-    {
-      "question": "Which Kubernetes object is used to expose pods inside GKE?",
-      "options": [
-        "Service",
-        "Artifact Repository",
-        "Cloud Router",
-        "Cloud NAT"
-      ],
-      "answer": "Service",
-      "explanation": "Service is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes-networking",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service can create and push Docker images to Artifact Registry?",
-      "options": [
-        "Cloud Build",
-        "Cloud DNS",
-        "Cloud CDN",
-        "Cloud VPN"
-      ],
-      "answer": "Cloud Build",
-      "explanation": "Cloud Build is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "container-cicd",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP feature allows private GKE nodes without public IP addresses?",
-      "options": [
-        "Private nodes",
-        "Public DNS",
-        "Cloud CDN",
-        "External IP only"
-      ],
-      "answer": "Private nodes",
-      "explanation": "Private nodes is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes-security",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service can route traffic to Cloud Run revisions?",
-      "options": [
-        "Cloud Run",
-        "Cloud DNS only",
-        "Cloud NAT",
-        "Cloud Router"
-      ],
-      "answer": "Cloud Run",
-      "explanation": "Cloud Run is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "serverless-containers",
-      "category": "gcp"
-    },
-    {
-      "question": "Which Cloud Run feature lets you split traffic between versions?",
-      "options": [
-        "Traffic splitting",
-        "Route peering",
-        "VPC firewall",
-        "DNS forwarding"
-      ],
-      "answer": "Traffic splitting",
-      "explanation": "Traffic splitting is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "serverless-containers",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service can connect Cloud Run to VPC resources?",
-      "options": [
-        "Serverless VPC Access",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Router"
-      ],
-      "answer": "Serverless VPC Access",
-      "explanation": "Serverless VPC Access is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "container-networking",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service can protect GKE ingress from web attacks?",
-      "options": [
-        "Cloud Armor",
-        "Cloud NAT",
-        "Cloud DNS",
-        "Cloud Storage"
-      ],
-      "answer": "Cloud Armor",
-      "explanation": "Cloud Armor is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "container-security",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service can manage multi-cluster Kubernetes services?",
-      "options": [
-        "GKE Multi-Cluster Services",
-        "Cloud SQL",
-        "Cloud Build Logs",
-        "Cloud CDN"
-      ],
-      "answer": "GKE Multi-Cluster Services",
-      "explanation": "GKE Multi-Cluster Services is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes-networking",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service can provide managed certificates for GKE ingress?",
-      "options": [
-        "Certificate Manager",
-        "Cloud Tasks",
-        "Cloud Spanner",
-        "Cloud Composer"
-      ],
-      "answer": "Certificate Manager",
-      "explanation": "Certificate Manager is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes-networking",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service can send GKE logs to a centralized dashboard?",
-      "options": [
-        "Cloud Logging",
-        "Cloud Build",
-        "Cloud Router",
-        "Cloud CDN"
-      ],
-      "answer": "Cloud Logging",
-      "explanation": "Cloud Logging is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "container-monitoring",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP feature allows GKE pods to access Google APIs privately?",
-      "options": [
-        "Private Google Access",
-        "Cloud CDN",
-        "Cloud Armor",
-        "External HTTP Load Balancer"
-      ],
-      "answer": "Private Google Access",
-      "explanation": "Private Google Access is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "container-networking",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service can apply firewall rules around GKE node networks?",
-      "options": [
-        "VPC Firewall",
-        "Cloud SQL",
-        "Cloud Pub/Sub",
-        "Cloud Functions"
-      ],
-      "answer": "VPC Firewall",
-      "explanation": "VPC Firewall is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "container-networking",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service can run containers based on request-driven scaling?",
-      "options": [
-        "Cloud Run",
-        "GKE Standard only",
-        "Compute Engine only",
-        "Cloud Storage"
-      ],
-      "answer": "Cloud Run",
-      "explanation": "Cloud Run is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "serverless-containers",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP feature helps clean up old container images in Artifact Registry?",
-      "options": [
-        "Cleanup policies",
-        "Cloud DNS forwarding",
-        "Cloud NAT draining",
-        "Cloud Armor rules"
-      ],
-      "answer": "Cleanup policies",
-      "explanation": "Cleanup policies is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "container-registry",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service can be used to observe traces from containerized apps?",
-      "options": [
-        "Cloud Trace",
-        "Cloud DNS",
-        "Cloud VPN",
-        "Cloud CDN"
-      ],
-      "answer": "Cloud Trace",
-      "explanation": "Cloud Trace is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "container-monitoring",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service can manage runtime security signals for GKE?",
-      "options": [
-        "GKE security posture dashboard",
-        "Cloud DNS",
-        "Cloud NAT",
-        "Cloud CDN"
-      ],
-      "answer": "GKE security posture dashboard",
-      "explanation": "GKE security posture dashboard is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "container-security",
-      "category": "gcp"
-    },
-    {
-      "question": "Which GCP service lets developers deploy containers directly from source?",
-      "options": [
-        "Cloud Run",
-        "Cloud SQL",
-        "Cloud DNS",
-        "Cloud Armor"
-      ],
-      "answer": "Cloud Run",
-      "explanation": "Cloud Run is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in GCP.",
-      "difficulty": "medium",
-      "subcategory": "serverless-containers",
-      "category": "gcp"
-    }
-  ]
+  {
+    "question": "Which GCP service or feature is best suited to control requests per container?",
+    "options": [
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances",
+      "Cloud Run ingress settings"
+    ],
+    "answer": "Cloud Run concurrency",
+    "explanation": "Cloud Run concurrency is used in GCP to control requests per container.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to reduce cold starts?",
+    "options": [
+      "Cloud Run min instances",
+      "Cloud Run concurrency",
+      "Cloud Run max instances",
+      "Cloud Run ingress settings"
+    ],
+    "answer": "Cloud Run min instances",
+    "explanation": "Cloud Run min instances is used in GCP to reduce cold starts.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to limit scale-out?",
+    "options": [
+      "Cloud Run max instances",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run ingress settings"
+    ],
+    "answer": "Cloud Run max instances",
+    "explanation": "Cloud Run max instances is used in GCP to limit scale-out.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to control service exposure?",
+    "options": [
+      "Cloud Run ingress settings",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "Cloud Run ingress settings",
+    "explanation": "Cloud Run ingress settings is used in GCP to control service exposure.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to require IAM access?",
+    "options": [
+      "Cloud Run authenticated invocation",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "Cloud Run authenticated invocation",
+    "explanation": "Cloud Run authenticated invocation is used in GCP to require IAM access.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to secure internal service calls?",
+    "options": [
+      "Cloud Run service-to-service IAM",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "Cloud Run service-to-service IAM",
+    "explanation": "Cloud Run service-to-service IAM is used in GCP to secure internal service calls.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to reach private VPC resources?",
+    "options": [
+      "Serverless VPC Access connector",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "Serverless VPC Access connector",
+    "explanation": "Serverless VPC Access connector is used in GCP to reach private VPC resources.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to return to prior revisions?",
+    "options": [
+      "Cloud Run revision rollback",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "Cloud Run revision rollback",
+    "explanation": "Cloud Run revision rollback is used in GCP to return to prior revisions.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to run multiple task instances?",
+    "options": [
+      "Cloud Run Jobs parallelism",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "Cloud Run Jobs parallelism",
+    "explanation": "Cloud Run Jobs parallelism is used in GCP to run multiple task instances.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to store images near runtimes?",
+    "options": [
+      "Artifact Registry regional repository",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "Artifact Registry regional repository",
+    "explanation": "Artifact Registry regional repository is used in GCP to store images near runtimes.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to manage image retention?",
+    "options": [
+      "Artifact Registry cleanup policies",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "Artifact Registry cleanup policies",
+    "explanation": "Artifact Registry cleanup policies is used in GCP to manage image retention.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to find image vulnerabilities?",
+    "options": [
+      "Artifact Analysis scanning",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "Artifact Analysis scanning",
+    "explanation": "Artifact Analysis scanning is used in GCP to find image vulnerabilities.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to block untrusted images?",
+    "options": [
+      "Binary Authorization policy",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "Binary Authorization policy",
+    "explanation": "Binary Authorization policy is used in GCP to block untrusted images.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to build inside private networks?",
+    "options": [
+      "Cloud Build private pool",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "Cloud Build private pool",
+    "explanation": "Cloud Build private pool is used in GCP to build inside private networks.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to parameterize image builds?",
+    "options": [
+      "Cloud Build substitutions",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "Cloud Build substitutions",
+    "explanation": "Cloud Build substitutions is used in GCP to parameterize image builds.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to promote releases across stages?",
+    "options": [
+      "Cloud Deploy delivery pipeline",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "Cloud Deploy delivery pipeline",
+    "explanation": "Cloud Deploy delivery pipeline is used in GCP to promote releases across stages.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to roll out changes gradually?",
+    "options": [
+      "Cloud Deploy canary strategy",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "Cloud Deploy canary strategy",
+    "explanation": "Cloud Deploy canary strategy is used in GCP to roll out changes gradually.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to size managed pod compute?",
+    "options": [
+      "GKE Autopilot resource requests",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "GKE Autopilot resource requests",
+    "explanation": "GKE Autopilot resource requests is used in GCP to size managed pod compute.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to customize worker nodes?",
+    "options": [
+      "GKE Standard node management",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "GKE Standard node management",
+    "explanation": "GKE Standard node management is used in GCP to customize worker nodes.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to control upgrade cadence?",
+    "options": [
+      "GKE release channels",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "GKE release channels",
+    "explanation": "GKE release channels is used in GCP to control upgrade cadence.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to secure API connectivity?",
+    "options": [
+      "GKE private control plane access",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "GKE private control plane access",
+    "explanation": "GKE private control plane access is used in GCP to secure API connectivity.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to limit API by IP?",
+    "options": [
+      "GKE master authorized networks",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "GKE master authorized networks",
+    "explanation": "GKE master authorized networks is used in GCP to limit API by IP.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to map pods to IAM identities?",
+    "options": [
+      "GKE Workload Identity Federation",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "GKE Workload Identity Federation",
+    "explanation": "GKE Workload Identity Federation is used in GCP to map pods to IAM identities.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to protect node boot integrity?",
+    "options": [
+      "GKE shielded nodes",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "GKE shielded nodes",
+    "explanation": "GKE shielded nodes is used in GCP to protect node boot integrity.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to ensure trusted node startup?",
+    "options": [
+      "GKE secure boot",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "GKE secure boot",
+    "explanation": "GKE secure boot is used in GCP to ensure trusted node startup.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to restrict pod traffic?",
+    "options": [
+      "GKE network policy",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "GKE network policy",
+    "explanation": "GKE network policy is used in GCP to restrict pod traffic.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to enhance networking and observability?",
+    "options": [
+      "GKE Dataplane V2",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "GKE Dataplane V2",
+    "explanation": "GKE Dataplane V2 is used in GCP to enhance networking and observability.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to configure modern traffic routing?",
+    "options": [
+      "GKE Gateway API",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "GKE Gateway API",
+    "explanation": "GKE Gateway API is used in GCP to configure modern traffic routing.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to expose services privately?",
+    "options": [
+      "GKE internal load balancer",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "GKE internal load balancer",
+    "explanation": "GKE internal load balancer is used in GCP to expose services privately.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to expose public web workloads?",
+    "options": [
+      "GKE external HTTP load balancer",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "GKE external HTTP load balancer",
+    "explanation": "GKE external HTTP load balancer is used in GCP to expose public web workloads.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to protect ingress from attacks?",
+    "options": [
+      "Cloud Armor for GKE ingress",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "Cloud Armor for GKE ingress",
+    "explanation": "Cloud Armor for GKE ingress is used in GCP to protect ingress from attacks.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to collect Kubernetes metrics?",
+    "options": [
+      "Managed Service for Prometheus",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "Managed Service for Prometheus",
+    "explanation": "Managed Service for Prometheus is used in GCP to collect Kubernetes metrics.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to centralize pod logs?",
+    "options": [
+      "Cloud Logging workload logs",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "Cloud Logging workload logs",
+    "explanation": "Cloud Logging workload logs is used in GCP to centralize pod logs.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to trace serverless requests?",
+    "options": [
+      "Cloud Trace with Cloud Run",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "Cloud Trace with Cloud Run",
+    "explanation": "Cloud Trace with Cloud Run is used in GCP to trace serverless requests.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to create node pools automatically?",
+    "options": [
+      "GKE node auto-provisioning",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "GKE node auto-provisioning",
+    "explanation": "GKE node auto-provisioning is used in GCP to create node pools automatically.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to adjust node count?",
+    "options": [
+      "GKE cluster autoscaler",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "GKE cluster autoscaler",
+    "explanation": "GKE cluster autoscaler is used in GCP to adjust node count.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to scale pods by metrics?",
+    "options": [
+      "Horizontal Pod Autoscaler",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "Horizontal Pod Autoscaler",
+    "explanation": "Horizontal Pod Autoscaler is used in GCP to scale pods by metrics.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to adjust resource requests?",
+    "options": [
+      "Vertical Pod Autoscaler",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "Vertical Pod Autoscaler",
+    "explanation": "Vertical Pod Autoscaler is used in GCP to adjust resource requests.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to protect app availability?",
+    "options": [
+      "GKE pod disruption budget",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "GKE pod disruption budget",
+    "explanation": "GKE pod disruption budget is used in GCP to protect app availability.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to spread pods across zones?",
+    "options": [
+      "GKE topology spread constraints",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "GKE topology spread constraints",
+    "explanation": "GKE topology spread constraints is used in GCP to spread pods across zones.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to dedicate nodes?",
+    "options": [
+      "GKE taints and tolerations",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "GKE taints and tolerations",
+    "explanation": "GKE taints and tolerations is used in GCP to dedicate nodes.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to prefer selected nodes?",
+    "options": [
+      "GKE node affinity",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "GKE node affinity",
+    "explanation": "GKE node affinity is used in GCP to prefer selected nodes.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to attach block storage?",
+    "options": [
+      "Persistent Disk CSI Driver",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "Persistent Disk CSI Driver",
+    "explanation": "Persistent Disk CSI Driver is used in GCP to attach block storage.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to mount file shares?",
+    "options": [
+      "Filestore CSI Driver",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "Filestore CSI Driver",
+    "explanation": "Filestore CSI Driver is used in GCP to mount file shares.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to mount secrets into pods?",
+    "options": [
+      "Secret Manager CSI Driver",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "Secret Manager CSI Driver",
+    "explanation": "Secret Manager CSI Driver is used in GCP to mount secrets into pods.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to apply manifests from Git?",
+    "options": [
+      "Config Sync Git source",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "Config Sync Git source",
+    "explanation": "Config Sync Git source is used in GCP to apply manifests from Git.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to enforce admission rules?",
+    "options": [
+      "Policy Controller constraints",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "Policy Controller constraints",
+    "explanation": "Policy Controller constraints is used in GCP to enforce admission rules.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to recover workloads?",
+    "options": [
+      "GKE Backup restore plan",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "GKE Backup restore plan",
+    "explanation": "GKE Backup restore plan is used in GCP to recover workloads.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to encrypt service traffic?",
+    "options": [
+      "Cloud Service Mesh mTLS",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "Cloud Service Mesh mTLS",
+    "explanation": "Cloud Service Mesh mTLS is used in GCP to encrypt service traffic.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  },
+  {
+    "question": "Which GCP service or feature is best suited to route between service versions?",
+    "options": [
+      "Cloud Service Mesh traffic splitting",
+      "Cloud Run concurrency",
+      "Cloud Run min instances",
+      "Cloud Run max instances"
+    ],
+    "answer": "Cloud Service Mesh traffic splitting",
+    "explanation": "Cloud Service Mesh traffic splitting is used in GCP to route between service versions.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "gcp"
+  }
+]

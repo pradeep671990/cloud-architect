@@ -1,702 +1,702 @@
 [
-    {
-      "question": "Which Azure service provides managed Kubernetes clusters?",
-      "options": [
-        "AKS",
-        "ACI",
-        "ACR",
-        "Azure DNS"
-      ],
-      "answer": "AKS",
-      "explanation": "AKS is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service stores Docker and OCI container images?",
-      "options": [
-        "Azure Container Registry",
-        "Azure Blob Storage",
-        "Azure SQL",
-        "Azure Files"
-      ],
-      "answer": "Azure Container Registry",
-      "explanation": "Azure Container Registry is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "container-registry",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service runs containers without managing servers?",
-      "options": [
-        "Azure Container Instances",
-        "Azure VM",
-        "Azure Backup",
-        "Azure DNS"
-      ],
-      "answer": "Azure Container Instances",
-      "explanation": "Azure Container Instances is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "serverless-containers",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service is designed for microservices and containerized apps?",
-      "options": [
-        "Azure Container Apps",
-        "Azure Monitor",
-        "Azure Firewall",
-        "Azure DevTest Labs"
-      ],
-      "answer": "Azure Container Apps",
-      "explanation": "Azure Container Apps is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "serverless-containers",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service can host Docker containers as web apps?",
-      "options": [
-        "Azure App Service",
-        "Azure Bastion",
-        "Azure Advisor",
-        "Azure Policy"
-      ],
-      "answer": "Azure App Service",
-      "explanation": "Azure App Service is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "container-hosting",
-      "category": "azure"
-    },
-    {
-      "question": "Which AKS feature automatically adjusts node count?",
-      "options": [
-        "Cluster Autoscaler",
-        "Azure DNS Zone",
-        "Blob Lifecycle",
-        "Public IP Prefix"
-      ],
-      "answer": "Cluster Autoscaler",
-      "explanation": "Cluster Autoscaler is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes-scaling",
-      "category": "azure"
-    },
-    {
-      "question": "Which AKS feature automatically adjusts pod count?",
-      "options": [
-        "Horizontal Pod Autoscaler",
-        "Azure Front Door",
-        "Key Vault Secret",
-        "Network Watcher"
-      ],
-      "answer": "Horizontal Pod Autoscaler",
-      "explanation": "Horizontal Pod Autoscaler is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes-scaling",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service stores secrets used by container workloads?",
-      "options": [
-        "Azure Key Vault",
-        "Azure CDN",
-        "Azure Monitor",
-        "Azure Migrate"
-      ],
-      "answer": "Azure Key Vault",
-      "explanation": "Azure Key Vault is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "container-security",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service collects logs and metrics from AKS?",
-      "options": [
-        "Azure Monitor",
-        "Azure DNS",
-        "Azure Firewall",
-        "Azure Backup"
-      ],
-      "answer": "Azure Monitor",
-      "explanation": "Azure Monitor is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "container-monitoring",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides vulnerability scanning integration for container images?",
-      "options": [
-        "Microsoft Defender for Cloud",
-        "Azure Cost Management",
-        "Azure Advisor",
-        "Azure Boards"
-      ],
-      "answer": "Microsoft Defender for Cloud",
-      "explanation": "Microsoft Defender for Cloud is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "container-security",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure networking plugin is commonly used for advanced AKS networking?",
-      "options": [
-        "Azure CNI",
-        "Azure DevOps",
-        "Azure Files",
-        "Azure Policy"
-      ],
-      "answer": "Azure CNI",
-      "explanation": "Azure CNI is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes-networking",
-      "category": "azure"
-    },
-    {
-      "question": "Which AKS component runs container workloads?",
-      "options": [
-        "Node pool",
-        "Resource group",
-        "Storage account",
-        "DNS record"
-      ],
-      "answer": "Node pool",
-      "explanation": "Node pool is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service can build and push Docker images using tasks?",
-      "options": [
-        "ACR Tasks",
-        "Azure DNS",
-        "Azure Bastion",
-        "Azure Load Testing"
-      ],
-      "answer": "ACR Tasks",
-      "explanation": "ACR Tasks is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "container-cicd",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure feature allows AKS to pull images from ACR securely?",
-      "options": [
-        "Managed identity",
-        "Public IP",
-        "Traffic Manager",
-        "Route Table"
-      ],
-      "answer": "Managed identity",
-      "explanation": "Managed identity is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "container-security",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service can expose AKS applications using Layer 7 routing?",
-      "options": [
-        "Application Gateway Ingress Controller",
-        "Azure Backup",
-        "Azure Files",
-        "Azure Arc"
-      ],
-      "answer": "Application Gateway Ingress Controller",
-      "explanation": "Application Gateway Ingress Controller is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes-networking",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service can provide ingress for AKS using NGINX-style routing?",
-      "options": [
-        "Ingress Controller",
-        "Azure Monitor Workbook",
-        "Azure Policy Assignment",
-        "Azure Disk Snapshot"
-      ],
-      "answer": "Ingress Controller",
-      "explanation": "Ingress Controller is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes-networking",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure storage option can be mounted by containers for shared file access?",
-      "options": [
-        "Azure Files",
-        "Azure DNS",
-        "Azure CDN",
-        "Azure Advisor"
-      ],
-      "answer": "Azure Files",
-      "explanation": "Azure Files is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "container-storage",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure disk type is commonly used as persistent storage for AKS pods?",
-      "options": [
-        "Managed Disk",
-        "Azure Front Door",
-        "Azure Firewall",
-        "Azure Monitor"
-      ],
-      "answer": "Managed Disk",
-      "explanation": "Managed Disk is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "container-storage",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service can run container jobs in a serverless style?",
-      "options": [
-        "Azure Container Apps Jobs",
-        "Azure SQL Jobs",
-        "Azure Backup Vault",
-        "Azure DNS Resolver"
-      ],
-      "answer": "Azure Container Apps Jobs",
-      "explanation": "Azure Container Apps Jobs is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "serverless-containers",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service can deploy containers using YAML-based pipelines?",
-      "options": [
-        "Azure DevOps Pipelines",
-        "Azure Advisor",
-        "Azure Cost Management",
-        "Azure Sentinel"
-      ],
-      "answer": "Azure DevOps Pipelines",
-      "explanation": "Azure DevOps Pipelines is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "container-cicd",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service can store Helm charts and OCI artifacts?",
-      "options": [
-        "Azure Container Registry",
-        "Azure Load Balancer",
-        "Azure DNS",
-        "Azure Policy"
-      ],
-      "answer": "Azure Container Registry",
-      "explanation": "Azure Container Registry is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "container-registry",
-      "category": "azure"
-    },
-    {
-      "question": "Which AKS feature separates different groups of worker nodes?",
-      "options": [
-        "Node pools",
-        "Private endpoints",
-        "DNS labels",
-        "Availability sets"
-      ],
-      "answer": "Node pools",
-      "explanation": "Node pools is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes",
-      "category": "azure"
-    },
-    {
-      "question": "Which AKS option keeps the API server reachable only privately?",
-      "options": [
-        "Private AKS cluster",
-        "Public IP Prefix",
-        "Azure CDN",
-        "Traffic Manager"
-      ],
-      "answer": "Private AKS cluster",
-      "explanation": "Private AKS cluster is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes-security",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service can provide load balancing for AKS services?",
-      "options": [
-        "Azure Load Balancer",
-        "Azure Key Vault",
-        "Azure Backup",
-        "Azure DevTest Labs"
-      ],
-      "answer": "Azure Load Balancer",
-      "explanation": "Azure Load Balancer is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "container-networking",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service helps manage policy compliance for AKS?",
-      "options": [
-        "Azure Policy",
-        "Azure DNS",
-        "Azure Blob Indexer",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Policy",
-      "explanation": "Azure Policy is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "container-security",
-      "category": "azure"
-    },
-    {
-      "question": "Which AKS feature can restrict pod placement using labels?",
-      "options": [
-        "Node selector",
-        "Blob tiering",
-        "DNS forwarding",
-        "Public endpoint"
-      ],
-      "answer": "Node selector",
-      "explanation": "Node selector is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes-scheduling",
-      "category": "azure"
-    },
-    {
-      "question": "Which Kubernetes object is used to expose pods internally in AKS?",
-      "options": [
-        "Service",
-        "Secret Store",
-        "Availability Set",
-        "Storage Container"
-      ],
-      "answer": "Service",
-      "explanation": "Service is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes-networking",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure feature can assign cloud permissions to AKS workloads?",
-      "options": [
-        "Workload identity",
-        "CDN endpoint",
-        "NSG flow log",
-        "Storage queue"
-      ],
-      "answer": "Workload identity",
-      "explanation": "Workload identity is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes-security",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service can run Docker containers with simple per-second billing?",
-      "options": [
-        "Azure Container Instances",
-        "Azure SQL",
-        "Azure Storage Explorer",
-        "Azure Firewall"
-      ],
-      "answer": "Azure Container Instances",
-      "explanation": "Azure Container Instances is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "serverless-containers",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service supports scaling container apps based on events?",
-      "options": [
-        "Azure Container Apps",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Monitor Alerts"
-      ],
-      "answer": "Azure Container Apps",
-      "explanation": "Azure Container Apps is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "container-scaling",
-      "category": "azure"
-    },
-    {
-      "question": "Which technology is used by Azure Container Apps for event-driven scaling?",
-      "options": [
-        "KEDA",
-        "Terraform State",
-        "Azure Files Sync",
-        "ExpressRoute"
-      ],
-      "answer": "KEDA",
-      "explanation": "KEDA is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "container-scaling",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service can protect AKS container workloads from threats?",
-      "options": [
-        "Microsoft Defender for Containers",
-        "Azure Cost Management",
-        "Azure Maps",
-        "Azure Search"
-      ],
-      "answer": "Microsoft Defender for Containers",
-      "explanation": "Microsoft Defender for Containers is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "container-security",
-      "category": "azure"
-    },
-    {
-      "question": "Which AKS feature provides managed Kubernetes version upgrades?",
-      "options": [
-        "AKS upgrade",
-        "ACR replication",
-        "Azure DNS alias",
-        "Storage lifecycle"
-      ],
-      "answer": "AKS upgrade",
-      "explanation": "AKS upgrade is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure registry feature replicates images to multiple regions?",
-      "options": [
-        "Geo-replication",
-        "Traffic Manager",
-        "Bastion tunneling",
-        "Private DNS"
-      ],
-      "answer": "Geo-replication",
-      "explanation": "Geo-replication is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "container-registry",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure feature gives private access to Azure Container Registry?",
-      "options": [
-        "Private Endpoint",
-        "Azure CDN",
-        "Public IP",
-        "Load Balancer Probe"
-      ],
-      "answer": "Private Endpoint",
-      "explanation": "Private Endpoint is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "container-security",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service can create container-based CI/CD workflows with GitHub?",
-      "options": [
-        "GitHub Actions",
-        "Azure DNS",
-        "Azure Firewall Manager",
-        "Azure Advisor"
-      ],
-      "answer": "GitHub Actions",
-      "explanation": "GitHub Actions is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "container-cicd",
-      "category": "azure"
-    },
-    {
-      "question": "Which AKS feature helps apply Kubernetes network policies?",
-      "options": [
-        "Network Policy",
-        "Azure Reservations",
-        "Blob Versioning",
-        "DNSSEC"
-      ],
-      "answer": "Network Policy",
-      "explanation": "Network Policy is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes-networking",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service can collect container logs in Log Analytics workspace?",
-      "options": [
-        "Azure Monitor Container Insights",
-        "Azure DNS",
-        "Azure Front Door",
-        "Azure Migrate"
-      ],
-      "answer": "Azure Monitor Container Insights",
-      "explanation": "Azure Monitor Container Insights is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "container-monitoring",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service can deploy container images directly from ACR to web apps?",
-      "options": [
-        "Azure App Service",
-        "Azure Site Recovery",
-        "Azure Logic Apps",
-        "Azure Data Factory"
-      ],
-      "answer": "Azure App Service",
-      "explanation": "Azure App Service is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "container-hosting",
-      "category": "azure"
-    },
-    {
-      "question": "Which AKS feature can run Linux and Windows node pools?",
-      "options": [
-        "Multiple node pools",
-        "Private DNS Zone",
-        "Azure Advisor",
-        "Storage Explorer"
-      ],
-      "answer": "Multiple node pools",
-      "explanation": "Multiple node pools is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service can store Kubernetes configuration secrets externally?",
-      "options": [
-        "Azure Key Vault",
-        "Azure CDN",
-        "Azure SQL Elastic Pool",
-        "Azure Route Server"
-      ],
-      "answer": "Azure Key Vault",
-      "explanation": "Azure Key Vault is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "container-security",
-      "category": "azure"
-    },
-    {
-      "question": "Which Kubernetes workload type is commonly used for stateless apps on AKS?",
-      "options": [
-        "Deployment",
-        "Private Endpoint",
-        "Storage Account",
-        "Azure Function Plan"
-      ],
-      "answer": "Deployment",
-      "explanation": "Deployment is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service can control outbound traffic from AKS?",
-      "options": [
-        "Azure Firewall",
-        "Azure Backup",
-        "Azure Boards",
-        "Azure DevTest Labs"
-      ],
-      "answer": "Azure Firewall",
-      "explanation": "Azure Firewall is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "container-networking",
-      "category": "azure"
-    },
-    {
-      "question": "Which AKS option integrates with Microsoft Entra ID for authentication?",
-      "options": [
-        "AKS-managed Microsoft Entra integration",
-        "Blob lifecycle policy",
-        "CDN compression",
-        "Traffic analytics"
-      ],
-      "answer": "AKS-managed Microsoft Entra integration",
-      "explanation": "AKS-managed Microsoft Entra integration is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes-security",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service can scan ACR images for security issues?",
-      "options": [
-        "Microsoft Defender for Cloud",
-        "Azure DNS",
-        "Azure Monitor Metrics",
-        "Azure Automation"
-      ],
-      "answer": "Microsoft Defender for Cloud",
-      "explanation": "Microsoft Defender for Cloud is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "container-security",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service can provide a managed environment for container apps?",
-      "options": [
-        "Azure Container Apps Environment",
-        "Azure DevTest Lab",
-        "Azure DNS Resolver",
-        "Azure Backup Vault"
-      ],
-      "answer": "Azure Container Apps Environment",
-      "explanation": "Azure Container Apps Environment is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "serverless-containers",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure tool can package Kubernetes applications for AKS?",
-      "options": [
-        "Helm",
-        "Azure CLI Storage Copy",
-        "Traffic Manager",
-        "Application Insights Availability Test"
-      ],
-      "answer": "Helm",
-      "explanation": "Helm is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "kubernetes",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service can expose private AKS applications internally?",
-      "options": [
-        "Internal Load Balancer",
-        "Azure CDN",
-        "Azure Search",
-        "Azure Cost Management"
-      ],
-      "answer": "Internal Load Balancer",
-      "explanation": "Internal Load Balancer is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "container-networking",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure feature can prevent public access to ACR?",
-      "options": [
-        "Disable public network access",
-        "Enable CDN endpoint",
-        "Create DNS alias",
-        "Enable public IP SKU"
-      ],
-      "answer": "Disable public network access",
-      "explanation": "Disable public network access is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "container-security",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service can automate Docker image builds on source code updates?",
-      "options": [
-        "ACR Tasks",
-        "Azure Advisor",
-        "Azure Load Balancer",
-        "Azure Backup"
-      ],
-      "answer": "ACR Tasks",
-      "explanation": "ACR Tasks is used for Docker, container, Kubernetes, registry, deployment, security, or monitoring use cases in AZURE.",
-      "difficulty": "medium",
-      "subcategory": "container-cicd",
-      "category": "azure"
-    }
-  ]
+  {
+    "question": "Which Azure service or feature is best suited to access Azure resources without stored secrets?",
+    "options": [
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS",
+      "Azure CNI Overlay"
+    ],
+    "answer": "AKS workload identity",
+    "explanation": "AKS workload identity is used in Azure to access Azure resources without stored secrets.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to restrict API server access?",
+    "options": [
+      "AKS authorized IP ranges",
+      "AKS workload identity",
+      "AKS private cluster DNS",
+      "Azure CNI Overlay"
+    ],
+    "answer": "AKS authorized IP ranges",
+    "explanation": "AKS authorized IP ranges is used in Azure to restrict API server access.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to resolve private API endpoints?",
+    "options": [
+      "AKS private cluster DNS",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "Azure CNI Overlay"
+    ],
+    "answer": "AKS private cluster DNS",
+    "explanation": "AKS private cluster DNS is used in Azure to resolve private API endpoints.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to reduce pod IP consumption?",
+    "options": [
+      "Azure CNI Overlay",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "Azure CNI Overlay",
+    "explanation": "Azure CNI Overlay is used in Azure to reduce pod IP consumption.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to control pod traffic?",
+    "options": [
+      "AKS network policy",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "AKS network policy",
+    "explanation": "AKS network policy is used in Azure to control pod traffic.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to protect AKS ingress?",
+    "options": [
+      "Application Gateway WAF with AKS",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "Application Gateway WAF with AKS",
+    "explanation": "Application Gateway WAF with AKS is used in Azure to protect AKS ingress.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to route requests to AKS services?",
+    "options": [
+      "AGIC path-based routing",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "AGIC path-based routing",
+    "explanation": "AGIC path-based routing is used in Azure to route requests to AKS services.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to pull images privately?",
+    "options": [
+      "ACR private endpoint",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "ACR private endpoint",
+    "explanation": "ACR private endpoint is used in Azure to pull images privately.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to support trusted images?",
+    "options": [
+      "ACR content trust",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "ACR content trust",
+    "explanation": "ACR content trust is used in Azure to support trusted images.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to remove untagged manifests?",
+    "options": [
+      "ACR retention policy",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "ACR retention policy",
+    "explanation": "ACR retention policy is used in Azure to remove untagged manifests.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to hold images before approval?",
+    "options": [
+      "ACR quarantine pattern",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "ACR quarantine pattern",
+    "explanation": "ACR quarantine pattern is used in Azure to hold images before approval.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to rebuild images after base updates?",
+    "options": [
+      "ACR base image trigger",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "ACR base image trigger",
+    "explanation": "ACR base image trigger is used in Azure to rebuild images after base updates.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to tune node autoscaling?",
+    "options": [
+      "AKS autoscaler profile",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "AKS autoscaler profile",
+    "explanation": "AKS autoscaler profile is used in Azure to tune node autoscaling.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to separate workloads by VM type?",
+    "options": [
+      "AKS multiple node pools",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "AKS multiple node pools",
+    "explanation": "AKS multiple node pools is used in Azure to separate workloads by VM type.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to host system components?",
+    "options": [
+      "AKS system node pool",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "AKS system node pool",
+    "explanation": "AKS system node pool is used in Azure to host system components.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to host application workloads?",
+    "options": [
+      "AKS user node pool",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "AKS user node pool",
+    "explanation": "AKS user node pool is used in Azure to host application workloads.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to control pod placement?",
+    "options": [
+      "AKS taints and tolerations",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "AKS taints and tolerations",
+    "explanation": "AKS taints and tolerations is used in Azure to control pod placement.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to schedule pods by labels?",
+    "options": [
+      "AKS node selector",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "AKS node selector",
+    "explanation": "AKS node selector is used in Azure to schedule pods by labels.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to preserve availability during maintenance?",
+    "options": [
+      "AKS pod disruption budget",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "AKS pod disruption budget",
+    "explanation": "AKS pod disruption budget is used in Azure to preserve availability during maintenance.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to control upgrade cadence?",
+    "options": [
+      "AKS upgrade channel",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "AKS upgrade channel",
+    "explanation": "AKS upgrade channel is used in Azure to control upgrade cadence.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to route between revisions?",
+    "options": [
+      "Container Apps traffic splitting",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "Container Apps traffic splitting",
+    "explanation": "Container Apps traffic splitting is used in Azure to route between revisions.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to scale from HTTP or events?",
+    "options": [
+      "Container Apps scale rules",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "Container Apps scale rules",
+    "explanation": "Container Apps scale rules is used in Azure to scale from HTTP or events.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to inject secrets into apps?",
+    "options": [
+      "Container Apps secrets",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "Container Apps secrets",
+    "explanation": "Container Apps secrets is used in Azure to inject secrets into apps.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to grant app resource permissions?",
+    "options": [
+      "Container Apps managed identity",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "Container Apps managed identity",
+    "explanation": "Container Apps managed identity is used in Azure to grant app resource permissions.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to connect apps to private networks?",
+    "options": [
+      "Container Apps VNet integration",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "Container Apps VNet integration",
+    "explanation": "Container Apps VNet integration is used in Azure to connect apps to private networks.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to expose apps privately?",
+    "options": [
+      "Container Apps internal environment",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "Container Apps internal environment",
+    "explanation": "Container Apps internal environment is used in Azure to expose apps privately.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to collect AKS Prometheus metrics?",
+    "options": [
+      "Managed Prometheus",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "Managed Prometheus",
+    "explanation": "Managed Prometheus is used in Azure to collect AKS Prometheus metrics.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to visualize container metrics?",
+    "options": [
+      "Managed Grafana",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "Managed Grafana",
+    "explanation": "Managed Grafana is used in Azure to visualize container metrics.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to troubleshoot running containers?",
+    "options": [
+      "Container Insights live logs",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "Container Insights live logs",
+    "explanation": "Container Insights live logs is used in Azure to troubleshoot running containers.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to scan ACR images?",
+    "options": [
+      "Defender image vulnerability assessment",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "Defender image vulnerability assessment",
+    "explanation": "Defender image vulnerability assessment is used in Azure to scan ACR images.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to detect container threats?",
+    "options": [
+      "Defender runtime threat detection",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "Defender runtime threat detection",
+    "explanation": "Defender runtime threat detection is used in Azure to detect container threats.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to enforce Kubernetes admission policies?",
+    "options": [
+      "Azure Policy Gatekeeper",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "Azure Policy Gatekeeper",
+    "explanation": "Azure Policy Gatekeeper is used in Azure to enforce Kubernetes admission policies.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to authorize Kubernetes access using Azure roles?",
+    "options": [
+      "AKS Azure RBAC",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "AKS Azure RBAC",
+    "explanation": "AKS Azure RBAC is used in Azure to authorize Kubernetes access using Azure roles.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to grant cluster access by group?",
+    "options": [
+      "AKS Entra group mapping",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "AKS Entra group mapping",
+    "explanation": "AKS Entra group mapping is used in Azure to grant cluster access by group.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to provision AKS block volumes?",
+    "options": [
+      "Azure Disk CSI Driver",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "Azure Disk CSI Driver",
+    "explanation": "Azure Disk CSI Driver is used in Azure to provision AKS block volumes.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to mount file shares in AKS?",
+    "options": [
+      "Azure Files CSI Driver",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "Azure Files CSI Driver",
+    "explanation": "Azure Files CSI Driver is used in Azure to mount file shares in AKS.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to mount secrets into pods?",
+    "options": [
+      "Key Vault CSI Driver",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "Key Vault CSI Driver",
+    "explanation": "Key Vault CSI Driver is used in Azure to mount secrets into pods.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to replace service principals?",
+    "options": [
+      "Managed identity migration",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "Managed identity migration",
+    "explanation": "Managed identity migration is used in Azure to replace service principals.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to route egress through firewalls?",
+    "options": [
+      "AKS userDefinedRouting",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "AKS userDefinedRouting",
+    "explanation": "AKS userDefinedRouting is used in Azure to route egress through firewalls.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to scale outbound SNAT?",
+    "options": [
+      "AKS NAT Gateway outbound",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "AKS NAT Gateway outbound",
+    "explanation": "AKS NAT Gateway outbound is used in Azure to scale outbound SNAT.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to expose private Kubernetes services?",
+    "options": [
+      "AKS internal load balancer",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "AKS internal load balancer",
+    "explanation": "AKS internal load balancer is used in Azure to expose private Kubernetes services.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to expose public Kubernetes services?",
+    "options": [
+      "AKS external load balancer",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "AKS external load balancer",
+    "explanation": "AKS external load balancer is used in Azure to expose public Kubernetes services.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to deploy YAML to AKS?",
+    "options": [
+      "Azure DevOps manifest task",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "Azure DevOps manifest task",
+    "explanation": "Azure DevOps manifest task is used in Azure to deploy YAML to AKS.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to deploy without long-lived secrets?",
+    "options": [
+      "GitHub Actions OIDC",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "GitHub Actions OIDC",
+    "explanation": "GitHub Actions OIDC is used in Azure to deploy without long-lived secrets.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to standardize cluster deployment?",
+    "options": [
+      "Bicep module for AKS",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "Bicep module for AKS",
+    "explanation": "Bicep module for AKS is used in Azure to standardize cluster deployment.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to deploy versioned charts?",
+    "options": [
+      "Helm release automation",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "Helm release automation",
+    "explanation": "Helm release automation is used in Azure to deploy versioned charts.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to scale from queue depth?",
+    "options": [
+      "KEDA queue scaling",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "KEDA queue scaling",
+    "explanation": "KEDA queue scaling is used in Azure to scale from queue depth.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to connect services with events?",
+    "options": [
+      "Dapr pubsub component",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "Dapr pubsub component",
+    "explanation": "Dapr pubsub component is used in Azure to connect services with events.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to deploy config across clusters?",
+    "options": [
+      "Azure Arc GitOps",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "Azure Arc GitOps",
+    "explanation": "Azure Arc GitOps is used in Azure to deploy config across clusters.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service or feature is best suited to choose compute profiles?",
+    "options": [
+      "Container Apps workload profiles",
+      "AKS workload identity",
+      "AKS authorized IP ranges",
+      "AKS private cluster DNS"
+    ],
+    "answer": "Container Apps workload profiles",
+    "explanation": "Container Apps workload profiles is used in Azure to choose compute profiles.",
+    "difficulty": "medium",
+    "subcategory": "docker-containers",
+    "category": "azure"
+  }
+]

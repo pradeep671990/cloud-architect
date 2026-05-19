@@ -1,702 +1,702 @@
 [
-    {
-      "question": "In Amazon EKS, which feature allows Kubernetes service accounts to assume IAM roles without using node IAM permissions?",
-      "options": [
-        "IAM Roles for Service Accounts",
-        "Security Groups",
-        "NAT Gateway",
-        "Route 53 Resolver"
-      ],
-      "answer": "IAM Roles for Service Accounts",
-      "explanation": "IAM Roles for Service Accounts is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "kubernetes-security",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service helps enforce deployment protection rules for Amazon ECS blue/green deployments?",
-      "options": [
-        "AWS CodeDeploy",
-        "AWS Config",
-        "Amazon Inspector",
-        "AWS CloudTrail"
-      ],
-      "answer": "AWS CodeDeploy",
-      "explanation": "AWS CodeDeploy is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-deployment",
-      "category": "aws"
-    },
-    {
-      "question": "Which Amazon ECS network mode assigns an elastic network interface directly to each task?",
-      "options": [
-        "awsvpc",
-        "bridge",
-        "host",
-        "none"
-      ],
-      "answer": "awsvpc",
-      "explanation": "awsvpc is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-networking",
-      "category": "aws"
-    },
-    {
-      "question": "Which Amazon EKS component is used to provision AWS load balancers from Kubernetes Ingress or Service resources?",
-      "options": [
-        "AWS Load Balancer Controller",
-        "EKS Add-on Manager",
-        "CloudFront Function",
-        "Route 53 Resolver"
-      ],
-      "answer": "AWS Load Balancer Controller",
-      "explanation": "AWS Load Balancer Controller is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "kubernetes-networking",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service can continuously scan Amazon ECR container images for vulnerabilities?",
-      "options": [
-        "Amazon Inspector",
-        "AWS Backup",
-        "Amazon Macie",
-        "AWS Trusted Advisor"
-      ],
-      "answer": "Amazon Inspector",
-      "explanation": "Amazon Inspector is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-security",
-      "category": "aws"
-    },
-    {
-      "question": "Which EKS feature allows pods to run on serverless compute without managing worker nodes?",
-      "options": [
-        "Fargate Profile",
-        "Managed Node Group",
-        "Launch Template",
-        "Placement Group"
-      ],
-      "answer": "Fargate Profile",
-      "explanation": "Fargate Profile is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "serverless-containers",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS feature can prevent Amazon ECR repositories from keeping unlimited old images?",
-      "options": [
-        "Lifecycle Policy",
-        "Target Group",
-        "Security Group Rule",
-        "Route Table"
-      ],
-      "answer": "Lifecycle Policy",
-      "explanation": "Lifecycle Policy is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-registry",
-      "category": "aws"
-    },
-    {
-      "question": "Which Amazon ECS deployment strategy can shift traffic between task sets using a load balancer?",
-      "options": [
-        "Blue/green deployment",
-        "DNS-only deployment",
-        "Manual AMI rotation",
-        "Static host update"
-      ],
-      "answer": "Blue/green deployment",
-      "explanation": "Blue/green deployment is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-deployment",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service can provide service discovery for ECS services using DNS names?",
-      "options": [
-        "AWS Cloud Map",
-        "AWS Shield",
-        "Amazon Athena",
-        "Amazon Translate"
-      ],
-      "answer": "AWS Cloud Map",
-      "explanation": "AWS Cloud Map is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "service-discovery",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS storage service is commonly used for shared persistent storage across multiple containers?",
-      "options": [
-        "Amazon EFS",
-        "Amazon S3 Glacier",
-        "Amazon SES",
-        "Amazon Kinesis"
-      ],
-      "answer": "Amazon EFS",
-      "explanation": "Amazon EFS is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-storage",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service can run containerized batch workloads at scale?",
-      "options": [
-        "AWS Batch",
-        "Amazon Lightsail",
-        "AWS WAF",
-        "Amazon WorkMail"
-      ],
-      "answer": "AWS Batch",
-      "explanation": "AWS Batch is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-compute",
-      "category": "aws"
-    },
-    {
-      "question": "Which Amazon EKS feature simplifies installation of components like CoreDNS and kube-proxy?",
-      "options": [
-        "EKS Add-ons",
-        "ECR Replication",
-        "CloudWatch Alarms",
-        "VPC Peering"
-      ],
-      "answer": "EKS Add-ons",
-      "explanation": "EKS Add-ons is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "kubernetes",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS option is used to encrypt container image repositories in Amazon ECR with customer-managed keys?",
-      "options": [
-        "AWS KMS",
-        "AWS Shield",
-        "Route 53",
-        "Amazon CloudFront"
-      ],
-      "answer": "AWS KMS",
-      "explanation": "AWS KMS is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-security",
-      "category": "aws"
-    },
-    {
-      "question": "Which Amazon ECS field defines CPU, memory, container image, ports, and environment variables?",
-      "options": [
-        "Task Definition",
-        "Hosted Zone",
-        "Target Group",
-        "Launch Template"
-      ],
-      "answer": "Task Definition",
-      "explanation": "Task Definition is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-orchestration",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service can collect distributed traces from containerized microservices?",
-      "options": [
-        "AWS X-Ray",
-        "Amazon Polly",
-        "Amazon Textract",
-        "AWS Artifact"
-      ],
-      "answer": "AWS X-Ray",
-      "explanation": "AWS X-Ray is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-monitoring",
-      "category": "aws"
-    },
-    {
-      "question": "Which EKS option is used when you need Kubernetes nodes managed by AWS with lifecycle automation?",
-      "options": [
-        "Managed Node Groups",
-        "ECR Pull Through Cache",
-        "S3 Transfer Acceleration",
-        "CloudFront Origin Shield"
-      ],
-      "answer": "Managed Node Groups",
-      "explanation": "Managed Node Groups is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "kubernetes",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service can replicate container images across AWS regions in ECR?",
-      "options": [
-        "ECR Cross-Region Replication",
-        "CloudFront Cache Policy",
-        "Route 53 Health Check",
-        "AWS VPN"
-      ],
-      "answer": "ECR Cross-Region Replication",
-      "explanation": "ECR Cross-Region Replication is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-registry",
-      "category": "aws"
-    },
-    {
-      "question": "Which ECS feature ensures the service maintains a specified number of running tasks?",
-      "options": [
-        "Service desired count",
-        "DNS TTL",
-        "Security group priority",
-        "S3 replication rule"
-      ],
-      "answer": "Service desired count",
-      "explanation": "Service desired count is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-orchestration",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS feature can give ECS tasks permissions to access Secrets Manager without sharing host credentials?",
-      "options": [
-        "Task Role",
-        "Instance Profile only",
-        "Route Table",
-        "Internet Gateway"
-      ],
-      "answer": "Task Role",
-      "explanation": "Task Role is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-security",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service can be used to build Docker images inside a managed CI environment?",
-      "options": [
-        "AWS CodeBuild",
-        "AWS Budgets",
-        "AWS Organizations",
-        "Amazon SES"
-      ],
-      "answer": "AWS CodeBuild",
-      "explanation": "AWS CodeBuild is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-cicd",
-      "category": "aws"
-    },
-    {
-      "question": "Which Amazon EKS networking plugin commonly assigns VPC IP addresses directly to Kubernetes pods?",
-      "options": [
-        "Amazon VPC CNI",
-        "CoreDNS",
-        "kube-proxy",
-        "Container Insights"
-      ],
-      "answer": "Amazon VPC CNI",
-      "explanation": "Amazon VPC CNI is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "kubernetes-networking",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service helps monitor ECS task CPU and memory metrics?",
-      "options": [
-        "Amazon CloudWatch",
-        "AWS IAM",
-        "Amazon Route 53",
-        "AWS Direct Connect"
-      ],
-      "answer": "Amazon CloudWatch",
-      "explanation": "Amazon CloudWatch is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-monitoring",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS feature allows EKS pods to use persistent block storage volumes?",
-      "options": [
-        "Amazon EBS CSI Driver",
-        "CloudFront OAC",
-        "Route 53 Resolver",
-        "AWS Shield Advanced"
-      ],
-      "answer": "Amazon EBS CSI Driver",
-      "explanation": "Amazon EBS CSI Driver is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-storage",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service can deploy containerized applications directly from source or container images without managing orchestration?",
-      "options": [
-        "AWS App Runner",
-        "Amazon Neptune",
-        "AWS Glue",
-        "Amazon EMR"
-      ],
-      "answer": "AWS App Runner",
-      "explanation": "AWS App Runner is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "serverless-containers",
-      "category": "aws"
-    },
-    {
-      "question": "Which Amazon ECS capability lets you place tasks based on constraints such as instance attributes?",
-      "options": [
-        "Task placement constraints",
-        "CloudFront cache policy",
-        "Route 53 weighted record",
-        "S3 object lock"
-      ],
-      "answer": "Task placement constraints",
-      "explanation": "Task placement constraints is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-orchestration",
-      "category": "aws"
-    },
-    {
-      "question": "Which EKS feature helps control pod-to-pod traffic using Kubernetes-native rules?",
-      "options": [
-        "Kubernetes Network Policies",
-        "ECR Lifecycle Policies",
-        "CloudTrail Events",
-        "S3 Bucket Policies"
-      ],
-      "answer": "Kubernetes Network Policies",
-      "explanation": "Kubernetes Network Policies is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "kubernetes-networking",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service can securely store Docker registry credentials or application secrets for containers?",
-      "options": [
-        "AWS Secrets Manager",
-        "AWS Config",
-        "Amazon EventBridge",
-        "AWS Global Accelerator"
-      ],
-      "answer": "AWS Secrets Manager",
-      "explanation": "AWS Secrets Manager is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-security",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service can automate ECS deployment workflows after image build completion?",
-      "options": [
-        "AWS CodePipeline",
-        "AWS Cost Explorer",
-        "Amazon WorkSpaces",
-        "AWS Artifact"
-      ],
-      "answer": "AWS CodePipeline",
-      "explanation": "AWS CodePipeline is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-cicd",
-      "category": "aws"
-    },
-    {
-      "question": "Which ECS deployment controller supports rolling updates managed directly by ECS?",
-      "options": [
-        "ECS deployment controller",
-        "External DNS controller",
-        "CloudFront controller",
-        "S3 replication controller"
-      ],
-      "answer": "ECS deployment controller",
-      "explanation": "ECS deployment controller is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-deployment",
-      "category": "aws"
-    },
-    {
-      "question": "Which EKS feature is used to manage pod identity with least privilege access to AWS APIs?",
-      "options": [
-        "IAM Roles for Service Accounts",
-        "NAT Gateway",
-        "Internet Gateway",
-        "Elastic IP"
-      ],
-      "answer": "IAM Roles for Service Accounts",
-      "explanation": "IAM Roles for Service Accounts is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "kubernetes-security",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service can expose ECS tasks through path-based routing for HTTP applications?",
-      "options": [
-        "Application Load Balancer",
-        "Network Firewall",
-        "CloudTrail Lake",
-        "AWS Backup"
-      ],
-      "answer": "Application Load Balancer",
-      "explanation": "Application Load Balancer is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-networking",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service can help centralize logs from ECS containers using the awslogs driver?",
-      "options": [
-        "CloudWatch Logs",
-        "Amazon S3 Select",
-        "AWS IAM Identity Center",
-        "AWS Shield"
-      ],
-      "answer": "CloudWatch Logs",
-      "explanation": "CloudWatch Logs is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-monitoring",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service supports private image pull-through caching for public container registries?",
-      "options": [
-        "Amazon ECR Pull Through Cache",
-        "Amazon S3 Transfer Acceleration",
-        "AWS Firewall Manager",
-        "Route 53 Resolver"
-      ],
-      "answer": "Amazon ECR Pull Through Cache",
-      "explanation": "Amazon ECR Pull Through Cache is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-registry",
-      "category": "aws"
-    },
-    {
-      "question": "Which Amazon EKS security feature can restrict API server access to selected CIDR ranges?",
-      "options": [
-        "Public endpoint access CIDR restriction",
-        "CloudFront signed cookies",
-        "S3 Block Public Access",
-        "ECR tag immutability"
-      ],
-      "answer": "Public endpoint access CIDR restriction",
-      "explanation": "Public endpoint access CIDR restriction is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "kubernetes-security",
-      "category": "aws"
-    },
-    {
-      "question": "Which ECR feature prevents overwriting existing image tags?",
-      "options": [
-        "Tag immutability",
-        "DNS failover",
-        "Task placement",
-        "Subnet association"
-      ],
-      "answer": "Tag immutability",
-      "explanation": "Tag immutability is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-registry",
-      "category": "aws"
-    },
-    {
-      "question": "Which Amazon ECS concept groups one or more containers that are scheduled together?",
-      "options": [
-        "Task",
-        "Repository",
-        "Hosted Zone",
-        "Bucket"
-      ],
-      "answer": "Task",
-      "explanation": "Task is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-orchestration",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service can trigger container workflows based on ECR image push events?",
-      "options": [
-        "Amazon EventBridge",
-        "Amazon Macie",
-        "AWS Snowball",
-        "Amazon Connect"
-      ],
-      "answer": "Amazon EventBridge",
-      "explanation": "Amazon EventBridge is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-cicd",
-      "category": "aws"
-    },
-    {
-      "question": "Which EKS add-on helps with Kubernetes DNS resolution inside the cluster?",
-      "options": [
-        "CoreDNS",
-        "AWS Config",
-        "Amazon Inspector",
-        "Route 53 Hosted Zone"
-      ],
-      "answer": "CoreDNS",
-      "explanation": "CoreDNS is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "kubernetes",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS option provides serverless compute for ECS tasks?",
-      "options": [
-        "Fargate launch type",
-        "EC2 launch type only",
-        "Dedicated Host",
-        "Reserved Instance"
-      ],
-      "answer": "Fargate launch type",
-      "explanation": "Fargate launch type is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "serverless-containers",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service can help detect runtime threats in EKS clusters?",
-      "options": [
-        "Amazon GuardDuty EKS Protection",
-        "AWS Backup",
-        "Amazon Forecast",
-        "AWS License Manager"
-      ],
-      "answer": "Amazon GuardDuty EKS Protection",
-      "explanation": "Amazon GuardDuty EKS Protection is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-security",
-      "category": "aws"
-    },
-    {
-      "question": "Which Amazon EKS feature can run Kubernetes workloads on customer-managed EC2 instances?",
-      "options": [
-        "Self-managed node groups",
-        "CloudFront Functions",
-        "Route 53 Resolver endpoints",
-        "S3 Event Notifications"
-      ],
-      "answer": "Self-managed node groups",
-      "explanation": "Self-managed node groups is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "kubernetes",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service can provide container insights dashboards for ECS and EKS?",
-      "options": [
-        "Amazon CloudWatch Container Insights",
-        "Amazon Pinpoint",
-        "AWS DataSync",
-        "Amazon Comprehend"
-      ],
-      "answer": "Amazon CloudWatch Container Insights",
-      "explanation": "Amazon CloudWatch Container Insights is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-monitoring",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS feature helps ECS services distribute traffic only to healthy tasks?",
-      "options": [
-        "Target group health checks",
-        "S3 lifecycle rules",
-        "Route table propagation",
-        "IAM access keys"
-      ],
-      "answer": "Target group health checks",
-      "explanation": "Target group health checks is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-networking",
-      "category": "aws"
-    },
-    {
-      "question": "Which EKS feature helps schedule workloads on EC2 Spot capacity with managed scaling?",
-      "options": [
-        "Karpenter",
-        "Route 53 Resolver",
-        "CloudFront Origin Shield",
-        "AWS Firewall Manager"
-      ],
-      "answer": "Karpenter",
-      "explanation": "Karpenter is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "kubernetes-scaling",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service can manage container image repositories with fine-grained IAM permissions?",
-      "options": [
-        "Amazon ECR",
-        "Amazon RDS",
-        "Amazon CloudFront",
-        "Amazon Route 53"
-      ],
-      "answer": "Amazon ECR",
-      "explanation": "Amazon ECR is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-registry",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service can manage infrastructure templates for ECS or EKS clusters?",
-      "options": [
-        "AWS CloudFormation",
-        "AWS Budgets",
-        "Amazon SES",
-        "Amazon Polly"
-      ],
-      "answer": "AWS CloudFormation",
-      "explanation": "AWS CloudFormation is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-iac",
-      "category": "aws"
-    },
-    {
-      "question": "Which ECS feature helps define whether containers in a task are essential?",
-      "options": [
-        "Container definition",
-        "Security group",
-        "Hosted zone",
-        "NAT route"
-      ],
-      "answer": "Container definition",
-      "explanation": "Container definition is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-orchestration",
-      "category": "aws"
-    },
-    {
-      "question": "Which Amazon EKS capability can help manage Kubernetes versions through planned upgrades?",
-      "options": [
-        "Cluster version upgrade",
-        "S3 replication",
-        "CloudFront invalidation",
-        "ECR lifecycle deletion"
-      ],
-      "answer": "Cluster version upgrade",
-      "explanation": "Cluster version upgrade is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "kubernetes",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service can expose containerized applications using private DNS-based discovery?",
-      "options": [
-        "AWS Cloud Map",
-        "AWS WAF",
-        "Amazon QLDB",
-        "AWS Backup"
-      ],
-      "answer": "AWS Cloud Map",
-      "explanation": "AWS Cloud Map is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "service-discovery",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS feature allows ECS tasks to securely retrieve secrets as environment variables?",
-      "options": [
-        "Secrets injection from Secrets Manager",
-        "Route 53 alias",
-        "CloudFront invalidation",
-        "S3 acceleration"
-      ],
-      "answer": "Secrets injection from Secrets Manager",
-      "explanation": "Secrets injection from Secrets Manager is an advanced Docker, container, Kubernetes, registry, deployment, security, monitoring, or networking capability in AWS.",
-      "difficulty": "hard",
-      "subcategory": "container-security",
-      "category": "aws"
-    }
-  ]
+  {
+    "question": "Which AWS service or feature is best suited to avoid broad node IAM permissions?",
+    "options": [
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement",
+      "EKS multi-tenant namespace governance"
+    ],
+    "answer": "EKS IRSA least privilege design",
+    "explanation": "EKS IRSA least privilege design is used in AWS to avoid broad node IAM permissions.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to restrict privileged pod behavior?",
+    "options": [
+      "EKS pod security standards",
+      "EKS IRSA least privilege design",
+      "EKS network policy enforcement",
+      "EKS multi-tenant namespace governance"
+    ],
+    "answer": "EKS pod security standards",
+    "explanation": "EKS pod security standards is used in AWS to restrict privileged pod behavior.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to limit east-west traffic?",
+    "options": [
+      "EKS network policy enforcement",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS multi-tenant namespace governance"
+    ],
+    "answer": "EKS network policy enforcement",
+    "explanation": "EKS network policy enforcement is used in AWS to limit east-west traffic.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to separate teams on one cluster?",
+    "options": [
+      "EKS multi-tenant namespace governance",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "EKS multi-tenant namespace governance",
+    "explanation": "EKS multi-tenant namespace governance is used in AWS to separate teams on one cluster.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to separate sensitive pods from shared nodes?",
+    "options": [
+      "EKS workload isolation with taints",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "EKS workload isolation with taints",
+    "explanation": "EKS workload isolation with taints is used in AWS to separate sensitive pods from shared nodes.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to design private control plane access?",
+    "options": [
+      "EKS private cluster with shared services VPC",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "EKS private cluster with shared services VPC",
+    "explanation": "EKS private cluster with shared services VPC is used in AWS to design private control plane access.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to reduce Kubernetes API exposure?",
+    "options": [
+      "EKS cluster endpoint hardening",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "EKS cluster endpoint hardening",
+    "explanation": "EKS cluster endpoint hardening is used in AWS to reduce Kubernetes API exposure.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to mount external secrets into pods?",
+    "options": [
+      "EKS secrets store CSI driver",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "EKS secrets store CSI driver",
+    "explanation": "EKS secrets store CSI driver is used in AWS to mount external secrets into pods.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to audit Kubernetes API activity?",
+    "options": [
+      "EKS control plane logging",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "EKS control plane logging",
+    "explanation": "EKS control plane logging is used in AWS to audit Kubernetes API activity.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to validate add-ons before upgrade?",
+    "options": [
+      "EKS upgrade compatibility planning",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "EKS upgrade compatibility planning",
+    "explanation": "EKS upgrade compatibility planning is used in AWS to validate add-ons before upgrade.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to replace nodes without full outage?",
+    "options": [
+      "EKS managed node group rolling update",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "EKS managed node group rolling update",
+    "explanation": "EKS managed node group rolling update is used in AWS to replace nodes without full outage.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to distribute pods across zones?",
+    "options": [
+      "EKS topology spread constraints",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "EKS topology spread constraints",
+    "explanation": "EKS topology spread constraints is used in AWS to distribute pods across zones.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to maintain availability during maintenance?",
+    "options": [
+      "EKS pod disruption budgets",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "EKS pod disruption budgets",
+    "explanation": "EKS pod disruption budgets is used in AWS to maintain availability during maintenance.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to protect Kubernetes web apps?",
+    "options": [
+      "EKS ingress with WAF-protected ALB",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "EKS ingress with WAF-protected ALB",
+    "explanation": "EKS ingress with WAF-protected ALB is used in AWS to protect Kubernetes web apps.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to pull images through private endpoints?",
+    "options": [
+      "EKS private image pull architecture",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "EKS private image pull architecture",
+    "explanation": "EKS private image pull architecture is used in AWS to pull images through private endpoints.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to deploy through version-controlled changes?",
+    "options": [
+      "EKS GitOps deployment governance",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "EKS GitOps deployment governance",
+    "explanation": "EKS GitOps deployment governance is used in AWS to deploy through version-controlled changes.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to promote tested images across clusters?",
+    "options": [
+      "EKS multi-region image promotion",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "EKS multi-region image promotion",
+    "explanation": "EKS multi-region image promotion is used in AWS to promote tested images across clusters.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to grow persistent pod volumes?",
+    "options": [
+      "EKS stateful workload storage expansion",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "EKS stateful workload storage expansion",
+    "explanation": "EKS stateful workload storage expansion is used in AWS to grow persistent pod volumes.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to reduce interruption risk across instance types?",
+    "options": [
+      "EKS Spot diversification",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "EKS Spot diversification",
+    "explanation": "EKS Spot diversification is used in AWS to reduce interruption risk across instance types.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to optimize containers on ARM processors?",
+    "options": [
+      "EKS Graviton workload planning",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "EKS Graviton workload planning",
+    "explanation": "EKS Graviton workload planning is used in AWS to optimize containers on ARM processors.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to shift production traffic safely?",
+    "options": [
+      "ECS blue/green deployment with ALB rules",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "ECS blue/green deployment with ALB rules",
+    "explanation": "ECS blue/green deployment with ALB rules is used in AWS to shift production traffic safely.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to implement service networking?",
+    "options": [
+      "ECS Service Connect with Cloud Map",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "ECS Service Connect with Cloud Map",
+    "explanation": "ECS Service Connect with Cloud Map is used in AWS to implement service networking.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to retrieve runtime metadata securely?",
+    "options": [
+      "ECS task metadata endpoint",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "ECS task metadata endpoint",
+    "explanation": "ECS task metadata endpoint is used in AWS to retrieve runtime metadata securely.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to stop bad deployments automatically?",
+    "options": [
+      "ECS deployment alarms",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "ECS deployment alarms",
+    "explanation": "ECS deployment alarms is used in AWS to stop bad deployments automatically.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to improve EC2 host utilization?",
+    "options": [
+      "ECS task placement for bin packing",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "ECS task placement for bin packing",
+    "explanation": "ECS task placement for bin packing is used in AWS to improve EC2 host utilization.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to run one task per instance?",
+    "options": [
+      "ECS DAEMON scheduling",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "ECS DAEMON scheduling",
+    "explanation": "ECS DAEMON scheduling is used in AWS to run one task per instance.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to avoid public internet registry access?",
+    "options": [
+      "ECS private image pulls through endpoints",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "ECS private image pulls through endpoints",
+    "explanation": "ECS private image pulls through endpoints is used in AWS to avoid public internet registry access.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to connect containers to private databases?",
+    "options": [
+      "ECS and RDS private connectivity",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "ECS and RDS private connectivity",
+    "explanation": "ECS and RDS private connectivity is used in AWS to connect containers to private databases.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to trace shell access to containers?",
+    "options": [
+      "ECS Exec audit logging",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "ECS Exec audit logging",
+    "explanation": "ECS Exec audit logging is used in AWS to trace shell access to containers.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to run services across regions?",
+    "options": [
+      "ECS multi-region disaster recovery",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "ECS multi-region disaster recovery",
+    "explanation": "ECS multi-region disaster recovery is used in AWS to run services across regions.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to protect production image releases?",
+    "options": [
+      "ECR immutable tags with signed promotion",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "ECR immutable tags with signed promotion",
+    "explanation": "ECR immutable tags with signed promotion is used in AWS to protect production image releases.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to keep images available during region failure?",
+    "options": [
+      "ECR replication with DR design",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "ECR replication with DR design",
+    "explanation": "ECR replication with DR design is used in AWS to keep images available during region failure.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to control image sprawl and cost?",
+    "options": [
+      "ECR lifecycle governance",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "ECR lifecycle governance",
+    "explanation": "ECR lifecycle governance is used in AWS to control image sprawl and cost.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to support supply-chain visibility?",
+    "options": [
+      "Inspector SBOM export",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "Inspector SBOM export",
+    "explanation": "Inspector SBOM export is used in AWS to support supply-chain visibility.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to shift small traffic percentages first?",
+    "options": [
+      "CodeDeploy canary for ECS",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "CodeDeploy canary for ECS",
+    "explanation": "CodeDeploy canary for ECS is used in AWS to shift small traffic percentages first.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to run interruption-tolerant containers cheaply?",
+    "options": [
+      "Fargate Spot for ECS",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "Fargate Spot for ECS",
+    "explanation": "Fargate Spot for ECS is used in AWS to run interruption-tolerant containers cheaply.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to choose OS and CPU architecture?",
+    "options": [
+      "Fargate runtime platform selection",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "Fargate runtime platform selection",
+    "explanation": "Fargate runtime platform selection is used in AWS to choose OS and CPU architecture.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to support temporary disk-heavy containers?",
+    "options": [
+      "Fargate task ephemeral storage tuning",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "Fargate task ephemeral storage tuning",
+    "explanation": "Fargate task ephemeral storage tuning is used in AWS to support temporary disk-heavy containers.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to reach internal services from serverless apps?",
+    "options": [
+      "App Runner VPC private backend access",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "App Runner VPC private backend access",
+    "explanation": "App Runner VPC private backend access is used in AWS to reach internal services from serverless apps.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to standardize log routing?",
+    "options": [
+      "FireLens sidecar logging pattern",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "FireLens sidecar logging pattern",
+    "explanation": "FireLens sidecar logging pattern is used in AWS to standardize log routing.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to collect logs metrics and traces?",
+    "options": [
+      "OpenTelemetry collector on EKS",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "OpenTelemetry collector on EKS",
+    "explanation": "OpenTelemetry collector on EKS is used in AWS to collect logs metrics and traces.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to instrument microservices consistently?",
+    "options": [
+      "ADOT sidecar on ECS",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "ADOT sidecar on ECS",
+    "explanation": "ADOT sidecar on ECS is used in AWS to instrument microservices consistently.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to manage observability cost?",
+    "options": [
+      "CloudWatch high-cardinality control",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "CloudWatch high-cardinality control",
+    "explanation": "CloudWatch high-cardinality control is used in AWS to manage observability cost.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to patch container hosts safely?",
+    "options": [
+      "Bottlerocket controlled updates",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "Bottlerocket controlled updates",
+    "explanation": "Bottlerocket controlled updates is used in AWS to patch container hosts safely.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to reduce unused node capacity?",
+    "options": [
+      "Karpenter consolidation",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "Karpenter consolidation",
+    "explanation": "Karpenter consolidation is used in AWS to reduce unused node capacity.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to protect workloads during replacement?",
+    "options": [
+      "Karpenter disruption controls",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "Karpenter disruption controls",
+    "explanation": "Karpenter disruption controls is used in AWS to protect workloads during replacement.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to standardize service templates?",
+    "options": [
+      "AWS Proton platform standardization",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "AWS Proton platform standardization",
+    "explanation": "AWS Proton platform standardization is used in AWS to standardize service templates.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to modularize container infrastructure?",
+    "options": [
+      "CloudFormation nested container stacks",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "CloudFormation nested container stacks",
+    "explanation": "CloudFormation nested container stacks is used in AWS to modularize container infrastructure.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to manage access across AWS accounts?",
+    "options": [
+      "Cross-account EKS access model",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "Cross-account EKS access model",
+    "explanation": "Cross-account EKS access model is used in AWS to manage access across AWS accounts.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  },
+  {
+    "question": "Which AWS service or feature is best suited to enforce trusted images before deployment?",
+    "options": [
+      "Container supply chain policy on AWS",
+      "EKS IRSA least privilege design",
+      "EKS pod security standards",
+      "EKS network policy enforcement"
+    ],
+    "answer": "Container supply chain policy on AWS",
+    "explanation": "Container supply chain policy on AWS is used in AWS to enforce trusted images before deployment.",
+    "difficulty": "hard",
+    "subcategory": "docker-containers",
+    "category": "aws"
+  }
+]
