@@ -698,5 +698,1405 @@
       "difficulty": "easy",
       "subcategory": "cdn",
       "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of private cloud networking in scenario variation 1?",
+      "options": [
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router",
+        "Cloud VPN"
+      ],
+      "answer": "VPC Network",
+      "explanation": "VPC Network is commonly used in GCP for private cloud networking.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of global traffic balancing in scenario variation 1?",
+      "options": [
+        "Cloud Load Balancing",
+        "VPC Network",
+        "Cloud Router",
+        "Cloud VPN"
+      ],
+      "answer": "Cloud Load Balancing",
+      "explanation": "Cloud Load Balancing is commonly used in GCP for global traffic balancing.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of dynamic route exchange in scenario variation 1?",
+      "options": [
+        "Cloud Router",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud VPN"
+      ],
+      "answer": "Cloud Router",
+      "explanation": "Cloud Router is commonly used in GCP for dynamic route exchange.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of encrypted hybrid networking in scenario variation 1?",
+      "options": [
+        "Cloud VPN",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Cloud VPN",
+      "explanation": "Cloud VPN is commonly used in GCP for encrypted hybrid networking.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of dedicated enterprise connectivity in scenario variation 1?",
+      "options": [
+        "Cloud Interconnect",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Cloud Interconnect",
+      "explanation": "Cloud Interconnect is commonly used in GCP for dedicated enterprise connectivity.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of network traffic filtering in scenario variation 1?",
+      "options": [
+        "Firewall Rules",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Firewall Rules",
+      "explanation": "Firewall Rules is commonly used in GCP for network traffic filtering.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of private outbound internet access in scenario variation 1?",
+      "options": [
+        "Cloud NAT",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Cloud NAT",
+      "explanation": "Cloud NAT is commonly used in GCP for private outbound internet access.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of private service exposure in scenario variation 1?",
+      "options": [
+        "Private Service Connect",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Private Service Connect",
+      "explanation": "Private Service Connect is commonly used in GCP for private service exposure.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of service mesh traffic control in scenario variation 1?",
+      "options": [
+        "Traffic Director",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Traffic Director",
+      "explanation": "Traffic Director is commonly used in GCP for service mesh traffic control.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of cross-project networking in scenario variation 1?",
+      "options": [
+        "Shared VPC",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Shared VPC",
+      "explanation": "Shared VPC is commonly used in GCP for cross-project networking.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of private cloud networking in scenario variation 2?",
+      "options": [
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router",
+        "Cloud VPN"
+      ],
+      "answer": "VPC Network",
+      "explanation": "VPC Network is commonly used in GCP for private cloud networking.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of global traffic balancing in scenario variation 2?",
+      "options": [
+        "Cloud Load Balancing",
+        "VPC Network",
+        "Cloud Router",
+        "Cloud VPN"
+      ],
+      "answer": "Cloud Load Balancing",
+      "explanation": "Cloud Load Balancing is commonly used in GCP for global traffic balancing.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of dynamic route exchange in scenario variation 2?",
+      "options": [
+        "Cloud Router",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud VPN"
+      ],
+      "answer": "Cloud Router",
+      "explanation": "Cloud Router is commonly used in GCP for dynamic route exchange.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of encrypted hybrid networking in scenario variation 2?",
+      "options": [
+        "Cloud VPN",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Cloud VPN",
+      "explanation": "Cloud VPN is commonly used in GCP for encrypted hybrid networking.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of dedicated enterprise connectivity in scenario variation 2?",
+      "options": [
+        "Cloud Interconnect",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Cloud Interconnect",
+      "explanation": "Cloud Interconnect is commonly used in GCP for dedicated enterprise connectivity.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of network traffic filtering in scenario variation 2?",
+      "options": [
+        "Firewall Rules",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Firewall Rules",
+      "explanation": "Firewall Rules is commonly used in GCP for network traffic filtering.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of private outbound internet access in scenario variation 2?",
+      "options": [
+        "Cloud NAT",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Cloud NAT",
+      "explanation": "Cloud NAT is commonly used in GCP for private outbound internet access.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of private service exposure in scenario variation 2?",
+      "options": [
+        "Private Service Connect",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Private Service Connect",
+      "explanation": "Private Service Connect is commonly used in GCP for private service exposure.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of service mesh traffic control in scenario variation 2?",
+      "options": [
+        "Traffic Director",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Traffic Director",
+      "explanation": "Traffic Director is commonly used in GCP for service mesh traffic control.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of cross-project networking in scenario variation 2?",
+      "options": [
+        "Shared VPC",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Shared VPC",
+      "explanation": "Shared VPC is commonly used in GCP for cross-project networking.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of private cloud networking in scenario variation 3?",
+      "options": [
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router",
+        "Cloud VPN"
+      ],
+      "answer": "VPC Network",
+      "explanation": "VPC Network is commonly used in GCP for private cloud networking.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of global traffic balancing in scenario variation 3?",
+      "options": [
+        "Cloud Load Balancing",
+        "VPC Network",
+        "Cloud Router",
+        "Cloud VPN"
+      ],
+      "answer": "Cloud Load Balancing",
+      "explanation": "Cloud Load Balancing is commonly used in GCP for global traffic balancing.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of dynamic route exchange in scenario variation 3?",
+      "options": [
+        "Cloud Router",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud VPN"
+      ],
+      "answer": "Cloud Router",
+      "explanation": "Cloud Router is commonly used in GCP for dynamic route exchange.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of encrypted hybrid networking in scenario variation 3?",
+      "options": [
+        "Cloud VPN",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Cloud VPN",
+      "explanation": "Cloud VPN is commonly used in GCP for encrypted hybrid networking.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of dedicated enterprise connectivity in scenario variation 3?",
+      "options": [
+        "Cloud Interconnect",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Cloud Interconnect",
+      "explanation": "Cloud Interconnect is commonly used in GCP for dedicated enterprise connectivity.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of network traffic filtering in scenario variation 3?",
+      "options": [
+        "Firewall Rules",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Firewall Rules",
+      "explanation": "Firewall Rules is commonly used in GCP for network traffic filtering.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of private outbound internet access in scenario variation 3?",
+      "options": [
+        "Cloud NAT",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Cloud NAT",
+      "explanation": "Cloud NAT is commonly used in GCP for private outbound internet access.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of private service exposure in scenario variation 3?",
+      "options": [
+        "Private Service Connect",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Private Service Connect",
+      "explanation": "Private Service Connect is commonly used in GCP for private service exposure.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of service mesh traffic control in scenario variation 3?",
+      "options": [
+        "Traffic Director",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Traffic Director",
+      "explanation": "Traffic Director is commonly used in GCP for service mesh traffic control.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of cross-project networking in scenario variation 3?",
+      "options": [
+        "Shared VPC",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Shared VPC",
+      "explanation": "Shared VPC is commonly used in GCP for cross-project networking.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of private cloud networking in scenario variation 4?",
+      "options": [
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router",
+        "Cloud VPN"
+      ],
+      "answer": "VPC Network",
+      "explanation": "VPC Network is commonly used in GCP for private cloud networking.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of global traffic balancing in scenario variation 4?",
+      "options": [
+        "Cloud Load Balancing",
+        "VPC Network",
+        "Cloud Router",
+        "Cloud VPN"
+      ],
+      "answer": "Cloud Load Balancing",
+      "explanation": "Cloud Load Balancing is commonly used in GCP for global traffic balancing.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of dynamic route exchange in scenario variation 4?",
+      "options": [
+        "Cloud Router",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud VPN"
+      ],
+      "answer": "Cloud Router",
+      "explanation": "Cloud Router is commonly used in GCP for dynamic route exchange.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of encrypted hybrid networking in scenario variation 4?",
+      "options": [
+        "Cloud VPN",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Cloud VPN",
+      "explanation": "Cloud VPN is commonly used in GCP for encrypted hybrid networking.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of dedicated enterprise connectivity in scenario variation 4?",
+      "options": [
+        "Cloud Interconnect",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Cloud Interconnect",
+      "explanation": "Cloud Interconnect is commonly used in GCP for dedicated enterprise connectivity.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of network traffic filtering in scenario variation 4?",
+      "options": [
+        "Firewall Rules",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Firewall Rules",
+      "explanation": "Firewall Rules is commonly used in GCP for network traffic filtering.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of private outbound internet access in scenario variation 4?",
+      "options": [
+        "Cloud NAT",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Cloud NAT",
+      "explanation": "Cloud NAT is commonly used in GCP for private outbound internet access.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of private service exposure in scenario variation 4?",
+      "options": [
+        "Private Service Connect",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Private Service Connect",
+      "explanation": "Private Service Connect is commonly used in GCP for private service exposure.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of service mesh traffic control in scenario variation 4?",
+      "options": [
+        "Traffic Director",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Traffic Director",
+      "explanation": "Traffic Director is commonly used in GCP for service mesh traffic control.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of cross-project networking in scenario variation 4?",
+      "options": [
+        "Shared VPC",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Shared VPC",
+      "explanation": "Shared VPC is commonly used in GCP for cross-project networking.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of private cloud networking in scenario variation 5?",
+      "options": [
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router",
+        "Cloud VPN"
+      ],
+      "answer": "VPC Network",
+      "explanation": "VPC Network is commonly used in GCP for private cloud networking.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of global traffic balancing in scenario variation 5?",
+      "options": [
+        "Cloud Load Balancing",
+        "VPC Network",
+        "Cloud Router",
+        "Cloud VPN"
+      ],
+      "answer": "Cloud Load Balancing",
+      "explanation": "Cloud Load Balancing is commonly used in GCP for global traffic balancing.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of dynamic route exchange in scenario variation 5?",
+      "options": [
+        "Cloud Router",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud VPN"
+      ],
+      "answer": "Cloud Router",
+      "explanation": "Cloud Router is commonly used in GCP for dynamic route exchange.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of encrypted hybrid networking in scenario variation 5?",
+      "options": [
+        "Cloud VPN",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Cloud VPN",
+      "explanation": "Cloud VPN is commonly used in GCP for encrypted hybrid networking.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of dedicated enterprise connectivity in scenario variation 5?",
+      "options": [
+        "Cloud Interconnect",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Cloud Interconnect",
+      "explanation": "Cloud Interconnect is commonly used in GCP for dedicated enterprise connectivity.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of network traffic filtering in scenario variation 5?",
+      "options": [
+        "Firewall Rules",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Firewall Rules",
+      "explanation": "Firewall Rules is commonly used in GCP for network traffic filtering.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of private outbound internet access in scenario variation 5?",
+      "options": [
+        "Cloud NAT",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Cloud NAT",
+      "explanation": "Cloud NAT is commonly used in GCP for private outbound internet access.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of private service exposure in scenario variation 5?",
+      "options": [
+        "Private Service Connect",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Private Service Connect",
+      "explanation": "Private Service Connect is commonly used in GCP for private service exposure.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of service mesh traffic control in scenario variation 5?",
+      "options": [
+        "Traffic Director",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Traffic Director",
+      "explanation": "Traffic Director is commonly used in GCP for service mesh traffic control.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of cross-project networking in scenario variation 5?",
+      "options": [
+        "Shared VPC",
+        "VPC Network",
+        "Cloud Load Balancing",
+        "Cloud Router"
+      ],
+      "answer": "Shared VPC",
+      "explanation": "Shared VPC is commonly used in GCP for cross-project networking.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of global content delivery in scenario variation 1?",
+      "options": [
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation",
+        "Cloud Armor"
+      ],
+      "answer": "Cloud CDN",
+      "explanation": "Cloud CDN is commonly used in GCP for global content delivery.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of restricted media access in scenario variation 1?",
+      "options": [
+        "Signed URLs",
+        "Cloud CDN",
+        "Cache Invalidation",
+        "Cloud Armor"
+      ],
+      "answer": "Signed URLs",
+      "explanation": "Signed URLs is commonly used in GCP for restricted media access.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of edge cache refresh in scenario variation 1?",
+      "options": [
+        "Cache Invalidation",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cloud Armor"
+      ],
+      "answer": "Cache Invalidation",
+      "explanation": "Cache Invalidation is commonly used in GCP for edge cache refresh.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of edge security filtering in scenario variation 1?",
+      "options": [
+        "Cloud Armor",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor is commonly used in GCP for edge security filtering.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of storage-backed CDN origin in scenario variation 1?",
+      "options": [
+        "Backend Bucket",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Backend Bucket",
+      "explanation": "Backend Bucket is commonly used in GCP for storage-backed CDN origin.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of reduced bandwidth transfer in scenario variation 1?",
+      "options": [
+        "Compression",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Compression",
+      "explanation": "Compression is commonly used in GCP for reduced bandwidth transfer.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of advanced cache tuning in scenario variation 1?",
+      "options": [
+        "Custom Cache Keys",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Custom Cache Keys",
+      "explanation": "Custom Cache Keys is commonly used in GCP for advanced cache tuning.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of reduced latency delivery in scenario variation 1?",
+      "options": [
+        "Edge Caching",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Edge Caching",
+      "explanation": "Edge Caching is commonly used in GCP for reduced latency delivery.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of error response caching in scenario variation 1?",
+      "options": [
+        "Negative Caching",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Negative Caching",
+      "explanation": "Negative Caching is commonly used in GCP for error response caching.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of HTTPS certificate handling in scenario variation 1?",
+      "options": [
+        "SSL Certificate Manager",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "SSL Certificate Manager",
+      "explanation": "SSL Certificate Manager is commonly used in GCP for HTTPS certificate handling.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of global content delivery in scenario variation 2?",
+      "options": [
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation",
+        "Cloud Armor"
+      ],
+      "answer": "Cloud CDN",
+      "explanation": "Cloud CDN is commonly used in GCP for global content delivery.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of restricted media access in scenario variation 2?",
+      "options": [
+        "Signed URLs",
+        "Cloud CDN",
+        "Cache Invalidation",
+        "Cloud Armor"
+      ],
+      "answer": "Signed URLs",
+      "explanation": "Signed URLs is commonly used in GCP for restricted media access.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of edge cache refresh in scenario variation 2?",
+      "options": [
+        "Cache Invalidation",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cloud Armor"
+      ],
+      "answer": "Cache Invalidation",
+      "explanation": "Cache Invalidation is commonly used in GCP for edge cache refresh.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of edge security filtering in scenario variation 2?",
+      "options": [
+        "Cloud Armor",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor is commonly used in GCP for edge security filtering.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of storage-backed CDN origin in scenario variation 2?",
+      "options": [
+        "Backend Bucket",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Backend Bucket",
+      "explanation": "Backend Bucket is commonly used in GCP for storage-backed CDN origin.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of reduced bandwidth transfer in scenario variation 2?",
+      "options": [
+        "Compression",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Compression",
+      "explanation": "Compression is commonly used in GCP for reduced bandwidth transfer.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of advanced cache tuning in scenario variation 2?",
+      "options": [
+        "Custom Cache Keys",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Custom Cache Keys",
+      "explanation": "Custom Cache Keys is commonly used in GCP for advanced cache tuning.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of reduced latency delivery in scenario variation 2?",
+      "options": [
+        "Edge Caching",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Edge Caching",
+      "explanation": "Edge Caching is commonly used in GCP for reduced latency delivery.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of error response caching in scenario variation 2?",
+      "options": [
+        "Negative Caching",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Negative Caching",
+      "explanation": "Negative Caching is commonly used in GCP for error response caching.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of HTTPS certificate handling in scenario variation 2?",
+      "options": [
+        "SSL Certificate Manager",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "SSL Certificate Manager",
+      "explanation": "SSL Certificate Manager is commonly used in GCP for HTTPS certificate handling.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of global content delivery in scenario variation 3?",
+      "options": [
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation",
+        "Cloud Armor"
+      ],
+      "answer": "Cloud CDN",
+      "explanation": "Cloud CDN is commonly used in GCP for global content delivery.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of restricted media access in scenario variation 3?",
+      "options": [
+        "Signed URLs",
+        "Cloud CDN",
+        "Cache Invalidation",
+        "Cloud Armor"
+      ],
+      "answer": "Signed URLs",
+      "explanation": "Signed URLs is commonly used in GCP for restricted media access.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of edge cache refresh in scenario variation 3?",
+      "options": [
+        "Cache Invalidation",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cloud Armor"
+      ],
+      "answer": "Cache Invalidation",
+      "explanation": "Cache Invalidation is commonly used in GCP for edge cache refresh.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of edge security filtering in scenario variation 3?",
+      "options": [
+        "Cloud Armor",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor is commonly used in GCP for edge security filtering.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of storage-backed CDN origin in scenario variation 3?",
+      "options": [
+        "Backend Bucket",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Backend Bucket",
+      "explanation": "Backend Bucket is commonly used in GCP for storage-backed CDN origin.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of reduced bandwidth transfer in scenario variation 3?",
+      "options": [
+        "Compression",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Compression",
+      "explanation": "Compression is commonly used in GCP for reduced bandwidth transfer.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of advanced cache tuning in scenario variation 3?",
+      "options": [
+        "Custom Cache Keys",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Custom Cache Keys",
+      "explanation": "Custom Cache Keys is commonly used in GCP for advanced cache tuning.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of reduced latency delivery in scenario variation 3?",
+      "options": [
+        "Edge Caching",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Edge Caching",
+      "explanation": "Edge Caching is commonly used in GCP for reduced latency delivery.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of error response caching in scenario variation 3?",
+      "options": [
+        "Negative Caching",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Negative Caching",
+      "explanation": "Negative Caching is commonly used in GCP for error response caching.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of HTTPS certificate handling in scenario variation 3?",
+      "options": [
+        "SSL Certificate Manager",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "SSL Certificate Manager",
+      "explanation": "SSL Certificate Manager is commonly used in GCP for HTTPS certificate handling.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of global content delivery in scenario variation 4?",
+      "options": [
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation",
+        "Cloud Armor"
+      ],
+      "answer": "Cloud CDN",
+      "explanation": "Cloud CDN is commonly used in GCP for global content delivery.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of restricted media access in scenario variation 4?",
+      "options": [
+        "Signed URLs",
+        "Cloud CDN",
+        "Cache Invalidation",
+        "Cloud Armor"
+      ],
+      "answer": "Signed URLs",
+      "explanation": "Signed URLs is commonly used in GCP for restricted media access.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of edge cache refresh in scenario variation 4?",
+      "options": [
+        "Cache Invalidation",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cloud Armor"
+      ],
+      "answer": "Cache Invalidation",
+      "explanation": "Cache Invalidation is commonly used in GCP for edge cache refresh.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of edge security filtering in scenario variation 4?",
+      "options": [
+        "Cloud Armor",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor is commonly used in GCP for edge security filtering.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of storage-backed CDN origin in scenario variation 4?",
+      "options": [
+        "Backend Bucket",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Backend Bucket",
+      "explanation": "Backend Bucket is commonly used in GCP for storage-backed CDN origin.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of reduced bandwidth transfer in scenario variation 4?",
+      "options": [
+        "Compression",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Compression",
+      "explanation": "Compression is commonly used in GCP for reduced bandwidth transfer.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of advanced cache tuning in scenario variation 4?",
+      "options": [
+        "Custom Cache Keys",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Custom Cache Keys",
+      "explanation": "Custom Cache Keys is commonly used in GCP for advanced cache tuning.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of reduced latency delivery in scenario variation 4?",
+      "options": [
+        "Edge Caching",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Edge Caching",
+      "explanation": "Edge Caching is commonly used in GCP for reduced latency delivery.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of error response caching in scenario variation 4?",
+      "options": [
+        "Negative Caching",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Negative Caching",
+      "explanation": "Negative Caching is commonly used in GCP for error response caching.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of HTTPS certificate handling in scenario variation 4?",
+      "options": [
+        "SSL Certificate Manager",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "SSL Certificate Manager",
+      "explanation": "SSL Certificate Manager is commonly used in GCP for HTTPS certificate handling.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of global content delivery in scenario variation 5?",
+      "options": [
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation",
+        "Cloud Armor"
+      ],
+      "answer": "Cloud CDN",
+      "explanation": "Cloud CDN is commonly used in GCP for global content delivery.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of restricted media access in scenario variation 5?",
+      "options": [
+        "Signed URLs",
+        "Cloud CDN",
+        "Cache Invalidation",
+        "Cloud Armor"
+      ],
+      "answer": "Signed URLs",
+      "explanation": "Signed URLs is commonly used in GCP for restricted media access.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of edge cache refresh in scenario variation 5?",
+      "options": [
+        "Cache Invalidation",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cloud Armor"
+      ],
+      "answer": "Cache Invalidation",
+      "explanation": "Cache Invalidation is commonly used in GCP for edge cache refresh.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of edge security filtering in scenario variation 5?",
+      "options": [
+        "Cloud Armor",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Cloud Armor",
+      "explanation": "Cloud Armor is commonly used in GCP for edge security filtering.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of storage-backed CDN origin in scenario variation 5?",
+      "options": [
+        "Backend Bucket",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Backend Bucket",
+      "explanation": "Backend Bucket is commonly used in GCP for storage-backed CDN origin.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of reduced bandwidth transfer in scenario variation 5?",
+      "options": [
+        "Compression",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Compression",
+      "explanation": "Compression is commonly used in GCP for reduced bandwidth transfer.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of advanced cache tuning in scenario variation 5?",
+      "options": [
+        "Custom Cache Keys",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Custom Cache Keys",
+      "explanation": "Custom Cache Keys is commonly used in GCP for advanced cache tuning.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of reduced latency delivery in scenario variation 5?",
+      "options": [
+        "Edge Caching",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Edge Caching",
+      "explanation": "Edge Caching is commonly used in GCP for reduced latency delivery.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of error response caching in scenario variation 5?",
+      "options": [
+        "Negative Caching",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "Negative Caching",
+      "explanation": "Negative Caching is commonly used in GCP for error response caching.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP service or feature is best suited for basic understanding of HTTPS certificate handling in scenario variation 5?",
+      "options": [
+        "SSL Certificate Manager",
+        "Cloud CDN",
+        "Signed URLs",
+        "Cache Invalidation"
+      ],
+      "answer": "SSL Certificate Manager",
+      "explanation": "SSL Certificate Manager is commonly used in GCP for HTTPS certificate handling.",
+      "difficulty": "easy",
+      "subcategory": "cdn",
+      "category": "gcp"
     }
   ]

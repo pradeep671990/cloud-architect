@@ -698,5 +698,1405 @@
       "difficulty": "medium",
       "subcategory": "peering",
       "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of content delivery in scenario variation 1?",
+      "options": [
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge",
+        "CloudFront Functions"
+      ],
+      "answer": "CloudFront",
+      "explanation": "CloudFront is commonly used in AWS for content delivery.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of secure S3 origin access in scenario variation 1?",
+      "options": [
+        "Origin Access Control",
+        "CloudFront",
+        "Lambda@Edge",
+        "CloudFront Functions"
+      ],
+      "answer": "Origin Access Control",
+      "explanation": "Origin Access Control is commonly used in AWS for secure S3 origin access.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of edge request processing in scenario variation 1?",
+      "options": [
+        "Lambda@Edge",
+        "CloudFront",
+        "Origin Access Control",
+        "CloudFront Functions"
+      ],
+      "answer": "Lambda@Edge",
+      "explanation": "Lambda@Edge is commonly used in AWS for edge request processing.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of lightweight edge logic in scenario variation 1?",
+      "options": [
+        "CloudFront Functions",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "CloudFront Functions",
+      "explanation": "CloudFront Functions is commonly used in AWS for lightweight edge logic.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of cache optimization in scenario variation 1?",
+      "options": [
+        "Origin Shield",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Origin Shield",
+      "explanation": "Origin Shield is commonly used in AWS for cache optimization.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of restricted CDN access in scenario variation 1?",
+      "options": [
+        "Signed URLs",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Signed URLs",
+      "explanation": "Signed URLs is commonly used in AWS for restricted CDN access.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of controlled media distribution in scenario variation 1?",
+      "options": [
+        "Signed Cookies",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Signed Cookies",
+      "explanation": "Signed Cookies is commonly used in AWS for controlled media distribution.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of country-based content blocking in scenario variation 1?",
+      "options": [
+        "Geo Restriction",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Geo Restriction",
+      "explanation": "Geo Restriction is commonly used in AWS for country-based content blocking.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of cache behavior management in scenario variation 1?",
+      "options": [
+        "Cache Policy",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Cache Policy",
+      "explanation": "Cache Policy is commonly used in AWS for cache behavior management.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of sensitive edge encryption in scenario variation 1?",
+      "options": [
+        "Field-Level Encryption",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Field-Level Encryption",
+      "explanation": "Field-Level Encryption is commonly used in AWS for sensitive edge encryption.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of content delivery in scenario variation 2?",
+      "options": [
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge",
+        "CloudFront Functions"
+      ],
+      "answer": "CloudFront",
+      "explanation": "CloudFront is commonly used in AWS for content delivery.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of secure S3 origin access in scenario variation 2?",
+      "options": [
+        "Origin Access Control",
+        "CloudFront",
+        "Lambda@Edge",
+        "CloudFront Functions"
+      ],
+      "answer": "Origin Access Control",
+      "explanation": "Origin Access Control is commonly used in AWS for secure S3 origin access.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of edge request processing in scenario variation 2?",
+      "options": [
+        "Lambda@Edge",
+        "CloudFront",
+        "Origin Access Control",
+        "CloudFront Functions"
+      ],
+      "answer": "Lambda@Edge",
+      "explanation": "Lambda@Edge is commonly used in AWS for edge request processing.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of lightweight edge logic in scenario variation 2?",
+      "options": [
+        "CloudFront Functions",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "CloudFront Functions",
+      "explanation": "CloudFront Functions is commonly used in AWS for lightweight edge logic.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of cache optimization in scenario variation 2?",
+      "options": [
+        "Origin Shield",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Origin Shield",
+      "explanation": "Origin Shield is commonly used in AWS for cache optimization.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of restricted CDN access in scenario variation 2?",
+      "options": [
+        "Signed URLs",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Signed URLs",
+      "explanation": "Signed URLs is commonly used in AWS for restricted CDN access.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of controlled media distribution in scenario variation 2?",
+      "options": [
+        "Signed Cookies",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Signed Cookies",
+      "explanation": "Signed Cookies is commonly used in AWS for controlled media distribution.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of country-based content blocking in scenario variation 2?",
+      "options": [
+        "Geo Restriction",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Geo Restriction",
+      "explanation": "Geo Restriction is commonly used in AWS for country-based content blocking.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of cache behavior management in scenario variation 2?",
+      "options": [
+        "Cache Policy",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Cache Policy",
+      "explanation": "Cache Policy is commonly used in AWS for cache behavior management.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of sensitive edge encryption in scenario variation 2?",
+      "options": [
+        "Field-Level Encryption",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Field-Level Encryption",
+      "explanation": "Field-Level Encryption is commonly used in AWS for sensitive edge encryption.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of content delivery in scenario variation 3?",
+      "options": [
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge",
+        "CloudFront Functions"
+      ],
+      "answer": "CloudFront",
+      "explanation": "CloudFront is commonly used in AWS for content delivery.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of secure S3 origin access in scenario variation 3?",
+      "options": [
+        "Origin Access Control",
+        "CloudFront",
+        "Lambda@Edge",
+        "CloudFront Functions"
+      ],
+      "answer": "Origin Access Control",
+      "explanation": "Origin Access Control is commonly used in AWS for secure S3 origin access.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of edge request processing in scenario variation 3?",
+      "options": [
+        "Lambda@Edge",
+        "CloudFront",
+        "Origin Access Control",
+        "CloudFront Functions"
+      ],
+      "answer": "Lambda@Edge",
+      "explanation": "Lambda@Edge is commonly used in AWS for edge request processing.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of lightweight edge logic in scenario variation 3?",
+      "options": [
+        "CloudFront Functions",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "CloudFront Functions",
+      "explanation": "CloudFront Functions is commonly used in AWS for lightweight edge logic.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of cache optimization in scenario variation 3?",
+      "options": [
+        "Origin Shield",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Origin Shield",
+      "explanation": "Origin Shield is commonly used in AWS for cache optimization.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of restricted CDN access in scenario variation 3?",
+      "options": [
+        "Signed URLs",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Signed URLs",
+      "explanation": "Signed URLs is commonly used in AWS for restricted CDN access.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of controlled media distribution in scenario variation 3?",
+      "options": [
+        "Signed Cookies",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Signed Cookies",
+      "explanation": "Signed Cookies is commonly used in AWS for controlled media distribution.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of country-based content blocking in scenario variation 3?",
+      "options": [
+        "Geo Restriction",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Geo Restriction",
+      "explanation": "Geo Restriction is commonly used in AWS for country-based content blocking.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of cache behavior management in scenario variation 3?",
+      "options": [
+        "Cache Policy",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Cache Policy",
+      "explanation": "Cache Policy is commonly used in AWS for cache behavior management.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of sensitive edge encryption in scenario variation 3?",
+      "options": [
+        "Field-Level Encryption",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Field-Level Encryption",
+      "explanation": "Field-Level Encryption is commonly used in AWS for sensitive edge encryption.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of content delivery in scenario variation 4?",
+      "options": [
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge",
+        "CloudFront Functions"
+      ],
+      "answer": "CloudFront",
+      "explanation": "CloudFront is commonly used in AWS for content delivery.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of secure S3 origin access in scenario variation 4?",
+      "options": [
+        "Origin Access Control",
+        "CloudFront",
+        "Lambda@Edge",
+        "CloudFront Functions"
+      ],
+      "answer": "Origin Access Control",
+      "explanation": "Origin Access Control is commonly used in AWS for secure S3 origin access.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of edge request processing in scenario variation 4?",
+      "options": [
+        "Lambda@Edge",
+        "CloudFront",
+        "Origin Access Control",
+        "CloudFront Functions"
+      ],
+      "answer": "Lambda@Edge",
+      "explanation": "Lambda@Edge is commonly used in AWS for edge request processing.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of lightweight edge logic in scenario variation 4?",
+      "options": [
+        "CloudFront Functions",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "CloudFront Functions",
+      "explanation": "CloudFront Functions is commonly used in AWS for lightweight edge logic.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of cache optimization in scenario variation 4?",
+      "options": [
+        "Origin Shield",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Origin Shield",
+      "explanation": "Origin Shield is commonly used in AWS for cache optimization.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of restricted CDN access in scenario variation 4?",
+      "options": [
+        "Signed URLs",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Signed URLs",
+      "explanation": "Signed URLs is commonly used in AWS for restricted CDN access.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of controlled media distribution in scenario variation 4?",
+      "options": [
+        "Signed Cookies",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Signed Cookies",
+      "explanation": "Signed Cookies is commonly used in AWS for controlled media distribution.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of country-based content blocking in scenario variation 4?",
+      "options": [
+        "Geo Restriction",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Geo Restriction",
+      "explanation": "Geo Restriction is commonly used in AWS for country-based content blocking.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of cache behavior management in scenario variation 4?",
+      "options": [
+        "Cache Policy",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Cache Policy",
+      "explanation": "Cache Policy is commonly used in AWS for cache behavior management.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of sensitive edge encryption in scenario variation 4?",
+      "options": [
+        "Field-Level Encryption",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Field-Level Encryption",
+      "explanation": "Field-Level Encryption is commonly used in AWS for sensitive edge encryption.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of content delivery in scenario variation 5?",
+      "options": [
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge",
+        "CloudFront Functions"
+      ],
+      "answer": "CloudFront",
+      "explanation": "CloudFront is commonly used in AWS for content delivery.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of secure S3 origin access in scenario variation 5?",
+      "options": [
+        "Origin Access Control",
+        "CloudFront",
+        "Lambda@Edge",
+        "CloudFront Functions"
+      ],
+      "answer": "Origin Access Control",
+      "explanation": "Origin Access Control is commonly used in AWS for secure S3 origin access.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of edge request processing in scenario variation 5?",
+      "options": [
+        "Lambda@Edge",
+        "CloudFront",
+        "Origin Access Control",
+        "CloudFront Functions"
+      ],
+      "answer": "Lambda@Edge",
+      "explanation": "Lambda@Edge is commonly used in AWS for edge request processing.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of lightweight edge logic in scenario variation 5?",
+      "options": [
+        "CloudFront Functions",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "CloudFront Functions",
+      "explanation": "CloudFront Functions is commonly used in AWS for lightweight edge logic.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of cache optimization in scenario variation 5?",
+      "options": [
+        "Origin Shield",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Origin Shield",
+      "explanation": "Origin Shield is commonly used in AWS for cache optimization.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of restricted CDN access in scenario variation 5?",
+      "options": [
+        "Signed URLs",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Signed URLs",
+      "explanation": "Signed URLs is commonly used in AWS for restricted CDN access.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of controlled media distribution in scenario variation 5?",
+      "options": [
+        "Signed Cookies",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Signed Cookies",
+      "explanation": "Signed Cookies is commonly used in AWS for controlled media distribution.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of country-based content blocking in scenario variation 5?",
+      "options": [
+        "Geo Restriction",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Geo Restriction",
+      "explanation": "Geo Restriction is commonly used in AWS for country-based content blocking.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of cache behavior management in scenario variation 5?",
+      "options": [
+        "Cache Policy",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Cache Policy",
+      "explanation": "Cache Policy is commonly used in AWS for cache behavior management.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of sensitive edge encryption in scenario variation 5?",
+      "options": [
+        "Field-Level Encryption",
+        "CloudFront",
+        "Origin Access Control",
+        "Lambda@Edge"
+      ],
+      "answer": "Field-Level Encryption",
+      "explanation": "Field-Level Encryption is commonly used in AWS for sensitive edge encryption.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of isolated cloud networking in scenario variation 1?",
+      "options": [
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer",
+        "Transit Gateway"
+      ],
+      "answer": "Amazon VPC",
+      "explanation": "Amazon VPC is commonly used in AWS for isolated cloud networking.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of DNS routing in scenario variation 1?",
+      "options": [
+        "Route 53",
+        "Amazon VPC",
+        "Elastic Load Balancer",
+        "Transit Gateway"
+      ],
+      "answer": "Route 53",
+      "explanation": "Route 53 is commonly used in AWS for DNS routing.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of traffic distribution in scenario variation 1?",
+      "options": [
+        "Elastic Load Balancer",
+        "Amazon VPC",
+        "Route 53",
+        "Transit Gateway"
+      ],
+      "answer": "Elastic Load Balancer",
+      "explanation": "Elastic Load Balancer is commonly used in AWS for traffic distribution.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of VPC connectivity in scenario variation 1?",
+      "options": [
+        "Transit Gateway",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "Transit Gateway",
+      "explanation": "Transit Gateway is commonly used in AWS for VPC connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of dedicated hybrid connectivity in scenario variation 1?",
+      "options": [
+        "Direct Connect",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "Direct Connect",
+      "explanation": "Direct Connect is commonly used in AWS for dedicated hybrid connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of encrypted site-to-site connectivity in scenario variation 1?",
+      "options": [
+        "VPN Gateway",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "VPN Gateway",
+      "explanation": "VPN Gateway is commonly used in AWS for encrypted site-to-site connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of instance-level firewall control in scenario variation 1?",
+      "options": [
+        "Security Group",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "Security Group",
+      "explanation": "Security Group is commonly used in AWS for instance-level firewall control.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of subnet-level filtering in scenario variation 1?",
+      "options": [
+        "Network ACL",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "Network ACL",
+      "explanation": "Network ACL is commonly used in AWS for subnet-level filtering.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of private service connectivity in scenario variation 1?",
+      "options": [
+        "PrivateLink",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "PrivateLink",
+      "explanation": "PrivateLink is commonly used in AWS for private service connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of global traffic optimization in scenario variation 1?",
+      "options": [
+        "Global Accelerator",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "Global Accelerator",
+      "explanation": "Global Accelerator is commonly used in AWS for global traffic optimization.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of isolated cloud networking in scenario variation 2?",
+      "options": [
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer",
+        "Transit Gateway"
+      ],
+      "answer": "Amazon VPC",
+      "explanation": "Amazon VPC is commonly used in AWS for isolated cloud networking.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of DNS routing in scenario variation 2?",
+      "options": [
+        "Route 53",
+        "Amazon VPC",
+        "Elastic Load Balancer",
+        "Transit Gateway"
+      ],
+      "answer": "Route 53",
+      "explanation": "Route 53 is commonly used in AWS for DNS routing.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of traffic distribution in scenario variation 2?",
+      "options": [
+        "Elastic Load Balancer",
+        "Amazon VPC",
+        "Route 53",
+        "Transit Gateway"
+      ],
+      "answer": "Elastic Load Balancer",
+      "explanation": "Elastic Load Balancer is commonly used in AWS for traffic distribution.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of VPC connectivity in scenario variation 2?",
+      "options": [
+        "Transit Gateway",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "Transit Gateway",
+      "explanation": "Transit Gateway is commonly used in AWS for VPC connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of dedicated hybrid connectivity in scenario variation 2?",
+      "options": [
+        "Direct Connect",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "Direct Connect",
+      "explanation": "Direct Connect is commonly used in AWS for dedicated hybrid connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of encrypted site-to-site connectivity in scenario variation 2?",
+      "options": [
+        "VPN Gateway",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "VPN Gateway",
+      "explanation": "VPN Gateway is commonly used in AWS for encrypted site-to-site connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of instance-level firewall control in scenario variation 2?",
+      "options": [
+        "Security Group",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "Security Group",
+      "explanation": "Security Group is commonly used in AWS for instance-level firewall control.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of subnet-level filtering in scenario variation 2?",
+      "options": [
+        "Network ACL",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "Network ACL",
+      "explanation": "Network ACL is commonly used in AWS for subnet-level filtering.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of private service connectivity in scenario variation 2?",
+      "options": [
+        "PrivateLink",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "PrivateLink",
+      "explanation": "PrivateLink is commonly used in AWS for private service connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of global traffic optimization in scenario variation 2?",
+      "options": [
+        "Global Accelerator",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "Global Accelerator",
+      "explanation": "Global Accelerator is commonly used in AWS for global traffic optimization.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of isolated cloud networking in scenario variation 3?",
+      "options": [
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer",
+        "Transit Gateway"
+      ],
+      "answer": "Amazon VPC",
+      "explanation": "Amazon VPC is commonly used in AWS for isolated cloud networking.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of DNS routing in scenario variation 3?",
+      "options": [
+        "Route 53",
+        "Amazon VPC",
+        "Elastic Load Balancer",
+        "Transit Gateway"
+      ],
+      "answer": "Route 53",
+      "explanation": "Route 53 is commonly used in AWS for DNS routing.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of traffic distribution in scenario variation 3?",
+      "options": [
+        "Elastic Load Balancer",
+        "Amazon VPC",
+        "Route 53",
+        "Transit Gateway"
+      ],
+      "answer": "Elastic Load Balancer",
+      "explanation": "Elastic Load Balancer is commonly used in AWS for traffic distribution.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of VPC connectivity in scenario variation 3?",
+      "options": [
+        "Transit Gateway",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "Transit Gateway",
+      "explanation": "Transit Gateway is commonly used in AWS for VPC connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of dedicated hybrid connectivity in scenario variation 3?",
+      "options": [
+        "Direct Connect",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "Direct Connect",
+      "explanation": "Direct Connect is commonly used in AWS for dedicated hybrid connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of encrypted site-to-site connectivity in scenario variation 3?",
+      "options": [
+        "VPN Gateway",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "VPN Gateway",
+      "explanation": "VPN Gateway is commonly used in AWS for encrypted site-to-site connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of instance-level firewall control in scenario variation 3?",
+      "options": [
+        "Security Group",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "Security Group",
+      "explanation": "Security Group is commonly used in AWS for instance-level firewall control.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of subnet-level filtering in scenario variation 3?",
+      "options": [
+        "Network ACL",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "Network ACL",
+      "explanation": "Network ACL is commonly used in AWS for subnet-level filtering.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of private service connectivity in scenario variation 3?",
+      "options": [
+        "PrivateLink",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "PrivateLink",
+      "explanation": "PrivateLink is commonly used in AWS for private service connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of global traffic optimization in scenario variation 3?",
+      "options": [
+        "Global Accelerator",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "Global Accelerator",
+      "explanation": "Global Accelerator is commonly used in AWS for global traffic optimization.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of isolated cloud networking in scenario variation 4?",
+      "options": [
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer",
+        "Transit Gateway"
+      ],
+      "answer": "Amazon VPC",
+      "explanation": "Amazon VPC is commonly used in AWS for isolated cloud networking.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of DNS routing in scenario variation 4?",
+      "options": [
+        "Route 53",
+        "Amazon VPC",
+        "Elastic Load Balancer",
+        "Transit Gateway"
+      ],
+      "answer": "Route 53",
+      "explanation": "Route 53 is commonly used in AWS for DNS routing.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of traffic distribution in scenario variation 4?",
+      "options": [
+        "Elastic Load Balancer",
+        "Amazon VPC",
+        "Route 53",
+        "Transit Gateway"
+      ],
+      "answer": "Elastic Load Balancer",
+      "explanation": "Elastic Load Balancer is commonly used in AWS for traffic distribution.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of VPC connectivity in scenario variation 4?",
+      "options": [
+        "Transit Gateway",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "Transit Gateway",
+      "explanation": "Transit Gateway is commonly used in AWS for VPC connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of dedicated hybrid connectivity in scenario variation 4?",
+      "options": [
+        "Direct Connect",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "Direct Connect",
+      "explanation": "Direct Connect is commonly used in AWS for dedicated hybrid connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of encrypted site-to-site connectivity in scenario variation 4?",
+      "options": [
+        "VPN Gateway",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "VPN Gateway",
+      "explanation": "VPN Gateway is commonly used in AWS for encrypted site-to-site connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of instance-level firewall control in scenario variation 4?",
+      "options": [
+        "Security Group",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "Security Group",
+      "explanation": "Security Group is commonly used in AWS for instance-level firewall control.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of subnet-level filtering in scenario variation 4?",
+      "options": [
+        "Network ACL",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "Network ACL",
+      "explanation": "Network ACL is commonly used in AWS for subnet-level filtering.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of private service connectivity in scenario variation 4?",
+      "options": [
+        "PrivateLink",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "PrivateLink",
+      "explanation": "PrivateLink is commonly used in AWS for private service connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of global traffic optimization in scenario variation 4?",
+      "options": [
+        "Global Accelerator",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "Global Accelerator",
+      "explanation": "Global Accelerator is commonly used in AWS for global traffic optimization.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of isolated cloud networking in scenario variation 5?",
+      "options": [
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer",
+        "Transit Gateway"
+      ],
+      "answer": "Amazon VPC",
+      "explanation": "Amazon VPC is commonly used in AWS for isolated cloud networking.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of DNS routing in scenario variation 5?",
+      "options": [
+        "Route 53",
+        "Amazon VPC",
+        "Elastic Load Balancer",
+        "Transit Gateway"
+      ],
+      "answer": "Route 53",
+      "explanation": "Route 53 is commonly used in AWS for DNS routing.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of traffic distribution in scenario variation 5?",
+      "options": [
+        "Elastic Load Balancer",
+        "Amazon VPC",
+        "Route 53",
+        "Transit Gateway"
+      ],
+      "answer": "Elastic Load Balancer",
+      "explanation": "Elastic Load Balancer is commonly used in AWS for traffic distribution.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of VPC connectivity in scenario variation 5?",
+      "options": [
+        "Transit Gateway",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "Transit Gateway",
+      "explanation": "Transit Gateway is commonly used in AWS for VPC connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of dedicated hybrid connectivity in scenario variation 5?",
+      "options": [
+        "Direct Connect",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "Direct Connect",
+      "explanation": "Direct Connect is commonly used in AWS for dedicated hybrid connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of encrypted site-to-site connectivity in scenario variation 5?",
+      "options": [
+        "VPN Gateway",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "VPN Gateway",
+      "explanation": "VPN Gateway is commonly used in AWS for encrypted site-to-site connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of instance-level firewall control in scenario variation 5?",
+      "options": [
+        "Security Group",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "Security Group",
+      "explanation": "Security Group is commonly used in AWS for instance-level firewall control.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of subnet-level filtering in scenario variation 5?",
+      "options": [
+        "Network ACL",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "Network ACL",
+      "explanation": "Network ACL is commonly used in AWS for subnet-level filtering.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of private service connectivity in scenario variation 5?",
+      "options": [
+        "PrivateLink",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "PrivateLink",
+      "explanation": "PrivateLink is commonly used in AWS for private service connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for intermediate implementation of global traffic optimization in scenario variation 5?",
+      "options": [
+        "Global Accelerator",
+        "Amazon VPC",
+        "Route 53",
+        "Elastic Load Balancer"
+      ],
+      "answer": "Global Accelerator",
+      "explanation": "Global Accelerator is commonly used in AWS for global traffic optimization.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "aws"
     }
   ]

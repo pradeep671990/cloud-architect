@@ -698,5 +698,1405 @@
       "difficulty": "medium",
       "subcategory": "peering",
       "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of private cloud networking in scenario variation 1?",
+      "options": [
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway",
+        "Azure Front Door"
+      ],
+      "answer": "Azure Virtual Network",
+      "explanation": "Azure Virtual Network is commonly used in AZURE for private cloud networking.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of layer 4 traffic balancing in scenario variation 1?",
+      "options": [
+        "Azure Load Balancer",
+        "Azure Virtual Network",
+        "Azure Application Gateway",
+        "Azure Front Door"
+      ],
+      "answer": "Azure Load Balancer",
+      "explanation": "Azure Load Balancer is commonly used in AZURE for layer 4 traffic balancing.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of layer 7 web traffic routing in scenario variation 1?",
+      "options": [
+        "Azure Application Gateway",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Front Door"
+      ],
+      "answer": "Azure Application Gateway",
+      "explanation": "Azure Application Gateway is commonly used in AZURE for layer 7 web traffic routing.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of global HTTP load balancing in scenario variation 1?",
+      "options": [
+        "Azure Front Door",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door is commonly used in AZURE for global HTTP load balancing.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of encrypted hybrid connectivity in scenario variation 1?",
+      "options": [
+        "Azure VPN Gateway",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Azure VPN Gateway",
+      "explanation": "Azure VPN Gateway is commonly used in AZURE for encrypted hybrid connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of private dedicated connectivity in scenario variation 1?",
+      "options": [
+        "Azure ExpressRoute",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Azure ExpressRoute",
+      "explanation": "Azure ExpressRoute is commonly used in AZURE for private dedicated connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of managed network security in scenario variation 1?",
+      "options": [
+        "Azure Firewall",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Azure Firewall",
+      "explanation": "Azure Firewall is commonly used in AZURE for managed network security.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of subnet and NIC filtering in scenario variation 1?",
+      "options": [
+        "Network Security Group",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Network Security Group",
+      "explanation": "Network Security Group is commonly used in AZURE for subnet and NIC filtering.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of secure VM access in scenario variation 1?",
+      "options": [
+        "Azure Bastion",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Azure Bastion",
+      "explanation": "Azure Bastion is commonly used in AZURE for secure VM access.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of global branch connectivity in scenario variation 1?",
+      "options": [
+        "Virtual WAN",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Virtual WAN",
+      "explanation": "Virtual WAN is commonly used in AZURE for global branch connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of private cloud networking in scenario variation 2?",
+      "options": [
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway",
+        "Azure Front Door"
+      ],
+      "answer": "Azure Virtual Network",
+      "explanation": "Azure Virtual Network is commonly used in AZURE for private cloud networking.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of layer 4 traffic balancing in scenario variation 2?",
+      "options": [
+        "Azure Load Balancer",
+        "Azure Virtual Network",
+        "Azure Application Gateway",
+        "Azure Front Door"
+      ],
+      "answer": "Azure Load Balancer",
+      "explanation": "Azure Load Balancer is commonly used in AZURE for layer 4 traffic balancing.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of layer 7 web traffic routing in scenario variation 2?",
+      "options": [
+        "Azure Application Gateway",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Front Door"
+      ],
+      "answer": "Azure Application Gateway",
+      "explanation": "Azure Application Gateway is commonly used in AZURE for layer 7 web traffic routing.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of global HTTP load balancing in scenario variation 2?",
+      "options": [
+        "Azure Front Door",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door is commonly used in AZURE for global HTTP load balancing.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of encrypted hybrid connectivity in scenario variation 2?",
+      "options": [
+        "Azure VPN Gateway",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Azure VPN Gateway",
+      "explanation": "Azure VPN Gateway is commonly used in AZURE for encrypted hybrid connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of private dedicated connectivity in scenario variation 2?",
+      "options": [
+        "Azure ExpressRoute",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Azure ExpressRoute",
+      "explanation": "Azure ExpressRoute is commonly used in AZURE for private dedicated connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of managed network security in scenario variation 2?",
+      "options": [
+        "Azure Firewall",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Azure Firewall",
+      "explanation": "Azure Firewall is commonly used in AZURE for managed network security.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of subnet and NIC filtering in scenario variation 2?",
+      "options": [
+        "Network Security Group",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Network Security Group",
+      "explanation": "Network Security Group is commonly used in AZURE for subnet and NIC filtering.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of secure VM access in scenario variation 2?",
+      "options": [
+        "Azure Bastion",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Azure Bastion",
+      "explanation": "Azure Bastion is commonly used in AZURE for secure VM access.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of global branch connectivity in scenario variation 2?",
+      "options": [
+        "Virtual WAN",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Virtual WAN",
+      "explanation": "Virtual WAN is commonly used in AZURE for global branch connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of private cloud networking in scenario variation 3?",
+      "options": [
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway",
+        "Azure Front Door"
+      ],
+      "answer": "Azure Virtual Network",
+      "explanation": "Azure Virtual Network is commonly used in AZURE for private cloud networking.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of layer 4 traffic balancing in scenario variation 3?",
+      "options": [
+        "Azure Load Balancer",
+        "Azure Virtual Network",
+        "Azure Application Gateway",
+        "Azure Front Door"
+      ],
+      "answer": "Azure Load Balancer",
+      "explanation": "Azure Load Balancer is commonly used in AZURE for layer 4 traffic balancing.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of layer 7 web traffic routing in scenario variation 3?",
+      "options": [
+        "Azure Application Gateway",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Front Door"
+      ],
+      "answer": "Azure Application Gateway",
+      "explanation": "Azure Application Gateway is commonly used in AZURE for layer 7 web traffic routing.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of global HTTP load balancing in scenario variation 3?",
+      "options": [
+        "Azure Front Door",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door is commonly used in AZURE for global HTTP load balancing.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of encrypted hybrid connectivity in scenario variation 3?",
+      "options": [
+        "Azure VPN Gateway",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Azure VPN Gateway",
+      "explanation": "Azure VPN Gateway is commonly used in AZURE for encrypted hybrid connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of private dedicated connectivity in scenario variation 3?",
+      "options": [
+        "Azure ExpressRoute",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Azure ExpressRoute",
+      "explanation": "Azure ExpressRoute is commonly used in AZURE for private dedicated connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of managed network security in scenario variation 3?",
+      "options": [
+        "Azure Firewall",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Azure Firewall",
+      "explanation": "Azure Firewall is commonly used in AZURE for managed network security.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of subnet and NIC filtering in scenario variation 3?",
+      "options": [
+        "Network Security Group",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Network Security Group",
+      "explanation": "Network Security Group is commonly used in AZURE for subnet and NIC filtering.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of secure VM access in scenario variation 3?",
+      "options": [
+        "Azure Bastion",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Azure Bastion",
+      "explanation": "Azure Bastion is commonly used in AZURE for secure VM access.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of global branch connectivity in scenario variation 3?",
+      "options": [
+        "Virtual WAN",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Virtual WAN",
+      "explanation": "Virtual WAN is commonly used in AZURE for global branch connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of private cloud networking in scenario variation 4?",
+      "options": [
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway",
+        "Azure Front Door"
+      ],
+      "answer": "Azure Virtual Network",
+      "explanation": "Azure Virtual Network is commonly used in AZURE for private cloud networking.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of layer 4 traffic balancing in scenario variation 4?",
+      "options": [
+        "Azure Load Balancer",
+        "Azure Virtual Network",
+        "Azure Application Gateway",
+        "Azure Front Door"
+      ],
+      "answer": "Azure Load Balancer",
+      "explanation": "Azure Load Balancer is commonly used in AZURE for layer 4 traffic balancing.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of layer 7 web traffic routing in scenario variation 4?",
+      "options": [
+        "Azure Application Gateway",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Front Door"
+      ],
+      "answer": "Azure Application Gateway",
+      "explanation": "Azure Application Gateway is commonly used in AZURE for layer 7 web traffic routing.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of global HTTP load balancing in scenario variation 4?",
+      "options": [
+        "Azure Front Door",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door is commonly used in AZURE for global HTTP load balancing.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of encrypted hybrid connectivity in scenario variation 4?",
+      "options": [
+        "Azure VPN Gateway",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Azure VPN Gateway",
+      "explanation": "Azure VPN Gateway is commonly used in AZURE for encrypted hybrid connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of private dedicated connectivity in scenario variation 4?",
+      "options": [
+        "Azure ExpressRoute",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Azure ExpressRoute",
+      "explanation": "Azure ExpressRoute is commonly used in AZURE for private dedicated connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of managed network security in scenario variation 4?",
+      "options": [
+        "Azure Firewall",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Azure Firewall",
+      "explanation": "Azure Firewall is commonly used in AZURE for managed network security.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of subnet and NIC filtering in scenario variation 4?",
+      "options": [
+        "Network Security Group",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Network Security Group",
+      "explanation": "Network Security Group is commonly used in AZURE for subnet and NIC filtering.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of secure VM access in scenario variation 4?",
+      "options": [
+        "Azure Bastion",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Azure Bastion",
+      "explanation": "Azure Bastion is commonly used in AZURE for secure VM access.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of global branch connectivity in scenario variation 4?",
+      "options": [
+        "Virtual WAN",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Virtual WAN",
+      "explanation": "Virtual WAN is commonly used in AZURE for global branch connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of private cloud networking in scenario variation 5?",
+      "options": [
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway",
+        "Azure Front Door"
+      ],
+      "answer": "Azure Virtual Network",
+      "explanation": "Azure Virtual Network is commonly used in AZURE for private cloud networking.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of layer 4 traffic balancing in scenario variation 5?",
+      "options": [
+        "Azure Load Balancer",
+        "Azure Virtual Network",
+        "Azure Application Gateway",
+        "Azure Front Door"
+      ],
+      "answer": "Azure Load Balancer",
+      "explanation": "Azure Load Balancer is commonly used in AZURE for layer 4 traffic balancing.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of layer 7 web traffic routing in scenario variation 5?",
+      "options": [
+        "Azure Application Gateway",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Front Door"
+      ],
+      "answer": "Azure Application Gateway",
+      "explanation": "Azure Application Gateway is commonly used in AZURE for layer 7 web traffic routing.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of global HTTP load balancing in scenario variation 5?",
+      "options": [
+        "Azure Front Door",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Azure Front Door",
+      "explanation": "Azure Front Door is commonly used in AZURE for global HTTP load balancing.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of encrypted hybrid connectivity in scenario variation 5?",
+      "options": [
+        "Azure VPN Gateway",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Azure VPN Gateway",
+      "explanation": "Azure VPN Gateway is commonly used in AZURE for encrypted hybrid connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of private dedicated connectivity in scenario variation 5?",
+      "options": [
+        "Azure ExpressRoute",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Azure ExpressRoute",
+      "explanation": "Azure ExpressRoute is commonly used in AZURE for private dedicated connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of managed network security in scenario variation 5?",
+      "options": [
+        "Azure Firewall",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Azure Firewall",
+      "explanation": "Azure Firewall is commonly used in AZURE for managed network security.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of subnet and NIC filtering in scenario variation 5?",
+      "options": [
+        "Network Security Group",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Network Security Group",
+      "explanation": "Network Security Group is commonly used in AZURE for subnet and NIC filtering.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of secure VM access in scenario variation 5?",
+      "options": [
+        "Azure Bastion",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Azure Bastion",
+      "explanation": "Azure Bastion is commonly used in AZURE for secure VM access.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of global branch connectivity in scenario variation 5?",
+      "options": [
+        "Virtual WAN",
+        "Azure Virtual Network",
+        "Azure Load Balancer",
+        "Azure Application Gateway"
+      ],
+      "answer": "Virtual WAN",
+      "explanation": "Virtual WAN is commonly used in AZURE for global branch connectivity.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of content acceleration in scenario variation 1?",
+      "options": [
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine",
+        "Caching Rules"
+      ],
+      "answer": "Azure CDN",
+      "explanation": "Azure CDN is commonly used in AZURE for content acceleration.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of global edge delivery in scenario variation 1?",
+      "options": [
+        "Azure Front Door CDN",
+        "Azure CDN",
+        "Rules Engine",
+        "Caching Rules"
+      ],
+      "answer": "Azure Front Door CDN",
+      "explanation": "Azure Front Door CDN is commonly used in AZURE for global edge delivery.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of edge routing customization in scenario variation 1?",
+      "options": [
+        "Rules Engine",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Caching Rules"
+      ],
+      "answer": "Rules Engine",
+      "explanation": "Rules Engine is commonly used in AZURE for edge routing customization.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of cache optimization in scenario variation 1?",
+      "options": [
+        "Caching Rules",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "Caching Rules",
+      "explanation": "Caching Rules is commonly used in AZURE for cache optimization.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of reduced content transfer size in scenario variation 1?",
+      "options": [
+        "Compression",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "Compression",
+      "explanation": "Compression is commonly used in AZURE for reduced content transfer size.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of branded CDN endpoints in scenario variation 1?",
+      "options": [
+        "Custom Domains",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "Custom Domains",
+      "explanation": "Custom Domains is commonly used in AZURE for branded CDN endpoints.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of edge security protection in scenario variation 1?",
+      "options": [
+        "WAF Integration",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "WAF Integration",
+      "explanation": "WAF Integration is commonly used in AZURE for edge security protection.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of country-based restrictions in scenario variation 1?",
+      "options": [
+        "Geo Filtering",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "Geo Filtering",
+      "explanation": "Geo Filtering is commonly used in AZURE for country-based restrictions.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of secure edge delivery in scenario variation 1?",
+      "options": [
+        "HTTPS Custom Domain",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "HTTPS Custom Domain",
+      "explanation": "HTTPS Custom Domain is commonly used in AZURE for secure edge delivery.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of cache invalidation in scenario variation 1?",
+      "options": [
+        "Endpoint Purge",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "Endpoint Purge",
+      "explanation": "Endpoint Purge is commonly used in AZURE for cache invalidation.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of content acceleration in scenario variation 2?",
+      "options": [
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine",
+        "Caching Rules"
+      ],
+      "answer": "Azure CDN",
+      "explanation": "Azure CDN is commonly used in AZURE for content acceleration.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of global edge delivery in scenario variation 2?",
+      "options": [
+        "Azure Front Door CDN",
+        "Azure CDN",
+        "Rules Engine",
+        "Caching Rules"
+      ],
+      "answer": "Azure Front Door CDN",
+      "explanation": "Azure Front Door CDN is commonly used in AZURE for global edge delivery.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of edge routing customization in scenario variation 2?",
+      "options": [
+        "Rules Engine",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Caching Rules"
+      ],
+      "answer": "Rules Engine",
+      "explanation": "Rules Engine is commonly used in AZURE for edge routing customization.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of cache optimization in scenario variation 2?",
+      "options": [
+        "Caching Rules",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "Caching Rules",
+      "explanation": "Caching Rules is commonly used in AZURE for cache optimization.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of reduced content transfer size in scenario variation 2?",
+      "options": [
+        "Compression",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "Compression",
+      "explanation": "Compression is commonly used in AZURE for reduced content transfer size.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of branded CDN endpoints in scenario variation 2?",
+      "options": [
+        "Custom Domains",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "Custom Domains",
+      "explanation": "Custom Domains is commonly used in AZURE for branded CDN endpoints.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of edge security protection in scenario variation 2?",
+      "options": [
+        "WAF Integration",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "WAF Integration",
+      "explanation": "WAF Integration is commonly used in AZURE for edge security protection.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of country-based restrictions in scenario variation 2?",
+      "options": [
+        "Geo Filtering",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "Geo Filtering",
+      "explanation": "Geo Filtering is commonly used in AZURE for country-based restrictions.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of secure edge delivery in scenario variation 2?",
+      "options": [
+        "HTTPS Custom Domain",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "HTTPS Custom Domain",
+      "explanation": "HTTPS Custom Domain is commonly used in AZURE for secure edge delivery.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of cache invalidation in scenario variation 2?",
+      "options": [
+        "Endpoint Purge",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "Endpoint Purge",
+      "explanation": "Endpoint Purge is commonly used in AZURE for cache invalidation.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of content acceleration in scenario variation 3?",
+      "options": [
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine",
+        "Caching Rules"
+      ],
+      "answer": "Azure CDN",
+      "explanation": "Azure CDN is commonly used in AZURE for content acceleration.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of global edge delivery in scenario variation 3?",
+      "options": [
+        "Azure Front Door CDN",
+        "Azure CDN",
+        "Rules Engine",
+        "Caching Rules"
+      ],
+      "answer": "Azure Front Door CDN",
+      "explanation": "Azure Front Door CDN is commonly used in AZURE for global edge delivery.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of edge routing customization in scenario variation 3?",
+      "options": [
+        "Rules Engine",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Caching Rules"
+      ],
+      "answer": "Rules Engine",
+      "explanation": "Rules Engine is commonly used in AZURE for edge routing customization.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of cache optimization in scenario variation 3?",
+      "options": [
+        "Caching Rules",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "Caching Rules",
+      "explanation": "Caching Rules is commonly used in AZURE for cache optimization.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of reduced content transfer size in scenario variation 3?",
+      "options": [
+        "Compression",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "Compression",
+      "explanation": "Compression is commonly used in AZURE for reduced content transfer size.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of branded CDN endpoints in scenario variation 3?",
+      "options": [
+        "Custom Domains",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "Custom Domains",
+      "explanation": "Custom Domains is commonly used in AZURE for branded CDN endpoints.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of edge security protection in scenario variation 3?",
+      "options": [
+        "WAF Integration",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "WAF Integration",
+      "explanation": "WAF Integration is commonly used in AZURE for edge security protection.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of country-based restrictions in scenario variation 3?",
+      "options": [
+        "Geo Filtering",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "Geo Filtering",
+      "explanation": "Geo Filtering is commonly used in AZURE for country-based restrictions.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of secure edge delivery in scenario variation 3?",
+      "options": [
+        "HTTPS Custom Domain",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "HTTPS Custom Domain",
+      "explanation": "HTTPS Custom Domain is commonly used in AZURE for secure edge delivery.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of cache invalidation in scenario variation 3?",
+      "options": [
+        "Endpoint Purge",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "Endpoint Purge",
+      "explanation": "Endpoint Purge is commonly used in AZURE for cache invalidation.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of content acceleration in scenario variation 4?",
+      "options": [
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine",
+        "Caching Rules"
+      ],
+      "answer": "Azure CDN",
+      "explanation": "Azure CDN is commonly used in AZURE for content acceleration.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of global edge delivery in scenario variation 4?",
+      "options": [
+        "Azure Front Door CDN",
+        "Azure CDN",
+        "Rules Engine",
+        "Caching Rules"
+      ],
+      "answer": "Azure Front Door CDN",
+      "explanation": "Azure Front Door CDN is commonly used in AZURE for global edge delivery.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of edge routing customization in scenario variation 4?",
+      "options": [
+        "Rules Engine",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Caching Rules"
+      ],
+      "answer": "Rules Engine",
+      "explanation": "Rules Engine is commonly used in AZURE for edge routing customization.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of cache optimization in scenario variation 4?",
+      "options": [
+        "Caching Rules",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "Caching Rules",
+      "explanation": "Caching Rules is commonly used in AZURE for cache optimization.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of reduced content transfer size in scenario variation 4?",
+      "options": [
+        "Compression",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "Compression",
+      "explanation": "Compression is commonly used in AZURE for reduced content transfer size.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of branded CDN endpoints in scenario variation 4?",
+      "options": [
+        "Custom Domains",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "Custom Domains",
+      "explanation": "Custom Domains is commonly used in AZURE for branded CDN endpoints.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of edge security protection in scenario variation 4?",
+      "options": [
+        "WAF Integration",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "WAF Integration",
+      "explanation": "WAF Integration is commonly used in AZURE for edge security protection.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of country-based restrictions in scenario variation 4?",
+      "options": [
+        "Geo Filtering",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "Geo Filtering",
+      "explanation": "Geo Filtering is commonly used in AZURE for country-based restrictions.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of secure edge delivery in scenario variation 4?",
+      "options": [
+        "HTTPS Custom Domain",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "HTTPS Custom Domain",
+      "explanation": "HTTPS Custom Domain is commonly used in AZURE for secure edge delivery.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of cache invalidation in scenario variation 4?",
+      "options": [
+        "Endpoint Purge",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "Endpoint Purge",
+      "explanation": "Endpoint Purge is commonly used in AZURE for cache invalidation.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of content acceleration in scenario variation 5?",
+      "options": [
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine",
+        "Caching Rules"
+      ],
+      "answer": "Azure CDN",
+      "explanation": "Azure CDN is commonly used in AZURE for content acceleration.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of global edge delivery in scenario variation 5?",
+      "options": [
+        "Azure Front Door CDN",
+        "Azure CDN",
+        "Rules Engine",
+        "Caching Rules"
+      ],
+      "answer": "Azure Front Door CDN",
+      "explanation": "Azure Front Door CDN is commonly used in AZURE for global edge delivery.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of edge routing customization in scenario variation 5?",
+      "options": [
+        "Rules Engine",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Caching Rules"
+      ],
+      "answer": "Rules Engine",
+      "explanation": "Rules Engine is commonly used in AZURE for edge routing customization.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of cache optimization in scenario variation 5?",
+      "options": [
+        "Caching Rules",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "Caching Rules",
+      "explanation": "Caching Rules is commonly used in AZURE for cache optimization.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of reduced content transfer size in scenario variation 5?",
+      "options": [
+        "Compression",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "Compression",
+      "explanation": "Compression is commonly used in AZURE for reduced content transfer size.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of branded CDN endpoints in scenario variation 5?",
+      "options": [
+        "Custom Domains",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "Custom Domains",
+      "explanation": "Custom Domains is commonly used in AZURE for branded CDN endpoints.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of edge security protection in scenario variation 5?",
+      "options": [
+        "WAF Integration",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "WAF Integration",
+      "explanation": "WAF Integration is commonly used in AZURE for edge security protection.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of country-based restrictions in scenario variation 5?",
+      "options": [
+        "Geo Filtering",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "Geo Filtering",
+      "explanation": "Geo Filtering is commonly used in AZURE for country-based restrictions.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of secure edge delivery in scenario variation 5?",
+      "options": [
+        "HTTPS Custom Domain",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "HTTPS Custom Domain",
+      "explanation": "HTTPS Custom Domain is commonly used in AZURE for secure edge delivery.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE service or feature is best suited for intermediate implementation of cache invalidation in scenario variation 5?",
+      "options": [
+        "Endpoint Purge",
+        "Azure CDN",
+        "Azure Front Door CDN",
+        "Rules Engine"
+      ],
+      "answer": "Endpoint Purge",
+      "explanation": "Endpoint Purge is commonly used in AZURE for cache invalidation.",
+      "difficulty": "medium",
+      "subcategory": "cdn",
+      "category": "azure"
     }
   ]
