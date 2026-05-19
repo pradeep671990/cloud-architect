@@ -1,1 +1,702 @@
-[]
+[
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to manage users groups and permissions?",
+      "options": [
+        "AWS IAM",
+        "IAM User",
+        "IAM Group",
+        "IAM Role"
+      ],
+      "answer": "AWS IAM",
+      "explanation": "AWS IAM is used in AWS to manage users groups and permissions.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to create an identity for a person?",
+      "options": [
+        "IAM User",
+        "AWS IAM",
+        "IAM Group",
+        "IAM Role"
+      ],
+      "answer": "IAM User",
+      "explanation": "IAM User is used in AWS to create an identity for a person.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to assign permissions to multiple users?",
+      "options": [
+        "IAM Group",
+        "AWS IAM",
+        "IAM User",
+        "IAM Role"
+      ],
+      "answer": "IAM Group",
+      "explanation": "IAM Group is used in AWS to assign permissions to multiple users.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to grant temporary permissions to services?",
+      "options": [
+        "IAM Role",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "IAM Role",
+      "explanation": "IAM Role is used in AWS to grant temporary permissions to services.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to define AWS access permissions?",
+      "options": [
+        "IAM Policy",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "IAM Policy",
+      "explanation": "IAM Policy is used in AWS to define AWS access permissions.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to manage multiple AWS accounts?",
+      "options": [
+        "AWS Organizations",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "AWS Organizations",
+      "explanation": "AWS Organizations is used in AWS to manage multiple AWS accounts.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to provide centralized login access?",
+      "options": [
+        "AWS SSO",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "AWS SSO",
+      "explanation": "AWS SSO is used in AWS to provide centralized login access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to generate temporary security credentials?",
+      "options": [
+        "AWS STS",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "AWS STS",
+      "explanation": "AWS STS is used in AWS to generate temporary security credentials.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to add multi-factor authentication to accounts?",
+      "options": [
+        "MFA",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "MFA",
+      "explanation": "MFA is used in AWS to add multi-factor authentication to accounts.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to provide programmatic AWS access?",
+      "options": [
+        "Access Key",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "Access Key",
+      "explanation": "Access Key is used in AWS to provide programmatic AWS access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to manage encryption keys?",
+      "options": [
+        "AWS KMS",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "AWS KMS",
+      "explanation": "AWS KMS is used in AWS to manage encryption keys.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to store sensitive credentials?",
+      "options": [
+        "AWS Secrets Manager",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "AWS Secrets Manager",
+      "explanation": "AWS Secrets Manager is used in AWS to store sensitive credentials.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to store configuration secrets?",
+      "options": [
+        "Parameter Store",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "Parameter Store",
+      "explanation": "Parameter Store is used in AWS to store configuration secrets.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to centralize workforce access?",
+      "options": [
+        "IAM Identity Center",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "IAM Identity Center",
+      "explanation": "IAM Identity Center is used in AWS to centralize workforce access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to audit IAM activity?",
+      "options": [
+        "CloudTrail",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "CloudTrail",
+      "explanation": "CloudTrail is used in AWS to audit IAM activity.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to limit maximum permissions?",
+      "options": [
+        "IAM Permission Boundary",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "IAM Permission Boundary",
+      "explanation": "IAM Permission Boundary is used in AWS to limit maximum permissions.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to control permissions across accounts?",
+      "options": [
+        "Service Control Policy",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "Service Control Policy",
+      "explanation": "Service Control Policy is used in AWS to control permissions across accounts.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to grant access directly to resources?",
+      "options": [
+        "Resource-based Policy",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "Resource-based Policy",
+      "explanation": "Resource-based Policy is used in AWS to grant access directly to resources.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to control who can assume a role?",
+      "options": [
+        "Trust Policy",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "Trust Policy",
+      "explanation": "Trust Policy is used in AWS to control who can assume a role.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to manage application user identities?",
+      "options": [
+        "AWS Cognito",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "AWS Cognito",
+      "explanation": "AWS Cognito is used in AWS to manage application user identities.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to connect external identity providers?",
+      "options": [
+        "Federation",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "Federation",
+      "explanation": "Federation is used in AWS to connect external identity providers.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to identify unintended access?",
+      "options": [
+        "IAM Access Analyzer",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "IAM Access Analyzer",
+      "explanation": "IAM Access Analyzer is used in AWS to identify unintended access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to integrate with Active Directory?",
+      "options": [
+        "AWS Directory Service",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "AWS Directory Service",
+      "explanation": "AWS Directory Service is used in AWS to integrate with Active Directory.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to attach policy directly to identity?",
+      "options": [
+        "IAM Inline Policy",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "IAM Inline Policy",
+      "explanation": "IAM Inline Policy is used in AWS to attach policy directly to identity.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to reuse permission policies?",
+      "options": [
+        "Customer Managed Policy",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "Customer Managed Policy",
+      "explanation": "Customer Managed Policy is used in AWS to reuse permission policies.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to use AWS predefined permissions?",
+      "options": [
+        "AWS Managed Policy",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "AWS Managed Policy",
+      "explanation": "AWS Managed Policy is used in AWS to use AWS predefined permissions.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to authenticate temporary sessions?",
+      "options": [
+        "Session Token",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "Session Token",
+      "explanation": "Session Token is used in AWS to authenticate temporary sessions.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to access the AWS account owner identity?",
+      "options": [
+        "Root User",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "Root User",
+      "explanation": "Root User is used in AWS to access the AWS account owner identity.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to access resources across accounts?",
+      "options": [
+        "Cross-account Role",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "Cross-account Role",
+      "explanation": "Cross-account Role is used in AWS to access resources across accounts.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to grant Shield permissions?",
+      "options": [
+        "AWS Shield Advanced Role",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "AWS Shield Advanced Role",
+      "explanation": "AWS Shield Advanced Role is used in AWS to grant Shield permissions.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to control endpoint access?",
+      "options": [
+        "VPC Endpoint Policy",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "VPC Endpoint Policy",
+      "explanation": "VPC Endpoint Policy is used in AWS to control endpoint access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to control S3 access?",
+      "options": [
+        "Bucket Policy",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "Bucket Policy",
+      "explanation": "Bucket Policy is used in AWS to control S3 access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to control key usage permissions?",
+      "options": [
+        "KMS Key Policy",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "KMS Key Policy",
+      "explanation": "KMS Key Policy is used in AWS to control key usage permissions.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to grant permissions to Lambda?",
+      "options": [
+        "Lambda Execution Role",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "Lambda Execution Role",
+      "explanation": "Lambda Execution Role is used in AWS to grant permissions to Lambda.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to attach IAM roles to EC2?",
+      "options": [
+        "EC2 Instance Profile",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "EC2 Instance Profile",
+      "explanation": "EC2 Instance Profile is used in AWS to attach IAM roles to EC2.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to assign IAM roles to Kubernetes pods?",
+      "options": [
+        "EKS IRSA",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "EKS IRSA",
+      "explanation": "EKS IRSA is used in AWS to assign IAM roles to Kubernetes pods.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to apply conditional access logic?",
+      "options": [
+        "Condition Key",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "Condition Key",
+      "explanation": "Condition Key is used in AWS to apply conditional access logic.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to grant minimum required access?",
+      "options": [
+        "Least Privilege",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "Least Privilege",
+      "explanation": "Least Privilege is used in AWS to grant minimum required access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to enforce password complexity?",
+      "options": [
+        "Password Policy",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "Password Policy",
+      "explanation": "Password Policy is used in AWS to enforce password complexity.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to track IAM configuration changes?",
+      "options": [
+        "AWS Config",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "AWS Config",
+      "explanation": "AWS Config is used in AWS to track IAM configuration changes.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to review IAM credentials?",
+      "options": [
+        "IAM Credential Report",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "IAM Credential Report",
+      "explanation": "IAM Credential Report is used in AWS to review IAM credentials.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to assign permissions in Identity Center?",
+      "options": [
+        "Permission Set",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "Permission Set",
+      "explanation": "Permission Set is used in AWS to assign permissions in Identity Center.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to authenticate external users?",
+      "options": [
+        "Identity Provider",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "Identity Provider",
+      "explanation": "Identity Provider is used in AWS to authenticate external users.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to switch to another IAM role?",
+      "options": [
+        "AssumeRole API",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "AssumeRole API",
+      "explanation": "AssumeRole API is used in AWS to switch to another IAM role.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to collect IAM audit evidence?",
+      "options": [
+        "AWS Audit Manager",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "AWS Audit Manager",
+      "explanation": "AWS Audit Manager is used in AWS to collect IAM audit evidence.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to monitor authentication activity?",
+      "options": [
+        "CloudWatch Logs",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "CloudWatch Logs",
+      "explanation": "CloudWatch Logs is used in AWS to monitor authentication activity.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to control temporary credential lifetime?",
+      "options": [
+        "Session Duration",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "Session Duration",
+      "explanation": "Session Duration is used in AWS to control temporary credential lifetime.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to organize IAM resources?",
+      "options": [
+        "IAM Tagging",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "IAM Tagging",
+      "explanation": "IAM Tagging is used in AWS to organize IAM resources.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to secure application access?",
+      "options": [
+        "AWS Verified Access",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "AWS Verified Access",
+      "explanation": "AWS Verified Access is used in AWS to secure application access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS identity and access management service or feature is best suited to control access using attributes?",
+      "options": [
+        "ABAC",
+        "AWS IAM",
+        "IAM User",
+        "IAM Group"
+      ],
+      "answer": "ABAC",
+      "explanation": "ABAC is used in AWS to control access using attributes.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "aws"
+    }
+  ]

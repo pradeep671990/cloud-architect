@@ -1,1 +1,702 @@
-[]
+[
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to manage cloud identities?",
+      "options": [
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity",
+        "Conditional Access"
+      ],
+      "answer": "Microsoft Entra ID",
+      "explanation": "Microsoft Entra ID is used in AZURE to manage cloud identities.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to assign permissions to resources?",
+      "options": [
+        "Azure RBAC",
+        "Microsoft Entra ID",
+        "Managed Identity",
+        "Conditional Access"
+      ],
+      "answer": "Azure RBAC",
+      "explanation": "Azure RBAC is used in AZURE to assign permissions to resources.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to provide passwordless Azure access?",
+      "options": [
+        "Managed Identity",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Conditional Access"
+      ],
+      "answer": "Managed Identity",
+      "explanation": "Managed Identity is used in AZURE to provide passwordless Azure access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to enforce adaptive access controls?",
+      "options": [
+        "Conditional Access",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Conditional Access",
+      "explanation": "Conditional Access is used in AZURE to enforce adaptive access controls.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to manage elevated access?",
+      "options": [
+        "Privileged Identity Management",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Privileged Identity Management",
+      "explanation": "Privileged Identity Management is used in AZURE to manage elevated access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to store secrets and certificates?",
+      "options": [
+        "Azure Key Vault",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Azure Key Vault",
+      "explanation": "Azure Key Vault is used in AZURE to store secrets and certificates.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to authenticate applications?",
+      "options": [
+        "Service Principal",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Service Principal",
+      "explanation": "Service Principal is used in AZURE to authenticate applications.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to integrate external SaaS apps?",
+      "options": [
+        "Enterprise Application",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Enterprise Application",
+      "explanation": "Enterprise Application is used in AZURE to integrate external SaaS apps.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to sync on-prem and cloud identities?",
+      "options": [
+        "Azure AD Connect",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Azure AD Connect",
+      "explanation": "Azure AD Connect is used in AZURE to sync on-prem and cloud identities.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to require multi-factor authentication?",
+      "options": [
+        "MFA",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "MFA",
+      "explanation": "MFA is used in AZURE to require multi-factor authentication.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to assign access to groups?",
+      "options": [
+        "Security Group",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Security Group",
+      "explanation": "Security Group is used in AZURE to assign access to groups.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to delegate identity administration?",
+      "options": [
+        "Administrative Unit",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Administrative Unit",
+      "explanation": "Administrative Unit is used in AZURE to delegate identity administration.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to grant Azure permissions?",
+      "options": [
+        "Role Assignment",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Role Assignment",
+      "explanation": "Role Assignment is used in AZURE to grant Azure permissions.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to define custom Azure permissions?",
+      "options": [
+        "Custom Role",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Custom Role",
+      "explanation": "Custom Role is used in AZURE to define custom Azure permissions.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to use predefined Azure permissions?",
+      "options": [
+        "Built-in Role",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Built-in Role",
+      "explanation": "Built-in Role is used in AZURE to use predefined Azure permissions.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to control privileged membership?",
+      "options": [
+        "Privileged Access Group",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Privileged Access Group",
+      "explanation": "Privileged Access Group is used in AZURE to control privileged membership.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to register applications in Entra?",
+      "options": [
+        "Application Registration",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Application Registration",
+      "explanation": "Application Registration is used in AZURE to register applications in Entra.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to review access permissions regularly?",
+      "options": [
+        "Access Review",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Access Review",
+      "explanation": "Access Review is used in AZURE to review access permissions regularly.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to manage user access packages?",
+      "options": [
+        "Entitlement Management",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Entitlement Management",
+      "explanation": "Entitlement Management is used in AZURE to manage user access packages.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to invite external users?",
+      "options": [
+        "B2B Collaboration",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "B2B Collaboration",
+      "explanation": "B2B Collaboration is used in AZURE to invite external users.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to manage customer identities?",
+      "options": [
+        "B2C Identity",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "B2C Identity",
+      "explanation": "B2C Identity is used in AZURE to manage customer identities.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to detect risky sign-ins?",
+      "options": [
+        "Identity Protection",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Identity Protection",
+      "explanation": "Identity Protection is used in AZURE to detect risky sign-ins.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to control access by risk level?",
+      "options": [
+        "Risk-based Access",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Risk-based Access",
+      "explanation": "Risk-based Access is used in AZURE to control access by risk level.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to authenticate without passwords?",
+      "options": [
+        "Passwordless Authentication",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Passwordless Authentication",
+      "explanation": "Passwordless Authentication is used in AZURE to authenticate without passwords.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to support hardware authentication?",
+      "options": [
+        "FIDO2 Security Key",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "FIDO2 Security Key",
+      "explanation": "FIDO2 Security Key is used in AZURE to support hardware authentication.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to enforce governance rules?",
+      "options": [
+        "Azure Policy",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Azure Policy",
+      "explanation": "Azure Policy is used in AZURE to enforce governance rules.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to manage multiple tenants?",
+      "options": [
+        "Azure Lighthouse",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Azure Lighthouse",
+      "explanation": "Azure Lighthouse is used in AZURE to manage multiple tenants.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to protect critical resources?",
+      "options": [
+        "Resource Lock",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Resource Lock",
+      "explanation": "Resource Lock is used in AZURE to protect critical resources.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to track identity activity?",
+      "options": [
+        "Azure Monitor",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Azure Monitor",
+      "explanation": "Azure Monitor is used in AZURE to track identity activity.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to review authentication attempts?",
+      "options": [
+        "Sign-in Logs",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Sign-in Logs",
+      "explanation": "Sign-in Logs is used in AZURE to review authentication attempts.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to track directory changes?",
+      "options": [
+        "Audit Logs",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Audit Logs",
+      "explanation": "Audit Logs is used in AZURE to track directory changes.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to assign Entra administrative roles?",
+      "options": [
+        "Directory Role",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Directory Role",
+      "explanation": "Directory Role is used in AZURE to assign Entra administrative roles.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to publish internal apps securely?",
+      "options": [
+        "Application Proxy",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Application Proxy",
+      "explanation": "Application Proxy is used in AZURE to publish internal apps securely.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to connect on-prem and cloud identities?",
+      "options": [
+        "Hybrid Identity",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Hybrid Identity",
+      "explanation": "Hybrid Identity is used in AZURE to connect on-prem and cloud identities.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to authorize delegated application access?",
+      "options": [
+        "OAuth 2.0",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "OAuth 2.0",
+      "explanation": "OAuth 2.0 is used in AZURE to authorize delegated application access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to authenticate application users?",
+      "options": [
+        "OpenID Connect",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "OpenID Connect",
+      "explanation": "OpenID Connect is used in AZURE to authenticate application users.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to enable federated authentication?",
+      "options": [
+        "SAML",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "SAML",
+      "explanation": "SAML is used in AZURE to enable federated authentication.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to assign licenses by group?",
+      "options": [
+        "Group-based Licensing",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Group-based Licensing",
+      "explanation": "Group-based Licensing is used in AZURE to assign licenses by group.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to approve elevated access requests?",
+      "options": [
+        "PIM Approval Workflow",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "PIM Approval Workflow",
+      "explanation": "PIM Approval Workflow is used in AZURE to approve elevated access requests.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to protect cryptographic keys?",
+      "options": [
+        "Managed HSM",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Managed HSM",
+      "explanation": "Managed HSM is used in AZURE to protect cryptographic keys.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to control Bastion access?",
+      "options": [
+        "Azure Bastion RBAC",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Azure Bastion RBAC",
+      "explanation": "Azure Bastion RBAC is used in AZURE to control Bastion access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to apply location-based rules?",
+      "options": [
+        "Conditional Access Named Locations",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Conditional Access Named Locations",
+      "explanation": "Conditional Access Named Locations is used in AZURE to apply location-based rules.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to limit tenant access?",
+      "options": [
+        "Tenant Restriction",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Tenant Restriction",
+      "explanation": "Tenant Restriction is used in AZURE to limit tenant access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to assign users automatically?",
+      "options": [
+        "Dynamic Group",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Dynamic Group",
+      "explanation": "Dynamic Group is used in AZURE to assign users automatically.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to manage lifecycle access?",
+      "options": [
+        "Identity Governance",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Identity Governance",
+      "explanation": "Identity Governance is used in AZURE to manage lifecycle access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to allow password reset?",
+      "options": [
+        "Self-service Password Reset",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Self-service Password Reset",
+      "explanation": "Self-service Password Reset is used in AZURE to allow password reset.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to maintain emergency admin access?",
+      "options": [
+        "Break-glass Account",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Break-glass Account",
+      "explanation": "Break-glass Account is used in AZURE to maintain emergency admin access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to control token validity?",
+      "options": [
+        "Token Lifetime Policy",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Token Lifetime Policy",
+      "explanation": "Token Lifetime Policy is used in AZURE to control token validity.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to grant application API access?",
+      "options": [
+        "API Permission",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "API Permission",
+      "explanation": "API Permission is used in AZURE to grant application API access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE identity and access management service or feature is best suited to restrict access to compliant devices?",
+      "options": [
+        "Device Compliance Policy",
+        "Microsoft Entra ID",
+        "Azure RBAC",
+        "Managed Identity"
+      ],
+      "answer": "Device Compliance Policy",
+      "explanation": "Device Compliance Policy is used in AZURE to restrict access to compliant devices.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    }
+  ]

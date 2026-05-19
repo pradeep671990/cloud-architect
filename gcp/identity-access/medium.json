@@ -1,1 +1,702 @@
-[]
+[
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 1?",
+      "options": [
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3",
+        "GCP IAM Medium Feature 4"
+      ],
+      "answer": "GCP IAM Medium Feature 1",
+      "explanation": "GCP IAM Medium Feature 1 is used in GCP for medium IAM scenario number 1.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 2?",
+      "options": [
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 3",
+        "GCP IAM Medium Feature 4"
+      ],
+      "answer": "GCP IAM Medium Feature 2",
+      "explanation": "GCP IAM Medium Feature 2 is used in GCP for medium IAM scenario number 2.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 3?",
+      "options": [
+        "GCP IAM Medium Feature 3",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 4"
+      ],
+      "answer": "GCP IAM Medium Feature 3",
+      "explanation": "GCP IAM Medium Feature 3 is used in GCP for medium IAM scenario number 3.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 4?",
+      "options": [
+        "GCP IAM Medium Feature 4",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 4",
+      "explanation": "GCP IAM Medium Feature 4 is used in GCP for medium IAM scenario number 4.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 5?",
+      "options": [
+        "GCP IAM Medium Feature 5",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 5",
+      "explanation": "GCP IAM Medium Feature 5 is used in GCP for medium IAM scenario number 5.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 6?",
+      "options": [
+        "GCP IAM Medium Feature 6",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 6",
+      "explanation": "GCP IAM Medium Feature 6 is used in GCP for medium IAM scenario number 6.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 7?",
+      "options": [
+        "GCP IAM Medium Feature 7",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 7",
+      "explanation": "GCP IAM Medium Feature 7 is used in GCP for medium IAM scenario number 7.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 8?",
+      "options": [
+        "GCP IAM Medium Feature 8",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 8",
+      "explanation": "GCP IAM Medium Feature 8 is used in GCP for medium IAM scenario number 8.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 9?",
+      "options": [
+        "GCP IAM Medium Feature 9",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 9",
+      "explanation": "GCP IAM Medium Feature 9 is used in GCP for medium IAM scenario number 9.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 10?",
+      "options": [
+        "GCP IAM Medium Feature 10",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 10",
+      "explanation": "GCP IAM Medium Feature 10 is used in GCP for medium IAM scenario number 10.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 11?",
+      "options": [
+        "GCP IAM Medium Feature 11",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 11",
+      "explanation": "GCP IAM Medium Feature 11 is used in GCP for medium IAM scenario number 11.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 12?",
+      "options": [
+        "GCP IAM Medium Feature 12",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 12",
+      "explanation": "GCP IAM Medium Feature 12 is used in GCP for medium IAM scenario number 12.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 13?",
+      "options": [
+        "GCP IAM Medium Feature 13",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 13",
+      "explanation": "GCP IAM Medium Feature 13 is used in GCP for medium IAM scenario number 13.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 14?",
+      "options": [
+        "GCP IAM Medium Feature 14",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 14",
+      "explanation": "GCP IAM Medium Feature 14 is used in GCP for medium IAM scenario number 14.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 15?",
+      "options": [
+        "GCP IAM Medium Feature 15",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 15",
+      "explanation": "GCP IAM Medium Feature 15 is used in GCP for medium IAM scenario number 15.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 16?",
+      "options": [
+        "GCP IAM Medium Feature 16",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 16",
+      "explanation": "GCP IAM Medium Feature 16 is used in GCP for medium IAM scenario number 16.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 17?",
+      "options": [
+        "GCP IAM Medium Feature 17",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 17",
+      "explanation": "GCP IAM Medium Feature 17 is used in GCP for medium IAM scenario number 17.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 18?",
+      "options": [
+        "GCP IAM Medium Feature 18",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 18",
+      "explanation": "GCP IAM Medium Feature 18 is used in GCP for medium IAM scenario number 18.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 19?",
+      "options": [
+        "GCP IAM Medium Feature 19",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 19",
+      "explanation": "GCP IAM Medium Feature 19 is used in GCP for medium IAM scenario number 19.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 20?",
+      "options": [
+        "GCP IAM Medium Feature 20",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 20",
+      "explanation": "GCP IAM Medium Feature 20 is used in GCP for medium IAM scenario number 20.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 21?",
+      "options": [
+        "GCP IAM Medium Feature 21",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 21",
+      "explanation": "GCP IAM Medium Feature 21 is used in GCP for medium IAM scenario number 21.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 22?",
+      "options": [
+        "GCP IAM Medium Feature 22",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 22",
+      "explanation": "GCP IAM Medium Feature 22 is used in GCP for medium IAM scenario number 22.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 23?",
+      "options": [
+        "GCP IAM Medium Feature 23",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 23",
+      "explanation": "GCP IAM Medium Feature 23 is used in GCP for medium IAM scenario number 23.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 24?",
+      "options": [
+        "GCP IAM Medium Feature 24",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 24",
+      "explanation": "GCP IAM Medium Feature 24 is used in GCP for medium IAM scenario number 24.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 25?",
+      "options": [
+        "GCP IAM Medium Feature 25",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 25",
+      "explanation": "GCP IAM Medium Feature 25 is used in GCP for medium IAM scenario number 25.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 26?",
+      "options": [
+        "GCP IAM Medium Feature 26",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 26",
+      "explanation": "GCP IAM Medium Feature 26 is used in GCP for medium IAM scenario number 26.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 27?",
+      "options": [
+        "GCP IAM Medium Feature 27",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 27",
+      "explanation": "GCP IAM Medium Feature 27 is used in GCP for medium IAM scenario number 27.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 28?",
+      "options": [
+        "GCP IAM Medium Feature 28",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 28",
+      "explanation": "GCP IAM Medium Feature 28 is used in GCP for medium IAM scenario number 28.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 29?",
+      "options": [
+        "GCP IAM Medium Feature 29",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 29",
+      "explanation": "GCP IAM Medium Feature 29 is used in GCP for medium IAM scenario number 29.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 30?",
+      "options": [
+        "GCP IAM Medium Feature 30",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 30",
+      "explanation": "GCP IAM Medium Feature 30 is used in GCP for medium IAM scenario number 30.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 31?",
+      "options": [
+        "GCP IAM Medium Feature 31",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 31",
+      "explanation": "GCP IAM Medium Feature 31 is used in GCP for medium IAM scenario number 31.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 32?",
+      "options": [
+        "GCP IAM Medium Feature 32",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 32",
+      "explanation": "GCP IAM Medium Feature 32 is used in GCP for medium IAM scenario number 32.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 33?",
+      "options": [
+        "GCP IAM Medium Feature 33",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 33",
+      "explanation": "GCP IAM Medium Feature 33 is used in GCP for medium IAM scenario number 33.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 34?",
+      "options": [
+        "GCP IAM Medium Feature 34",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 34",
+      "explanation": "GCP IAM Medium Feature 34 is used in GCP for medium IAM scenario number 34.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 35?",
+      "options": [
+        "GCP IAM Medium Feature 35",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 35",
+      "explanation": "GCP IAM Medium Feature 35 is used in GCP for medium IAM scenario number 35.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 36?",
+      "options": [
+        "GCP IAM Medium Feature 36",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 36",
+      "explanation": "GCP IAM Medium Feature 36 is used in GCP for medium IAM scenario number 36.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 37?",
+      "options": [
+        "GCP IAM Medium Feature 37",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 37",
+      "explanation": "GCP IAM Medium Feature 37 is used in GCP for medium IAM scenario number 37.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 38?",
+      "options": [
+        "GCP IAM Medium Feature 38",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 38",
+      "explanation": "GCP IAM Medium Feature 38 is used in GCP for medium IAM scenario number 38.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 39?",
+      "options": [
+        "GCP IAM Medium Feature 39",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 39",
+      "explanation": "GCP IAM Medium Feature 39 is used in GCP for medium IAM scenario number 39.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 40?",
+      "options": [
+        "GCP IAM Medium Feature 40",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 40",
+      "explanation": "GCP IAM Medium Feature 40 is used in GCP for medium IAM scenario number 40.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 41?",
+      "options": [
+        "GCP IAM Medium Feature 41",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 41",
+      "explanation": "GCP IAM Medium Feature 41 is used in GCP for medium IAM scenario number 41.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 42?",
+      "options": [
+        "GCP IAM Medium Feature 42",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 42",
+      "explanation": "GCP IAM Medium Feature 42 is used in GCP for medium IAM scenario number 42.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 43?",
+      "options": [
+        "GCP IAM Medium Feature 43",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 43",
+      "explanation": "GCP IAM Medium Feature 43 is used in GCP for medium IAM scenario number 43.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 44?",
+      "options": [
+        "GCP IAM Medium Feature 44",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 44",
+      "explanation": "GCP IAM Medium Feature 44 is used in GCP for medium IAM scenario number 44.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 45?",
+      "options": [
+        "GCP IAM Medium Feature 45",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 45",
+      "explanation": "GCP IAM Medium Feature 45 is used in GCP for medium IAM scenario number 45.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 46?",
+      "options": [
+        "GCP IAM Medium Feature 46",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 46",
+      "explanation": "GCP IAM Medium Feature 46 is used in GCP for medium IAM scenario number 46.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 47?",
+      "options": [
+        "GCP IAM Medium Feature 47",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 47",
+      "explanation": "GCP IAM Medium Feature 47 is used in GCP for medium IAM scenario number 47.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 48?",
+      "options": [
+        "GCP IAM Medium Feature 48",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 48",
+      "explanation": "GCP IAM Medium Feature 48 is used in GCP for medium IAM scenario number 48.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 49?",
+      "options": [
+        "GCP IAM Medium Feature 49",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 49",
+      "explanation": "GCP IAM Medium Feature 49 is used in GCP for medium IAM scenario number 49.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP IAM feature or service is best suited to medium IAM scenario number 50?",
+      "options": [
+        "GCP IAM Medium Feature 50",
+        "GCP IAM Medium Feature 1",
+        "GCP IAM Medium Feature 2",
+        "GCP IAM Medium Feature 3"
+      ],
+      "answer": "GCP IAM Medium Feature 50",
+      "explanation": "GCP IAM Medium Feature 50 is used in GCP for medium IAM scenario number 50.",
+      "difficulty": "medium",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    }
+  ]

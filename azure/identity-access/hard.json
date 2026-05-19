@@ -1,1 +1,702 @@
-[]
+[
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 1?",
+      "options": [
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3",
+        "Azure IAM Hard Feature 4"
+      ],
+      "answer": "Azure IAM Hard Feature 1",
+      "explanation": "Azure IAM Hard Feature 1 is used in AZURE for advanced IAM architecture scenario number 1.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 2?",
+      "options": [
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 3",
+        "Azure IAM Hard Feature 4"
+      ],
+      "answer": "Azure IAM Hard Feature 2",
+      "explanation": "Azure IAM Hard Feature 2 is used in AZURE for advanced IAM architecture scenario number 2.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 3?",
+      "options": [
+        "Azure IAM Hard Feature 3",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 4"
+      ],
+      "answer": "Azure IAM Hard Feature 3",
+      "explanation": "Azure IAM Hard Feature 3 is used in AZURE for advanced IAM architecture scenario number 3.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 4?",
+      "options": [
+        "Azure IAM Hard Feature 4",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 4",
+      "explanation": "Azure IAM Hard Feature 4 is used in AZURE for advanced IAM architecture scenario number 4.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 5?",
+      "options": [
+        "Azure IAM Hard Feature 5",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 5",
+      "explanation": "Azure IAM Hard Feature 5 is used in AZURE for advanced IAM architecture scenario number 5.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 6?",
+      "options": [
+        "Azure IAM Hard Feature 6",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 6",
+      "explanation": "Azure IAM Hard Feature 6 is used in AZURE for advanced IAM architecture scenario number 6.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 7?",
+      "options": [
+        "Azure IAM Hard Feature 7",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 7",
+      "explanation": "Azure IAM Hard Feature 7 is used in AZURE for advanced IAM architecture scenario number 7.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 8?",
+      "options": [
+        "Azure IAM Hard Feature 8",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 8",
+      "explanation": "Azure IAM Hard Feature 8 is used in AZURE for advanced IAM architecture scenario number 8.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 9?",
+      "options": [
+        "Azure IAM Hard Feature 9",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 9",
+      "explanation": "Azure IAM Hard Feature 9 is used in AZURE for advanced IAM architecture scenario number 9.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 10?",
+      "options": [
+        "Azure IAM Hard Feature 10",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 10",
+      "explanation": "Azure IAM Hard Feature 10 is used in AZURE for advanced IAM architecture scenario number 10.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 11?",
+      "options": [
+        "Azure IAM Hard Feature 11",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 11",
+      "explanation": "Azure IAM Hard Feature 11 is used in AZURE for advanced IAM architecture scenario number 11.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 12?",
+      "options": [
+        "Azure IAM Hard Feature 12",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 12",
+      "explanation": "Azure IAM Hard Feature 12 is used in AZURE for advanced IAM architecture scenario number 12.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 13?",
+      "options": [
+        "Azure IAM Hard Feature 13",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 13",
+      "explanation": "Azure IAM Hard Feature 13 is used in AZURE for advanced IAM architecture scenario number 13.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 14?",
+      "options": [
+        "Azure IAM Hard Feature 14",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 14",
+      "explanation": "Azure IAM Hard Feature 14 is used in AZURE for advanced IAM architecture scenario number 14.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 15?",
+      "options": [
+        "Azure IAM Hard Feature 15",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 15",
+      "explanation": "Azure IAM Hard Feature 15 is used in AZURE for advanced IAM architecture scenario number 15.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 16?",
+      "options": [
+        "Azure IAM Hard Feature 16",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 16",
+      "explanation": "Azure IAM Hard Feature 16 is used in AZURE for advanced IAM architecture scenario number 16.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 17?",
+      "options": [
+        "Azure IAM Hard Feature 17",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 17",
+      "explanation": "Azure IAM Hard Feature 17 is used in AZURE for advanced IAM architecture scenario number 17.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 18?",
+      "options": [
+        "Azure IAM Hard Feature 18",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 18",
+      "explanation": "Azure IAM Hard Feature 18 is used in AZURE for advanced IAM architecture scenario number 18.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 19?",
+      "options": [
+        "Azure IAM Hard Feature 19",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 19",
+      "explanation": "Azure IAM Hard Feature 19 is used in AZURE for advanced IAM architecture scenario number 19.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 20?",
+      "options": [
+        "Azure IAM Hard Feature 20",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 20",
+      "explanation": "Azure IAM Hard Feature 20 is used in AZURE for advanced IAM architecture scenario number 20.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 21?",
+      "options": [
+        "Azure IAM Hard Feature 21",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 21",
+      "explanation": "Azure IAM Hard Feature 21 is used in AZURE for advanced IAM architecture scenario number 21.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 22?",
+      "options": [
+        "Azure IAM Hard Feature 22",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 22",
+      "explanation": "Azure IAM Hard Feature 22 is used in AZURE for advanced IAM architecture scenario number 22.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 23?",
+      "options": [
+        "Azure IAM Hard Feature 23",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 23",
+      "explanation": "Azure IAM Hard Feature 23 is used in AZURE for advanced IAM architecture scenario number 23.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 24?",
+      "options": [
+        "Azure IAM Hard Feature 24",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 24",
+      "explanation": "Azure IAM Hard Feature 24 is used in AZURE for advanced IAM architecture scenario number 24.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 25?",
+      "options": [
+        "Azure IAM Hard Feature 25",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 25",
+      "explanation": "Azure IAM Hard Feature 25 is used in AZURE for advanced IAM architecture scenario number 25.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 26?",
+      "options": [
+        "Azure IAM Hard Feature 26",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 26",
+      "explanation": "Azure IAM Hard Feature 26 is used in AZURE for advanced IAM architecture scenario number 26.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 27?",
+      "options": [
+        "Azure IAM Hard Feature 27",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 27",
+      "explanation": "Azure IAM Hard Feature 27 is used in AZURE for advanced IAM architecture scenario number 27.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 28?",
+      "options": [
+        "Azure IAM Hard Feature 28",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 28",
+      "explanation": "Azure IAM Hard Feature 28 is used in AZURE for advanced IAM architecture scenario number 28.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 29?",
+      "options": [
+        "Azure IAM Hard Feature 29",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 29",
+      "explanation": "Azure IAM Hard Feature 29 is used in AZURE for advanced IAM architecture scenario number 29.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 30?",
+      "options": [
+        "Azure IAM Hard Feature 30",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 30",
+      "explanation": "Azure IAM Hard Feature 30 is used in AZURE for advanced IAM architecture scenario number 30.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 31?",
+      "options": [
+        "Azure IAM Hard Feature 31",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 31",
+      "explanation": "Azure IAM Hard Feature 31 is used in AZURE for advanced IAM architecture scenario number 31.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 32?",
+      "options": [
+        "Azure IAM Hard Feature 32",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 32",
+      "explanation": "Azure IAM Hard Feature 32 is used in AZURE for advanced IAM architecture scenario number 32.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 33?",
+      "options": [
+        "Azure IAM Hard Feature 33",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 33",
+      "explanation": "Azure IAM Hard Feature 33 is used in AZURE for advanced IAM architecture scenario number 33.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 34?",
+      "options": [
+        "Azure IAM Hard Feature 34",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 34",
+      "explanation": "Azure IAM Hard Feature 34 is used in AZURE for advanced IAM architecture scenario number 34.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 35?",
+      "options": [
+        "Azure IAM Hard Feature 35",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 35",
+      "explanation": "Azure IAM Hard Feature 35 is used in AZURE for advanced IAM architecture scenario number 35.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 36?",
+      "options": [
+        "Azure IAM Hard Feature 36",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 36",
+      "explanation": "Azure IAM Hard Feature 36 is used in AZURE for advanced IAM architecture scenario number 36.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 37?",
+      "options": [
+        "Azure IAM Hard Feature 37",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 37",
+      "explanation": "Azure IAM Hard Feature 37 is used in AZURE for advanced IAM architecture scenario number 37.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 38?",
+      "options": [
+        "Azure IAM Hard Feature 38",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 38",
+      "explanation": "Azure IAM Hard Feature 38 is used in AZURE for advanced IAM architecture scenario number 38.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 39?",
+      "options": [
+        "Azure IAM Hard Feature 39",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 39",
+      "explanation": "Azure IAM Hard Feature 39 is used in AZURE for advanced IAM architecture scenario number 39.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 40?",
+      "options": [
+        "Azure IAM Hard Feature 40",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 40",
+      "explanation": "Azure IAM Hard Feature 40 is used in AZURE for advanced IAM architecture scenario number 40.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 41?",
+      "options": [
+        "Azure IAM Hard Feature 41",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 41",
+      "explanation": "Azure IAM Hard Feature 41 is used in AZURE for advanced IAM architecture scenario number 41.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 42?",
+      "options": [
+        "Azure IAM Hard Feature 42",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 42",
+      "explanation": "Azure IAM Hard Feature 42 is used in AZURE for advanced IAM architecture scenario number 42.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 43?",
+      "options": [
+        "Azure IAM Hard Feature 43",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 43",
+      "explanation": "Azure IAM Hard Feature 43 is used in AZURE for advanced IAM architecture scenario number 43.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 44?",
+      "options": [
+        "Azure IAM Hard Feature 44",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 44",
+      "explanation": "Azure IAM Hard Feature 44 is used in AZURE for advanced IAM architecture scenario number 44.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 45?",
+      "options": [
+        "Azure IAM Hard Feature 45",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 45",
+      "explanation": "Azure IAM Hard Feature 45 is used in AZURE for advanced IAM architecture scenario number 45.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 46?",
+      "options": [
+        "Azure IAM Hard Feature 46",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 46",
+      "explanation": "Azure IAM Hard Feature 46 is used in AZURE for advanced IAM architecture scenario number 46.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 47?",
+      "options": [
+        "Azure IAM Hard Feature 47",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 47",
+      "explanation": "Azure IAM Hard Feature 47 is used in AZURE for advanced IAM architecture scenario number 47.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 48?",
+      "options": [
+        "Azure IAM Hard Feature 48",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 48",
+      "explanation": "Azure IAM Hard Feature 48 is used in AZURE for advanced IAM architecture scenario number 48.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 49?",
+      "options": [
+        "Azure IAM Hard Feature 49",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 49",
+      "explanation": "Azure IAM Hard Feature 49 is used in AZURE for advanced IAM architecture scenario number 49.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    },
+    {
+      "question": "Which AZURE IAM feature or service is best suited to advanced IAM architecture scenario number 50?",
+      "options": [
+        "Azure IAM Hard Feature 50",
+        "Azure IAM Hard Feature 1",
+        "Azure IAM Hard Feature 2",
+        "Azure IAM Hard Feature 3"
+      ],
+      "answer": "Azure IAM Hard Feature 50",
+      "explanation": "Azure IAM Hard Feature 50 is used in AZURE for advanced IAM architecture scenario number 50.",
+      "difficulty": "hard",
+      "subcategory": "identity-access-management",
+      "category": "azure"
+    }
+  ]

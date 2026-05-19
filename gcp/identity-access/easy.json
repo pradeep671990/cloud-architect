@@ -1,1 +1,702 @@
-[]
+[
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to manage Google Cloud permissions?",
+      "options": [
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role",
+        "Primitive Role"
+      ],
+      "answer": "Cloud IAM",
+      "explanation": "Cloud IAM is used in GCP to manage Google Cloud permissions.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to grant permissions to identities?",
+      "options": [
+        "IAM Role",
+        "Cloud IAM",
+        "Custom Role",
+        "Primitive Role"
+      ],
+      "answer": "IAM Role",
+      "explanation": "IAM Role is used in GCP to grant permissions to identities.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to define custom permissions?",
+      "options": [
+        "Custom Role",
+        "Cloud IAM",
+        "IAM Role",
+        "Primitive Role"
+      ],
+      "answer": "Custom Role",
+      "explanation": "Custom Role is used in GCP to define custom permissions.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to use basic project-wide roles?",
+      "options": [
+        "Primitive Role",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Primitive Role",
+      "explanation": "Primitive Role is used in GCP to use basic project-wide roles.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to authenticate workloads?",
+      "options": [
+        "Service Account",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Service Account",
+      "explanation": "Service Account is used in GCP to authenticate workloads.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to access GCP without service account keys?",
+      "options": [
+        "Workload Identity Federation",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Workload Identity Federation",
+      "explanation": "Workload Identity Federation is used in GCP to access GCP without service account keys.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to define access bindings?",
+      "options": [
+        "IAM Policy",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "IAM Policy",
+      "explanation": "IAM Policy is used in GCP to define access bindings.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to manage users and groups?",
+      "options": [
+        "Cloud Identity",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Cloud Identity",
+      "explanation": "Cloud Identity is used in GCP to manage users and groups.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to enforce organization-wide rules?",
+      "options": [
+        "Organization Policy",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Organization Policy",
+      "explanation": "Organization Policy is used in GCP to enforce organization-wide rules.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to protect sensitive data access?",
+      "options": [
+        "VPC Service Controls",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "VPC Service Controls",
+      "explanation": "VPC Service Controls is used in GCP to protect sensitive data access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to track IAM activity?",
+      "options": [
+        "Cloud Audit Logs",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Cloud Audit Logs",
+      "explanation": "Cloud Audit Logs is used in GCP to track IAM activity.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to apply conditional access?",
+      "options": [
+        "IAM Conditions",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "IAM Conditions",
+      "explanation": "IAM Conditions is used in GCP to apply conditional access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to authorize application access?",
+      "options": [
+        "OAuth Consent Screen",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "OAuth Consent Screen",
+      "explanation": "OAuth Consent Screen is used in GCP to authorize application access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to secure application access?",
+      "options": [
+        "Identity-Aware Proxy",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Identity-Aware Proxy",
+      "explanation": "Identity-Aware Proxy is used in GCP to secure application access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to manage encryption keys?",
+      "options": [
+        "Cloud KMS",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Cloud KMS",
+      "explanation": "Cloud KMS is used in GCP to manage encryption keys.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to store sensitive credentials?",
+      "options": [
+        "Secret Manager",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Secret Manager",
+      "explanation": "Secret Manager is used in GCP to store sensitive credentials.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to define contextual access policies?",
+      "options": [
+        "Access Context Manager",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Access Context Manager",
+      "explanation": "Access Context Manager is used in GCP to define contextual access policies.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to implement zero-trust access?",
+      "options": [
+        "BeyondCorp Enterprise",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "BeyondCorp Enterprise",
+      "explanation": "BeyondCorp Enterprise is used in GCP to implement zero-trust access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to optimize IAM permissions?",
+      "options": [
+        "IAM Recommender",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "IAM Recommender",
+      "explanation": "IAM Recommender is used in GCP to optimize IAM permissions.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to analyze IAM access?",
+      "options": [
+        "Policy Analyzer",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Policy Analyzer",
+      "explanation": "Policy Analyzer is used in GCP to analyze IAM access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to assign permissions to groups?",
+      "options": [
+        "Group-based Access",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Group-based Access",
+      "explanation": "Group-based Access is used in GCP to assign permissions to groups.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to manage enterprise identities?",
+      "options": [
+        "Google Workspace",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Google Workspace",
+      "explanation": "Google Workspace is used in GCP to manage enterprise identities.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to restrict external sharing?",
+      "options": [
+        "Domain Restricted Sharing",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Domain Restricted Sharing",
+      "explanation": "Domain Restricted Sharing is used in GCP to restrict external sharing.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to sync on-prem identities?",
+      "options": [
+        "Cloud Directory Sync",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Cloud Directory Sync",
+      "explanation": "Cloud Directory Sync is used in GCP to sync on-prem identities.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to monitor IAM security posture?",
+      "options": [
+        "Security Command Center",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Security Command Center",
+      "explanation": "Security Command Center is used in GCP to monitor IAM security posture.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to require approval for support access?",
+      "options": [
+        "Access Approval",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Access Approval",
+      "explanation": "Access Approval is used in GCP to require approval for support access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to view Google administrator access?",
+      "options": [
+        "Access Transparency",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Access Transparency",
+      "explanation": "Access Transparency is used in GCP to view Google administrator access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to enforce trusted deployments?",
+      "options": [
+        "Binary Authorization",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Binary Authorization",
+      "explanation": "Binary Authorization is used in GCP to enforce trusted deployments.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to manage VM SSH access through IAM?",
+      "options": [
+        "OS Login",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "OS Login",
+      "explanation": "OS Login is used in GCP to manage VM SSH access through IAM.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to authenticate using service credentials?",
+      "options": [
+        "Service Account Key",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Service Account Key",
+      "explanation": "Service Account Key is used in GCP to authenticate using service credentials.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to explicitly deny access?",
+      "options": [
+        "IAM Deny Policy",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "IAM Deny Policy",
+      "explanation": "IAM Deny Policy is used in GCP to explicitly deny access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to manage project hierarchy?",
+      "options": [
+        "Resource Manager",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Resource Manager",
+      "explanation": "Resource Manager is used in GCP to manage project hierarchy.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to assign permissions at folder scope?",
+      "options": [
+        "Folder-level IAM",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Folder-level IAM",
+      "explanation": "Folder-level IAM is used in GCP to assign permissions at folder scope.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to assign permissions at project scope?",
+      "options": [
+        "Project-level IAM",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Project-level IAM",
+      "explanation": "Project-level IAM is used in GCP to assign permissions at project scope.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to assign permissions globally?",
+      "options": [
+        "Organization-level IAM",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Organization-level IAM",
+      "explanation": "Organization-level IAM is used in GCP to assign permissions globally.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to restrict access by condition?",
+      "options": [
+        "Conditional Binding",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Conditional Binding",
+      "explanation": "Conditional Binding is used in GCP to restrict access by condition.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to limit identity permissions?",
+      "options": [
+        "Principal Access Boundary",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Principal Access Boundary",
+      "explanation": "Principal Access Boundary is used in GCP to limit identity permissions.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to federate external identities?",
+      "options": [
+        "Workload Identity Pool",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Workload Identity Pool",
+      "explanation": "Workload Identity Pool is used in GCP to federate external identities.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to manage team-based access?",
+      "options": [
+        "Google Groups",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Google Groups",
+      "explanation": "Google Groups is used in GCP to manage team-based access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to control Cloud Armor administration?",
+      "options": [
+        "Cloud Armor IAM",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Cloud Armor IAM",
+      "explanation": "Cloud Armor IAM is used in GCP to control Cloud Armor administration.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to issue private certificates?",
+      "options": [
+        "Private CA",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Private CA",
+      "explanation": "Private CA is used in GCP to issue private certificates.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to manage certificates?",
+      "options": [
+        "Certificate Authority Service",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Certificate Authority Service",
+      "explanation": "Certificate Authority Service is used in GCP to manage certificates.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to control API platform access?",
+      "options": [
+        "Apigee IAM",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Apigee IAM",
+      "explanation": "Apigee IAM is used in GCP to control API platform access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to secure analytics access?",
+      "options": [
+        "BigQuery IAM",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "BigQuery IAM",
+      "explanation": "BigQuery IAM is used in GCP to secure analytics access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to control messaging permissions?",
+      "options": [
+        "Pub/Sub IAM",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Pub/Sub IAM",
+      "explanation": "Pub/Sub IAM is used in GCP to control messaging permissions.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to manage storage bucket access?",
+      "options": [
+        "Cloud Storage IAM",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Cloud Storage IAM",
+      "explanation": "Cloud Storage IAM is used in GCP to manage storage bucket access.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to authenticate database users?",
+      "options": [
+        "Cloud SQL IAM Authentication",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Cloud SQL IAM Authentication",
+      "explanation": "Cloud SQL IAM Authentication is used in GCP to authenticate database users.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to debug access issues?",
+      "options": [
+        "IAM Troubleshooter",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "IAM Troubleshooter",
+      "explanation": "IAM Troubleshooter is used in GCP to debug access issues.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to authenticate external users?",
+      "options": [
+        "Federated Identity",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Federated Identity",
+      "explanation": "Federated Identity is used in GCP to authenticate external users.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP identity and access management service or feature is best suited to apply device and location rules?",
+      "options": [
+        "Context-aware Access",
+        "Cloud IAM",
+        "IAM Role",
+        "Custom Role"
+      ],
+      "answer": "Context-aware Access",
+      "explanation": "Context-aware Access is used in GCP to apply device and location rules.",
+      "difficulty": "easy",
+      "subcategory": "identity-access-management",
+      "category": "gcp"
+    }
+  ]
