@@ -1,48 +1,6 @@
 [
     {
-      "question": "In GCP, which service or feature is primarily used for managed MySQL/PostgreSQL/SQL Server hosting?",
-      "options": [
-        "Cloud SQL",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Cloud SQL",
-      "explanation": "Cloud SQL is commonly used in GCP for managed MySQL/PostgreSQL/SQL Server hosting.",
-      "difficulty": "medium",
-      "subcategory": "cloud-sql",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for serverless analytics and warehousing?",
-      "options": [
-        "BigQuery",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "BigQuery",
-      "explanation": "BigQuery is commonly used in GCP for serverless analytics and warehousing.",
-      "difficulty": "medium",
-      "subcategory": "bigquery",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for NoSQL document storage for applications?",
-      "options": [
-        "Firestore",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Firestore",
-      "explanation": "Firestore is commonly used in GCP for NoSQL document storage for applications.",
-      "difficulty": "medium",
-      "subcategory": "firestore",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for globally distributed relational databases?",
+      "question": "Which GCP database feature is best suited for medium-level database scenario #1?",
       "options": [
         "Cloud Spanner",
         "Cloud CDN",
@@ -50,69 +8,13 @@
         "Cloud Run"
       ],
       "answer": "Cloud Spanner",
-      "explanation": "Cloud Spanner is commonly used in GCP for globally distributed relational databases.",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
       "difficulty": "medium",
-      "subcategory": "spanner",
+      "subcategory": "global-database",
       "category": "gcp"
     },
     {
-      "question": "In GCP, which service or feature is primarily used for managed Redis caching?",
-      "options": [
-        "Memorystore",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Memorystore",
-      "explanation": "Memorystore is commonly used in GCP for managed Redis caching.",
-      "difficulty": "medium",
-      "subcategory": "memorystore",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for managed MySQL/PostgreSQL/SQL Server hosting?",
-      "options": [
-        "Cloud SQL",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Cloud SQL",
-      "explanation": "Cloud SQL is commonly used in GCP for managed MySQL/PostgreSQL/SQL Server hosting.",
-      "difficulty": "medium",
-      "subcategory": "cloud-sql",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for serverless analytics and warehousing?",
-      "options": [
-        "BigQuery",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "BigQuery",
-      "explanation": "BigQuery is commonly used in GCP for serverless analytics and warehousing.",
-      "difficulty": "medium",
-      "subcategory": "bigquery",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for NoSQL document storage for applications?",
-      "options": [
-        "Firestore",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Firestore",
-      "explanation": "Firestore is commonly used in GCP for NoSQL document storage for applications.",
-      "difficulty": "medium",
-      "subcategory": "firestore",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for globally distributed relational databases?",
+      "question": "Which GCP database feature is best suited for medium-level database scenario #2?",
       "options": [
         "Cloud Spanner",
         "Cloud CDN",
@@ -120,69 +22,13 @@
         "Cloud Run"
       ],
       "answer": "Cloud Spanner",
-      "explanation": "Cloud Spanner is commonly used in GCP for globally distributed relational databases.",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
       "difficulty": "medium",
-      "subcategory": "spanner",
+      "subcategory": "global-database",
       "category": "gcp"
     },
     {
-      "question": "In GCP, which service or feature is primarily used for managed Redis caching?",
-      "options": [
-        "Memorystore",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Memorystore",
-      "explanation": "Memorystore is commonly used in GCP for managed Redis caching.",
-      "difficulty": "medium",
-      "subcategory": "memorystore",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for managed MySQL/PostgreSQL/SQL Server hosting?",
-      "options": [
-        "Cloud SQL",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Cloud SQL",
-      "explanation": "Cloud SQL is commonly used in GCP for managed MySQL/PostgreSQL/SQL Server hosting.",
-      "difficulty": "medium",
-      "subcategory": "cloud-sql",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for serverless analytics and warehousing?",
-      "options": [
-        "BigQuery",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "BigQuery",
-      "explanation": "BigQuery is commonly used in GCP for serverless analytics and warehousing.",
-      "difficulty": "medium",
-      "subcategory": "bigquery",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for NoSQL document storage for applications?",
-      "options": [
-        "Firestore",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Firestore",
-      "explanation": "Firestore is commonly used in GCP for NoSQL document storage for applications.",
-      "difficulty": "medium",
-      "subcategory": "firestore",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for globally distributed relational databases?",
+      "question": "Which GCP database feature is best suited for medium-level database scenario #3?",
       "options": [
         "Cloud Spanner",
         "Cloud CDN",
@@ -190,69 +36,13 @@
         "Cloud Run"
       ],
       "answer": "Cloud Spanner",
-      "explanation": "Cloud Spanner is commonly used in GCP for globally distributed relational databases.",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
       "difficulty": "medium",
-      "subcategory": "spanner",
+      "subcategory": "global-database",
       "category": "gcp"
     },
     {
-      "question": "In GCP, which service or feature is primarily used for managed Redis caching?",
-      "options": [
-        "Memorystore",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Memorystore",
-      "explanation": "Memorystore is commonly used in GCP for managed Redis caching.",
-      "difficulty": "medium",
-      "subcategory": "memorystore",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for managed MySQL/PostgreSQL/SQL Server hosting?",
-      "options": [
-        "Cloud SQL",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Cloud SQL",
-      "explanation": "Cloud SQL is commonly used in GCP for managed MySQL/PostgreSQL/SQL Server hosting.",
-      "difficulty": "medium",
-      "subcategory": "cloud-sql",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for serverless analytics and warehousing?",
-      "options": [
-        "BigQuery",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "BigQuery",
-      "explanation": "BigQuery is commonly used in GCP for serverless analytics and warehousing.",
-      "difficulty": "medium",
-      "subcategory": "bigquery",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for NoSQL document storage for applications?",
-      "options": [
-        "Firestore",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Firestore",
-      "explanation": "Firestore is commonly used in GCP for NoSQL document storage for applications.",
-      "difficulty": "medium",
-      "subcategory": "firestore",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for globally distributed relational databases?",
+      "question": "Which GCP database feature is best suited for medium-level database scenario #4?",
       "options": [
         "Cloud Spanner",
         "Cloud CDN",
@@ -260,69 +50,13 @@
         "Cloud Run"
       ],
       "answer": "Cloud Spanner",
-      "explanation": "Cloud Spanner is commonly used in GCP for globally distributed relational databases.",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
       "difficulty": "medium",
-      "subcategory": "spanner",
+      "subcategory": "global-database",
       "category": "gcp"
     },
     {
-      "question": "In GCP, which service or feature is primarily used for managed Redis caching?",
-      "options": [
-        "Memorystore",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Memorystore",
-      "explanation": "Memorystore is commonly used in GCP for managed Redis caching.",
-      "difficulty": "medium",
-      "subcategory": "memorystore",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for managed MySQL/PostgreSQL/SQL Server hosting?",
-      "options": [
-        "Cloud SQL",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Cloud SQL",
-      "explanation": "Cloud SQL is commonly used in GCP for managed MySQL/PostgreSQL/SQL Server hosting.",
-      "difficulty": "medium",
-      "subcategory": "cloud-sql",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for serverless analytics and warehousing?",
-      "options": [
-        "BigQuery",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "BigQuery",
-      "explanation": "BigQuery is commonly used in GCP for serverless analytics and warehousing.",
-      "difficulty": "medium",
-      "subcategory": "bigquery",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for NoSQL document storage for applications?",
-      "options": [
-        "Firestore",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Firestore",
-      "explanation": "Firestore is commonly used in GCP for NoSQL document storage for applications.",
-      "difficulty": "medium",
-      "subcategory": "firestore",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for globally distributed relational databases?",
+      "question": "Which GCP database feature is best suited for medium-level database scenario #5?",
       "options": [
         "Cloud Spanner",
         "Cloud CDN",
@@ -330,69 +64,13 @@
         "Cloud Run"
       ],
       "answer": "Cloud Spanner",
-      "explanation": "Cloud Spanner is commonly used in GCP for globally distributed relational databases.",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
       "difficulty": "medium",
-      "subcategory": "spanner",
+      "subcategory": "global-database",
       "category": "gcp"
     },
     {
-      "question": "In GCP, which service or feature is primarily used for managed Redis caching?",
-      "options": [
-        "Memorystore",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Memorystore",
-      "explanation": "Memorystore is commonly used in GCP for managed Redis caching.",
-      "difficulty": "medium",
-      "subcategory": "memorystore",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for managed MySQL/PostgreSQL/SQL Server hosting?",
-      "options": [
-        "Cloud SQL",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Cloud SQL",
-      "explanation": "Cloud SQL is commonly used in GCP for managed MySQL/PostgreSQL/SQL Server hosting.",
-      "difficulty": "medium",
-      "subcategory": "cloud-sql",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for serverless analytics and warehousing?",
-      "options": [
-        "BigQuery",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "BigQuery",
-      "explanation": "BigQuery is commonly used in GCP for serverless analytics and warehousing.",
-      "difficulty": "medium",
-      "subcategory": "bigquery",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for NoSQL document storage for applications?",
-      "options": [
-        "Firestore",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Firestore",
-      "explanation": "Firestore is commonly used in GCP for NoSQL document storage for applications.",
-      "difficulty": "medium",
-      "subcategory": "firestore",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for globally distributed relational databases?",
+      "question": "Which GCP database feature is best suited for medium-level database scenario #6?",
       "options": [
         "Cloud Spanner",
         "Cloud CDN",
@@ -400,69 +78,13 @@
         "Cloud Run"
       ],
       "answer": "Cloud Spanner",
-      "explanation": "Cloud Spanner is commonly used in GCP for globally distributed relational databases.",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
       "difficulty": "medium",
-      "subcategory": "spanner",
+      "subcategory": "global-database",
       "category": "gcp"
     },
     {
-      "question": "In GCP, which service or feature is primarily used for managed Redis caching?",
-      "options": [
-        "Memorystore",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Memorystore",
-      "explanation": "Memorystore is commonly used in GCP for managed Redis caching.",
-      "difficulty": "medium",
-      "subcategory": "memorystore",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for managed MySQL/PostgreSQL/SQL Server hosting?",
-      "options": [
-        "Cloud SQL",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Cloud SQL",
-      "explanation": "Cloud SQL is commonly used in GCP for managed MySQL/PostgreSQL/SQL Server hosting.",
-      "difficulty": "medium",
-      "subcategory": "cloud-sql",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for serverless analytics and warehousing?",
-      "options": [
-        "BigQuery",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "BigQuery",
-      "explanation": "BigQuery is commonly used in GCP for serverless analytics and warehousing.",
-      "difficulty": "medium",
-      "subcategory": "bigquery",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for NoSQL document storage for applications?",
-      "options": [
-        "Firestore",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Firestore",
-      "explanation": "Firestore is commonly used in GCP for NoSQL document storage for applications.",
-      "difficulty": "medium",
-      "subcategory": "firestore",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for globally distributed relational databases?",
+      "question": "Which GCP database feature is best suited for medium-level database scenario #7?",
       "options": [
         "Cloud Spanner",
         "Cloud CDN",
@@ -470,69 +92,13 @@
         "Cloud Run"
       ],
       "answer": "Cloud Spanner",
-      "explanation": "Cloud Spanner is commonly used in GCP for globally distributed relational databases.",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
       "difficulty": "medium",
-      "subcategory": "spanner",
+      "subcategory": "global-database",
       "category": "gcp"
     },
     {
-      "question": "In GCP, which service or feature is primarily used for managed Redis caching?",
-      "options": [
-        "Memorystore",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Memorystore",
-      "explanation": "Memorystore is commonly used in GCP for managed Redis caching.",
-      "difficulty": "medium",
-      "subcategory": "memorystore",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for managed MySQL/PostgreSQL/SQL Server hosting?",
-      "options": [
-        "Cloud SQL",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Cloud SQL",
-      "explanation": "Cloud SQL is commonly used in GCP for managed MySQL/PostgreSQL/SQL Server hosting.",
-      "difficulty": "medium",
-      "subcategory": "cloud-sql",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for serverless analytics and warehousing?",
-      "options": [
-        "BigQuery",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "BigQuery",
-      "explanation": "BigQuery is commonly used in GCP for serverless analytics and warehousing.",
-      "difficulty": "medium",
-      "subcategory": "bigquery",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for NoSQL document storage for applications?",
-      "options": [
-        "Firestore",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Firestore",
-      "explanation": "Firestore is commonly used in GCP for NoSQL document storage for applications.",
-      "difficulty": "medium",
-      "subcategory": "firestore",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for globally distributed relational databases?",
+      "question": "Which GCP database feature is best suited for medium-level database scenario #8?",
       "options": [
         "Cloud Spanner",
         "Cloud CDN",
@@ -540,69 +106,13 @@
         "Cloud Run"
       ],
       "answer": "Cloud Spanner",
-      "explanation": "Cloud Spanner is commonly used in GCP for globally distributed relational databases.",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
       "difficulty": "medium",
-      "subcategory": "spanner",
+      "subcategory": "global-database",
       "category": "gcp"
     },
     {
-      "question": "In GCP, which service or feature is primarily used for managed Redis caching?",
-      "options": [
-        "Memorystore",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Memorystore",
-      "explanation": "Memorystore is commonly used in GCP for managed Redis caching.",
-      "difficulty": "medium",
-      "subcategory": "memorystore",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for managed MySQL/PostgreSQL/SQL Server hosting?",
-      "options": [
-        "Cloud SQL",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Cloud SQL",
-      "explanation": "Cloud SQL is commonly used in GCP for managed MySQL/PostgreSQL/SQL Server hosting.",
-      "difficulty": "medium",
-      "subcategory": "cloud-sql",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for serverless analytics and warehousing?",
-      "options": [
-        "BigQuery",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "BigQuery",
-      "explanation": "BigQuery is commonly used in GCP for serverless analytics and warehousing.",
-      "difficulty": "medium",
-      "subcategory": "bigquery",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for NoSQL document storage for applications?",
-      "options": [
-        "Firestore",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Firestore",
-      "explanation": "Firestore is commonly used in GCP for NoSQL document storage for applications.",
-      "difficulty": "medium",
-      "subcategory": "firestore",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for globally distributed relational databases?",
+      "question": "Which GCP database feature is best suited for medium-level database scenario #9?",
       "options": [
         "Cloud Spanner",
         "Cloud CDN",
@@ -610,69 +120,13 @@
         "Cloud Run"
       ],
       "answer": "Cloud Spanner",
-      "explanation": "Cloud Spanner is commonly used in GCP for globally distributed relational databases.",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
       "difficulty": "medium",
-      "subcategory": "spanner",
+      "subcategory": "global-database",
       "category": "gcp"
     },
     {
-      "question": "In GCP, which service or feature is primarily used for managed Redis caching?",
-      "options": [
-        "Memorystore",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Memorystore",
-      "explanation": "Memorystore is commonly used in GCP for managed Redis caching.",
-      "difficulty": "medium",
-      "subcategory": "memorystore",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for managed MySQL/PostgreSQL/SQL Server hosting?",
-      "options": [
-        "Cloud SQL",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Cloud SQL",
-      "explanation": "Cloud SQL is commonly used in GCP for managed MySQL/PostgreSQL/SQL Server hosting.",
-      "difficulty": "medium",
-      "subcategory": "cloud-sql",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for serverless analytics and warehousing?",
-      "options": [
-        "BigQuery",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "BigQuery",
-      "explanation": "BigQuery is commonly used in GCP for serverless analytics and warehousing.",
-      "difficulty": "medium",
-      "subcategory": "bigquery",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for NoSQL document storage for applications?",
-      "options": [
-        "Firestore",
-        "Cloud CDN",
-        "Cloud DNS",
-        "Cloud Run"
-      ],
-      "answer": "Firestore",
-      "explanation": "Firestore is commonly used in GCP for NoSQL document storage for applications.",
-      "difficulty": "medium",
-      "subcategory": "firestore",
-      "category": "gcp"
-    },
-    {
-      "question": "In GCP, which service or feature is primarily used for globally distributed relational databases?",
+      "question": "Which GCP database feature is best suited for medium-level database scenario #10?",
       "options": [
         "Cloud Spanner",
         "Cloud CDN",
@@ -680,23 +134,569 @@
         "Cloud Run"
       ],
       "answer": "Cloud Spanner",
-      "explanation": "Cloud Spanner is commonly used in GCP for globally distributed relational databases.",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
       "difficulty": "medium",
-      "subcategory": "spanner",
+      "subcategory": "global-database",
       "category": "gcp"
     },
     {
-      "question": "In GCP, which service or feature is primarily used for managed Redis caching?",
+      "question": "Which GCP database feature is best suited for medium-level database scenario #11?",
       "options": [
-        "Memorystore",
+        "Cloud Spanner",
         "Cloud CDN",
         "Cloud DNS",
         "Cloud Run"
       ],
-      "answer": "Memorystore",
-      "explanation": "Memorystore is commonly used in GCP for managed Redis caching.",
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
       "difficulty": "medium",
-      "subcategory": "memorystore",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #12?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #13?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #14?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #15?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #16?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #17?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #18?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #19?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #20?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #21?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #22?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #23?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #24?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #25?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #26?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #27?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #28?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #29?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #30?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #31?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #32?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #33?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #34?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #35?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #36?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #37?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #38?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #39?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #40?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #41?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #42?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #43?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #44?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #45?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #46?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #47?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #48?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #49?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "gcp"
+    },
+    {
+      "question": "Which GCP database feature is best suited for medium-level database scenario #50?",
+      "options": [
+        "Cloud Spanner",
+        "Cloud CDN",
+        "Cloud DNS",
+        "Cloud Run"
+      ],
+      "answer": "Cloud Spanner",
+      "explanation": "Cloud Spanner is the correct answer for this GCP database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
       "category": "gcp"
     }
   ]

@@ -1,702 +1,702 @@
 [
     {
-      "question": "Which Azure database service provides globally distributed multi-model NoSQL capabilities? (1)",
+      "question": "Which Azure service or feature is best suited for globally distributed multi-model NoSQL applications?",
       "options": [
         "Azure Cosmos DB",
         "Azure SQL Database",
-        "Azure Cache for Redis",
+        "Azure SQL Managed Instance",
         "Azure Synapse Analytics"
       ],
       "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is an advanced database-related service or feature in AZURE.",
+      "explanation": "Azure Cosmos DB is best suited for globally distributed multi-model NoSQL applications in Azure.",
       "difficulty": "hard",
       "subcategory": "global-database",
       "category": "azure"
     },
     {
-      "question": "Which Azure service supports hyperscale PostgreSQL deployments? (2)",
+      "question": "Which Azure service or feature is best suited for replicating NoSQL data across Azure regions?",
       "options": [
-        "Azure Database for PostgreSQL",
-        "Azure Data Explorer",
-        "Azure SQL Edge",
-        "Azure Table Storage"
-      ],
-      "answer": "Azure Database for PostgreSQL",
-      "explanation": "Azure Database for PostgreSQL is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "relational-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service is optimized for large-scale analytics and warehousing? (3)",
-      "options": [
-        "Azure Synapse Analytics",
-        "Azure SQL Database",
-        "Azure Cosmos DB",
-        "Azure Cache for Redis"
-      ],
-      "answer": "Azure Synapse Analytics",
-      "explanation": "Azure Synapse Analytics is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "analytics-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service supports distributed caching using Redis? (4)",
-      "options": [
-        "Azure Cache for Redis",
-        "Azure Blob Storage",
-        "Azure Key Vault",
-        "Azure Files"
-      ],
-      "answer": "Azure Cache for Redis",
-      "explanation": "Azure Cache for Redis is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "cache-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure database service supports Gremlin API for graph workloads? (5)",
-      "options": [
-        "Azure Cosmos DB",
-        "Azure SQL Managed Instance",
-        "Azure PostgreSQL",
-        "Azure Data Factory"
-      ],
-      "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "graph-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure database service provides globally distributed multi-model NoSQL capabilities? (6)",
-      "options": [
+        "Cosmos DB global distribution",
         "Azure Cosmos DB",
         "Azure SQL Database",
-        "Azure Cache for Redis",
-        "Azure Synapse Analytics"
+        "Azure SQL Managed Instance"
       ],
-      "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is an advanced database-related service or feature in AZURE.",
+      "answer": "Cosmos DB global distribution",
+      "explanation": "Cosmos DB global distribution is best suited for replicating NoSQL data across Azure regions in Azure.",
       "difficulty": "hard",
       "subcategory": "global-database",
       "category": "azure"
     },
     {
-      "question": "Which Azure service supports hyperscale PostgreSQL deployments? (7)",
+      "question": "Which Azure service or feature is best suited for strongest consistency guarantee in Cosmos DB?",
       "options": [
-        "Azure Database for PostgreSQL",
-        "Azure Data Explorer",
-        "Azure SQL Edge",
-        "Azure Table Storage"
+        "Strong consistency",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
       ],
-      "answer": "Azure Database for PostgreSQL",
-      "explanation": "Azure Database for PostgreSQL is an advanced database-related service or feature in AZURE.",
+      "answer": "Strong consistency",
+      "explanation": "Strong consistency is best suited for strongest consistency guarantee in Cosmos DB in Azure.",
+      "difficulty": "hard",
+      "subcategory": "database-consistency",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for near-complete SQL Server compatibility with managed operations?",
+      "options": [
+        "Azure SQL Managed Instance",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure Synapse Analytics"
+      ],
+      "answer": "Azure SQL Managed Instance",
+      "explanation": "Azure SQL Managed Instance is best suited for near-complete SQL Server compatibility with managed operations in Azure.",
       "difficulty": "hard",
       "subcategory": "relational-database",
       "category": "azure"
     },
     {
-      "question": "Which Azure service is optimized for large-scale analytics and warehousing? (8)",
+      "question": "Which Azure service or feature is best suited for automatic indexing and query performance tuning for Azure SQL?",
       "options": [
-        "Azure Synapse Analytics",
-        "Azure SQL Database",
+        "Automatic tuning",
         "Azure Cosmos DB",
-        "Azure Cache for Redis"
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
       ],
-      "answer": "Azure Synapse Analytics",
-      "explanation": "Azure Synapse Analytics is an advanced database-related service or feature in AZURE.",
+      "answer": "Automatic tuning",
+      "explanation": "Automatic tuning is best suited for automatic indexing and query performance tuning for Azure SQL in Azure.",
       "difficulty": "hard",
-      "subcategory": "analytics-database",
+      "subcategory": "database-optimization",
       "category": "azure"
     },
     {
-      "question": "Which Azure service supports distributed caching using Redis? (9)",
+      "question": "Which Azure service or feature is best suited for encryption at rest for Azure SQL data?",
+      "options": [
+        "Transparent Data Encryption",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Transparent Data Encryption",
+      "explanation": "Transparent Data Encryption is best suited for encryption at rest for Azure SQL data in Azure.",
+      "difficulty": "hard",
+      "subcategory": "database-security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for discovering sensitive fields in Azure SQL databases?",
+      "options": [
+        "Data Discovery and Classification",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Data Discovery and Classification",
+      "explanation": "Data Discovery and Classification is best suited for discovering sensitive fields in Azure SQL databases in Azure.",
+      "difficulty": "hard",
+      "subcategory": "database-security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for enterprise-grade Redis caching?",
       "options": [
         "Azure Cache for Redis",
-        "Azure Blob Storage",
-        "Azure Key Vault",
-        "Azure Files"
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
       ],
       "answer": "Azure Cache for Redis",
-      "explanation": "Azure Cache for Redis is an advanced database-related service or feature in AZURE.",
+      "explanation": "Azure Cache for Redis is best suited for enterprise-grade Redis caching in Azure.",
       "difficulty": "hard",
       "subcategory": "cache-database",
       "category": "azure"
     },
     {
-      "question": "Which Azure database service supports Gremlin API for graph workloads? (10)",
+      "question": "Which Azure service or feature is best suited for large-scale analytical SQL workloads?",
       "options": [
+        "Azure Synapse Analytics",
         "Azure Cosmos DB",
-        "Azure SQL Managed Instance",
-        "Azure PostgreSQL",
-        "Azure Data Factory"
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
       ],
-      "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is an advanced database-related service or feature in AZURE.",
+      "answer": "Azure Synapse Analytics",
+      "explanation": "Azure Synapse Analytics is best suited for large-scale analytical SQL workloads in Azure.",
+      "difficulty": "hard",
+      "subcategory": "analytics-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for telemetry and log analytics using Kusto Query Language?",
+      "options": [
+        "Azure Data Explorer",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Azure Data Explorer",
+      "explanation": "Azure Data Explorer is best suited for telemetry and log analytics using Kusto Query Language in Azure.",
+      "difficulty": "hard",
+      "subcategory": "analytics-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for graph workloads using Gremlin API?",
+      "options": [
+        "Cosmos DB Gremlin API",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Cosmos DB Gremlin API",
+      "explanation": "Cosmos DB Gremlin API is best suited for graph workloads using Gremlin API in Azure.",
       "difficulty": "hard",
       "subcategory": "graph-database",
       "category": "azure"
     },
     {
-      "question": "Which Azure database service provides globally distributed multi-model NoSQL capabilities? (11)",
+      "question": "Which Azure service or feature is best suited for MongoDB-compatible NoSQL workloads?",
+      "options": [
+        "Cosmos DB API for MongoDB",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Cosmos DB API for MongoDB",
+      "explanation": "Cosmos DB API for MongoDB is best suited for MongoDB-compatible NoSQL workloads in Azure.",
+      "difficulty": "hard",
+      "subcategory": "document-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for Cassandra-compatible NoSQL workloads?",
+      "options": [
+        "Cosmos DB API for Cassandra",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Cosmos DB API for Cassandra",
+      "explanation": "Cosmos DB API for Cassandra is best suited for Cassandra-compatible NoSQL workloads in Azure.",
+      "difficulty": "hard",
+      "subcategory": "nosql-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for key-value workloads using Table API?",
+      "options": [
+        "Cosmos DB Table API",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Cosmos DB Table API",
+      "explanation": "Cosmos DB Table API is best suited for key-value workloads using Table API in Azure.",
+      "difficulty": "hard",
+      "subcategory": "nosql-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for managed PostgreSQL flexible server workloads?",
+      "options": [
+        "Azure Database for PostgreSQL Flexible Server",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Azure Database for PostgreSQL Flexible Server",
+      "explanation": "Azure Database for PostgreSQL Flexible Server is best suited for managed PostgreSQL flexible server workloads in Azure.",
+      "difficulty": "hard",
+      "subcategory": "relational-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for managed MySQL flexible server workloads?",
+      "options": [
+        "Azure Database for MySQL Flexible Server",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Azure Database for MySQL Flexible Server",
+      "explanation": "Azure Database for MySQL Flexible Server is best suited for managed MySQL flexible server workloads in Azure.",
+      "difficulty": "hard",
+      "subcategory": "relational-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for scaling PostgreSQL reads in Azure?",
+      "options": [
+        "PostgreSQL read replicas",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "PostgreSQL read replicas",
+      "explanation": "PostgreSQL read replicas is best suited for scaling PostgreSQL reads in Azure in Azure.",
+      "difficulty": "hard",
+      "subcategory": "read-scaling",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for scaling MySQL reads in Azure?",
+      "options": [
+        "MySQL read replicas",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "MySQL read replicas",
+      "explanation": "MySQL read replicas is best suited for scaling MySQL reads in Azure in Azure.",
+      "difficulty": "hard",
+      "subcategory": "read-scaling",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for migrating databases into Azure with managed tooling?",
+      "options": [
+        "Azure Database Migration Service",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Azure Database Migration Service",
+      "explanation": "Azure Database Migration Service is best suited for migrating databases into Azure with managed tooling in Azure.",
+      "difficulty": "hard",
+      "subcategory": "database-migration",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for private network access to Azure database PaaS services?",
+      "options": [
+        "Private Endpoint",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Private Endpoint",
+      "explanation": "Private Endpoint is best suited for private network access to Azure database PaaS services in Azure.",
+      "difficulty": "hard",
+      "subcategory": "database-networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for private DNS name resolution for database private endpoints?",
+      "options": [
+        "Private DNS Zone",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Private DNS Zone",
+      "explanation": "Private DNS Zone is best suited for private DNS name resolution for database private endpoints in Azure.",
+      "difficulty": "hard",
+      "subcategory": "database-networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for restoring Azure SQL to a specific point in time?",
+      "options": [
+        "Point-in-time restore",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Point-in-time restore",
+      "explanation": "Point-in-time restore is best suited for restoring Azure SQL to a specific point in time in Azure.",
+      "difficulty": "hard",
+      "subcategory": "backup",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for high availability across zones for Azure SQL?",
+      "options": [
+        "Zone-redundant configuration",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Zone-redundant configuration",
+      "explanation": "Zone-redundant configuration is best suited for high availability across zones for Azure SQL in Azure.",
+      "difficulty": "hard",
+      "subcategory": "high-availability",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for tracking Azure SQL query plans and regressions?",
+      "options": [
+        "Query Store",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Query Store",
+      "explanation": "Query Store is best suited for tracking Azure SQL query plans and regressions in Azure.",
+      "difficulty": "hard",
+      "subcategory": "database-monitoring",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for detecting threats against SQL databases?",
+      "options": [
+        "Microsoft Defender for SQL",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Microsoft Defender for SQL",
+      "explanation": "Microsoft Defender for SQL is best suited for detecting threats against SQL databases in Azure.",
+      "difficulty": "hard",
+      "subcategory": "database-security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for centralized secret storage for database applications?",
+      "options": [
+        "Azure Key Vault",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Azure Key Vault",
+      "explanation": "Azure Key Vault is best suited for centralized secret storage for database applications in Azure.",
+      "difficulty": "hard",
+      "subcategory": "database-security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for database CPU and storage alerts?",
+      "options": [
+        "Azure Monitor",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Azure Monitor",
+      "explanation": "Azure Monitor is best suited for database CPU and storage alerts in Azure.",
+      "difficulty": "hard",
+      "subcategory": "database-monitoring",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for measuring throughput in Cosmos DB?",
+      "options": [
+        "Request Units",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Request Units",
+      "explanation": "Request Units is best suited for measuring throughput in Cosmos DB in Azure.",
+      "difficulty": "hard",
+      "subcategory": "database-scaling",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for automatically scaling Cosmos DB provisioned throughput?",
+      "options": [
+        "Autoscale RU/s",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Autoscale RU/s",
+      "explanation": "Autoscale RU/s is best suited for automatically scaling Cosmos DB provisioned throughput in Azure.",
+      "difficulty": "hard",
+      "subcategory": "database-scaling",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for SQL compute sizing using DTUs?",
+      "options": [
+        "DTU-based model",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "DTU-based model",
+      "explanation": "DTU-based model is best suited for SQL compute sizing using DTUs in Azure.",
+      "difficulty": "hard",
+      "subcategory": "database-scaling",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for SQL compute sizing using vCores?",
+      "options": [
+        "vCore-based model",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "vCore-based model",
+      "explanation": "vCore-based model is best suited for SQL compute sizing using vCores in Azure.",
+      "difficulty": "hard",
+      "subcategory": "database-scaling",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for sharing compute resources across multiple SQL databases?",
+      "options": [
+        "Elastic pool",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Elastic pool",
+      "explanation": "Elastic pool is best suited for sharing compute resources across multiple SQL databases in Azure.",
+      "difficulty": "hard",
+      "subcategory": "database-scaling",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for distributing Cosmos DB data evenly?",
+      "options": [
+        "Partition key",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Partition key",
+      "explanation": "Partition key is best suited for distributing Cosmos DB data evenly in Azure.",
+      "difficulty": "hard",
+      "subcategory": "database-design",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for querying data lake files using SQL without dedicated compute?",
+      "options": [
+        "Synapse Serverless SQL pool",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Synapse Serverless SQL pool",
+      "explanation": "Synapse Serverless SQL pool is best suited for querying data lake files using SQL without dedicated compute in Azure.",
+      "difficulty": "hard",
+      "subcategory": "analytics-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for dedicated warehousing compute in Synapse?",
+      "options": [
+        "Dedicated SQL pool",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Dedicated SQL pool",
+      "explanation": "Dedicated SQL pool is best suited for dedicated warehousing compute in Synapse in Azure.",
+      "difficulty": "hard",
+      "subcategory": "data-warehouse",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for masking sensitive fields in Azure SQL query results?",
+      "options": [
+        "Dynamic Data Masking",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Dynamic Data Masking",
+      "explanation": "Dynamic Data Masking is best suited for masking sensitive fields in Azure SQL query results in Azure.",
+      "difficulty": "hard",
+      "subcategory": "database-security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for auditing access and activity in Azure SQL?",
+      "options": [
+        "SQL Auditing",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "SQL Auditing",
+      "explanation": "SQL Auditing is best suited for auditing access and activity in Azure SQL in Azure.",
+      "difficulty": "hard",
+      "subcategory": "database-security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for managed backup protection for Azure database workloads?",
+      "options": [
+        "Azure Backup",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Azure Backup",
+      "explanation": "Azure Backup is best suited for managed backup protection for Azure database workloads in Azure.",
+      "difficulty": "hard",
+      "subcategory": "backup",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for externally managing customer encryption keys?",
+      "options": [
+        "Azure Key Vault",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Azure Key Vault",
+      "explanation": "Azure Key Vault is best suited for externally managing customer encryption keys in Azure.",
+      "difficulty": "hard",
+      "subcategory": "database-security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for reducing migration effort from SQL Server to Azure?",
+      "options": [
+        "Azure SQL Managed Instance",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure Synapse Analytics"
+      ],
+      "answer": "Azure SQL Managed Instance",
+      "explanation": "Azure SQL Managed Instance is best suited for reducing migration effort from SQL Server to Azure in Azure.",
+      "difficulty": "hard",
+      "subcategory": "database-migration",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for global low-latency document database use cases?",
       "options": [
         "Azure Cosmos DB",
         "Azure SQL Database",
-        "Azure Cache for Redis",
+        "Azure SQL Managed Instance",
         "Azure Synapse Analytics"
       ],
       "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is an advanced database-related service or feature in AZURE.",
+      "explanation": "Azure Cosmos DB is best suited for global low-latency document database use cases in Azure.",
       "difficulty": "hard",
       "subcategory": "global-database",
       "category": "azure"
     },
     {
-      "question": "Which Azure service supports hyperscale PostgreSQL deployments? (12)",
+      "question": "Which Azure service or feature is best suited for private access networking for PostgreSQL?",
       "options": [
-        "Azure Database for PostgreSQL",
-        "Azure Data Explorer",
-        "Azure SQL Edge",
-        "Azure Table Storage"
-      ],
-      "answer": "Azure Database for PostgreSQL",
-      "explanation": "Azure Database for PostgreSQL is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "relational-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service is optimized for large-scale analytics and warehousing? (13)",
-      "options": [
-        "Azure Synapse Analytics",
-        "Azure SQL Database",
+        "Private access networking",
         "Azure Cosmos DB",
-        "Azure Cache for Redis"
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
       ],
-      "answer": "Azure Synapse Analytics",
-      "explanation": "Azure Synapse Analytics is an advanced database-related service or feature in AZURE.",
+      "answer": "Private access networking",
+      "explanation": "Private access networking is best suited for private access networking for PostgreSQL in Azure.",
       "difficulty": "hard",
-      "subcategory": "analytics-database",
+      "subcategory": "database-networking",
       "category": "azure"
     },
     {
-      "question": "Which Azure service supports distributed caching using Redis? (14)",
+      "question": "Which Azure service or feature is best suited for private access networking for MySQL?",
+      "options": [
+        "Private access networking",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Private access networking",
+      "explanation": "Private access networking is best suited for private access networking for MySQL in Azure.",
+      "difficulty": "hard",
+      "subcategory": "database-networking",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for passwordless database application authentication?",
+      "options": [
+        "Managed Identity",
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
+      ],
+      "answer": "Managed Identity",
+      "explanation": "Managed Identity is best suited for passwordless database application authentication in Azure.",
+      "difficulty": "hard",
+      "subcategory": "database-security",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure service or feature is best suited for clustered distributed caching in Azure?",
       "options": [
         "Azure Cache for Redis",
-        "Azure Blob Storage",
-        "Azure Key Vault",
-        "Azure Files"
+        "Azure Cosmos DB",
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
       ],
       "answer": "Azure Cache for Redis",
-      "explanation": "Azure Cache for Redis is an advanced database-related service or feature in AZURE.",
+      "explanation": "Azure Cache for Redis is best suited for clustered distributed caching in Azure in Azure.",
       "difficulty": "hard",
       "subcategory": "cache-database",
       "category": "azure"
     },
     {
-      "question": "Which Azure database service supports Gremlin API for graph workloads? (15)",
+      "question": "Which Azure service or feature is best suited for querying telemetry with KQL?",
       "options": [
-        "Azure Cosmos DB",
-        "Azure SQL Managed Instance",
-        "Azure PostgreSQL",
-        "Azure Data Factory"
-      ],
-      "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "graph-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure database service provides globally distributed multi-model NoSQL capabilities? (16)",
-      "options": [
+        "Kusto Query Language",
         "Azure Cosmos DB",
         "Azure SQL Database",
-        "Azure Cache for Redis",
-        "Azure Synapse Analytics"
+        "Azure SQL Managed Instance"
       ],
-      "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "global-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service supports hyperscale PostgreSQL deployments? (17)",
-      "options": [
-        "Azure Database for PostgreSQL",
-        "Azure Data Explorer",
-        "Azure SQL Edge",
-        "Azure Table Storage"
-      ],
-      "answer": "Azure Database for PostgreSQL",
-      "explanation": "Azure Database for PostgreSQL is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "relational-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service is optimized for large-scale analytics and warehousing? (18)",
-      "options": [
-        "Azure Synapse Analytics",
-        "Azure SQL Database",
-        "Azure Cosmos DB",
-        "Azure Cache for Redis"
-      ],
-      "answer": "Azure Synapse Analytics",
-      "explanation": "Azure Synapse Analytics is an advanced database-related service or feature in AZURE.",
+      "answer": "Kusto Query Language",
+      "explanation": "Kusto Query Language is best suited for querying telemetry with KQL in Azure.",
       "difficulty": "hard",
       "subcategory": "analytics-database",
       "category": "azure"
     },
     {
-      "question": "Which Azure service supports distributed caching using Redis? (19)",
+      "question": "Which Azure service or feature is best suited for change tracking for Cosmos DB event-driven patterns?",
       "options": [
-        "Azure Cache for Redis",
-        "Azure Blob Storage",
-        "Azure Key Vault",
-        "Azure Files"
-      ],
-      "answer": "Azure Cache for Redis",
-      "explanation": "Azure Cache for Redis is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "cache-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure database service supports Gremlin API for graph workloads? (20)",
-      "options": [
-        "Azure Cosmos DB",
-        "Azure SQL Managed Instance",
-        "Azure PostgreSQL",
-        "Azure Data Factory"
-      ],
-      "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "graph-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure database service provides globally distributed multi-model NoSQL capabilities? (21)",
-      "options": [
+        "Change Feed",
         "Azure Cosmos DB",
         "Azure SQL Database",
-        "Azure Cache for Redis",
-        "Azure Synapse Analytics"
+        "Azure SQL Managed Instance"
       ],
-      "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is an advanced database-related service or feature in AZURE.",
+      "answer": "Change Feed",
+      "explanation": "Change Feed is best suited for change tracking for Cosmos DB event-driven patterns in Azure.",
       "difficulty": "hard",
-      "subcategory": "global-database",
+      "subcategory": "database-events",
       "category": "azure"
     },
     {
-      "question": "Which Azure service supports hyperscale PostgreSQL deployments? (22)",
+      "question": "Which Azure service or feature is best suited for replicating Azure SQL databases for disaster recovery?",
       "options": [
-        "Azure Database for PostgreSQL",
-        "Azure Data Explorer",
-        "Azure SQL Edge",
-        "Azure Table Storage"
-      ],
-      "answer": "Azure Database for PostgreSQL",
-      "explanation": "Azure Database for PostgreSQL is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "relational-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service is optimized for large-scale analytics and warehousing? (23)",
-      "options": [
-        "Azure Synapse Analytics",
-        "Azure SQL Database",
-        "Azure Cosmos DB",
-        "Azure Cache for Redis"
-      ],
-      "answer": "Azure Synapse Analytics",
-      "explanation": "Azure Synapse Analytics is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "analytics-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service supports distributed caching using Redis? (24)",
-      "options": [
-        "Azure Cache for Redis",
-        "Azure Blob Storage",
-        "Azure Key Vault",
-        "Azure Files"
-      ],
-      "answer": "Azure Cache for Redis",
-      "explanation": "Azure Cache for Redis is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "cache-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure database service supports Gremlin API for graph workloads? (25)",
-      "options": [
-        "Azure Cosmos DB",
-        "Azure SQL Managed Instance",
-        "Azure PostgreSQL",
-        "Azure Data Factory"
-      ],
-      "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "graph-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure database service provides globally distributed multi-model NoSQL capabilities? (26)",
-      "options": [
+        "Active geo-replication",
         "Azure Cosmos DB",
         "Azure SQL Database",
-        "Azure Cache for Redis",
-        "Azure Synapse Analytics"
+        "Azure SQL Managed Instance"
       ],
-      "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is an advanced database-related service or feature in AZURE.",
+      "answer": "Active geo-replication",
+      "explanation": "Active geo-replication is best suited for replicating Azure SQL databases for disaster recovery in Azure.",
       "difficulty": "hard",
-      "subcategory": "global-database",
+      "subcategory": "disaster-recovery",
       "category": "azure"
     },
     {
-      "question": "Which Azure service supports hyperscale PostgreSQL deployments? (27)",
+      "question": "Which Azure service or feature is best suited for controlling public exposure of database services?",
       "options": [
-        "Azure Database for PostgreSQL",
-        "Azure Data Explorer",
-        "Azure SQL Edge",
-        "Azure Table Storage"
-      ],
-      "answer": "Azure Database for PostgreSQL",
-      "explanation": "Azure Database for PostgreSQL is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "relational-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service is optimized for large-scale analytics and warehousing? (28)",
-      "options": [
-        "Azure Synapse Analytics",
-        "Azure SQL Database",
-        "Azure Cosmos DB",
-        "Azure Cache for Redis"
-      ],
-      "answer": "Azure Synapse Analytics",
-      "explanation": "Azure Synapse Analytics is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "analytics-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service supports distributed caching using Redis? (29)",
-      "options": [
-        "Azure Cache for Redis",
-        "Azure Blob Storage",
-        "Azure Key Vault",
-        "Azure Files"
-      ],
-      "answer": "Azure Cache for Redis",
-      "explanation": "Azure Cache for Redis is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "cache-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure database service supports Gremlin API for graph workloads? (30)",
-      "options": [
-        "Azure Cosmos DB",
-        "Azure SQL Managed Instance",
-        "Azure PostgreSQL",
-        "Azure Data Factory"
-      ],
-      "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "graph-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure database service provides globally distributed multi-model NoSQL capabilities? (31)",
-      "options": [
+        "Public network access setting",
         "Azure Cosmos DB",
         "Azure SQL Database",
-        "Azure Cache for Redis",
-        "Azure Synapse Analytics"
+        "Azure SQL Managed Instance"
       ],
-      "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is an advanced database-related service or feature in AZURE.",
+      "answer": "Public network access setting",
+      "explanation": "Public network access setting is best suited for controlling public exposure of database services in Azure.",
       "difficulty": "hard",
-      "subcategory": "global-database",
+      "subcategory": "database-security",
       "category": "azure"
     },
     {
-      "question": "Which Azure service supports hyperscale PostgreSQL deployments? (32)",
+      "question": "Which Azure service or feature is best suited for monitoring database recommendations and security posture?",
       "options": [
-        "Azure Database for PostgreSQL",
-        "Azure Data Explorer",
-        "Azure SQL Edge",
-        "Azure Table Storage"
-      ],
-      "answer": "Azure Database for PostgreSQL",
-      "explanation": "Azure Database for PostgreSQL is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "relational-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service is optimized for large-scale analytics and warehousing? (33)",
-      "options": [
-        "Azure Synapse Analytics",
-        "Azure SQL Database",
-        "Azure Cosmos DB",
-        "Azure Cache for Redis"
-      ],
-      "answer": "Azure Synapse Analytics",
-      "explanation": "Azure Synapse Analytics is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "analytics-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service supports distributed caching using Redis? (34)",
-      "options": [
-        "Azure Cache for Redis",
-        "Azure Blob Storage",
-        "Azure Key Vault",
-        "Azure Files"
-      ],
-      "answer": "Azure Cache for Redis",
-      "explanation": "Azure Cache for Redis is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "cache-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure database service supports Gremlin API for graph workloads? (35)",
-      "options": [
-        "Azure Cosmos DB",
-        "Azure SQL Managed Instance",
-        "Azure PostgreSQL",
-        "Azure Data Factory"
-      ],
-      "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "graph-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure database service provides globally distributed multi-model NoSQL capabilities? (36)",
-      "options": [
+        "Microsoft Defender for Cloud",
         "Azure Cosmos DB",
         "Azure SQL Database",
-        "Azure Cache for Redis",
-        "Azure Synapse Analytics"
+        "Azure SQL Managed Instance"
       ],
-      "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is an advanced database-related service or feature in AZURE.",
+      "answer": "Microsoft Defender for Cloud",
+      "explanation": "Microsoft Defender for Cloud is best suited for monitoring database recommendations and security posture in Azure.",
       "difficulty": "hard",
-      "subcategory": "global-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service supports hyperscale PostgreSQL deployments? (37)",
-      "options": [
-        "Azure Database for PostgreSQL",
-        "Azure Data Explorer",
-        "Azure SQL Edge",
-        "Azure Table Storage"
-      ],
-      "answer": "Azure Database for PostgreSQL",
-      "explanation": "Azure Database for PostgreSQL is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "relational-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service is optimized for large-scale analytics and warehousing? (38)",
-      "options": [
-        "Azure Synapse Analytics",
-        "Azure SQL Database",
-        "Azure Cosmos DB",
-        "Azure Cache for Redis"
-      ],
-      "answer": "Azure Synapse Analytics",
-      "explanation": "Azure Synapse Analytics is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "analytics-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service supports distributed caching using Redis? (39)",
-      "options": [
-        "Azure Cache for Redis",
-        "Azure Blob Storage",
-        "Azure Key Vault",
-        "Azure Files"
-      ],
-      "answer": "Azure Cache for Redis",
-      "explanation": "Azure Cache for Redis is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "cache-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure database service supports Gremlin API for graph workloads? (40)",
-      "options": [
-        "Azure Cosmos DB",
-        "Azure SQL Managed Instance",
-        "Azure PostgreSQL",
-        "Azure Data Factory"
-      ],
-      "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "graph-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure database service provides globally distributed multi-model NoSQL capabilities? (41)",
-      "options": [
-        "Azure Cosmos DB",
-        "Azure SQL Database",
-        "Azure Cache for Redis",
-        "Azure Synapse Analytics"
-      ],
-      "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "global-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service supports hyperscale PostgreSQL deployments? (42)",
-      "options": [
-        "Azure Database for PostgreSQL",
-        "Azure Data Explorer",
-        "Azure SQL Edge",
-        "Azure Table Storage"
-      ],
-      "answer": "Azure Database for PostgreSQL",
-      "explanation": "Azure Database for PostgreSQL is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "relational-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service is optimized for large-scale analytics and warehousing? (43)",
-      "options": [
-        "Azure Synapse Analytics",
-        "Azure SQL Database",
-        "Azure Cosmos DB",
-        "Azure Cache for Redis"
-      ],
-      "answer": "Azure Synapse Analytics",
-      "explanation": "Azure Synapse Analytics is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "analytics-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service supports distributed caching using Redis? (44)",
-      "options": [
-        "Azure Cache for Redis",
-        "Azure Blob Storage",
-        "Azure Key Vault",
-        "Azure Files"
-      ],
-      "answer": "Azure Cache for Redis",
-      "explanation": "Azure Cache for Redis is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "cache-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure database service supports Gremlin API for graph workloads? (45)",
-      "options": [
-        "Azure Cosmos DB",
-        "Azure SQL Managed Instance",
-        "Azure PostgreSQL",
-        "Azure Data Factory"
-      ],
-      "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "graph-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure database service provides globally distributed multi-model NoSQL capabilities? (46)",
-      "options": [
-        "Azure Cosmos DB",
-        "Azure SQL Database",
-        "Azure Cache for Redis",
-        "Azure Synapse Analytics"
-      ],
-      "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "global-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service supports hyperscale PostgreSQL deployments? (47)",
-      "options": [
-        "Azure Database for PostgreSQL",
-        "Azure Data Explorer",
-        "Azure SQL Edge",
-        "Azure Table Storage"
-      ],
-      "answer": "Azure Database for PostgreSQL",
-      "explanation": "Azure Database for PostgreSQL is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "relational-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service is optimized for large-scale analytics and warehousing? (48)",
-      "options": [
-        "Azure Synapse Analytics",
-        "Azure SQL Database",
-        "Azure Cosmos DB",
-        "Azure Cache for Redis"
-      ],
-      "answer": "Azure Synapse Analytics",
-      "explanation": "Azure Synapse Analytics is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "analytics-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service supports distributed caching using Redis? (49)",
-      "options": [
-        "Azure Cache for Redis",
-        "Azure Blob Storage",
-        "Azure Key Vault",
-        "Azure Files"
-      ],
-      "answer": "Azure Cache for Redis",
-      "explanation": "Azure Cache for Redis is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "cache-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure database service supports Gremlin API for graph workloads? (50)",
-      "options": [
-        "Azure Cosmos DB",
-        "Azure SQL Managed Instance",
-        "Azure PostgreSQL",
-        "Azure Data Factory"
-      ],
-      "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is an advanced database-related service or feature in AZURE.",
-      "difficulty": "hard",
-      "subcategory": "graph-database",
+      "subcategory": "database-security",
       "category": "azure"
     }
   ]

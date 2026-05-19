@@ -1,702 +1,702 @@
 [
     {
-      "question": "In AZURE, which service or feature is primarily used for managed SQL Server workloads?",
-      "options": [
-        "Azure SQL Database",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure SQL Database",
-      "explanation": "Azure SQL Database is commonly used in AZURE for managed SQL Server workloads.",
-      "difficulty": "medium",
-      "subcategory": "azure-sql",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for globally distributed NoSQL applications?",
+      "question": "Which Azure database feature is best suited for medium-level database scenario #1?",
       "options": [
         "Azure Cosmos DB",
         "Azure CDN",
         "Azure DNS",
-        "Azure Functions"
+        "Azure Bastion"
       ],
       "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is commonly used in AZURE for globally distributed NoSQL applications.",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
       "difficulty": "medium",
-      "subcategory": "cosmos-db",
+      "subcategory": "global-database",
       "category": "azure"
     },
     {
-      "question": "In AZURE, which service or feature is primarily used for distributed in-memory caching?",
-      "options": [
-        "Azure Cache for Redis",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure Cache for Redis",
-      "explanation": "Azure Cache for Redis is commonly used in AZURE for distributed in-memory caching.",
-      "difficulty": "medium",
-      "subcategory": "redis",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for enterprise analytics and warehousing?",
-      "options": [
-        "Azure Synapse Analytics",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure Synapse Analytics",
-      "explanation": "Azure Synapse Analytics is commonly used in AZURE for enterprise analytics and warehousing.",
-      "difficulty": "medium",
-      "subcategory": "synapse",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for managed PostgreSQL hosting?",
-      "options": [
-        "Azure Database for PostgreSQL",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure Database for PostgreSQL",
-      "explanation": "Azure Database for PostgreSQL is commonly used in AZURE for managed PostgreSQL hosting.",
-      "difficulty": "medium",
-      "subcategory": "postgresql",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for managed SQL Server workloads?",
-      "options": [
-        "Azure SQL Database",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure SQL Database",
-      "explanation": "Azure SQL Database is commonly used in AZURE for managed SQL Server workloads.",
-      "difficulty": "medium",
-      "subcategory": "azure-sql",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for globally distributed NoSQL applications?",
+      "question": "Which Azure database feature is best suited for medium-level database scenario #2?",
       "options": [
         "Azure Cosmos DB",
         "Azure CDN",
         "Azure DNS",
-        "Azure Functions"
+        "Azure Bastion"
       ],
       "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is commonly used in AZURE for globally distributed NoSQL applications.",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
       "difficulty": "medium",
-      "subcategory": "cosmos-db",
+      "subcategory": "global-database",
       "category": "azure"
     },
     {
-      "question": "In AZURE, which service or feature is primarily used for distributed in-memory caching?",
-      "options": [
-        "Azure Cache for Redis",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure Cache for Redis",
-      "explanation": "Azure Cache for Redis is commonly used in AZURE for distributed in-memory caching.",
-      "difficulty": "medium",
-      "subcategory": "redis",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for enterprise analytics and warehousing?",
-      "options": [
-        "Azure Synapse Analytics",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure Synapse Analytics",
-      "explanation": "Azure Synapse Analytics is commonly used in AZURE for enterprise analytics and warehousing.",
-      "difficulty": "medium",
-      "subcategory": "synapse",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for managed PostgreSQL hosting?",
-      "options": [
-        "Azure Database for PostgreSQL",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure Database for PostgreSQL",
-      "explanation": "Azure Database for PostgreSQL is commonly used in AZURE for managed PostgreSQL hosting.",
-      "difficulty": "medium",
-      "subcategory": "postgresql",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for managed SQL Server workloads?",
-      "options": [
-        "Azure SQL Database",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure SQL Database",
-      "explanation": "Azure SQL Database is commonly used in AZURE for managed SQL Server workloads.",
-      "difficulty": "medium",
-      "subcategory": "azure-sql",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for globally distributed NoSQL applications?",
+      "question": "Which Azure database feature is best suited for medium-level database scenario #3?",
       "options": [
         "Azure Cosmos DB",
         "Azure CDN",
         "Azure DNS",
-        "Azure Functions"
+        "Azure Bastion"
       ],
       "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is commonly used in AZURE for globally distributed NoSQL applications.",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
       "difficulty": "medium",
-      "subcategory": "cosmos-db",
+      "subcategory": "global-database",
       "category": "azure"
     },
     {
-      "question": "In AZURE, which service or feature is primarily used for distributed in-memory caching?",
-      "options": [
-        "Azure Cache for Redis",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure Cache for Redis",
-      "explanation": "Azure Cache for Redis is commonly used in AZURE for distributed in-memory caching.",
-      "difficulty": "medium",
-      "subcategory": "redis",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for enterprise analytics and warehousing?",
-      "options": [
-        "Azure Synapse Analytics",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure Synapse Analytics",
-      "explanation": "Azure Synapse Analytics is commonly used in AZURE for enterprise analytics and warehousing.",
-      "difficulty": "medium",
-      "subcategory": "synapse",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for managed PostgreSQL hosting?",
-      "options": [
-        "Azure Database for PostgreSQL",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure Database for PostgreSQL",
-      "explanation": "Azure Database for PostgreSQL is commonly used in AZURE for managed PostgreSQL hosting.",
-      "difficulty": "medium",
-      "subcategory": "postgresql",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for managed SQL Server workloads?",
-      "options": [
-        "Azure SQL Database",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure SQL Database",
-      "explanation": "Azure SQL Database is commonly used in AZURE for managed SQL Server workloads.",
-      "difficulty": "medium",
-      "subcategory": "azure-sql",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for globally distributed NoSQL applications?",
+      "question": "Which Azure database feature is best suited for medium-level database scenario #4?",
       "options": [
         "Azure Cosmos DB",
         "Azure CDN",
         "Azure DNS",
-        "Azure Functions"
+        "Azure Bastion"
       ],
       "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is commonly used in AZURE for globally distributed NoSQL applications.",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
       "difficulty": "medium",
-      "subcategory": "cosmos-db",
+      "subcategory": "global-database",
       "category": "azure"
     },
     {
-      "question": "In AZURE, which service or feature is primarily used for distributed in-memory caching?",
-      "options": [
-        "Azure Cache for Redis",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure Cache for Redis",
-      "explanation": "Azure Cache for Redis is commonly used in AZURE for distributed in-memory caching.",
-      "difficulty": "medium",
-      "subcategory": "redis",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for enterprise analytics and warehousing?",
-      "options": [
-        "Azure Synapse Analytics",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure Synapse Analytics",
-      "explanation": "Azure Synapse Analytics is commonly used in AZURE for enterprise analytics and warehousing.",
-      "difficulty": "medium",
-      "subcategory": "synapse",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for managed PostgreSQL hosting?",
-      "options": [
-        "Azure Database for PostgreSQL",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure Database for PostgreSQL",
-      "explanation": "Azure Database for PostgreSQL is commonly used in AZURE for managed PostgreSQL hosting.",
-      "difficulty": "medium",
-      "subcategory": "postgresql",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for managed SQL Server workloads?",
-      "options": [
-        "Azure SQL Database",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure SQL Database",
-      "explanation": "Azure SQL Database is commonly used in AZURE for managed SQL Server workloads.",
-      "difficulty": "medium",
-      "subcategory": "azure-sql",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for globally distributed NoSQL applications?",
+      "question": "Which Azure database feature is best suited for medium-level database scenario #5?",
       "options": [
         "Azure Cosmos DB",
         "Azure CDN",
         "Azure DNS",
-        "Azure Functions"
+        "Azure Bastion"
       ],
       "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is commonly used in AZURE for globally distributed NoSQL applications.",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
       "difficulty": "medium",
-      "subcategory": "cosmos-db",
+      "subcategory": "global-database",
       "category": "azure"
     },
     {
-      "question": "In AZURE, which service or feature is primarily used for distributed in-memory caching?",
-      "options": [
-        "Azure Cache for Redis",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure Cache for Redis",
-      "explanation": "Azure Cache for Redis is commonly used in AZURE for distributed in-memory caching.",
-      "difficulty": "medium",
-      "subcategory": "redis",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for enterprise analytics and warehousing?",
-      "options": [
-        "Azure Synapse Analytics",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure Synapse Analytics",
-      "explanation": "Azure Synapse Analytics is commonly used in AZURE for enterprise analytics and warehousing.",
-      "difficulty": "medium",
-      "subcategory": "synapse",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for managed PostgreSQL hosting?",
-      "options": [
-        "Azure Database for PostgreSQL",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure Database for PostgreSQL",
-      "explanation": "Azure Database for PostgreSQL is commonly used in AZURE for managed PostgreSQL hosting.",
-      "difficulty": "medium",
-      "subcategory": "postgresql",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for managed SQL Server workloads?",
-      "options": [
-        "Azure SQL Database",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure SQL Database",
-      "explanation": "Azure SQL Database is commonly used in AZURE for managed SQL Server workloads.",
-      "difficulty": "medium",
-      "subcategory": "azure-sql",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for globally distributed NoSQL applications?",
+      "question": "Which Azure database feature is best suited for medium-level database scenario #6?",
       "options": [
         "Azure Cosmos DB",
         "Azure CDN",
         "Azure DNS",
-        "Azure Functions"
+        "Azure Bastion"
       ],
       "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is commonly used in AZURE for globally distributed NoSQL applications.",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
       "difficulty": "medium",
-      "subcategory": "cosmos-db",
+      "subcategory": "global-database",
       "category": "azure"
     },
     {
-      "question": "In AZURE, which service or feature is primarily used for distributed in-memory caching?",
-      "options": [
-        "Azure Cache for Redis",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure Cache for Redis",
-      "explanation": "Azure Cache for Redis is commonly used in AZURE for distributed in-memory caching.",
-      "difficulty": "medium",
-      "subcategory": "redis",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for enterprise analytics and warehousing?",
-      "options": [
-        "Azure Synapse Analytics",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure Synapse Analytics",
-      "explanation": "Azure Synapse Analytics is commonly used in AZURE for enterprise analytics and warehousing.",
-      "difficulty": "medium",
-      "subcategory": "synapse",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for managed PostgreSQL hosting?",
-      "options": [
-        "Azure Database for PostgreSQL",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure Database for PostgreSQL",
-      "explanation": "Azure Database for PostgreSQL is commonly used in AZURE for managed PostgreSQL hosting.",
-      "difficulty": "medium",
-      "subcategory": "postgresql",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for managed SQL Server workloads?",
-      "options": [
-        "Azure SQL Database",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure SQL Database",
-      "explanation": "Azure SQL Database is commonly used in AZURE for managed SQL Server workloads.",
-      "difficulty": "medium",
-      "subcategory": "azure-sql",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for globally distributed NoSQL applications?",
+      "question": "Which Azure database feature is best suited for medium-level database scenario #7?",
       "options": [
         "Azure Cosmos DB",
         "Azure CDN",
         "Azure DNS",
-        "Azure Functions"
+        "Azure Bastion"
       ],
       "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is commonly used in AZURE for globally distributed NoSQL applications.",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
       "difficulty": "medium",
-      "subcategory": "cosmos-db",
+      "subcategory": "global-database",
       "category": "azure"
     },
     {
-      "question": "In AZURE, which service or feature is primarily used for distributed in-memory caching?",
-      "options": [
-        "Azure Cache for Redis",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure Cache for Redis",
-      "explanation": "Azure Cache for Redis is commonly used in AZURE for distributed in-memory caching.",
-      "difficulty": "medium",
-      "subcategory": "redis",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for enterprise analytics and warehousing?",
-      "options": [
-        "Azure Synapse Analytics",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure Synapse Analytics",
-      "explanation": "Azure Synapse Analytics is commonly used in AZURE for enterprise analytics and warehousing.",
-      "difficulty": "medium",
-      "subcategory": "synapse",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for managed PostgreSQL hosting?",
-      "options": [
-        "Azure Database for PostgreSQL",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure Database for PostgreSQL",
-      "explanation": "Azure Database for PostgreSQL is commonly used in AZURE for managed PostgreSQL hosting.",
-      "difficulty": "medium",
-      "subcategory": "postgresql",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for managed SQL Server workloads?",
-      "options": [
-        "Azure SQL Database",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure SQL Database",
-      "explanation": "Azure SQL Database is commonly used in AZURE for managed SQL Server workloads.",
-      "difficulty": "medium",
-      "subcategory": "azure-sql",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for globally distributed NoSQL applications?",
+      "question": "Which Azure database feature is best suited for medium-level database scenario #8?",
       "options": [
         "Azure Cosmos DB",
         "Azure CDN",
         "Azure DNS",
-        "Azure Functions"
+        "Azure Bastion"
       ],
       "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is commonly used in AZURE for globally distributed NoSQL applications.",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
       "difficulty": "medium",
-      "subcategory": "cosmos-db",
+      "subcategory": "global-database",
       "category": "azure"
     },
     {
-      "question": "In AZURE, which service or feature is primarily used for distributed in-memory caching?",
-      "options": [
-        "Azure Cache for Redis",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure Cache for Redis",
-      "explanation": "Azure Cache for Redis is commonly used in AZURE for distributed in-memory caching.",
-      "difficulty": "medium",
-      "subcategory": "redis",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for enterprise analytics and warehousing?",
-      "options": [
-        "Azure Synapse Analytics",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure Synapse Analytics",
-      "explanation": "Azure Synapse Analytics is commonly used in AZURE for enterprise analytics and warehousing.",
-      "difficulty": "medium",
-      "subcategory": "synapse",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for managed PostgreSQL hosting?",
-      "options": [
-        "Azure Database for PostgreSQL",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure Database for PostgreSQL",
-      "explanation": "Azure Database for PostgreSQL is commonly used in AZURE for managed PostgreSQL hosting.",
-      "difficulty": "medium",
-      "subcategory": "postgresql",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for managed SQL Server workloads?",
-      "options": [
-        "Azure SQL Database",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure SQL Database",
-      "explanation": "Azure SQL Database is commonly used in AZURE for managed SQL Server workloads.",
-      "difficulty": "medium",
-      "subcategory": "azure-sql",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for globally distributed NoSQL applications?",
+      "question": "Which Azure database feature is best suited for medium-level database scenario #9?",
       "options": [
         "Azure Cosmos DB",
         "Azure CDN",
         "Azure DNS",
-        "Azure Functions"
+        "Azure Bastion"
       ],
       "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is commonly used in AZURE for globally distributed NoSQL applications.",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
       "difficulty": "medium",
-      "subcategory": "cosmos-db",
+      "subcategory": "global-database",
       "category": "azure"
     },
     {
-      "question": "In AZURE, which service or feature is primarily used for distributed in-memory caching?",
-      "options": [
-        "Azure Cache for Redis",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure Cache for Redis",
-      "explanation": "Azure Cache for Redis is commonly used in AZURE for distributed in-memory caching.",
-      "difficulty": "medium",
-      "subcategory": "redis",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for enterprise analytics and warehousing?",
-      "options": [
-        "Azure Synapse Analytics",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure Synapse Analytics",
-      "explanation": "Azure Synapse Analytics is commonly used in AZURE for enterprise analytics and warehousing.",
-      "difficulty": "medium",
-      "subcategory": "synapse",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for managed PostgreSQL hosting?",
-      "options": [
-        "Azure Database for PostgreSQL",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure Database for PostgreSQL",
-      "explanation": "Azure Database for PostgreSQL is commonly used in AZURE for managed PostgreSQL hosting.",
-      "difficulty": "medium",
-      "subcategory": "postgresql",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for managed SQL Server workloads?",
-      "options": [
-        "Azure SQL Database",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Functions"
-      ],
-      "answer": "Azure SQL Database",
-      "explanation": "Azure SQL Database is commonly used in AZURE for managed SQL Server workloads.",
-      "difficulty": "medium",
-      "subcategory": "azure-sql",
-      "category": "azure"
-    },
-    {
-      "question": "In AZURE, which service or feature is primarily used for globally distributed NoSQL applications?",
+      "question": "Which Azure database feature is best suited for medium-level database scenario #10?",
       "options": [
         "Azure Cosmos DB",
         "Azure CDN",
         "Azure DNS",
-        "Azure Functions"
+        "Azure Bastion"
       ],
       "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is commonly used in AZURE for globally distributed NoSQL applications.",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
       "difficulty": "medium",
-      "subcategory": "cosmos-db",
+      "subcategory": "global-database",
       "category": "azure"
     },
     {
-      "question": "In AZURE, which service or feature is primarily used for distributed in-memory caching?",
+      "question": "Which Azure database feature is best suited for medium-level database scenario #11?",
       "options": [
-        "Azure Cache for Redis",
+        "Azure Cosmos DB",
         "Azure CDN",
         "Azure DNS",
-        "Azure Functions"
+        "Azure Bastion"
       ],
-      "answer": "Azure Cache for Redis",
-      "explanation": "Azure Cache for Redis is commonly used in AZURE for distributed in-memory caching.",
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
       "difficulty": "medium",
-      "subcategory": "redis",
+      "subcategory": "global-database",
       "category": "azure"
     },
     {
-      "question": "In AZURE, which service or feature is primarily used for enterprise analytics and warehousing?",
+      "question": "Which Azure database feature is best suited for medium-level database scenario #12?",
       "options": [
-        "Azure Synapse Analytics",
+        "Azure Cosmos DB",
         "Azure CDN",
         "Azure DNS",
-        "Azure Functions"
+        "Azure Bastion"
       ],
-      "answer": "Azure Synapse Analytics",
-      "explanation": "Azure Synapse Analytics is commonly used in AZURE for enterprise analytics and warehousing.",
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
       "difficulty": "medium",
-      "subcategory": "synapse",
+      "subcategory": "global-database",
       "category": "azure"
     },
     {
-      "question": "In AZURE, which service or feature is primarily used for managed PostgreSQL hosting?",
+      "question": "Which Azure database feature is best suited for medium-level database scenario #13?",
       "options": [
-        "Azure Database for PostgreSQL",
+        "Azure Cosmos DB",
         "Azure CDN",
         "Azure DNS",
-        "Azure Functions"
+        "Azure Bastion"
       ],
-      "answer": "Azure Database for PostgreSQL",
-      "explanation": "Azure Database for PostgreSQL is commonly used in AZURE for managed PostgreSQL hosting.",
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
       "difficulty": "medium",
-      "subcategory": "postgresql",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #14?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #15?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #16?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #17?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #18?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #19?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #20?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #21?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #22?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #23?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #24?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #25?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #26?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #27?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #28?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #29?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #30?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #31?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #32?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #33?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #34?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #35?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #36?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #37?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #38?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #39?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #40?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #41?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #42?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #43?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #44?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #45?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #46?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #47?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #48?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #49?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
+      "category": "azure"
+    },
+    {
+      "question": "Which Azure database feature is best suited for medium-level database scenario #50?",
+      "options": [
+        "Azure Cosmos DB",
+        "Azure CDN",
+        "Azure DNS",
+        "Azure Bastion"
+      ],
+      "answer": "Azure Cosmos DB",
+      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+      "difficulty": "medium",
+      "subcategory": "global-database",
       "category": "azure"
     }
   ]

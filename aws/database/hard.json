@@ -1,702 +1,702 @@
 [
     {
-      "question": "Which AWS database service supports globally distributed relational databases with MySQL and PostgreSQL compatibility? (1)",
+      "question": "Which AWS service or feature is best suited for globally distributed relational databases with low-latency reads?",
       "options": [
         "Amazon Aurora Global Database",
+        "Amazon Aurora",
         "Amazon DynamoDB",
-        "Amazon Neptune",
-        "Amazon ElastiCache"
+        "Amazon RDS"
       ],
       "answer": "Amazon Aurora Global Database",
-      "explanation": "Amazon Aurora Global Database is an advanced database-related service or feature in AWS.",
+      "explanation": "Amazon Aurora Global Database is best suited for globally distributed relational databases with low-latency reads in AWS.",
       "difficulty": "hard",
       "subcategory": "global-database",
       "category": "aws"
     },
     {
-      "question": "Which AWS service provides a managed ledger database with immutable transaction logs? (2)",
+      "question": "Which AWS service or feature is best suited for immutable and cryptographically verifiable ledger records?",
       "options": [
         "Amazon QLDB",
-        "Amazon RDS",
-        "Amazon Redshift",
-        "Amazon Athena"
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
       ],
       "answer": "Amazon QLDB",
-      "explanation": "Amazon QLDB is an advanced database-related service or feature in AWS.",
+      "explanation": "Amazon QLDB is best suited for immutable and cryptographically verifiable ledger records in AWS.",
       "difficulty": "hard",
       "subcategory": "ledger-database",
       "category": "aws"
     },
     {
-      "question": "Which AWS service is best suited for graph database workloads such as fraud detection? (3)",
+      "question": "Which AWS service or feature is best suited for graph queries using relationships between data points?",
       "options": [
         "Amazon Neptune",
-        "Amazon DynamoDB",
         "Amazon Aurora",
-        "Amazon Keyspaces"
+        "Amazon DynamoDB",
+        "Amazon RDS"
       ],
       "answer": "Amazon Neptune",
-      "explanation": "Amazon Neptune is an advanced database-related service or feature in AWS.",
+      "explanation": "Amazon Neptune is best suited for graph queries using relationships between data points in AWS.",
       "difficulty": "hard",
       "subcategory": "graph-database",
       "category": "aws"
     },
     {
-      "question": "Which AWS service offers Cassandra-compatible managed NoSQL database functionality? (4)",
+      "question": "Which AWS service or feature is best suited for Apache Cassandra-compatible managed NoSQL workloads?",
       "options": [
         "Amazon Keyspaces",
-        "Amazon ElastiCache",
-        "Amazon Timestream",
-        "Amazon Redshift"
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
       ],
       "answer": "Amazon Keyspaces",
-      "explanation": "Amazon Keyspaces is an advanced database-related service or feature in AWS.",
+      "explanation": "Amazon Keyspaces is best suited for Apache Cassandra-compatible managed NoSQL workloads in AWS.",
       "difficulty": "hard",
       "subcategory": "nosql-database",
       "category": "aws"
     },
     {
-      "question": "Which AWS database service is specifically optimized for time-series data? (5)",
+      "question": "Which AWS service or feature is best suited for time-series data such as IoT telemetry and metrics?",
       "options": [
         "Amazon Timestream",
-        "Amazon DocumentDB",
-        "Amazon Neptune",
-        "Amazon QLDB"
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
       ],
       "answer": "Amazon Timestream",
-      "explanation": "Amazon Timestream is an advanced database-related service or feature in AWS.",
+      "explanation": "Amazon Timestream is best suited for time-series data such as IoT telemetry and metrics in AWS.",
       "difficulty": "hard",
       "subcategory": "time-series-database",
       "category": "aws"
     },
     {
-      "question": "Which AWS database service supports globally distributed relational databases with MySQL and PostgreSQL compatibility? (6)",
+      "question": "Which AWS service or feature is best suited for serverless MySQL and PostgreSQL-compatible relational scaling?",
       "options": [
-        "Amazon Aurora Global Database",
+        "Amazon Aurora Serverless",
+        "Amazon Aurora",
         "Amazon DynamoDB",
-        "Amazon Neptune",
-        "Amazon ElastiCache"
+        "Amazon RDS"
       ],
-      "answer": "Amazon Aurora Global Database",
-      "explanation": "Amazon Aurora Global Database is an advanced database-related service or feature in AWS.",
+      "answer": "Amazon Aurora Serverless",
+      "explanation": "Amazon Aurora Serverless is best suited for serverless MySQL and PostgreSQL-compatible relational scaling in AWS.",
+      "difficulty": "hard",
+      "subcategory": "serverless-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for globally replicated NoSQL tables across AWS Regions?",
+      "options": [
+        "DynamoDB Global Tables",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "DynamoDB Global Tables",
+      "explanation": "DynamoDB Global Tables is best suited for globally replicated NoSQL tables across AWS Regions in AWS.",
       "difficulty": "hard",
       "subcategory": "global-database",
       "category": "aws"
     },
     {
-      "question": "Which AWS service provides a managed ledger database with immutable transaction logs? (7)",
+      "question": "Which AWS service or feature is best suited for read-heavy DynamoDB workloads using in-memory acceleration?",
       "options": [
-        "Amazon QLDB",
-        "Amazon RDS",
-        "Amazon Redshift",
-        "Amazon Athena"
+        "DynamoDB Accelerator",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
       ],
-      "answer": "Amazon QLDB",
-      "explanation": "Amazon QLDB is an advanced database-related service or feature in AWS.",
+      "answer": "DynamoDB Accelerator",
+      "explanation": "DynamoDB Accelerator is best suited for read-heavy DynamoDB workloads using in-memory acceleration in AWS.",
       "difficulty": "hard",
-      "subcategory": "ledger-database",
+      "subcategory": "cache-database",
       "category": "aws"
     },
     {
-      "question": "Which AWS service is best suited for graph database workloads such as fraud detection? (8)",
+      "question": "Which AWS service or feature is best suited for querying S3 data from a Redshift warehouse without loading it?",
       "options": [
-        "Amazon Neptune",
+        "Redshift Spectrum",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "Redshift Spectrum",
+      "explanation": "Redshift Spectrum is best suited for querying S3 data from a Redshift warehouse without loading it in AWS.",
+      "difficulty": "hard",
+      "subcategory": "analytics-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for database connection pooling for serverless applications?",
+      "options": [
+        "Amazon RDS Proxy",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "Amazon RDS Proxy",
+      "explanation": "Amazon RDS Proxy is best suited for database connection pooling for serverless applications in AWS.",
+      "difficulty": "hard",
+      "subcategory": "database-connection",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for automatic failover for relational databases across Availability Zones?",
+      "options": [
+        "RDS Multi-AZ deployment",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "RDS Multi-AZ deployment",
+      "explanation": "RDS Multi-AZ deployment is best suited for automatic failover for relational databases across Availability Zones in AWS.",
+      "difficulty": "hard",
+      "subcategory": "high-availability",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for scaling relational database reads using secondary database copies?",
+      "options": [
+        "RDS Read Replica",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "RDS Read Replica",
+      "explanation": "RDS Read Replica is best suited for scaling relational database reads using secondary database copies in AWS.",
+      "difficulty": "hard",
+      "subcategory": "read-scaling",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for read scaling in Aurora using additional reader instances?",
+      "options": [
+        "Aurora Replicas",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "Aurora Replicas",
+      "explanation": "Aurora Replicas is best suited for read scaling in Aurora using additional reader instances in AWS.",
+      "difficulty": "hard",
+      "subcategory": "read-scaling",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for migrating databases to AWS with minimal downtime?",
+      "options": [
+        "AWS Database Migration Service",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "AWS Database Migration Service",
+      "explanation": "AWS Database Migration Service is best suited for migrating databases to AWS with minimal downtime in AWS.",
+      "difficulty": "hard",
+      "subcategory": "database-migration",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for converting schemas from commercial databases to AWS-compatible engines?",
+      "options": [
+        "AWS Schema Conversion Tool",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "AWS Schema Conversion Tool",
+      "explanation": "AWS Schema Conversion Tool is best suited for converting schemas from commercial databases to AWS-compatible engines in AWS.",
+      "difficulty": "hard",
+      "subcategory": "database-migration",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for testing RDS production changes using blue and green environments?",
+      "options": [
+        "RDS Blue/Green Deployments",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "RDS Blue/Green Deployments",
+      "explanation": "RDS Blue/Green Deployments is best suited for testing RDS production changes using blue and green environments in AWS.",
+      "difficulty": "hard",
+      "subcategory": "database-deployment",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for rotating database credentials securely?",
+      "options": [
+        "AWS Secrets Manager",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "AWS Secrets Manager",
+      "explanation": "AWS Secrets Manager is best suited for rotating database credentials securely in AWS.",
+      "difficulty": "hard",
+      "subcategory": "database-security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for managing encryption keys for database encryption at rest?",
+      "options": [
+        "AWS KMS",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "AWS KMS",
+      "explanation": "AWS KMS is best suited for managing encryption keys for database encryption at rest in AWS.",
+      "difficulty": "hard",
+      "subcategory": "database-security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for analyzing database wait events and load in RDS?",
+      "options": [
+        "Performance Insights",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "Performance Insights",
+      "explanation": "Performance Insights is best suited for analyzing database wait events and load in RDS in AWS.",
+      "difficulty": "hard",
+      "subcategory": "database-monitoring",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for monitoring database CPU, storage, and connection metrics?",
+      "options": [
+        "Amazon CloudWatch",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "Amazon CloudWatch",
+      "explanation": "Amazon CloudWatch is best suited for monitoring database CPU, storage, and connection metrics in AWS.",
+      "difficulty": "hard",
+      "subcategory": "database-monitoring",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for MongoDB-compatible managed database workloads?",
+      "options": [
+        "Amazon DocumentDB",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "Amazon DocumentDB",
+      "explanation": "Amazon DocumentDB is best suited for MongoDB-compatible managed database workloads in AWS.",
+      "difficulty": "hard",
+      "subcategory": "document-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for scaling reads for MongoDB-compatible workloads in AWS?",
+      "options": [
+        "DocumentDB Read Replicas",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "DocumentDB Read Replicas",
+      "explanation": "DocumentDB Read Replicas is best suited for scaling reads for MongoDB-compatible workloads in AWS in AWS.",
+      "difficulty": "hard",
+      "subcategory": "read-scaling",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for PostgreSQL-compatible high-performance relational workloads?",
+      "options": [
+        "Amazon Aurora PostgreSQL",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "Amazon Aurora PostgreSQL",
+      "explanation": "Amazon Aurora PostgreSQL is best suited for PostgreSQL-compatible high-performance relational workloads in AWS.",
+      "difficulty": "hard",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for MySQL-compatible high-performance relational workloads?",
+      "options": [
+        "Amazon Aurora MySQL",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "Amazon Aurora MySQL",
+      "explanation": "Amazon Aurora MySQL is best suited for MySQL-compatible high-performance relational workloads in AWS.",
+      "difficulty": "hard",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for petabyte-scale cloud data warehousing?",
+      "options": [
+        "Amazon Redshift",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "Amazon Redshift",
+      "explanation": "Amazon Redshift is best suited for petabyte-scale cloud data warehousing in AWS.",
+      "difficulty": "hard",
+      "subcategory": "data-warehouse",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for serverless data warehouse capacity?",
+      "options": [
+        "Amazon Redshift Serverless",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "Amazon Redshift Serverless",
+      "explanation": "Amazon Redshift Serverless is best suited for serverless data warehouse capacity in AWS.",
+      "difficulty": "hard",
+      "subcategory": "serverless-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for SQL queries directly over data stored in Amazon S3?",
+      "options": [
+        "Amazon Athena",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "Amazon Athena",
+      "explanation": "Amazon Athena is best suited for SQL queries directly over data stored in Amazon S3 in AWS.",
+      "difficulty": "hard",
+      "subcategory": "analytics-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for Redis-compatible application caching?",
+      "options": [
+        "Amazon ElastiCache for Redis",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "Amazon ElastiCache for Redis",
+      "explanation": "Amazon ElastiCache for Redis is best suited for Redis-compatible application caching in AWS.",
+      "difficulty": "hard",
+      "subcategory": "cache-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for Memcached-compatible application caching?",
+      "options": [
+        "Amazon ElastiCache for Memcached",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "Amazon ElastiCache for Memcached",
+      "explanation": "Amazon ElastiCache for Memcached is best suited for Memcached-compatible application caching in AWS.",
+      "difficulty": "hard",
+      "subcategory": "cache-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for high-scale key-value access with predictable performance?",
+      "options": [
         "Amazon DynamoDB",
         "Amazon Aurora",
-        "Amazon Keyspaces"
-      ],
-      "answer": "Amazon Neptune",
-      "explanation": "Amazon Neptune is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "graph-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service offers Cassandra-compatible managed NoSQL database functionality? (9)",
-      "options": [
-        "Amazon Keyspaces",
-        "Amazon ElastiCache",
-        "Amazon Timestream",
+        "Amazon RDS",
         "Amazon Redshift"
       ],
-      "answer": "Amazon Keyspaces",
-      "explanation": "Amazon Keyspaces is an advanced database-related service or feature in AWS.",
+      "answer": "Amazon DynamoDB",
+      "explanation": "Amazon DynamoDB is best suited for high-scale key-value access with predictable performance in AWS.",
       "difficulty": "hard",
       "subcategory": "nosql-database",
       "category": "aws"
     },
     {
-      "question": "Which AWS database service is specifically optimized for time-series data? (10)",
+      "question": "Which AWS service or feature is best suited for capturing DynamoDB item-level changes for event processing?",
       "options": [
-        "Amazon Timestream",
-        "Amazon DocumentDB",
-        "Amazon Neptune",
-        "Amazon QLDB"
-      ],
-      "answer": "Amazon Timestream",
-      "explanation": "Amazon Timestream is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "time-series-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS database service supports globally distributed relational databases with MySQL and PostgreSQL compatibility? (11)",
-      "options": [
-        "Amazon Aurora Global Database",
-        "Amazon DynamoDB",
-        "Amazon Neptune",
-        "Amazon ElastiCache"
-      ],
-      "answer": "Amazon Aurora Global Database",
-      "explanation": "Amazon Aurora Global Database is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "global-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service provides a managed ledger database with immutable transaction logs? (12)",
-      "options": [
-        "Amazon QLDB",
-        "Amazon RDS",
-        "Amazon Redshift",
-        "Amazon Athena"
-      ],
-      "answer": "Amazon QLDB",
-      "explanation": "Amazon QLDB is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "ledger-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service is best suited for graph database workloads such as fraud detection? (13)",
-      "options": [
-        "Amazon Neptune",
-        "Amazon DynamoDB",
+        "DynamoDB Streams",
         "Amazon Aurora",
-        "Amazon Keyspaces"
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "DynamoDB Streams",
+      "explanation": "DynamoDB Streams is best suited for capturing DynamoDB item-level changes for event processing in AWS.",
+      "difficulty": "hard",
+      "subcategory": "database-events",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for automatically deleting expired DynamoDB records?",
+      "options": [
+        "DynamoDB TTL",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "DynamoDB TTL",
+      "explanation": "DynamoDB TTL is best suited for automatically deleting expired DynamoDB records in AWS.",
+      "difficulty": "hard",
+      "subcategory": "data-lifecycle",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for restoring DynamoDB tables to a specific point in time?",
+      "options": [
+        "DynamoDB point-in-time recovery",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "DynamoDB point-in-time recovery",
+      "explanation": "DynamoDB point-in-time recovery is best suited for restoring DynamoDB tables to a specific point in time in AWS.",
+      "difficulty": "hard",
+      "subcategory": "backup",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for exporting RDS snapshots to S3 for analytics?",
+      "options": [
+        "RDS snapshot export to S3",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "RDS snapshot export to S3",
+      "explanation": "RDS snapshot export to S3 is best suited for exporting RDS snapshots to S3 for analytics in AWS.",
+      "difficulty": "hard",
+      "subcategory": "backup",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for centralized database backup management across AWS services?",
+      "options": [
+        "AWS Backup",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "AWS Backup",
+      "explanation": "AWS Backup is best suited for centralized database backup management across AWS services in AWS.",
+      "difficulty": "hard",
+      "subcategory": "backup",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for viewing operating-system-level metrics for RDS?",
+      "options": [
+        "RDS Enhanced Monitoring",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "RDS Enhanced Monitoring",
+      "explanation": "RDS Enhanced Monitoring is best suited for viewing operating-system-level metrics for RDS in AWS.",
+      "difficulty": "hard",
+      "subcategory": "database-monitoring",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for OpenSearch and Elasticsearch-compatible search workloads?",
+      "options": [
+        "Amazon OpenSearch Service",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "Amazon OpenSearch Service",
+      "explanation": "Amazon OpenSearch Service is best suited for OpenSearch and Elasticsearch-compatible search workloads in AWS.",
+      "difficulty": "hard",
+      "subcategory": "search-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for placing RDS databases inside selected private subnets?",
+      "options": [
+        "DB subnet group",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "DB subnet group",
+      "explanation": "DB subnet group is best suited for placing RDS databases inside selected private subnets in AWS.",
+      "difficulty": "hard",
+      "subcategory": "database-networking",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for controlling inbound traffic to database instances?",
+      "options": [
+        "Security Group",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "Security Group",
+      "explanation": "Security Group is best suited for controlling inbound traffic to database instances in AWS.",
+      "difficulty": "hard",
+      "subcategory": "database-security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for encrypting database traffic between clients and databases?",
+      "options": [
+        "SSL/TLS database connection",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "SSL/TLS database connection",
+      "explanation": "SSL/TLS database connection is best suited for encrypting database traffic between clients and databases in AWS.",
+      "difficulty": "hard",
+      "subcategory": "database-security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for using IAM to authenticate to supported RDS engines?",
+      "options": [
+        "IAM database authentication",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "IAM database authentication",
+      "explanation": "IAM database authentication is best suited for using IAM to authenticate to supported RDS engines in AWS.",
+      "difficulty": "hard",
+      "subcategory": "database-security",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for creating fast database copies for testing in Aurora?",
+      "options": [
+        "Aurora cloning",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "answer": "Aurora cloning",
+      "explanation": "Aurora cloning is best suited for creating fast database copies for testing in Aurora in AWS.",
+      "difficulty": "hard",
+      "subcategory": "database-operations",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service or feature is best suited for relationship-heavy use cases like recommendation engines?",
+      "options": [
+        "Amazon Neptune",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon RDS"
       ],
       "answer": "Amazon Neptune",
-      "explanation": "Amazon Neptune is an advanced database-related service or feature in AWS.",
+      "explanation": "Amazon Neptune is best suited for relationship-heavy use cases like recommendation engines in AWS.",
       "difficulty": "hard",
       "subcategory": "graph-database",
       "category": "aws"
     },
     {
-      "question": "Which AWS service offers Cassandra-compatible managed NoSQL database functionality? (14)",
+      "question": "Which AWS service or feature is best suited for automatically pausing and resuming unused Aurora capacity?",
       "options": [
-        "Amazon Keyspaces",
-        "Amazon ElastiCache",
-        "Amazon Timestream",
-        "Amazon Redshift"
-      ],
-      "answer": "Amazon Keyspaces",
-      "explanation": "Amazon Keyspaces is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "nosql-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS database service is specifically optimized for time-series data? (15)",
-      "options": [
-        "Amazon Timestream",
-        "Amazon DocumentDB",
-        "Amazon Neptune",
-        "Amazon QLDB"
-      ],
-      "answer": "Amazon Timestream",
-      "explanation": "Amazon Timestream is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "time-series-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS database service supports globally distributed relational databases with MySQL and PostgreSQL compatibility? (16)",
-      "options": [
-        "Amazon Aurora Global Database",
-        "Amazon DynamoDB",
-        "Amazon Neptune",
-        "Amazon ElastiCache"
-      ],
-      "answer": "Amazon Aurora Global Database",
-      "explanation": "Amazon Aurora Global Database is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "global-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service provides a managed ledger database with immutable transaction logs? (17)",
-      "options": [
-        "Amazon QLDB",
-        "Amazon RDS",
-        "Amazon Redshift",
-        "Amazon Athena"
-      ],
-      "answer": "Amazon QLDB",
-      "explanation": "Amazon QLDB is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "ledger-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service is best suited for graph database workloads such as fraud detection? (18)",
-      "options": [
-        "Amazon Neptune",
-        "Amazon DynamoDB",
+        "Aurora Serverless auto pause",
         "Amazon Aurora",
-        "Amazon Keyspaces"
-      ],
-      "answer": "Amazon Neptune",
-      "explanation": "Amazon Neptune is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "graph-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service offers Cassandra-compatible managed NoSQL database functionality? (19)",
-      "options": [
-        "Amazon Keyspaces",
-        "Amazon ElastiCache",
-        "Amazon Timestream",
-        "Amazon Redshift"
-      ],
-      "answer": "Amazon Keyspaces",
-      "explanation": "Amazon Keyspaces is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "nosql-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS database service is specifically optimized for time-series data? (20)",
-      "options": [
-        "Amazon Timestream",
-        "Amazon DocumentDB",
-        "Amazon Neptune",
-        "Amazon QLDB"
-      ],
-      "answer": "Amazon Timestream",
-      "explanation": "Amazon Timestream is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "time-series-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS database service supports globally distributed relational databases with MySQL and PostgreSQL compatibility? (21)",
-      "options": [
-        "Amazon Aurora Global Database",
         "Amazon DynamoDB",
-        "Amazon Neptune",
-        "Amazon ElastiCache"
+        "Amazon RDS"
       ],
-      "answer": "Amazon Aurora Global Database",
-      "explanation": "Amazon Aurora Global Database is an advanced database-related service or feature in AWS.",
+      "answer": "Aurora Serverless auto pause",
+      "explanation": "Aurora Serverless auto pause is best suited for automatically pausing and resuming unused Aurora capacity in AWS.",
       "difficulty": "hard",
-      "subcategory": "global-database",
+      "subcategory": "serverless-database",
       "category": "aws"
     },
     {
-      "question": "Which AWS service provides a managed ledger database with immutable transaction logs? (22)",
+      "question": "Which AWS service or feature is best suited for organizing Redshift data to improve scan performance?",
       "options": [
-        "Amazon QLDB",
-        "Amazon RDS",
-        "Amazon Redshift",
-        "Amazon Athena"
-      ],
-      "answer": "Amazon QLDB",
-      "explanation": "Amazon QLDB is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "ledger-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service is best suited for graph database workloads such as fraud detection? (23)",
-      "options": [
-        "Amazon Neptune",
-        "Amazon DynamoDB",
+        "Redshift sort key",
         "Amazon Aurora",
-        "Amazon Keyspaces"
-      ],
-      "answer": "Amazon Neptune",
-      "explanation": "Amazon Neptune is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "graph-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service offers Cassandra-compatible managed NoSQL database functionality? (24)",
-      "options": [
-        "Amazon Keyspaces",
-        "Amazon ElastiCache",
-        "Amazon Timestream",
-        "Amazon Redshift"
-      ],
-      "answer": "Amazon Keyspaces",
-      "explanation": "Amazon Keyspaces is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "nosql-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS database service is specifically optimized for time-series data? (25)",
-      "options": [
-        "Amazon Timestream",
-        "Amazon DocumentDB",
-        "Amazon Neptune",
-        "Amazon QLDB"
-      ],
-      "answer": "Amazon Timestream",
-      "explanation": "Amazon Timestream is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "time-series-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS database service supports globally distributed relational databases with MySQL and PostgreSQL compatibility? (26)",
-      "options": [
-        "Amazon Aurora Global Database",
         "Amazon DynamoDB",
-        "Amazon Neptune",
-        "Amazon ElastiCache"
+        "Amazon RDS"
       ],
-      "answer": "Amazon Aurora Global Database",
-      "explanation": "Amazon Aurora Global Database is an advanced database-related service or feature in AWS.",
+      "answer": "Redshift sort key",
+      "explanation": "Redshift sort key is best suited for organizing Redshift data to improve scan performance in AWS.",
       "difficulty": "hard",
-      "subcategory": "global-database",
+      "subcategory": "data-warehouse",
       "category": "aws"
     },
     {
-      "question": "Which AWS service provides a managed ledger database with immutable transaction logs? (27)",
+      "question": "Which AWS service or feature is best suited for distributing Redshift rows across compute nodes?",
       "options": [
-        "Amazon QLDB",
-        "Amazon RDS",
-        "Amazon Redshift",
-        "Amazon Athena"
-      ],
-      "answer": "Amazon QLDB",
-      "explanation": "Amazon QLDB is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "ledger-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service is best suited for graph database workloads such as fraud detection? (28)",
-      "options": [
-        "Amazon Neptune",
-        "Amazon DynamoDB",
+        "Redshift distribution style",
         "Amazon Aurora",
-        "Amazon Keyspaces"
+        "Amazon DynamoDB",
+        "Amazon RDS"
       ],
-      "answer": "Amazon Neptune",
-      "explanation": "Amazon Neptune is an advanced database-related service or feature in AWS.",
+      "answer": "Redshift distribution style",
+      "explanation": "Redshift distribution style is best suited for distributing Redshift rows across compute nodes in AWS.",
       "difficulty": "hard",
-      "subcategory": "graph-database",
+      "subcategory": "data-warehouse",
       "category": "aws"
     },
     {
-      "question": "Which AWS service offers Cassandra-compatible managed NoSQL database functionality? (29)",
-      "options": [
-        "Amazon Keyspaces",
-        "Amazon ElastiCache",
-        "Amazon Timestream",
-        "Amazon Redshift"
-      ],
-      "answer": "Amazon Keyspaces",
-      "explanation": "Amazon Keyspaces is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "nosql-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS database service is specifically optimized for time-series data? (30)",
+      "question": "Which AWS service or feature is best suited for storing ordered metrics over time with automatic lifecycle handling?",
       "options": [
         "Amazon Timestream",
-        "Amazon DocumentDB",
-        "Amazon Neptune",
-        "Amazon QLDB"
-      ],
-      "answer": "Amazon Timestream",
-      "explanation": "Amazon Timestream is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "time-series-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS database service supports globally distributed relational databases with MySQL and PostgreSQL compatibility? (31)",
-      "options": [
-        "Amazon Aurora Global Database",
-        "Amazon DynamoDB",
-        "Amazon Neptune",
-        "Amazon ElastiCache"
-      ],
-      "answer": "Amazon Aurora Global Database",
-      "explanation": "Amazon Aurora Global Database is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "global-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service provides a managed ledger database with immutable transaction logs? (32)",
-      "options": [
-        "Amazon QLDB",
-        "Amazon RDS",
-        "Amazon Redshift",
-        "Amazon Athena"
-      ],
-      "answer": "Amazon QLDB",
-      "explanation": "Amazon QLDB is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "ledger-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service is best suited for graph database workloads such as fraud detection? (33)",
-      "options": [
-        "Amazon Neptune",
-        "Amazon DynamoDB",
         "Amazon Aurora",
-        "Amazon Keyspaces"
-      ],
-      "answer": "Amazon Neptune",
-      "explanation": "Amazon Neptune is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "graph-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service offers Cassandra-compatible managed NoSQL database functionality? (34)",
-      "options": [
-        "Amazon Keyspaces",
-        "Amazon ElastiCache",
-        "Amazon Timestream",
-        "Amazon Redshift"
-      ],
-      "answer": "Amazon Keyspaces",
-      "explanation": "Amazon Keyspaces is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "nosql-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS database service is specifically optimized for time-series data? (35)",
-      "options": [
-        "Amazon Timestream",
-        "Amazon DocumentDB",
-        "Amazon Neptune",
-        "Amazon QLDB"
+        "Amazon DynamoDB",
+        "Amazon RDS"
       ],
       "answer": "Amazon Timestream",
-      "explanation": "Amazon Timestream is an advanced database-related service or feature in AWS.",
+      "explanation": "Amazon Timestream is best suited for storing ordered metrics over time with automatic lifecycle handling in AWS.",
       "difficulty": "hard",
       "subcategory": "time-series-database",
       "category": "aws"
     },
     {
-      "question": "Which AWS database service supports globally distributed relational databases with MySQL and PostgreSQL compatibility? (36)",
+      "question": "Which AWS service or feature is best suited for replicating Aurora data to another Region for disaster recovery?",
       "options": [
-        "Amazon Aurora Global Database",
-        "Amazon DynamoDB",
-        "Amazon Neptune",
-        "Amazon ElastiCache"
-      ],
-      "answer": "Amazon Aurora Global Database",
-      "explanation": "Amazon Aurora Global Database is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "global-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service provides a managed ledger database with immutable transaction logs? (37)",
-      "options": [
-        "Amazon QLDB",
-        "Amazon RDS",
-        "Amazon Redshift",
-        "Amazon Athena"
-      ],
-      "answer": "Amazon QLDB",
-      "explanation": "Amazon QLDB is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "ledger-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service is best suited for graph database workloads such as fraud detection? (38)",
-      "options": [
-        "Amazon Neptune",
-        "Amazon DynamoDB",
+        "Aurora Global Database",
         "Amazon Aurora",
-        "Amazon Keyspaces"
-      ],
-      "answer": "Amazon Neptune",
-      "explanation": "Amazon Neptune is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "graph-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service offers Cassandra-compatible managed NoSQL database functionality? (39)",
-      "options": [
-        "Amazon Keyspaces",
-        "Amazon ElastiCache",
-        "Amazon Timestream",
-        "Amazon Redshift"
-      ],
-      "answer": "Amazon Keyspaces",
-      "explanation": "Amazon Keyspaces is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "nosql-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS database service is specifically optimized for time-series data? (40)",
-      "options": [
-        "Amazon Timestream",
-        "Amazon DocumentDB",
-        "Amazon Neptune",
-        "Amazon QLDB"
-      ],
-      "answer": "Amazon Timestream",
-      "explanation": "Amazon Timestream is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "time-series-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS database service supports globally distributed relational databases with MySQL and PostgreSQL compatibility? (41)",
-      "options": [
-        "Amazon Aurora Global Database",
         "Amazon DynamoDB",
-        "Amazon Neptune",
-        "Amazon ElastiCache"
+        "Amazon RDS"
       ],
-      "answer": "Amazon Aurora Global Database",
-      "explanation": "Amazon Aurora Global Database is an advanced database-related service or feature in AWS.",
+      "answer": "Aurora Global Database",
+      "explanation": "Aurora Global Database is best suited for replicating Aurora data to another Region for disaster recovery in AWS.",
       "difficulty": "hard",
-      "subcategory": "global-database",
+      "subcategory": "disaster-recovery",
       "category": "aws"
     },
     {
-      "question": "Which AWS service provides a managed ledger database with immutable transaction logs? (42)",
+      "question": "Which AWS service or feature is best suited for preventing accidental overwrites of DynamoDB backups?",
       "options": [
-        "Amazon QLDB",
-        "Amazon RDS",
-        "Amazon Redshift",
-        "Amazon Athena"
-      ],
-      "answer": "Amazon QLDB",
-      "explanation": "Amazon QLDB is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "ledger-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service is best suited for graph database workloads such as fraud detection? (43)",
-      "options": [
-        "Amazon Neptune",
-        "Amazon DynamoDB",
+        "AWS Backup vault lock",
         "Amazon Aurora",
-        "Amazon Keyspaces"
-      ],
-      "answer": "Amazon Neptune",
-      "explanation": "Amazon Neptune is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "graph-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service offers Cassandra-compatible managed NoSQL database functionality? (44)",
-      "options": [
-        "Amazon Keyspaces",
-        "Amazon ElastiCache",
-        "Amazon Timestream",
-        "Amazon Redshift"
-      ],
-      "answer": "Amazon Keyspaces",
-      "explanation": "Amazon Keyspaces is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "nosql-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS database service is specifically optimized for time-series data? (45)",
-      "options": [
-        "Amazon Timestream",
-        "Amazon DocumentDB",
-        "Amazon Neptune",
-        "Amazon QLDB"
-      ],
-      "answer": "Amazon Timestream",
-      "explanation": "Amazon Timestream is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "time-series-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS database service supports globally distributed relational databases with MySQL and PostgreSQL compatibility? (46)",
-      "options": [
-        "Amazon Aurora Global Database",
         "Amazon DynamoDB",
-        "Amazon Neptune",
-        "Amazon ElastiCache"
+        "Amazon RDS"
       ],
-      "answer": "Amazon Aurora Global Database",
-      "explanation": "Amazon Aurora Global Database is an advanced database-related service or feature in AWS.",
+      "answer": "AWS Backup vault lock",
+      "explanation": "AWS Backup vault lock is best suited for preventing accidental overwrites of DynamoDB backups in AWS.",
       "difficulty": "hard",
-      "subcategory": "global-database",
+      "subcategory": "backup",
       "category": "aws"
     },
     {
-      "question": "Which AWS service provides a managed ledger database with immutable transaction logs? (47)",
+      "question": "Which AWS service or feature is best suited for isolating database access using private network paths?",
       "options": [
-        "Amazon QLDB",
-        "Amazon RDS",
-        "Amazon Redshift",
-        "Amazon Athena"
-      ],
-      "answer": "Amazon QLDB",
-      "explanation": "Amazon QLDB is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "ledger-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service is best suited for graph database workloads such as fraud detection? (48)",
-      "options": [
-        "Amazon Neptune",
-        "Amazon DynamoDB",
+        "VPC-only database access",
         "Amazon Aurora",
-        "Amazon Keyspaces"
+        "Amazon DynamoDB",
+        "Amazon RDS"
       ],
-      "answer": "Amazon Neptune",
-      "explanation": "Amazon Neptune is an advanced database-related service or feature in AWS.",
+      "answer": "VPC-only database access",
+      "explanation": "VPC-only database access is best suited for isolating database access using private network paths in AWS.",
       "difficulty": "hard",
-      "subcategory": "graph-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service offers Cassandra-compatible managed NoSQL database functionality? (49)",
-      "options": [
-        "Amazon Keyspaces",
-        "Amazon ElastiCache",
-        "Amazon Timestream",
-        "Amazon Redshift"
-      ],
-      "answer": "Amazon Keyspaces",
-      "explanation": "Amazon Keyspaces is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "nosql-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS database service is specifically optimized for time-series data? (50)",
-      "options": [
-        "Amazon Timestream",
-        "Amazon DocumentDB",
-        "Amazon Neptune",
-        "Amazon QLDB"
-      ],
-      "answer": "Amazon Timestream",
-      "explanation": "Amazon Timestream is an advanced database-related service or feature in AWS.",
-      "difficulty": "hard",
-      "subcategory": "time-series-database",
+      "subcategory": "database-networking",
       "category": "aws"
     }
   ]

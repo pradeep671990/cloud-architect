@@ -1,702 +1,702 @@
 [
     {
-      "question": "Which AWS service provides managed relational databases?",
+      "question": "Which AWS service provides managed relational databases? (Easy AWS #1)",
       "options": [
         "Amazon RDS",
-        "Amazon S3",
         "Amazon EC2",
+        "Amazon S3",
         "Amazon CloudFront"
       ],
       "answer": "Amazon RDS",
-      "explanation": "Amazon RDS is a database-related service or feature used in AWS.",
+      "explanation": "Amazon RDS is the correct answer for this AWS database service question.",
       "difficulty": "easy",
       "subcategory": "relational-database",
       "category": "aws"
     },
     {
-      "question": "Which AWS database service is compatible with MySQL and PostgreSQL?",
-      "options": [
-        "Amazon Aurora",
-        "Amazon DynamoDB",
-        "Amazon Redshift",
-        "Amazon ElastiCache"
-      ],
-      "answer": "Amazon Aurora",
-      "explanation": "Amazon Aurora is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "relational-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service is a NoSQL key-value database?",
+      "question": "Which AWS service provides NoSQL key-value storage? (Easy AWS #2)",
       "options": [
         "Amazon DynamoDB",
-        "Amazon RDS",
-        "Amazon Redshift",
-        "Amazon Neptune"
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
       ],
       "answer": "Amazon DynamoDB",
-      "explanation": "Amazon DynamoDB is a database-related service or feature used in AWS.",
+      "explanation": "Amazon DynamoDB is the correct answer for this AWS database service question.",
       "difficulty": "easy",
       "subcategory": "nosql-database",
       "category": "aws"
     },
     {
-      "question": "Which AWS service is used for data warehousing?",
+      "question": "Which AWS service provides data warehousing? (Easy AWS #3)",
       "options": [
         "Amazon Redshift",
-        "Amazon RDS",
-        "Amazon EFS",
-        "Amazon Route 53"
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
       ],
       "answer": "Amazon Redshift",
-      "explanation": "Amazon Redshift is a database-related service or feature used in AWS.",
+      "explanation": "Amazon Redshift is the correct answer for this AWS database service question.",
       "difficulty": "easy",
       "subcategory": "data-warehouse",
       "category": "aws"
     },
     {
-      "question": "Which AWS service provides managed Redis and Memcached?",
+      "question": "Which AWS service provides managed Redis caching? (Easy AWS #4)",
       "options": [
         "Amazon ElastiCache",
-        "Amazon Athena",
-        "Amazon Aurora",
-        "Amazon SQS"
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
       ],
       "answer": "Amazon ElastiCache",
-      "explanation": "Amazon ElastiCache is a database-related service or feature used in AWS.",
+      "explanation": "Amazon ElastiCache is the correct answer for this AWS database service question.",
       "difficulty": "easy",
       "subcategory": "cache-database",
       "category": "aws"
     },
     {
-      "question": "Which AWS database service is designed for graph data?",
+      "question": "Which AWS service supports graph databases? (Easy AWS #5)",
       "options": [
         "Amazon Neptune",
-        "Amazon RDS",
-        "Amazon DynamoDB",
-        "Amazon Redshift"
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
       ],
       "answer": "Amazon Neptune",
-      "explanation": "Amazon Neptune is a database-related service or feature used in AWS.",
+      "explanation": "Amazon Neptune is the correct answer for this AWS database service question.",
       "difficulty": "easy",
       "subcategory": "graph-database",
       "category": "aws"
     },
     {
-      "question": "Which AWS service is used for document database workloads?",
+      "question": "Which AWS service supports MongoDB-compatible databases? (Easy AWS #6)",
       "options": [
         "Amazon DocumentDB",
-        "Amazon Redshift",
-        "Amazon Route 53",
-        "Amazon EBS"
-      ],
-      "answer": "Amazon DocumentDB",
-      "explanation": "Amazon DocumentDB is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "document-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service provides time-series database capability?",
-      "options": [
-        "Amazon Timestream",
-        "Amazon RDS",
-        "Amazon CloudFront",
-        "Amazon S3"
-      ],
-      "answer": "Amazon Timestream",
-      "explanation": "Amazon Timestream is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "time-series-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service can run managed PostgreSQL databases?",
-      "options": [
-        "Amazon RDS",
-        "Amazon SQS",
-        "Amazon SNS",
-        "Amazon ECR"
-      ],
-      "answer": "Amazon RDS",
-      "explanation": "Amazon RDS is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "relational-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service can run managed MySQL databases?",
-      "options": [
-        "Amazon RDS",
-        "AWS Lambda",
-        "Amazon Kinesis",
-        "Amazon CloudWatch"
-      ],
-      "answer": "Amazon RDS",
-      "explanation": "Amazon RDS is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "relational-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service supports serverless NoSQL database workloads?",
-      "options": [
-        "Amazon DynamoDB",
         "Amazon EC2",
-        "Amazon VPC",
-        "Amazon EFS"
-      ],
-      "answer": "Amazon DynamoDB",
-      "explanation": "Amazon DynamoDB is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "serverless-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS database service is commonly used for caching application data?",
-      "options": [
-        "Amazon ElastiCache",
-        "Amazon RDS",
-        "Amazon Redshift",
-        "Amazon Athena"
-      ],
-      "answer": "Amazon ElastiCache",
-      "explanation": "Amazon ElastiCache is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "cache-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS database service is commonly used for analytics on large datasets?",
-      "options": [
-        "Amazon Redshift",
-        "Amazon Route 53",
-        "Amazon IAM",
-        "Amazon ECR"
-      ],
-      "answer": "Amazon Redshift",
-      "explanation": "Amazon Redshift is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "analytics-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service provides a MongoDB-compatible database?",
-      "options": [
-        "Amazon DocumentDB",
-        "Amazon Aurora",
-        "Amazon Timestream",
-        "Amazon QLDB"
+        "Amazon S3",
+        "Amazon CloudFront"
       ],
       "answer": "Amazon DocumentDB",
-      "explanation": "Amazon DocumentDB is a database-related service or feature used in AWS.",
+      "explanation": "Amazon DocumentDB is the correct answer for this AWS database service question.",
       "difficulty": "easy",
       "subcategory": "document-database",
       "category": "aws"
     },
     {
-      "question": "Which AWS database is best known for single-digit millisecond performance at scale?",
-      "options": [
-        "Amazon DynamoDB",
-        "Amazon Redshift",
-        "Amazon RDS",
-        "Amazon Neptune"
-      ],
-      "answer": "Amazon DynamoDB",
-      "explanation": "Amazon DynamoDB is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "nosql-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service provides ledger database functionality?",
+      "question": "Which AWS service supports ledger databases? (Easy AWS #7)",
       "options": [
         "Amazon QLDB",
-        "Amazon RDS",
-        "Amazon ElastiCache",
-        "Amazon Redshift"
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
       ],
       "answer": "Amazon QLDB",
-      "explanation": "Amazon QLDB is a database-related service or feature used in AWS.",
+      "explanation": "Amazon QLDB is the correct answer for this AWS database service question.",
       "difficulty": "easy",
       "subcategory": "ledger-database",
       "category": "aws"
     },
     {
-      "question": "Which AWS service is a query service for data stored in S3?",
+      "question": "Which AWS service supports time-series databases? (Easy AWS #8)",
       "options": [
-        "Amazon Athena",
-        "Amazon RDS",
-        "Amazon Neptune",
-        "Amazon ElastiCache"
+        "Amazon Timestream",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
       ],
-      "answer": "Amazon Athena",
-      "explanation": "Amazon Athena is a database-related service or feature used in AWS.",
+      "answer": "Amazon Timestream",
+      "explanation": "Amazon Timestream is the correct answer for this AWS database service question.",
       "difficulty": "easy",
-      "subcategory": "analytics-database",
+      "subcategory": "time-series-database",
       "category": "aws"
     },
     {
-      "question": "Which AWS service provides managed Apache Cassandra-compatible database?",
+      "question": "Which AWS service provides Cassandra-compatible databases? (Easy AWS #9)",
       "options": [
         "Amazon Keyspaces",
-        "Amazon Aurora",
-        "Amazon RDS",
-        "Amazon Redshift"
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
       ],
       "answer": "Amazon Keyspaces",
-      "explanation": "Amazon Keyspaces is a database-related service or feature used in AWS.",
+      "explanation": "Amazon Keyspaces is the correct answer for this AWS database service question.",
       "difficulty": "easy",
       "subcategory": "nosql-database",
       "category": "aws"
     },
     {
-      "question": "Which AWS database service supports Multi-AZ deployments?",
+      "question": "Which AWS service queries S3 data using SQL? (Easy AWS #10)",
       "options": [
-        "Amazon RDS",
-        "Amazon CloudFront",
-        "Amazon S3 Glacier",
-        "Amazon SNS"
-      ],
-      "answer": "Amazon RDS",
-      "explanation": "Amazon RDS is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "high-availability",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service is used to migrate databases to AWS?",
-      "options": [
-        "AWS Database Migration Service",
-        "AWS Shield",
-        "AWS WAF",
+        "Amazon Athena",
+        "Amazon EC2",
+        "Amazon S3",
         "Amazon CloudFront"
       ],
-      "answer": "AWS Database Migration Service",
-      "explanation": "AWS Database Migration Service is a database-related service or feature used in AWS.",
+      "answer": "Amazon Athena",
+      "explanation": "Amazon Athena is the correct answer for this AWS database service question.",
       "difficulty": "easy",
-      "subcategory": "database-migration",
+      "subcategory": "analytics-database",
       "category": "aws"
     },
     {
-      "question": "Which AWS service helps convert database schemas during migration?",
+      "question": "Which AWS service provides managed relational databases? (Easy AWS #11)",
       "options": [
-        "AWS Schema Conversion Tool",
-        "AWS IAM",
-        "AWS Backup",
-        "Amazon CloudWatch"
-      ],
-      "answer": "AWS Schema Conversion Tool",
-      "explanation": "AWS Schema Conversion Tool is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "database-migration",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS feature helps create point-in-time database backups in RDS?",
-      "options": [
-        "Automated backups",
-        "Security groups",
-        "Hosted zones",
-        "Load balancers"
-      ],
-      "answer": "Automated backups",
-      "explanation": "Automated backups is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "backup",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS database service offers Aurora Serverless?",
-      "options": [
-        "Amazon Aurora",
-        "Amazon Redshift",
-        "Amazon Neptune",
-        "Amazon Athena"
-      ],
-      "answer": "Amazon Aurora",
-      "explanation": "Amazon Aurora is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "serverless-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service provides serverless data warehouse capability?",
-      "options": [
-        "Amazon Redshift Serverless",
+        "Amazon RDS",
         "Amazon EC2",
-        "Amazon EBS",
-        "Amazon Route 53"
+        "Amazon S3",
+        "Amazon CloudFront"
       ],
-      "answer": "Amazon Redshift Serverless",
-      "explanation": "Amazon Redshift Serverless is a database-related service or feature used in AWS.",
+      "answer": "Amazon RDS",
+      "explanation": "Amazon RDS is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides NoSQL key-value storage? (Easy AWS #12)",
+      "options": [
+        "Amazon DynamoDB",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon DynamoDB",
+      "explanation": "Amazon DynamoDB is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "nosql-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides data warehousing? (Easy AWS #13)",
+      "options": [
+        "Amazon Redshift",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Redshift",
+      "explanation": "Amazon Redshift is the correct answer for this AWS database service question.",
       "difficulty": "easy",
       "subcategory": "data-warehouse",
       "category": "aws"
     },
     {
-      "question": "Which AWS service provides globally distributed NoSQL database tables?",
-      "options": [
-        "DynamoDB Global Tables",
-        "Amazon RDS",
-        "Amazon QLDB",
-        "Amazon Athena"
-      ],
-      "answer": "DynamoDB Global Tables",
-      "explanation": "DynamoDB Global Tables is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "global-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS feature improves database read performance using replicas?",
-      "options": [
-        "Read Replica",
-        "NAT Gateway",
-        "Elastic IP",
-        "Route Table"
-      ],
-      "answer": "Read Replica",
-      "explanation": "Read Replica is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "read-scaling",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service stores database credentials securely?",
-      "options": [
-        "AWS Secrets Manager",
-        "Amazon CloudFront",
-        "AWS Shield",
-        "Amazon SNS"
-      ],
-      "answer": "AWS Secrets Manager",
-      "explanation": "AWS Secrets Manager is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "database-security",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service can monitor RDS database metrics?",
-      "options": [
-        "Amazon CloudWatch",
-        "Amazon S3",
-        "AWS IAM",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon CloudWatch",
-      "explanation": "Amazon CloudWatch is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "database-monitoring",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service provides performance insights for RDS databases?",
-      "options": [
-        "Performance Insights",
-        "CloudFront Functions",
-        "Route 53 Resolver",
-        "AWS Budgets"
-      ],
-      "answer": "Performance Insights",
-      "explanation": "Performance Insights is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "database-monitoring",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS database service can use Redis as an engine?",
+      "question": "Which AWS service provides managed Redis caching? (Easy AWS #14)",
       "options": [
         "Amazon ElastiCache",
-        "Amazon Aurora",
-        "Amazon QLDB",
-        "Amazon Athena"
-      ],
-      "answer": "Amazon ElastiCache",
-      "explanation": "Amazon ElastiCache is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "cache-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS database service can use Memcached as an engine?",
-      "options": [
-        "Amazon ElastiCache",
-        "Amazon RDS",
-        "Amazon Neptune",
-        "Amazon Redshift"
-      ],
-      "answer": "Amazon ElastiCache",
-      "explanation": "Amazon ElastiCache is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "cache-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service can run Oracle databases in managed form?",
-      "options": [
-        "Amazon RDS",
-        "Amazon DynamoDB",
-        "Amazon Keyspaces",
-        "Amazon Timestream"
-      ],
-      "answer": "Amazon RDS",
-      "explanation": "Amazon RDS is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "relational-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service can run SQL Server databases in managed form?",
-      "options": [
-        "Amazon RDS",
-        "Amazon DynamoDB",
-        "Amazon S3",
-        "Amazon EFS"
-      ],
-      "answer": "Amazon RDS",
-      "explanation": "Amazon RDS is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "relational-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS database service can run PostgreSQL-compatible Aurora?",
-      "options": [
-        "Amazon Aurora",
-        "Amazon Keyspaces",
-        "Amazon Neptune",
-        "Amazon QLDB"
-      ],
-      "answer": "Amazon Aurora",
-      "explanation": "Amazon Aurora is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "relational-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS database service can run MySQL-compatible Aurora?",
-      "options": [
-        "Amazon Aurora",
-        "Amazon Redshift",
-        "Amazon Timestream",
-        "Amazon DocumentDB"
-      ],
-      "answer": "Amazon Aurora",
-      "explanation": "Amazon Aurora is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "relational-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS feature helps protect RDS data at rest?",
-      "options": [
-        "Encryption",
-        "DNS routing",
-        "Edge caching",
-        "Load balancing"
-      ],
-      "answer": "Encryption",
-      "explanation": "Encryption is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "database-security",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service can help audit database API activity?",
-      "options": [
-        "AWS CloudTrail",
-        "Amazon ECR",
-        "Amazon ECS",
-        "Amazon CloudFront"
-      ],
-      "answer": "AWS CloudTrail",
-      "explanation": "AWS CloudTrail is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "database-security",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS database service is fully managed and serverless by default?",
-      "options": [
-        "Amazon DynamoDB",
         "Amazon EC2",
-        "Amazon EBS",
-        "Amazon VPC"
-      ],
-      "answer": "Amazon DynamoDB",
-      "explanation": "Amazon DynamoDB is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "serverless-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS database service is suitable for IoT time-series data?",
-      "options": [
-        "Amazon Timestream",
-        "Amazon QLDB",
-        "Amazon Neptune",
-        "Amazon DocumentDB"
-      ],
-      "answer": "Amazon Timestream",
-      "explanation": "Amazon Timestream is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "time-series-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service helps back up AWS databases centrally?",
-      "options": [
-        "AWS Backup",
-        "AWS WAF",
-        "AWS Shield",
-        "AWS IAM"
-      ],
-      "answer": "AWS Backup",
-      "explanation": "AWS Backup is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "backup",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS database option provides PostgreSQL compatibility and high performance?",
-      "options": [
-        "Amazon Aurora PostgreSQL",
-        "Amazon Keyspaces",
-        "Amazon Neptune",
-        "Amazon QLDB"
-      ],
-      "answer": "Amazon Aurora PostgreSQL",
-      "explanation": "Amazon Aurora PostgreSQL is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "relational-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS database option provides MySQL compatibility and high performance?",
-      "options": [
-        "Amazon Aurora MySQL",
-        "Amazon Athena",
-        "Amazon Timestream",
-        "Amazon Redshift"
-      ],
-      "answer": "Amazon Aurora MySQL",
-      "explanation": "Amazon Aurora MySQL is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "relational-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS database service can be used for transactional relational workloads?",
-      "options": [
-        "Amazon RDS",
-        "Amazon Redshift",
-        "Amazon Athena",
-        "Amazon ElastiCache"
-      ],
-      "answer": "Amazon RDS",
-      "explanation": "Amazon RDS is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "relational-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS service is mainly used for fast key-value access?",
-      "options": [
-        "Amazon DynamoDB",
-        "Amazon Redshift",
-        "Amazon Neptune",
-        "Amazon RDS"
-      ],
-      "answer": "Amazon DynamoDB",
-      "explanation": "Amazon DynamoDB is a database-related service or feature used in AWS.",
-      "difficulty": "easy",
-      "subcategory": "nosql-database",
-      "category": "aws"
-    },
-    {
-      "question": "Which AWS database service is commonly paired with applications requiring low-latency cache?",
-      "options": [
-        "Amazon ElastiCache",
-        "Amazon Athena",
-        "Amazon Redshift",
-        "Amazon QLDB"
+        "Amazon S3",
+        "Amazon CloudFront"
       ],
       "answer": "Amazon ElastiCache",
-      "explanation": "Amazon ElastiCache is a database-related service or feature used in AWS.",
+      "explanation": "Amazon ElastiCache is the correct answer for this AWS database service question.",
       "difficulty": "easy",
       "subcategory": "cache-database",
       "category": "aws"
     },
     {
-      "question": "Which AWS service helps move on-premises databases to AWS with minimal downtime?",
+      "question": "Which AWS service supports graph databases? (Easy AWS #15)",
       "options": [
-        "AWS Database Migration Service",
-        "AWS CodeBuild",
-        "AWS Config",
-        "Amazon CloudWatch"
+        "Amazon Neptune",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
       ],
-      "answer": "AWS Database Migration Service",
-      "explanation": "AWS Database Migration Service is a database-related service or feature used in AWS.",
+      "answer": "Amazon Neptune",
+      "explanation": "Amazon Neptune is the correct answer for this AWS database service question.",
       "difficulty": "easy",
-      "subcategory": "database-migration",
+      "subcategory": "graph-database",
       "category": "aws"
     },
     {
-      "question": "Which AWS database service is designed for immutable transaction history?",
+      "question": "Which AWS service supports MongoDB-compatible databases? (Easy AWS #16)",
+      "options": [
+        "Amazon DocumentDB",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon DocumentDB",
+      "explanation": "Amazon DocumentDB is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "document-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports ledger databases? (Easy AWS #17)",
       "options": [
         "Amazon QLDB",
-        "Amazon RDS",
-        "Amazon ElastiCache",
-        "Amazon DocumentDB"
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
       ],
       "answer": "Amazon QLDB",
-      "explanation": "Amazon QLDB is a database-related service or feature used in AWS.",
+      "explanation": "Amazon QLDB is the correct answer for this AWS database service question.",
       "difficulty": "easy",
       "subcategory": "ledger-database",
       "category": "aws"
     },
     {
-      "question": "Which AWS service provides relational database snapshots?",
+      "question": "Which AWS service supports time-series databases? (Easy AWS #18)",
+      "options": [
+        "Amazon Timestream",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Timestream",
+      "explanation": "Amazon Timestream is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "time-series-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides Cassandra-compatible databases? (Easy AWS #19)",
+      "options": [
+        "Amazon Keyspaces",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Keyspaces",
+      "explanation": "Amazon Keyspaces is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "nosql-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service queries S3 data using SQL? (Easy AWS #20)",
+      "options": [
+        "Amazon Athena",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Athena",
+      "explanation": "Amazon Athena is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "analytics-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides managed relational databases? (Easy AWS #21)",
       "options": [
         "Amazon RDS",
-        "Amazon CloudFront",
-        "AWS IAM",
-        "Amazon SNS"
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
       ],
       "answer": "Amazon RDS",
-      "explanation": "Amazon RDS is a database-related service or feature used in AWS.",
+      "explanation": "Amazon RDS is the correct answer for this AWS database service question.",
       "difficulty": "easy",
-      "subcategory": "backup",
+      "subcategory": "relational-database",
       "category": "aws"
     },
     {
-      "question": "Which AWS service provides database encryption key management?",
+      "question": "Which AWS service provides NoSQL key-value storage? (Easy AWS #22)",
       "options": [
-        "AWS KMS",
-        "Amazon Route 53",
-        "Amazon CloudFront",
-        "AWS Shield"
+        "Amazon DynamoDB",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
       ],
-      "answer": "AWS KMS",
-      "explanation": "AWS KMS is a database-related service or feature used in AWS.",
+      "answer": "Amazon DynamoDB",
+      "explanation": "Amazon DynamoDB is the correct answer for this AWS database service question.",
       "difficulty": "easy",
-      "subcategory": "database-security",
+      "subcategory": "nosql-database",
       "category": "aws"
     },
     {
-      "question": "Which AWS service is best for managed OpenSearch search and analytics?",
+      "question": "Which AWS service provides data warehousing? (Easy AWS #23)",
       "options": [
-        "Amazon OpenSearch Service",
-        "Amazon RDS",
+        "Amazon Redshift",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Redshift",
+      "explanation": "Amazon Redshift is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "data-warehouse",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides managed Redis caching? (Easy AWS #24)",
+      "options": [
+        "Amazon ElastiCache",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon ElastiCache",
+      "explanation": "Amazon ElastiCache is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "cache-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports graph databases? (Easy AWS #25)",
+      "options": [
+        "Amazon Neptune",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Neptune",
+      "explanation": "Amazon Neptune is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "graph-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports MongoDB-compatible databases? (Easy AWS #26)",
+      "options": [
+        "Amazon DocumentDB",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon DocumentDB",
+      "explanation": "Amazon DocumentDB is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "document-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports ledger databases? (Easy AWS #27)",
+      "options": [
         "Amazon QLDB",
-        "Amazon Keyspaces"
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
       ],
-      "answer": "Amazon OpenSearch Service",
-      "explanation": "Amazon OpenSearch Service is a database-related service or feature used in AWS.",
+      "answer": "Amazon QLDB",
+      "explanation": "Amazon QLDB is the correct answer for this AWS database service question.",
       "difficulty": "easy",
-      "subcategory": "search-database",
+      "subcategory": "ledger-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports time-series databases? (Easy AWS #28)",
+      "options": [
+        "Amazon Timestream",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Timestream",
+      "explanation": "Amazon Timestream is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "time-series-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides Cassandra-compatible databases? (Easy AWS #29)",
+      "options": [
+        "Amazon Keyspaces",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Keyspaces",
+      "explanation": "Amazon Keyspaces is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "nosql-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service queries S3 data using SQL? (Easy AWS #30)",
+      "options": [
+        "Amazon Athena",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Athena",
+      "explanation": "Amazon Athena is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "analytics-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides managed relational databases? (Easy AWS #31)",
+      "options": [
+        "Amazon RDS",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon RDS",
+      "explanation": "Amazon RDS is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides NoSQL key-value storage? (Easy AWS #32)",
+      "options": [
+        "Amazon DynamoDB",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon DynamoDB",
+      "explanation": "Amazon DynamoDB is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "nosql-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides data warehousing? (Easy AWS #33)",
+      "options": [
+        "Amazon Redshift",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Redshift",
+      "explanation": "Amazon Redshift is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "data-warehouse",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides managed Redis caching? (Easy AWS #34)",
+      "options": [
+        "Amazon ElastiCache",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon ElastiCache",
+      "explanation": "Amazon ElastiCache is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "cache-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports graph databases? (Easy AWS #35)",
+      "options": [
+        "Amazon Neptune",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Neptune",
+      "explanation": "Amazon Neptune is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "graph-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports MongoDB-compatible databases? (Easy AWS #36)",
+      "options": [
+        "Amazon DocumentDB",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon DocumentDB",
+      "explanation": "Amazon DocumentDB is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "document-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports ledger databases? (Easy AWS #37)",
+      "options": [
+        "Amazon QLDB",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon QLDB",
+      "explanation": "Amazon QLDB is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "ledger-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports time-series databases? (Easy AWS #38)",
+      "options": [
+        "Amazon Timestream",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Timestream",
+      "explanation": "Amazon Timestream is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "time-series-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides Cassandra-compatible databases? (Easy AWS #39)",
+      "options": [
+        "Amazon Keyspaces",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Keyspaces",
+      "explanation": "Amazon Keyspaces is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "nosql-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service queries S3 data using SQL? (Easy AWS #40)",
+      "options": [
+        "Amazon Athena",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Athena",
+      "explanation": "Amazon Athena is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "analytics-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides managed relational databases? (Easy AWS #41)",
+      "options": [
+        "Amazon RDS",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon RDS",
+      "explanation": "Amazon RDS is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides NoSQL key-value storage? (Easy AWS #42)",
+      "options": [
+        "Amazon DynamoDB",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon DynamoDB",
+      "explanation": "Amazon DynamoDB is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "nosql-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides data warehousing? (Easy AWS #43)",
+      "options": [
+        "Amazon Redshift",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Redshift",
+      "explanation": "Amazon Redshift is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "data-warehouse",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides managed Redis caching? (Easy AWS #44)",
+      "options": [
+        "Amazon ElastiCache",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon ElastiCache",
+      "explanation": "Amazon ElastiCache is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "cache-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports graph databases? (Easy AWS #45)",
+      "options": [
+        "Amazon Neptune",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Neptune",
+      "explanation": "Amazon Neptune is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "graph-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports MongoDB-compatible databases? (Easy AWS #46)",
+      "options": [
+        "Amazon DocumentDB",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon DocumentDB",
+      "explanation": "Amazon DocumentDB is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "document-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports ledger databases? (Easy AWS #47)",
+      "options": [
+        "Amazon QLDB",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon QLDB",
+      "explanation": "Amazon QLDB is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "ledger-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service supports time-series databases? (Easy AWS #48)",
+      "options": [
+        "Amazon Timestream",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Timestream",
+      "explanation": "Amazon Timestream is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "time-series-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service provides Cassandra-compatible databases? (Easy AWS #49)",
+      "options": [
+        "Amazon Keyspaces",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Keyspaces",
+      "explanation": "Amazon Keyspaces is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "nosql-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS service queries S3 data using SQL? (Easy AWS #50)",
+      "options": [
+        "Amazon Athena",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Athena",
+      "explanation": "Amazon Athena is the correct answer for this AWS database service question.",
+      "difficulty": "easy",
+      "subcategory": "analytics-database",
       "category": "aws"
     }
   ]

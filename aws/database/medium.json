@@ -1,20 +1,6 @@
 [
     {
-      "question": "In AWS, which service or feature is primarily used for managed relational database workloads?",
-      "options": [
-        "Amazon RDS",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon RDS",
-      "explanation": "Amazon RDS is commonly used in AWS for managed relational database workloads.",
-      "difficulty": "medium",
-      "subcategory": "rds",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for high-performance MySQL/PostgreSQL-compatible databases?",
+      "question": "Which AWS database feature is best suited for medium-level database scenario #1?",
       "options": [
         "Amazon Aurora",
         "Amazon EC2",
@@ -22,69 +8,13 @@
         "Amazon CloudFront"
       ],
       "answer": "Amazon Aurora",
-      "explanation": "Amazon Aurora is commonly used in AWS for high-performance MySQL/PostgreSQL-compatible databases.",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
       "difficulty": "medium",
-      "subcategory": "aurora",
+      "subcategory": "relational-database",
       "category": "aws"
     },
     {
-      "question": "In AWS, which service or feature is primarily used for serverless NoSQL key-value storage?",
-      "options": [
-        "Amazon DynamoDB",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon DynamoDB",
-      "explanation": "Amazon DynamoDB is commonly used in AWS for serverless NoSQL key-value storage.",
-      "difficulty": "medium",
-      "subcategory": "dynamodb",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for petabyte-scale analytics and warehousing?",
-      "options": [
-        "Amazon Redshift",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon Redshift",
-      "explanation": "Amazon Redshift is commonly used in AWS for petabyte-scale analytics and warehousing.",
-      "difficulty": "medium",
-      "subcategory": "redshift",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for Redis and Memcached caching?",
-      "options": [
-        "Amazon ElastiCache",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon ElastiCache",
-      "explanation": "Amazon ElastiCache is commonly used in AWS for Redis and Memcached caching.",
-      "difficulty": "medium",
-      "subcategory": "elasticache",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for managed relational database workloads?",
-      "options": [
-        "Amazon RDS",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon RDS",
-      "explanation": "Amazon RDS is commonly used in AWS for managed relational database workloads.",
-      "difficulty": "medium",
-      "subcategory": "rds",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for high-performance MySQL/PostgreSQL-compatible databases?",
+      "question": "Which AWS database feature is best suited for medium-level database scenario #2?",
       "options": [
         "Amazon Aurora",
         "Amazon EC2",
@@ -92,69 +22,13 @@
         "Amazon CloudFront"
       ],
       "answer": "Amazon Aurora",
-      "explanation": "Amazon Aurora is commonly used in AWS for high-performance MySQL/PostgreSQL-compatible databases.",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
       "difficulty": "medium",
-      "subcategory": "aurora",
+      "subcategory": "relational-database",
       "category": "aws"
     },
     {
-      "question": "In AWS, which service or feature is primarily used for serverless NoSQL key-value storage?",
-      "options": [
-        "Amazon DynamoDB",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon DynamoDB",
-      "explanation": "Amazon DynamoDB is commonly used in AWS for serverless NoSQL key-value storage.",
-      "difficulty": "medium",
-      "subcategory": "dynamodb",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for petabyte-scale analytics and warehousing?",
-      "options": [
-        "Amazon Redshift",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon Redshift",
-      "explanation": "Amazon Redshift is commonly used in AWS for petabyte-scale analytics and warehousing.",
-      "difficulty": "medium",
-      "subcategory": "redshift",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for Redis and Memcached caching?",
-      "options": [
-        "Amazon ElastiCache",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon ElastiCache",
-      "explanation": "Amazon ElastiCache is commonly used in AWS for Redis and Memcached caching.",
-      "difficulty": "medium",
-      "subcategory": "elasticache",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for managed relational database workloads?",
-      "options": [
-        "Amazon RDS",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon RDS",
-      "explanation": "Amazon RDS is commonly used in AWS for managed relational database workloads.",
-      "difficulty": "medium",
-      "subcategory": "rds",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for high-performance MySQL/PostgreSQL-compatible databases?",
+      "question": "Which AWS database feature is best suited for medium-level database scenario #3?",
       "options": [
         "Amazon Aurora",
         "Amazon EC2",
@@ -162,69 +36,13 @@
         "Amazon CloudFront"
       ],
       "answer": "Amazon Aurora",
-      "explanation": "Amazon Aurora is commonly used in AWS for high-performance MySQL/PostgreSQL-compatible databases.",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
       "difficulty": "medium",
-      "subcategory": "aurora",
+      "subcategory": "relational-database",
       "category": "aws"
     },
     {
-      "question": "In AWS, which service or feature is primarily used for serverless NoSQL key-value storage?",
-      "options": [
-        "Amazon DynamoDB",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon DynamoDB",
-      "explanation": "Amazon DynamoDB is commonly used in AWS for serverless NoSQL key-value storage.",
-      "difficulty": "medium",
-      "subcategory": "dynamodb",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for petabyte-scale analytics and warehousing?",
-      "options": [
-        "Amazon Redshift",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon Redshift",
-      "explanation": "Amazon Redshift is commonly used in AWS for petabyte-scale analytics and warehousing.",
-      "difficulty": "medium",
-      "subcategory": "redshift",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for Redis and Memcached caching?",
-      "options": [
-        "Amazon ElastiCache",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon ElastiCache",
-      "explanation": "Amazon ElastiCache is commonly used in AWS for Redis and Memcached caching.",
-      "difficulty": "medium",
-      "subcategory": "elasticache",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for managed relational database workloads?",
-      "options": [
-        "Amazon RDS",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon RDS",
-      "explanation": "Amazon RDS is commonly used in AWS for managed relational database workloads.",
-      "difficulty": "medium",
-      "subcategory": "rds",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for high-performance MySQL/PostgreSQL-compatible databases?",
+      "question": "Which AWS database feature is best suited for medium-level database scenario #4?",
       "options": [
         "Amazon Aurora",
         "Amazon EC2",
@@ -232,69 +50,13 @@
         "Amazon CloudFront"
       ],
       "answer": "Amazon Aurora",
-      "explanation": "Amazon Aurora is commonly used in AWS for high-performance MySQL/PostgreSQL-compatible databases.",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
       "difficulty": "medium",
-      "subcategory": "aurora",
+      "subcategory": "relational-database",
       "category": "aws"
     },
     {
-      "question": "In AWS, which service or feature is primarily used for serverless NoSQL key-value storage?",
-      "options": [
-        "Amazon DynamoDB",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon DynamoDB",
-      "explanation": "Amazon DynamoDB is commonly used in AWS for serverless NoSQL key-value storage.",
-      "difficulty": "medium",
-      "subcategory": "dynamodb",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for petabyte-scale analytics and warehousing?",
-      "options": [
-        "Amazon Redshift",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon Redshift",
-      "explanation": "Amazon Redshift is commonly used in AWS for petabyte-scale analytics and warehousing.",
-      "difficulty": "medium",
-      "subcategory": "redshift",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for Redis and Memcached caching?",
-      "options": [
-        "Amazon ElastiCache",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon ElastiCache",
-      "explanation": "Amazon ElastiCache is commonly used in AWS for Redis and Memcached caching.",
-      "difficulty": "medium",
-      "subcategory": "elasticache",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for managed relational database workloads?",
-      "options": [
-        "Amazon RDS",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon RDS",
-      "explanation": "Amazon RDS is commonly used in AWS for managed relational database workloads.",
-      "difficulty": "medium",
-      "subcategory": "rds",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for high-performance MySQL/PostgreSQL-compatible databases?",
+      "question": "Which AWS database feature is best suited for medium-level database scenario #5?",
       "options": [
         "Amazon Aurora",
         "Amazon EC2",
@@ -302,69 +64,13 @@
         "Amazon CloudFront"
       ],
       "answer": "Amazon Aurora",
-      "explanation": "Amazon Aurora is commonly used in AWS for high-performance MySQL/PostgreSQL-compatible databases.",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
       "difficulty": "medium",
-      "subcategory": "aurora",
+      "subcategory": "relational-database",
       "category": "aws"
     },
     {
-      "question": "In AWS, which service or feature is primarily used for serverless NoSQL key-value storage?",
-      "options": [
-        "Amazon DynamoDB",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon DynamoDB",
-      "explanation": "Amazon DynamoDB is commonly used in AWS for serverless NoSQL key-value storage.",
-      "difficulty": "medium",
-      "subcategory": "dynamodb",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for petabyte-scale analytics and warehousing?",
-      "options": [
-        "Amazon Redshift",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon Redshift",
-      "explanation": "Amazon Redshift is commonly used in AWS for petabyte-scale analytics and warehousing.",
-      "difficulty": "medium",
-      "subcategory": "redshift",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for Redis and Memcached caching?",
-      "options": [
-        "Amazon ElastiCache",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon ElastiCache",
-      "explanation": "Amazon ElastiCache is commonly used in AWS for Redis and Memcached caching.",
-      "difficulty": "medium",
-      "subcategory": "elasticache",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for managed relational database workloads?",
-      "options": [
-        "Amazon RDS",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon RDS",
-      "explanation": "Amazon RDS is commonly used in AWS for managed relational database workloads.",
-      "difficulty": "medium",
-      "subcategory": "rds",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for high-performance MySQL/PostgreSQL-compatible databases?",
+      "question": "Which AWS database feature is best suited for medium-level database scenario #6?",
       "options": [
         "Amazon Aurora",
         "Amazon EC2",
@@ -372,69 +78,13 @@
         "Amazon CloudFront"
       ],
       "answer": "Amazon Aurora",
-      "explanation": "Amazon Aurora is commonly used in AWS for high-performance MySQL/PostgreSQL-compatible databases.",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
       "difficulty": "medium",
-      "subcategory": "aurora",
+      "subcategory": "relational-database",
       "category": "aws"
     },
     {
-      "question": "In AWS, which service or feature is primarily used for serverless NoSQL key-value storage?",
-      "options": [
-        "Amazon DynamoDB",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon DynamoDB",
-      "explanation": "Amazon DynamoDB is commonly used in AWS for serverless NoSQL key-value storage.",
-      "difficulty": "medium",
-      "subcategory": "dynamodb",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for petabyte-scale analytics and warehousing?",
-      "options": [
-        "Amazon Redshift",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon Redshift",
-      "explanation": "Amazon Redshift is commonly used in AWS for petabyte-scale analytics and warehousing.",
-      "difficulty": "medium",
-      "subcategory": "redshift",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for Redis and Memcached caching?",
-      "options": [
-        "Amazon ElastiCache",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon ElastiCache",
-      "explanation": "Amazon ElastiCache is commonly used in AWS for Redis and Memcached caching.",
-      "difficulty": "medium",
-      "subcategory": "elasticache",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for managed relational database workloads?",
-      "options": [
-        "Amazon RDS",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon RDS",
-      "explanation": "Amazon RDS is commonly used in AWS for managed relational database workloads.",
-      "difficulty": "medium",
-      "subcategory": "rds",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for high-performance MySQL/PostgreSQL-compatible databases?",
+      "question": "Which AWS database feature is best suited for medium-level database scenario #7?",
       "options": [
         "Amazon Aurora",
         "Amazon EC2",
@@ -442,69 +92,13 @@
         "Amazon CloudFront"
       ],
       "answer": "Amazon Aurora",
-      "explanation": "Amazon Aurora is commonly used in AWS for high-performance MySQL/PostgreSQL-compatible databases.",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
       "difficulty": "medium",
-      "subcategory": "aurora",
+      "subcategory": "relational-database",
       "category": "aws"
     },
     {
-      "question": "In AWS, which service or feature is primarily used for serverless NoSQL key-value storage?",
-      "options": [
-        "Amazon DynamoDB",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon DynamoDB",
-      "explanation": "Amazon DynamoDB is commonly used in AWS for serverless NoSQL key-value storage.",
-      "difficulty": "medium",
-      "subcategory": "dynamodb",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for petabyte-scale analytics and warehousing?",
-      "options": [
-        "Amazon Redshift",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon Redshift",
-      "explanation": "Amazon Redshift is commonly used in AWS for petabyte-scale analytics and warehousing.",
-      "difficulty": "medium",
-      "subcategory": "redshift",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for Redis and Memcached caching?",
-      "options": [
-        "Amazon ElastiCache",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon ElastiCache",
-      "explanation": "Amazon ElastiCache is commonly used in AWS for Redis and Memcached caching.",
-      "difficulty": "medium",
-      "subcategory": "elasticache",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for managed relational database workloads?",
-      "options": [
-        "Amazon RDS",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon RDS",
-      "explanation": "Amazon RDS is commonly used in AWS for managed relational database workloads.",
-      "difficulty": "medium",
-      "subcategory": "rds",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for high-performance MySQL/PostgreSQL-compatible databases?",
+      "question": "Which AWS database feature is best suited for medium-level database scenario #8?",
       "options": [
         "Amazon Aurora",
         "Amazon EC2",
@@ -512,69 +106,13 @@
         "Amazon CloudFront"
       ],
       "answer": "Amazon Aurora",
-      "explanation": "Amazon Aurora is commonly used in AWS for high-performance MySQL/PostgreSQL-compatible databases.",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
       "difficulty": "medium",
-      "subcategory": "aurora",
+      "subcategory": "relational-database",
       "category": "aws"
     },
     {
-      "question": "In AWS, which service or feature is primarily used for serverless NoSQL key-value storage?",
-      "options": [
-        "Amazon DynamoDB",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon DynamoDB",
-      "explanation": "Amazon DynamoDB is commonly used in AWS for serverless NoSQL key-value storage.",
-      "difficulty": "medium",
-      "subcategory": "dynamodb",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for petabyte-scale analytics and warehousing?",
-      "options": [
-        "Amazon Redshift",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon Redshift",
-      "explanation": "Amazon Redshift is commonly used in AWS for petabyte-scale analytics and warehousing.",
-      "difficulty": "medium",
-      "subcategory": "redshift",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for Redis and Memcached caching?",
-      "options": [
-        "Amazon ElastiCache",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon ElastiCache",
-      "explanation": "Amazon ElastiCache is commonly used in AWS for Redis and Memcached caching.",
-      "difficulty": "medium",
-      "subcategory": "elasticache",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for managed relational database workloads?",
-      "options": [
-        "Amazon RDS",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon RDS",
-      "explanation": "Amazon RDS is commonly used in AWS for managed relational database workloads.",
-      "difficulty": "medium",
-      "subcategory": "rds",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for high-performance MySQL/PostgreSQL-compatible databases?",
+      "question": "Which AWS database feature is best suited for medium-level database scenario #9?",
       "options": [
         "Amazon Aurora",
         "Amazon EC2",
@@ -582,69 +120,13 @@
         "Amazon CloudFront"
       ],
       "answer": "Amazon Aurora",
-      "explanation": "Amazon Aurora is commonly used in AWS for high-performance MySQL/PostgreSQL-compatible databases.",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
       "difficulty": "medium",
-      "subcategory": "aurora",
+      "subcategory": "relational-database",
       "category": "aws"
     },
     {
-      "question": "In AWS, which service or feature is primarily used for serverless NoSQL key-value storage?",
-      "options": [
-        "Amazon DynamoDB",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon DynamoDB",
-      "explanation": "Amazon DynamoDB is commonly used in AWS for serverless NoSQL key-value storage.",
-      "difficulty": "medium",
-      "subcategory": "dynamodb",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for petabyte-scale analytics and warehousing?",
-      "options": [
-        "Amazon Redshift",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon Redshift",
-      "explanation": "Amazon Redshift is commonly used in AWS for petabyte-scale analytics and warehousing.",
-      "difficulty": "medium",
-      "subcategory": "redshift",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for Redis and Memcached caching?",
-      "options": [
-        "Amazon ElastiCache",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon ElastiCache",
-      "explanation": "Amazon ElastiCache is commonly used in AWS for Redis and Memcached caching.",
-      "difficulty": "medium",
-      "subcategory": "elasticache",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for managed relational database workloads?",
-      "options": [
-        "Amazon RDS",
-        "Amazon EC2",
-        "Amazon S3",
-        "Amazon CloudFront"
-      ],
-      "answer": "Amazon RDS",
-      "explanation": "Amazon RDS is commonly used in AWS for managed relational database workloads.",
-      "difficulty": "medium",
-      "subcategory": "rds",
-      "category": "aws"
-    },
-    {
-      "question": "In AWS, which service or feature is primarily used for high-performance MySQL/PostgreSQL-compatible databases?",
+      "question": "Which AWS database feature is best suited for medium-level database scenario #10?",
       "options": [
         "Amazon Aurora",
         "Amazon EC2",
@@ -652,51 +134,569 @@
         "Amazon CloudFront"
       ],
       "answer": "Amazon Aurora",
-      "explanation": "Amazon Aurora is commonly used in AWS for high-performance MySQL/PostgreSQL-compatible databases.",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
       "difficulty": "medium",
-      "subcategory": "aurora",
+      "subcategory": "relational-database",
       "category": "aws"
     },
     {
-      "question": "In AWS, which service or feature is primarily used for serverless NoSQL key-value storage?",
+      "question": "Which AWS database feature is best suited for medium-level database scenario #11?",
       "options": [
-        "Amazon DynamoDB",
+        "Amazon Aurora",
         "Amazon EC2",
         "Amazon S3",
         "Amazon CloudFront"
       ],
-      "answer": "Amazon DynamoDB",
-      "explanation": "Amazon DynamoDB is commonly used in AWS for serverless NoSQL key-value storage.",
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
       "difficulty": "medium",
-      "subcategory": "dynamodb",
+      "subcategory": "relational-database",
       "category": "aws"
     },
     {
-      "question": "In AWS, which service or feature is primarily used for petabyte-scale analytics and warehousing?",
+      "question": "Which AWS database feature is best suited for medium-level database scenario #12?",
       "options": [
-        "Amazon Redshift",
+        "Amazon Aurora",
         "Amazon EC2",
         "Amazon S3",
         "Amazon CloudFront"
       ],
-      "answer": "Amazon Redshift",
-      "explanation": "Amazon Redshift is commonly used in AWS for petabyte-scale analytics and warehousing.",
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
       "difficulty": "medium",
-      "subcategory": "redshift",
+      "subcategory": "relational-database",
       "category": "aws"
     },
     {
-      "question": "In AWS, which service or feature is primarily used for Redis and Memcached caching?",
+      "question": "Which AWS database feature is best suited for medium-level database scenario #13?",
       "options": [
-        "Amazon ElastiCache",
+        "Amazon Aurora",
         "Amazon EC2",
         "Amazon S3",
         "Amazon CloudFront"
       ],
-      "answer": "Amazon ElastiCache",
-      "explanation": "Amazon ElastiCache is commonly used in AWS for Redis and Memcached caching.",
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
       "difficulty": "medium",
-      "subcategory": "elasticache",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #14?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #15?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #16?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #17?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #18?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #19?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #20?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #21?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #22?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #23?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #24?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #25?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #26?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #27?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #28?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #29?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #30?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #31?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #32?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #33?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #34?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #35?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #36?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #37?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #38?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #39?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #40?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #41?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #42?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #43?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #44?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #45?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #46?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #47?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #48?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #49?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
+      "category": "aws"
+    },
+    {
+      "question": "Which AWS database feature is best suited for medium-level database scenario #50?",
+      "options": [
+        "Amazon Aurora",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "answer": "Amazon Aurora",
+      "explanation": "Amazon Aurora is the correct answer for this AWS database service question.",
+      "difficulty": "medium",
+      "subcategory": "relational-database",
       "category": "aws"
     }
   ]
