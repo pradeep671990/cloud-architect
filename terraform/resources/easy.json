@@ -1,1 +1,142 @@
-[]
+[
+    {
+      "question": "What does a Terraform resource block define?",
+      "options": [
+        "Infrastructure object to manage",
+        "Only variable values",
+        "Only output values",
+        "Only backend storage"
+      ],
+      "answer": "Infrastructure object to manage",
+      "explanation": "A resource block defines infrastructure that Terraform creates or manages.",
+      "difficulty": "mixed",
+      "subcategory": "resources",
+      "category": "terraform"
+    },
+    {
+      "question": "Which keyword is used to declare infrastructure in Terraform?",
+      "options": [
+        "resource",
+        "variable",
+        "output",
+        "provider"
+      ],
+      "answer": "resource",
+      "explanation": "The resource keyword defines infrastructure resources.",
+      "difficulty": "mixed",
+      "subcategory": "resources",
+      "category": "terraform"
+    },
+    {
+      "question": "What are the two labels in a resource block?",
+      "options": [
+        "Resource type and local name",
+        "Variable and output",
+        "Backend and provider",
+        "Region and account"
+      ],
+      "answer": "Resource type and local name",
+      "explanation": "A resource block uses resource type and local name labels.",
+      "difficulty": "mixed",
+      "subcategory": "resources",
+      "category": "terraform"
+    },
+    {
+      "question": "Scenario: You need to create an AWS EC2 instance. What do you define?",
+      "options": [
+        "Resource block",
+        "Output only",
+        "Backend only",
+        "Provider alias only"
+      ],
+      "answer": "Resource block",
+      "explanation": "Resources are used to create infrastructure objects such as EC2 instances.",
+      "difficulty": "mixed",
+      "subcategory": "resources",
+      "category": "terraform"
+    },
+    {
+      "question": "What does Terraform compare resources against during plan?",
+      "options": [
+        "State and configuration",
+        "Only README",
+        "Only variables",
+        "Only outputs"
+      ],
+      "answer": "State and configuration",
+      "explanation": "Terraform compares desired configuration with state and real infrastructure.",
+      "difficulty": "mixed",
+      "subcategory": "resources",
+      "category": "terraform"
+    },
+    {
+      "question": "Which meta-argument creates multiple similar resources by number?",
+      "options": [
+        "count",
+        "depends_on",
+        "provider",
+        "lifecycle"
+      ],
+      "answer": "count",
+      "explanation": "count creates multiple resource instances using a numeric index.",
+      "difficulty": "mixed",
+      "subcategory": "resources",
+      "category": "terraform"
+    },
+    {
+      "question": "Which meta-argument creates multiple resources from a map or set?",
+      "options": [
+        "for_each",
+        "count",
+        "provider",
+        "backend"
+      ],
+      "answer": "for_each",
+      "explanation": "for_each creates resource instances from each item in a map or set.",
+      "difficulty": "mixed",
+      "subcategory": "resources",
+      "category": "terraform"
+    },
+    {
+      "question": "Which meta-argument controls resource dependency manually?",
+      "options": [
+        "depends_on",
+        "count",
+        "for_each",
+        "sensitive"
+      ],
+      "answer": "depends_on",
+      "explanation": "depends_on explicitly defines dependency ordering.",
+      "difficulty": "mixed",
+      "subcategory": "resources",
+      "category": "terraform"
+    },
+    {
+      "question": "Which block can prevent accidental resource deletion?",
+      "options": [
+        "lifecycle",
+        "provider",
+        "output",
+        "locals"
+      ],
+      "answer": "lifecycle",
+      "explanation": "The lifecycle block can include prevent_destroy to protect resources.",
+      "difficulty": "mixed",
+      "subcategory": "resources",
+      "category": "terraform"
+    },
+    {
+      "question": "Scenario: A resource must be recreated before the old one is destroyed. Which lifecycle option helps?",
+      "options": [
+        "create_before_destroy",
+        "ignore_changes",
+        "prevent_destroy",
+        "replace_triggered_by"
+      ],
+      "answer": "create_before_destroy",
+      "explanation": "create_before_destroy creates a replacement before destroying the old resource.",
+      "difficulty": "mixed",
+      "subcategory": "resources",
+      "category": "terraform"
+    }
+  ]

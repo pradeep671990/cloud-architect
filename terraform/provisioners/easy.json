@@ -1,1 +1,142 @@
-[]
+[
+    {
+      "question": "What are Terraform provisioners used for?",
+      "options": [
+        "Run scripts or commands during resource creation",
+        "Store state",
+        "Define providers only",
+        "Create variables"
+      ],
+      "answer": "Run scripts or commands during resource creation",
+      "explanation": "Provisioners run scripts or commands on local or remote systems.",
+      "difficulty": "mixed",
+      "subcategory": "provisioners",
+      "category": "terraform"
+    },
+    {
+      "question": "Which provisioner runs commands on the machine running Terraform?",
+      "options": [
+        "local-exec",
+        "remote-exec",
+        "file",
+        "backend-exec"
+      ],
+      "answer": "local-exec",
+      "explanation": "local-exec runs commands locally where Terraform is executed.",
+      "difficulty": "mixed",
+      "subcategory": "provisioners",
+      "category": "terraform"
+    },
+    {
+      "question": "Which provisioner runs commands on a remote resource?",
+      "options": [
+        "remote-exec",
+        "local-exec",
+        "output",
+        "provider"
+      ],
+      "answer": "remote-exec",
+      "explanation": "remote-exec runs commands on a remote resource after connection.",
+      "difficulty": "mixed",
+      "subcategory": "provisioners",
+      "category": "terraform"
+    },
+    {
+      "question": "Which provisioner copies files to a remote resource?",
+      "options": [
+        "file",
+        "local-exec",
+        "remote-exec",
+        "template"
+      ],
+      "answer": "file",
+      "explanation": "The file provisioner copies files or directories to remote machines.",
+      "difficulty": "mixed",
+      "subcategory": "provisioners",
+      "category": "terraform"
+    },
+    {
+      "question": "Why are provisioners considered a last resort?",
+      "options": [
+        "They can make deployments less predictable",
+        "They replace all resources",
+        "They remove variables",
+        "They disable outputs"
+      ],
+      "answer": "They can make deployments less predictable",
+      "explanation": "Provisioners can introduce procedural steps that are harder to track idempotently.",
+      "difficulty": "mixed",
+      "subcategory": "provisioners",
+      "category": "terraform"
+    },
+    {
+      "question": "Scenario: You need to run a one-time bootstrap script on a VM. Which provisioner can help?",
+      "options": [
+        "remote-exec",
+        "output",
+        "backend",
+        "provider"
+      ],
+      "answer": "remote-exec",
+      "explanation": "remote-exec can run commands on a newly created remote machine.",
+      "difficulty": "mixed",
+      "subcategory": "provisioners",
+      "category": "terraform"
+    },
+    {
+      "question": "Which block is needed for remote-exec to connect to a server?",
+      "options": [
+        "connection",
+        "backend",
+        "locals",
+        "terraform"
+      ],
+      "answer": "connection",
+      "explanation": "A connection block provides SSH or WinRM details for remote provisioners.",
+      "difficulty": "mixed",
+      "subcategory": "provisioners",
+      "category": "terraform"
+    },
+    {
+      "question": "What is a better alternative to provisioners for cloud-init capable VMs?",
+      "options": [
+        "user_data or custom_data",
+        "terraform output",
+        "state rm",
+        "provider alias"
+      ],
+      "answer": "user_data or custom_data",
+      "explanation": "Cloud-init style configuration is often more reliable than provisioners.",
+      "difficulty": "mixed",
+      "subcategory": "provisioners",
+      "category": "terraform"
+    },
+    {
+      "question": "What happens if a creation-time provisioner fails?",
+      "options": [
+        "Resource may be marked tainted",
+        "Provider is deleted",
+        "Backend is removed",
+        "Variables are ignored"
+      ],
+      "answer": "Resource may be marked tainted",
+      "explanation": "Terraform can mark the resource tainted so it is recreated later.",
+      "difficulty": "mixed",
+      "subcategory": "provisioners",
+      "category": "terraform"
+    },
+    {
+      "question": "Which provisioner should be avoided for routine configuration management?",
+      "options": [
+        "remote-exec",
+        "output",
+        "variable",
+        "provider"
+      ],
+      "answer": "remote-exec",
+      "explanation": "Configuration management tools or image baking are often better for routine configuration.",
+      "difficulty": "mixed",
+      "subcategory": "provisioners",
+      "category": "terraform"
+    }
+  ]

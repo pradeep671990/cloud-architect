@@ -1,1 +1,142 @@
-[]
+[
+    {
+      "question": "What are Terraform workspaces used for?",
+      "options": [
+        "Manage multiple state instances",
+        "Install providers",
+        "Write outputs",
+        "Run provisioners"
+      ],
+      "answer": "Manage multiple state instances",
+      "explanation": "Workspaces allow multiple state instances for the same configuration.",
+      "difficulty": "mixed",
+      "subcategory": "workspaces",
+      "category": "terraform"
+    },
+    {
+      "question": "Which command lists Terraform workspaces?",
+      "options": [
+        "terraform workspace list",
+        "terraform state list",
+        "terraform output",
+        "terraform fmt"
+      ],
+      "answer": "terraform workspace list",
+      "explanation": "terraform workspace list displays available workspaces.",
+      "difficulty": "mixed",
+      "subcategory": "workspaces",
+      "category": "terraform"
+    },
+    {
+      "question": "Which command creates a new workspace?",
+      "options": [
+        "terraform workspace new",
+        "terraform init new",
+        "terraform state new",
+        "terraform apply new"
+      ],
+      "answer": "terraform workspace new",
+      "explanation": "terraform workspace new creates a new workspace.",
+      "difficulty": "mixed",
+      "subcategory": "workspaces",
+      "category": "terraform"
+    },
+    {
+      "question": "Which command switches workspace?",
+      "options": [
+        "terraform workspace select",
+        "terraform select state",
+        "terraform init select",
+        "terraform plan select"
+      ],
+      "answer": "terraform workspace select",
+      "explanation": "terraform workspace select changes the active workspace.",
+      "difficulty": "mixed",
+      "subcategory": "workspaces",
+      "category": "terraform"
+    },
+    {
+      "question": "Which workspace exists by default?",
+      "options": [
+        "default",
+        "main",
+        "prod",
+        "root"
+      ],
+      "answer": "default",
+      "explanation": "Terraform starts with the default workspace.",
+      "difficulty": "mixed",
+      "subcategory": "workspaces",
+      "category": "terraform"
+    },
+    {
+      "question": "Scenario: You want separate state for dev and test using same config. What can help?",
+      "options": [
+        "Workspaces",
+        "Provisioners",
+        "Outputs only",
+        "terraform fmt"
+      ],
+      "answer": "Workspaces",
+      "explanation": "Workspaces can maintain separate state for the same configuration.",
+      "difficulty": "mixed",
+      "subcategory": "workspaces",
+      "category": "terraform"
+    },
+    {
+      "question": "Should workspaces always replace separate environment folders?",
+      "options": [
+        "No",
+        "Yes always",
+        "Only for providers",
+        "Only for outputs"
+      ],
+      "answer": "No",
+      "explanation": "Workspaces are useful in some cases but separate folders or repos may be better for complex environments.",
+      "difficulty": "mixed",
+      "subcategory": "workspaces",
+      "category": "terraform"
+    },
+    {
+      "question": "Which interpolation identifies current workspace?",
+      "options": [
+        "terraform.workspace",
+        "terraform.state",
+        "terraform.backend",
+        "terraform.provider"
+      ],
+      "answer": "terraform.workspace",
+      "explanation": "terraform.workspace returns the current workspace name.",
+      "difficulty": "mixed",
+      "subcategory": "workspaces",
+      "category": "terraform"
+    },
+    {
+      "question": "Scenario: A production and dev environment have very different architectures. Are workspaces always ideal?",
+      "options": [
+        "No",
+        "Yes",
+        "Only with local backend",
+        "Only without variables"
+      ],
+      "answer": "No",
+      "explanation": "Very different environments are often better managed with separate configurations.",
+      "difficulty": "mixed",
+      "subcategory": "workspaces",
+      "category": "terraform"
+    },
+    {
+      "question": "What changes when switching Terraform workspaces?",
+      "options": [
+        "Active state",
+        "Provider source code",
+        "Terraform binary",
+        "HCL syntax"
+      ],
+      "answer": "Active state",
+      "explanation": "Workspaces switch the active state instance.",
+      "difficulty": "mixed",
+      "subcategory": "workspaces",
+      "category": "terraform"
+    }
+  ]

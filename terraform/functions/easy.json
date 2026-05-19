@@ -1,1 +1,142 @@
-[]
+[
+    {
+      "question": "Which Terraform function joins list values into a string?",
+      "options": [
+        "join",
+        "split",
+        "lookup",
+        "merge"
+      ],
+      "answer": "join",
+      "explanation": "The join function combines list elements into a single string.",
+      "difficulty": "mixed",
+      "subcategory": "functions",
+      "category": "terraform"
+    },
+    {
+      "question": "Which Terraform function splits a string into a list?",
+      "options": [
+        "split",
+        "join",
+        "lower",
+        "upper"
+      ],
+      "answer": "split",
+      "explanation": "The split function divides a string into a list based on a separator.",
+      "difficulty": "mixed",
+      "subcategory": "functions",
+      "category": "terraform"
+    },
+    {
+      "question": "Which Terraform function converts text to lowercase?",
+      "options": [
+        "lower",
+        "upper",
+        "merge",
+        "lookup"
+      ],
+      "answer": "lower",
+      "explanation": "The lower function converts a string to lowercase.",
+      "difficulty": "mixed",
+      "subcategory": "functions",
+      "category": "terraform"
+    },
+    {
+      "question": "Which Terraform function converts text to uppercase?",
+      "options": [
+        "upper",
+        "lower",
+        "split",
+        "concat"
+      ],
+      "answer": "upper",
+      "explanation": "The upper function converts a string to uppercase.",
+      "difficulty": "mixed",
+      "subcategory": "functions",
+      "category": "terraform"
+    },
+    {
+      "question": "Which Terraform function retrieves a value from a map?",
+      "options": [
+        "lookup",
+        "join",
+        "flatten",
+        "length"
+      ],
+      "answer": "lookup",
+      "explanation": "The lookup function retrieves a value from a map with an optional default.",
+      "difficulty": "mixed",
+      "subcategory": "functions",
+      "category": "terraform"
+    },
+    {
+      "question": "Which Terraform function combines multiple maps?",
+      "options": [
+        "merge",
+        "split",
+        "lower",
+        "replace"
+      ],
+      "answer": "merge",
+      "explanation": "The merge function combines maps into a single map.",
+      "difficulty": "mixed",
+      "subcategory": "functions",
+      "category": "terraform"
+    },
+    {
+      "question": "Which Terraform function returns the number of items in a list?",
+      "options": [
+        "length",
+        "lookup",
+        "join",
+        "format"
+      ],
+      "answer": "length",
+      "explanation": "The length function returns the number of elements in a list or characters in a string.",
+      "difficulty": "mixed",
+      "subcategory": "functions",
+      "category": "terraform"
+    },
+    {
+      "question": "Scenario: You need to create a resource name using environment and app name. Which function is helpful?",
+      "options": [
+        "format",
+        "file",
+        "flatten",
+        "toset"
+      ],
+      "answer": "format",
+      "explanation": "The format function creates formatted strings from values.",
+      "difficulty": "mixed",
+      "subcategory": "functions",
+      "category": "terraform"
+    },
+    {
+      "question": "Which Terraform function reads the contents of a file?",
+      "options": [
+        "file",
+        "merge",
+        "lookup",
+        "split"
+      ],
+      "answer": "file",
+      "explanation": "The file function reads content from a file path.",
+      "difficulty": "mixed",
+      "subcategory": "functions",
+      "category": "terraform"
+    },
+    {
+      "question": "Which Terraform function removes nested list structure?",
+      "options": [
+        "flatten",
+        "join",
+        "upper",
+        "replace"
+      ],
+      "answer": "flatten",
+      "explanation": "The flatten function converts nested lists into a single list.",
+      "difficulty": "mixed",
+      "subcategory": "functions",
+      "category": "terraform"
+    }
+  ]

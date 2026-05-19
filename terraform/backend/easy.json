@@ -1,1 +1,142 @@
-[]
+[
+    {
+      "question": "What is the purpose of a Terraform backend?",
+      "options": [
+        "To store Terraform state",
+        "To create variables",
+        "To run provisioners",
+        "To format code"
+      ],
+      "answer": "To store Terraform state",
+      "explanation": "A backend defines where Terraform stores its state and how operations like locking are handled.",
+      "difficulty": "mixed",
+      "subcategory": "backend",
+      "category": "terraform"
+    },
+    {
+      "question": "Which backend is commonly used to store Terraform state in AWS?",
+      "options": [
+        "S3",
+        "EC2",
+        "Lambda",
+        "CloudFront"
+      ],
+      "answer": "S3",
+      "explanation": "Amazon S3 is commonly used as a remote backend for Terraform state in AWS.",
+      "difficulty": "mixed",
+      "subcategory": "backend",
+      "category": "terraform"
+    },
+    {
+      "question": "In Azure, which storage service is commonly used for Terraform remote state?",
+      "options": [
+        "Azure Blob Storage",
+        "Azure SQL Database",
+        "Azure Key Vault",
+        "Azure CDN"
+      ],
+      "answer": "Azure Blob Storage",
+      "explanation": "Azure Blob Storage is commonly used to store Terraform state files in Azure.",
+      "difficulty": "mixed",
+      "subcategory": "backend",
+      "category": "terraform"
+    },
+    {
+      "question": "Which backend feature helps prevent two users from modifying state at the same time?",
+      "options": [
+        "State locking",
+        "Variable validation",
+        "Output mapping",
+        "Provider aliasing"
+      ],
+      "answer": "State locking",
+      "explanation": "State locking prevents concurrent Terraform operations from corrupting the state file.",
+      "difficulty": "mixed",
+      "subcategory": "backend",
+      "category": "terraform"
+    },
+    {
+      "question": "Scenario: Your team members are overwriting each other's Terraform changes. What should you configure?",
+      "options": [
+        "Remote backend with state locking",
+        "Local backend only",
+        "More output values",
+        "Provisioners"
+      ],
+      "answer": "Remote backend with state locking",
+      "explanation": "A remote backend with locking helps teams collaborate safely.",
+      "difficulty": "mixed",
+      "subcategory": "backend",
+      "category": "terraform"
+    },
+    {
+      "question": "What happens if Terraform state is stored only locally on one engineer's laptop?",
+      "options": [
+        "Collaboration becomes risky",
+        "Terraform runs faster always",
+        "Providers are not needed",
+        "Variables stop working"
+      ],
+      "answer": "Collaboration becomes risky",
+      "explanation": "Local state makes collaboration difficult because other users cannot safely share the same infrastructure state.",
+      "difficulty": "mixed",
+      "subcategory": "backend",
+      "category": "terraform"
+    },
+    {
+      "question": "Which command initializes the configured Terraform backend?",
+      "options": [
+        "terraform init",
+        "terraform plan",
+        "terraform apply",
+        "terraform validate"
+      ],
+      "answer": "terraform init",
+      "explanation": "terraform init initializes providers, modules, and backend configuration.",
+      "difficulty": "mixed",
+      "subcategory": "backend",
+      "category": "terraform"
+    },
+    {
+      "question": "Scenario: You changed backend configuration from local to remote. Which command should you run?",
+      "options": [
+        "terraform init -migrate-state",
+        "terraform destroy",
+        "terraform fmt",
+        "terraform output"
+      ],
+      "answer": "terraform init -migrate-state",
+      "explanation": "This command migrates existing state to the new backend.",
+      "difficulty": "mixed",
+      "subcategory": "backend",
+      "category": "terraform"
+    },
+    {
+      "question": "Why should backend credentials not be hardcoded in Terraform files?",
+      "options": [
+        "It can expose sensitive access",
+        "It improves formatting",
+        "It disables state locking",
+        "It removes providers"
+      ],
+      "answer": "It can expose sensitive access",
+      "explanation": "Hardcoded credentials can leak secrets and should be avoided.",
+      "difficulty": "mixed",
+      "subcategory": "backend",
+      "category": "terraform"
+    },
+    {
+      "question": "Which file usually should not be committed when using local state?",
+      "options": [
+        "terraform.tfstate",
+        "main.tf",
+        "variables.tf",
+        "outputs.tf"
+      ],
+      "answer": "terraform.tfstate",
+      "explanation": "The terraform.tfstate file may contain sensitive infrastructure details and should not be committed.",
+      "difficulty": "mixed",
+      "subcategory": "backend",
+      "category": "terraform"
+    }
+  ]

@@ -1,1 +1,142 @@
-[]
+[
+    {
+      "question": "What is a Terraform provider?",
+      "options": [
+        "Plugin to manage external platforms",
+        "State file",
+        "Variable file",
+        "Output value"
+      ],
+      "answer": "Plugin to manage external platforms",
+      "explanation": "Providers allow Terraform to interact with platforms like AWS, Azure, and GCP.",
+      "difficulty": "mixed",
+      "subcategory": "providers",
+      "category": "terraform"
+    },
+    {
+      "question": "Which block configures a provider?",
+      "options": [
+        "provider",
+        "resource",
+        "output",
+        "variable"
+      ],
+      "answer": "provider",
+      "explanation": "The provider block configures provider-specific settings.",
+      "difficulty": "mixed",
+      "subcategory": "providers",
+      "category": "terraform"
+    },
+    {
+      "question": "Scenario: You want to create AWS resources. Which provider do you configure?",
+      "options": [
+        "AWS provider",
+        "AzureRM provider",
+        "Google provider",
+        "Random provider"
+      ],
+      "answer": "AWS provider",
+      "explanation": "The AWS provider manages AWS resources.",
+      "difficulty": "mixed",
+      "subcategory": "providers",
+      "category": "terraform"
+    },
+    {
+      "question": "Which provider is commonly used for Azure resources?",
+      "options": [
+        "azurerm",
+        "aws",
+        "google",
+        "kubernetes"
+      ],
+      "answer": "azurerm",
+      "explanation": "The azurerm provider manages Azure resources.",
+      "difficulty": "mixed",
+      "subcategory": "providers",
+      "category": "terraform"
+    },
+    {
+      "question": "Which provider is commonly used for GCP resources?",
+      "options": [
+        "google",
+        "aws",
+        "azurerm",
+        "random"
+      ],
+      "answer": "google",
+      "explanation": "The google provider manages Google Cloud resources.",
+      "difficulty": "mixed",
+      "subcategory": "providers",
+      "category": "terraform"
+    },
+    {
+      "question": "Where are provider version constraints usually defined?",
+      "options": [
+        "required_providers block",
+        "output block",
+        "resource name",
+        "tfvars only"
+      ],
+      "answer": "required_providers block",
+      "explanation": "Provider source and version constraints are defined in required_providers.",
+      "difficulty": "mixed",
+      "subcategory": "providers",
+      "category": "terraform"
+    },
+    {
+      "question": "Which command downloads provider plugins?",
+      "options": [
+        "terraform init",
+        "terraform apply",
+        "terraform destroy",
+        "terraform console"
+      ],
+      "answer": "terraform init",
+      "explanation": "terraform init downloads required provider plugins.",
+      "difficulty": "mixed",
+      "subcategory": "providers",
+      "category": "terraform"
+    },
+    {
+      "question": "Scenario: You need two AWS regions in the same configuration. What should you use?",
+      "options": [
+        "Provider alias",
+        "Output alias",
+        "State alias",
+        "Variable alias"
+      ],
+      "answer": "Provider alias",
+      "explanation": "Provider aliases allow multiple configurations of the same provider.",
+      "difficulty": "mixed",
+      "subcategory": "providers",
+      "category": "terraform"
+    },
+    {
+      "question": "What does provider authentication allow Terraform to do?",
+      "options": [
+        "Access cloud APIs",
+        "Format code",
+        "Create outputs only",
+        "Disable state"
+      ],
+      "answer": "Access cloud APIs",
+      "explanation": "Providers authenticate Terraform to cloud APIs.",
+      "difficulty": "mixed",
+      "subcategory": "providers",
+      "category": "terraform"
+    },
+    {
+      "question": "Why should provider versions be constrained?",
+      "options": [
+        "To prevent unexpected breaking changes",
+        "To remove modules",
+        "To disable state",
+        "To hide variables"
+      ],
+      "answer": "To prevent unexpected breaking changes",
+      "explanation": "Version constraints keep provider behavior predictable.",
+      "difficulty": "mixed",
+      "subcategory": "providers",
+      "category": "terraform"
+    }
+  ]

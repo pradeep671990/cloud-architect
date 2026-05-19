@@ -1,1 +1,142 @@
-[]
+[
+    {
+      "question": "What is a best practice for storing Terraform state in a team environment?",
+      "options": [
+        "Use remote backend",
+        "Use only local state",
+        "Email state files",
+        "Commit state to Git"
+      ],
+      "answer": "Use remote backend",
+      "explanation": "Remote backends allow safer collaboration and centralized state management.",
+      "difficulty": "mixed",
+      "subcategory": "best-practices",
+      "category": "terraform"
+    },
+    {
+      "question": "Why should Terraform state files be protected?",
+      "options": [
+        "They may contain sensitive values",
+        "They contain only comments",
+        "They replace providers",
+        "They are not used"
+      ],
+      "answer": "They may contain sensitive values",
+      "explanation": "State files can include sensitive resource attributes and must be secured.",
+      "difficulty": "mixed",
+      "subcategory": "best-practices",
+      "category": "terraform"
+    },
+    {
+      "question": "Which practice improves Terraform code readability?",
+      "options": [
+        "Use consistent formatting",
+        "Use random indentation",
+        "Avoid variables",
+        "Hardcode all values"
+      ],
+      "answer": "Use consistent formatting",
+      "explanation": "Consistent formatting makes Terraform code easier to review and maintain.",
+      "difficulty": "mixed",
+      "subcategory": "best-practices",
+      "category": "terraform"
+    },
+    {
+      "question": "Scenario: Multiple environments use similar infrastructure. What is a recommended approach?",
+      "options": [
+        "Use modules",
+        "Copy paste all code",
+        "Use provisioners only",
+        "Avoid variables"
+      ],
+      "answer": "Use modules",
+      "explanation": "Modules help reuse common infrastructure patterns across environments.",
+      "difficulty": "mixed",
+      "subcategory": "best-practices",
+      "category": "terraform"
+    },
+    {
+      "question": "Why should variables be used instead of hardcoded values?",
+      "options": [
+        "To make configuration reusable",
+        "To disable providers",
+        "To delete state",
+        "To avoid planning"
+      ],
+      "answer": "To make configuration reusable",
+      "explanation": "Variables make Terraform code flexible across environments.",
+      "difficulty": "mixed",
+      "subcategory": "best-practices",
+      "category": "terraform"
+    },
+    {
+      "question": "What should be used to protect secrets instead of plain text variables?",
+      "options": [
+        "Secret manager or sensitive variables",
+        "Output everything",
+        "Local file only",
+        "Hardcoded passwords"
+      ],
+      "answer": "Secret manager or sensitive variables",
+      "explanation": "Secrets should be handled securely and not exposed in plain text.",
+      "difficulty": "mixed",
+      "subcategory": "best-practices",
+      "category": "terraform"
+    },
+    {
+      "question": "Which command should be used before committing Terraform code to keep formatting standard?",
+      "options": [
+        "terraform fmt",
+        "terraform destroy",
+        "terraform import",
+        "terraform output"
+      ],
+      "answer": "terraform fmt",
+      "explanation": "terraform fmt ensures consistent formatting.",
+      "difficulty": "mixed",
+      "subcategory": "best-practices",
+      "category": "terraform"
+    },
+    {
+      "question": "Scenario: You want to review infrastructure changes before applying. What should you use?",
+      "options": [
+        "terraform plan",
+        "terraform apply -auto-approve",
+        "terraform destroy",
+        "terraform state rm"
+      ],
+      "answer": "terraform plan",
+      "explanation": "terraform plan allows safe review before changes are applied.",
+      "difficulty": "mixed",
+      "subcategory": "best-practices",
+      "category": "terraform"
+    },
+    {
+      "question": "Why should provider versions be pinned?",
+      "options": [
+        "To avoid unexpected version changes",
+        "To remove state locking",
+        "To hide outputs",
+        "To disable modules"
+      ],
+      "answer": "To avoid unexpected version changes",
+      "explanation": "Version constraints reduce the risk of breaking changes from provider upgrades.",
+      "difficulty": "mixed",
+      "subcategory": "best-practices",
+      "category": "terraform"
+    },
+    {
+      "question": "Which file is commonly used to lock provider versions?",
+      "options": [
+        ".terraform.lock.hcl",
+        "terraform.tfvars",
+        "outputs.tf",
+        "README.md"
+      ],
+      "answer": ".terraform.lock.hcl",
+      "explanation": "The lock file records selected provider versions for consistent deployments.",
+      "difficulty": "mixed",
+      "subcategory": "best-practices",
+      "category": "terraform"
+    }
+  ]

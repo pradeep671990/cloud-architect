@@ -1,1 +1,142 @@
-[]
+[
+    {
+      "question": "What is the purpose of Terraform variables?",
+      "options": [
+        "Make configuration reusable",
+        "Store provider plugins",
+        "Delete state",
+        "Run shell commands"
+      ],
+      "answer": "Make configuration reusable",
+      "explanation": "Variables allow values to be passed into Terraform configuration.",
+      "difficulty": "mixed",
+      "subcategory": "variables",
+      "category": "terraform"
+    },
+    {
+      "question": "Which block declares a Terraform variable?",
+      "options": [
+        "variable",
+        "output",
+        "provider",
+        "resource"
+      ],
+      "answer": "variable",
+      "explanation": "The variable block declares an input variable.",
+      "difficulty": "mixed",
+      "subcategory": "variables",
+      "category": "terraform"
+    },
+    {
+      "question": "Which file is commonly used to provide variable values?",
+      "options": [
+        "terraform.tfvars",
+        "outputs.tf",
+        "main.log",
+        "state.lock"
+      ],
+      "answer": "terraform.tfvars",
+      "explanation": "terraform.tfvars commonly contains values for declared variables.",
+      "difficulty": "mixed",
+      "subcategory": "variables",
+      "category": "terraform"
+    },
+    {
+      "question": "Which argument defines a variable's expected data type?",
+      "options": [
+        "type",
+        "value",
+        "source",
+        "backend"
+      ],
+      "answer": "type",
+      "explanation": "The type argument constrains accepted variable values.",
+      "difficulty": "mixed",
+      "subcategory": "variables",
+      "category": "terraform"
+    },
+    {
+      "question": "Which argument provides a fallback value for a variable?",
+      "options": [
+        "default",
+        "source",
+        "provider",
+        "depends_on"
+      ],
+      "answer": "default",
+      "explanation": "The default argument provides a value when no input is supplied.",
+      "difficulty": "mixed",
+      "subcategory": "variables",
+      "category": "terraform"
+    },
+    {
+      "question": "Scenario: You need different instance sizes for dev and prod. What should you use?",
+      "options": [
+        "Variable",
+        "Hardcoded value",
+        "Provisioner",
+        "State rm"
+      ],
+      "answer": "Variable",
+      "explanation": "Variables allow different values per environment.",
+      "difficulty": "mixed",
+      "subcategory": "variables",
+      "category": "terraform"
+    },
+    {
+      "question": "How can a variable be marked as secret in Terraform output?",
+      "options": [
+        "sensitive = true",
+        "count = true",
+        "public = false",
+        "hidden = yes"
+      ],
+      "answer": "sensitive = true",
+      "explanation": "The sensitive flag prevents Terraform from displaying the value in normal output.",
+      "difficulty": "mixed",
+      "subcategory": "variables",
+      "category": "terraform"
+    },
+    {
+      "question": "Which environment variable prefix can pass values to Terraform variables?",
+      "options": [
+        "TF_VAR_",
+        "AWS_VAR_",
+        "TERRAFORM_OUTPUT_",
+        "HCL_"
+      ],
+      "answer": "TF_VAR_",
+      "explanation": "Terraform reads environment variables prefixed with TF_VAR_ as input variables.",
+      "difficulty": "mixed",
+      "subcategory": "variables",
+      "category": "terraform"
+    },
+    {
+      "question": "Which variable type is used for key-value pairs?",
+      "options": [
+        "map",
+        "string",
+        "number",
+        "bool"
+      ],
+      "answer": "map",
+      "explanation": "A map stores key-value pairs.",
+      "difficulty": "mixed",
+      "subcategory": "variables",
+      "category": "terraform"
+    },
+    {
+      "question": "Which variable type is used for ordered multiple values?",
+      "options": [
+        "list",
+        "map",
+        "bool",
+        "number"
+      ],
+      "answer": "list",
+      "explanation": "A list stores ordered values.",
+      "difficulty": "mixed",
+      "subcategory": "variables",
+      "category": "terraform"
+    }
+  ]

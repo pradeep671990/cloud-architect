@@ -1,1 +1,142 @@
-[]
+[
+    {
+      "question": "What is Terraform state used for?",
+      "options": [
+        "Mapping configuration to real resources",
+        "Formatting files",
+        "Storing provider documentation",
+        "Running shell commands"
+      ],
+      "answer": "Mapping configuration to real resources",
+      "explanation": "Terraform state tracks the relationship between code and real infrastructure.",
+      "difficulty": "mixed",
+      "subcategory": "state-management",
+      "category": "terraform"
+    },
+    {
+      "question": "Which command lists resources in Terraform state?",
+      "options": [
+        "terraform state list",
+        "terraform plan",
+        "terraform fmt",
+        "terraform init"
+      ],
+      "answer": "terraform state list",
+      "explanation": "terraform state list shows resources tracked in state.",
+      "difficulty": "mixed",
+      "subcategory": "state-management",
+      "category": "terraform"
+    },
+    {
+      "question": "Which command shows details of a resource in state?",
+      "options": [
+        "terraform state show",
+        "terraform output",
+        "terraform validate",
+        "terraform providers"
+      ],
+      "answer": "terraform state show",
+      "explanation": "terraform state show displays state details for a specific resource.",
+      "difficulty": "mixed",
+      "subcategory": "state-management",
+      "category": "terraform"
+    },
+    {
+      "question": "Which command removes a resource from state without deleting real infrastructure?",
+      "options": [
+        "terraform state rm",
+        "terraform destroy",
+        "terraform apply",
+        "terraform fmt"
+      ],
+      "answer": "terraform state rm",
+      "explanation": "terraform state rm removes tracking only; it does not delete the actual resource.",
+      "difficulty": "mixed",
+      "subcategory": "state-management",
+      "category": "terraform"
+    },
+    {
+      "question": "Which command moves a resource address in state?",
+      "options": [
+        "terraform state mv",
+        "terraform import",
+        "terraform init",
+        "terraform console"
+      ],
+      "answer": "terraform state mv",
+      "explanation": "terraform state mv changes resource addresses in state.",
+      "difficulty": "mixed",
+      "subcategory": "state-management",
+      "category": "terraform"
+    },
+    {
+      "question": "Scenario: A resource was created manually and now must be managed by Terraform. What should you use?",
+      "options": [
+        "terraform import",
+        "terraform fmt",
+        "terraform output",
+        "terraform destroy"
+      ],
+      "answer": "terraform import",
+      "explanation": "terraform import brings existing infrastructure under Terraform management.",
+      "difficulty": "mixed",
+      "subcategory": "state-management",
+      "category": "terraform"
+    },
+    {
+      "question": "Why should state not be edited manually?",
+      "options": [
+        "It can corrupt infrastructure tracking",
+        "It improves performance",
+        "It removes providers",
+        "It disables variables"
+      ],
+      "answer": "It can corrupt infrastructure tracking",
+      "explanation": "Manual state edits are risky and can break Terraform's resource mapping.",
+      "difficulty": "mixed",
+      "subcategory": "state-management",
+      "category": "terraform"
+    },
+    {
+      "question": "What is state drift?",
+      "options": [
+        "Real infrastructure differs from Terraform state or code",
+        "Provider version is locked",
+        "Output is sensitive",
+        "Backend is remote"
+      ],
+      "answer": "Real infrastructure differs from Terraform state or code",
+      "explanation": "Drift happens when infrastructure changes outside Terraform.",
+      "difficulty": "mixed",
+      "subcategory": "state-management",
+      "category": "terraform"
+    },
+    {
+      "question": "Which command refreshes state during planning by default?",
+      "options": [
+        "terraform plan",
+        "terraform fmt",
+        "terraform output",
+        "terraform console"
+      ],
+      "answer": "terraform plan",
+      "explanation": "terraform plan normally refreshes state to compare with real infrastructure.",
+      "difficulty": "mixed",
+      "subcategory": "state-management",
+      "category": "terraform"
+    },
+    {
+      "question": "Scenario: Two engineers apply at the same time. What prevents state corruption?",
+      "options": [
+        "State locking",
+        "Output values",
+        "Local variables",
+        "Provisioners"
+      ],
+      "answer": "State locking",
+      "explanation": "State locking prevents simultaneous state modifications.",
+      "difficulty": "mixed",
+      "subcategory": "state-management",
+      "category": "terraform"
+    }
+  ]

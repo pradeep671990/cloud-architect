@@ -1,1 +1,142 @@
-[]
+[
+    {
+      "question": "What is a Terraform module?",
+      "options": [
+        "Reusable Terraform configuration",
+        "A state lock",
+        "A provider plugin only",
+        "A backend type"
+      ],
+      "answer": "Reusable Terraform configuration",
+      "explanation": "A module is a reusable set of Terraform configuration files.",
+      "difficulty": "mixed",
+      "subcategory": "modules",
+      "category": "terraform"
+    },
+    {
+      "question": "Which block is used to call a Terraform module?",
+      "options": [
+        "module",
+        "resource",
+        "provider",
+        "output"
+      ],
+      "answer": "module",
+      "explanation": "The module block calls a child module.",
+      "difficulty": "mixed",
+      "subcategory": "modules",
+      "category": "terraform"
+    },
+    {
+      "question": "Scenario: You need to create the same VPC pattern in dev, QA, and prod. What should you use?",
+      "options": [
+        "Module",
+        "Provisioner",
+        "Local state",
+        "Manual script"
+      ],
+      "answer": "Module",
+      "explanation": "Modules help reuse infrastructure patterns across environments.",
+      "difficulty": "mixed",
+      "subcategory": "modules",
+      "category": "terraform"
+    },
+    {
+      "question": "Which argument specifies the location of a module?",
+      "options": [
+        "source",
+        "name",
+        "provider",
+        "backend"
+      ],
+      "answer": "source",
+      "explanation": "The source argument tells Terraform where to find the module.",
+      "difficulty": "mixed",
+      "subcategory": "modules",
+      "category": "terraform"
+    },
+    {
+      "question": "Can a Terraform module have variables?",
+      "options": [
+        "Yes",
+        "No",
+        "Only root module",
+        "Only provider module"
+      ],
+      "answer": "Yes",
+      "explanation": "Modules can accept input variables for reusable configuration.",
+      "difficulty": "mixed",
+      "subcategory": "modules",
+      "category": "terraform"
+    },
+    {
+      "question": "Can a Terraform module return outputs?",
+      "options": [
+        "Yes",
+        "No",
+        "Only backend outputs",
+        "Only provider outputs"
+      ],
+      "answer": "Yes",
+      "explanation": "Modules can expose values using output blocks.",
+      "difficulty": "mixed",
+      "subcategory": "modules",
+      "category": "terraform"
+    },
+    {
+      "question": "What is the root module in Terraform?",
+      "options": [
+        "The current working directory configuration",
+        "Only remote modules",
+        "Only provider code",
+        "Only backend code"
+      ],
+      "answer": "The current working directory configuration",
+      "explanation": "The root module is the Terraform configuration in the current directory.",
+      "difficulty": "mixed",
+      "subcategory": "modules",
+      "category": "terraform"
+    },
+    {
+      "question": "Which command downloads module dependencies?",
+      "options": [
+        "terraform init",
+        "terraform plan",
+        "terraform output",
+        "terraform state"
+      ],
+      "answer": "terraform init",
+      "explanation": "terraform init downloads modules and providers.",
+      "difficulty": "mixed",
+      "subcategory": "modules",
+      "category": "terraform"
+    },
+    {
+      "question": "Scenario: You updated a module source version. Which command should you run?",
+      "options": [
+        "terraform init -upgrade",
+        "terraform destroy",
+        "terraform fmt",
+        "terraform output"
+      ],
+      "answer": "terraform init -upgrade",
+      "explanation": "This command upgrades modules and provider plugins when allowed.",
+      "difficulty": "mixed",
+      "subcategory": "modules",
+      "category": "terraform"
+    },
+    {
+      "question": "Why should modules be versioned?",
+      "options": [
+        "To keep deployments predictable",
+        "To delete state",
+        "To avoid variables",
+        "To disable outputs"
+      ],
+      "answer": "To keep deployments predictable",
+      "explanation": "Versioning modules prevents unexpected changes from affecting infrastructure.",
+      "difficulty": "mixed",
+      "subcategory": "modules",
+      "category": "terraform"
+    }
+  ]

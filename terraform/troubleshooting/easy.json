@@ -1,1 +1,142 @@
-[]
+[
+    {
+      "question": "Terraform says provider plugin is missing. Which command should you run?",
+      "options": [
+        "terraform init",
+        "terraform apply",
+        "terraform destroy",
+        "terraform output"
+      ],
+      "answer": "terraform init",
+      "explanation": "terraform init downloads provider plugins.",
+      "difficulty": "mixed",
+      "subcategory": "troubleshooting",
+      "category": "terraform"
+    },
+    {
+      "question": "Terraform formatting is inconsistent. Which command should you use?",
+      "options": [
+        "terraform fmt",
+        "terraform state list",
+        "terraform import",
+        "terraform graph"
+      ],
+      "answer": "terraform fmt",
+      "explanation": "terraform fmt formats Terraform files consistently.",
+      "difficulty": "mixed",
+      "subcategory": "troubleshooting",
+      "category": "terraform"
+    },
+    {
+      "question": "Terraform syntax validation fails. Which command helps check configuration?",
+      "options": [
+        "terraform validate",
+        "terraform apply",
+        "terraform output",
+        "terraform state rm"
+      ],
+      "answer": "terraform validate",
+      "explanation": "terraform validate checks syntax and configuration validity.",
+      "difficulty": "mixed",
+      "subcategory": "troubleshooting",
+      "category": "terraform"
+    },
+    {
+      "question": "Scenario: Terraform wants to recreate a resource unexpectedly. What should you inspect first?",
+      "options": [
+        "terraform plan output",
+        "README file",
+        "Provider website only",
+        "Shell history"
+      ],
+      "answer": "terraform plan output",
+      "explanation": "The plan explains what Terraform intends to change and why.",
+      "difficulty": "mixed",
+      "subcategory": "troubleshooting",
+      "category": "terraform"
+    },
+    {
+      "question": "Scenario: State lock is stuck after a failed run. Which command may help carefully?",
+      "options": [
+        "terraform force-unlock",
+        "terraform destroy",
+        "terraform fmt",
+        "terraform output"
+      ],
+      "answer": "terraform force-unlock",
+      "explanation": "terraform force-unlock can remove a stuck lock when it is safe to do so.",
+      "difficulty": "mixed",
+      "subcategory": "troubleshooting",
+      "category": "terraform"
+    },
+    {
+      "question": "Terraform cannot authenticate to cloud provider. What should you check?",
+      "options": [
+        "Provider credentials",
+        "Output names",
+        "Formatting only",
+        "Module README only"
+      ],
+      "answer": "Provider credentials",
+      "explanation": "Authentication errors are usually related to missing or invalid provider credentials.",
+      "difficulty": "mixed",
+      "subcategory": "troubleshooting",
+      "category": "terraform"
+    },
+    {
+      "question": "Scenario: A module source cannot be downloaded. What should you check?",
+      "options": [
+        "Module source URL and access",
+        "Output value only",
+        "State list only",
+        "Variable description"
+      ],
+      "answer": "Module source URL and access",
+      "explanation": "Incorrect module source paths or missing access can prevent downloads.",
+      "difficulty": "mixed",
+      "subcategory": "troubleshooting",
+      "category": "terraform"
+    },
+    {
+      "question": "Terraform reports unsupported argument. What is the likely issue?",
+      "options": [
+        "Argument not valid for that resource/provider version",
+        "Backend is always wrong",
+        "Outputs are missing",
+        "State file is empty"
+      ],
+      "answer": "Argument not valid for that resource/provider version",
+      "explanation": "Unsupported argument errors often come from wrong resource syntax or provider version.",
+      "difficulty": "mixed",
+      "subcategory": "troubleshooting",
+      "category": "terraform"
+    },
+    {
+      "question": "Scenario: Terraform detects changes made manually in cloud console. What is this called?",
+      "options": [
+        "Drift",
+        "Locking",
+        "Formatting",
+        "Aliasing"
+      ],
+      "answer": "Drift",
+      "explanation": "Drift means real infrastructure differs from Terraform-managed configuration or state.",
+      "difficulty": "mixed",
+      "subcategory": "troubleshooting",
+      "category": "terraform"
+    },
+    {
+      "question": "Which command can show dependency graph information?",
+      "options": [
+        "terraform graph",
+        "terraform fmt",
+        "terraform output",
+        "terraform login"
+      ],
+      "answer": "terraform graph",
+      "explanation": "terraform graph generates a visual dependency graph in DOT format.",
+      "difficulty": "mixed",
+      "subcategory": "troubleshooting",
+      "category": "terraform"
+    }
+  ]

@@ -1,1 +1,142 @@
-[]
+[
+    {
+      "question": "Which Terraform command previews infrastructure changes?",
+      "options": [
+        "terraform plan",
+        "terraform apply",
+        "terraform destroy",
+        "terraform fmt"
+      ],
+      "answer": "terraform plan",
+      "explanation": "terraform plan shows proposed changes before applying them.",
+      "difficulty": "mixed",
+      "subcategory": "basics",
+      "category": "terraform"
+    },
+    {
+      "question": "Which Terraform command applies infrastructure changes?",
+      "options": [
+        "terraform apply",
+        "terraform init",
+        "terraform validate",
+        "terraform output"
+      ],
+      "answer": "terraform apply",
+      "explanation": "terraform apply creates, updates, or deletes infrastructure based on the plan.",
+      "difficulty": "mixed",
+      "subcategory": "basics",
+      "category": "terraform"
+    },
+    {
+      "question": "Which Terraform command initializes a working directory?",
+      "options": [
+        "terraform init",
+        "terraform plan",
+        "terraform state",
+        "terraform import"
+      ],
+      "answer": "terraform init",
+      "explanation": "terraform init prepares the directory by installing providers and modules.",
+      "difficulty": "mixed",
+      "subcategory": "basics",
+      "category": "terraform"
+    },
+    {
+      "question": "What is the main language used by Terraform configuration files?",
+      "options": [
+        "HCL",
+        "YAML",
+        "XML",
+        "Bash"
+      ],
+      "answer": "HCL",
+      "explanation": "Terraform uses HashiCorp Configuration Language, known as HCL.",
+      "difficulty": "mixed",
+      "subcategory": "basics",
+      "category": "terraform"
+    },
+    {
+      "question": "Which file extension is commonly used for Terraform files?",
+      "options": [
+        ".tf",
+        ".yaml",
+        ".jsonnet",
+        ".ini"
+      ],
+      "answer": ".tf",
+      "explanation": "Terraform configuration files commonly use the .tf extension.",
+      "difficulty": "mixed",
+      "subcategory": "basics",
+      "category": "terraform"
+    },
+    {
+      "question": "Scenario: You want to check whether Terraform syntax is valid. Which command should you run?",
+      "options": [
+        "terraform validate",
+        "terraform apply",
+        "terraform import",
+        "terraform destroy"
+      ],
+      "answer": "terraform validate",
+      "explanation": "terraform validate checks whether the configuration is syntactically valid.",
+      "difficulty": "mixed",
+      "subcategory": "basics",
+      "category": "terraform"
+    },
+    {
+      "question": "Which command formats Terraform code?",
+      "options": [
+        "terraform fmt",
+        "terraform plan",
+        "terraform refresh",
+        "terraform output"
+      ],
+      "answer": "terraform fmt",
+      "explanation": "terraform fmt rewrites Terraform files into standard formatting.",
+      "difficulty": "mixed",
+      "subcategory": "basics",
+      "category": "terraform"
+    },
+    {
+      "question": "What does Terraform use to track real infrastructure resources?",
+      "options": [
+        "State file",
+        "README file",
+        "Provider cache only",
+        "Output file"
+      ],
+      "answer": "State file",
+      "explanation": "Terraform state maps configuration to real infrastructure resources.",
+      "difficulty": "mixed",
+      "subcategory": "basics",
+      "category": "terraform"
+    },
+    {
+      "question": "Which Terraform workflow order is most common?",
+      "options": [
+        "init, plan, apply",
+        "apply, plan, init",
+        "destroy, init, plan",
+        "output, fmt, apply"
+      ],
+      "answer": "init, plan, apply",
+      "explanation": "The common Terraform workflow is initialize, review plan, then apply changes.",
+      "difficulty": "mixed",
+      "subcategory": "basics",
+      "category": "terraform"
+    },
+    {
+      "question": "Scenario: A new team member clones a Terraform repository. What should they run first?",
+      "options": [
+        "terraform init",
+        "terraform apply",
+        "terraform destroy",
+        "terraform output"
+      ],
+      "answer": "terraform init",
+      "explanation": "A new working directory must be initialized before planning or applying.",
+      "difficulty": "mixed",
+      "subcategory": "basics",
+      "category": "terraform"
+    }
+  ]

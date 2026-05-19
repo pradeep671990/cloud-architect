@@ -1,1 +1,142 @@
-[]
+[
+    {
+      "question": "What is the purpose of Terraform output values?",
+      "options": [
+        "Expose useful values after apply",
+        "Store provider plugins",
+        "Lock state",
+        "Delete resources"
+      ],
+      "answer": "Expose useful values after apply",
+      "explanation": "Outputs display or export useful values from Terraform configurations.",
+      "difficulty": "mixed",
+      "subcategory": "outputs",
+      "category": "terraform"
+    },
+    {
+      "question": "Which block defines an output value?",
+      "options": [
+        "output",
+        "variable",
+        "provider",
+        "terraform"
+      ],
+      "answer": "output",
+      "explanation": "The output block defines values returned by Terraform.",
+      "difficulty": "mixed",
+      "subcategory": "outputs",
+      "category": "terraform"
+    },
+    {
+      "question": "Scenario: You need to display a load balancer DNS name after deployment. What should you use?",
+      "options": [
+        "Output",
+        "Provider",
+        "Provisioner",
+        "Backend"
+      ],
+      "answer": "Output",
+      "explanation": "Outputs are used to display values such as DNS names, IPs, and IDs.",
+      "difficulty": "mixed",
+      "subcategory": "outputs",
+      "category": "terraform"
+    },
+    {
+      "question": "Which command displays Terraform output values?",
+      "options": [
+        "terraform output",
+        "terraform plan",
+        "terraform init",
+        "terraform fmt"
+      ],
+      "answer": "terraform output",
+      "explanation": "terraform output displays values defined in output blocks.",
+      "difficulty": "mixed",
+      "subcategory": "outputs",
+      "category": "terraform"
+    },
+    {
+      "question": "How can sensitive output values be hidden in CLI output?",
+      "options": [
+        "Set sensitive = true",
+        "Use count",
+        "Use provider alias",
+        "Use depends_on"
+      ],
+      "answer": "Set sensitive = true",
+      "explanation": "The sensitive argument hides output values from normal CLI display.",
+      "difficulty": "mixed",
+      "subcategory": "outputs",
+      "category": "terraform"
+    },
+    {
+      "question": "Can module outputs be used by another module?",
+      "options": [
+        "Yes",
+        "No",
+        "Only in backend",
+        "Only in providers"
+      ],
+      "answer": "Yes",
+      "explanation": "Module outputs can be referenced by root or other modules.",
+      "difficulty": "mixed",
+      "subcategory": "outputs",
+      "category": "terraform"
+    },
+    {
+      "question": "Which attribute is used inside an output block to define the returned data?",
+      "options": [
+        "value",
+        "type",
+        "source",
+        "backend"
+      ],
+      "answer": "value",
+      "explanation": "The value attribute defines what the output returns.",
+      "difficulty": "mixed",
+      "subcategory": "outputs",
+      "category": "terraform"
+    },
+    {
+      "question": "Scenario: You want to pass a VPC ID from network module to compute module. What helps?",
+      "options": [
+        "Module output",
+        "Local backend",
+        "Provisioner",
+        "Terraform fmt"
+      ],
+      "answer": "Module output",
+      "explanation": "Module outputs allow sharing values between modules.",
+      "difficulty": "mixed",
+      "subcategory": "outputs",
+      "category": "terraform"
+    },
+    {
+      "question": "Should passwords be exposed using normal outputs?",
+      "options": [
+        "No",
+        "Yes always",
+        "Only with terraform fmt",
+        "Only in local backend"
+      ],
+      "answer": "No",
+      "explanation": "Sensitive data should not be exposed in normal outputs.",
+      "difficulty": "mixed",
+      "subcategory": "outputs",
+      "category": "terraform"
+    },
+    {
+      "question": "What happens if an output references a resource attribute?",
+      "options": [
+        "Terraform displays the attribute after apply",
+        "Terraform deletes it",
+        "Terraform ignores it",
+        "Terraform disables provider"
+      ],
+      "answer": "Terraform displays the attribute after apply",
+      "explanation": "Outputs can expose resource attributes after deployment.",
+      "difficulty": "mixed",
+      "subcategory": "outputs",
+      "category": "terraform"
+    }
+  ]
