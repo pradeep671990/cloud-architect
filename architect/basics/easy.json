@@ -1,0 +1,482 @@
+[
+    {
+      "section": "Atlassian DevOps Architect – Round 1: Infra, Kubernetes, and Cloud Patterns",
+      "question": "Design a multi-tenant EKS cluster with isolation across dev, QA, and prod, with no noisy neighbors.",
+      "answer": "Use separate namespaces per tenant/environment. Apply ResourceQuotas and LimitRanges per namespace to cap CPU/memory. Use dedicated node groups (node selectors + taints/tolerations) per environment so dev pods never land on prod nodes. Enable Network Policies (Calico or VPC CNI) to block cross-namespace pod-to-pod traffic. Use IAM Roles for Service Accounts (IRSA) so each namespace gets its own AWS permissions. For hard isolation, use separate EKS node groups with separate EC2 instance families and enable PodSecurityAdmission policies per namespace.",
+      "key_concepts": ["Namespaces", "ResourceQuota", "LimitRange", "Node Taints/Tolerations", "Network Policy", "IRSA", "PodSecurityAdmission"]
+    },
+    {
+      "section": "Atlassian DevOps Architect – Round 1: Infra, Kubernetes, and Cloud Patterns",
+      "question": "What's your approach to managing 10+ Kustomize overlays without drift or duplication?",
+      "answer": "Structure overlays with a clean base/ directory containing shared manifests, and per-environment overlays (dev/, qa/, prod/) that only patch what differs — never duplicate full files. Use components/ for reusable patches (e.g., HPA, monitoring sidecars) that can be mixed in. Enforce drift detection via CI: run 'kustomize build' on every PR and diff against the last known-good render. Store rendered manifests in a GitOps repo (ArgoCD/Flux) and alert on out-of-sync states. Use namePrefix/nameSuffix and commonLabels in the base to avoid repetition across overlays.",
+      "key_concepts": ["Kustomize base/overlay structure", "Components", "GitOps drift detection", "ArgoCD/Flux", "kustomize build in CI"]
+    },
+    {
+      "section": "Atlassian DevOps Architect – Round 1: Infra, Kubernetes, and Cloud Patterns",
+      "question": "Explain how you'd secure cross-region S3 replication and validate data integrity at scale.",
+      "answer": "Enable S3 Cross-Region Replication (CRR) with SSE-KMS using separate KMS keys per region. Restrict replication IAM role to only the required source and destination buckets. Enable S3 Object Lock on the destination to prevent tampering. For integrity: enable S3 Replication Time Control (RTC) for SLA-backed replication, use S3 Inventory + Athena to compare ETags between source and destination, and set up CloudWatch metrics on ReplicationLatency and BytesPendingReplication. For large-scale validation, write a Lambda that periodically samples random objects, fetches ETags from both regions, and alerts on mismatch.",
+      "key_concepts": ["S3 CRR", "SSE-KMS", "S3 Object Lock", "ETag comparison", "S3 Inventory", "Replication Time Control", "Lambda validation"]
+    },
+    {
+      "section": "Atlassian DevOps Architect – Round 1: Infra, Kubernetes, and Cloud Patterns",
+      "question": "What happens when systemd hits a failing unit in a containerized node? How would you auto-recover?",
+      "answer": "When a systemd unit fails repeatedly, it enters 'failed' state and stops restarting (if StartLimitIntervalSec/StartLimitBurst is exceeded). On a Kubernetes node, critical units like kubelet or containerd failing means the node goes NotReady. Auto-recovery: set Restart=always and RestartSec=5s in unit files. Use StartLimitAction=reboot for critical services if needed. On the Kubernetes side, configure Node Problem Detector (NPD) to watch systemd unit failures and emit NodeConditions. Combine with cluster-autoscaler or a custom controller to cordon+drain+replace the node automatically when NPD reports persistent failures.",
+      "key_concepts": ["systemd Restart policy", "StartLimitBurst", "Node Problem Detector", "NodeCondition", "kubelet/containerd recovery", "cordon and drain"]
+    },
+    {
+      "section": "Atlassian DevOps Architect – Round 1: Infra, Kubernetes, and Cloud Patterns",
+      "question": "Walk through your strategy to detect and mitigate pod-to-pod lateral movement inside a cluster.",
+      "answer": "Detection: Deploy Falco with runtime security rules to detect unexpected syscalls, shell spawning inside containers, or unusual network connections. Use network flow logs (VPC Flow Logs or Cilium Hubble) to baseline normal traffic patterns and alert on anomalies. Enable Kubernetes audit logs and watch for unexpected ServiceAccount token usage. Mitigation: Apply default-deny NetworkPolicy in every namespace, then whitelist only required pod-to-pod paths. Use mTLS via a service mesh (Istio/Linkerd) so all traffic is authenticated and encrypted. Enable PodSecurity standards (restricted profile) to block privilege escalation. Rotate ServiceAccount tokens frequently and use projected volumes with short TTLs.",
+      "key_concepts": ["Falco", "NetworkPolicy default-deny", "Cilium Hubble", "mTLS/Istio", "PodSecurity restricted", "Kubernetes Audit Logs", "ServiceAccount token rotation"]
+    },
+    {
+      "section": "Atlassian DevOps Architect – Round 1: Infra, Kubernetes, and Cloud Patterns",
+      "question": "How do you perform zero-downtime upgrades for a stateful workload using Helm 3?",
+      "answer": "For stateful workloads: use StatefulSet with updateStrategy: RollingUpdate and set partition to upgrade one pod at a time. Before upgrading, verify PodDisruptionBudget (PDB) is set so at least N-1 replicas are always available. Use Helm hooks (pre-upgrade, post-upgrade) to run schema migrations or data validation jobs before traffic shifts. For databases, use an init container or migration job that is idempotent. Test with 'helm upgrade --dry-run' first. After upgrade, run 'helm test' to validate. If health checks fail, 'helm rollback' brings you back immediately. Always back up PVCs using Velero before a major upgrade.",
+      "key_concepts": ["StatefulSet RollingUpdate", "PodDisruptionBudget", "Helm hooks", "helm rollback", "Velero PVC backup", "idempotent migrations"]
+    },
+    {
+      "section": "Atlassian DevOps Architect – Round 1: Infra, Kubernetes, and Cloud Patterns",
+      "question": "Describe a hybrid cloud routing architecture between GCP and AWS. Where do you enforce boundaries?",
+      "answer": "Use AWS Direct Connect and GCP Cloud Interconnect connected to a co-location facility (or use VPN tunnels over the internet as fallback). On AWS side: Transit Gateway aggregates VPC routes and connects to the Direct Connect Gateway. On GCP side: Cloud Router with BGP advertises GCP subnet ranges. Use BGP route filtering to control which subnets are visible across clouds — this is your enforcement boundary. Apply firewall rules/security groups on both sides to allow only required ports. For DNS: use Route 53 Resolver and GCP Cloud DNS with forwarding rules. Enforce data residency by tagging and routing sensitive workloads to stay within a single cloud using policy-based routing.",
+      "key_concepts": ["AWS Transit Gateway", "Direct Connect", "GCP Cloud Interconnect", "BGP route filtering", "Cloud Router", "Route 53 Resolver", "data boundary enforcement"]
+    },
+    {
+      "section": "Atlassian DevOps Architect – Round 1: Infra, Kubernetes, and Cloud Patterns",
+      "question": "Your Terraform state got corrupted during a backend migration. What is your rebuild strategy?",
+      "answer": "Step 1: Stop all Terraform operations immediately — lock the backend manually if possible. Step 2: Check if the old backend still has a valid state file backup (S3 versioning is a lifesaver here). Step 3: If versioning is enabled, restore the last valid .tfstate using 'aws s3 cp'. Step 4: If no backup exists, run 'terraform import' for each resource to rebuild state from existing infrastructure. Step 5: Use 'terraform plan' after import and confirm no destructive changes. Step 6: If partial state exists, use 'terraform state rm' to remove corrupted entries before re-importing. Step 7: Post-recovery, enable S3 versioning, DynamoDB locking, and add state backup automation to your CI pipeline.",
+      "key_concepts": ["S3 versioning for state backup", "terraform import", "terraform state rm", "DynamoDB state locking", "backend migration safety checks"]
+    },
+    {
+      "section": "Atlassian DevOps Architect – Round 1: Infra, Kubernetes, and Cloud Patterns",
+      "question": "Bash One-liner: Find all running containers using more than 500MB RSS memory on a node.",
+      "answer": "Command: docker stats --no-stream --format '{{.Name}} {{.MemUsage}}' | awk '{split($2,a,\"MiB\"); if(a[1]+0 > 500) print $1, $2}'\n\nAlternative using /proc: for pid in $(docker inspect --format '{{.State.Pid}}' $(docker ps -q)); do rss=$(cat /proc/$pid/status | grep VmRSS | awk '{print $2}'); if [ $rss -gt 512000 ]; then echo \"PID $pid RSS: ${rss}kB\"; fi; done\n\nExplanation: The first command uses docker stats to get live memory usage and awk to filter containers above 500MB. The second approach reads RSS directly from /proc filesystem which is more accurate for containerized workloads.",
+      "key_concepts": ["docker stats", "/proc/PID/status VmRSS", "awk filtering", "container memory monitoring"]
+    },
+    {
+      "section": "Atlassian DevOps Architect – Round 2: Real Fire, RCA, and Chaos Control",
+      "question": "A new AWS ALB config caused TLS handshakes to fail intermittently. Walk through your full RCA path.",
+      "answer": "Step 1: Check ALB access logs for SSL_ERROR or failed handshake entries — filter by status 000 or SSL policy fields. Step 2: Use 'openssl s_client -connect <ALB-DNS>:443' repeatedly to reproduce and capture the exact TLS error (certificate mismatch, cipher mismatch, SNI issue). Step 3: Compare old vs new ALB listener config — check SSL policy (ELBSecurityPolicy), certificate ARN, and whether ALPN policies changed. Step 4: Check if ACM certificate covers all required domains (wildcard vs SAN). Step 5: Verify target group protocol — if backend expects HTTP but ALB is sending HTTPS, re-encryption config matters. Step 6: Check CloudWatch metrics for ActiveConnectionCount, RejectedConnectionCount, and TargetTLSNegotiationErrorCount. Step 7: Rollback the config change, confirm resolution, then re-apply with correct SSL policy.",
+      "key_concepts": ["ALB access logs", "openssl s_client", "SSL policy", "ACM certificate SAN", "TargetTLSNegotiationErrorCount", "ALPN", "listener config rollback"]
+    },
+    {
+      "section": "Atlassian DevOps Architect – Round 2: Real Fire, RCA, and Chaos Control",
+      "question": "Kubernetes nodes are healthy but kubectl logs is blank for critical pods. What's happening?",
+      "answer": "Possible causes: 1) Application is logging to a file inside the container instead of stdout/stderr — Kubernetes only captures stdout/stderr. Fix: reconfigure the app or add a sidecar that tails the file to stdout. 2) Log rotation has already rotated the file on the node before kubectl logs could read it — check /var/log/containers/ on the node directly. 3) The container runtime (containerd/dockerd) log driver is misconfigured — check 'crictl logs <containerID>'. 4) Pod was restarted and old logs are gone — use 'kubectl logs --previous' flag. 5) A log aggregator (Fluentd/Filebeat) is consuming and removing logs before kubectl reads them. Check DaemonSet configs. 6) kubelet log path is wrong — verify /etc/kubernetes/kubelet-config.yaml containerLogMaxSize setting.",
+      "key_concepts": ["stdout/stderr requirement", "kubectl logs --previous", "crictl logs", "/var/log/containers", "log rotation", "containerLogMaxSize"]
+    },
+    {
+      "section": "Atlassian DevOps Architect – Round 2: Real Fire, RCA, and Chaos Control",
+      "question": "You deployed a sidecar logging agent. Suddenly, CPU throttling spikes. Diagnose and rollback.",
+      "answer": "Diagnosis: Run 'kubectl top pods' to confirm which container in the pod is throttling. Check 'kubectl describe pod' for CPU limits on the sidecar — a low cpu limit (e.g., 100m) causes heavy throttling when the agent bursts. Use 'kubectl exec' into the sidecar and check its own metrics endpoint. Look at container_cpu_throttled_seconds_total in Prometheus. Check if the sidecar is tailing too many log files or has aggressive flush intervals. Rollback: Use 'kubectl rollout undo deployment/<name>' to remove the sidecar version. If using Helm: 'helm rollback <release> <revision>'. Long-term fix: increase the sidecar's CPU limit, tune log flush intervals, and add resource requests/limits based on actual profiled usage.",
+      "key_concepts": ["kubectl top", "CPU throttling", "container_cpu_throttled_seconds_total", "kubectl rollout undo", "helm rollback", "sidecar resource tuning"]
+    },
+    {
+      "section": "Atlassian DevOps Architect – Round 2: Real Fire, RCA, and Chaos Control",
+      "question": "Autoscaling isn't kicking in despite CPU crossing the threshold. What's broken — metrics, HPA, or API server?",
+      "answer": "Debugging order: 1) Check HPA status: 'kubectl describe hpa <name>' — look at 'Conditions' and 'Metrics' fields for any 'unable to fetch metrics' errors. 2) Check metrics-server: 'kubectl top pods' — if this fails, metrics-server is down or misconfigured. Check its logs: 'kubectl logs -n kube-system deployment/metrics-server'. 3) Verify the HPA targetCPUUtilizationPercentage is based on requests, not limits — if pods have no CPU requests set, HPA can't calculate utilization. 4) Check if stabilizationWindowSeconds is too high (default 5 min for scale-down, 3 min for scale-up) — causing delayed reaction. 5) Check API server: 'kubectl get --raw /apis/metrics.k8s.io/v1beta1/pods' — if this 503s, the aggregated API layer is broken. 6) For KEDA: check ScaledObject conditions and the external metrics source connection.",
+      "key_concepts": ["kubectl describe hpa", "metrics-server", "CPU requests vs limits", "stabilizationWindowSeconds", "aggregated API layer", "KEDA ScaledObject"]
+    },
+    {
+      "section": "Atlassian DevOps Architect – Round 2: Real Fire, RCA, and Chaos Control",
+      "question": "Prod users reporting 504s, but ELB health checks are green. Explain your isolation and triage process.",
+      "answer": "Health checks being green means ELB can reach the app on the health check endpoint, but real user requests are timing out. Triage: 1) Check ELB access logs for target response times — filter requests with 504 to identify slow targets. 2) Check TargetResponseTime CloudWatch metric — spikes here mean the backend is slow, not the ELB. 3) SSH into or exec into a target and manually curl the slow endpoint — isolate if it's app-level slowness. 4) Check connection pool exhaustion: DB connections, thread pool limits, or downstream service timeouts. 5) Check if the ELB idle timeout (default 60s) is shorter than your app's response time for heavy requests — increase it. 6) Look at ELB SurgeQueueLength and SpilloverCount — queue full means backends can't handle load. 7) Gradually shift traffic away from the bad targets using weighted target groups while you investigate.",
+      "key_concepts": ["ELB access logs", "TargetResponseTime", "idle timeout", "SurgeQueueLength", "connection pool", "weighted target groups", "backend vs ELB distinction"]
+    },
+    {
+      "section": "Atlassian DevOps Architect – Round 2: Real Fire, RCA, and Chaos Control",
+      "question": "Systemd journal logs vanish on reboot across some AMIs. What do you check in the image build and boot sequence?",
+      "answer": "Root causes to check: 1) /etc/systemd/journald.conf — verify Storage=persistent is set. Default is 'auto' which only persists if /var/log/journal exists. 2) Check if /var/log/journal directory exists in the AMI — create it with correct permissions: 'mkdir -p /var/log/journal && systemd-tmpfiles --create --prefix /var/log/journal'. 3) AMI uses tmpfs for /var/log — check /etc/fstab and systemd mount units. If /var/log is tmpfs, journal is wiped on reboot. 4) Check cloud-init scripts in the AMI — a poorly written script might be clearing /var/log/journal on boot. 5) Verify RateLimitBurst and RateLimitIntervalSec in journald.conf aren't dropping high-volume logs silently. 6) If using log forwarding (rsyslog/Filebeat), check if it's consuming and deleting journal entries before reboot.",
+      "key_concepts": ["journald Storage=persistent", "/var/log/journal", "tmpfs /var/log", "cloud-init", "RateLimitBurst", "systemd-tmpfiles"]
+    },
+    {
+      "section": "Atlassian DevOps Architect – Round 2: Real Fire, RCA, and Chaos Control",
+      "question": "A production pod was OOMKilled, but you can't find logs. Walk through a forensic-level debug.",
+      "answer": "Step 1: 'kubectl describe pod <name>' — check Last State section for OOMKilled exit code (137) and the last termination message. Step 2: 'kubectl logs <pod> --previous' — get logs from the killed container instance. Step 3: If logs are gone, check on the node: 'crictl logs <containerID>' using the container ID from describe output. Step 4: Check /var/log/containers/ and /var/log/pods/ on the node directly. Step 5: Check kernel OOM killer logs: 'dmesg | grep -i oom' or 'journalctl -k | grep oom-kill' — this shows which process was killed and its memory usage. Step 6: Check Prometheus container_memory_working_set_bytes metric for the pod over time to see the memory growth pattern. Step 7: Review the pod's memory limits vs actual usage trend. Add a terminationMessagePath to capture last lines of app output before death.",
+      "key_concepts": ["kubectl logs --previous", "crictl logs", "dmesg OOM", "exit code 137", "container_memory_working_set_bytes", "terminationMessagePath", "/var/log/pods"]
+    },
+    {
+      "section": "Atlassian DevOps Architect – Round 2: Real Fire, RCA, and Chaos Control",
+      "question": "Kernel panic on a GKE node mid-deploy. How do you identify if it's infra, base image, or app-level?",
+      "answer": "Step 1: Check GKE node serial console logs (in GCP Console → Compute Engine → VM → Serial port output) for the kernel panic stack trace — this gives the exact failing kernel module or driver. Step 2: Check if the panic is reproducible — if only during deploy, it's likely the app triggering a kernel bug (e.g., specific syscall, seccomp violation, eBPF issue). Step 3: Compare the panicking node's kernel version with healthy nodes — 'uname -r'. A recent GKE node auto-upgrade could have introduced a bad kernel. Step 4: Check if the deployed container uses privileged mode or unusual kernel capabilities — these can trigger panics in certain kernel versions. Step 5: Check Cloud Logging for vmkernel or kernel panic entries across all nodes to see if it's isolated or widespread. Step 6: If base image issue, roll back the node pool image version in GKE. If app-level, disable the deployment and test the container on an isolated VM with the same kernel.",
+      "key_concepts": ["serial console logs", "kernel stack trace", "uname -r", "privileged containers", "GKE node image rollback", "seccomp", "eBPF kernel bug"]
+    },
+    {
+      "section": "Atlassian DevOps Architect – Round 3: Leadership, Engineering Influence & Production Principles",
+      "question": "How do you design infrastructure that empowers devs without giving them footguns?",
+      "answer": "Use a platform engineering model: provide self-service abstractions (Internal Developer Platform) so devs provision resources through approved templates, not raw Terraform or kubectl. Use namespaces with guardrails — ResourceQuotas, LimitRanges, and OPA/Kyverno policies that block insecure configs (no latest tags, no privileged pods, required resource limits). Offer golden path templates for common patterns (web service, worker, cron job) via Backstage or Helm charts. Enable devs to deploy to dev/QA freely but require approval gates for prod. Use policy-as-code to give immediate, clear feedback in CI — not a late-night prod incident. Build runbooks and internal docs so devs understand why constraints exist.",
+      "key_concepts": ["Internal Developer Platform", "OPA/Kyverno policies", "golden path templates", "Backstage", "policy-as-code", "self-service with guardrails"]
+    },
+    {
+      "section": "Atlassian DevOps Architect – Round 3: Leadership, Engineering Influence & Production Principles",
+      "question": "What's your Linux-level checklist before approving any custom AMI to production?",
+      "answer": "Checklist: 1) Kernel version — matches approved baseline, no known CVEs. 2) OS hardening — CIS benchmark score (use CIS-CAT or Lynis). 3) No unnecessary packages installed — minimal attack surface. 4) SSH config — PasswordAuthentication=no, root login disabled, strong ciphers only. 5) /var/log/journal persistent storage enabled. 6) SELinux/AppArmor enabled and enforcing. 7) NTP/chrony configured for time sync. 8) cloud-init version and scripts reviewed — no leftover credentials or hardcoded values. 9) Vulnerability scan via Trivy or AWS Inspector on the AMI. 10) IMDSv2 enforced (no IMDSv1). 11) EBS volumes encrypted by default. 12) Auditd enabled with rules for privileged command logging. 13) Automated using a pipeline: Packer build → Trivy scan → CIS benchmark → AMI tagging → approval gate.",
+      "key_concepts": ["CIS benchmark", "Lynis", "IMDSv2", "Trivy AMI scan", "Auditd", "cloud-init review", "SELinux/AppArmor", "Packer pipeline"]
+    },
+    {
+      "section": "Atlassian DevOps Architect – Round 3: Leadership, Engineering Influence & Production Principles",
+      "question": "You've been asked to move from centralized logging to a service-mesh-based observability model. What are your tradeoffs?",
+      "answer": "Centralized logging (ELK/Loki) pros: simple, works with any app, no code changes, good for legacy services. Cons: high storage cost, no correlation between logs/traces/metrics, difficult to attribute latency to a specific service hop. Service mesh observability (Istio + Jaeger/Zipkin + Prometheus) pros: automatic distributed tracing, mTLS visibility, per-service golden signals (latency, error rate, throughput) without code changes, L7 traffic insight. Cons: added latency from sidecar proxies (~1-2ms), increased resource overhead (Envoy sidecar per pod), operational complexity of managing the mesh control plane, harder debugging when the mesh itself is the problem. My recommendation: keep centralized logging for application-level logs (errors, business events) and layer the service mesh for infrastructure-level observability. Don't replace — complement.",
+      "key_concepts": ["ELK/Loki vs Istio+Jaeger", "distributed tracing", "sidecar overhead", "golden signals", "complementary observability", "mTLS visibility"]
+    },
+    {
+      "section": "Atlassian DevOps Architect – Round 3: Leadership, Engineering Influence & Production Principles",
+      "question": "Describe how you simulate production-level chaos in staging for Kubernetes.",
+      "answer": "Use Chaos Engineering tools: 1) LitmusChaos or Chaos Monkey for Kubernetes — inject pod kills, node drains, network delays, CPU/memory stress at a scheduled cadence. 2) Toxiproxy — simulate network latency, packet loss, and connection resets between services. 3) Manually drain nodes during peak load simulation to test PDB effectiveness. 4) Kill random pods to verify liveness/readiness probes and auto-restart behavior. 5) Saturate CPU/memory of specific pods to test HPA response time. 6) Inject DNS failures to test service discovery resilience. Process: define steady state (error rate < X%, p99 latency < Yms), run chaos experiment, measure deviation, fix weaknesses, repeat. Always run with a kill switch and never in prod without a GameDay plan.",
+      "key_concepts": ["LitmusChaos", "Toxiproxy", "PodDisruptionBudget testing", "steady state hypothesis", "GameDay", "DNS failure injection", "HPA stress test"]
+    },
+    {
+      "section": "Atlassian DevOps Architect – Round 3: Leadership, Engineering Influence & Production Principles",
+      "question": "How do you handle pushback from leadership when your SLOs threaten velocity?",
+      "answer": "Frame SLOs as enablers of velocity, not blockers. Use data: show the cost of incidents caused by skipping reliability work — MTTR, revenue impact, engineer toil. Introduce error budgets — if the error budget is healthy, the team can ship fast; if it's burning, they slow down. This makes reliability a shared engineering decision, not a top-down constraint. Propose a phased approach: ship with a defined reliability floor (e.g., 99.5% availability) and improve over time. Build SLOs into the definition of done so reliability work isn't seen as separate overhead. Use postmortem data to quantify the cost of technical debt. If leadership still pushes back, document the risk formally and escalate — but always offer a middle path with a concrete plan.",
+      "key_concepts": ["error budget", "SLO as enabler", "incident cost data", "definition of done", "postmortem ROI", "risk documentation", "reliability floor"]
+    },
+    {
+      "section": "5 Years in DevOps – Real Interview Q&A",
+      "question": "How do you manage Terraform state in a team?",
+      "answer": "Store state remotely — on AWS use S3 with versioning enabled and DynamoDB for state locking. On Azure use Azure Blob Storage with lease-based locking. Use separate state files (workspaces or separate backends) per environment (dev, QA, UAT, prod) to prevent cross-environment blast radius. Build reusable modules for common infra patterns (AKS node pools, Key Vault, networking) so teams don't write raw resources. Enforce state access via IAM roles — not everyone should be able to run terraform apply in prod. In CI/CD, use 'terraform plan' on PR and 'terraform apply' only on merge to main, with plan output stored as an artifact for review.",
+      "key_concepts": ["S3 + DynamoDB backend", "Azure Blob + lease locking", "separate state per env", "Terraform modules", "IAM for state access", "CI plan/apply split"]
+    },
+    {
+      "section": "5 Years in DevOps – Real Interview Q&A",
+      "question": "HPA vs KEDA — when do you use what?",
+      "answer": "HPA (Horizontal Pod Autoscaler): use when scaling decisions are based on CPU or memory utilization. It's built into Kubernetes and requires no extra installation. Best for stateless web services with predictable resource patterns. KEDA (Kubernetes Event-Driven Autoscaler): use when you need to scale based on external metrics — Kafka lag, SQS queue depth, Azure Service Bus message count, Prometheus custom metrics, etc. KEDA also supports scale-to-zero, which HPA does not (HPA minimum is 1). Use KEDA in event-driven architectures, batch processors, and non-prod clusters where cost saving via zero-scale matters. KEDA internally creates and manages an HPA, so the two work together.",
+      "key_concepts": ["HPA CPU/memory scaling", "KEDA event-driven scaling", "scale-to-zero", "Kafka/SQS metrics", "KEDA creates HPA internally", "cost optimization"]
+    },
+    {
+      "section": "5 Years in DevOps – Real Interview Q&A",
+      "question": "Pod stuck in Pending — how do you debug it?",
+      "answer": "Run 'kubectl describe pod <name>' and go straight to the Events section at the bottom. Common causes: 1) Insufficient resources — 'Insufficient cpu' or 'Insufficient memory' means no node has enough free resources matching the pod's requests. Fix: scale up nodes or reduce requests. 2) Taint/Toleration mismatch — pod has no toleration for a node's taint. Fix: add the correct toleration or use a different nodeSelector. 3) PVC not bound — pod waits for a PersistentVolumeClaim to bind. Check 'kubectl get pvc'. 4) Node affinity/anti-affinity rules too strict — no node matches. Review affinity rules. 5) Image pull issues — if it's stuck in ContainerCreating, the image might not be pulled yet. Check 'kubectl describe pod' for ImagePullBackoff. Enforce LimitRanges at namespace level to prevent resource over-commitment.",
+      "key_concepts": ["kubectl describe pod Events", "resource requests", "taints/tolerations", "PVC binding", "node affinity", "LimitRange", "ImagePullBackoff"]
+    },
+    {
+      "section": "5 Years in DevOps – Real Interview Q&A",
+      "question": "How do you handle secrets in AKS?",
+      "answer": "Use Azure Key Vault with the Secrets Store CSI Driver (azure/secrets-store-csi-driver-provider-azure). Pods mount secrets as volumes at runtime — secrets never sit in etcd as Kubernetes Secret objects. Access control uses Managed Identity (User-Assigned or Workload Identity) bound to the pod's ServiceAccount, combined with Azure RBAC (Key Vault Secrets User role). Prefer the newer Workload Identity model over pod identity v1 — it's more secure and doesn't require a mutating webhook. For migration from Access Policy model to RBAC model: create new access policies in RBAC mode, test with a dev pod, then migrate production workloads. Never store secrets as environment variables from plain Kubernetes Secrets without encryption at rest enabled in AKS.",
+      "key_concepts": ["Secrets Store CSI Driver", "Azure Key Vault", "Workload Identity", "Managed Identity", "Azure RBAC", "no secrets in etcd", "encryption at rest"]
+    },
+    {
+      "section": "5 Years in DevOps – Real Interview Q&A",
+      "question": "Walk me through a CI/CD pipeline you've built.",
+      "answer": "On merge to main: GitHub Actions triggers. Stages: 1) Lint — ESLint, Dockerfile linting with Hadolint, Terraform fmt/validate. 2) Unit tests — run with coverage threshold gate. 3) Docker build — multi-stage build, tag with commit SHA. 4) Image scan — Trivy scans for HIGH/CRITICAL CVEs, fails pipeline if found. 5) Push to ACR — only if scan passes. 6) Helm upgrade — deploy to AKS dev namespace with the new image tag. 7) Post-deploy health check — curl the /health endpoint, check pod rollout status. 8) If health check fails: automatic 'helm rollback' to previous revision. 9) Manual approval gate for prod deploy. 10) Prod deploy with same Helm chart, prod values file, PodDisruptionBudget enforced during rollout.",
+      "key_concepts": ["GitHub Actions", "Trivy image scan", "Helm upgrade + rollback", "multi-stage Docker build", "ACR", "post-deploy health check", "manual approval gate"]
+    },
+    {
+      "section": "5 Years in DevOps – Real Interview Q&A",
+      "question": "Liveness vs Readiness vs Startup probes — what is the difference?",
+      "answer": "Startup probe: runs first, only during container startup. Used for slow-starting apps (e.g., JVM warmup). If it fails within failureThreshold × periodSeconds, the container is killed. While startup probe is running, liveness and readiness probes are disabled. Readiness probe: runs continuously after startup. If it fails, the pod is removed from the Service endpoints — it stops receiving traffic but is NOT killed. Use for apps that can temporarily be unready (cache warming, downstream dependency down). Liveness probe: runs continuously. If it fails, the container is killed and restarted. Use only for detecting truly dead/deadlocked states — don't use it for transient errors or you'll cause unnecessary restarts. Golden rule: always set a Startup probe for slow starters to avoid premature liveness kills.",
+      "key_concepts": ["startup probe disables others", "readiness removes from Service", "liveness kills and restarts", "failureThreshold", "JVM warmup", "golden rule for slow starters"]
+    },
+    {
+      "section": "5 Years in DevOps – Real Interview Q&A",
+      "question": "How do you monitor and observe your clusters?",
+      "answer": "Full observability stack: Metrics: kube-state-metrics + metrics-server + Prometheus (or Azure Monitor for AKS). Dashboards in Grafana with prebuilt Kubernetes dashboards. Alert on pod restarts, node memory pressure, HPA at max replicas, PVC usage. Logs: Filebeat DaemonSet on every node ships container logs + node system logs to Elasticsearch. Kibana for log search, dashboards, and data views. Index lifecycle management (ILM) to manage retention and cost. Traces: Jaeger or OpenTelemetry Collector for distributed tracing (if service mesh is used). Events: Kubernetes event exporter ships cluster events to Elasticsearch for long-term retention (events expire in 1 hour by default). Alerts: PagerDuty/OpsGenie integration for SLO breach alerts with clear runbook links.",
+      "key_concepts": ["Prometheus + Grafana", "Filebeat DaemonSet", "Elasticsearch + Kibana", "kube-state-metrics", "OpenTelemetry", "event exporter", "ILM"]
+    },
+    {
+      "section": "5 Years in DevOps – Real Interview Q&A",
+      "question": "How do you handle node pool upgrades without downtime?",
+      "answer": "Use surge upgrade settings: configure maxSurge=1 and maxUnavailable=0 in the node pool upgrade config. This adds a new node before draining an old one — zero capacity loss. Ensure PodDisruptionBudgets are set for all critical workloads so the drain operation respects minimum available replicas. Process: 1) Upgrade control plane first (AKS/EKS managed control plane is usually seamless). 2) Upgrade node pools one at a time (blue/green node pools if risk is high). 3) New node comes up, Kubernetes scheduler starts placing pods on it. 4) Old node is cordoned then drained — respects PDB. 5) Old node is deleted. Monitor pod rescheduling with 'kubectl get pods -w' during the process. For AKS: use 'az aks nodepool upgrade' with --node-surge-count.",
+      "key_concepts": ["maxSurge upgrade", "PodDisruptionBudget during drain", "control plane first", "cordon and drain", "blue/green node pools", "az aks nodepool upgrade"]
+    },
+    {
+      "section": "5 Years in DevOps – Real Interview Q&A",
+      "question": "Cross-namespace networking in Kubernetes — how does it work?",
+      "answer": "By default, all pods in a Kubernetes cluster can communicate with all other pods across namespaces — the network is flat. A pod in namespace A can reach a service in namespace B using the full DNS name: service-name.namespace-b.svc.cluster.local. To restrict this, apply NetworkPolicy resources. A default-deny ingress policy in a namespace blocks all incoming traffic unless explicitly whitelisted. To allow specific cross-namespace traffic: use namespaceSelector in NetworkPolicy to match the source namespace's labels. For example, allow traffic from the monitoring namespace to scrape metrics from all namespaces. Always label your namespaces so NetworkPolicy selectors work correctly.",
+      "key_concepts": ["flat network by default", "FQDN: svc.namespace.svc.cluster.local", "NetworkPolicy", "namespaceSelector", "default-deny", "namespace labels"]
+    },
+    {
+      "section": "5 Years in DevOps – Real Interview Q&A",
+      "question": "How do you approach onboarding a new application team onto AKS?",
+      "answer": "Step 1: Create a dedicated namespace with agreed naming conventions. Step 2: Apply ResourceQuota and LimitRange to cap resource usage. Step 3: Create a ServiceAccount with RBAC roles scoped to their namespace only (no cluster-wide permissions). Step 4: Onboard to the GitOps repo — provide a Helm chart template or Kustomize base they can customize. Step 5: Set up their namespace in ArgoCD/Flux with auto-sync enabled for dev, manual approval for prod. Step 6: Provide a Key Vault integration guide and Workload Identity setup for secrets. Step 7: Add their namespace to the Filebeat/Prometheus scrape config for observability. Step 8: Walk through the CI/CD pipeline, runbooks, and escalation path. Step 9: Enforce Network Policies — start with default-deny and open only required ports. Document everything in Confluence/Backstage.",
+      "key_concepts": ["namespace + RBAC", "ResourceQuota", "GitOps onboarding", "Workload Identity", "default-deny NetworkPolicy", "Backstage docs", "ArgoCD per-namespace"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "Code pushed but pipeline not triggered. What will you check first?",
+      "answer": "Check in this order: 1) Verify the branch name matches the pipeline trigger config (e.g., push to 'main' but trigger is on 'master'). 2) Check webhook settings in GitHub/GitLab — is the webhook active and pointing to the correct CI URL? Check webhook delivery logs for errors. 3) Check if the pipeline config file (.github/workflows/*.yml or .gitlab-ci.yml) has a syntax error that prevents parsing. 4) Verify the CI runner/agent is online and connected. 5) Check if the branch is protected and requires specific conditions before triggering. 6) Look at the CI platform's event logs for any received/ignored events.",
+      "key_concepts": ["webhook delivery logs", "branch name mismatch", "YAML syntax error", "runner availability", "branch protection rules", "event logs"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "Build stage failed. How will you debug it?",
+      "answer": "Step 1: Read the full build log — don't just look at the last line. Scroll up to find the first ERROR or FAILED line. Step 2: Identify the failing command (e.g., npm install, mvn package, docker build). Step 3: Reproduce locally with the same environment variables and build context. Step 4: Check dependency versions — a transitive dependency update might have broken the build. Step 5: Check if the build agent has enough disk space, memory, or CPU. Step 6: Compare with the last successful build — what changed? (Git diff, dependency lockfile changes). Step 7: Enable verbose/debug logging for the failing command (e.g., 'npm install --verbose', 'mvn -X').",
+      "key_concepts": ["first error in logs", "local reproduction", "dependency version changes", "agent resources", "git diff from last success", "verbose logging"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "Tests failing intermittently. What will you do?",
+      "answer": "Intermittent test failures are usually caused by: 1) Flaky tests — test relies on timing, order, or external state. Identify by running the test 10x in isolation. Fix by adding retries or fixing the test logic. 2) Shared state between tests — a previous test pollutes the environment. Run tests in isolation/parallel with clean state per run. 3) External dependency — test calls a real API or database that has downtime. Mock external dependencies in unit tests. 4) Resource contention on the CI agent — too many parallel jobs cause timing-sensitive tests to fail. Reduce parallelism or increase agent size. 5) Enable test run history in your CI tool to identify which tests are flaky (e.g., GitHub Actions test summary, Allure reports).",
+      "key_concepts": ["flaky test identification", "test isolation", "mocking external deps", "parallel job contention", "test history/Allure", "retry logic"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "Build successful but artifact not generated. Why?",
+      "answer": "Check: 1) The build command succeeded with exit code 0 but the output path is wrong — check artifact path in the pipeline config vs actual build output directory. 2) The artifact upload step ran after a failing conditional — check 'if' conditions on the upload step. 3) Build ran in a container and the artifact is inside the container but not copied to the host workspace. Use Docker COPY or mounted volumes. 4) The artifact is generated but in a subdirectory not included in the upload glob pattern — check patterns like '**/build/*.jar' vs 'build/*.jar'. 5) Disk quota exceeded on the agent — artifact was created but immediately deleted. Check agent disk usage.",
+      "key_concepts": ["artifact path mismatch", "conditional step logic", "Docker volume mounts", "glob pattern", "disk quota", "exit code vs output"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "Artifact pushed but deployment failed. What will you check?",
+      "answer": "Check: 1) Deployment target (Kubernetes, VM, ECS) logs for the actual error — not just the pipeline output. 2) Image tag mismatch — pipeline pushed 'v1.2.3' but deployment manifest still references 'latest' or an old tag. 3) Registry credentials expired or misconfigured in the deployment target — imagePullBackoff errors in Kubernetes. 4) Config/secret values missing in the target environment — app starts but crashes on missing env vars. 5) Network connectivity from deployment target to the registry (firewall rules, VPC endpoint). 6) Insufficient permissions — deployment service account lacks rights to update the deployment.",
+      "key_concepts": ["deployment target logs", "image tag mismatch", "registry credentials", "missing env vars", "network to registry", "RBAC permissions"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "Wrong version deployed to production. Why?",
+      "answer": "Root causes: 1) Pipeline used 'latest' tag instead of immutable SHA/version tags — multiple builds overwrote the same tag. Always tag with git commit SHA. 2) Deployment config was not updated atomically — image was pushed but values.yaml or configmap was not updated in the same commit. 3) Cache hit on the build step — CI used a cached image from a previous build. Use --no-cache or pin base image digest. 4) CD tool (ArgoCD/Flux) was pointing to a different branch or tag than expected. Check the sync target. 5) Manual override in production bypassed the pipeline — check who ran 'kubectl set image' manually. Enable audit logs.",
+      "key_concepts": ["immutable image tags", "SHA tagging", "atomic config updates", "build cache invalidation", "ArgoCD sync target", "kubectl audit logs"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "Pipeline very slow. How will you optimize it?",
+      "answer": "Optimization techniques: 1) Parallelise independent jobs — lint, test, and security scan can run simultaneously. 2) Cache dependencies — cache node_modules, .m2/repository, pip packages between runs using cache actions keyed on lockfile hash. 3) Use incremental builds — only rebuild changed services in a monorepo (affected commands in Nx/Turborepo). 4) Optimize Docker builds — multi-stage builds, layer ordering (copy dependency files first, then source), use BuildKit with inline cache. 5) Use faster/larger CI runners for heavy jobs. 6) Skip unnecessary stages on draft PRs or documentation-only changes using path filters. 7) Analyse pipeline timing with CI tools (GitHub Actions timing breakdown, GitLab pipeline analytics).",
+      "key_concepts": ["parallel jobs", "dependency caching", "affected builds", "Docker BuildKit", "multi-stage builds", "path filters", "pipeline analytics"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "Multiple builds running together. How will you control it?",
+      "answer": "Use concurrency controls: 1) GitHub Actions: use 'concurrency' group with 'cancel-in-progress: true' to cancel outdated runs on the same branch when a new push happens. 2) GitLab CI: use 'resource_group' to serialize deployments to the same environment. 3) Jenkins: use 'throttle concurrent builds' plugin or 'lock' step for exclusive access to an environment. 4) For deployment pipelines specifically: ensure only one deploy runs at a time per environment to prevent race conditions. 5) Use queuing: if parallel execution is needed for testing but not deployment, split the pipeline into separate stages with different concurrency rules.",
+      "key_concepts": ["GitHub Actions concurrency", "GitLab resource_group", "cancel-in-progress", "Jenkins throttle/lock", "environment-level serialization"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "Secrets exposed in pipeline logs. What is your action?",
+      "answer": "Immediate actions: 1) Rotate the exposed secret immediately — treat it as compromised. 2) Revoke any sessions or tokens that used the exposed credential. 3) Audit access logs to determine if the secret was used maliciously during the exposure window. Prevention: 4) Use the CI platform's secret masking feature — GitHub Actions automatically masks values stored as secrets, but only if they're set as secrets, not hardcoded. 5) Never echo or print secrets in commands. Use 'set +x' in bash to disable command printing. 6) Use 'add-mask' in GitHub Actions to mask dynamic secrets. 7) Scan pipeline logs automatically with tools like truffleHog or detect-secrets. 8) Review all steps that print environment variables (env, printenv) — remove or restrict them.",
+      "key_concepts": ["rotate immediately", "secret masking", "set +x", "add-mask", "truffleHog/detect-secrets", "audit access logs", "no hardcoded secrets"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "Pipeline works locally but fails in CI/CD. Why?",
+      "answer": "Classic causes: 1) Environment variable differences — local has .env file, CI doesn't. Check all required env vars are set in CI secrets/variables. 2) OS/architecture difference — local is macOS arm64, CI is linux/amd64. Use Docker to normalise the build environment. 3) File permission differences — local has executable scripts, CI runner cloned repo without execute permissions. Add 'chmod +x' in pipeline or use 'git update-index --chmod=+x'. 4) Network access — CI runner can't reach an internal service or private registry. Check firewall rules and VPN/peering config. 5) Dependency version drift — local has cached older packages. Add lockfile ('package-lock.json', 'requirements.txt') and use 'ci' install commands (npm ci vs npm install).",
+      "key_concepts": ["env var missing", "OS/arch mismatch", "file permissions", "network access from CI", "lockfile + npm ci", "Docker for reproducibility"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "Docker image build fails in pipeline. What will you debug?",
+      "answer": "Debug steps: 1) Check the exact error line in the docker build output — layer-by-layer until the RUN command that fails. 2) Common causes: package not found (apt/yum repo unavailable from CI network), COPY path doesn't exist in build context, ARG/ENV variable not passed. 3) Check if the base image tag still exists — 'FROM node:16' might have been deprecated. Pin to digest: 'FROM node:16@sha256:...'. 4) Build context too large — check .dockerignore file, large node_modules or .git being sent to daemon slows or fails builds. 5) Registry rate limiting (Docker Hub) — use an authenticated pull or a private registry mirror. 6) Run 'docker build --progress=plain' to see detailed output and reproduce locally.",
+      "key_concepts": ["layer-by-layer error", "base image digest pinning", ".dockerignore", "Docker Hub rate limit", "build context size", "ARG/ENV passing", "--progress=plain"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "Image push to registry failed. What could be wrong?",
+      "answer": "Check: 1) Authentication — CI credentials for the registry are expired, wrong, or not set. Re-authenticate: 'docker login' with correct credentials stored as CI secrets. 2) Repository doesn't exist — the target repo must be created first in ECR/ACR/GCR before pushing. 3) Image tag format invalid — some registries have naming restrictions. 4) Network connectivity — CI runner can't reach the registry endpoint (firewall, NAT, VPC endpoint config). 5) Storage quota exceeded on the registry — check registry storage limits. 6) Push permissions — the service account/IAM role used by CI has only pull permissions, not push. Check IAM policies (ECR: ecr:PutImage, ecr:InitiateLayerUpload, etc.).",
+      "key_concepts": ["registry auth/credentials", "ECR repo creation", "IAM push permissions", "network to registry", "tag naming rules", "storage quota"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "Deployment to Kubernetes failed. What will you check?",
+      "answer": "Check in order: 1) 'kubectl rollout status deployment/<name>' — see if rollout is stuck. 2) 'kubectl describe deployment/<name>' — check Events for error messages. 3) 'kubectl get pods' — look for CrashLoopBackOff, ImagePullBackOff, Pending states. 4) 'kubectl describe pod <failing-pod>' — Events section shows the root cause (image pull error, scheduling failure, probe failure). 5) 'kubectl logs <pod>' — app logs for startup errors. 6) Check if the Helm release values are correct: 'helm get values <release>'. 7) Check RBAC — does the CI service account have permission to update deployments in that namespace? 8) Check if the new image tag actually exists in the registry.",
+      "key_concepts": ["kubectl rollout status", "kubectl describe pod Events", "CrashLoopBackOff", "ImagePullBackOff", "helm get values", "RBAC for CI SA"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "Rollback required after failure. How will you implement it?",
+      "answer": "Kubernetes/Helm: 'helm rollback <release> <revision>' or 'kubectl rollout undo deployment/<name>'. Always know your revision before deploying: 'helm history <release>'. For GitOps: revert the Git commit that changed the image tag/config — ArgoCD/Flux will auto-sync back to the previous state. For database migrations: rollback is harder — use reversible migrations (Flyway/Liquibase with undo scripts). Never deploy schema changes that can't be rolled back without data loss. For blue/green deployments: rollback = switch the load balancer back to the blue (old) target group — instant and zero-risk. Design rollback into the deployment strategy from day one, not as an afterthought.",
+      "key_concepts": ["helm rollback", "kubectl rollout undo", "GitOps revert", "Flyway undo migrations", "blue/green switch", "revision tracking", "rollback by design"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "Health checks failing after deployment. What will you verify?",
+      "answer": "Verify: 1) Is the health check endpoint (/health, /ready) actually implemented in the new version? A code change might have removed or moved it. 2) Check the health check path, port, and protocol in the load balancer/Kubernetes probe config — they must match the app. 3) Check if the app needs more startup time — liveness/readiness probes might be hitting before the app is ready. Increase initialDelaySeconds or add a Startup probe. 4) Check if the health endpoint requires authentication — load balancer health checks should use a public, unauthenticated endpoint. 5) Check app logs for errors during startup — a failed DB connection might cause /health to return 500. 6) Verify environment-specific config (DB URL, API keys) is correctly set in the new environment.",
+      "key_concepts": ["health endpoint existence", "probe path/port match", "initialDelaySeconds", "startup probe", "unauthenticated health path", "startup config errors"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "Zero downtime deployment needed. How will you design it?",
+      "answer": "Kubernetes: Use RollingUpdate strategy with maxUnavailable=0 and maxSurge=1. Set Readiness probes so old pods only stop receiving traffic after new pods are ready. Use PodDisruptionBudgets to enforce minimum available replicas during the rollout. For databases: deploy backward-compatible schema changes first (additive only), then deploy the app, then remove old columns in a separate migration cycle. For load balancers: use connection draining (deregistration delay) so in-flight requests complete before old targets are removed. For feature flags: decouple deployment from release — deploy code dark, then enable via feature flag without redeployment. Blue/Green: run old and new versions simultaneously, shift traffic gradually (canary) before full cutover.",
+      "key_concepts": ["RollingUpdate maxUnavailable=0", "Readiness probe gating", "connection draining", "backward-compatible migrations", "feature flags", "canary deployment", "PodDisruptionBudget"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "Pipeline not picking latest code changes. Why?",
+      "answer": "Causes: 1) Pipeline is triggered by a webhook but the webhook payload wasn't delivered — check webhook delivery logs in GitHub/GitLab. 2) Pipeline is using a cached checkout — the 'git checkout' step is reading from cache. Force a fresh clone or disable checkout cache. 3) CI tool is polling for changes and the polling interval is too long. Switch to webhook-based triggers. 4) Branch protection or required status checks are preventing the trigger. 5) The pipeline uses a hardcoded branch ref (e.g., 'refs/heads/main') but the push was to a different branch. 6) Submodule not updated — if code is in a Git submodule, the parent repo commit SHA didn't change. Update submodule reference.",
+      "key_concepts": ["webhook delivery logs", "git checkout cache", "polling vs webhooks", "hardcoded branch ref", "Git submodules", "branch protection"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "Environment-specific configs not applied. What will you check?",
+      "answer": "Check: 1) Config injection method — are configs passed as env vars, config maps, or files? Verify the mechanism used. 2) Helm values files — is the correct values file (values-prod.yaml) being used in the deploy command? Check 'helm upgrade -f values-prod.yaml'. 3) Kustomize overlay — is the correct overlay (prod/) being built? Check 'kustomize build overlays/prod'. 4) ArgoCD/Flux application definition — is it pointing to the correct values file and cluster? 5) Secret values — are environment-specific secrets (DB URLs, API keys) set in the target environment's secret store? 6) Check if the app is reading config from a hardcoded path that exists in dev but not prod.",
+      "key_concepts": ["Helm -f values file", "Kustomize overlay targeting", "ArgoCD app config", "secret per environment", "hardcoded config paths", "config injection method"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "Manual approval needed before prod deploy. How will you design it?",
+      "answer": "Implementation options: 1) GitHub Actions: use 'environment' with required reviewers — the deploy job waits for approval from designated users before running. 2) GitLab CI: use 'when: manual' on the production deploy job — it appears in the UI for a human to click. 3) Jenkins: use the 'input' step — pipeline pauses and waits for a user to approve in the UI. 4) ArgoCD: configure the prod Application with 'syncPolicy' without auto-sync — require a human to trigger sync from the ArgoCD UI or CLI. Best practice: notify approvers via Slack/email when a deploy is waiting. Set a timeout on the approval gate to prevent pipelines hanging indefinitely. Log who approved and when for audit trails.",
+      "key_concepts": ["GitHub environment protection rules", "GitLab when: manual", "Jenkins input step", "ArgoCD manual sync", "approval notifications", "audit trail", "timeout on approval"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "Pipeline stuck in queue. What will you check?",
+      "answer": "Check: 1) All available runners/agents are busy — check runner utilization. Add more runner capacity or upgrade to larger runners. 2) Concurrency limits — pipeline is waiting due to environment or resource group concurrency settings. Check if the limit is intentional. 3) A previous run is stuck and holding a lock (resource_group in GitLab, concurrency group in GitHub Actions). Cancel the stuck run manually. 4) Runner is offline or disconnected — check runner status in CI admin panel. Restart or re-register the runner. 5) Job requires a specific runner tag/label that no available runner has. Check runner tags match the job requirements.",
+      "key_concepts": ["runner capacity", "concurrency limit", "stuck run holding lock", "runner tags mismatch", "runner offline", "cancel stuck runs"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "Agent/node not available. How will you debug?",
+      "answer": "Debug steps: 1) Check CI admin panel for agent/runner status — is it offline, idle, or in error state? 2) SSH into the agent machine and check: disk space (df -h), memory (free -m), CPU load (top). An agent with full disk will appear unavailable. 3) Check the agent process: is the runner daemon running? (systemctl status gitlab-runner / systemctl status github-actions-runner). 4) Check agent logs for connection errors to the CI controller. 5) Check network connectivity from the agent to the CI server. 6) For Kubernetes-based agents (Jenkins inbound agent, GitHub Actions ARC): check if the pod is running and can pull the agent image. 7) Re-register or restart the agent as a last resort.",
+      "key_concepts": ["runner daemon status", "disk/memory on agent", "agent process check", "network to CI controller", "Kubernetes agent pod", "agent re-registration"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "Logs not sufficient to debug issue. What will you improve?",
+      "answer": "Improvements: 1) Enable verbose/debug logging for the failing tool (--verbose, --debug flags). 2) Add explicit echo/print statements around critical steps to show intermediate values. 3) Capture and upload artifacts: test reports (JUnit XML), coverage reports, build output directories. 4) Use structured logging in applications so logs are queryable (JSON format). 5) Increase log retention in your CI tool — some tools purge logs after 30 days. 6) For deployment failures: enable Kubernetes events export to a long-term store (Elasticsearch) since events expire in 1 hour. 7) Add 'set -x' in bash scripts to print every executed command. 8) Use OpenTelemetry to trace pipeline execution for complex multi-step workflows.",
+      "key_concepts": ["verbose flags", "artifact upload", "structured/JSON logging", "log retention", "Kubernetes event export", "set -x bash", "OpenTelemetry pipeline tracing"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "Notification not sent after failure. What will you check?",
+      "answer": "Check: 1) Notification step condition — is it set to run 'if: failure()' or 'on_failure'? A missing or wrong condition means it only runs on success. 2) Secrets for notification service (Slack webhook URL, PagerDuty API key) — are they set in CI variables? An expired or missing secret silently fails. 3) Network connectivity from CI runner to the notification endpoint (Slack, Teams, PagerDuty). 4) Check the notification step's own logs — it might have run and failed silently. 5) If using a notification plugin/action, check if it has been updated and the API changed. 6) Test the notification step manually by triggering it in isolation.",
+      "key_concepts": ["if: failure() condition", "notification secrets", "network to Slack/PagerDuty", "silent step failure", "notification step logs", "manual test trigger"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "Monitoring not detecting deployment issue. Why?",
+      "answer": "Possible gaps: 1) Monitoring alert thresholds are too loose — error rate alert triggers at 10% but the issue causes 3% errors. Tune thresholds to match SLO. 2) Monitoring is checking the wrong metric — health check endpoint returns 200 but a background job is silently failing. Add business metrics. 3) Alert routing is broken — alert fired but notification wasn't delivered (same as notification debugging above). 4) Monitoring tool itself was affected by the deployment — if you deployed a change to the monitoring stack, it might have a gap. 5) New endpoints or services weren't added to monitoring. Enforce 'monitoring as code' — every new service must register its metrics and alerts in the same PR as the service itself.",
+      "key_concepts": ["alert threshold tuning", "business metrics", "monitoring stack self-impact", "new service monitoring gap", "monitoring as code", "SLO-aligned alerts"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "Pipeline fails only in production environment. Why?",
+      "answer": "Common causes: 1) Environment-specific config missing — prod has stricter requirements (HTTPS, auth, TLS) that dev skips. 2) Network differences — prod is in a private VPC with no internet access; CI runner can't reach external dependencies. 3) IAM/RBAC permissions — CI service account has more permissions in dev than prod. Audit prod permissions. 4) Prod-specific feature flags or config values that expose a code path not tested in lower environments. 5) Scale differences — prod data volume or concurrency exposes a race condition or timeout not seen in dev. 6) Secret values — prod secrets are rotated more frequently and the pipeline might be using an expired secret. Always test pipeline changes in a staging environment that mirrors prod as closely as possible.",
+      "key_concepts": ["env config differences", "private VPC no internet", "IAM permission diff", "prod-only code paths", "scale-related bugs", "secret rotation", "prod-parity staging"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "Dependency failure during build. How will you debug?",
+      "answer": "Debug steps: 1) Identify the failing dependency from the error message — package name and version. 2) Check if the package registry (npm, PyPI, Maven Central) is experiencing downtime — check their status pages. 3) Check if the specific version was yanked/deprecated — use an explicit version pin in your lockfile. 4) Check if you're behind a corporate proxy — the build agent might need proxy settings (HTTP_PROXY, HTTPS_PROXY). 5) Use a private registry mirror (Artifactory, Nexus) to avoid external dependency on public registries. 6) Check for network timeouts — increase timeout settings for dependency downloads. 7) For Docker base images: use a registry mirror and pin to digest to avoid 'not found' errors.",
+      "key_concepts": ["registry status page", "version pinning/lockfile", "proxy settings", "Artifactory/Nexus mirror", "download timeouts", "yanked packages", "base image digest"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "Multiple microservices deployment. How will you manage pipeline?",
+      "answer": "Strategies: 1) Monorepo with affected builds — only build and deploy services that have changed files (using Nx, Turborepo, or custom path filters). 2) Separate pipeline per service in a polyrepo setup — each service has its own CI/CD pipeline triggered independently. 3) Use a deployment orchestrator — a central pipeline that reads a deployment manifest and deploys services in dependency order. 4) GitOps with ArgoCD ApplicationSets — each microservice has an ArgoCD Application, and ApplicationSet generates them from a template. 5) Use service mesh traffic management to do canary releases per service independently. 6) Maintain a service dependency map to ensure services are deployed in the right order (e.g., schema migration before API, API before frontend).",
+      "key_concepts": ["affected builds", "polyrepo pipelines", "ArgoCD ApplicationSets", "deployment dependency order", "canary per service", "Nx/Turborepo", "deployment orchestrator"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "Pipeline security concerns. What will you improve?",
+      "answer": "Security hardening checklist: 1) Never store secrets in pipeline YAML — use CI secret variables or external vaults (HashiCorp Vault, AWS Secrets Manager). 2) Pin all third-party actions/plugins to a specific commit SHA, not a mutable tag (e.g., uses: actions/checkout@v3 → uses: actions/checkout@abc123). 3) Use least-privilege service accounts for CI — separate accounts per environment with minimal permissions. 4) Enable branch protection — prevent direct pushes to main, require PRs and status checks. 5) Scan code (SAST), dependencies (SCA), and container images (Trivy) in every pipeline. 6) Audit who has access to prod deployment pipelines. 7) Use OIDC-based authentication to cloud providers instead of long-lived static credentials.",
+      "key_concepts": ["secret management", "action SHA pinning", "least-privilege SA", "branch protection", "SAST/SCA/Trivy", "OIDC auth", "prod pipeline access control"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "CI/CD cost increasing. How will you optimize?",
+      "answer": "Cost optimization strategies: 1) Use spot/preemptible instances for CI runners — up to 80% cheaper for non-critical build jobs. 2) Cache dependencies aggressively — fewer cache misses = fewer package downloads = faster and cheaper runs. 3) Run parallel jobs only when needed — don't spin up 10 parallel jobs for a 2-minute test suite. 4) Cancel in-progress runs on new push — don't waste minutes on outdated builds. 5) Use smaller base images and multi-stage Docker builds — less disk I/O and faster pushes. 6) Set pipeline time limits — prevent runaway pipelines from consuming minutes for hours. 7) Audit and delete unused pipelines, schedules, and artifacts. 8) Move to self-hosted runners for high-volume teams — fixed cost vs per-minute billing.",
+      "key_concepts": ["spot instances for CI", "dependency caching", "cancel-in-progress", "pipeline time limits", "self-hosted runners", "artifact cleanup", "multi-stage builds"]
+    },
+    {
+      "section": "CI/CD Pipeline Debugging – 30 Scenarios",
+      "question": "What is your step-by-step approach for end-to-end pipeline debugging?",
+      "answer": "Step 1: Identify the exact failure point — which stage, which step, which line. Don't guess. Step 2: Read the full log — scroll to the first ERROR, not just the last line. Step 3: Reproduce locally — use the same environment, same commands, same variables. Step 4: Isolate — comment out steps to narrow down the culprit. Step 5: Compare — diff against the last successful run. What changed? (Code, config, dependency, infra). Step 6: Check external dependencies — registry, artifact store, target environment. Step 7: Fix the root cause — not just the symptom. Step 8: Add a test or guard to catch this failure class in future (e.g., a lint rule, a health check, a dependency pin). Step 9: Document in a runbook or postmortem. Step 10: Improve observability so this is caught faster next time.",
+      "key_concepts": ["identify exact failure point", "first error not last line", "local reproduction", "diff last success", "fix root cause not symptom", "prevent recurrence", "postmortem"]
+    },
+    {
+      "section": "AWS & Infrastructure Interview Questions",
+      "question": "Tell me about yourself.",
+      "answer": "Structure your answer using the Present-Past-Future framework: Present: Your current role and key responsibilities (e.g., 'I currently work as a DevOps Engineer at X, where I manage cloud infrastructure on AWS, build CI/CD pipelines, and lead platform reliability initiatives.'). Past: Highlight 2-3 relevant achievements with measurable outcomes (e.g., 'Over the past Y years, I've reduced deployment time by 60% by implementing GitOps, and cut infra costs by 30% through spot instance optimization.'). Future: Why this role excites you and aligns with your goals. Keep it under 2 minutes. Always connect your experience to the specific job description.",
+      "key_concepts": ["Present-Past-Future structure", "measurable achievements", "relevance to job description", "2-minute limit", "connect to role"]
+    },
+    {
+      "section": "AWS & Infrastructure Interview Questions",
+      "question": "How do you migrate infrastructure from on-premises to AWS? What steps need to be followed?",
+      "answer": "Phase 1 – Discover & Assess: Use AWS Application Discovery Service or Migration Evaluator to inventory on-prem assets, dependencies, and utilization. Categorize by the 7 Rs: Rehost, Replatform, Refactor, Repurchase, Retire, Retain, Relocate. Phase 2 – Plan: Design target AWS architecture (VPC, subnets, security groups, IAM). Set up AWS Landing Zone / Control Tower for governance. Plan network connectivity: AWS Direct Connect or VPN for hybrid phase. Phase 3 – Migrate: Use AWS MGN (Application Migration Service) for lift-and-shift (rehost). Use AWS DMS for database migration. For containerized apps: migrate to ECS/EKS. Phase 4 – Validate: Run parallel (old + new) environments, validate data integrity, run load tests. Phase 5 – Cutover & Optimize: DNS cutover (Route 53), decommission on-prem, apply right-sizing and Reserved Instances for cost optimization.",
+      "key_concepts": ["7 Rs migration strategy", "AWS MGN", "AWS DMS", "Direct Connect", "Control Tower", "parallel validation", "DNS cutover", "right-sizing"]
+    },
+    {
+      "section": "AWS & Infrastructure Interview Questions",
+      "question": "What is the purpose of VPC peering? What should you consider while configuring it?",
+      "answer": "VPC peering creates a private network connection between two VPCs (same or different accounts, same or different regions) so resources can communicate using private IPs without traversing the internet. Use cases: connecting application VPC to a shared services VPC (logging, DNS, monitoring), cross-account access. Key considerations: 1) No transitive routing — if VPC A peers with B and B peers with C, A cannot reach C through B. Use Transit Gateway for hub-and-spoke. 2) CIDR overlap — peered VPCs cannot have overlapping IP ranges. Plan CIDR ranges carefully across all VPCs before peering. 3) Route tables — you must add routes in both VPCs' route tables pointing to the peering connection. 4) Security groups — you can reference security groups from the peered VPC by account ID. 5) DNS resolution — enable 'Allow DNS resolution from remote VPC' if needed.",
+      "key_concepts": ["private IP communication", "no transitive routing", "CIDR non-overlap", "route table update on both sides", "Transit Gateway for scale", "cross-account peering", "DNS resolution setting"]
+    },
+    {
+      "section": "AWS & Infrastructure Interview Questions",
+      "question": "What are the purposes of ALB and NLB? Which one is faster, and why?",
+      "answer": "ALB (Application Load Balancer): Operates at Layer 7 (HTTP/HTTPS). Supports path-based routing, host-based routing, header-based routing, and WebSockets. Ideal for microservices, containerized apps, and APIs. Supports WAF integration, authentication (Cognito, OIDC), and Lambda targets. NLB (Network Load Balancer): Operates at Layer 4 (TCP/UDP/TLS). Designed for extreme performance — handles millions of requests per second with ultra-low latency. Preserves source IP of the client. Supports static IPs and Elastic IPs. Ideal for real-time gaming, IoT, financial trading, and any protocol that isn't HTTP. NLB is faster because it processes at Layer 4 without parsing HTTP headers, performing content-based routing, or SSL termination overhead — pure TCP/UDP forwarding with minimal processing.",
+      "key_concepts": ["ALB Layer 7", "NLB Layer 4", "path/host-based routing", "NLB source IP preservation", "NLB static IP", "WAF with ALB", "NLB performance"]
+    },
+    {
+      "section": "AWS & Infrastructure Interview Questions",
+      "question": "Have you performed any AWS troubleshooting? Provide five examples.",
+      "answer": "Example 1 – EC2 unreachable: Checked security group inbound rules (missing SSH/22 rule), verified NACL wasn't blocking traffic, confirmed the instance had a public IP and was in a public subnet with an IGW route. Example 2 – RDS connection timeout from application: Found the RDS security group only allowed connections from a specific security group ID that had been recreated — updated the SG reference. Example 3 – Lambda timeout: Function was timing out because it was inside a VPC but without a NAT Gateway to reach the internet. Added NAT Gateway to the private subnet route table. Example 4 – S3 access denied: Bucket policy was denying public access but application was not using an IAM role with the correct policy. Fixed by attaching the correct IAM policy to the EC2 instance profile. Example 5 – ALB 502: Target group had instances that were unhealthy — application was listening on port 8080 but health check was configured for port 80. Fixed health check port.",
+      "key_concepts": ["security group rules", "NACL", "VPC + Lambda NAT", "IAM instance profile", "ALB health check port", "RDS SG reference", "IGW route table"]
+    },
+    {
+      "section": "AWS & Infrastructure Interview Questions",
+      "question": "A customer reports an application is running very slowly intermittently. How would you improve performance?",
+      "answer": "Investigation steps: 1) Check CloudWatch metrics — CPU, memory, disk I/O, network for EC2/ECS/RDS during the slow period. Identify the bottleneck. 2) Check ALB TargetResponseTime and slow request logs to identify which endpoints are slow. 3) Check RDS slow query log — a missing index or full table scan can cause intermittent slowness under load. 4) Check if Auto Scaling is too slow to react — increase cooldown settings or use predictive scaling. Improvements: 5) Add ElastiCache (Redis/Memcached) to cache frequent DB reads. 6) Use CloudFront CDN for static assets and API caching at edge. 7) Optimize database with read replicas to offload read traffic. 8) Use SQS to decouple heavy processing from the synchronous request path. 9) Enable Enhanced Monitoring on RDS and enable Performance Insights to identify query bottlenecks.",
+      "key_concepts": ["CloudWatch metrics", "RDS slow query log", "ElastiCache", "CloudFront", "read replicas", "Auto Scaling", "Performance Insights", "SQS decoupling"]
+    },
+    {
+      "section": "AWS & Infrastructure Interview Questions",
+      "question": "Assume an Auto Scaling Group is not working properly. How would you troubleshoot it?",
+      "answer": "Step 1: Check ASG Activity History in the console or via 'aws autoscaling describe-scaling-activities' — this shows why instances were launched or terminated and any errors. Step 2: Check scaling policies — are the CloudWatch alarms configured correctly? Check the alarm state: are thresholds set correctly and is the metric actually crossing the threshold? Step 3: Check if the Launch Template/Launch Configuration is valid — can it launch instances? Try launching a standalone EC2 with the same config. Step 4: Check if the target capacity is already at max — ASG won't scale out beyond MaxSize. Step 5: Check instance health — if instances are launching but immediately marked Unhealthy, the health check (EC2 or ELB) might be failing for the new instances. Step 6: Check if there are insufficient EC2 capacity errors in the activity history — use multiple AZs and instance types to reduce this.",
+      "key_concepts": ["ASG Activity History", "scaling policy CloudWatch alarms", "Launch Template validation", "MaxSize limit", "health check failures", "insufficient capacity", "multiple AZs/instance types"]
+    },
+    {
+      "section": "AWS & Infrastructure Interview Questions",
+      "question": "What is the purpose of DNS? What types of DNS records are commonly used, and how does DNS work?",
+      "answer": "DNS (Domain Name System) translates human-readable domain names (example.com) into IP addresses that computers use to communicate. How DNS works: 1) Client queries recursive resolver (usually ISP or 8.8.8.8). 2) Resolver queries root nameserver → TLD nameserver (.com) → authoritative nameserver for example.com. 3) Authoritative NS returns the IP. 4) Resolver caches the result per TTL. Common record types: A — maps domain to IPv4 address. AAAA — maps domain to IPv6 address. CNAME — canonical name alias (e.g., www → example.com). MX — mail exchange server for email routing. TXT — text records for SPF, DKIM, domain verification. NS — nameserver records. PTR — reverse DNS (IP to hostname). SRV — service location records (used in Kubernetes, SIP). In AWS: Route 53 uses Alias records (AWS-specific) to point to AWS resources (ALB, CloudFront, S3) without extra DNS hops.",
+      "key_concepts": ["A/AAAA/CNAME/MX/TXT/NS/PTR records", "recursive resolver", "TTL", "authoritative nameserver", "Route 53 Alias", "SPF/DKIM via TXT", "DNS resolution flow"]
+    },
+    {
+      "section": "AWS & Infrastructure Interview Questions",
+      "question": "How is Transit Gateway different from VPC Peering?",
+      "answer": "VPC Peering: Direct, one-to-one connection between two VPCs. No transitive routing. For 10 VPCs to fully communicate, you need 45 peering connections (n*(n-1)/2). No bandwidth limits but harder to manage at scale. Transit Gateway: A regional hub that acts as a central router. Any VPC attached to the TGW can communicate with any other attached VPC. Supports transitive routing. Also connects VPNs, Direct Connect, and other accounts. Simpler to manage at scale — one attachment per VPC. Supports routing tables and route domains to control inter-VPC traffic. Slightly higher latency than direct peering. Cost: TGW charges per attachment and per GB of data processed. Use VPC Peering for simple, few-VPC architectures. Use Transit Gateway for complex, multi-account, multi-VPC or hybrid connectivity.",
+      "key_concepts": ["transitive routing", "hub-and-spoke", "n*(n-1)/2 peering connections", "TGW routing tables", "Direct Connect + VPN support", "per-attachment cost", "scale comparison"]
+    },
+    {
+      "section": "AWS & Infrastructure Interview Questions",
+      "question": "In Terraform, can we use multiple cloud providers?",
+      "answer": "Yes. Terraform supports multiple providers in the same configuration. You can define multiple provider blocks — for example, aws, azurerm, google, kubernetes — all in the same Terraform project. Each provider is configured with its own credentials and settings. You can even configure multiple instances of the same provider with aliases (e.g., two AWS accounts or two regions): provider 'aws' { alias = 'us-east-1' region = 'us-east-1' } and reference with 'provider = aws.us-east-1' in the resource. This enables truly multi-cloud infrastructure as code. Common use cases: managing AWS resources + a Kubernetes cluster on GKE + DNS on Cloudflare — all in one Terraform workspace.",
+      "key_concepts": ["multiple provider blocks", "provider aliases", "multi-cloud IaC", "provider credentials separation", "alias for multi-region", "kubernetes provider", "cloudflare provider"]
+    },
+    {
+      "section": "AWS & Infrastructure Interview Questions",
+      "question": "What is the purpose of the terraform init command, and how does Terraform integrate with cloud providers?",
+      "answer": "'terraform init' is the first command you run in any Terraform project. It does three things: 1) Downloads provider plugins — reads the required_providers block and downloads the correct version of each provider (AWS, Azure, GCP, etc.) from the Terraform Registry into .terraform/providers/. 2) Initializes the backend — configures the remote state backend (S3, Azure Blob, GCS) or local backend. 3) Downloads child modules referenced in the configuration. How Terraform integrates with cloud providers: Each provider is a plugin that wraps the cloud provider's API. When you run 'terraform apply', Terraform calls the provider plugin which makes authenticated API calls (using IAM roles, service principal credentials, etc.) to create/update/delete resources. Credentials are passed via environment variables, provider config blocks, or instance metadata.",
+      "key_concepts": ["provider plugin download", "backend initialization", "module download", "required_providers block", "API wrapper", "credential passing methods", ".terraform directory"]
+    },
+    {
+      "section": "AWS & Infrastructure Interview Questions",
+      "question": "In Terraform, what is the difference between a provider and a provisioner?",
+      "answer": "Provider: A plugin that enables Terraform to manage resources on a specific platform (AWS, Azure, GCP, Kubernetes, GitHub, etc.). It handles CRUD operations via the platform's API. Example: the 'aws' provider lets you create EC2 instances, S3 buckets, VPCs, etc. Providers are the core of Terraform's infrastructure management. Provisioner: A mechanism to execute scripts or configuration management tools AFTER a resource is created — on the resource itself or on a local machine. Types: 'remote-exec' (runs commands on the remote resource via SSH/WinRM), 'local-exec' (runs commands on the machine running Terraform), 'file' (copies files to the remote resource). Important: Terraform recommends avoiding provisioners when possible — use cloud-init, user data scripts, or a proper CM tool (Ansible, Chef) instead. Provisioners create hidden dependencies and complicate state management.",
+      "key_concepts": ["provider = CRUD via API", "provisioner = post-create scripts", "remote-exec", "local-exec", "file provisioner", "avoid provisioners", "cloud-init alternative"]
+    },
+    {
+      "section": "AWS & Infrastructure Interview Questions",
+      "question": "What is the purpose of Terraform modules? How many Terraform modules have you worked with?",
+      "answer": "Terraform modules are reusable, self-contained packages of Terraform configuration that encapsulate a group of related resources. Purpose: 1) Reusability — define a VPC, EKS cluster, or RDS setup once, reuse across multiple environments with different inputs. 2) Abstraction — expose only the required variables, hide internal complexity. 3) Consistency — all environments use the same module version, preventing configuration drift. 4) Maintainability — update the module once and all consumers benefit. Module types: Root module (your main config), child modules (called with 'module' blocks), public modules (Terraform Registry). In practice: build modules for AKS node pools, Key Vault policies, networking, ACR, monitoring stack. Use versioned modules from a private registry (Terraform Cloud, Artifactory) so teams can pin to stable versions.",
+      "key_concepts": ["reusability", "abstraction", "versioned modules", "module registry", "child vs root module", "input/output variables", "configuration consistency"]
+    },
+    {
+      "section": "AWS & Infrastructure Interview Questions",
+      "question": "Which Terraform provisioner is best for configuration management tools like Ansible?",
+      "answer": "Use 'local-exec' provisioner to call Ansible from Terraform — run 'ansible-playbook' as a local command after the EC2 instance is created, passing the instance's IP as an inventory. This keeps Ansible logic outside of Terraform and avoids SSH credential management inside Terraform state. However, the better pattern is to avoid provisioners entirely: use an EC2 user_data script (or cloud-init) to install a minimal bootstrap, then have the instance register itself with Ansible AWX/Tower or pull from an Ansible playbook via SSM Run Command. For immutable infrastructure: bake the Ansible configuration into the AMI using Packer — no provisioner needed at all, instances launch already configured. Provisioners should be the last resort, not the first choice.",
+      "key_concepts": ["local-exec for Ansible", "user_data bootstrap", "SSM Run Command", "Packer + Ansible for AMI baking", "avoid provisioners", "immutable infrastructure", "AWX/Tower pull model"]
+    },
+    {
+      "section": "AWS & Infrastructure Interview Questions",
+      "question": "Why do we use a database reverse proxy (e.g., RDS Proxy)?",
+      "answer": "A database reverse proxy (like AWS RDS Proxy) sits between your application and the database and provides: 1) Connection pooling — Lambda functions and containers create hundreds of short-lived DB connections that overwhelm RDS. RDS Proxy maintains a pool of persistent connections to RDS and multiplexes application connections through them. Reduces 'too many connections' errors dramatically. 2) Improved failover — RDS Proxy maintains connections during an RDS Multi-AZ failover, reducing failover time from 30-60s to ~5s. 3) IAM authentication — apps connect to the proxy using IAM tokens instead of DB credentials — no passwords in app code. 4) Enhanced security — proxy sits in your VPC, DB doesn't need to be publicly accessible. Use cases: Lambda-to-RDS workloads, high-connection-count microservices, and any scenario requiring graceful DB failover.",
+      "key_concepts": ["connection pooling", "Lambda DB connections", "RDS Proxy failover time", "IAM DB auth", "too many connections", "VPC private DB", "multiplexing connections"]
+    },
+    {
+      "section": "AWS & Infrastructure Interview Questions",
+      "question": "Why is Ansible called idempotent?",
+      "answer": "Idempotency means running the same operation multiple times produces the same result — there are no unintended side effects on repeated execution. Ansible is idempotent because its modules check the current state before making changes. For example: the 'apt' module checks if a package is already installed — if it is, it does nothing. The 'copy' module checks if the file already has the correct content — if it does, it doesn't overwrite it. The 'service' module checks if a service is already running — if it is, it doesn't restart it. This is in contrast to running a bash script that might install a package twice or restart a service unnecessarily. Idempotency makes Ansible safe to run repeatedly — in CI/CD pipelines, on-demand, or as drift remediation. Not all Ansible modules are idempotent by default (e.g., 'command' and 'shell' modules are not — use with caution and add 'creates' or 'when' conditions).",
+      "key_concepts": ["idempotency definition", "state checking before action", "apt/copy/service module examples", "command/shell not idempotent", "safe repeated execution", "drift remediation", "creates condition"]
+    },
+    {
+      "section": "AWS & Infrastructure Interview Questions",
+      "question": "Do you have any experience with Azure?",
+      "answer": "Structure your answer honestly around your actual Azure experience. If you have it: 'Yes, I've worked with Azure for X years. Key services I've used: AKS for container orchestration, Azure Key Vault for secrets management with the Secrets Store CSI Driver, Azure Blob Storage for Terraform state with lease locking, Azure Container Registry (ACR) for image storage, Azure Monitor + Log Analytics for observability, and Azure DevOps/GitHub Actions for CI/CD. I've also worked with Managed Identities and Workload Identity for secure service-to-service authentication.' If limited: 'My primary experience is AWS, but I have hands-on experience with [specific services]. I've studied the Azure equivalents and understand the architectural parallels — e.g., EKS ↔ AKS, IAM Roles ↔ Managed Identities, ECR ↔ ACR.'",
+      "key_concepts": ["AKS", "Azure Key Vault + CSI", "Azure Blob state backend", "Managed Identity / Workload Identity", "ACR", "Azure Monitor", "AWS-to-Azure service mapping"]
+    },
+    {
+      "section": "AWS & Infrastructure Interview Questions",
+      "question": "How is TLS/SSL certificate termination implemented in a load balancer?",
+      "answer": "TLS termination means the load balancer decrypts the incoming HTTPS traffic using its SSL certificate, then forwards the request to the backend as plain HTTP (or re-encrypts with a backend certificate). How it works in AWS ALB: 1) Upload or provision a certificate in ACM (AWS Certificate Manager). 2) Add an HTTPS listener on port 443 to the ALB and attach the ACM certificate. 3) ALB performs the TLS handshake with the client, decrypts the request, and forwards it to the target group (typically on port 80 or 8080). 4) ALB selects the correct certificate using SNI (Server Name Indication) if multiple domains are hosted. Benefits: offloads CPU-intensive TLS decryption from backend servers, centralises certificate management, enables HTTP-level features (routing, WAF, auth) that require decrypted traffic. For end-to-end encryption: configure ALB to re-encrypt traffic to backends using a different certificate (HTTPS target group).",
+      "key_concepts": ["TLS termination vs passthrough", "ACM certificate", "HTTPS listener on ALB", "SNI", "offload decryption", "end-to-end encryption", "HTTP vs HTTPS target group"]
+    }
+  ]

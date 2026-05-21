@@ -40,10 +40,10 @@ const quizStructure = {
   kubernetes: [
     "cluster-management", "core-concepts", "helm", "ingress", "monitoring",
     "networking", "rbac", "scheduling", "security", "storage",
-    "troubleshooting", "workloads"
+    "troubleshooting", "workloads", "qa"
   ],
 
-  docker: [
+  architect: [
     "basics", "compose", "containers", "dockerfile", "images",
     "networking", "optimization", "registry", "security",
     "troubleshooting", "volumes"
