@@ -1,122 +1,151 @@
 [
   {
-    "section": "Production-Level Kubernetes Scenario-Based Questions",
-    "question": "How would you troubleshoot a failed Pod in Kubernetes?",
-    "answer": "Step 1 — Get pod status: 'kubectl get pods -n <namespace>' to see the current state (Pending, CrashLoopBackOff, Error, OOMKilled, ImagePullBackOff). Step 2 — Describe the pod: 'kubectl describe pod <pod-name> -n <namespace>' — go straight to the Events section at the bottom. This tells you WHY it failed (scheduling issue, image pull error, probe failure, OOM, etc.). Step 3 — Check logs: 'kubectl logs <pod-name> -n <namespace>' for current logs. Use '--previous' flag to get logs from the last crashed container: 'kubectl logs <pod-name> --previous'. Step 4 — Exec into the container (if it's running): 'kubectl exec -it <pod-name> -- /bin/sh' to inspect the filesystem, env vars, and connectivity. Step 5 — Common failure states and fixes: CrashLoopBackOff → app crashing at startup, check logs for errors. OOMKilled → increase memory limit or fix memory leak. Pending → insufficient resources or scheduling constraint (taint, affinity). ImagePullBackOff → wrong image name, tag, or registry credentials. Error → app exited with non-zero code, check logs. Step 6 — Check events at namespace level: 'kubectl get events -n <namespace> --sort-by=.lastTimestamp'.",
-    "key_concepts": ["kubectl describe pod Events", "kubectl logs --previous", "CrashLoopBackOff", "OOMKilled exit code 137", "ImagePullBackOff", "kubectl get events", "kubectl exec"]
+    "question": "Which command should you use first to troubleshoot a failed Pod in Kubernetes?",
+    "options": [
+      "kubectl describe pod",
+      "kubectl scale pod",
+      "kubectl apply pod",
+      "kubectl rollout pod"
+    ],
+    "answer": "kubectl describe pod",
+    "explanation": "kubectl describe pod shows events, scheduling issues, image pull failures, and probe failures.",
+    "difficulty": "medium",
+    "subcategory": "qa",
+    "category": "kubernetes"
   },
+
   {
-    "section": "Production-Level Kubernetes Scenario-Based Questions",
-    "question": "How would you handle high CPU or memory usage in a cluster?",
-    "answer": "Immediate triage: Step 1 — Identify which nodes are under pressure: 'kubectl top nodes'. Step 2 — Identify which pods are consuming most resources: 'kubectl top pods -A --sort-by=cpu' or '--sort-by=memory'. Step 3 — For memory pressure on a node: check if pods are hitting their limits with 'kubectl describe node <node-name>' — look at 'Allocated resources' section. Step 4 — Short-term relief: if a specific pod is consuming excessive resources, check if it has a memory leak. Use 'kubectl delete pod <pod>' to restart it (if the app is stateless). Step 5 — Check HPA status: 'kubectl get hpa -A' — if CPU is high and HPA isn't scaling, check if metrics-server is running and if CPU requests are set (HPA requires requests). Step 6 — Scale out the node group via cluster-autoscaler or manually. Long-term fixes: Set proper ResourceRequests and Limits for all pods. Use LimitRange to enforce defaults. Use VerticalPodAutoscaler (VPA) to right-size resource requests. Enable cluster-autoscaler for automatic node scaling. Use Prometheus alerts for node memory pressure (node_memory_MemAvailable_bytes).",
-    "key_concepts": ["kubectl top nodes/pods", "kubectl describe node Allocated resources", "HPA + metrics-server", "cluster-autoscaler", "ResourceRequests/Limits", "LimitRange", "VPA", "node memory pressure alert"]
+    "question": "What does CrashLoopBackOff usually indicate?",
+    "options": [
+      "Container repeatedly crashes and restarts",
+      "Node is disconnected",
+      "PVC is deleted",
+      "Cluster autoscaler failure"
+    ],
+    "answer": "Container repeatedly crashes and restarts",
+    "explanation": "CrashLoopBackOff means the application starts, crashes, and Kubernetes keeps restarting it.",
+    "difficulty": "medium",
+    "subcategory": "qa",
+    "category": "kubernetes"
   },
+
   {
-    "section": "Production-Level Kubernetes Scenario-Based Questions",
-    "question": "How would you manage zero-downtime deployments in Kubernetes?",
-    "answer": "Strategy 1 — Rolling Update (default): Set deployment strategy to RollingUpdate with maxUnavailable: 0 and maxSurge: 1. This ensures new pods come up before old ones are terminated — zero capacity loss. Strategy 2 — Readiness Probes: Configure readiness probes on all pods. Kubernetes will only route traffic to a pod AFTER its readiness probe passes. Old pods continue serving traffic until new pods are ready. Strategy 3 — PodDisruptionBudgets (PDB): Set PDB with minAvailable to ensure at least N replicas are always serving traffic during the rollout. Strategy 4 — Connection Draining: For services behind an ALB/NLB, configure deregistration delay (connection draining) so in-flight requests complete before old pods are terminated. Set terminationGracePeriodSeconds on pods to give the app time to finish ongoing requests. Strategy 5 — PreStop Hook: Add a preStop lifecycle hook with a sleep to allow time for the pod to be removed from the load balancer endpoints before it starts shutting down. Strategy 6 — Database migrations: Only deploy backward-compatible schema changes. Use feature flags to decouple deployment from release.",
-    "key_concepts": ["RollingUpdate maxUnavailable:0", "Readiness probe gating", "PodDisruptionBudget", "terminationGracePeriodSeconds", "preStop lifecycle hook", "connection draining", "backward-compatible migrations", "feature flags"]
+    "question": "Which command helps view logs from the previous crashed container?",
+    "options": [
+      "kubectl logs --previous",
+      "kubectl get events",
+      "kubectl top pod",
+      "kubectl describe node"
+    ],
+    "answer": "kubectl logs --previous",
+    "explanation": "The --previous flag retrieves logs from the last crashed container instance.",
+    "difficulty": "hard",
+    "subcategory": "qa",
+    "category": "kubernetes"
   },
+
   {
-    "section": "Production-Level Kubernetes Scenario-Based Questions",
-    "question": "How would you troubleshoot CrashLoopBackOff issues?",
-    "answer": "CrashLoopBackOff means the container is starting, crashing, and Kubernetes keeps restarting it with exponential backoff. Debugging steps: Step 1 — Get logs from the crashed container: 'kubectl logs <pod-name> --previous -n <namespace>'. This is critical — it shows what the app printed before crashing. Step 2 — Describe the pod: 'kubectl describe pod <pod-name>' — check 'Last State' section for exit code. Exit code 1 = app error. Exit code 137 = OOMKilled. Exit code 139 = segmentation fault. Exit code 143 = SIGTERM (graceful shutdown that timed out). Step 3 — Common root causes and fixes: Missing env vars or secrets → pod starts but crashes when it can't find a DB URL or API key. Fix: verify all required env vars are set in the deployment. Bad liveness probe → probe is too aggressive and kills a healthy but slow-starting app. Fix: increase initialDelaySeconds or switch to a Startup probe. OOMKilled → app exceeds memory limit. Fix: increase limit or fix memory leak. Application bug → app throws an uncaught exception at startup. Fix: reproduce locally with the same env vars. Wrong command/entrypoint → container exits immediately. Fix: override command with 'sleep 3600' temporarily to exec in and debug.",
-    "key_concepts": ["kubectl logs --previous", "exit codes (1/137/139/143)", "missing env vars", "liveness probe too aggressive", "OOMKilled", "startup probe", "override command for debugging", "Last State in describe"]
+    "question": "What is the most common reason for OOMKilled?",
+    "options": [
+      "Memory limit exceeded",
+      "Disk corruption",
+      "Service unavailable",
+      "Node reboot"
+    ],
+    "answer": "Memory limit exceeded",
+    "explanation": "OOMKilled occurs when the container exceeds its allocated memory limit.",
+    "difficulty": "medium",
+    "subcategory": "qa",
+    "category": "kubernetes"
   },
+
   {
-    "section": "Production-Level Kubernetes Scenario-Based Questions",
-    "question": "How would you handle node failure in production?",
-    "answer": "Automatic handling (what Kubernetes does): When a node becomes NotReady, Kubernetes waits for node-eviction-timeout (default 5 minutes) before evicting pods to other nodes. Pods with a ReplicaSet/Deployment are rescheduled automatically on healthy nodes. StatefulSet pods are NOT automatically rescheduled — you must manually delete the pod or set pod-eviction-timeout. Manual response steps: Step 1 — Detect: Monitor node status via 'kubectl get nodes' or Prometheus alerts on node_up metric. Step 2 — Cordon the node to prevent new pods from being scheduled: 'kubectl cordon <node-name>'. Step 3 — Drain the node to evict existing pods gracefully: 'kubectl drain <node-name> --ignore-daemonsets --delete-emptydir-data'. PDB is respected during drain. Step 4 — Investigate: SSH into the node (if accessible), check 'journalctl -u kubelet', 'dmesg', disk space, and memory. Step 5 — Replace: If the node is unrecoverable, terminate it and let the cluster-autoscaler provision a replacement. Step 6 — Prevention: Use multi-AZ node groups. Set PodDisruptionBudgets. Run cluster-autoscaler for automatic replacement.",
-    "key_concepts": ["NotReady node eviction timeout", "kubectl cordon", "kubectl drain", "PDB during drain", "StatefulSet manual pod delete", "cluster-autoscaler replacement", "multi-AZ node groups", "journalctl kubelet"]
+    "question": "Which Kubernetes object automatically scales pods based on CPU or memory?",
+    "options": [
+      "Horizontal Pod Autoscaler",
+      "ReplicaSet",
+      "DaemonSet",
+      "Ingress"
+    ],
+    "answer": "Horizontal Pod Autoscaler",
+    "explanation": "HPA automatically scales pod replicas based on metrics like CPU and memory usage.",
+    "difficulty": "easy",
+    "subcategory": "qa",
+    "category": "kubernetes"
   },
+
   {
-    "section": "Production-Level Kubernetes Scenario-Based Questions",
-    "question": "How would you scale applications during high traffic?",
-    "answer": "Horizontal Pod Autoscaler (HPA): Automatically scales the number of pod replicas based on CPU/memory utilization or custom metrics. Configure with: 'kubectl autoscale deployment <name> --cpu-percent=70 --min=3 --max=20'. Requires metrics-server. KEDA (Kubernetes Event-Driven Autoscaler): Scale based on external metrics — Kafka lag, SQS queue depth, HTTP request rate, Prometheus metrics. Supports scale-to-zero. Cluster Autoscaler: Automatically adds nodes when pods are unschedulable due to insufficient resources. Scales down idle nodes after a configurable cool-down. Vertical Pod Autoscaler (VPA): Adjusts CPU/memory requests of individual pods based on historical usage. Use in recommendation mode first — don't use VPA and HPA on CPU/memory simultaneously. Pre-scaling for known events: Use scheduled scaling (KEDA CronTrigger or HPA behavior) to pre-warm capacity before expected traffic spikes (e.g., marketing campaigns, flash sales). Load testing: Run k6 or Locust against staging to validate scaling behavior before production events. Ensure readiness probes are fast so new pods start receiving traffic quickly.",
-    "key_concepts": ["HPA + metrics-server", "KEDA external metrics", "cluster-autoscaler", "VPA recommendation mode", "scheduled scaling", "scale-to-zero", "pre-warming capacity", "readiness probe speed"]
+    "question": "Which command is used to check resource usage of nodes?",
+    "options": [
+      "kubectl top nodes",
+      "kubectl logs nodes",
+      "kubectl describe ingress",
+      "kubectl rollout status"
+    ],
+    "answer": "kubectl top nodes",
+    "explanation": "kubectl top nodes displays CPU and memory consumption of Kubernetes nodes.",
+    "difficulty": "easy",
+    "subcategory": "qa",
+    "category": "kubernetes"
   },
+
   {
-    "section": "Production-Level Kubernetes Scenario-Based Questions",
-    "question": "How would you secure Kubernetes clusters in production?",
-    "answer": "Cluster-level security: 1) Enable RBAC — use least-privilege roles. No ClusterAdmin for application service accounts. 2) Enable Network Policies — default-deny all ingress/egress, whitelist only required traffic. 3) Use PodSecurity Admission (PSA) — enforce 'restricted' profile to block privileged containers, hostPath mounts, and host network access. 4) Enable audit logging on the API server to track all actions. 5) Rotate kubeconfig credentials regularly. Control plane security: 6) Enable etcd encryption at rest for Secrets. 7) Use private API server endpoint — no public internet access to the API server. 8) Restrict API server access to known CIDR ranges. Workload security: 9) Use non-root containers — set runAsNonRoot: true and runAsUser in securityContext. 10) Use read-only root filesystem — set readOnlyRootFilesystem: true. 11) Drop all Linux capabilities — capabilities.drop: [ALL], add only what's needed. 12) Use Falco for runtime threat detection — detect shell spawning, unexpected syscalls, privilege escalation. 13) Scan container images with Trivy in CI — block HIGH/CRITICAL CVEs. 14) Use mTLS via Istio/Linkerd for service-to-service encryption. 15) Manage secrets with external vault (HashiCorp Vault, AWS Secrets Manager, Azure Key Vault) — not plain Kubernetes Secrets.",
-    "key_concepts": ["RBAC least-privilege", "Network Policy default-deny", "PodSecurity restricted", "etcd encryption", "private API server", "runAsNonRoot", "readOnlyRootFilesystem", "drop capabilities", "Falco", "Trivy", "mTLS", "external secret vault"]
+    "question": "Which deployment strategy provides zero-downtime deployment by gradually replacing pods?",
+    "options": [
+      "Rolling Update",
+      "Recreate",
+      "Blue-Green",
+      "Canary Delete"
+    ],
+    "answer": "Rolling Update",
+    "explanation": "Rolling Update replaces old pods gradually while keeping the application available.",
+    "difficulty": "medium",
+    "subcategory": "qa",
+    "category": "kubernetes"
   },
+
   {
-    "section": "Production-Level Kubernetes Scenario-Based Questions",
-    "question": "How would you manage secrets securely in Kubernetes?",
-    "answer": "Level 1 — Basic (not recommended for production): Kubernetes Secrets stored as base64 in etcd. Base64 is NOT encryption. Anyone with etcd access or kubectl get secret can read them. Level 2 — Encryption at rest: Enable Kubernetes Secrets encryption at rest using an EncryptionConfiguration with AES-GCM or KMS provider. This encrypts secrets in etcd. Level 3 — External Secret Managers (recommended): Use external vault solutions and inject secrets at runtime: AWS Secrets Manager / Parameter Store → use External Secrets Operator (ESO) to sync secrets into Kubernetes Secrets, or use AWS Secrets Manager CSI Driver. Azure Key Vault → Secrets Store CSI Driver with Workload Identity. HashiCorp Vault → Vault Agent Injector sidecar or Vault CSI Driver. Benefits: Secrets live outside Kubernetes, centralized rotation, audit trail, no secrets in Git. Best practices: Never commit secrets to Git — use git-secrets or pre-commit hooks to scan. Use short-lived secrets with automatic rotation. Grant pod-level access to specific secrets only (Workload Identity / IRSA). Audit secret access with CloudTrail/Vault audit logs.",
-    "key_concepts": ["base64 is not encryption", "EncryptionConfiguration KMS", "External Secrets Operator", "Secrets Store CSI Driver", "Vault Agent Injector", "Workload Identity / IRSA", "secret rotation", "git-secrets pre-commit", "audit trail"]
+    "question": "Which probe ensures traffic is only sent to healthy pods?",
+    "options": [
+      "Readiness Probe",
+      "Startup Probe",
+      "Liveness Probe",
+      "Health Probe"
+    ],
+    "answer": "Readiness Probe",
+    "explanation": "Readiness probes determine if a pod is ready to receive traffic.",
+    "difficulty": "medium",
+    "subcategory": "qa",
+    "category": "kubernetes"
   },
+
   {
-    "section": "Production-Level Kubernetes Scenario-Based Questions",
-    "question": "How would you troubleshoot networking issues between Pods?",
-    "answer": "Step 1 — Verify pod IPs and DNS: 'kubectl get pods -o wide' to see pod IPs. Exec into a pod and test connectivity: 'kubectl exec -it <pod> -- curl http://<target-pod-ip>:<port>'. Step 2 — Test Service DNS resolution: 'kubectl exec -it <pod> -- nslookup <service-name>.<namespace>.svc.cluster.local'. If DNS fails, check CoreDNS pods: 'kubectl get pods -n kube-system | grep coredns' and check CoreDNS logs. Step 3 — Check Network Policies: 'kubectl get networkpolicies -n <namespace>'. A default-deny policy may be blocking the traffic. Test by temporarily deleting the NetworkPolicy to confirm it's the cause. Step 4 — Check CNI plugin: 'kubectl describe node <node>' — check CNI (Calico, Cilium, flannel) is functioning. Check CNI pod logs in kube-system. Step 5 — Check Services and Endpoints: 'kubectl describe service <service-name>' — check if Endpoints are populated. Empty endpoints = no matching pods (label selector mismatch). Step 6 — Use network debugging tools: Run a debug pod with netshoot image: 'kubectl run netshoot --image=nicolaka/netshoot -it --rm -- bash'. Use tcpdump, curl, dig, traceroute from inside the cluster. Step 7 — Check kube-proxy: 'kubectl logs -n kube-system kube-proxy-<id>' for iptables/ipvs rule issues.",
-    "key_concepts": ["kubectl exec curl", "nslookup CoreDNS", "NetworkPolicy blocking", "CNI plugin logs", "Service Endpoints selector", "netshoot debug pod", "kube-proxy iptables", "tcpdump in cluster"]
+    "question": "Which command prevents new pods from being scheduled on a node?",
+    "options": [
+      "kubectl cordon",
+      "kubectl scale",
+      "kubectl taint",
+      "kubectl apply"
+    ],
+    "answer": "kubectl cordon",
+    "explanation": "kubectl cordon marks a node unschedulable for new pods.",
+    "difficulty": "hard",
+    "subcategory": "qa",
+    "category": "kubernetes"
   },
+
   {
-    "section": "Production-Level Kubernetes Scenario-Based Questions",
-    "question": "How would you handle persistent storage failures?",
-    "answer": "Step 1 — Identify the failure: 'kubectl describe pod <pod>' — look for volume mount errors or PVC not bound messages. 'kubectl get pvc -n <namespace>' — check PVC status (Pending, Bound, Lost). Step 2 — PVC in Pending state: Check if a PV is available that matches the PVC's storageClassName, accessMode, and capacity. If using dynamic provisioning, check if the StorageClass provisioner pod is running. Check provisioner logs for errors. Step 3 — PVC in Lost state: The underlying PV lost its backing storage (EBS volume deleted, NFS server down). Check 'kubectl describe pv <pv-name>' for events. Step 4 — For EBS volumes: Check if the EBS volume exists in AWS and is not detached or deleted. Check if the volume is in the same AZ as the node — EBS volumes are AZ-specific. If a pod moved to a different AZ, it can't attach to the old EBS volume. Fix: Use EBS CSI driver with proper topology constraints, or use EFS (multi-AZ) for shared storage. Step 5 — Recovery: If PV data is intact, manually rebind the PVC to the PV by setting the PV's claimRef. Step 6 — Prevention: Use StorageClass with reclaimPolicy: Retain to prevent accidental PV deletion. Use Velero for PVC backup and restore. Set up volume snapshots for point-in-time recovery.",
-    "key_concepts": ["PVC Pending/Lost/Bound states", "StorageClass dynamic provisioner", "EBS AZ constraint", "EFS for multi-AZ", "PV reclaimPolicy Retain", "Velero backup", "volume snapshots", "PVC-PV rebinding"]
-  },
-  {
-    "section": "Production-Level Kubernetes Scenario-Based Questions",
-    "question": "How would you monitor Kubernetes clusters effectively?",
-    "answer": "Four pillars of Kubernetes observability: Metrics: Deploy kube-state-metrics (exposes object-level metrics — deployment replicas, pod status, PVC binding) and metrics-server (resource usage for HPA). Use Prometheus to scrape all metrics. Build Grafana dashboards with the Kubernetes mixin (prebuilt dashboards for nodes, namespaces, pods). Alert on: node memory > 85%, pod restart count > 5 in 1 hour, HPA at max replicas, PVC usage > 80%, API server latency > 1s. Logs: Run Filebeat or Fluent Bit as a DaemonSet on every node to collect container logs from /var/log/containers/ and ship to Elasticsearch/Loki. Include pod name, namespace, node name as log metadata for easy filtering. Traces: Use OpenTelemetry Collector for distributed tracing across services. Jaeger or Zipkin as backend. Events: Export Kubernetes events to a persistent store (Elasticsearch or S3) — events expire in 1 hour by default and are invaluable for debugging. Use kube-event-exporter. Alerts: Alert on SLOs (error rate, latency, availability) via Prometheus Alertmanager → PagerDuty/OpsGenie. Include runbook links in every alert.",
-    "key_concepts": ["kube-state-metrics", "metrics-server", "Prometheus scraping", "Grafana Kubernetes mixin", "Filebeat/Fluent Bit DaemonSet", "OpenTelemetry", "Kubernetes event exporter", "SLO-based alerts", "Alertmanager → PagerDuty"]
-  },
-  {
-    "section": "Production-Level Kubernetes Scenario-Based Questions",
-    "question": "How would you implement disaster recovery in Kubernetes?",
-    "answer": "DR strategy covers three areas — cluster, data, and configuration: Cluster-level DR: Use GitOps (ArgoCD/Flux) so all cluster configuration is in Git. If the cluster is lost, spin up a new cluster and point ArgoCD at the Git repo — the entire cluster state is restored automatically. Use Infrastructure as Code (Terraform/Pulumi) to recreate the cluster in minutes. For multi-region DR: run active-passive or active-active clusters across regions. Use a global load balancer (Route 53 latency routing or AWS Global Accelerator) to failover traffic. Data DR (PVCs/Databases): Use Velero to back up PersistentVolumes and Kubernetes objects (Deployments, Services, ConfigMaps, Secrets) to S3. Schedule regular Velero backups and test restores quarterly. For databases: use managed DB services (RDS, CloudSQL) with automated snapshots and cross-region replication. Use S3 Cross-Region Replication for object data. Configuration DR: Store all secrets in an external vault (HashiCorp Vault, AWS Secrets Manager) with cross-region replication. Never store DR-critical data only inside the cluster. RTO/RPO targets: Define Recovery Time Objective (how fast you recover) and Recovery Point Objective (how much data loss is acceptable). Test DR with GameDay exercises — simulate region failure and time the recovery.",
-    "key_concepts": ["GitOps for cluster config", "Velero backup/restore", "Terraform cluster recreation", "active-passive multi-region", "Route 53 failover", "RDS cross-region replication", "RTO/RPO", "GameDay DR testing", "external vault replication"]
-  },
-  {
-    "section": "Production-Level Kubernetes Scenario-Based Questions",
-    "question": "How would you troubleshoot failed rolling updates?",
-    "answer": "Step 1 — Check rollout status: 'kubectl rollout status deployment/<name> -n <namespace>'. If it hangs, the new pods are not becoming ready. Step 2 — Describe the deployment: 'kubectl describe deployment <name>' — check the Events section and the Conditions (Available, Progressing). A ProgressDeadlineExceeded error means the rollout timed out. Step 3 — Check new pod status: 'kubectl get pods' — filter for the new ReplicaSet's pods. Look for CrashLoopBackOff, ImagePullBackOff, or Pending. Step 4 — Get logs from the failing new pod: 'kubectl logs <new-pod> --previous' to see why it's crashing. Step 5 — Common causes: New image has a bug → crashes at startup. Wrong environment variables for the new version. Readiness probe failing because the new version has a different health endpoint. Resource limits too low for the new version. Step 6 — Rollback immediately if production is impacted: 'kubectl rollout undo deployment/<name>'. Check rollout history first: 'kubectl rollout history deployment/<name>'. Step 7 — Rollback to a specific revision: 'kubectl rollout undo deployment/<name> --to-revision=<number>'. Step 8 — Set progressDeadlineSeconds on the deployment to fail fast and trigger alerts when a rollout is stuck.",
-    "key_concepts": ["kubectl rollout status", "ProgressDeadlineExceeded", "kubectl rollout undo", "kubectl rollout history", "readiness probe health endpoint change", "progressDeadlineSeconds", "--to-revision rollback", "new pod logs --previous"]
-  },
-  {
-    "section": "Production-Level Kubernetes Scenario-Based Questions",
-    "question": "How would you optimize Kubernetes resource utilization?",
-    "answer": "Right-sizing: Step 1 — Use VPA (Vertical Pod Autoscaler) in recommendation mode: 'kubectl describe vpa <name>' — it shows recommended CPU/memory requests based on actual usage. Update requests accordingly. Step 2 — Use Goldilocks (Fairwinds) — a tool that runs VPA in recommendation mode on all deployments and shows a UI with suggested resource sizes. Cluster-level optimization: Step 3 — Enable cluster-autoscaler to scale down idle nodes automatically. Set scale-down-utilization-threshold appropriately. Step 4 — Use spot/preemptible instances for non-critical workloads (batch jobs, dev/QA). Use on-demand only for production stateful workloads. Step 5 — Use namespace-level ResourceQuotas to prevent any one team from consuming disproportionate resources. Workload optimization: Step 6 — Enable KEDA for scale-to-zero on non-prod workloads. Step 7 — Use node affinity and pod topology spread constraints to balance pods across nodes and prevent hot spots. Step 8 — Identify and evict zombie pods (completed jobs, failed pods) with: 'kubectl delete pods --field-selector=status.phase=Failed -A'. Step 9 — Use Prometheus to track container_cpu_usage_seconds_total vs requests ratio — pods with very low actual usage vs high requests are wasting node capacity.",
-    "key_concepts": ["VPA recommendation mode", "Goldilocks", "cluster-autoscaler scale-down", "spot instances", "ResourceQuota", "scale-to-zero KEDA", "topology spread constraints", "zombie pod cleanup", "requests vs actual usage ratio"]
-  },
-  {
-    "section": "Production-Level Kubernetes Scenario-Based Questions",
-    "question": "How would you manage multi-environment deployments in Kubernetes?",
-    "answer": "Option 1 — Namespaces within a single cluster: Use separate namespaces (dev, qa, staging, prod) with RBAC roles scoped per namespace. ResourceQuotas and LimitRanges enforce per-environment limits. NetworkPolicies prevent cross-environment pod communication. Simple and cost-effective but lacks hard isolation — a cluster control plane outage affects all environments. Option 2 — Separate clusters per environment (recommended for prod isolation): Dev/QA on a single shared cluster (namespaced). Staging and Prod on dedicated clusters. Stronger isolation, independent upgrade paths. GitOps management: Use ArgoCD with ApplicationSets or multiple ArgoCD Applications pointing to different clusters. Helm values files per environment: values-dev.yaml, values-qa.yaml, values-prod.yaml. Kustomize overlays per environment: overlays/dev, overlays/qa, overlays/prod. Promotion strategy: Code merges to 'main' → deploys to dev automatically. Tagged releases → deploy to QA, then staging with manual approval, then prod with approval gate. Use image digests (not mutable tags) in production manifests. Secret management: Each environment gets its own secrets in the vault with separate access policies.",
-    "key_concepts": ["namespace per environment", "separate clusters for prod", "ArgoCD ApplicationSets", "Helm values per environment", "Kustomize overlays", "promotion strategy", "manual approval gates", "image digest in prod", "per-environment RBAC"]
-  },
-  {
-    "section": "Production-Level Kubernetes Scenario-Based Questions",
-    "question": "How would you handle image pull errors in production?",
-    "answer": "Step 1 — Identify the error type from 'kubectl describe pod <name>': ImagePullBackOff — Kubernetes tried to pull the image and failed repeatedly. ErrImagePull — First pull attempt failed. InvalidImageName — Image name has invalid format. Step 2 — Verify the image exists: Manually pull the image from the node or a debug pod: 'docker pull <image>' or 'crictl pull <image>'. Check the registry for the exact tag. Step 3 — Check registry credentials: For private registries, the pod needs an imagePullSecret. 'kubectl get secret <secret-name> -o yaml' to verify the secret exists and has correct credentials. Check if credentials are expired — re-create the secret with fresh credentials. Step 4 — Check network connectivity: Can the node reach the registry? (firewall, VPC endpoint, NAT gateway). For ECR: check if the IAM role attached to the node has 'ecr:GetAuthorizationToken', 'ecr:BatchGetImage', 'ecr:GetDownloadUrlForLayer' permissions. Step 5 — Docker Hub rate limiting: Anonymous pulls are limited to 100/6hr per IP. Use authenticated pulls or a private mirror. Step 6 — Prevention: Use a private registry mirror (ECR, ACR, GCR, Artifactory). Pin images to immutable digests in production. Set up image pre-pulling on nodes via a DaemonSet for critical images.",
-    "key_concepts": ["ImagePullBackOff vs ErrImagePull", "imagePullSecret", "ECR IAM permissions", "crictl pull debug", "Docker Hub rate limit", "private registry mirror", "image digest pinning", "pre-pulling DaemonSet"]
-  },
-  {
-    "section": "Production-Level Kubernetes Scenario-Based Questions",
-    "question": "How would you implement blue-green deployment in Kubernetes?",
-    "answer": "Blue-green deployment runs two identical environments (blue = current live, green = new version) and switches traffic between them. Implementation in Kubernetes: Step 1 — Deploy the green version as a separate Deployment with a different label (version: green) but same app label structure. Example: app: my-service, version: blue (current) and app: my-service, version: green (new). Step 2 — The Kubernetes Service selector points to 'version: blue' initially — all traffic goes to blue pods. Step 3 — Run smoke tests against the green Deployment using a separate 'green-service' or by port-forwarding: 'kubectl port-forward deployment/my-service-green 8080:80'. Step 4 — Switch traffic: Update the Service selector from 'version: blue' to 'version: green'. This is a single atomic change — traffic instantly shifts to green. 'kubectl patch service my-service -p {\"spec\":{\"selector\":{\"version\":\"green\"}}}'. Step 5 — Monitor error rates and latency for 5-10 minutes after switching. Step 6 — Rollback if needed: Patch the service selector back to 'version: blue' — instant rollback with zero risk. Step 7 — After validation, delete the blue Deployment. Advanced: Use Argo Rollouts or Flagger for automated blue-green with analysis and automatic rollback based on Prometheus metrics.",
-    "key_concepts": ["separate Deployment per version", "Service selector switch", "atomic traffic switch", "port-forward smoke test", "kubectl patch service", "instant rollback via selector", "Argo Rollouts", "Flagger automated analysis"]
-  },
-  {
-    "section": "Production-Level Kubernetes Scenario-Based Questions",
-    "question": "How would you troubleshoot ingress controller issues?",
-    "answer": "Step 1 — Check if the ingress controller pods are running: 'kubectl get pods -n ingress-nginx' (for NGINX ingress). Check logs: 'kubectl logs -n ingress-nginx <ingress-controller-pod>'. Step 2 — Check the Ingress resource: 'kubectl describe ingress <name> -n <namespace>' — check for events. Verify the host, path rules, and service name/port are correct. Step 3 — Verify the backend Service and Endpoints: 'kubectl describe service <backend-service>' — check Endpoints are populated. Empty endpoints = selector mismatch with pods. Step 4 — Check TLS configuration: If using TLS, verify the Secret with the certificate exists: 'kubectl get secret <tls-secret> -n <namespace>'. Check if the certificate is valid and not expired. Step 5 — Test at each layer: Test the backend pod directly: 'kubectl exec -it <debug-pod> -- curl http://<pod-ip>:<port>'. Test the Service: 'kubectl exec -it <debug-pod> -- curl http://<service-name>.<namespace>.svc.cluster.local'. Test the ingress controller: check the LoadBalancer Service IP/DNS for the ingress controller. Step 6 — Check NGINX ingress config: 'kubectl exec -it <ingress-pod> -n ingress-nginx -- cat /etc/nginx/nginx.conf | grep <hostname>' to verify the upstream config was generated. Step 7 — Check annotations: Wrong or missing annotations (nginx.ingress.kubernetes.io/rewrite-target, ssl-redirect) cause silent failures.",
-    "key_concepts": ["ingress controller pod logs", "kubectl describe ingress", "backend Service Endpoints", "TLS secret validation", "nginx.conf upstream config", "layer-by-layer testing", "rewrite-target annotation", "LoadBalancer ingress IP"]
-  },
-  {
-    "section": "Production-Level Kubernetes Scenario-Based Questions",
-    "question": "How would you manage RBAC permissions in Kubernetes?",
-    "answer": "RBAC components: Role/ClusterRole (what can be done), RoleBinding/ClusterRoleBinding (who can do it). Design principles: Principle of Least Privilege — grant only the minimum permissions needed. Prefer Roles over ClusterRoles — namespace-scoped is safer. Never give application service accounts cluster-admin. Best practices: Step 1 — Define Roles per team/service: Developers get read-only access to their namespace (get, list, watch pods, logs). CI/CD service account gets deploy permissions only (create/update Deployments, Services). Monitoring gets read-only access to metrics endpoints. Step 2 — Use Groups not individual users: Bind roles to groups (managed in your identity provider — OIDC, Active Directory) rather than individual usernames. When an employee leaves, remove from the group — no Kubernetes config change needed. Step 3 — Audit regularly: 'kubectl auth can-i --list --as=system:serviceaccount:<namespace>:<sa-name>' to review what a service account can do. Use 'rakkess' or 'kubectl-who-can' tools for visual RBAC auditing. Step 4 — Use OPA/Kyverno to enforce RBAC policies: block creation of ClusterRoleBindings without approval, alert on wildcard permissions (verbs: ['*']). Step 5 — Regularly rotate kubeconfig credentials and ServiceAccount tokens. Step 6 — Enable Kubernetes API server audit logging — every RBAC action is logged.",
-    "key_concepts": ["Role vs ClusterRole", "least privilege", "Groups not users", "OIDC integration", "kubectl auth can-i --list", "rakkess/kubectl-who-can", "OPA/Kyverno RBAC policy", "wildcard verb blocking", "API audit logging", "ServiceAccount token rotation"]
-  },
-  {
-    "section": "Production-Level Kubernetes Scenario-Based Questions",
-    "question": "How would you reduce downtime during cluster upgrades?",
-    "answer": "Planning: Step 1 — Read the release notes for the target version — check for deprecated APIs, breaking changes, and component compatibility (etcd, CoreDNS, CNI). Step 2 — Test the upgrade in a non-prod cluster first — ideally a staging cluster that mirrors production. Step 3 — Check all deployed resources for deprecated APIs: use 'pluto' or 'kubent' (kube no trouble) tools to scan for deprecated API versions in your manifests. Update manifests before upgrading. Control plane upgrade: Step 4 — Upgrade the control plane first (managed in EKS/AKS/GKE — typically a blue/green control plane replacement with minimal downtime). Step 5 — Verify control plane is healthy: 'kubectl get nodes', 'kubectl get pods -n kube-system'. Node pool upgrade (the risky part): Step 6 — Use surge upgrade strategy: configure maxSurge=1, maxUnavailable=0. New nodes come up before old ones are drained. Step 7 — Ensure all workloads have PodDisruptionBudgets — they are respected during drain operations. Step 8 — Upgrade node pools one at a time (not all at once). Step 9 — Monitor pod rescheduling and application error rates during each node drain. Step 10 — For blue/green node upgrades: create a new node group with the new version, migrate workloads, delete the old node group. This is the safest approach for stateful workloads.",
-    "key_concepts": ["pluto/kubent deprecated API check", "staging cluster test", "control plane upgrade first", "surge upgrade maxSurge=1", "PodDisruptionBudgets during drain", "one node pool at a time", "blue/green node group", "EKS/AKS/GKE managed upgrade", "kube-system health check"]
+    "question": "Which command gracefully evicts pods from a node during maintenance?",
+    "options": [
+      "kubectl drain",
+      "kubectl delete node",
+      "kubectl rollout restart",
+      "kubectl top node"
+    ],
+    "answer": "kubectl drain",
+    "explanation": "kubectl drain safely evicts workloads from a node before maintenance.",
+    "difficulty": "hard",
+    "subcategory": "qa",
+    "category": "kubernetes"
   }
 ]
