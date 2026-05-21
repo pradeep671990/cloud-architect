@@ -200,7 +200,13 @@ async function startQuiz() {
     const filePath =
       `./${mainCategory}/${subCategory}/${difficulty}.json`;
 
+    //console.log("Loading file:", filePath);
+    console.log("================================");
+    console.log("Main Category:", mainCategory);
+    console.log("Sub Category:", subCategory);
+    console.log("Difficulty:", difficulty);
     console.log("Loading file:", filePath);
+    console.log("================================");
 
     const response = await fetch(filePath);
 
