@@ -1,52 +1,102 @@
 [
   {
-    "question": "What is Amazon S3?",
-    "answer": "Amazon Simple Storage Service — a scalable object storage service for storing and retrieving any amount of data from anywhere.",
-    "explanation": "S3 stores data as objects inside buckets. It offers 99.999999999% (11 nines) durability and is used for backups, static websites, data lakes, and more."
+    "question": "How does Terraform work internally — what is its workflow and lifecycle?",
+    "answer": "Terraform follows a 4-stage lifecycle:\n1. WRITE — Define infrastructure as HCL code\n2. INIT — terraform init downloads providers & modules\n3. PLAN — terraform plan compares desired state vs current state file and shows a diff\n4. APPLY — terraform apply executes the plan, calls provider APIs, updates state file\n\nInternally: Terraform builds a dependency graph (DAG) of all resources, walks the graph in parallel where possible, and uses the state file as the source of truth for what currently exists.",
+    "explanation": "The core engine is the 'resource graph' — Terraform figures out what order to create/update/destroy resources by analysing dependencies (explicit via depends_on and implicit via references). This is why Terraform can parallelise independent resources automatically."
   },
   {
-    "question": "What are the S3 storage classes?",
-    "answer": "S3 Standard, S3 Intelligent-Tiering, S3 Standard-IA, S3 One Zone-IA, S3 Glacier Instant Retrieval, S3 Glacier Flexible Retrieval, S3 Glacier Deep Archive.",
-    "explanation": "Each class balances cost, availability, and retrieval speed. Standard is for frequent access; Glacier Deep Archive is cheapest for long-term archival."
+    "question": "Why is the Terraform state file critical in production?",
+    "answer": "The state file (terraform.tfstate) is Terraform's source of truth. It:\n• Maps real infrastructure to your config (resource IDs, IPs, ARNs)\n• Tracks metadata Terraform needs between runs\n• Enables Terraform to calculate what changed (plan diff)\n• Stores dependency information\n\nWithout it, Terraform does not know what already exists and will try to recreate everything, causing duplicates or failures.",
+    "explanation": "Never delete or corrupt the state file. Always store it remotely (S3, GCS, Azure Blob, Terraform Cloud) with versioning enabled. The state file can contain sensitive data (passwords, keys) — encrypt it at rest using server-side encryption."
   },
   {
-    "question": "What is the difference between EBS and EFS?",
-    "answer": "EBS (Elastic Block Store) is block storage attached to a single EC2 instance. EFS (Elastic File System) is a managed NFS file system that can be shared across multiple EC2 instances.",
-    "explanation": "Use EBS for OS/database disks on one instance. Use EFS when multiple instances need to share the same file system simultaneously."
+    "question": "What is remote state management in Terraform and how do you set it up?",
+    "answer": "Remote state stores terraform.tfstate in a shared, secure backend instead of locally.\n\nExample — AWS S3 backend:\nterraform {\n  backend \"s3\" {\n    bucket         = \"my-tf-state\"\n    key            = \"prod/terraform.tfstate\"\n    region         = \"us-east-1\"\n    encrypt        = true\n    dynamodb_table = \"tf-state-lock\"\n  }\n}\n\nBenefits:\n• Team collaboration — everyone reads the same state\n• State locking — prevents concurrent runs\n• Versioning — recover from accidental changes\n• Security — encrypted, access-controlled",
+    "explanation": "Use separate state files per environment (dev/stage/prod) and per component (networking, compute, databases) to reduce blast radius. Never share one state file across all infrastructure."
   },
   {
-    "question": "What is an S3 pre-signed URL?",
-    "answer": "A time-limited URL that grants temporary access to a private S3 object without requiring AWS credentials.",
-    "explanation": "Pre-signed URLs are useful for sharing private content securely for a limited period, such as download links in a web application."
+    "question": "What is Terraform state locking and why is it critical?",
+    "answer": "State locking prevents two Terraform runs from modifying the state file simultaneously, which would corrupt it.\n\nHow it works:\n• Before any write operation, Terraform acquires a lock\n• Other runs trying to apply will fail with a lock error\n• Lock is released after apply completes or fails\n\nImplementation:\n• AWS: DynamoDB table (LockID as primary key)\n• GCS: Native locking built-in\n• Azure: Native blob lease locking\n• Terraform Cloud: Built-in\n\nForce-unlock (use carefully): terraform force-unlock <LOCK_ID>",
+    "explanation": "Without locking, two engineers running terraform apply simultaneously could both read the same state, make different changes, and write conflicting state files — causing resource drift, duplicates, or state corruption. Always enable locking in production."
   },
   {
-    "question": "What is S3 Versioning?",
-    "answer": "A feature that keeps multiple versions of an object in the same bucket, allowing recovery from accidental deletions or overwrites.",
-    "explanation": "When versioning is enabled, a DELETE request adds a delete marker instead of removing the object. You can restore previous versions at any time."
+    "question": "How do you structure Terraform code for large production projects?",
+    "answer": "Recommended structure:\n\ninfrastructure/\n├── modules/          # reusable modules\n│   ├── vpc/\n│   ├── eks/\n│   └── rds/\n├── environments/\n│   ├── dev/\n│   │   ├── main.tf\n│   │   ├── variables.tf\n│   │   └── terraform.tfvars\n│   ├── staging/\n│   └── prod/\n└── global/           # shared resources (DNS, IAM)\n\nKey principles:\n• Separate state per environment\n• Keep modules generic, environments specific\n• Use remote state data sources for cross-stack references\n• Pin provider and module versions",
+    "explanation": "Avoid one giant terraform workspace for all environments. Separate stacks reduce blast radius — a botched apply in networking won't affect databases. Use terragrunt for DRY environment configs, or Terraform workspaces for simple projects."
   },
   {
-    "question": "What is an EBS Snapshot?",
-    "answer": "A point-in-time backup of an EBS volume stored in Amazon S3.",
-    "explanation": "Snapshots are incremental — only changed blocks since the last snapshot are saved. They can be used to create new EBS volumes or move data across Availability Zones."
+    "question": "How do you design reusable Terraform modules?",
+    "answer": "A good module:\n• Has clear inputs (variables.tf) with types, defaults, descriptions\n• Has clear outputs (outputs.tf) for other modules to consume\n• Does ONE thing well (e.g. VPC module, not VPC+EKS+RDS)\n• Uses semantic versioning (source = \"git::...?ref=v1.2.0\")\n\nExample module call:\nmodule \"vpc\" {\n  source   = \"./modules/vpc\"\n  env      = var.environment\n  cidr     = \"10.0.0.0/16\"\n  az_count = 3\n}\n\nBest practices:\n• No hardcoded values — everything via variables\n• Validate inputs with validation blocks\n• Document with README and examples\n• Test with terratest or terraform test",
+    "explanation": "Think of modules like functions — they take inputs, perform a task, return outputs. The module consumer should not need to look inside the module to use it. Version-pin modules in production to prevent unexpected changes."
   },
   {
-    "question": "What is S3 Lifecycle Policy?",
-    "answer": "A set of rules that automatically transition objects to cheaper storage classes or delete them after a defined period.",
-    "explanation": "Example: move objects to Standard-IA after 30 days, to Glacier after 90 days, and delete after 365 days — all automatically with no manual work."
+    "question": "What is the difference between count and for_each in Terraform — with real-world examples?",
+    "answer": "count — integer based, best for identical resources:\nresource \"aws_instance\" \"web\" {\n  count = 3\n  ami   = var.ami_id\n  # referenced as aws_instance.web[0], [1], [2]\n}\n\nfor_each — map/set based, best for resources with unique config:\nresource \"aws_s3_bucket\" \"env\" {\n  for_each = toset([\"dev\", \"staging\", \"prod\"])\n  bucket   = \"myapp-${each.key}\"\n  # referenced as aws_s3_bucket.env[\"dev\"]\n}\n\nKey difference: If you remove item [1] from count=3, Terraform destroys [1] and [2] and recreates [2]. With for_each removing \"staging\" only removes that specific resource — others untouched.",
+    "explanation": "Use for_each in production whenever resources have individual identities (IAM users, S3 buckets, DNS records). Use count only for truly identical resources (same config, just need N of them). for_each is safer because removing one item doesn't cause cascading destroy/recreate of others."
   },
   {
-    "question": "What is Amazon Glacier used for?",
-    "answer": "Long-term, low-cost archival storage for data that is rarely accessed.",
-    "explanation": "Glacier offers three retrieval options: Expedited (1–5 min), Standard (3–5 hrs), and Bulk (5–12 hrs). It is ideal for compliance archives and backups."
+    "question": "How do you manage secrets securely in Terraform?",
+    "answer": "Never hardcode secrets. Approaches:\n\n1. AWS Secrets Manager / SSM Parameter Store:\ndata \"aws_secretsmanager_secret_version\" \"db\" {\n  secret_id = \"prod/db/password\"\n}\n\n2. Vault Provider — fetch secrets at plan/apply time\n\n3. Environment variables — TF_VAR_db_password\n\n4. Encrypted .tfvars files — use SOPS or age encryption\n\n5. Mark variables sensitive:\nvariable \"db_password\" {\n  sensitive = true  # hides from plan output\n}\n\nState file: Always encrypt at rest (S3 SSE, GCS CMEK). Use terraform_remote_state carefully — outputs are not encrypted.",
+    "explanation": "The biggest risk is secrets ending up in the state file in plaintext — Terraform stores all resource attributes including passwords. Always use secrets manager references and restrict state file access with IAM policies. Audit state access via CloudTrail."
   },
   {
-    "question": "What is S3 Transfer Acceleration?",
-    "answer": "A feature that speeds up S3 uploads by routing data through Amazon CloudFront edge locations to the AWS backbone network.",
-    "explanation": "Useful for users uploading large files from geographically distant locations. Data enters the nearest edge location and travels over AWS's optimized network to S3."
+    "question": "How do you manage multiple environments (dev/staging/prod) in Terraform?",
+    "answer": "3 main approaches:\n\n1. Directory-per-environment (recommended for production):\nenvironments/dev/main.tf\nenvironments/prod/main.tf\nEach has its own state file. Most isolation.\n\n2. Terraform Workspaces:\nterraform workspace new staging\nterraform workspace select prod\nSame code, separate state per workspace.\nGood for simple setups, not recommended for very different prod configs.\n\n3. Terragrunt:\nDRY wrapper — define config once, override per environment in terragrunt.hcl\nBest for large teams with many environments.\n\nAlways use:\n• Different state buckets/keys per env\n• Different AWS accounts per env (best practice)\n• Environment-specific tfvars files",
+    "explanation": "The directory-per-environment pattern gives the most isolation and clarity. Workspaces share the same backend bucket but use different state keys — they're convenient but can lead to mistakes if you forget which workspace is active. Never use default workspace in production."
   },
   {
-    "question": "What is Amazon FSx?",
-    "answer": "A fully managed file system service offering FSx for Windows File Server (SMB) and FSx for Lustre (high-performance computing).",
-    "explanation": "FSx for Windows supports Active Directory integration. FSx for Lustre integrates natively with S3 and is optimized for ML training and HPC workloads."
+    "question": "What is Terraform drift detection and how do you handle it?",
+    "answer": "Drift = when real infrastructure differs from Terraform state (manual changes via console, API, or other tools).\n\nDetecting drift:\n• terraform plan — shows drift as unexpected changes\n• terraform refresh — updates state to match real infrastructure (use carefully)\n• terraform apply -refresh-only — refresh without making changes (safer)\n• AWS Config, Driftctl tool for continuous detection\n\nHandling drift:\n1. Import the change: terraform import aws_instance.web i-1234567\n2. Revert manually: fix in console then re-apply\n3. Update code to match reality, then apply\n\nPrevention:\n• Block manual console access via SCPs/IAM\n• Use Sentinel policies (Terraform Enterprise)\n• Enforce IaC-only changes via CI/CD",
+    "explanation": "Drift is one of the biggest operational challenges with Terraform. The safest approach is running terraform plan -detailed-exitcode in CI/CD on a schedule — exit code 2 means drift detected. Alert the team and require a PR to reconcile."
+  },
+  {
+    "question": "What happens if the Terraform state file is corrupted and how do you recover?",
+    "answer": "Symptoms: JSON parse errors, missing resources, duplicate IDs.\n\nRecovery steps:\n1. Restore from backup:\n   • S3 versioning: restore previous version\n   • Terraform Cloud: built-in state history\n\n2. Rebuild state manually:\n   terraform state list  (if partial state works)\n   terraform import <resource> <id>  (re-import each resource)\n\n3. For partial corruption:\n   terraform state rm <broken_resource>  then re-import\n\n4. Last resort:\n   • Manually edit the JSON (make a backup first)\n   • Update serial number after editing\n\nPrevention:\n• Enable S3 versioning + MFA delete\n• Never manually edit state in production\n• Use state locking always\n• Regular state backups",
+    "explanation": "The serial field in state tracks version. After any manual edit, increment serial by 1 or Terraform will reject it. The lineage field is a UUID — never change it. Treat state file recovery like database recovery — careful, tested, step-by-step."
+  },
+  {
+    "question": "How do you troubleshoot Terraform apply failures in production?",
+    "answer": "Step-by-step approach:\n\n1. Read the error carefully — provider errors include API error codes\n\n2. Enable debug logging:\n   TF_LOG=DEBUG terraform apply 2>&1 | tee debug.log\n   Levels: TRACE, DEBUG, INFO, WARN, ERROR\n\n3. Check state consistency:\n   terraform plan  (is state out of sync?)\n\n4. Check provider/API issues:\n   • Rate limits → add retry logic or slow down\n   • Permissions → check IAM role used by Terraform\n   • Resource limits → check AWS/Azure/GCP quotas\n\n5. Partial apply:\n   terraform apply -target=aws_instance.web  (apply single resource)\n\n6. State issues:\n   terraform state list\n   terraform state show aws_instance.web\n\n7. Check provider version compatibility",
+    "explanation": "The most common production failures are: IAM permissions (403), resource quotas (LimitExceeded), dependency ordering issues, and provider bugs. Always run terraform plan before apply in production and review every change. Use -target sparingly — it can leave state inconsistent."
+  },
+  {
+    "question": "How do you import existing infrastructure into Terraform?",
+    "answer": "Use terraform import to bring existing resources under Terraform management.\n\nSteps:\n1. Write the resource block in .tf files (empty or with config)\n2. Run import:\n   terraform import aws_s3_bucket.mybucket my-existing-bucket\n   terraform import aws_instance.web i-0abc1234567890def\n\n3. Run terraform plan — Terraform shows the diff between imported state and your config\n4. Update .tf config to match reality (remove diffs)\n5. Run terraform plan again — should show no changes\n\nNew in Terraform 1.5+: import block in code:\nimport {\n  to = aws_s3_bucket.mybucket\n  id = \"my-existing-bucket\"\n}\n\nBulk import: Use terraform-import-generator or cloud-specific tools (aws2tf, aztfy, gcloud-to-tf)",
+    "explanation": "Import only adds the resource to state — it does NOT generate the .tf config. You must write the config manually (or use generate_config_out in TF 1.5+). After import, always verify with terraform plan that no unintended changes will be made before running apply."
+  },
+  {
+    "question": "How does Terraform manage resource dependencies?",
+    "answer": "Two types:\n\n1. Implicit dependencies (automatic):\nTerraform detects when one resource references another:\nresource \"aws_instance\" \"web\" {\n  subnet_id = aws_subnet.main.id  # implicit dep on subnet\n}\nTerraform builds a DAG and creates subnet before instance.\n\n2. Explicit dependencies (manual):\nresource \"aws_instance\" \"web\" {\n  depends_on = [aws_iam_role_policy.s3_access]\n}\nUse when there's a dependency Terraform can't see (e.g. IAM propagation delay).\n\nVisualize the dependency graph:\nterraform graph | dot -Tsvg > graph.svg\n\nDestroy order is the reverse of creation order.",
+    "explanation": "Circular dependencies (A depends on B, B depends on A) cause Terraform to error. Solve by refactoring — extract a third resource that both can reference, or use data sources. Always prefer implicit dependencies over depends_on for maintainability."
+  },
+  {
+    "question": "How do you optimize Terraform performance for large infrastructure?",
+    "answer": "Key optimizations:\n\n1. Parallelism (default 10):\n   terraform apply -parallelism=20\n\n2. Split into smaller stacks:\n   Don't put 500 resources in one state file\n   Separate by layer: networking / compute / data\n\n3. Use -target for quick fixes (carefully):\n   terraform plan -target=module.eks\n\n4. Avoid unnecessary refreshes:\n   terraform apply -refresh=false  (when state is trusted)\n\n5. Optimize provider config:\n   • Use assume_role for cross-account\n   • Reuse provider instances across modules\n\n6. Use terraform plan -out=plan.tfplan then apply the plan file\n\n7. Minimize use of data sources in hot paths (they make API calls every run)",
+    "explanation": "The biggest performance killer is too many resources in a single state file — Terraform must refresh all of them on every run. Splitting into microstack architecture (one state file per service/component) dramatically improves speed and reduces blast radius."
+  },
+  {
+    "question": "How do you integrate Terraform with CI/CD pipelines?",
+    "answer": "Standard CI/CD pipeline for Terraform:\n\nPR / feature branch:\n1. terraform fmt -check  (formatting)\n2. terraform validate    (syntax)\n3. tflint / checkov      (linting / security)\n4. terraform plan        (post plan as PR comment)\n\nMerge to main:\n5. terraform apply -auto-approve  (auto apply) OR\n   Manual approval step (recommended for prod)\n\nTools:\n• GitHub Actions + OIDC (no stored AWS keys)\n• GitLab CI + terraform image\n• Atlantis — dedicated Terraform PR automation\n• Terraform Cloud — built-in CI/CD\n• Jenkins with terraform plugin\n\nKey: Use OIDC/IAM roles — never store cloud credentials as CI secrets",
+    "explanation": "Atlantis is popular for team workflows — it runs plan on every PR and posts results as comments, then applies on merge. Always use plan approval for production. Store plan output as artifact and apply the exact same plan — never re-plan before apply in prod."
+  },
+  {
+    "question": "How do you achieve zero-downtime infrastructure changes with Terraform?",
+    "answer": "Key techniques:\n\n1. create_before_destroy lifecycle:\nresource \"aws_instance\" \"web\" {\n  lifecycle {\n    create_before_destroy = true\n  }\n}\nCreates new resource first, then destroys old one.\n\n2. Blue-Green deployments:\n   Deploy new ASG/target group, shift traffic, destroy old\n\n3. ignore_changes for volatile attributes:\nlifecycle {\n  ignore_changes = [user_data, tags[\"LastUpdated\"]]\n}\n\n4. prevent_destroy for critical resources:\nlifecycle {\n  prevent_destroy = true  # blocks accidental destroy\n}\n\n5. For databases:\n   Use snapshot_before_delete\n   Prefer modify over replace (avoid force_new)\n   Use deletion_protection = true\n\n6. Feature flags to decouple deploy from release",
+    "explanation": "Watch out for resources that force replacement on any change (force_new = true in provider docs). For example, changing user_data on an EC2 instance destroys and recreates it. Always check the plan output for '# forces replacement' — this is your zero-downtime warning signal."
+  },
+  {
+    "question": "What are the most common Terraform issues in production and how do you fix them?",
+    "answer": "1. State lock not released → terraform force-unlock <ID>\n\n2. Provider version mismatch → pin versions in required_providers block\n\n3. Resource already exists (conflict) → terraform import it first\n\n4. Quota/limit exceeded → request limit increase, or use -target to apply in batches\n\n5. Eventual consistency (IAM roles not propagated) → add time_sleep resource or depends_on\n\n6. Sensitive data in plan output → mark variables as sensitive = true\n\n7. Workspace confusion (wrong env) → always run terraform workspace show before apply\n\n8. Module version drift → pin module versions: source = \"...?ref=v2.1.0\"\n\n9. Circular dependencies → refactor to remove cycles\n\n10. Apply succeeded but state not updated → check for partial apply, run plan",
+    "explanation": "The #1 cause of production incidents with Terraform is running apply without reviewing the plan carefully. Treat 'forces replacement' lines in plan output as critical alerts — they mean downtime. Always require human approval for production applies that show resource destruction."
+  },
+  {
+    "question": "How do you secure Terraform workflows in production?",
+    "answer": "Infrastructure security checklist:\n\n1. Access control:\n   • Use IAM roles, not access keys for CI/CD (OIDC)\n   • Least-privilege IAM policy for Terraform role\n   • Separate roles per environment\n\n2. State security:\n   • Encrypt state at rest (S3 SSE-KMS)\n   • Restrict state bucket access via IAM\n   • Enable S3 versioning + MFA delete\n   • Never commit state to git\n\n3. Secrets:\n   • Use Vault, SSM, or Secrets Manager\n   • Mark sensitive variables\n   • Audit state file for exposed secrets\n\n4. Policy as code:\n   • Sentinel (Terraform Enterprise)\n   • OPA/conftest for open source\n   • Checkov, tfsec for static analysis\n\n5. Audit: Enable CloudTrail for all API calls made by Terraform role",
+    "explanation": "Add .gitignore entries for: *.tfstate, *.tfstate.backup, .terraform/, *.tfvars (if they contain secrets), crash.log. Use pre-commit hooks with tflint, tfsec, checkov to catch issues before code review. In enterprise setups, Terraform Cloud provides SSO, audit logs, and policy enforcement out of the box."
+  },
+  {
+    "question": "What are Terraform production best practices?",
+    "answer": "Code & structure:\n✅ Pin all provider and module versions\n✅ Use remote state with locking\n✅ Separate state per environment and component\n✅ Use modules for reusability\n✅ Run fmt, validate, lint in CI\n\nSafety:\n✅ Always review plan before apply\n✅ Use prevent_destroy on critical resources\n✅ Enable deletion_protection on databases\n✅ Never use terraform destroy in production without backup\n✅ Test in dev/staging before prod\n\nOperations:\n✅ Store state in versioned, encrypted S3/GCS\n✅ Use OIDC for CI/CD — no static credentials\n✅ Tag all resources for cost and ownership\n✅ Document modules with README\n✅ Use terratest or terraform test for module testing\n\n❌ Never: commit state files, hardcode secrets, use default workspace in prod",
+    "explanation": "The golden rule: Terraform is infrastructure as code — treat it with the same discipline as application code. Code reviews, automated testing, staged rollouts, and rollback plans are not optional in production. If you wouldn't deploy app code without tests and review, don't deploy infrastructure changes without them either."
   }
 ]
