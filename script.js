@@ -904,9 +904,11 @@ function flipCard() {
   const inner = document.getElementById("fcCardInner");
   if (!inner) return;
   fcFlipped = !fcFlipped;
-  fcFlipped
-    ? inner.classList.add("fc-flipped")
-    : inner.classList.remove("fc-flipped");
+  if (fcFlipped) {
+    inner.classList.add("fc-flipped");
+  } else {
+    inner.classList.remove("fc-flipped");
+  }
 }
 
 // ── Go to next card ──

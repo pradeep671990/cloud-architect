@@ -548,61 +548,62 @@ button:hover {
 
 /* =========================
    FLASHCARD FLIP SCENE
+   show/hide approach —
+   3D CSS flip breaks inside
+   backdrop-filter containers
 ========================= */
 
 .fc-scene {
-  perspective: 1200px;
   width: 100%;
-  height: 300px;
+  min-height: 220px;
   cursor: pointer;
   margin-bottom: 20px;
 }
 
 .fc-card {
   width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.55s ease;
   border-radius: 20px;
-}
-
-.fc-card.fc-flipped {
-  transform: rotateY(180deg);
+  position: relative;
 }
 
 .fc-card.fc-known-card {
   box-shadow: 0 0 18px rgba(34, 197, 94, 0.2);
 }
 
-/* Front and Back faces */
+/* Both faces hidden by default */
 .fc-face {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  min-height: 220px;
   border-radius: 20px;
   padding: 35px 30px;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  overflow-y: auto;
 }
 
+/* Front shown by default */
 .fc-front {
+  display: flex;
   background: rgba(56, 189, 248, 0.07);
   border: 1px solid rgba(56, 189, 248, 0.25);
 }
 
+/* Back hidden until flipped */
 .fc-back {
+  display: none;
   background: rgba(34, 197, 94, 0.07);
   border: 1px solid rgba(34, 197, 94, 0.25);
-  transform: rotateY(180deg);
+}
+
+/* When flipped: hide front, show back */
+.fc-card.fc-flipped .fc-front {
+  display: none;
+}
+
+.fc-card.fc-flipped .fc-back {
+  display: flex;
 }
 
 .fc-tag {
