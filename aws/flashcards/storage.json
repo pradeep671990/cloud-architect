@@ -1,0 +1,52 @@
+[
+  {
+    "question": "What is Amazon S3?",
+    "answer": "Amazon Simple Storage Service — a scalable object storage service for storing and retrieving any amount of data from anywhere.",
+    "explanation": "S3 stores data as objects inside buckets. It offers 99.999999999% (11 nines) durability and is used for backups, static websites, data lakes, and more."
+  },
+  {
+    "question": "What are the S3 storage classes?",
+    "answer": "S3 Standard, S3 Intelligent-Tiering, S3 Standard-IA, S3 One Zone-IA, S3 Glacier Instant Retrieval, S3 Glacier Flexible Retrieval, S3 Glacier Deep Archive.",
+    "explanation": "Each class balances cost, availability, and retrieval speed. Standard is for frequent access; Glacier Deep Archive is cheapest for long-term archival."
+  },
+  {
+    "question": "What is the difference between EBS and EFS?",
+    "answer": "EBS (Elastic Block Store) is block storage attached to a single EC2 instance. EFS (Elastic File System) is a managed NFS file system that can be shared across multiple EC2 instances.",
+    "explanation": "Use EBS for OS/database disks on one instance. Use EFS when multiple instances need to share the same file system simultaneously."
+  },
+  {
+    "question": "What is an S3 pre-signed URL?",
+    "answer": "A time-limited URL that grants temporary access to a private S3 object without requiring AWS credentials.",
+    "explanation": "Pre-signed URLs are useful for sharing private content securely for a limited period, such as download links in a web application."
+  },
+  {
+    "question": "What is S3 Versioning?",
+    "answer": "A feature that keeps multiple versions of an object in the same bucket, allowing recovery from accidental deletions or overwrites.",
+    "explanation": "When versioning is enabled, a DELETE request adds a delete marker instead of removing the object. You can restore previous versions at any time."
+  },
+  {
+    "question": "What is an EBS Snapshot?",
+    "answer": "A point-in-time backup of an EBS volume stored in Amazon S3.",
+    "explanation": "Snapshots are incremental — only changed blocks since the last snapshot are saved. They can be used to create new EBS volumes or move data across Availability Zones."
+  },
+  {
+    "question": "What is S3 Lifecycle Policy?",
+    "answer": "A set of rules that automatically transition objects to cheaper storage classes or delete them after a defined period.",
+    "explanation": "Example: move objects to Standard-IA after 30 days, to Glacier after 90 days, and delete after 365 days — all automatically with no manual work."
+  },
+  {
+    "question": "What is Amazon Glacier used for?",
+    "answer": "Long-term, low-cost archival storage for data that is rarely accessed.",
+    "explanation": "Glacier offers three retrieval options: Expedited (1–5 min), Standard (3–5 hrs), and Bulk (5–12 hrs). It is ideal for compliance archives and backups."
+  },
+  {
+    "question": "What is S3 Transfer Acceleration?",
+    "answer": "A feature that speeds up S3 uploads by routing data through Amazon CloudFront edge locations to the AWS backbone network.",
+    "explanation": "Useful for users uploading large files from geographically distant locations. Data enters the nearest edge location and travels over AWS's optimized network to S3."
+  },
+  {
+    "question": "What is Amazon FSx?",
+    "answer": "A fully managed file system service offering FSx for Windows File Server (SMB) and FSx for Lustre (high-performance computing).",
+    "explanation": "FSx for Windows supports Active Directory integration. FSx for Lustre integrates natively with S3 and is optimized for ML training and HPC workloads."
+  }
+]

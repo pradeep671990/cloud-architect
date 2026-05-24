@@ -262,6 +262,71 @@
 
   <div id="history"></div>
 
+
+  <!-- =========================
+       FLASHCARD SECTION
+  ========================== -->
+
+  <hr>
+
+  <h2>🃏 Flashcard Interview Prep</h2>
+
+  <p class="fc-subtitle">
+    Select a topic and click a card to flip and reveal the answer
+  </p>
+
+  <!-- Flashcard Controls -->
+  <div class="fc-controls">
+
+    <div>
+      <label>Technology:</label>
+      <select id="fcCategory" onchange="loadFcSubCategories()">
+        <option value="">Select Technology</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Topic:</label>
+      <select id="fcSubCategory">
+        <option value="">Select Topic</option>
+      </select>
+    </div>
+
+    <div>
+      <label>&nbsp;</label>
+      <button onclick="loadFlashcards()">🃏 Load Flashcards</button>
+    </div>
+
+  </div>
+
+  <!-- Flashcard Progress -->
+  <div id="fcProgressWrap" style="display:none;">
+    <div class="fc-progress-info">
+      <span id="fcProgressText"></span>
+      <span id="fcKnownCount">✅ Known: 0</span>
+    </div>
+    <div class="progress-container">
+      <div id="fcProgressBar"></div>
+    </div>
+  </div>
+
+  <!-- Flashcard Deck -->
+  <div id="fcDeck"></div>
+
+  <!-- Flashcard Navigation -->
+  <div id="fcNav" class="fc-nav" style="display:none;">
+
+    <button onclick="fcPrev()">⬅ Prev</button>
+
+    <div class="fc-nav-actions">
+      <button class="btn-known"   onclick="markKnown()">✅ Know It</button>
+      <button class="btn-unknown" onclick="markUnknown()">🔁 Review Again</button>
+    </div>
+
+    <button onclick="fcNext()">Next ➡</button>
+
+  </div>
+
 </div>
 
 

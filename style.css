@@ -504,3 +504,280 @@ button:hover {
     font-size: 18px;
   }
 }
+
+
+/* =========================
+   FLASHCARD SECTION
+========================= */
+
+.fc-subtitle {
+  color: #94a3b8;
+  font-size: 15px;
+  margin: 8px 0 22px;
+}
+
+/* Controls row */
+.fc-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 20px;
+  align-items: end;
+  margin-bottom: 25px;
+}
+
+.fc-controls label {
+  font-weight: bold;
+  color: #e2e8f0;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Progress info row */
+.fc-progress-info {
+  display: flex;
+  justify-content: space-between;
+  color: #94a3b8;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+#fcKnownCount {
+  color: #86efac;
+  font-weight: bold;
+}
+
+/* =========================
+   FLASHCARD FLIP SCENE
+========================= */
+
+.fc-scene {
+  perspective: 1200px;
+  width: 100%;
+  min-height: 280px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.fc-card {
+  width: 100%;
+  min-height: 280px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.55s ease;
+  border-radius: 20px;
+}
+
+.fc-card.fc-flipped {
+  transform: rotateY(180deg);
+}
+
+.fc-card.fc-known-card {
+  box-shadow: 0 0 18px rgba(34, 197, 94, 0.2);
+}
+
+/* Front and Back faces */
+.fc-face {
+  position: absolute;
+  width: 100%;
+  min-height: 280px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 20px;
+  padding: 35px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.fc-front {
+  background: rgba(56, 189, 248, 0.07);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.fc-back {
+  background: rgba(34, 197, 94, 0.07);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  transform: rotateY(180deg);
+}
+
+.fc-tag {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 18px;
+  background: rgba(255,255,255,0.06);
+  padding: 4px 14px;
+  border-radius: 20px;
+}
+
+.fc-question {
+  font-size: 20px;
+  font-weight: bold;
+  color: #e2e8f0;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.fc-hint {
+  font-size: 13px;
+  color: #64748b;
+  font-style: italic;
+}
+
+.fc-known-badge {
+  margin-top: 14px;
+  background: rgba(34,197,94,0.15);
+  border: 1px solid rgba(34,197,94,0.3);
+  color: #86efac;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.fc-answer {
+  font-size: 18px;
+  color: #86efac;
+  font-weight: bold;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.fc-explanation {
+  font-size: 14px;
+  color: #94a3b8;
+  line-height: 1.6;
+  background: rgba(255,255,255,0.04);
+  padding: 12px 16px;
+  border-radius: 10px;
+  border-left: 3px solid #38bdf8;
+  text-align: left;
+  width: 100%;
+  margin-top: 6px;
+}
+
+/* =========================
+   FLASHCARD NAVIGATION
+========================= */
+
+.fc-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0 30px;
+  gap: 10px;
+}
+
+.fc-nav-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-known {
+  background: linear-gradient(90deg, #16a34a, #22c55e);
+  padding: 12px 20px;
+}
+
+.btn-known:hover {
+  box-shadow: 0 5px 15px rgba(34,197,94,0.4);
+}
+
+.btn-unknown {
+  background: linear-gradient(90deg, #b45309, #f59e0b);
+  padding: 12px 20px;
+}
+
+.btn-unknown:hover {
+  box-shadow: 0 5px 15px rgba(245,158,11,0.4);
+}
+
+/* =========================
+   FLASHCARD SUMMARY
+========================= */
+
+.fc-summary {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 35px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.fc-summary h3 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  color: #e2e8f0;
+}
+
+.fc-summary-stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.fc-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 18px 24px;
+  border-radius: 14px;
+  min-width: 100px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.fc-stat-green {
+  background: rgba(34,197,94,0.1);
+  border-color: rgba(34,197,94,0.3);
+}
+
+.fc-stat-red {
+  background: rgba(239,68,68,0.1);
+  border-color: rgba(239,68,68,0.3);
+}
+
+.fc-stat-blue {
+  background: rgba(56,189,248,0.1);
+  border-color: rgba(56,189,248,0.3);
+}
+
+.fc-stat-num {
+  font-size: 30px;
+  font-weight: bold;
+  color: #e2e8f0;
+}
+
+.fc-stat-lbl {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+  .fc-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .fc-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .fc-nav-actions {
+    order: -1;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .fc-question { font-size: 17px; }
+  .fc-answer   { font-size: 16px; }
+}

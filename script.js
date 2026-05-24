@@ -769,3 +769,231 @@ function displayHistory() {
   historyEl.innerHTML = html;
 
 }
+
+
+// ================================================
+// FLASHCARD SYSTEM
+// ================================================
+// JSON path: ./{category}/flashcards/{topic}.json
+// Example:   ./aws/flashcards/storage.json
+// ================================================
+
+let fcCards   = [];   // all loaded cards
+let fcIndex   = 0;    // current card index
+let fcKnown   = [];   // indices marked as known
+let fcFlipped = false;
+
+// ── Populate Technology dropdown on page load ──
+(function initFcDropdown() {
+  const fcCatEl = document.getElementById("fcCategory");
+  if (!fcCatEl) return;
+  Object.keys(quizStructure).forEach(cat => {
+    const opt = document.createElement("option");
+    opt.value = cat;
+    opt.textContent =
+      cat.charAt(0).toUpperCase() + cat.slice(1);
+    fcCatEl.appendChild(opt);
+  });
+})();
+
+// ── Populate Topic dropdown when Technology changes ──
+function loadFcSubCategories() {
+  const cat   = document.getElementById("fcCategory").value;
+  const subEl = document.getElementById("fcSubCategory");
+  subEl.innerHTML = '<option value="">Select Topic</option>';
+  if (!cat || !quizStructure[cat]) return;
+  quizStructure[cat].forEach(sub => {
+    const opt = document.createElement("option");
+    opt.value = sub;
+    opt.textContent = sub.replace(/-/g, " ").toUpperCase();
+    subEl.appendChild(opt);
+  });
+}
+
+// ── Load flashcards from JSON file ──
+async function loadFlashcards() {
+  const cat = document.getElementById("fcCategory").value;
+  const sub = document.getElementById("fcSubCategory").value;
+
+  if (!cat || !sub) {
+    alert("Please select a Technology and Topic first.");
+    return;
+  }
+
+  const filePath = `./${cat}/flashcards/${sub}.json`;
+  console.log("Loading flashcards:", filePath);
+
+  document.getElementById("fcDeck").innerHTML =
+    "<p style='color:#94a3b8;padding:20px;text-align:center;'>⏳ Loading flashcards...</p>";
+  document.getElementById("fcNav").style.display          = "none";
+  document.getElementById("fcProgressWrap").style.display = "none";
+
+  try {
+    const res = await fetch(filePath);
+    if (!res.ok)
+      throw new Error(`File not found: ${filePath} (HTTP ${res.status})`);
+
+    const data = await res.json();
+    if (!Array.isArray(data) || data.length === 0)
+      throw new Error(`File "${filePath}" is empty or not a valid JSON array.`);
+
+    fcCards   = data;
+    fcIndex   = 0;
+    fcKnown   = [];
+    fcFlipped = false;
+
+    document.getElementById("fcProgressWrap").style.display = "block";
+    document.getElementById("fcNav").style.display          = "flex";
+    renderFcCard();
+
+  } catch (err) {
+    console.error(err);
+    document.getElementById("fcDeck").innerHTML = `
+      <div class="error">
+        ❌ Could not load flashcards.<br><br>
+        <strong>Reason:</strong> ${err.message}<br><br>
+        Make sure the file exists at:
+        <code>${filePath}</code>
+      </div>`;
+  }
+}
+
+// ── Render current flashcard ──
+function renderFcCard() {
+  if (!fcCards.length) return;
+
+  const card    = fcCards[fcIndex];
+  const isKnown = fcKnown.includes(fcIndex);
+  fcFlipped     = false;
+
+  // Update progress bar
+  const pct = ((fcIndex + 1) / fcCards.length) * 100;
+  document.getElementById("fcProgressBar").style.width = pct + "%";
+  document.getElementById("fcProgressText").textContent =
+    `Card ${fcIndex + 1} of ${fcCards.length}`;
+  document.getElementById("fcKnownCount").textContent =
+    `✅ Known: ${fcKnown.length}`;
+
+  document.getElementById("fcDeck").innerHTML = `
+    <div class="fc-scene" onclick="flipCard()">
+      <div class="fc-card ${isKnown ? "fc-known-card" : ""}" id="fcCardInner">
+
+        <!-- FRONT: Question -->
+        <div class="fc-face fc-front">
+          <div class="fc-tag">❓ Question</div>
+          <p class="fc-question">${card.question}</p>
+          <p class="fc-hint">👆 Click card to reveal answer</p>
+          ${isKnown ? '<div class="fc-known-badge">✅ Known</div>' : ""}
+        </div>
+
+        <!-- BACK: Answer -->
+        <div class="fc-face fc-back">
+          <div class="fc-tag">💡 Answer</div>
+          <p class="fc-answer">${card.answer}</p>
+          ${card.explanation
+            ? `<p class="fc-explanation">📖 ${card.explanation}</p>`
+            : ""}
+        </div>
+
+      </div>
+    </div>`;
+}
+
+// ── Flip the card on click ──
+function flipCard() {
+  const inner = document.getElementById("fcCardInner");
+  if (!inner) return;
+  fcFlipped = !fcFlipped;
+  fcFlipped
+    ? inner.classList.add("fc-flipped")
+    : inner.classList.remove("fc-flipped");
+}
+
+// ── Go to next card ──
+function fcNext() {
+  if (fcIndex < fcCards.length - 1) {
+    fcIndex++;
+    renderFcCard();
+  } else {
+    showFcSummary();
+  }
+}
+
+// ── Go to previous card ──
+function fcPrev() {
+  if (fcIndex > 0) {
+    fcIndex--;
+    renderFcCard();
+  }
+}
+
+// ── Mark as known and advance ──
+function markKnown() {
+  if (!fcKnown.includes(fcIndex)) fcKnown.push(fcIndex);
+  fcNext();
+}
+
+// ── Mark as needs review and advance ──
+function markUnknown() {
+  fcKnown = fcKnown.filter(i => i !== fcIndex);
+  fcNext();
+}
+
+// ── Show end-of-deck summary ──
+function showFcSummary() {
+  const total = fcCards.length;
+  const known = fcKnown.length;
+  const pct   = ((known / total) * 100).toFixed(0);
+
+  document.getElementById("fcNav").style.display = "none";
+  document.getElementById("fcDeck").innerHTML = `
+    <div class="fc-summary">
+      <h3>🎉 Deck Complete!</h3>
+      <div class="fc-summary-stats">
+        <div class="fc-stat">
+          <span class="fc-stat-num">${total}</span>
+          <span class="fc-stat-lbl">Total Cards</span>
+        </div>
+        <div class="fc-stat fc-stat-green">
+          <span class="fc-stat-num">${known}</span>
+          <span class="fc-stat-lbl">✅ Known</span>
+        </div>
+        <div class="fc-stat fc-stat-red">
+          <span class="fc-stat-num">${total - known}</span>
+          <span class="fc-stat-lbl">🔁 Review Again</span>
+        </div>
+        <div class="fc-stat fc-stat-blue">
+          <span class="fc-stat-num">${pct}%</span>
+          <span class="fc-stat-lbl">Mastery</span>
+        </div>
+      </div>
+      <button onclick="restartFlashcards()">🔄 Restart Deck</button>
+      <button onclick="reviewUnknown()">🔁 Review Unknown Only</button>
+    </div>`;
+}
+
+// ── Restart full deck ──
+function restartFlashcards() {
+  fcIndex = 0;
+  fcKnown = [];
+  document.getElementById("fcNav").style.display = "flex";
+  renderFcCard();
+}
+
+// ── Review only cards not yet known ──
+function reviewUnknown() {
+  const unknown = fcCards.filter((_, i) => !fcKnown.includes(i));
+  if (unknown.length === 0) {
+    document.getElementById("fcDeck").innerHTML = `
+      <div class="fc-summary">
+        <h3>🎯 Perfect! You know all the cards!</h3>
+        <button onclick="restartFlashcards()">🔄 Restart Deck</button>
+      </div>`;
+    return;
+  }
+  fcCards = unknown;
+  fcIndex = 0;
+  fcKnown = [];
+  document.getElementById("fcNav").style.display = "flex";
+  renderFcCard();
+}
