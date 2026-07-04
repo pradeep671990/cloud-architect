@@ -1,1 +1,956 @@
-[]
+[
+  {
+    "question": "You're starting a new project with a web app, API, and Postgres DB that need to run together locally with one command. What tool and command?",
+    "options": ["Docker Compose - docker compose up", "docker run three times manually", "Kubernetes minikube", "docker build --all"],
+    "answer": "Docker Compose - docker compose up",
+    "explanation": "Define all three services in a single docker-compose.yml (services: web, api, db) and start them together with 'docker compose up -d'. Compose automatically creates a shared default network so services reach each other by service name, handles startup ordering via depends_on, and lets you manage the whole stack's lifecycle (up/down/logs) as one unit instead of juggling individual docker run commands.",
+    "difficulty": "easy",
+    "subcategory": "core-concepts",
+    "category": "docker-compose"
+  },
+  {
+    "question": "What's the difference between the legacy 'docker-compose' (hyphenated, Python) and the newer 'docker compose' (V2, Go, plugin) CLI?",
+    "options": ["V2 is a Docker CLI plugin written in Go, faster, actively maintained, and bundled with Docker Desktop/Engine", "They are identical binaries with different names", "V1 supports more features than V2", "V2 requires Kubernetes to run"],
+    "answer": "V2 is a Docker CLI plugin written in Go, faster, actively maintained, and bundled with Docker Desktop/Engine",
+    "explanation": "docker-compose V1 was a standalone Python tool, now deprecated and no longer receiving updates. Compose V2 is implemented as a Docker CLI plugin ('docker compose', no hyphen), written in Go for better performance, ships by default with modern Docker installations, and has ongoing feature development (like 'compose watch'). New projects should always target the V2 command syntax.",
+    "difficulty": "easy",
+    "subcategory": "core-concepts",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You need service B to wait until service A's application inside the container is actually ready, not just until A's container has started.",
+    "options": ["depends_on with condition: service_healthy, paired with a HEALTHCHECK on service A", "depends_on alone with no condition", "restart: always on service B", "links directive with a sleep command"],
+    "answer": "depends_on with condition: service_healthy, paired with a HEALTHCHECK on service A",
+    "explanation": "Plain 'depends_on: [serviceA]' only guarantees container start order, not application readiness. Add a 'healthcheck' block to serviceA and reference it as 'depends_on: { serviceA: { condition: service_healthy } }' on serviceB so Compose waits for A to report healthy first. For full resilience, the app itself should still implement retry/backoff logic since even this doesn't guarantee zero race conditions under all failure modes.",
+    "difficulty": "medium",
+    "subcategory": "dependencies",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you validate that your docker-compose.yml syntax is correct without actually starting any containers?",
+    "options": ["docker compose config", "docker compose up --dry-run", "docker compose validate", "docker compose ps"],
+    "answer": "docker compose config",
+    "explanation": "'docker compose config' parses the compose file(s), resolves variable substitution and merges from any override/extends, and prints the fully resolved configuration, failing with a clear error if the YAML is invalid or references undefined services/networks. This is a great pre-flight check in CI before actually attempting 'up'.",
+    "difficulty": "easy",
+    "subcategory": "core-concepts",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You want local development to use different port mappings and volumes than what's committed for the team, without editing the shared file.",
+    "options": ["docker-compose.override.yml, automatically merged by Compose", "Fork the repo and maintain a personal branch", "Use ARG in the compose file", "Rename services locally"],
+    "answer": "docker-compose.override.yml, automatically merged by Compose",
+    "explanation": "Compose automatically detects and merges 'docker-compose.override.yml' with 'docker-compose.yml' when you run plain 'docker compose up', with no extra flags needed. Keep it gitignored (or committed as a shared dev override) to layer personal or environment-specific tweaks like extra port bindings or bind mounts on top of the base file without modifying it directly.",
+    "difficulty": "easy",
+    "subcategory": "core-concepts",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You need separate configurations for dev, staging, and CI, all derived from one base docker-compose.yml, explicitly chosen per run.",
+    "options": ["Multiple -f flags: docker compose -f base.yml -f staging.yml up", "One giant compose file with if/else logic", "Separate git repos per environment", "Environment-specific Dockerfiles only"],
+    "answer": "Multiple -f flags: docker compose -f base.yml -f staging.yml up",
+    "explanation": "Chain multiple '-f' flags in the order they should be merged: 'docker compose -f docker-compose.yml -f docker-compose.staging.yml up -d'. Compose deep-merges the files (later files override/extend earlier ones), letting you keep a clean shared base and small, explicit per-environment diffs rather than duplicating the whole stack definition.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you pass different environment variables to a service depending on whether you run locally or in CI, without hardcoding values in the YAML?",
+    "options": ["env_file directive pointing to a .env file, or shell environment variable interpolation with ${VAR}", "Only via ARG in the Dockerfile", "Hardcode both cases directly in docker-compose.yml", "Use two entirely separate compose projects"],
+    "answer": "env_file directive pointing to a .env file, or shell environment variable interpolation with ${VAR}",
+    "explanation": "Use 'env_file: .env' to load key-value pairs from a file into the container's environment, or reference host shell variables directly in the compose file with '${DB_HOST}' syntax, which Compose substitutes at parse time from the shell environment or a root-level '.env' file. This keeps environment-specific secrets/config out of the committed YAML.",
+    "difficulty": "easy",
+    "subcategory": "environment-config",
+    "category": "docker-compose"
+  },
+  {
+    "question": "What's the difference between the root-level '.env' file that Compose reads automatically and a service-level 'env_file:' entry?",
+    "options": ["The root .env only feeds variable substitution WITHIN the compose file itself; env_file injects variables directly into the container's runtime environment", "They do exactly the same thing", "env_file only works for build args, never runtime", "The root .env sets container environment variables directly"],
+    "answer": "The root .env only feeds variable substitution WITHIN the compose file itself; env_file injects variables directly into the container's runtime environment",
+    "explanation": "A '.env' file in the same directory as docker-compose.yml is used by Compose to resolve '${VARIABLE}' placeholders when parsing the YAML (e.g., choosing an image tag or port number), but its variables aren't automatically passed into containers. To actually set environment variables inside a container, use the service's 'environment:' list or 'env_file:' key, which is a distinct mechanism even though it may point at a file with a similar name.",
+    "difficulty": "medium",
+    "subcategory": "environment-config",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You accidentally committed a .env file containing API keys to git. Beyond rotating the keys, how do you prevent recurrence in Compose projects?",
+    "options": ["Add .env to .gitignore, commit a .env.example template with placeholder values, and load real secrets outside VCS", "Rename the file to .env.txt", "Encrypt the whole repo", "Switch to docker-compose.override.yml exclusively"],
+    "answer": "Add .env to .gitignore, commit a .env.example template with placeholder values, and load real secrets outside VCS",
+    "explanation": "Standard practice: gitignore the real '.env', commit a '.env.example' documenting required variable names (with dummy/blank values) so teammates know what to set, and populate the real file locally or fetch it via a secrets manager in CI/CD. For anything sensitive in production, prefer Docker/Swarm secrets or an external vault over env files entirely.",
+    "difficulty": "medium",
+    "subcategory": "security",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you inject a secret (like a DB password) into a Compose service without it showing up in 'docker inspect' environment variables or the compose file itself?",
+    "options": ["Compose 'secrets:' top-level key, mounted as a file at /run/secrets/<name>", "environment: key with the password inline", "Bake it into the image via ARG", "Pass it as a command-line argument in 'command:'"],
+    "answer": "Compose 'secrets:' top-level key, mounted as a file at /run/secrets/<name>",
+    "explanation": "Define a top-level 'secrets:' block referencing a file or (in Swarm) an external secret, then reference it under the service's 'secrets:' list. Compose mounts it as a read-only file inside the container at '/run/secrets/<secret_name>' rather than an environment variable, avoiding exposure via 'docker inspect' (which does show env vars in plaintext) or process listing tools that can read environment blocks.",
+    "difficulty": "hard",
+    "subcategory": "security",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You want to run only a subset of services (e.g., skip a monitoring stack) during quick local iteration, but keep it defined in the same compose file for full-stack CI runs.",
+    "options": ["Compose profiles", "Separate compose files for every combination", "Comment out services manually each time", "depends_on with optional: true"],
+    "answer": "Compose profiles",
+    "explanation": "Tag optional services with 'profiles: [\"monitoring\"]' in the compose file. Running plain 'docker compose up' skips any service with a profile assigned (services with no profiles always start), while 'docker compose --profile monitoring up' includes them. This avoids maintaining multiple near-duplicate compose files just to toggle optional components like monitoring or debugging tools.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you scale a stateless 'worker' service to 5 replicas for local load testing with Compose?",
+    "options": ["docker compose up --scale worker=5", "docker compose restart worker five times", "Add five duplicate service blocks manually", "docker compose build --replicas=5"],
+    "answer": "docker compose up --scale worker=5",
+    "explanation": "'docker compose up --scale worker=5' starts 5 containers for the 'worker' service. If the service publishes a fixed host port, you'll get a conflict since only one container can bind a given host port; either avoid publishing a host port for horizontally-scaled services (let them only be reachable internally) or omit fixed host ports and let Compose assign them dynamically.",
+    "difficulty": "medium",
+    "subcategory": "scaling",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You changed the image tag for a service and want Compose to pull the new image and recreate just that container, without touching unrelated services.",
+    "options": ["docker compose up -d <service-name>", "docker compose down then up (whole stack)", "docker compose restart (whole stack)", "docker compose build --no-cache (whole stack)"],
+    "answer": "docker compose up -d <service-name>",
+    "explanation": "Passing a specific service name to 'up' scopes the operation to just that service (and its dependencies if they aren't already running): 'docker compose up -d api' recreates only the 'api' container with the updated image/config, leaving other running services (like the database) untouched and avoiding unnecessary downtime for unrelated components.",
+    "difficulty": "easy",
+    "subcategory": "core-concepts",
+    "category": "docker-compose"
+  },
+  {
+    "question": "What's the danger of running 'docker compose down -v' on a production-like environment?",
+    "options": ["It deletes named volumes, permanently destroying persisted data like database contents", "It only stops containers, nothing is deleted", "It rebuilds all images from scratch", "It only affects networks, not data"],
+    "answer": "It deletes named volumes, permanently destroying persisted data like database contents",
+    "explanation": "'docker compose down' alone stops and removes containers and the default network, but leaves named volumes intact. Adding '-v' (or '--volumes') additionally removes any named volumes declared in the compose file, which for a database service means permanently deleting all its data. Never run '-v' against an environment with data you care about without a verified backup first.",
+    "difficulty": "medium",
+    "subcategory": "storage",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you persist a Postgres database's data across 'docker compose down' and 'up' cycles?",
+    "options": ["Declare a named volume and mount it to the DB's data directory", "Rely on the container's writable layer", "Use a bind mount to /tmp", "Use tmpfs for the data directory"],
+    "answer": "Declare a named volume and mount it to the DB's data directory",
+    "explanation": "In the top-level 'volumes:' section declare 'pgdata:', then under the db service: 'volumes: [\"pgdata:/var/lib/postgresql/data\"]'. Named volumes are managed independently of container lifecycle, so 'docker compose down' (without -v) removes the containers but the volume and its data remain, ready to be reattached the next time 'docker compose up' recreates the db container.",
+    "difficulty": "easy",
+    "subcategory": "storage",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You want your local source code changes to reflect immediately inside a running container without rebuilding the image every time.",
+    "options": ["Bind mount the source directory as a volume over the container's app path", "Rebuild the image on every file save", "Use a named volume instead of bind mount", "COPY the code at build time only"],
+    "answer": "Bind mount the source directory as a volume over the container's app path",
+    "explanation": "In development, mount your local source folder into the container: 'volumes: [\"./src:/app/src\"]'. Combined with a file-watching dev server (nodemon, Flask debug mode, etc.) inside the container, edits on the host are immediately visible inside the container without an image rebuild, dramatically speeding up the local dev loop. This should NOT be used in production, where code should be baked into the image.",
+    "difficulty": "easy",
+    "subcategory": "storage",
+    "category": "docker-compose"
+  },
+  {
+    "question": "A bind-mounted node_modules folder from the host (different OS/arch) causes native binary errors inside the Linux container. How do you fix this while still bind-mounting source code?",
+    "options": ["Use an anonymous volume to 'mask' node_modules inside the container, keeping it separate from the host mount", "Delete node_modules from the host entirely and never install locally", "Switch to Windows containers", "Disable volume mounts entirely for this service"],
+    "answer": "Use an anonymous volume to 'mask' node_modules inside the container, keeping it separate from the host mount",
+    "explanation": "Mount source with 'volumes: [\"./:/app\", \"/app/node_modules\"]'. The second entry, an anonymous volume mounted at the same path as node_modules, takes precedence over the bind-mounted folder underneath it, so the container keeps its own Linux-native node_modules (installed during image build) instead of using the host's potentially incompatible (e.g., macOS/Windows-compiled) native binaries, while still getting live source code updates for everything else.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do two services in the same docker-compose.yml reach each other over the network by default?",
+    "options": ["By service name, via Compose's automatically created default network with built-in DNS", "By container IP address only, manually looked up", "They cannot communicate without an explicit 'links:' directive", "Only via published host ports"],
+    "answer": "By service name, via Compose's automatically created default network with built-in DNS",
+    "explanation": "Compose automatically creates a default bridge network for the project and attaches every defined service to it, registering each service name in an internal DNS so 'http://api:8080' resolves correctly from the 'web' service without any manual network or 'links:' configuration (links: is legacy and no longer necessary in modern Compose).",
+    "difficulty": "easy",
+    "subcategory": "networking",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You want two Compose projects (e.g., 'app' and 'shared-infra') to be able to talk to each other's containers, each managed by its own compose file.",
+    "options": ["Declare an external network in both compose files pointing to the same pre-created Docker network", "Merge both into a single giant compose file always", "Use --link across projects", "Publish all ports to the host and connect via localhost"],
+    "answer": "Declare an external network in both compose files pointing to the same pre-created Docker network", 
+    "explanation": "Create a shared network once ('docker network create shared_net'), then in each compose file declare 'networks: { shared_net: { external: true } }' and attach the relevant services to it. This lets independently managed compose projects (e.g., a shared infra stack for Postgres/Redis and a separate app stack) communicate over a common network without merging their lifecycles.",
+    "difficulty": "medium",
+    "subcategory": "networking",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you give a service a custom, human-friendly hostname alias distinct from its Compose service name on the network?",
+    "options": ["networks.<network>.aliases under the service", "hostname: only, which is insufficient for aliasing", "container_name: alone", "extra_hosts: pointing to itself"],
+    "answer": "networks.<network>.aliases under the service",
+    "explanation": "Under the service's network attachment, add 'networks: { mynet: { aliases: [\"legacy-db-name\"] } }' so other containers can resolve that extra name to the same service, in addition to its default service-name DNS entry. Useful when migrating a legacy app that hardcodes a specific hostname it expects to find on the network.",
+    "difficulty": "medium",
+    "subcategory": "networking",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You need one service to be reachable from the host on port 5432, but not exposed at all to the internet if the host has a public IP.",
+    "options": ["ports: \"127.0.0.1:5432:5432\" to bind only the loopback interface", "ports: \"5432:5432\" (binds all interfaces by default)", "expose: \"5432\" only", "network_mode: host"],
+    "answer": "ports: \"127.0.0.1:5432:5432\" to bind only the loopback interface",
+    "explanation": "By default, 'ports: \"5432:5432\"' binds to 0.0.0.0, making the port reachable from any network interface, including a public one on a cloud VM, which is a common accidental exposure of internal-only services like databases. Specifying the loopback IP explicitly restricts access to processes on the same host only. 'expose:' alone doesn't publish to the host at all, it only documents/exposes the port to other containers on the same network.",
+    "difficulty": "medium",
+    "subcategory": "networking",
+    "category": "docker-compose"
+  },
+  {
+    "question": "What's the difference between 'ports:' and 'expose:' in a Compose service definition?",
+    "options": ["ports publishes to the host machine; expose only makes the port reachable to other containers on the same network, not the host", "They are functionally identical", "expose publishes to the host, ports does not", "ports only works with TCP, expose supports UDP"],
+    "answer": "ports publishes to the host machine; expose only makes the port reachable to other containers on the same network, not the host",
+    "explanation": "'ports: [\"8080:80\"]' creates a host-to-container port mapping, making the service reachable from outside Docker (e.g., via curl localhost:8080 on the host). 'expose: [\"80\"]' is largely documentation, similar to Dockerfile's EXPOSE, since other containers on the same Compose network can already reach any port without an explicit expose declaration; it doesn't publish anything to the host at all.",
+    "difficulty": "easy",
+    "subcategory": "networking",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You need a Compose service to use the same network namespace as another container (share its localhost/ports directly).",
+    "options": ["network_mode: \"service:<other-service-name>\"", "networks: shared_net alone", "links: [<other-service>]", "extra_hosts pointing to the other service"],
+    "answer": "network_mode: \"service:<other-service-name>\"",
+    "explanation": "'network_mode: \"service:api\"' makes this container share the exact same network namespace (IP, interfaces, localhost) as the 'api' service's container, a common pattern for sidecar containers (like a logging agent or proxy) that need to see the main container's ports as if they were 'localhost' rather than going through the network at all.",
+    "difficulty": "hard",
+    "subcategory": "networking",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you make a service in Compose use the host machine's network stack directly, bypassing Docker's network isolation entirely?",
+    "options": ["network_mode: host", "networks: [host_net]", "ports: \"0.0.0.0:*\"", "expose: all"],
+    "answer": "network_mode: host",
+    "explanation": "'network_mode: host' removes network namespace isolation for that service, so it binds directly to the host's network interfaces and ports (no 'ports:' mapping needed or even honored). This is useful for performance-sensitive networking or tools needing raw host network access, but sacrifices port-mapping flexibility and isolation, and only works reliably on Linux hosts (not Docker Desktop for Mac/Windows).",
+    "difficulty": "medium",
+    "subcategory": "networking",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you build a service's image from a local Dockerfile as part of 'docker compose up', instead of pulling a pre-built image?",
+    "options": ["build: context/dockerfile keys under the service", "image: with a local file path", "command: docker build inline", "It's not possible; images must be pre-built"],
+    "answer": "build: context/dockerfile keys under the service",
+    "explanation": "Under the service, specify 'build: { context: ./app, dockerfile: Dockerfile.dev, args: { NODE_ENV: development } }'. Compose builds the image from that context and Dockerfile when you run 'docker compose up --build' or automatically if the image doesn't exist yet. You can combine both 'build:' and 'image:' to also tag the resulting image with a specific name.",
+    "difficulty": "easy",
+    "subcategory": "build",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You changed the Dockerfile but 'docker compose up' keeps using a stale cached image. How do you force a rebuild?",
+    "options": ["docker compose up --build (or docker compose build --no-cache)", "docker compose restart", "docker compose down and immediately up", "Delete the docker-compose.yml and recreate it"],
+    "answer": "docker compose up --build (or docker compose build --no-cache)",
+    "explanation": "'docker compose up' by default reuses an already-built image if one exists with the expected tag, even if the Dockerfile changed since then. The '--build' flag forces Compose to rebuild images for any service with a 'build:' section before starting containers. For a completely fresh build ignoring all layer cache, use 'docker compose build --no-cache' first, then 'up'.",
+    "difficulty": "easy",
+    "subcategory": "build",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you pass build-time arguments (like a version number) into a service's Dockerfile through Compose?",
+    "options": ["build.args under the service", "environment: at runtime only", "command: with inline flags", "secrets: block"],
+    "answer": "build.args under the service",
+    "explanation": "Under the service's 'build:' key, add 'args: { APP_VERSION: \"1.2.3\" }', corresponding to 'ARG APP_VERSION' declared in the Dockerfile. These are only available during the image build, not automatically injected as runtime environment variables unless the Dockerfile also does 'ENV APP_VERSION=$APP_VERSION' to persist the value forward.",
+    "difficulty": "easy",
+    "subcategory": "build",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You want multiple services in the same compose file to share a common base configuration (like logging options) without repeating it in every service block.",
+    "options": ["YAML anchors and aliases (&base / <<: *base), or the 'extends:' key", "Copy-paste the config into every service", "Use a separate Dockerfile per shared config", "environment inheritance is automatic across services"],
+    "answer": "YAML anchors and aliases (&base / <<: *base), or the 'extends:' key",
+    "explanation": "Define a reusable block once, e.g. 'x-logging: &default-logging { driver: json-file, options: { max-size: \"10m\" } }' (the 'x-' prefix marks it as an extension field Compose ignores structurally), then reference it in each service with 'logging: *default-logging'. Alternatively, the older 'extends:' key lets one service inherit and override fields from another service definition, though YAML anchors are now the more common modern pattern.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you set a hard memory and CPU limit on a Compose service, similar to '--memory' and '--cpus' in plain docker run?",
+    "options": ["deploy.resources.limits (with Swarm) or the newer top-level resources under the service for plain Compose", "environment: MEMORY_LIMIT variable", "restart: on-failure", "healthcheck timeout settings"],
+    "answer": "deploy.resources.limits (with Swarm) or the newer top-level resources under the service for plain Compose",
+    "explanation": "Historically, 'deploy: resources: limits: { cpus: \"1.5\", memory: 512M }' only took effect under 'docker stack deploy' (Swarm mode) and was silently ignored by plain 'docker compose up'. Modern Compose (v2.x with recent versions) has extended support to honor these limits even outside Swarm; verify your Compose version, and as a fallback older setups sometimes used the legacy top-level 'mem_limit'/'cpus' fields for plain Compose enforcement.",
+    "difficulty": "hard",
+    "subcategory": "performance",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you tell Compose how many replicas of a stateless service to run and its update/rollback strategy when deploying to Swarm?",
+    "options": ["deploy.replicas and deploy.update_config / deploy.rollback_config", "scale: field directly on the service", "command: with a --replicas flag", "restart: always with a counter"],
+    "answer": "deploy.replicas and deploy.update_config / deploy.rollback_config",
+    "explanation": "Under a service's 'deploy:' key (honored by 'docker stack deploy' in Swarm mode), set 'replicas: 3', and configure 'update_config: { parallelism: 1, delay: 10s, failure_action: rollback }' to control rolling update behavior. These 'deploy:' keys are Swarm-specific and largely ignored by plain 'docker compose up' outside of a swarm (use '--scale' at the CLI instead for that case).",
+    "difficulty": "medium",
+    "subcategory": "orchestration",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you deploy a docker-compose.yml file to a Docker Swarm cluster instead of running it locally with plain Compose?",
+    "options": ["docker stack deploy -c docker-compose.yml mystack", "docker compose up --swarm", "docker swarm run -c docker-compose.yml", "docker compose deploy"],
+    "answer": "docker stack deploy -c docker-compose.yml mystack",
+    "explanation": "'docker stack deploy' consumes the same Compose file format (v3+) but targets an initialized Swarm cluster, honoring 'deploy:' keys like replicas, placement constraints, and update/rollback configs which plain 'docker compose up' ignores. This lets teams reuse one config format for both local development (docker compose) and clustered production deployment (docker stack), reducing config duplication.",
+    "difficulty": "medium",
+    "subcategory": "orchestration",
+    "category": "docker-compose"
+  },
+  {
+    "question": "A service in Compose needs to always restart if it crashes, but should NOT restart after an explicit 'docker compose stop'.",
+    "options": ["restart: unless-stopped", "restart: always", "restart: on-failure with no limit", "No restart policy plus a cron watchdog"],
+    "answer": "restart: unless-stopped",
+    "explanation": "'unless-stopped' restarts the container automatically after crashes or a host/daemon reboot, but respects an explicit manual stop, it won't be restarted until you explicitly start it again. 'always' would even restart it after you intentionally stopped it (e.g., on the next daemon restart), which is usually not the desired behavior for maintenance windows.",
+    "difficulty": "easy",
+    "subcategory": "core-concepts",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How would you configure a batch/one-off job service in Compose that should run to completion and NOT restart automatically?",
+    "options": ["restart: \"no\" (the default) and run it via 'docker compose run' rather than as part of 'up'", "restart: always", "deploy.replicas: 0", "healthcheck with retries: 0"],
+    "answer": "restart: \"no\" (the default) and run it via 'docker compose run' rather than as part of 'up'",
+    "explanation": "For a one-shot task like a database migration or a report generator, keep the default 'restart: \"no\"' policy so Compose doesn't keep relaunching it after it exits normally, and invoke it explicitly with 'docker compose run --rm migrator' rather than including it as a long-running part of 'docker compose up', which would otherwise try to keep all services running.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "docker-compose"
+  },
+  {
+    "question": "What's the difference between 'docker compose run' and 'docker compose up' for a given service?",
+    "options": ["run starts a one-off container (optionally interactive) without necessarily starting linked dependent services or publishing ports by default; up starts and keeps the full defined stack running", "They are functionally identical commands", "run only works for build-only services", "up always requires -d, run never does"],
+    "answer": "run starts a one-off container (optionally interactive) without necessarily starting linked dependent services or publishing ports by default; up starts and keeps the full defined stack running",
+    "explanation": "'docker compose run api python manage.py shell' is designed for one-off, often interactive, ad-hoc commands, doesn't publish the service's normal ports by default (avoiding conflicts with an already-running 'up'), and by default DOES start any dependent services if not already running. 'docker compose up' instead starts (and by default keeps running) all services as defined for normal application operation.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you follow logs from just one specific service out of many running in a Compose project, rather than the entire stack's interleaved output?",
+    "options": ["docker compose logs -f <service-name>", "docker compose ps -f <service-name>", "docker attach <service-name>", "docker compose top <service-name>"],
+    "answer": "docker compose logs -f <service-name>",
+    "explanation": "'docker compose logs -f api' streams only the 'api' service's logs, following new output live. Omitting the service name shows all services' logs interleaved with a color-coded prefix per service, which can get noisy for busy multi-service stacks; scoping to a single service is much easier for focused debugging.",
+    "difficulty": "easy",
+    "subcategory": "troubleshooting",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You need to run an ad-hoc shell command inside a specific already-running Compose service's container for debugging.",
+    "options": ["docker compose exec <service> sh", "docker compose run <service> sh (creates a new container)", "docker compose attach <service>", "docker compose logs <service> --shell"],
+    "answer": "docker compose exec <service> sh",
+    "explanation": "'docker compose exec api sh' opens an interactive shell inside the ALREADY-RUNNING 'api' container, sharing its existing state, network, and mounted volumes. 'docker compose run' instead creates a brand-new, separate container instance from the service's image, which is useful for isolated one-off tasks but not for inspecting the actual live running instance's current state.",
+    "difficulty": "easy",
+    "subcategory": "troubleshooting",
+    "category": "docker-compose"
+  },
+  {
+    "question": "Two services depend on each other in a startup-order cycle (A needs B ready, B needs A ready), causing depends_on to be unusable directly. What's the fix?",
+    "options": ["Remove the hard depends_on cycle; implement application-level retry/backoff so each service tolerates the other being briefly unavailable at startup", "Compose supports circular depends_on natively, no changes needed", "Merge both services into one container", "Use restart: always to eventually converge"],
+    "answer": "Remove the hard depends_on cycle; implement application-level retry/backoff so each service tolerates the other being briefly unavailable at startup",
+    "explanation": "Compose (and Docker in general) doesn't support circular startup dependencies since there's no valid order to start them in. The correct architectural fix is to decouple hard startup-order coupling: let each service attempt to connect to the other with retries and exponential backoff, so whichever comes up first simply waits briefly rather than requiring a strict, mutually-exclusive start order.",
+    "difficulty": "hard",
+    "subcategory": "dependencies",
+    "category": "docker-compose"
+  },
+  {
+    "question": "Your compose file references '${TAG}' for an image version, but forgetting to set it in the shell silently defaults to blank/invalid values. How do you guard against this?",
+    "options": ["Use the ${VAR:?error message} required-variable syntax", "Wrap the whole compose file in a shell script with set -u", "Manually document required variables in a README only", "Compose will always throw an error automatically with no config needed"],
+    "answer": "Use the ${VAR:?error message} required-variable syntax",
+    "explanation": "Compose supports '${TAG:?TAG must be set}' interpolation syntax, which causes 'docker compose config' (and thus 'up') to fail immediately with your custom error message if the variable is unset or empty, rather than silently substituting an empty string that might resolve to an invalid or unintended image reference like 'myapp:' (empty tag).",
+    "difficulty": "medium",
+    "subcategory": "environment-config",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you give a container a fixed, predictable name instead of Compose's default auto-generated '<project>_<service>_<n>' naming?",
+    "options": ["container_name: under the service", "hostname: alone", "Set COMPOSE_PROJECT_NAME only", "It's not configurable in Compose"],
+    "answer": "container_name: under the service",
+    "explanation": "Add 'container_name: my-fixed-api-name' to override Compose's default naming convention. Caution: this disables Compose's ability to run multiple instances/scale that service (since container names must be unique on the host), so avoid using 'container_name' together with 'scale'/'--scale' for that service.",
+    "difficulty": "easy",
+    "subcategory": "core-concepts",
+    "category": "docker-compose"
+  },
+  {
+    "question": "Running the same docker-compose.yml twice from two different directories on the same host causes container name collisions. Why, and how do you fix it?",
+    "options": ["Compose derives the project name from the directory name by default; set COMPOSE_PROJECT_NAME or use -p explicitly to differentiate", "Compose doesn't support running the same file twice ever", "You must always rename services for each copy", "Docker automatically prevents this and handles it silently"],
+    "answer": "Compose derives the project name from the directory name by default; set COMPOSE_PROJECT_NAME or use -p explicitly to differentiate",
+    "explanation": "By default, the Compose project name (used as a prefix for container/network/volume names) is derived from the parent directory's name. If two checkouts happen to be in identically-named directories, or you want intentionally isolated parallel instances of the same project, explicitly set a unique project name via 'docker compose -p myproject-featurebranch up' or the COMPOSE_PROJECT_NAME environment variable.",
+    "difficulty": "medium",
+    "subcategory": "troubleshooting",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You want to see all containers, networks, and volumes associated with a specific Compose project for cleanup or auditing purposes.",
+    "options": ["docker compose ps / docker compose down --remove-orphans, filtered by the project's labels", "docker ps -a across the whole host with no filter", "Manually track container IDs in a spreadsheet", "docker system prune -a blindly"],
+    "answer": "docker compose ps / docker compose down --remove-orphans, filtered by the project's labels",
+    "explanation": "Compose automatically labels every resource it creates with 'com.docker.compose.project=<name>', so 'docker compose ps' (run from the project directory, or with '-p <project>') lists just that project's containers. 'docker compose down --remove-orphans' additionally cleans up containers for services that used to exist in the compose file but were since removed, preventing orphaned leftovers.",
+    "difficulty": "medium",
+    "subcategory": "troubleshooting",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you configure a HEALTHCHECK directly in a Compose file rather than baking it into the Dockerfile, and override an image's built-in healthcheck?",
+    "options": ["healthcheck: block under the service, which overrides any Dockerfile HEALTHCHECK for that service", "It's only possible via the Dockerfile, never Compose", "environment: HEALTHCHECK_CMD variable", "command: appended with a health flag"],
+    "answer": "healthcheck: block under the service, which overrides any Dockerfile HEALTHCHECK for that service",
+    "explanation": "Add 'healthcheck: { test: [\"CMD\", \"curl\", \"-f\", \"http://localhost/health\"], interval: 30s, timeout: 5s, retries: 3, start_period: 10s }' under the service. This takes precedence over any HEALTHCHECK baked into the image, letting you customize health checking per deployment context (e.g., a longer start_period in a slower CI environment) without rebuilding the image.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you explicitly disable a healthcheck that's baked into a third-party base image, if it's causing false 'unhealthy' states in your environment?",
+    "options": ["healthcheck: { disable: true }", "Remove the image and rebuild your own", "restart: always to bypass health status", "There is no way to override an image's healthcheck"],
+    "answer": "healthcheck: { disable: true }",
+    "explanation": "Setting 'healthcheck: { disable: true }' under the service in your compose file turns off any HEALTHCHECK defined in the image entirely, useful when a vendor image's default healthcheck doesn't fit your environment (e.g., assumes a port or path that differs in your setup) and you either don't need health checking or plan to implement your own via a sidecar/monitoring tool instead.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You're running Compose in CI and want the pipeline to fail if any service exits with a non-zero code during integration tests, then tear everything down automatically.",
+    "options": ["docker compose up --abort-on-container-exit --exit-code-from <test-service>", "docker compose up -d and manually poll status", "docker compose run without any exit code checking", "Rely on the CI timeout only"],
+    "answer": "docker compose up --abort-on-container-exit --exit-code-from <test-service>",
+    "explanation": "'--abort-on-container-exit' stops the whole stack as soon as any container exits, and '--exit-code-from test-runner' makes 'docker compose up' itself return that specific service's exit code as its own, which CI systems can check to determine pass/fail. Follow with 'docker compose down' (or use '--remove-orphans') to clean up afterward regardless of outcome.",
+    "difficulty": "medium",
+    "subcategory": "best-practices",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How would you architect a Compose-based integration test setup so dependent services (DB, queue) are ephemeral per test run and never share state between runs?",
+    "options": ["Use a dedicated docker-compose.test.yml with fresh, unnamed/anonymous or freshly-created named volumes, torn down with 'down -v' after each run", "Reuse a shared long-lived staging environment for all test runs", "Point tests at production infrastructure directly", "Skip using volumes entirely and expect stateless dependencies always"],
+    "answer": "Use a dedicated docker-compose.test.yml with fresh, unnamed/anonymous or freshly-created named volumes, torn down with 'down -v' after each run",
+    "explanation": "A clean test setup uses its own compose file (or profile) scoped to testing, spins up isolated instances of dependencies for each CI run (avoiding cross-run state pollution and flaky tests from leftover data), and reliably tears everything down including volumes ('docker compose -f docker-compose.test.yml down -v') at the end of the job, whether it passed or failed, using CI 'always run this step' semantics.",
+    "difficulty": "hard",
+    "subcategory": "best-practices",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You want Compose to automatically rebuild and restart a service whenever you edit its source code, similar to a dev-mode file watcher, without manual 'up --build' each time.",
+    "options": ["docker compose watch (Compose V2's built-in file sync/rebuild feature)", "A custom cron job polling for file changes", "docker compose up --follow", "Restart the whole host on file save"],
+    "answer": "docker compose watch (Compose V2's built-in file sync/rebuild feature)",
+    "explanation": "Modern Compose V2 supports a 'develop: watch:' section under a service, defining rules like '{ path: ./src, action: sync }' (live-syncs files into the running container) or '{ path: ./package.json, action: rebuild }' (triggers a full image rebuild and container recreate). Running 'docker compose watch' then automatically reacts to file changes, offering a smoother dev inner loop than manual rebuild commands.",
+    "difficulty": "medium",
+    "subcategory": "build",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you make a Compose service use an image from a private registry that requires authentication?",
+    "options": ["docker login to the registry beforehand; Compose uses the same stored credentials as the Docker CLI", "Put a username/password directly in the image: field", "Add a 'credentials:' block in the compose file", "It's not supported; must be public images only"],
+    "answer": "docker login to the registry beforehand; Compose uses the same stored credentials as the Docker CLI",
+    "explanation": "Compose doesn't have its own separate authentication mechanism; it delegates image pulls to the Docker Engine, which uses whatever credentials are already stored (via 'docker login myregistry.example.com') in the local Docker config (~/.docker/config.json). In CI, ensure a 'docker login' step runs before 'docker compose pull'/'up' using credentials from the CI's secret store.",
+    "difficulty": "easy",
+    "subcategory": "registry",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You want to pre-pull all images referenced in a compose file (perhaps to warm a cache or verify availability) without starting any containers.",
+    "options": ["docker compose pull", "docker compose up --pull-only", "docker compose build --pull", "docker compose config --pull"],
+    "answer": "docker compose pull",
+    "explanation": "'docker compose pull' downloads the latest images for every service with an 'image:' reference (skipping those that only have a 'build:' section unless also tagged with an image name), without creating or starting any containers. This is useful in CI to warm the local image cache in parallel with other setup steps, or simply to verify all referenced images/tags actually exist and are reachable.",
+    "difficulty": "easy",
+    "subcategory": "registry",
+    "category": "docker-compose"
+  },
+  {
+    "question": "Two versions of your team's compose file specify different Compose file format versions ('3.8' vs top-level fields with no version). What actually matters in modern Compose V2?",
+    "options": ["The top-level 'version:' key is now deprecated/ignored by Compose V2; the Compose Specification determines available fields based on the CLI version installed", "The version key is strictly required and must match the Docker Engine version exactly", "Version mismatches always cause a hard failure", "Only version 2 files work; version 3 is Swarm-only and unusable locally"],
+    "answer": "The top-level 'version:' key is now deprecated/ignored by Compose V2; the Compose Specification determines available fields based on the CLI version installed",
+    "explanation": "Since the unification into 'The Compose Specification', the 'version:' field at the top of docker-compose.yml is effectively obsolete; Compose V2 emits a warning if present but otherwise ignores it, and simply supports whatever fields the installed Compose CLI version implements. New compose files can safely omit 'version:' entirely.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you set a custom restart/graceful-shutdown timeout for a Compose service that needs longer than the 10-second default to finish in-flight work?",
+    "options": ["stop_grace_period: under the service", "restart: always with a delay parameter", "healthcheck.timeout increased", "There is no way to configure this in Compose"],
+    "answer": "stop_grace_period: under the service",
+    "explanation": "Set 'stop_grace_period: 30s' on the service so that 'docker compose stop' (and 'down') waits up to 30 seconds after sending SIGTERM before force-killing with SIGKILL, giving the application enough time to drain in-flight requests, flush buffers, or close database connections cleanly during shutdown, rather than the default 10-second window.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You need your app container to receive SIGINT instead of Docker's default SIGTERM on 'docker compose stop', since that's what the framework listens for.",
+    "options": ["stop_signal: SIGINT under the service", "STOPSIGNAL in the compose file directly (not valid)", "Override via command: kill -INT", "restart: on-stop-signal"],
+    "answer": "stop_signal: SIGINT under the service",
+    "explanation": "Add 'stop_signal: SIGINT' to the service definition so Compose sends that specific signal on stop/down instead of the default SIGTERM. This is the Compose-level equivalent of the Dockerfile's 'STOPSIGNAL' instruction and is useful when you can't modify the image's Dockerfile directly but still need correct graceful-shutdown signal behavior for a given deployment.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How would you set per-service CPU/memory reservations (soft guarantees) as opposed to hard limits, for capacity planning in a Swarm deploy?",
+    "options": ["deploy.resources.reservations", "deploy.resources.limits alone", "environment: RESERVED_MEMORY", "mem_swappiness setting"],
+    "answer": "deploy.resources.reservations",
+    "explanation": "'deploy: resources: { reservations: { cpus: \"0.5\", memory: 256M }, limits: { cpus: \"1\", memory: 512M } } ' distinguishes a soft guarantee (reservation, used by the Swarm scheduler for bin-packing decisions when placing replicas across nodes) from a hard ceiling (limit, enforced by cgroups at runtime, killing the container's process if exceeded). Reservations help the scheduler avoid over-committing a node's actual capacity.",
+    "difficulty": "hard",
+    "subcategory": "orchestration",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You want a service to only start on Swarm worker nodes with a specific label (e.g., GPU-equipped nodes), not just anywhere in the cluster.",
+    "options": ["deploy.placement.constraints referencing a custom node label", "networks: gpu_net alone", "environment: REQUIRE_GPU=true", "It's impossible to target specific nodes in Swarm"],
+    "answer": "deploy.placement.constraints referencing a custom node label",
+    "explanation": "Label target nodes ('docker node update --label-add gpu=true node3'), then in the compose file's service: 'deploy: { placement: { constraints: [\"node.labels.gpu==true\"] } } }'. When deployed via 'docker stack deploy', the Swarm scheduler restricts that service's replicas to only nodes matching the label, ensuring GPU-dependent workloads land where the hardware actually exists.",
+    "difficulty": "hard",
+    "subcategory": "orchestration",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you make a compose file portable across teammates with different CPU architectures (Apple Silicon vs Intel) without hardcoding a platform?",
+    "options": ["platform: field per service, or rely on multi-arch image manifests so Docker auto-selects the right variant", "Maintain a completely separate compose file per architecture", "Only support one architecture and require emulation for the rest", "Use network_mode: host to bypass architecture concerns"],
+    "answer": "platform: field per service, or rely on multi-arch image manifests so Docker auto-selects the right variant",
+    "explanation": "If your images are published as multi-arch manifests (built via buildx for both linux/amd64 and linux/arm64), Docker automatically pulls the correct variant for the host's architecture with no compose changes needed. If you need to force a specific architecture (e.g., testing amd64-only images on Apple Silicon via emulation), set 'platform: linux/amd64' explicitly on that service.",
+    "difficulty": "medium",
+    "subcategory": "build",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You need to add an entry to /etc/hosts inside a container so it can resolve an external hostname to a specific IP for testing.",
+    "options": ["extra_hosts: under the service", "networks.aliases (only works for other compose services)", "dns: pointing to a custom resolver", "command: appending an /etc/hosts edit"],
+    "answer": "extra_hosts: under the service",
+    "explanation": "'extra_hosts: [\"api.example.com:203.0.113.5\"]' injects a static host-to-IP mapping into the container's /etc/hosts file, useful for pointing a hostname at a test/staging IP, simulating DNS for an external dependency, or working around DNS resolution issues in restricted network environments, without modifying the actual application code or its configured hostname.",
+    "difficulty": "medium",
+    "subcategory": "networking",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you configure a custom DNS server for a Compose service instead of using the Docker daemon's default resolver?",
+    "options": ["dns: under the service", "networks: custom_dns (not a real key)", "extra_hosts pointing to a DNS server", "environment: DNS_SERVER variable (app-specific, not Docker-level)"],
+    "answer": "dns: under the service",
+    "explanation": "'dns: [\"8.8.8.8\", \"1.1.1.1\"]' overrides the default DNS servers a container uses for external name resolution, useful in corporate networks with internal DNS requirements, or when the default Docker DNS configuration doesn't correctly resolve certain external domains. This doesn't affect Compose's internal service-name DNS resolution, which is handled separately by the embedded Docker DNS.",
+    "difficulty": "medium",
+    "subcategory": "networking",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You want to limit log file growth for every service in a large compose file without repeating logging config in each service block.",
+    "options": ["Define a YAML anchor for a shared logging config and reference it across services with the merge key", "Set a global 'logging:' key at the top level (not a real Compose feature)", "Only configurable per-container via 'docker logs --max-size'", "Logging limits can only be set at the Docker daemon level, never per-Compose-service"],
+    "answer": "Define a YAML anchor for a shared logging config and reference it across services with the merge key",
+    "explanation": "Compose has no single top-level 'logging:' key applying to all services, but you can define 'x-logging: &default-logging { driver: \"json-file\", options: { max-size: \"10m\", max-file: \"3\" } }' once, then apply 'logging: *default-logging' under each service, achieving the same DRY effect via YAML's native anchor/alias mechanism rather than a Compose-specific global setting.",
+    "difficulty": "medium",
+    "subcategory": "best-practices",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you make a service depend on a config file or secret managed externally (e.g., created outside this compose file, perhaps by another stack or manually)?",
+    "options": ["Mark the top-level configs/secrets entry with 'external: true'", "Reference it with a relative file path only, ignoring external management", "Copy the file into every service's build context", "external configs/secrets aren't supported by Compose"],
+    "answer": "Mark the top-level configs/secrets entry with 'external: true'",
+    "explanation": "Under the top-level 'secrets:' or 'configs:' section, 'my_secret: { external: true }' tells Compose that the resource already exists (e.g., created manually via 'docker secret create', or by another stack) rather than being defined and managed by this compose file itself, letting multiple stacks reference shared, centrally-managed secrets/configs without duplication.",
+    "difficulty": "hard",
+    "subcategory": "security",
+    "category": "docker-compose"
+  },
+  {
+    "question": "Why might 'docker compose up' report a port conflict error even though 'docker ps' shows no running containers using that port?",
+    "options": ["Another non-Docker process on the host (or a leftover container from a different Compose project) is already bound to that host port", "Compose always requires unique ports across all projects globally with no exceptions", "The compose.yml file is corrupted", "Docker caches port bindings indefinitely even after full cleanup"],
+    "answer": "Another non-Docker process on the host (or a leftover container from a different Compose project) is already bound to that host port",
+    "explanation": "Host port binding conflicts happen at the OS socket level, not just within Docker's bookkeeping. Check with 'lsof -i :5432' or 'netstat -tulpn | grep 5432' on the host to find whatever process (could be a locally installed Postgres, a container from a completely different, unrelated compose project, or a zombie process) already holds that port before Compose tries to bind it.",
+    "difficulty": "medium",
+    "subcategory": "troubleshooting",
+    "category": "docker-compose"
+  },
+  {
+    "question": "A service works fine when run standalone with 'docker run' but fails to start under 'docker compose up' due to a missing environment variable. What's a likely cause?",
+    "options": ["The variable was passed manually via '-e' in the docker run command but isn't declared in the compose file's environment/env_file section", "Compose never supports environment variables", "docker run and Compose use entirely different Docker engines", "The Dockerfile's ENV instruction is ignored by Compose"],
+    "answer": "The variable was passed manually via '-e' in the compose file's environment/env_file section",
+    "explanation": "It's easy to forget to translate a working ad-hoc 'docker run -e SECRET_KEY=xyz myapp' invocation into the equivalent compose 'environment:' or 'env_file:' declaration, since Compose doesn't automatically inherit whatever flags you happened to use previously with plain docker run. Always cross-check that every '-e'/'-v'/'-p' flag from a working manual run has a corresponding declared field in the compose service definition.",
+    "difficulty": "medium",
+    "subcategory": "troubleshooting",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you check exactly which configuration Compose actually resolved and applied, after merging multiple -f files and variable substitution, to debug an unexpected running configuration?",
+    "options": ["docker compose config (prints the fully merged, resolved YAML)", "Read each -f file manually and merge by eye", "docker inspect on a running container only", "There is no way to see the merged result before applying it"],
+    "answer": "docker compose config (prints the fully merged, resolved YAML)",
+    "explanation": "'docker compose config' is the single most useful debugging command for multi-file or variable-heavy compose setups: it outputs the fully merged and interpolated configuration exactly as Compose will apply it, letting you catch unexpected overrides, missing variable substitutions, or unintended merges before actually starting any containers.",
+    "difficulty": "easy",
+    "subcategory": "troubleshooting",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You want CI to fail fast if the compose file references an environment variable that isn't set, rather than silently using an empty default.",
+    "options": ["docker compose config --strict (or rely on ${VAR:?msg} required-variable syntax) as a pre-flight CI step", "Just run 'docker compose up' directly and check logs after the fact", "Manually grep the YAML for '${' patterns", "Compose always fails automatically with no extra steps needed"],
+    "answer": "docker compose config --strict (or rely on ${VAR:?msg} required-variable syntax) as a pre-flight CI step",
+    "explanation": "Add a CI step running 'docker compose config' (with required-variable syntax like '${VAR:?must be set}' in the YAML) before the actual 'up' step. This surfaces missing-variable errors immediately with a clear message, rather than allowing silent blank substitution that could lead to services starting with subtly wrong configuration (e.g., an empty database host) that's harder to diagnose later.",
+    "difficulty": "medium",
+    "subcategory": "best-practices",
+    "category": "docker-compose"
+  },
+  {
+    "question": "What's the benefit of using 'depends_on' at all if it doesn't guarantee full application readiness by default?",
+    "options": ["It still controls container START and STOP ordering, ensuring dependencies exist before dependents even attempt to start, reducing (not eliminating) race conditions", "It has no benefit at all and should never be used", "It guarantees zero downtime deployments automatically", "It replaces the need for healthchecks entirely"],
+    "answer": "It still controls container START and STOP ordering, ensuring dependencies exist before dependents even attempt to start, reducing (not eliminating) race conditions",
+    "explanation": "Even without a healthcheck condition, plain 'depends_on: [db]' ensures Compose starts 'db' before 'api', and stops 'api' before 'db' on teardown, avoiding scenarios where a dependent service isn't even given a chance to attempt a connection because its dependency container doesn't exist yet. It's a real, useful ordering guarantee, just not a full readiness guarantee, which is why pairing it with healthchecks (or app-level retries) closes the remaining gap.",
+    "difficulty": "medium",
+    "subcategory": "dependencies",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you configure a Compose service so its container automatically gets a specific, fixed IP address on a custom network for a legacy app that hardcodes IPs?",
+    "options": ["Define a custom network with a specific subnet, then set ipv4_address under the service's network config", "container_name: alone determines the IP", "Docker cannot assign static IPs; only DNS names are supported", "network_mode: host guarantees a fixed IP automatically"],
+    "answer": "Define a custom network with a specific subnet, then set ipv4_address under the service's network config",
+    "explanation": "Declare a network with 'ipam: { config: [{ subnet: 172.28.0.0/16 }] }', then under the service: 'networks: { mynet: { ipv4_address: 172.28.0.10 } }'. This pins a static IP for legacy applications or firewall rules that depend on fixed addresses, though it sacrifices some of Docker's flexibility around automatic scheduling/scaling since static IPs must be manually managed and can't collide across scaled replicas.",
+    "difficulty": "hard",
+    "subcategory": "networking",
+    "category": "docker-compose"
+  },
+  {
+    "question": "Why is it considered bad practice to use 'latest' as the image tag for services in a production docker-compose.yml?",
+    "options": ["It's a mutable, non-reproducible reference that can silently change between deployments, breaking the 'what you tested is what you deployed' guarantee", "'latest' always points to the most secure, patched version automatically", "Compose doesn't support any other tag format", "It only affects local dev, never production behavior"],
+    "answer": "It's a mutable, non-reproducible reference that can silently change between deployments, breaking the 'what you tested is what you deployed' guarantee",
+    "explanation": "The 'latest' tag is just a convention, not a guarantee of the newest or most stable version, and can be repointed to different image content at any time by whoever maintains it. Pin explicit, immutable versions (e.g., 'postgres:16.2' or better yet a digest) in production compose files so redeploying the exact same compose file always produces the exact same running image, critical for reproducibility and rollback reliability.",
+    "difficulty": "easy",
+    "subcategory": "best-practices",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How would you structure a compose-based monorepo with 6 microservices so onboarding a new developer requires minimal manual setup steps?",
+    "options": ["A single top-level docker-compose.yml orchestrating all services with sane defaults, plus a documented 'make up' or setup script wrapping common commands and .env.example", "Require each developer to manually docker run every service in the correct order from memory", "Maintain 6 completely separate, disconnected compose files with no shared network", "Expect developers to read all Dockerfiles individually before starting anything"],
+    "answer": "A single top-level docker-compose.yml orchestrating all services with sane defaults, plus a documented 'make up' or setup script wrapping common commands and .env.example",
+    "explanation": "Good onboarding ergonomics come from a single command (often wrapped in a Makefile target or shell script like './dev.sh up') that handles pulling/building images, copying '.env.example' to '.env' if missing, and starting the full stack with correct dependency ordering and healthchecks, so a new developer's setup is close to 'git clone && make up' rather than requiring tribal knowledge of manual steps or startup order.",
+    "difficulty": "medium",
+    "subcategory": "best-practices",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You need a reverse proxy (nginx/traefik) in front of several Compose services, automatically picking up new services as they're added without manually editing the proxy's config each time.",
+    "options": ["Traefik with Docker provider labels on each service (auto-discovery via the Docker socket)", "Manually edit an nginx.conf file and restart nginx for every new service", "Use network_mode: host for every service to bypass proxying", "Hardcode all upstream IPs, updating them by hand each deploy"],
+    "answer": "Traefik with Docker provider labels on each service (auto-discovery via the Docker socket)",
+    "explanation": "Run Traefik with access to the Docker socket and its Docker provider enabled, then add labels like 'traefik.http.routers.api.rule=Host(`api.localhost`)' directly on each service in the compose file. Traefik watches Docker events and automatically updates its routing configuration as services are added, removed, or scaled, eliminating manual reverse-proxy config file edits and reloads for every change.",
+    "difficulty": "medium",
+    "subcategory": "networking",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you ensure sensitive bind-mounted config files (like TLS private keys) aren't accidentally group/world-readable inside the container?",
+    "options": ["Set correct host file permissions before mounting (read-only, owner-only), and mount as :ro; avoid baking secrets into images entirely", "Rely on the container's default umask to fix permissions automatically", "Compose automatically restricts all mounted file permissions to 600", "Permissions don't matter once inside a container namespace"],
+    "answer": "Set correct host file permissions before mounting (read-only, owner-only), and mount as :ro; avoid baking secrets into images entirely",
+    "explanation": "Bind mounts preserve the host file's actual permissions and ownership as seen inside the container's user namespace (unless remapped), so a world-readable key file on the host remains world-readable inside the container too. Set restrictive permissions ('chmod 600') on the host file, mount read-only ('- ./certs/key.pem:/certs/key.pem:ro'), and ensure the container process runs as a user with legitimate access, rather than assuming Docker adds any automatic protection.",
+    "difficulty": "hard",
+    "subcategory": "security",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You want a single compose file to support both a lightweight SQLite mode for quick demos and a full Postgres mode for real usage, chosen at startup.",
+    "options": ["Compose profiles to toggle which DB service and app configuration is active", "Two entirely separate applications with duplicated code", "Always run both databases simultaneously and let the app pick one at runtime", "Environment variables alone, without any structural compose changes, cannot achieve this"],
+    "answer": "Compose profiles to toggle which DB service and app configuration is active",
+    "explanation": "Define the Postgres service under 'profiles: [\"full\"]' so it's excluded by default, while the app service reads a DATABASE_URL environment variable (set differently per profile via override files or .env) pointing at either an embedded SQLite path or the Postgres service. Running 'docker compose --profile full up' brings up the heavier setup, while plain 'docker compose up' stays lightweight for quick demos.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you avoid duplicating the same volume/network definitions across dozens of services when most share identical storage/network requirements?",
+    "options": ["Define shared named volumes/networks once at the top level and reference them by name across multiple services", "Create a unique volume and network for every single service, even if functionally identical", "Use anonymous volumes everywhere for simplicity", "Duplicate the full volume definition inline under each service"],
+    "answer": "Define shared named volumes/networks once at the top level and reference them by name across multiple services",
+    "explanation": "Declare 'volumes: { shared_cache: {} }' and 'networks: { backend: {} }' once at the top level of the compose file, then simply reference 'shared_cache' or 'backend' by name under each relevant service's own 'volumes:'/'networks:' list. Compose creates each named resource exactly once and lets multiple services share it, avoiding both duplication and the confusion of multiple similarly-named but distinct resources.",
+    "difficulty": "easy",
+    "subcategory": "core-concepts",
+    "category": "docker-compose"
+  },
+  {
+    "question": "A teammate's Compose service definition uses 'links:' to connect to the database. Is this still necessary or recommended in modern Compose?",
+    "options": ["No, it's legacy and unnecessary; the default network already provides service-name DNS resolution between all services", "Yes, it's required for any two services to communicate at all", "links: is required specifically for database connections only", "links: improves performance over default networking"],
+    "answer": "No, it's legacy and unnecessary; the default network already provides service-name DNS resolution between all services",
+    "explanation": "'links:' was needed in the very old Docker networking model to explicitly wire up container-to-container communication and environment variable injection. Since user-defined (and Compose's default) bridge networks provide built-in DNS-based service discovery for ALL attached containers automatically, 'links:' is now redundant for standard use cases and is considered legacy; it can usually be safely removed unless relying on a specific legacy alias behavior.",
+    "difficulty": "medium",
+    "subcategory": "networking",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you configure ulimits (like max open file descriptors) for a specific service that needs to handle many concurrent connections?",
+    "options": ["ulimits: block under the service", "environment: ULIMIT_NOFILE variable", "deploy.resources.limits.ulimits (only)", "It's only configurable at the Docker daemon level globally"],
+    "answer": "ulimits: block under the service",
+    "explanation": "'ulimits: { nofile: { soft: 65536, hard: 65536 } }' under a service raises the file descriptor limit for that specific container, important for high-concurrency services like databases or proxies that need to hold many simultaneous connections open, which would otherwise hit the host or Docker's default (often much lower) ulimit and start failing with 'too many open files' errors.",
+    "difficulty": "medium",
+    "subcategory": "performance",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You need a shared, read-only configuration file (like an nginx.conf) mounted into several different services without duplicating the file in each service's build context.",
+    "options": ["A single bind mount referencing the same host file path across multiple services' volumes lists", "Copy the same file into every service's individual Dockerfile", "Use a named volume seeded once and hope services don't need updates", "It's not possible to share a single file across services"],
+    "answer": "A single bind mount referencing the same host file path across multiple services' volumes lists",
+    "explanation": "Simply reference the same host path in each service's 'volumes:' list, e.g. both 'web' and 'proxy' mounting '- ./shared/app.conf:/etc/app/app.conf:ro'. Since it's the same underlying host file, editing it once on the host immediately reflects in every container that mounts it, avoiding the need to duplicate or manually keep multiple copies in sync across services or build contexts.",
+    "difficulty": "easy",
+    "subcategory": "storage",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you make Compose wait for an external, non-Dockerized dependency (like a cloud-managed RDS database not defined in this compose file) before starting your app?",
+    "options": ["An entrypoint script or a small wait-for utility inside the app container that polls the external endpoint before exec'ing the main process", "depends_on referencing the external service (not possible, since it's not a Compose-managed service)", "Compose automatically waits for any hostname mentioned in environment variables", "network_mode: host guarantees connectivity timing automatically"],
+    "answer": "An entrypoint script or a small wait-for utility inside the app container that polls the external endpoint before exec'ing the main process",
+    "explanation": "'depends_on' only works between services actually defined within the same Compose project; it has no concept of external, unmanaged infrastructure like a cloud RDS instance. The standard pattern is an entrypoint script using a tool like 'wait-for-it.sh' or 'dockerize -wait tcp://db-host:5432' to poll until the external dependency accepts connections, then 'exec' the actual application process, keeping the retry logic explicit and visible rather than relying on Compose orchestration for something outside its scope.",
+    "difficulty": "medium",
+    "subcategory": "dependencies",
+    "category": "docker-compose"
+  },
+  {
+    "question": "What's a key risk of relying purely on 'depends_on' ordering for database migrations that must run exactly once before any app replica starts?",
+    "options": ["With multiple app replicas starting concurrently, each could race to run migrations simultaneously, causing partial or duplicated schema changes", "depends_on guarantees migrations run exactly once automatically, no risk exists", "Migrations always run instantly, so timing never matters", "This scenario doesn't apply to Compose, only Kubernetes"],
+    "answer": "With multiple app replicas starting concurrently, each could race to run migrations simultaneously, causing partial or duplicated schema changes",
+    "explanation": "If migration logic lives inside the app's own startup path and you scale that service to multiple replicas ('docker compose up --scale app=3'), all three could attempt to run migrations at nearly the same time, risking race conditions, locking issues, or duplicate/conflicting schema changes depending on the migration tool's concurrency safety. Better practice: run migrations as a distinct, separate one-off service/job that completes before the app service is scaled up or started.",
+    "difficulty": "hard",
+    "subcategory": "best-practices",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you view resource usage (CPU/memory) for all currently running containers in a specific Compose project, similar to 'docker stats' but scoped to just that project?",
+    "options": ["docker compose top / docker stats $(docker compose ps -q)", "docker compose ps alone shows resource usage", "docker compose logs --stats", "There is no way to scope docker stats to one Compose project"],
+    "answer": "docker compose top / docker stats $(docker compose ps -q)",
+    "explanation": "'docker compose top' shows the running processes inside each service's container (like 'ps' per container), while for live CPU/memory metrics scoped to just this project, combine 'docker compose ps -q' (which lists just this project's container IDs) with 'docker stats' by piping the IDs in: 'docker stats $(docker compose ps -q)', giving a focused resource view without unrelated containers from other projects on the host cluttering the output.",
+    "difficulty": "medium",
+    "subcategory": "troubleshooting",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You want to guarantee that 'docker compose down' also removes any anonymous volumes created for services, not just the named ones, for a completely clean slate in CI.",
+    "options": ["docker compose down -v (or --volumes)", "docker compose down alone removes everything including anonymous volumes by default", "docker volume prune is required separately in every case", "Anonymous volumes can never be removed via Compose commands"],
+    "answer": "docker compose down -v (or --volumes)",
+    "explanation": "'docker compose down -v' removes both named volumes declared in the compose file's 'volumes:' section AND anonymous volumes that were created implicitly for services (e.g., via an image's VOLUME instruction or unnamed volume mounts) as part of this project, giving a genuinely clean slate. Without '-v', both named and anonymous volumes from this project would be left behind, potentially accumulating over many CI runs.",
+    "difficulty": "medium",
+    "subcategory": "storage",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you configure a compose service so it only starts after another service has fully EXITED successfully (like a one-time setup/seed job), rather than just being 'running'?",
+    "options": ["depends_on with condition: service_completed_successfully", "depends_on with condition: service_started", "restart: on-success (not a real option)", "healthcheck alone with no depends_on"],
+    "answer": "depends_on with condition: service_completed_successfully",
+    "explanation": "'depends_on: { seed-job: { condition: service_completed_successfully } }' waits for the referenced service's container to exit with status code 0 before starting the dependent service, ideal for one-time setup tasks like seeding a database with initial data, which must fully finish (not just 'be running', since a one-shot job is expected to exit) before the main application should be considered ready to start.",
+    "difficulty": "hard",
+    "subcategory": "dependencies",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You want to label your Compose-managed containers with custom metadata (team owner, cost-center) for tracking/billing purposes across your infrastructure.",
+    "options": ["labels: under the service (and/or top-level for networks/volumes)", "environment: variables only, since labels aren't supported", "container_name: encodes all needed metadata", "annotations: (a Kubernetes-only concept, not applicable)"],
+    "answer": "labels: under the service (and/or top-level for networks/volumes)",
+    "explanation": "'labels: { \"com.mycompany.team\": \"platform\", \"com.mycompany.cost-center\": \"eng-42\" }' attaches queryable metadata to the container (and similarly, volumes/networks support their own 'labels:' key), retrievable via 'docker inspect' or filterable with 'docker ps --filter label=...'. This is commonly used by cost-tracking tools, cleanup scripts, or governance policies that need to identify resource ownership programmatically.",
+    "difficulty": "easy",
+    "subcategory": "best-practices",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How would you design a Compose setup so a flaky third-party dependency (an external payment gateway sandbox) can be mocked locally without changing application code?",
+    "options": ["Add a mock/stub service (e.g., WireMock or a small custom mock server) as another Compose service, and point the app's config at it via an environment variable for the base URL", "Hardcode the mock URL directly in the application source code", "Disable the payment feature entirely during local development", "There's no way to mock external dependencies with Compose"],
+    "answer": "Add a mock/stub service (e.g., WireMock or a small custom mock server) as another Compose service, and point the app's config at it via an environment variable for the base URL",
+    "explanation": "Add a 'payment-mock' service (WireMock, Mockoon, or a small custom Express/Flask stub) to the compose file, configured with expected request/response fixtures. The app's existing externalized config (e.g., 'PAYMENT_API_URL' environment variable) points to 'http://payment-mock:8080' locally/in CI and the real gateway URL in staging/production, requiring zero application code branching for environment-specific behavior.",
+    "difficulty": "medium",
+    "subcategory": "best-practices",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You need to verify a Compose file will work correctly before merging a PR, without actually needing all real credentials/infrastructure available in the CI runner.",
+    "options": ["docker compose config for syntax validation, plus a CI job that spins the stack up with mock/test credentials and runs smoke tests", "Only rely on manual local testing before merging, no automated CI checks", "Assume compose files never need testing since YAML is simple", "Deploy directly to production to validate, then roll back if broken"],
+    "answer": "docker compose config for syntax validation, plus a CI job that spins the stack up with mock/test credentials and runs smoke tests",
+    "explanation": "A layered validation approach: first, a cheap and fast 'docker compose config' syntax/structure check; second, an actual 'docker compose up -d' in CI using safe test credentials and mocked external dependencies, followed by basic smoke tests (e.g., curling a health endpoint) to confirm the stack genuinely starts and services can reach each other, catching issues a pure YAML lint would miss.",
+    "difficulty": "medium",
+    "subcategory": "best-practices",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you prevent a misconfigured Compose service from silently swallowing errors by having its container just exit and restart in a loop, hiding the real problem from casual observation?",
+    "options": ["Use restart: on-failure with a limited max retry count, combined with monitoring/alerting on restart counts, rather than restart: always masking the issue indefinitely", "Always use restart: always so it's never visibly down", "Disable restart entirely and never notice crashes", "Increase healthcheck retries to hide failures longer"],
+    "answer": "Use restart: on-failure with a limited max retry count, combined with monitoring/alerting on restart counts, rather than restart: always masking the issue indefinitely",
+    "explanation": "'restart: always' can mask a persistently crashing service by continuously and silently restarting it forever, making the problem invisible unless someone happens to check logs or container uptime. 'restart: on-failure:5' caps retries so a genuinely broken service eventually stops and surfaces as clearly 'Exited' in 'docker compose ps', and pairing this with monitoring on container restart counts (e.g., via cAdvisor/Prometheus) surfaces flapping services proactively rather than relying on someone noticing by chance.",
+    "difficulty": "hard",
+    "subcategory": "troubleshooting",
+    "category": "docker-compose"
+  },
+  {
+    "question": "What's the tradeoff of putting many unrelated services (e.g., 15+ microservices) into a single monolithic docker-compose.yml versus splitting into multiple smaller compose files per domain?",
+    "options": ["A single file is simpler to start everything at once but slows local iteration and increases resource usage; splitting improves modularity but requires shared network wiring across files", "There's no meaningful tradeoff; always use one giant file for everything", "Multiple compose files are never able to communicate with each other at all", "Splitting always makes local development strictly worse in every case"],
+    "answer": "A single file is simpler to start everything at once but slows local iteration and increases resource usage; splitting improves modularity but requires shared network wiring across files",
+    "explanation": "A single 'docker-compose.yml' with everything is easy to spin up wholesale but forces developers to run (and consume resources for) services they may not be actively working on, and edits by different teams collide in one file. Splitting into domain-specific compose files (each an independently runnable project) connected via a shared external network lets developers run only what they need locally, at the cost of slightly more setup complexity and needing to manage cross-file network/dependency wiring explicitly.",
+    "difficulty": "hard",
+    "subcategory": "best-practices",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you make sure a compose-defined volume backup/restore process is actually tested and works, rather than just assumed?",
+    "options": ["Periodically run a scripted drill: back up a volume via a temp container, restore it into a fresh volume, and verify data integrity, ideally automated in CI/cron", "Assume Docker automatically handles all volume backups", "Trust that named volumes never need backup since Docker manages them", "Only document the backup process in a wiki without ever executing it"],
+    "answer": "Periodically run a scripted drill: back up a volume via a temp container, restore it into a fresh volume, and verify data integrity, ideally automated in CI/cron",
+    "explanation": "Docker doesn't automatically back up volumes; that's the operator's responsibility. A reliable process scripts the backup ('docker run --rm -v myvol:/data -v $(pwd):/backup alpine tar czf /backup/vol.tar.gz -C /data .'), then periodically (via a scheduled job) actually restores that backup into a fresh test volume and validates the data, since an unverified backup that turns out to be corrupt or incomplete provides false confidence and is discovered only during an actual disaster, when it's too late.",
+    "difficulty": "hard",
+    "subcategory": "storage",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You need read-only access for a monitoring/log-shipping sidecar to another service's log directory without granting it any write access.",
+    "options": ["Mount the shared named volume as read-only (:ro) in the sidecar's volumes list, while the main service mounts it read-write", "Give both services full read-write access to simplify configuration", "Use network_mode: service to share files (incorrect mechanism)", "Sidecars cannot access another service's files under any configuration"],
+    "answer": "Mount the shared named volume as read-only (:ro) in the sidecar's volumes list, while the main service mounts it read-write", 
+    "explanation": "Declare a shared named volume (e.g., 'app_logs'), mount it normally (read-write) in the main app service where logs are written ('- app_logs:/var/log/app'), and mount the SAME volume with the ':ro' suffix in the log-shipping sidecar service ('- app_logs:/var/log/app:ro'). This lets the sidecar read and ship logs without any risk of accidentally modifying or deleting the source log files.",
+    "difficulty": "medium",
+    "subcategory": "storage",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How would you troubleshoot a Compose service that starts successfully but immediately becomes 'unhealthy' according to its healthcheck, even though the app seems to work when tested manually via exec?",
+    "options": ["Check the exact healthcheck command's assumptions (correct port/path, tool availability like curl inside the image, and sufficient start_period for slow-starting apps)", "Assume the healthcheck feature itself is broken and disable it", "Restart the container repeatedly until it happens to pass", "Increase the container's CPU limit, since healthchecks always fail due to CPU starvation"],
+    "answer": "Check the exact healthcheck command's assumptions (correct port/path, tool availability like curl inside the image, and sufficient start_period for slow-starting apps)",
+    "explanation": "Common causes: the healthcheck command references a tool (like curl or wget) not actually installed in a minimal/slim base image, so the command itself fails regardless of app health; the healthcheck hits the wrong internal port/path; or 'start_period' is too short for an app with genuine slow startup (e.g., JVM warm-up), causing early checks to fail before the app is truly ready. Manually running the EXACT healthcheck command via 'docker compose exec <service> <healthcheck-command>' quickly reveals which of these is the actual issue.",
+    "difficulty": "hard",
+    "subcategory": "troubleshooting",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You want your Compose project's default network to use a specific driver (e.g., a custom overlay for cross-host use) instead of the standard local bridge.",
+    "options": ["Declare the top-level 'default' network explicitly with a chosen driver", "It's not possible to customize the default network's driver", "Rename every service's network reference manually to a new network", "Use network_mode: bridge with extra flags in command:"],
+    "answer": "Declare the top-level 'default' network explicitly with a chosen driver",
+    "explanation": "You can override Compose's implicitly-created default network by explicitly declaring it: 'networks: { default: { driver: overlay, attachable: true } }'. Any service not explicitly assigned to a different network automatically joins this customized 'default' network, letting you change its driver, IPAM settings, or other properties without needing to individually reference a differently-named network across every single service.",
+    "difficulty": "hard",
+    "subcategory": "networking",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you make a Compose-managed container automatically pull the newest available image tag every time you run 'up', rather than reusing a locally cached one?",
+    "options": ["docker compose pull followed by docker compose up (or 'up --pull always' in newer Compose versions)", "It happens automatically by default with no configuration needed", "Rebuild the image locally every time instead of pulling", "Delete the entire local Docker image cache before every 'up'"],
+    "answer": "docker compose pull followed by docker compose up (or 'up --pull always' in newer Compose versions)",
+    "explanation": "By default, if an image with the referenced tag already exists locally, Compose won't automatically re-check the registry for updates on plain 'up'. Explicitly run 'docker compose pull' first to fetch the latest content for that tag, or use the newer 'docker compose up --pull always' flag (available in recent Compose versions) which forces a registry check/pull before starting containers, useful for floating tags like environment-specific ':staging' images that get updated in place.",
+    "difficulty": "medium",
+    "subcategory": "registry",
+    "category": "docker-compose"
+  },
+  {
+    "question": "A Compose service needs different resource limits in local dev (generous) versus CI (constrained, shared runners). How do you avoid maintaining two full copies of the compose file just for this difference?",
+    "options": ["Base compose file with lenient/no limits, plus a CI-specific override file adding stricter deploy.resources.limits", "Hardcode CI-appropriate limits always, even in local dev", "Only test in CI, skip local development entirely for resource-sensitive services", "Compose automatically detects CI environments and adjusts limits on its own"],
+    "answer": "Base compose file with lenient/no limits, plus a CI-specific override file adding stricter deploy.resources.limits",
+    "explanation": "Keep the main docker-compose.yml free of restrictive limits (appropriate for a developer's presumably capable local machine), and add a small 'docker-compose.ci.yml' override that only specifies the tighter 'deploy.resources.limits' needed to avoid one service starving others on a shared, resource-constrained CI runner: 'docker compose -f docker-compose.yml -f docker-compose.ci.yml up -d'. This keeps the override minimal and clearly scoped to its actual purpose.",
+    "difficulty": "medium",
+    "subcategory": "performance",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you configure a service to depend on a config value being present as a Docker 'config' object (Swarm-only feature) rather than baking it into the image or passing via environment variable?",
+    "options": ["Top-level 'configs:' section plus a per-service 'configs:' reference, mounted as a file", "environment: with the config value inlined", "secrets: block (configs and secrets are functionally identical)", "It's not a real Compose/Swarm feature"],
+    "answer": "Top-level 'configs:' section plus a per-service 'configs:' reference, mounted as a file",
+    "explanation": "Similar to secrets but intended for non-sensitive configuration data, declare 'configs: { app_config: { file: ./app-config.yaml } }' at the top level, then reference it under the service's 'configs:' list, which mounts it as a file inside the container (default path '/app_config' unless customized). Unlike secrets, configs aren't specially protected/encrypted, since they're meant for non-sensitive data like feature flags or non-secret application settings that still benefit from centralized, versioned management.",
+    "difficulty": "hard",
+    "subcategory": "orchestration",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You want your CI pipeline to cache Compose-built images between runs to speed up repeated builds of the same service without a registry cache.",
+    "options": ["Cache the Docker build cache directory / use BuildKit's cache export-import with docker compose build, leveraging CI's native cache mechanism", "There is no way to cache builds across separate CI runs", "Always rebuild fully from scratch every single run for correctness", "Cache the final compose.yml file itself, which has no effect on build speed"],
+    "answer": "Cache the Docker build cache directory / use BuildKit's cache export-import with docker compose build, leveraging CI's native cache mechanism",
+    "explanation": "Since 'docker compose build' delegates to the same underlying build engine, you can enable BuildKit and use its cache export/import features (or your CI platform's native Docker layer caching support, like GitHub Actions' 'docker/build-push-action' with cache-from/cache-to) alongside 'docker compose build', persisting layer cache between otherwise-ephemeral CI runner instances to avoid re-downloading dependencies or re-running expensive build steps every single run.",
+    "difficulty": "hard",
+    "subcategory": "performance",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you quickly determine, from the compose file alone, exactly which services will actually start when a teammate runs plain 'docker compose up' (i.e., accounting for profiles)?",
+    "options": ["docker compose config --services (lists active services given current profile/env context)", "Manually read the entire YAML file and mentally track every profile", "docker compose ps before starting anything (shows nothing useful pre-start)", "There is no command; profiles make this impossible to determine upfront"],
+    "answer": "docker compose config --services (lists active services given current profile/env context)",
+    "explanation": "'docker compose config --services' lists exactly which services would be included given the current environment variables, active '--profile' flags, and merged override files, without actually starting anything, letting you quickly verify (e.g., in documentation or CI) exactly what a plain 'up' invocation will and won't include, especially useful once a compose file has grown to use several profiles for optional components.",
+    "difficulty": "medium",
+    "subcategory": "troubleshooting",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You've noticed 'docker compose up' takes much longer after adding many services with 'depends_on' chains, even though total container count didn't change much. Why might this be, and what helps?",
+    "options": ["Long sequential dependency chains force serialized startup rather than parallel starts; flattening unnecessary dependencies or using healthcheck conditions judiciously can shorten the critical path", "Compose always starts every service fully in parallel regardless of depends_on, so this shouldn't happen", "This is purely a Docker Engine bug with no possible optimization", "Removing all depends_on always speeds things up with no downside"],
+    "answer": "Long sequential dependency chains force serialized startup rather than parallel starts; flattening unnecessary dependencies or using healthcheck conditions judiciously can shorten the critical path",
+    "explanation": "Compose does start independent services in parallel, but any chain of 'depends_on' relationships (especially with 'service_healthy' conditions requiring full healthcheck cycles to pass) creates a serialized critical path: if A depends on B depends on C depends on D, total startup time is roughly the sum of each stage's readiness time. Review whether every dependency link is truly necessary (versus just 'nice to have' ordering) and whether healthcheck intervals/start_periods can be tuned tighter, to shorten the overall critical path without sacrificing correctness.",
+    "difficulty": "hard",
+    "subcategory": "performance",
+    "category": "docker-compose"
+  },
+  {
+    "question": "What's the correct way to run database schema migrations exactly once as part of a Compose-based deployment pipeline, avoiding both races and forgetting to run them?",
+    "options": ["A dedicated one-off migration service with restart: \"no\", started explicitly via 'docker compose run --rm migrate' as an earlier pipeline stage, before the app service starts/updates", "Run migrations inside the app's ENTRYPOINT on every single container start", "Run migrations manually and inconsistently whenever someone remembers", "Bake the migration results directly into the image at build time and never run them again"],
+    "answer": "A dedicated one-off migration service with restart: \"no\", started explicitly via 'docker compose run --rm migrate' as an earlier pipeline stage, before the app service starts/updates",
+    "explanation": "Model migrations as their own distinct service (same image as the app, but different command) with no restart policy, invoked explicitly as a discrete step in the deployment pipeline: 'docker compose run --rm migrate' completes and exits, and only then does the pipeline proceed to bring up or update the actual app service replicas. This makes migration execution an explicit, auditable, single, ordered step rather than an implicit side effect scattered across every app container's startup.",
+    "difficulty": "hard",
+    "subcategory": "best-practices",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you make sure sensitive environment variables (like API keys) set via 'environment:' in a compose file aren't visible in plaintext to anyone who can run 'docker inspect' on the container?",
+    "options": ["Environment variables are inherently visible via docker inspect regardless of how they're set; use Compose 'secrets:' (file-based) instead for anything truly sensitive", "Base64-encode the value in the compose file, which fully hides it from inspect", "Use a very long, hard-to-guess variable name to obscure it", "Set restart: always, which encrypts environment variables automatically"],
+    "answer": "Environment variables are inherently visible via docker inspect regardless of how they're set; use Compose 'secrets:' (file-based) instead for anything truly sensitive",
+    "explanation": "Regardless of how an environment variable makes it into the container (environment:, env_file:, or Dockerfile ENV), 'docker inspect <container>' shows environment variables in plaintext by design; base64 encoding just obscures it superficially since decoding is trivial with no real security benefit. For genuinely sensitive values, use Compose's file-based 'secrets:' mechanism, which mounts them as files under '/run/secrets/' rather than exposing them via the inspectable environment variable list, and pair with proper file permissions and access control at rest.",
+    "difficulty": "medium",
+    "subcategory": "security",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You want a single command that tears down the entire Compose stack, removes volumes AND locally-built images (but not pulled base images), for a truly fresh CI run.",
+    "options": ["docker compose down --volumes --rmi local", "docker compose down alone removes everything by default", "docker system prune -a (too broad, affects unrelated projects on the host)", "docker compose rm -f (does not address networks/volumes/images comprehensively)"],
+    "answer": "docker compose down --volumes --rmi local",
+    "explanation": "'docker compose down --volumes --rmi local' stops and removes containers, removes the project's volumes, and also removes images that were built locally by this compose file (tagged via 'build:'), while leaving alone images that were simply pulled from a registry (e.g., 'postgres:16'), which don't need rebuilding and would just be re-pulled from cache anyway, striking a good balance between thoroughness and unnecessary re-downloading.",
+    "difficulty": "medium",
+    "subcategory": "best-practices",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How would you migrate an existing docker-compose.yml based application toward Kubernetes without a full manual rewrite from scratch?",
+    "options": ["Use a conversion tool like Kompose as a starting point, then manually refine the generated manifests for production-grade Kubernetes concerns (probes, resource requests, ConfigMaps/Secrets, ingress)", "There's no tooling for this; a full manual rewrite is always required", "Kubernetes can natively execute docker-compose.yml files unmodified in production", "Simply rename the file extension from .yml to .yaml and deploy directly"],
+    "answer": "Use a conversion tool like Kompose as a starting point, then manually refine the generated manifests for production-grade Kubernetes concerns (probes, resource requests, ConfigMaps/Secrets, ingress)",
+    "explanation": "Kompose ('kompose convert -f docker-compose.yml') auto-generates Kubernetes Deployment/Service/PVC manifests from an existing Compose file, giving a useful starting point rather than starting from a blank page. However, the generated manifests typically need manual refinement afterward: adding proper liveness/readiness probes (beyond simple HEALTHCHECK translation), setting resource requests/limits appropriately, converting environment/secrets handling to ConfigMaps/Secrets, and adding Ingress resources for external routing, since Compose's simpler model doesn't map 1:1 onto Kubernetes's richer feature set.",
+    "difficulty": "hard",
+    "subcategory": "orchestration",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You need every service in a large compose file to automatically join a specific pre-existing network, without manually listing 'networks: [mynet]' under all 30 services.",
+    "options": ["Override the implicit 'default' network to point at the external network, so all services attach to it by default with no per-service changes needed", "Add networks: manually to every single service block, there's no shortcut", "Use network_mode: host globally as a workaround", "It cannot be done without editing every service"],
+    "answer": "Override the implicit 'default' network to point at the external network, so all services attach to it by default with no per-service changes needed",
+    "explanation": "Declaring 'networks: { default: { external: true, name: my-existing-network } }' at the top level redirects Compose's implicit default network (which every service joins unless it explicitly specifies otherwise) to point at an already-existing external network, achieving the 'every service joins this network' goal without touching each of the 30 individual service definitions.",
+    "difficulty": "hard",
+    "subcategory": "networking",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you handle the situation where a Compose service's healthcheck passes, but the service is still not truly ready to handle production-level load (e.g., caches are cold, connection pools not yet warmed)?",
+    "options": ["Distinguish liveness (is it alive) from true readiness (can it handle real traffic) with a more comprehensive readiness check, and/or add a brief warm-up delay/ramp-up before routing full traffic", "Assume healthcheck passing is always sufficient and equivalent to full production readiness", "Remove the healthcheck entirely since it's clearly insufficient", "Increase memory limits, which automatically resolves any warm-up concerns"],
+    "answer": "Distinguish liveness (is it alive) from true readiness (can it handle real traffic) with a more comprehensive readiness check, and/or add a brief warm-up delay/ramp-up before routing full traffic",
+    "explanation": "A basic 'process is alive and responding' healthcheck is necessary but not always sufficient for full traffic readiness, especially for services with expensive warm-up behavior (JIT compilation, cache population, connection pool establishment). Consider a richer readiness endpoint that actually checks these internal warm-up signals before reporting healthy, and/or architect gradual traffic ramp-up (common in more sophisticated orchestrators, though Compose itself has limited native support for this compared to Kubernetes readiness gates or a service mesh's traffic shifting).",
+    "difficulty": "hard",
+    "subcategory": "troubleshooting",
+    "category": "docker-compose"
+  },
+  {
+    "question": "Why might 'docker compose up -d' return quickly and show all containers as 'running', yet the application is actually still broken and unusable?",
+    "options": ["'Running' only reflects that the container's main process hasn't exited; it says nothing about application-level correctness, which requires healthchecks or manual verification", "'Running' status guarantees full application correctness by definition", "This can only happen due to a Docker Engine bug", "Compose always verifies full application functionality before reporting success"],
+    "answer": "'Running' only reflects that the container's main process hasn't exited; it says nothing about application-level correctness, which requires healthchecks or manual verification", 
+    "explanation": "Container 'running' status is purely about whether PID 1 is still alive; a web server can be running perfectly fine as a process while still returning 500 errors for every request due to a misconfiguration, missing environment variable, or broken downstream connection. This is exactly why HEALTHCHECKs exist as a more meaningful readiness/liveness signal than plain running status, and why smoke tests after 'up' remain valuable even when every service shows as 'running' in 'docker compose ps'.",
+    "difficulty": "medium",
+    "subcategory": "troubleshooting",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you configure resource limits differently per replica when scaling a service with '--scale', if some replicas should be 'primary' with more resources and others 'worker' with less?",
+    "options": ["Compose doesn't support per-replica differentiation within a single scaled service; define them as two distinct services with different resource configs instead", "Use deploy.replicas with a per-index override syntax", "environment: REPLICA_INDEX automatically adjusts resources", "It's automatically handled by Docker's scheduler with no configuration needed"],
+    "answer": "Compose doesn't support per-replica differentiation within a single scaled service; define them as two distinct services with different resource configs instead",
+    "explanation": "All replicas of a single scaled Compose service share the exact same definition, including resource limits, environment, and image; there's no built-in mechanism to give replica #1 different resources than replica #2 within one service block. If you genuinely need differentiated resource profiles (e.g., a 'primary' vs 'replica' database setup, or workers with different resource tiers), model them as separate, distinctly-named services each with their own tailored configuration instead of relying on '--scale' for that single service.",
+    "difficulty": "hard",
+    "subcategory": "scaling",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You want to confirm exactly which network(s) a running Compose service's container is actually attached to, for debugging an unexpected connectivity issue.",
+    "options": ["docker inspect <container> and check .NetworkSettings.Networks, or docker network inspect <network>", "docker compose ps shows full network details directly", "docker compose logs shows network attachment info", "There's no way to inspect network attachment after the container starts"],
+    "answer": "docker inspect <container> and check .NetworkSettings.Networks, or docker network inspect <network>",
+    "explanation": "'docker inspect <container-id>' includes a '.NetworkSettings.Networks' section listing every network the container is attached to, along with its IP address and aliases on each. Alternatively, 'docker network inspect <network-name>' lists all containers currently attached to that specific network from the network's perspective, useful for confirming whether an expected service actually joined the network you intended (e.g., after a compose file change didn't get picked up due to needing a full recreate rather than just a restart).",
+    "difficulty": "medium",
+    "subcategory": "networking",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How do you handle a scenario where changing a network's configuration (like the subnet) in the compose file doesn't take effect just from 'docker compose up' again?",
+    "options": ["Networks generally can't be modified in place; you must remove the network (docker compose down, possibly docker network rm) and recreate it via 'up' again", "Networks always update instantly and automatically on any 'up' regardless of the change", "Restart the Docker daemon, which is the only way to apply network changes", "Manually edit the network's live configuration via docker network update"],
+    "answer": "Networks generally can't be modified in place; you must remove the network (docker compose down, possibly docker network rm) and recreate it via 'up' again",
+    "explanation": "Fundamental properties of a Docker network (like its subnet/IPAM configuration) are set at creation time and can't be modified on an existing network. If you change these in the compose file, Compose will typically error out on 'up' complaining about a network configuration mismatch unless you first remove the existing network ('docker compose down', or if the network persists, 'docker network rm <name>') so it can be recreated fresh with the new settings on the next 'up'.",
+    "difficulty": "hard",
+    "subcategory": "networking",
+    "category": "docker-compose"
+  },
+  {
+    "question": "What's a robust way to handle secrets rotation for a long-running Compose service without requiring a full 'docker compose down/up' cycle for every rotation?",
+    "options": ["Mount secrets as files (via secrets: or a bind-mounted vault-agent-managed path) and have the application watch the file for changes, reloading credentials in place", "Rotate secrets by editing the compose file and always doing a full stack teardown/recreate for every single rotation event", "Environment variables automatically refresh live without any container restart needed", "Secrets rotation isn't achievable at all with Compose-managed services"],
+    "answer": "Mount secrets as files (via secrets: or a bind-mounted vault-agent-managed path) and have the application watch the file for changes, reloading credentials in place",
+    "explanation": "Since environment variables are fixed at process start, in-place secret rotation typically relies on file-based secrets: mount the secret as a file (via Compose 'secrets:' or a bind-mounted path managed by a sidecar like a Vault Agent), and have the application code watch that file (via inotify or periodic re-read) to detect changes and refresh its in-memory credentials, avoiding a disruptive full container recreate for every rotation cycle while still eventually reflecting the new value.",
+    "difficulty": "hard",
+    "subcategory": "security",
+    "category": "docker-compose"
+  },
+  {
+    "question": "How would you design a compose-based local development environment to closely mirror production's actual container images and configuration, minimizing 'works on my machine' surprises?",
+    "options": ["Reuse the same production Dockerfile/image (multi-stage build with a 'dev' target if needed) and only vary environment-specific config (ports, secrets, mounted source for hot-reload) via override files, not the underlying image itself", "Maintain a completely separate, differently-built image just for local development with no relation to production's Dockerfile", "Skip Docker entirely for local development and run everything natively on the host instead", "Assume dev/prod parity is impossible to achieve with Docker and not worth pursuing"],
+    "answer": "Reuse the same production Dockerfile/image (multi-stage build with a 'dev' target if needed) and only vary environment-specific config (ports, secrets, mounted source for hot-reload) via override files, not the underlying image itself",
+    "explanation": "Following the 12-factor 'dev/prod parity' principle, the biggest win comes from using the SAME Dockerfile (potentially targeting a 'dev' build stage that adds hot-reload tooling on top of the same base as production) rather than maintaining a parallel, drifting local-only image. Differences between environments should live in externalized configuration (compose override files controlling ports, mounted volumes for live code sync, and environment variables), not in fundamentally different container images, which is where most 'works on my machine but not in prod' surprises actually originate.",
+    "difficulty": "hard",
+    "subcategory": "best-practices",
+    "category": "docker-compose"
+  },
+  {
+    "question": "You're reviewing a colleague's docker-compose.yml and see 'privileged: true' set on a simple web app service with no obvious need for it. What should you flag, and why?",
+    "options": ["This is almost certainly unnecessary and dangerous; privileged mode grants near-full host access and should be removed unless a specific, justified low-level hardware/kernel need exists", "This is a completely standard, harmless setting for any web application and needs no scrutiny", "privileged: true only affects networking speed, nothing else", "It's required for any service that uses environment variables"],
+    "answer": "This is almost certainly unnecessary and dangerous; privileged mode grants near-full host access and should be removed unless a specific, justified low-level hardware/kernel need exists",
+    "explanation": "'privileged: true' disables most of the container isolation Docker provides (all capabilities, device access, disabled seccomp/AppArmor confinement), effectively risking full host compromise if that web app is ever exploited. Ordinary web applications essentially never need this; it's typically only justified for specialized infrastructure tooling (like Docker-in-Docker CI runners or certain hardware-interfacing tools). This should be a hard stop in code review requiring explicit justification, or ideally replaced with targeted '--cap-add' for whatever specific capability was actually needed.",
+    "difficulty": "medium",
+    "subcategory": "security",
+    "category": "docker-compose"
+  }
+]
