@@ -1,1 +1,1402 @@
-[]
+[
+    {
+      "question": "You need to reduce a Node.js image from 1.2GB to under 150MB without breaking the app. What's the primary technique?",
+      "options": [
+        "Multi-stage builds",
+        "Larger base image",
+        "Disable caching",
+        "Add more RUN layers"
+      ],
+      "answer": "Multi-stage builds",
+      "explanation": "Use a multi-stage Dockerfile: a 'builder' stage with the full SDK/toolchain (node:20) compiles/installs dependencies, then a final stage copies only the compiled artifacts and node_modules into a minimal base like node:20-alpine or distroless. This drops build tools, caches, and dev dependencies from the final image, often cutting size by 80-90%.",
+      "difficulty": "medium",
+      "subcategory": "images",
+      "category": "docker"
+    },
+    {
+      "question": "A container keeps restarting in a CrashLoop. What's the first command to diagnose it?",
+      "options": [
+        "docker logs <container>",
+        "docker rm -f <container>",
+        "docker pull <image>",
+        "docker network ls"
+      ],
+      "answer": "docker logs <container>",
+      "explanation": "Always check stdout/stderr first with 'docker logs <container>' (add --tail 100 -f to follow). Follow up with 'docker inspect' to check exit code and OOMKilled status, and 'docker events' for lifecycle events. Only after understanding the failure should you remove or rebuild the container.",
+      "difficulty": "easy",
+      "subcategory": "troubleshooting",
+      "category": "docker"
+    },
+    {
+      "question": "You want two Dockerfile instructions to always run together as a single cached layer to avoid stale apt cache issues. How?",
+      "options": [
+        "Chain with && in one RUN",
+        "Use two separate RUN lines",
+        "Use COPY twice",
+        "Use ENV instead"
+      ],
+      "answer": "Chain with && in one RUN",
+      "explanation": "Combine 'apt-get update && apt-get install -y <pkgs> && rm -rf /var/lib/apt/lists/*' into a single RUN instruction. If update and install are separate layers, Docker's cache can reuse a stale 'apt-get update' layer while installing new packages, resulting in missing or outdated packages. Single-line chaining also cleans cache in the same layer, keeping image size down.",
+      "difficulty": "medium",
+      "subcategory": "dockerfile",
+      "category": "docker"
+    },
+    {
+      "question": "Design a Dockerfile so that changing application source code doesn't invalidate the dependency-install layer.",
+      "options": [
+        "Copy dependency manifest first, install, then copy source",
+        "Copy everything in one COPY",
+        "Use ADD for source code",
+        "Disable build cache"
+      ],
+      "answer": "Copy dependency manifest first, install, then copy source",
+      "explanation": "Order matters for layer caching: COPY package.json/requirements.txt first, run the install step (npm ci / pip install), then COPY the rest of the source. Since Docker caches layers based on file content hashes, source code changes won't invalidate the expensive dependency-install layer, dramatically speeding up rebuilds.",
+      "difficulty": "medium",
+      "subcategory": "dockerfile",
+      "category": "docker"
+    },
+    {
+      "question": "A container needs to persist database files across restarts and re-deployments. What should you use?",
+      "options": [
+        "Named volume",
+        "Bind mount to /tmp",
+        "COPY into image",
+        "tmpfs mount"
+      ],
+      "answer": "Named volume",
+      "explanation": "Named volumes ('docker volume create mydata', then -v mydata:/var/lib/mysql') are managed by Docker, survive container removal, and work across host filesystems including managed drivers (NFS, cloud block storage). Bind mounts tie you to a specific host path and are less portable; tmpfs is memory-only and non-persistent; baking data into the image is an anti-pattern.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "docker"
+    },
+    {
+      "question": "You need two containers on the same host to communicate by container name without exposing ports to the host.",
+      "options": [
+        "User-defined bridge network",
+        "Default bridge network",
+        "Host network",
+        "None network"
+      ],
+      "answer": "User-defined bridge network",
+      "explanation": "Create a custom bridge network ('docker network create mynet') and attach both containers to it. Docker's embedded DNS resolves container names to IPs automatically on user-defined networks (unlike the default bridge, which requires --link or IP addresses). No host port publishing is needed since containers communicate directly over the internal network.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "docker"
+    },
+    {
+      "question": "How do you prevent a container from running as root for security hardening?",
+      "options": [
+        "USER instruction in Dockerfile",
+        "EXPOSE instruction",
+        "ENTRYPOINT with sudo",
+        "Run with --privileged"
+      ],
+      "answer": "USER instruction in Dockerfile",
+      "explanation": "Add a non-root user in the Dockerfile ('RUN adduser -D appuser') and switch to it with 'USER appuser' before the CMD/ENTRYPOINT. This limits blast radius if the container is compromised. Combine with --cap-drop=ALL and read-only root filesystem (--read-only) at runtime for defense in depth; avoid --privileged entirely unless absolutely required.",
+      "difficulty": "easy",
+      "subcategory": "security",
+      "category": "docker"
+    },
+    {
+      "question": "Your CI pipeline builds an image on every commit but pushes are slow due to full rebuilds. How do you speed this up?",
+      "options": [
+        "BuildKit cache mounts / registry cache",
+        "Disable multi-stage builds",
+        "Use larger EC2 instance only",
+        "Remove .dockerignore"
+      ],
+      "answer": "BuildKit cache mounts / registry cache",
+      "explanation": "Enable BuildKit (DOCKER_BUILDKIT=1) and use '--cache-from'/'--cache-to' with a registry cache, or RUN --mount=type=cache for package manager caches (npm, pip, apt). This persists cache layers across ephemeral CI runners that don't share local disk, avoiding full re-downloads and re-compiles on every build.",
+      "difficulty": "hard",
+      "subcategory": "performance",
+      "category": "docker"
+    },
+    {
+      "question": "You accidentally committed a secret into an image layer. Is deleting the file in a later layer enough to remove it?",
+      "options": [
+        "No, the secret remains in the earlier layer",
+        "Yes, layers are overwritten",
+        "Yes, if you use .dockerignore afterward",
+        "No, but docker history hides it"
+      ],
+      "answer": "No, the secret remains in the earlier layer",
+      "explanation": "Docker images are a stack of immutable layers. Deleting a file in a later layer only marks it hidden in the final filesystem view; the original layer with the secret is still stored in the image and extractable via 'docker save' or history inspection. You must rebuild the image without ever adding the secret (use build secrets: --secret flag with BuildKit) and rotate the exposed credential.",
+      "difficulty": "hard",
+      "subcategory": "security",
+      "category": "docker"
+    },
+    {
+      "question": "What's the correct way to pass a database password to a build without baking it into image layers?",
+      "options": [
+        "BuildKit --secret flag",
+        "ARG in Dockerfile",
+        "ENV in Dockerfile",
+        "COPY a .env file"
+      ],
+      "answer": "BuildKit --secret flag",
+      "explanation": "Use 'docker build --secret id=dbpass,src=./dbpass.txt' with BuildKit, and in the Dockerfile mount it only during the specific RUN step: 'RUN --mount=type=secret,id=dbpass ...'. The secret is never written to a layer. ARG and ENV values persist in image history/metadata and are visible via 'docker history' or 'docker inspect', making them unsuitable for secrets.",
+      "difficulty": "hard",
+      "subcategory": "security",
+      "category": "docker"
+    },
+    {
+      "question": "A production container needs a hard memory ceiling so it can't take down the host under a memory leak. How?",
+      "options": [
+        "--memory limit at runtime",
+        "EXPOSE in Dockerfile",
+        "Increase host swap",
+        "USER instruction"
+      ],
+      "answer": "--memory limit at runtime",
+      "explanation": "Set '--memory=512m --memory-swap=512m' when running the container (or equivalent in Compose/Kubernetes resources.limits). The kernel cgroup enforces this; if exceeded, the container is OOM-killed rather than exhausting host memory and affecting other workloads. Pair with --memory-reservation for a soft limit and monitor with 'docker stats'.",
+      "difficulty": "medium",
+      "subcategory": "performance",
+      "category": "docker"
+    },
+    {
+      "question": "How do you limit a container to 1.5 CPU cores?",
+      "options": [
+        "--cpus=1.5",
+        "--memory=1.5g",
+        "--pids-limit=1.5",
+        "ENV CPU=1.5"
+      ],
+      "answer": "--cpus=1.5",
+      "explanation": "'--cpus=1.5' uses the CFS quota mechanism to cap the container at 1.5 CPU cores worth of processing time, regardless of how many cores the host has. Older alternative is '--cpu-period' and '--cpu-quota' directly. This prevents CPU-hungry containers from starving others on shared hosts.",
+      "difficulty": "easy",
+      "subcategory": "performance",
+      "category": "docker"
+    },
+    {
+      "question": "You need a health check so orchestrators know when your app container is actually ready to serve traffic, not just running.",
+      "options": [
+        "HEALTHCHECK instruction",
+        "EXPOSE instruction",
+        "CMD instruction alone",
+        "STOPSIGNAL instruction"
+      ],
+      "answer": "HEALTHCHECK instruction",
+      "explanation": "Add 'HEALTHCHECK --interval=30s --timeout=3s --retries=3 CMD curl -f http://localhost:8080/health || exit 1' to the Dockerfile. Docker periodically runs the check and reports 'healthy'/'unhealthy'/'starting' via 'docker ps'. This is distinct from just the process running (CMD) since a process can be alive but unresponsive (e.g., deadlocked, DB connection lost).",
+      "difficulty": "medium",
+      "subcategory": "core-concepts",
+      "category": "docker"
+    },
+    {
+      "question": "A container needs to gracefully shut down on SIGTERM within 10 seconds instead of being force-killed. What controls this?",
+      "options": [
+        "Proper signal handling + docker stop -t 10",
+        "docker kill only",
+        "HEALTHCHECK retries",
+        "--restart=always"
+      ],
+      "answer": "Proper signal handling + docker stop -t 10",
+      "explanation": "Docker sends SIGTERM on 'docker stop', waits for the grace period (default 10s, adjustable with -t), then sends SIGKILL. Your app's PID 1 must actually catch and handle SIGTERM to close connections/flush data cleanly; if using shell-form CMD, signals may not propagate to the real process. Use exec-form CMD or a lightweight init like tini to ensure signals reach the app.",
+      "difficulty": "medium",
+      "subcategory": "core-concepts",
+      "category": "docker"
+    },
+    {
+      "question": "Why might zombie processes accumulate inside a long-running container, and how do you fix it?",
+      "options": [
+        "No init process reaping children; use tini/--init",
+        "Too many volumes mounted",
+        "Using alpine base image",
+        "HEALTHCHECK misconfigured"
+      ],
+      "answer": "No init process reaping children; use tini/--init",
+      "explanation": "If your application (PID 1) spawns child processes but doesn't reap them, they become zombies since PID 1 in a container doesn't get the same default signal handling as a normal init system. Fix by running with 'docker run --init' (uses Docker's built-in tini) or explicitly installing tini as the ENTRYPOINT to properly reap orphaned children and forward signals.",
+      "difficulty": "hard",
+      "subcategory": "troubleshooting",
+      "category": "docker"
+    },
+    {
+      "question": "You want to run multiple related services (API, DB, cache) together for local development with one command.",
+      "options": [
+        "Docker Compose",
+        "docker run in a loop",
+        "docker save/load",
+        "Dockerfile ENTRYPOINT chaining"
+      ],
+      "answer": "Docker Compose",
+      "explanation": "Define services, networks, and volumes declaratively in a docker-compose.yml and bring them all up with 'docker compose up -d'. Compose automatically creates a shared network so services can reach each other by service name, manages startup/shutdown order via 'depends_on', and simplifies environment variable and volume management versus manual 'docker run' commands.",
+      "difficulty": "easy",
+      "subcategory": "compose",
+      "category": "docker"
+    },
+    {
+      "question": "In Compose, service B must wait until service A's application is actually ready (not just its container started). How?",
+      "options": [
+        "depends_on with condition: service_healthy",
+        "depends_on alone",
+        "restart: always",
+        "links directive"
+      ],
+      "answer": "depends_on with condition: service_healthy",
+      "explanation": "Plain 'depends_on' only waits for the container to start, not for the app inside to be ready. Combine it with a HEALTHCHECK on service A and 'depends_on: { serviceA: { condition: service_healthy } }' on service B so Compose waits for A to report healthy before starting B. For true resilience, apps should also implement their own retry/backoff logic for dependencies.",
+      "difficulty": "medium",
+      "subcategory": "compose",
+      "category": "docker"
+    },
+    {
+      "question": "You need different configuration for local dev vs CI when using the same base docker-compose.yml.",
+      "options": [
+        "Compose override files (docker-compose.override.yml)",
+        "Duplicate the entire compose file",
+        "Use ENV instruction in Dockerfile",
+        "Use different image tags only"
+      ],
+      "answer": "Compose override files (docker-compose.override.yml)",
+      "explanation": "Keep a base docker-compose.yml with shared config, then layer environment-specific overrides: 'docker compose -f docker-compose.yml -f docker-compose.ci.yml up'. Compose merges files in order, letting you override ports, volumes, or environment variables per environment without duplicating the whole definition.",
+      "difficulty": "medium",
+      "subcategory": "compose",
+      "category": "docker"
+    },
+    {
+      "question": "You have secrets (API keys) needed by a Compose service but don't want them in the compose file or image.",
+      "options": [
+        "Docker secrets or env_file excluded from VCS",
+        "Hardcode in docker-compose.yml",
+        "Bake into Dockerfile ARG",
+        "Store in image labels"
+      ],
+      "answer": "Docker secrets or env_file excluded from VCS",
+      "explanation": "For Swarm, use 'docker secret create' and reference it under the service's 'secrets:' key, mounted as a file at /run/secrets/. For plain Compose (non-swarm), use an 'env_file' that's gitignored, or better, pull secrets at runtime from a vault (AWS Secrets Manager, HashiCorp Vault) via an entrypoint script rather than storing them in any committed file.",
+      "difficulty": "medium",
+      "subcategory": "security",
+      "category": "docker"
+    },
+    {
+      "question": "What's the difference between COPY and ADD in a Dockerfile, and which should you prefer by default?",
+      "options": [
+        "ADD has extra features (URL/tar extraction); prefer COPY for clarity",
+        "They are identical",
+        "COPY can extract tar files, ADD cannot",
+        "ADD is deprecated and blocked"
+      ],
+      "answer": "ADD has extra features (URL/tar extraction); prefer COPY for clarity",
+      "explanation": "COPY does one thing: copy files/directories from build context into the image. ADD additionally supports remote URLs and automatic extraction of local tar archives, which is 'magic' behavior that can cause unexpected results (e.g., surprise extraction). Docker's own best practices recommend COPY unless you specifically need ADD's extraction feature, for predictability and easier auditing.",
+      "difficulty": "easy",
+      "subcategory": "dockerfile",
+      "category": "docker"
+    },
+    {
+      "question": "How do you keep your build context small so 'docker build' doesn't send gigabytes of unrelated files to the daemon?",
+      "options": [
+        ".dockerignore file",
+        "Use ADD instead of COPY",
+        "Increase Docker daemon memory",
+        "Use --no-cache"
+      ],
+      "answer": ".dockerignore file",
+      "explanation": "Create a .dockerignore excluding node_modules, .git, build artifacts, and large local files not needed in the image. The entire build context is tarred and sent to the daemon before the build starts, so a bloated context slows every build and can leak unwanted files (like .git history or local .env files) into cache or accidentally into layers.",
+      "difficulty": "easy",
+      "subcategory": "dockerfile",
+      "category": "docker"
+    },
+    {
+      "question": "You need reproducible builds where the exact same Dockerfile always produces a bit-for-bit identical base layer.",
+      "options": [
+        "Pin base image by digest (image@sha256:...)",
+        "Use 'latest' tag",
+        "Use FROM scratch always",
+        "Rebuild weekly with --no-cache"
+      ],
+      "answer": "Pin base image by digest (image@sha256:...)",
+      "explanation": "Tags like 'node:20' or even 'node:20.11.0' can be repointed to different underlying image content upstream. Pinning by immutable digest, e.g. 'FROM node@sha256:abcd1234...', guarantees the exact same base image bytes every build, which matters for security audits, reproducibility, and avoiding surprise breaking changes from upstream re-tagging.",
+      "difficulty": "medium",
+      "subcategory": "images",
+      "category": "docker"
+    },
+    {
+      "question": "Two teams both tag their images 'myapp:latest' and keep overwriting each other in the shared registry. What's the fix?",
+      "options": [
+        "Use immutable, meaningful tags (semver/git-sha) and avoid relying on 'latest'",
+        "Delete the registry and recreate",
+        "Use 'latest' but add a comment",
+        "Switch to a different registry vendor"
+      ],
+      "answer": "Use immutable, meaningful tags (semver/git-sha) and avoid relying on 'latest'",
+      "explanation": "Tag images with the git commit SHA or semantic version (myapp:1.4.2 or myapp:sha-a1b2c3d) as the source of truth, and optionally also push 'latest' as a convenience pointer only, never the deployment target. This gives full traceability from a running container back to the exact source commit and prevents accidental overwrites in shared repos.",
+      "difficulty": "medium",
+      "subcategory": "registry",
+      "category": "docker"
+    },
+    {
+      "question": "How do you scan an image for known CVEs before pushing to production?",
+      "options": [
+        "docker scout / trivy image scan",
+        "docker history",
+        "docker inspect",
+        "docker diff"
+      ],
+      "answer": "docker scout / trivy image scan",
+      "explanation": "Run 'docker scout cves <image>' (Docker's built-in tool) or a third-party scanner like Trivy/Grype/Snyk against the built image. These compare installed package versions against CVE databases and flag vulnerable OS packages and language dependencies. Integrate this as a CI gate that fails the pipeline above a chosen severity threshold before pushing to the registry.",
+      "difficulty": "medium",
+      "subcategory": "security",
+      "category": "docker"
+    },
+    {
+      "question": "Your image build works locally on Apple Silicon (arm64) but fails to run on production x86_64 servers. Why, and how do you fix it?",
+      "options": [
+        "Architecture mismatch; use buildx with --platform for multi-arch builds",
+        "Docker Desktop bug requiring reinstall",
+        "Missing .dockerignore",
+        "Corrupted layer cache"
+      ],
+      "answer": "Architecture mismatch; use buildx with --platform for multi-arch builds",
+      "explanation": "Images built on arm64 hosts default to arm64 unless specified otherwise, and won't run natively on amd64 servers. Use 'docker buildx build --platform linux/amd64,linux/arm64 -t myapp:tag --push .' to build and push a multi-arch manifest. Docker/Kubernetes will then automatically pull the correct architecture variant for each host.",
+      "difficulty": "medium",
+      "subcategory": "images",
+      "category": "docker"
+    },
+    {
+      "question": "A container writes logs to a file inside the container instead of stdout, and 'docker logs' shows nothing. What's the best practice fix?",
+      "options": [
+        "Configure the app to log to stdout/stderr",
+        "Increase container disk quota",
+        "Use docker cp to pull logs manually",
+        "Switch to a bigger base image"
+      ],
+      "answer": "Configure the app to log to stdout/stderr",
+      "explanation": "Docker's logging drivers (json-file, journald, fluentd, etc.) only capture what's written to the container's stdout/stderr. Following the 12-factor app principle, applications should treat logs as an event stream to stdout, letting the container runtime/orchestrator handle routing, rotation, and aggregation (e.g., to ELK, CloudWatch, Loki) rather than managing log files inside the container.",
+      "difficulty": "easy",
+      "subcategory": "troubleshooting",
+      "category": "docker"
+    },
+    {
+      "question": "Container logs are filling up host disk because a chatty app never stops writing to stdout. How do you cap this?",
+      "options": [
+        "Configure logging driver with max-size and max-file",
+        "Delete /var/lib/docker/containers manually",
+        "Restart Docker daemon nightly",
+        "Set --memory limit"
+      ],
+      "answer": "Configure logging driver with max-size and max-file",
+      "explanation": "Set log rotation options either globally in /etc/docker/daemon.json ({'log-driver':'json-file','log-opts':{'max-size':'10m','max-file':'3'}}) or per-container with '--log-opt max-size=10m --log-opt max-file=3'. This caps each container's log storage and automatically rotates, preventing unbounded disk growth from the default (unlimited) json-file driver.",
+      "difficulty": "medium",
+      "subcategory": "troubleshooting",
+      "category": "docker"
+    },
+    {
+      "question": "You need containers on different Docker hosts (no orchestrator) to communicate securely as if on the same LAN.",
+      "options": [
+        "Overlay network (Swarm) or a VPN/mesh like WireGuard/Tailscale between hosts",
+        "Default bridge network",
+        "Host network mode",
+        "None network mode"
+      ],
+      "answer": "Overlay network (Swarm) or a VPN/mesh like WireGuard/Tailscale between hosts",
+      "explanation": "Docker's default bridge is host-local only. For cross-host container networking without Kubernetes, initialize Docker Swarm ('docker swarm init') and use an overlay network, which uses VXLAN to route traffic between hosts with built-in encryption option (--opt encrypted). Alternatively, a host-level mesh VPN can connect the underlying hosts, with bridge networks on top.",
+      "difficulty": "hard",
+      "subcategory": "networking",
+      "category": "docker"
+    },
+    {
+      "question": "Why does 'localhost' inside a container not reach a service running on the host machine, and what's the fix on Docker Desktop?",
+      "options": [
+        "Container has its own network namespace; use host.docker.internal",
+        "Docker Desktop bug; requires restart",
+        "Firewall blocking by default",
+        "Need --network=host always"
+      ],
+      "answer": "Container has its own network namespace; use host.docker.internal",
+      "explanation": "Each container gets an isolated network namespace, so 'localhost' inside refers to the container itself, not the host. On Docker Desktop (Mac/Windows), use the special DNS name 'host.docker.internal' to reach host-side services. On native Linux, you'd typically use the host's actual IP on the docker0 bridge, or add '--add-host=host.docker.internal:host-gateway'.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "docker"
+    },
+    {
+      "question": "You want to expose a container's port 8080 as port 80 on the host, but only bind to a specific host interface for security.",
+      "options": [
+        "-p 127.0.0.1:80:8080 (or specific IP)",
+        "-p 80:8080 (binds all interfaces)",
+        "EXPOSE 80 in Dockerfile only",
+        "--network=host"
+      ],
+      "answer": "-p 127.0.0.1:80:8080 (or specific IP)",
+      "explanation": "By default '-p 80:8080' binds to 0.0.0.0, exposing the port on every network interface, which can unintentionally expose internal services to the public internet on cloud hosts. Specifying the interface IP, e.g. '-p 127.0.0.1:80:8080' or a private IP, restricts exposure to just that interface. EXPOSE alone is documentation only and doesn't actually publish anything.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "docker"
+    },
+    {
+      "question": "What's the security risk of running a container with '--privileged', and when is it actually justified?",
+      "options": [
+        "Grants nearly all host kernel capabilities and device access; only for trusted infra tools like Docker-in-Docker",
+        "No real risk, it's just a convenience flag",
+        "It only affects networking",
+        "It's required for all database containers"
+      ],
+      "answer": "Grants nearly all host kernel capabilities and device access; only for trusted infra tools like Docker-in-Docker",
+      "explanation": "--privileged disables most container isolation: it grants all Linux capabilities, disables seccomp/AppArmor confinement, and gives access to host devices, effectively enabling container escape and full host compromise if the app is exploited. Legitimate uses are narrow: nested Docker (CI runners), certain hardware access tools, or kernel module loading. Prefer granular '--cap-add' for specific capabilities instead.",
+      "difficulty": "medium",
+      "subcategory": "security",
+      "category": "docker"
+    },
+    {
+      "question": "How do you restrict a container to only the specific Linux capabilities it needs, following least privilege?",
+      "options": [
+        "--cap-drop=ALL then --cap-add=<needed caps>",
+        "--privileged with a whitelist",
+        "USER root with iptables rules",
+        "SELinux disabled mode"
+      ],
+      "answer": "--cap-drop=ALL then --cap-add=<needed caps>",
+      "explanation": "Start by dropping all capabilities ('--cap-drop=ALL') then add back only what's required, e.g. '--cap-add=NET_BIND_SERVICE' if the app binds to a privileged port. This follows least-privilege and shrinks the attack surface far more than the ~14 default capabilities Docker grants out of the box.",
+      "difficulty": "medium",
+      "subcategory": "security",
+      "category": "docker"
+    },
+    {
+      "question": "You want the container's root filesystem to be immutable at runtime to prevent malware from writing to it.",
+      "options": [
+        "--read-only with tmpfs for writable paths",
+        "USER nonroot only",
+        "--cap-drop=ALL only",
+        "Use FROM scratch"
+      ],
+      "answer": "--read-only with tmpfs for writable paths",
+      "explanation": "Run with '--read-only' to make the entire root filesystem read-only, then mount specific writable paths the app legitimately needs (like /tmp or a cache dir) using '--tmpfs /tmp' or a volume. This blocks attackers or misbehaving processes from persisting changes to the filesystem, a strong hardening layer for production.",
+      "difficulty": "medium",
+      "subcategory": "security",
+      "category": "docker"
+    },
+    {
+      "question": "How do you audit exactly what commands and layers built a given image, useful for security review?",
+      "options": [
+        "docker history <image>",
+        "docker ps -a",
+        "docker top <image>",
+        "docker stats"
+      ],
+      "answer": "docker history <image>",
+      "explanation": "'docker history --no-trunc <image>' lists every layer with the instruction that created it and its size, useful for spotting accidentally embedded secrets, unnecessary packages, or bloated layers. For deeper inspection, tools like 'dive' visualize layer contents interactively to find wasted space and duplicate files across layers.",
+      "difficulty": "easy",
+      "subcategory": "images",
+      "category": "docker"
+    },
+    {
+      "question": "You need to debug a running production container without installing debugging tools into it (to keep the image minimal/distroless).",
+      "options": [
+        "docker debug / ephemeral debug container via --target process namespace (docker run --pid=container:<id>)",
+        "docker exec -it <container> bash always",
+        "Rebuild the image with debug tools added",
+        "SSH into the container"
+      ],
+      "answer": "docker debug / ephemeral debug container via --target process namespace (docker run --pid=container:<id>)",
+      "explanation": "For distroless or scratch-based images with no shell, 'docker exec bash' fails since there's no shell binary. Instead, use Docker's newer 'docker debug' command, or manually attach a toolbox container sharing the target's PID namespace: 'docker run -it --pid=container:<id> --net=container:<id> nicolaka/netshoot'. Kubernetes has an equivalent with ephemeral debug containers.",
+      "difficulty": "hard",
+      "subcategory": "troubleshooting",
+      "category": "docker"
+    },
+    {
+      "question": "A container exits immediately with code 0 right after 'docker run', even though it's supposed to be a long-running server. Likely cause?",
+      "options": [
+        "The main process finished/exited, and it wasn't run in foreground/blocking mode",
+        "Not enough memory",
+        "Missing EXPOSE instruction",
+        "Wrong base image OS"
+      ],
+      "answer": "The main process finished/exited, and it wasn't run in foreground/blocking mode",
+      "explanation": "A container's lifecycle is tied to its PID 1 process. If the CMD/ENTRYPOINT runs something that completes quickly (e.g., a script that starts a background daemon and returns, or a misconfigured supervisor), Docker considers the container's job done and stops it. The main process must run in the foreground (not daemonized) for the container to stay alive.",
+      "difficulty": "medium",
+      "subcategory": "troubleshooting",
+      "category": "docker"
+    },
+    {
+      "question": "You need a container to automatically restart after a host reboot or crash, but not retry forever after a bad deploy.",
+      "options": [
+        "--restart unless-stopped",
+        "--restart always",
+        "--restart on-failure with no limit",
+        "No restart policy, use cron"
+      ],
+      "answer": "--restart unless-stopped",
+      "explanation": "'unless-stopped' restarts the container on daemon/host restart and on crashes, but respects an explicit 'docker stop' (won't restart it until manually started again). 'always' would even restart a container you intentionally stopped. 'on-failure[:max-retries]' is better for batch jobs that should retry a bounded number of times, not long-running services.",
+      "difficulty": "easy",
+      "subcategory": "core-concepts",
+      "category": "docker"
+    },
+    {
+      "question": "How can you tell if OOM killer terminated your container versus it exiting due to an app bug?",
+      "options": [
+        "docker inspect shows OOMKilled: true",
+        "Only docker logs shows this",
+        "Check host's uptime command",
+        "docker stats history"
+      ],
+      "answer": "docker inspect shows OOMKilled: true",
+      "explanation": "Run 'docker inspect <container>' and look at .State.OOMKilled. If true, the container hit its memory limit (cgroup) and the kernel killed the process. This is different from a normal non-zero exit code from an application-level crash. Use this to decide whether to raise memory limits, fix a leak, or optimize memory usage.",
+      "difficulty": "medium",
+      "subcategory": "troubleshooting",
+      "category": "docker"
+    },
+    {
+      "question": "You need to copy a file out of a stopped (not running) container for forensic analysis.",
+      "options": [
+        "docker cp <container>:/path ./local",
+        "docker exec <container> cat file",
+        "docker attach <container>",
+        "docker export image only"
+      ],
+      "answer": "docker cp <container>:/path ./local",
+      "explanation": "'docker cp' works on both running and stopped containers because it operates on the container's filesystem layer directly, not through a live process. 'docker exec' requires a running container with a usable shell/process. For a full filesystem snapshot, 'docker export <container> > out.tar' dumps the entire container filesystem as a tarball.",
+      "difficulty": "easy",
+      "subcategory": "core-concepts",
+      "category": "docker"
+    },
+    {
+      "question": "You're deploying to an air-gapped environment with no registry access. How do you get your image there?",
+      "options": [
+        "docker save to tarball, transfer, docker load",
+        "docker push to a public registry temporarily",
+        "Rebuild the Dockerfile on the air-gapped machine",
+        "Use docker pull with a proxy"
+      ],
+      "answer": "docker save to tarball, transfer, docker load",
+      "explanation": "Run 'docker save myapp:1.0 -o myapp.tar' on a connected machine, transfer the tarball via approved media/channel into the air-gapped network, then 'docker load -i myapp.tar' to restore it into the local Docker daemon's image store, ready to run without any registry connectivity.",
+      "difficulty": "medium",
+      "subcategory": "registry",
+      "category": "docker"
+    },
+    {
+      "question": "Your private registry requires authentication. How do you securely store credentials for automated CI pushes?",
+      "options": [
+        "docker login with credentials from a secrets manager, not hardcoded in scripts",
+        "Store username/password in the Dockerfile",
+        "Use --insecure-registry to skip auth",
+        "Commit ~/.docker/config.json to git"
+      ],
+      "answer": "docker login with credentials from a secrets manager, not hardcoded in scripts",
+      "explanation": "CI pipelines should pull registry credentials from the CI platform's secret store (GitHub Actions secrets, GitLab CI variables, AWS Secrets Manager) and pipe them into 'docker login -u $USER --password-stdin' at runtime. Never commit credentials, the docker config.json, or embed them as Dockerfile ARG/ENV values, which end up in image history.",
+      "difficulty": "medium",
+      "subcategory": "registry",
+      "category": "docker"
+    },
+    {
+      "question": "You want to enforce that only signed, verified images can be deployed in your environment.",
+      "options": [
+        "Docker Content Trust (DCT) / Notary, or Sigstore cosign",
+        "Only use official Docker Hub images",
+        "Rely on .dockerignore",
+        "Use HEALTHCHECK verification"
+      ],
+      "answer": "Docker Content Trust (DCT) / Notary, or Sigstore cosign",
+      "explanation": "Enable Docker Content Trust ('export DOCKER_CONTENT_TRUST=1') so pushes are signed and pulls verify signatures against Notary, rejecting untrusted/tampered images. Modern pipelines increasingly use Sigstore's cosign to sign images and verify signatures as an admission control step in Kubernetes (e.g., via Kyverno or OPA Gatekeeper policies).",
+      "difficulty": "hard",
+      "subcategory": "security",
+      "category": "docker"
+    },
+    {
+      "question": "Disk usage on your Docker host is growing unexpectedly. What command helps identify what's consuming space?",
+      "options": [
+        "docker system df -v",
+        "docker stats",
+        "df -h only",
+        "docker inspect"
+      ],
+      "answer": "docker system df -v",
+      "explanation": "'docker system df' summarizes space used by images, containers, volumes, and build cache; the '-v' flag breaks it down per-item. Commonly the culprits are dangling images from repeated builds, stopped containers left around, or an ever-growing build cache. Clean up safely with 'docker system prune' (add '-a --volumes' cautiously for a deeper clean).",
+      "difficulty": "easy",
+      "subcategory": "troubleshooting",
+      "category": "docker"
+    },
+    {
+      "question": "You want automated, safe cleanup of unused Docker resources on CI runners without deleting things still in use.",
+      "options": [
+        "docker system prune -f (without -a, and without --volumes unless verified safe)",
+        "rm -rf /var/lib/docker",
+        "docker rmi $(docker images -q) blindly",
+        "Restart Docker daemon nightly"
+      ],
+      "answer": "docker system prune -f (without -a, and without --volumes unless verified safe)",
+      "explanation": "'docker system prune' removes stopped containers, unused networks, dangling images, and unused build cache, but leaves images referenced by any container (running or stopped) and named volumes untouched by default. Adding '-a' also removes unused (not just dangling) images; '--volumes' removes unused volumes too, which is riskier and should only run after confirming no needed data lives there.",
+      "difficulty": "medium",
+      "subcategory": "troubleshooting",
+      "category": "docker"
+    },
+    {
+      "question": "How does the union/overlay filesystem (e.g., overlay2) benefit image layering and container startup speed?",
+      "options": [
+        "Shares read-only layers across images/containers via copy-on-write, so only diffs are stored and starts are fast",
+        "It compresses images to reduce network transfer only",
+        "It replicates layers across hosts automatically",
+        "It encrypts each layer by default"
+      ],
+      "answer": "Shares read-only layers across images/containers via copy-on-write, so only diffs are stored and starts are fast",
+      "explanation": "overlay2 stacks read-only image layers and adds a thin writable layer per container. Multiple containers from the same image share the same underlying read-only layers on disk (no duplication), and only modified/new files get copied into the container's own writable layer (copy-on-write). This makes container creation near-instant since no full filesystem copy is needed.",
+      "difficulty": "hard",
+      "subcategory": "core-concepts",
+      "category": "docker"
+    },
+    {
+      "question": "Why is writing large amounts of data to a container's writable layer (not a volume) bad practice?",
+      "options": [
+        "It's slower (copy-on-write overhead) and lost when the container is removed",
+        "It's actually faster than volumes",
+        "It automatically syncs to the host",
+        "It bypasses the storage driver entirely"
+      ],
+      "answer": "It's slower (copy-on-write overhead) and lost when the container is removed",
+      "explanation": "The container's writable layer uses the storage driver's copy-on-write mechanics, which have more overhead for write-heavy workloads (especially with overlay2 for large files) than a volume, which is a direct mount bypassing that layer. Critically, data in the writable layer disappears when the container is deleted, whereas volumes are designed to persist independently of container lifecycle.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "docker"
+    },
+    {
+      "question": "You want to share configuration files read-only from the host into multiple containers without letting containers modify them.",
+      "options": [
+        "Bind mount with :ro flag",
+        "Named volume with rw",
+        "COPY at build time only",
+        "tmpfs mount"
+      ],
+      "answer": "Bind mount with :ro flag",
+      "explanation": "Use '-v /host/config:/app/config:ro' to bind-mount a host directory as read-only inside the container. This is ideal for config files, certs, or shared reference data managed outside the container lifecycle where you want the host as source of truth and want to prevent accidental writes from the container side.",
+      "difficulty": "easy",
+      "subcategory": "storage",
+      "category": "docker"
+    },
+    {
+      "question": "A stateless microservice needs a fast, ephemeral scratch space that never touches disk (for performance/security).",
+      "options": [
+        "tmpfs mount",
+        "Named volume",
+        "Bind mount",
+        "Anonymous volume"
+      ],
+      "answer": "tmpfs mount",
+      "explanation": "'--tmpfs /app/cache' (or 'mount type=tmpfs' in Compose) creates an in-memory filesystem inside the container. It's extremely fast (RAM-backed), automatically discarded on container stop, and never persisted to the host disk, which is useful both for performance-sensitive scratch data and for security (sensitive temp files never hit disk).",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "docker"
+    },
+    {
+      "question": "How do you migrate a named volume's data from one Docker host to another?",
+      "options": [
+        "Run a temp container mounting the volume, tar the contents, transfer, and extract into a new volume on the target host",
+        "docker cp works directly between hosts",
+        "Volumes automatically replicate across hosts",
+        "Rename the volume remotely"
+      ],
+      "answer": "Run a temp container mounting the volume, tar the contents, transfer, and extract into a new volume on the target host",
+      "explanation": "A common pattern: 'docker run --rm -v myvol:/data -v $(pwd):/backup alpine tar czf /backup/myvol.tar.gz -C /data .' to create a backup archive, scp/transfer it to the target host, then run a similar container there to extract into a freshly created volume: 'tar xzf /backup/myvol.tar.gz -C /data'.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "docker"
+    },
+    {
+      "question": "What's the risk of using an anonymous volume (just '-v /data' with no name/source) in production?",
+      "options": [
+        "Hard to track/reuse; easily orphaned and accumulates as clutter, risking accidental data loss on cleanup",
+        "They can't be backed up ever",
+        "They are always read-only",
+        "They only work with Swarm"
+      ],
+      "answer": "Hard to track/reuse; easily orphaned and accumulates as clutter, risking accidental data loss on cleanup",
+      "explanation": "Anonymous volumes get a random hash name and aren't referenced anywhere else, so they're easy to lose track of. If a container is removed without '-v' to also delete volumes, they become orphaned and clutter 'docker volume ls'; conversely, aggressive cleanup scripts using '--volumes' with prune can unexpectedly delete data that was actually important. Prefer named volumes for anything meant to persist.",
+      "difficulty": "medium",
+      "subcategory": "storage",
+      "category": "docker"
+    },
+    {
+      "question": "You need Docker Swarm services to keep working even if one manager node fails. How many managers do you need minimum for fault tolerance?",
+      "options": [
+        "3 (odd number, quorum via Raft)",
+        "2",
+        "1 is sufficient with replicas",
+        "5 is the minimum required"
+      ],
+      "answer": "3 (odd number, quorum via Raft)",
+      "explanation": "Swarm managers use the Raft consensus algorithm, which requires a quorum (majority) to make decisions. With 3 managers, the cluster tolerates 1 manager failure while maintaining quorum (2 of 3). Always use an odd number of managers (3, 5, 7) since even numbers don't improve fault tolerance and increase the chance of split votes.",
+      "difficulty": "medium",
+      "subcategory": "orchestration",
+      "category": "docker"
+    },
+    {
+      "question": "How do you perform a rolling update of a Swarm service with zero downtime and automatic rollback on failure?",
+      "options": [
+        "docker service update with --update-parallelism, --update-delay, and --rollback config",
+        "docker service rm then recreate",
+        "docker stop all replicas then redeploy",
+        "Manually update each container"
+      ],
+      "answer": "docker service update with --update-parallelism, --update-delay, and --rollback config",
+      "explanation": "Configure the service with '--update-parallelism 1 --update-delay 10s --update-failure-action rollback --update-monitor 30s' so Swarm updates one replica at a time, waits between batches, monitors health, and automatically rolls back to the previous version if the failure threshold is exceeded, e.g. from a failing HEALTHCHECK.",
+      "difficulty": "hard",
+      "subcategory": "orchestration",
+      "category": "docker"
+    },
+    {
+      "question": "In Swarm mode, how does the routing mesh let you reach any replica of a service by hitting any node's published port?",
+      "options": [
+        "IPVS-based load balancing routes ingress traffic to a healthy replica cluster-wide",
+        "DNS round robin only",
+        "Each node proxies manually via iptables scripts",
+        "Only the manager node accepts traffic"
+      ],
+      "answer": "IPVS-based load balancing routes ingress traffic to a healthy replica cluster-wide",
+      "explanation": "Swarm's routing mesh uses IPVS (IP Virtual Server) load balancing so that hitting the published port on ANY node in the cluster routes the request to a healthy container running that service, even if it's not on the node you connected to. This gives external clients a single consistent entry point regardless of scheduling decisions.",
+      "difficulty": "hard",
+      "subcategory": "orchestration",
+      "category": "docker"
+    },
+    {
+      "question": "A batch job container should run once, complete, and not restart, but you still want to review its final logs/exit code.",
+      "options": [
+        "--restart no (default) and don't remove with --rm until logs are checked",
+        "--restart always",
+        "--rm flag immediately with --restart on-failure",
+        "Use a HEALTHCHECK to end it"
+      ],
+      "answer": "--restart no (default) and don't remove with --rm until logs are checked",
+      "explanation": "For a one-shot job, don't use '--rm' (which deletes the container immediately on exit, losing the ability to inspect it) and leave the restart policy at the default 'no'. Check 'docker logs' and 'docker inspect' for the exit code afterward, then clean it up manually or via a scheduled prune once verified.",
+      "difficulty": "easy",
+      "subcategory": "core-concepts",
+      "category": "docker"
+    },
+    {
+      "question": "You're building a Go binary and want the smallest possible final image with no OS packages at all. What base do you use?",
+      "options": [
+        "FROM scratch",
+        "FROM ubuntu",
+        "FROM alpine",
+        "FROM debian:slim"
+      ],
+      "answer": "FROM scratch",
+      "explanation": "For statically-compiled binaries (common in Go with CGO_ENABLED=0), 'FROM scratch' as the final stage gives a truly empty base with just your binary and any explicitly copied files (like CA certs for HTTPS). This yields images often just a few MB, with a minimal attack surface since there's no shell, package manager, or OS utilities to exploit.",
+      "difficulty": "medium",
+      "subcategory": "images",
+      "category": "docker"
+    },
+    {
+      "question": "Why might an Alpine-based image cause subtle bugs for a Python/Node app that work fine on Debian-based images?",
+      "options": [
+        "musl libc vs glibc differences can break some compiled native dependencies/DNS resolution behavior",
+        "Alpine doesn't support networking",
+        "Alpine images can't run as non-root",
+        "Alpine has no package manager"
+      ],
+      "answer": "musl libc vs glibc differences can break some compiled native dependencies/DNS resolution behavior",
+      "explanation": "Alpine uses musl libc instead of glibc, which most native Node/Python C-extension packages are compiled/tested against. This can cause binary incompatibility (requiring rebuilding native modules) or subtle behavioral differences, notably around DNS resolution and locale handling. If you hit hard-to-debug issues, try a 'slim' Debian-based variant as a middle ground between size and compatibility.",
+      "difficulty": "hard",
+      "subcategory": "images",
+      "category": "docker"
+    },
+    {
+      "question": "How do you pass build-time configuration (like a version number) into a Dockerfile without hardcoding it?",
+      "options": [
+        "ARG instruction with --build-arg",
+        "ENV instruction only",
+        "COPY a config file always",
+        "LABEL instruction"
+      ],
+      "answer": "ARG instruction with --build-arg",
+      "explanation": "Declare 'ARG VERSION=latest' in the Dockerfile, then pass a value at build time: 'docker build --build-arg VERSION=1.2.3 .'. ARG values are only available during the build (not at container runtime) unless explicitly also assigned to an ENV. Note ARG values still appear in image history, so never use them for secrets.",
+      "difficulty": "easy",
+      "subcategory": "dockerfile",
+      "category": "docker"
+    },
+    {
+      "question": "What's the difference between CMD and ENTRYPOINT, and when would you use both together?",
+      "options": [
+        "ENTRYPOINT sets the fixed executable; CMD supplies default arguments that users can override",
+        "They are interchangeable in all cases",
+        "CMD runs at build time, ENTRYPOINT at runtime only for shells",
+        "ENTRYPOINT is deprecated in favor of CMD"
+      ],
+      "answer": "ENTRYPOINT sets the fixed executable; CMD supplies default arguments that users can override",
+      "explanation": "Use ENTRYPOINT for the main command that should always run (e.g., ['python','app.py'] or an entrypoint script), and CMD for default arguments to that command (e.g., ['--port','8080']) which users can override at 'docker run' time by appending arguments. This pattern gives a fixed, safe main behavior while still allowing flexible runtime configuration.",
+      "difficulty": "medium",
+      "subcategory": "dockerfile",
+      "category": "docker"
+    },
+    {
+      "question": "You need an entrypoint script to run setup logic (like waiting for a DB) before finally handing off to the main app process.",
+      "options": [
+        "Entrypoint script that ends with 'exec \"$@\"'",
+        "Entrypoint script that calls the app with a plain function call (no exec)",
+        "Use CMD with && chaining",
+        "Use HEALTHCHECK to delay startup"
+      ],
+      "answer": "Entrypoint script that ends with 'exec \"$@\"'",
+      "explanation": "An entrypoint.sh can do setup (wait-for-it, migrations, env validation) then finish with 'exec \"$@\"' to replace the shell process with the actual application process (passed via CMD as the args). Using 'exec' is critical: without it, the app runs as a child of the shell, and the shell (not the app) becomes PID 1, breaking proper signal forwarding for graceful shutdown.",
+      "difficulty": "hard",
+      "subcategory": "dockerfile",
+      "category": "docker"
+    },
+    {
+      "question": "How do you document which port a container listens on for other developers/tools, even though it doesn't actually open the port?",
+      "options": [
+        "EXPOSE instruction",
+        "PORT instruction",
+        "-p flag in Dockerfile",
+        "LISTEN instruction"
+      ],
+      "answer": "EXPOSE instruction",
+      "explanation": "'EXPOSE 8080' in the Dockerfile is purely documentation/metadata; it doesn't publish the port to the host. It does have one functional effect: if you run with 'docker run -P' (capital P), Docker will auto-publish all EXPOSEd ports to random host ports. Actual port publishing for specific mappings still requires '-p hostport:containerport' at runtime.",
+      "difficulty": "easy",
+      "subcategory": "dockerfile",
+      "category": "docker"
+    },
+    {
+      "question": "You want to attach custom metadata (owner, version, git commit) to an image for governance/tracking.",
+      "options": [
+        "LABEL instruction",
+        "ENV instruction",
+        "ARG instruction",
+        "COMMENT instruction"
+      ],
+      "answer": "LABEL instruction",
+      "explanation": "'LABEL maintainer=\"team-x\" version=\"1.2.3\" git-commit=\"a1b2c3d\"' embeds key-value metadata into the image manifest, queryable via 'docker inspect' or filterable with 'docker images --filter label=...'. This is widely used for governance, compliance tagging, and automated cleanup policies (e.g., 'delete images with label stage=temp older than 30 days').",
+      "difficulty": "easy",
+      "subcategory": "dockerfile",
+      "category": "docker"
+    },
+    {
+      "question": "A multi-stage Dockerfile has 5 stages but you only want to build up through the 'test' stage for CI, skipping the final production stage.",
+      "options": [
+        "docker build --target test",
+        "docker build --stage test",
+        "Split into 5 separate Dockerfiles",
+        "docker build -f test.Dockerfile"
+      ],
+      "answer": "docker build --target test",
+      "explanation": "'docker build --target test -t myapp:test .' stops the build at the named stage ('FROM ... AS test'), letting you reuse one Dockerfile for building, testing, and producing the final production image at different targets, e.g. running unit tests inside the 'test' stage in CI without needing to build later production-only stages.",
+      "difficulty": "medium",
+      "subcategory": "images",
+      "category": "docker"
+    },
+    {
+      "question": "You need to run the same image with different environment-specific settings (DB host, feature flags) without rebuilding.",
+      "options": [
+        "Environment variables via -e / --env-file at runtime",
+        "ARG at build time",
+        "Separate images per environment",
+        "Hardcode in application config file baked into image"
+      ],
+      "answer": "Environment variables via -e / --env-file at runtime",
+      "explanation": "Following 12-factor app principles, externalize config as environment variables read at container startup: 'docker run -e DB_HOST=prod-db --env-file prod.env myapp'. This lets the exact same image artifact be promoted through dev/staging/prod, which is critical for reliable, tested deployments (build once, deploy everywhere).",
+      "difficulty": "easy",
+      "subcategory": "core-concepts",
+      "category": "docker"
+    },
+    {
+      "question": "How do you inject dynamic secrets (rotated frequently) into a container without restarting it for every rotation?",
+      "options": [
+        "Mount secrets as files from a vault agent/sidecar that updates them in place; app watches for file changes",
+        "Bake secrets into ENV at container start only",
+        "Rebuild the image every time a secret rotates",
+        "Use ARG for runtime secrets"
+      ],
+      "answer": "Mount secrets as files from a vault agent/sidecar that updates them in place; app watches for file changes",
+      "explanation": "Environment variables are typically fixed at process start, so a common pattern is a sidecar (like Vault Agent or a cloud secrets-manager sync tool) that writes/refreshes secret files onto a shared volume, and the application watches those files (inotify) and reloads credentials without needing a full container restart, minimizing downtime from frequent rotations.",
+      "difficulty": "hard",
+      "subcategory": "security",
+      "category": "docker"
+    },
+    {
+      "question": "How do you make sure a container's clock/timezone matches the host, which matters for logs and cron-like jobs?",
+      "options": [
+        "Mount /etc/localtime and /etc/timezone read-only from the host, or set TZ env var",
+        "Containers always inherit host time automatically with no config needed",
+        "Rebuild image in host's timezone",
+        "Use --network=host"
+      ],
+      "answer": "Mount /etc/localtime and /etc/timezone read-only from the host, or set TZ env var",
+      "explanation": "Containers share the host kernel's system clock (wall clock time is always correct), but the configured timezone/locale for formatting is separate and defaults to UTC unless configured. Either bind-mount '-v /etc/localtime:/etc/localtime:ro' from the host, or set an environment variable like 'TZ=America/New_York' if the base image and app support tzdata.",
+      "difficulty": "medium",
+      "subcategory": "core-concepts",
+      "category": "docker"
+    },
+    {
+      "question": "What's the danger of mounting the host's Docker socket (/var/run/docker.sock) into a container?",
+      "options": [
+        "It grants the container root-equivalent control over the entire host via the Docker daemon",
+        "It only allows read-only access to container logs",
+        "It's sandboxed by the container's own namespace",
+        "There's no meaningful risk if the container is unprivileged"
+      ],
+      "answer": "It grants the container root-equivalent control over the entire host via the Docker daemon",
+      "explanation": "Mounting '-v /var/run/docker.sock:/var/run/docker.sock' lets the container talk to the host's Docker daemon directly, meaning it can create new containers with arbitrary mounts (including mounting the host's root filesystem) or escape isolation entirely, effectively equivalent to root on the host. Common in CI tools (Docker-in-Docker patterns) but should be treated as a high-risk, trusted-only capability, never exposed to untrusted workloads.",
+      "difficulty": "hard",
+      "subcategory": "security",
+      "category": "docker"
+    },
+    {
+      "question": "How do you prevent fork-bomb style attacks or runaway process creation from exhausting host PIDs?",
+      "options": [
+        "--pids-limit flag",
+        "--memory limit only",
+        "--cpus limit only",
+        "Read-only filesystem"
+      ],
+      "answer": "--pids-limit flag",
+      "explanation": "'--pids-limit=100' caps the number of processes/threads a container can create via the cgroup pids controller. Without it, a fork bomb (accidental or malicious) inside one container can exhaust the host's total PID table, potentially affecting all other containers and processes on the same host.",
+      "difficulty": "medium",
+      "subcategory": "security",
+      "category": "docker"
+    },
+    {
+      "question": "You want a seccomp profile to restrict which syscalls a container can make, beyond Docker's default profile.",
+      "options": [
+        "--security-opt seccomp=custom-profile.json",
+        "--cap-drop=ALL alone is equivalent",
+        "Enable AppArmor only",
+        "Use --privileged with syscall filter"
+      ],
+      "answer": "--security-opt seccomp=custom-profile.json",
+      "explanation": "Docker ships a default seccomp profile blocking ~44 dangerous syscalls, but you can supply a stricter custom JSON profile tailored to your app's actual syscall needs via '--security-opt seccomp=./custom-profile.json'. Tools like 'docker run --security-opt seccomp=unconfined' (the opposite, disabling filtering) should be avoided in production; tightening further reduces kernel attack surface.",
+      "difficulty": "hard",
+      "subcategory": "security",
+      "category": "docker"
+    },
+    {
+      "question": "How does AppArmor or SELinux complement seccomp in container security hardening?",
+      "options": [
+        "They enforce mandatory access control on file/network/capability access, while seccomp filters syscalls",
+        "They are redundant with seccomp and unnecessary",
+        "They only apply to the host, never containers",
+        "They replace the need for namespaces"
+      ],
+      "answer": "They enforce mandatory access control on file/network/capability access, while seccomp filters syscalls",
+      "explanation": "Seccomp restricts which syscalls a process can invoke at all. AppArmor (Ubuntu/Debian) and SELinux (RHEL/CentOS) add a complementary layer of mandatory access control, restricting what files, network resources, and capabilities a confined process/container can access even for allowed syscalls. Docker applies a default AppArmor profile automatically on supported systems; combining both layers gives defense in depth.",
+      "difficulty": "hard",
+      "subcategory": "security",
+      "category": "docker"
+    },
+    {
+      "question": "A team wants to enforce that no container in their environment ever runs as UID 0 (root), cluster-wide. How, beyond individual Dockerfiles?",
+      "options": [
+        "Admission control policy (e.g., OPA/Kyverno in K8s, or a CI/CD pipeline gate scanning image config)",
+        "Ask developers nicely in code review only",
+        "Rely solely on --user flag at runtime",
+        "Disable root user on the host OS"
+      ],
+      "answer": "Admission control policy (e.g., OPA/Kyverno in K8s, or a CI/CD pipeline gate scanning image config)",
+      "explanation": "Relying on individual Dockerfiles or runtime flags is inconsistent since it can be forgotten or overridden. A systemic control like a Kubernetes admission policy (Kyverno/OPA Gatekeeper checking runAsNonRoot) or a CI pipeline step that inspects the image's default USER via 'docker inspect' and fails the build if it's root/UID 0, enforces the policy consistently across all teams and images.",
+      "difficulty": "hard",
+      "subcategory": "security",
+      "category": "docker"
+    },
+    {
+      "question": "You want faster container startup for a Java app that's slow to JIT-warm-up on every cold start in a scaled environment.",
+      "options": [
+        "Use a pre-warmed/AOT-compiled runtime (e.g., GraalVM native image) baked into the image",
+        "Increase --memory limit only",
+        "Use FROM scratch with the JAR alone",
+        "Disable HEALTHCHECK to start faster"
+      ],
+      "answer": "Use a pre-warmed/AOT-compiled runtime (e.g., GraalVM native image) baked into the image",
+      "explanation": "JVM cold-start and JIT warm-up overhead is a common pain point in containerized/serverless environments with frequent scaling. Compiling to a native image ahead-of-time with GraalVM (or using CDS - Class Data Sharing) drastically reduces startup latency, since there's no bytecode interpretation/JIT warm-up needed at container boot, at the cost of some build complexity and potential reflection limitations.",
+      "difficulty": "hard",
+      "subcategory": "performance",
+      "category": "docker"
+    },
+    {
+      "question": "How can you tell if slow container performance is due to disk I/O throttling from a storage driver versus CPU contention?",
+      "options": [
+        "Compare docker stats (CPU%, block I/O) with host-level iostat/cgroup blkio stats",
+        "Only check application logs",
+        "Restart the container and see if it's faster",
+        "Increase --memory only"
+      ],
+      "answer": "Compare docker stats (CPU%, block I/O) with host-level iostat/cgroup blkio stats",
+      "explanation": "'docker stats' shows per-container CPU% and Block I/O columns as a starting point. Cross-reference with host tools like 'iostat -x 1' or cgroup blkio throttling counters (/sys/fs/cgroup/.../io.stat) to distinguish disk-bound bottlenecks (high I/O wait, throttled bytes) from CPU-bound ones (sustained high CPU% near the --cpus limit), guiding whether to add '--device-write-bps' limits, use faster storage, or scale CPU instead.",
+      "difficulty": "hard",
+      "subcategory": "performance",
+      "category": "docker"
+    },
+    {
+      "question": "You need to run BuildKit-powered builds but your CI environment's Docker version predates BuildKit being default. How do you enable it?",
+      "options": [
+        "Set DOCKER_BUILDKIT=1 environment variable, or use docker buildx",
+        "Upgrade the kernel only",
+        "Use --legacy-builder flag",
+        "It cannot be enabled on older versions"
+      ],
+      "answer": "Set DOCKER_BUILDKIT=1 environment variable, or use docker buildx",
+      "explanation": "For Docker versions where BuildKit isn't the default builder, set 'DOCKER_BUILDKIT=1' before running 'docker build' to opt in, unlocking features like build secrets, cache mounts, and improved parallel layer building. Modern Docker CLI ships 'docker buildx' as the recommended interface, which is BuildKit-based by default and also supports multi-platform builds.",
+      "difficulty": "medium",
+      "subcategory": "performance",
+      "category": "docker"
+    },
+    {
+      "question": "Why would you use BuildKit's parallel stage execution benefit a multi-stage Dockerfile with independent stages?",
+      "options": [
+        "Independent stages with no dependency between them can build concurrently instead of sequentially",
+        "It compresses the final image automatically",
+        "It removes the need for a .dockerignore file",
+        "It automatically parallelizes RUN commands within a single stage"
+      ],
+      "answer": "Independent stages with no dependency between them can build concurrently instead of sequentially",
+      "explanation": "Classic Docker builder executes stages strictly in Dockerfile order even if two stages don't depend on each other. BuildKit analyzes the dependency graph and can build unrelated stages (e.g., a frontend asset build and a backend dependency install stage that never COPY --from each other) in parallel, reducing overall build wall-clock time on multi-core CI runners.",
+      "difficulty": "hard",
+      "subcategory": "performance",
+      "category": "docker"
+    },
+    {
+      "question": "How do you validate a Dockerfile follows best practices automatically before merging a PR?",
+      "options": [
+        "Hadolint linter in CI",
+        "Manual code review only",
+        "docker build --dry-run",
+        "docker history after merge"
+      ],
+      "answer": "Hadolint linter in CI",
+      "explanation": "Hadolint statically analyzes Dockerfiles against best-practice rules (e.g., pin versions, avoid ADD for remote URLs, combine RUN commands, avoid latest tag, use COPY --chown instead of a separate chown RUN) and integrates easily as a CI step or pre-commit hook, catching issues before they reach production images.",
+      "difficulty": "easy",
+      "subcategory": "best-practices",
+      "category": "docker"
+    },
+    {
+      "question": "You need to set file ownership when copying files into the image without an extra RUN chown layer (to save image size/layers).",
+      "options": [
+        "COPY --chown=user:group",
+        "RUN chown after COPY",
+        "USER before COPY",
+        "VOLUME with permissions flag"
+      ],
+      "answer": "COPY --chown=user:group",
+      "explanation": "'COPY --chown=appuser:appgroup ./src /app' sets ownership as part of the copy operation itself, avoiding a separate 'RUN chown -R' layer that would otherwise duplicate the entire file tree's data in a new layer (since changing metadata still creates copies in overlay filesystems), keeping the image smaller and the build faster.",
+      "difficulty": "medium",
+      "subcategory": "dockerfile",
+      "category": "docker"
+    },
+    {
+      "question": "Your team wants a single source of truth Compose file that also works well when deployed to Swarm without a full Kubernetes migration.",
+      "options": [
+        "Docker Compose v3 spec with 'docker stack deploy'",
+        "Kompose to convert directly to Kubernetes only",
+        "Two entirely separate config formats maintained by hand",
+        "docker-compose is Swarm-incompatible, must rewrite"
+      ],
+      "answer": "Docker Compose v3 spec with 'docker stack deploy'",
+      "explanation": "Compose file format v3 is designed to be usable both locally with 'docker compose up' and for cluster deployment via 'docker stack deploy -c docker-compose.yml mystack' on a Swarm cluster, supporting deploy-specific keys (replicas, resources, restart_policy, placement constraints) that are ignored by plain Compose but honored by Swarm.",
+      "difficulty": "medium",
+      "subcategory": "orchestration",
+      "category": "docker"
+    },
+    {
+      "question": "How do you set placement constraints so a Swarm service only runs on nodes with SSD-backed storage?",
+      "options": [
+        "deploy.placement.constraints with a custom node label",
+        "--network=host on those nodes only",
+        "Manually SSH and run containers only there",
+        "Use resource reservations alone"
+      ],
+      "answer": "deploy.placement.constraints with a custom node label",
+      "explanation": "Label the target nodes ('docker node update --label-add storage=ssd node1'), then in the service definition add 'deploy: placement: constraints: [node.labels.storage == ssd]'. Swarm's scheduler will then only place replicas of that service on matching nodes, useful for workloads with specific hardware or compliance requirements.",
+      "difficulty": "medium",
+      "subcategory": "orchestration",
+      "category": "docker"
+    },
+    {
+      "question": "What happens to in-flight requests when you scale down a Swarm service from 5 to 2 replicas?",
+      "options": [
+        "Swarm sends SIGTERM to removed containers, respecting stop_grace_period, then routing mesh stops sending new traffic to them",
+        "All requests are dropped instantly with SIGKILL",
+        "Removed replicas keep running until manually stopped",
+        "Traffic is queued indefinitely until replicas return"
+      ],
+      "answer": "Swarm sends SIGTERM to removed containers, respecting stop_grace_period, then routing mesh stops sending new traffic to them",
+      "explanation": "Swarm removes replicas gracefully: it stops routing new connections to the containers being scaled down, sends SIGTERM to let them finish in-flight work and shut down cleanly, and waits up to 'stop_grace_period' (default 10s) before force-killing with SIGKILL if they haven't exited. Proper application-level graceful shutdown handling is still required to avoid dropped requests.",
+      "difficulty": "hard",
+      "subcategory": "orchestration",
+      "category": "docker"
+    },
+    {
+      "question": "You're troubleshooting DNS resolution failures between containers on a custom bridge network. What tool helps diagnose this quickly?",
+      "options": [
+        "nicolaka/netshoot container attached to the same network",
+        "docker images",
+        "docker system df",
+        "docker history"
+      ],
+      "answer": "nicolaka/netshoot container attached to the same network",
+      "explanation": "'docker run -it --network=<mynet> nicolaka/netshoot' spins up a container preloaded with networking tools (dig, nslookup, tcpdump, curl, iproute2) on the same network as your troubled containers, letting you test DNS resolution ('dig servicename'), connectivity, and packet captures without needing to install tools into your production images.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "docker"
+    },
+    {
+      "question": "How do you connect a running container to an additional network after it was already started on just one network?",
+      "options": [
+        "docker network connect <network> <container>",
+        "Restart the container with new -p flags",
+        "docker network create then restart daemon",
+        "Not possible without recreating the container"
+      ],
+      "answer": "docker network connect <network> <container>",
+      "explanation": "'docker network connect mynet mycontainer' attaches an already-running container to an additional network without restarting it, useful for temporarily bridging a container into a debug network or gradually migrating traffic during a network topology change. Use 'docker network disconnect' to remove it from a network similarly.",
+      "difficulty": "easy",
+      "subcategory": "networking",
+      "category": "docker"
+    },
+    {
+      "question": "Why might two containers on the SAME custom bridge network still fail to reach each other, even though DNS resolves correctly?",
+      "options": [
+        "A firewall/iptables rule or Docker's inter-container communication (icc) setting is blocking traffic, or the app isn't listening on 0.0.0.0",
+        "Bridge networks never allow container-to-container traffic",
+        "DNS resolution success guarantees connectivity always",
+        "This scenario is impossible"
+      ],
+      "answer": "A firewall/iptables rule or Docker's inter-container communication (icc) setting is blocking traffic, or the app isn't listening on 0.0.0.0",
+      "explanation": "DNS resolving a name to an IP doesn't guarantee the TCP connection succeeds. Common culprits: the app inside the target container is bound to 127.0.0.1 instead of 0.0.0.0 (unreachable from other containers), host firewall rules interfering with the docker0/bridge iptables chains, or (on the legacy default bridge) icc=false disabling inter-container communication entirely.",
+      "difficulty": "hard",
+      "subcategory": "networking",
+      "category": "docker"
+    },
+    {
+      "question": "You want a container's outbound traffic to always appear to come from a specific host IP among several available.",
+      "options": [
+        "Configure the daemon or per-network with a specified bridge/gateway IP and use SNAT rules",
+        "Use --network=host always",
+        "This is impossible with Docker",
+        "Use EXPOSE with a static IP"
+      ],
+      "answer": "Configure the daemon or per-network with a specified bridge/gateway IP and use SNAT rules",
+      "explanation": "By default, outbound container traffic is masqueraded (SNAT'd) through whichever interface the host routes through. To control the source IP, you can bind a specific host IP for port publishing ('-p <specific-ip>::containerport') and/or configure custom iptables SNAT rules, or use a macvlan network to give the container its own IP directly on the physical network, bypassing NAT entirely.",
+      "difficulty": "hard",
+      "subcategory": "networking",
+      "category": "docker"
+    },
+    {
+      "question": "What's a macvlan network and when would you choose it over the default bridge?",
+      "options": [
+        "Gives containers their own MAC/IP directly on the physical LAN, useful when legacy apps expect to be a first-class network citizen",
+        "It's just an alias for bridge networking",
+        "It disables all container networking for security",
+        "It's only usable inside Kubernetes"
+      ],
+      "answer": "Gives containers their own MAC/IP directly on the physical LAN, useful when legacy apps expect to be a first-class network citizen",
+      "explanation": "A macvlan network assigns each container a unique MAC address and IP on the physical network segment, making it appear as a distinct device to the rest of the LAN rather than being hidden behind NAT like the default bridge. This suits legacy applications that need to be directly addressable, or network monitoring appliances that require Layer 2 visibility, but requires the host NIC to support promiscuous mode and careful IP management.",
+      "difficulty": "hard",
+      "subcategory": "networking",
+      "category": "docker"
+    },
+    {
+      "question": "How do you ensure only specific containers can talk to your database container, blocking all others on the same host?",
+      "options": [
+        "Put the DB on its own user-defined network and only attach authorized containers to it",
+        "Rely on the DB's own password authentication alone",
+        "Use --network=host for the database",
+        "Expose the DB port publicly and filter by application-level auth only"
+      ],
+      "answer": "Put the DB on its own user-defined network and only attach authorized containers to it",
+      "explanation": "Network segmentation is a strong first line of defense: create a dedicated network for the DB and only connect the specific application containers that need access, never exposing the DB's port to the host or a broader network. This means even if a container on another network is compromised, it can't reach the database at the network layer at all, independent of application credentials.",
+      "difficulty": "medium",
+      "subcategory": "networking",
+      "category": "docker"
+    },
+    {
+      "question": "You need to test how your application behaves under simulated network latency/packet loss between containers.",
+      "options": [
+        "tc (traffic control) inside a container with NET_ADMIN capability, or a chaos engineering tool like Pumba",
+        "docker network create with a --latency flag",
+        "Only possible with real hardware routers",
+        "Reduce --cpus to simulate slowness"
+      ],
+      "answer": "tc (traffic control) inside a container with NET_ADMIN capability, or a chaos engineering tool like Pumba",
+      "explanation": "Grant the container '--cap-add=NET_ADMIN' and use the Linux 'tc' (traffic control) utility to inject artificial latency, jitter, or packet loss on its network interface. Chaos tools like Pumba wrap this to make injecting network faults or even killing containers randomly easier for resilience testing, without needing custom network hardware.",
+      "difficulty": "hard",
+      "subcategory": "networking",
+      "category": "docker"
+    },
+    {
+      "question": "What's the recommended way to handle database schema migrations when deploying a new container version?",
+      "options": [
+        "Run migrations as a separate one-off job/container before starting the new app version, not inside the app's entrypoint on every boot",
+        "Run migrations automatically every time any replica starts",
+        "Bake migration results into the image at build time",
+        "Skip migrations and let the app auto-create tables"
+      ],
+      "answer": "Run migrations as a separate one-off job/container before starting the new app version, not inside the app's entrypoint on every boot",
+      "explanation": "Running migrations inside every replica's startup is dangerous with multiple replicas starting concurrently (race conditions, duplicate/partial migrations). Instead, run migrations as a distinct step in the deployment pipeline (a one-off 'docker run' job or a Kubernetes Job) that completes before the new application replicas start serving traffic, ensuring exactly-once, ordered execution.",
+      "difficulty": "medium",
+      "subcategory": "best-practices",
+      "category": "docker"
+    },
+    {
+      "question": "How do you reduce the blast radius if an attacker compromises a container and tries to pivot to other containers on the host?",
+      "options": [
+        "Network segmentation, least-privilege capabilities, read-only filesystems, and per-service networks, layered together",
+        "Rely solely on the app's authentication layer",
+        "Use a single flat network for simplicity",
+        "Disable logging to reduce forensic footprint"
+      ],
+      "answer": "Network segmentation, least-privilege capabilities, read-only filesystems, and per-service networks, layered together",
+      "explanation": "No single control fully prevents lateral movement; defense in depth combines: dedicated networks per trust boundary (DB not reachable from public-facing services directly), dropped Linux capabilities, read-only root filesystems, non-root users, resource limits (pids/memory/cpu), and runtime security monitoring (e.g., Falco) to detect anomalous behavior like unexpected outbound connections or shell spawning.",
+      "difficulty": "hard",
+      "subcategory": "security",
+      "category": "docker"
+    },
+    {
+      "question": "You need to run integration tests that spin up real dependent services (DB, message queue) inside CI, then tear them down cleanly every run.",
+      "options": [
+        "Docker Compose (or Testcontainers) to programmatically start/stop ephemeral dependencies per test run",
+        "Use production shared DB for testing",
+        "Manually SSH to provision test infrastructure",
+        "Skip integration tests, unit tests only"
+      ],
+      "answer": "Docker Compose (or Testcontainers) to programmatically start/stop ephemeral dependencies per test run",
+      "explanation": "Testcontainers libraries (Java, Node, Python, Go) programmatically launch real Docker containers (e.g., a Postgres or Kafka image) scoped to a single test run, with automatic cleanup afterward, giving realistic integration tests without shared, stateful test environments. Plain Docker Compose with 'up --abort-on-container-exit' in CI is a lighter-weight alternative for simpler pipelines.",
+      "difficulty": "medium",
+      "subcategory": "best-practices",
+      "category": "docker"
+    },
+    {
+      "question": "A colleague suggests running the app AND the database in the same container 'to simplify deployment.' Why is this an anti-pattern?",
+      "options": [
+        "Violates single-responsibility per container, complicates scaling/logging/lifecycle, and couples unrelated failure domains",
+        "It's actually recommended by Docker for all stacks",
+        "It reduces total resource usage significantly",
+        "There's no meaningful downside"
+      ],
+      "answer": "Violates single-responsibility per container, complicates scaling/logging/lifecycle, and couples unrelated failure domains",
+      "explanation": "Docker's philosophy favors one primary process/concern per container: it simplifies independent scaling (scale app replicas without duplicating the DB), independent updates/rollbacks, clean log separation, and resource isolation/limits per component. Combining app and DB into one container also means a crash or restart of either takes down both, and you lose the ability to reuse a standard, well-maintained official DB image.",
+      "difficulty": "easy",
+      "subcategory": "best-practices",
+      "category": "docker"
+    },
+    {
+      "question": "You want to guarantee reproducible dependency versions in your image builds across different developer machines and CI.",
+      "options": [
+        "Commit and use a lockfile (package-lock.json, poetry.lock, go.sum) inside the build, with a deterministic install command like 'npm ci'",
+        "Always use the latest version of dependencies at build time",
+        "Rely on dependency resolution being naturally deterministic",
+        "Disable the lockfile to simplify builds"
+      ],
+      "answer": "Commit and use a lockfile (package-lock.json, poetry.lock, go.sum) inside the build, with a deterministic install command like 'npm ci'",
+      "explanation": "Lockfiles pin exact transitive dependency versions. Using 'npm ci' (instead of 'npm install') inside the Dockerfile enforces an exact match to the lockfile and fails if it's out of sync, preventing 'works on my machine' drift where two builds of supposedly the same source resolve different dependency versions due to caret/tilde ranges resolving differently over time.",
+      "difficulty": "medium",
+      "subcategory": "best-practices",
+      "category": "docker"
+    },
+    {
+      "question": "How would you design a CI/CD pipeline stage that builds, scans, and only pushes a Docker image if it passes both tests and vulnerability thresholds?",
+      "options": [
+        "Sequential pipeline: build image -> run tests in a container from that image -> scan with trivy/scout -> push only if all gates pass",
+        "Push immediately after build to save time",
+        "Scan only in production after deployment",
+        "Skip testing inside containers, test only the raw source code"
+      ],
+      "answer": "Sequential pipeline: build image -> run tests in a container from that image -> scan with trivy/scout -> push only if all gates pass",
+      "explanation": "A robust pipeline builds the actual artifact once (ideally to a 'test' target via multi-stage build), runs the real test suite against that exact image (not just the source, to catch environment-specific issues), then runs a vulnerability scan with a defined severity gate (e.g., fail on CRITICAL/HIGH), and only pushes to the registry with an immutable tag if every gate passes, ensuring nothing broken or vulnerable reaches production.",
+      "difficulty": "hard",
+      "subcategory": "best-practices",
+      "category": "docker"
+    },
+    {
+      "question": "How do Linux namespaces and cgroups together provide the isolation that makes a 'container' possible?",
+      "options": [
+        "Namespaces isolate what a process can SEE (PID, network, mount, etc.); cgroups limit what resources it can USE (CPU, memory, I/O)",
+        "Namespaces limit resources; cgroups provide visibility isolation",
+        "They are the same mechanism with different names",
+        "Only cgroups are needed; namespaces are optional"
+      ],
+      "answer": "Namespaces isolate what a process can SEE (PID, network, mount, etc.); cgroups limit what resources it can USE (CPU, memory, I/O)",
+      "explanation": "Namespaces (pid, net, mnt, uts, ipc, user) give a process its own isolated view of the system, e.g., its own PID 1, its own network interfaces, its own mounted filesystem root, so it appears to be running on its own machine. Cgroups (control groups) then enforce resource accounting and limits (CPU shares/quota, memory ceilings, block I/O throttling, PID counts) on that process group. Together they're the fundamental Linux kernel primitives; Docker/containerd/runc are the tooling layered on top.",
+      "difficulty": "hard",
+      "subcategory": "core-concepts",
+      "category": "docker"
+    },
+    {
+      "question": "Why can a container 'see' a different hostname and process list than the host, even without any virtualization?",
+      "options": [
+        "UTS namespace isolates hostname; PID namespace isolates the process tree view",
+        "Docker uses full hardware virtualization like a VM",
+        "It's an illusion created only by the CLI output formatting",
+        "Containers run a separate copy of the Linux kernel"
+      ],
+      "answer": "UTS namespace isolates hostname; PID namespace isolates the process tree view",
+      "explanation": "The UTS namespace gives each container its own hostname/domain name independent of the host's. The PID namespace gives it its own process ID numbering starting at 1, so the container's main process appears as 'PID 1' even though on the host it has a different, real PID visible via 'ps aux' or in another namespace's view. Critically, unlike a VM, all containers on a host still share the same underlying kernel; there's no separate kernel per container.",
+      "difficulty": "medium",
+      "subcategory": "core-concepts",
+      "category": "docker"
+    },
+    {
+      "question": "Given a container that intermittently loses connection to an external API and retries poorly, causing cascading failures across services, what container-level and app-level fixes would you recommend?",
+      "options": [
+        "App-level: circuit breaker + exponential backoff with jitter; Container-level: proper healthchecks and resource limits to prevent cascading resource exhaustion",
+        "Simply increase --restart retries indefinitely",
+        "Ignore it since it's transient and self-resolving",
+        "Switch to --network=host to fix connectivity"
+      ],
+      "answer": "App-level: circuit breaker + exponential backoff with jitter; Container-level: proper healthchecks and resource limits to prevent cascading resource exhaustion",
+      "explanation": "This is fundamentally an application resiliency problem, not something 'docker run' flags alone fix. Implement a circuit breaker pattern so repeated failures to a flaky dependency stop overwhelming it and your own service (avoiding thread/connection pool exhaustion), combined with exponential backoff with jitter for retries. At the container/orchestration level, ensure HEALTHCHECKs correctly reflect this degraded state so the orchestrator can route around or restart unhealthy instances, and resource limits prevent one struggling service from starving others sharing the host.",
+      "difficulty": "hard",
+      "subcategory": "troubleshooting",
+      "category": "docker"
+    },
+    {
+      "question": "You inherited a legacy app that writes PID files and expects to daemonize itself (fork to background). What's the containerization challenge and fix?",
+      "options": [
+        "Daemonizing breaks the foreground-process model; run it with a flag/wrapper that keeps it in the foreground as PID 1",
+        "No changes needed, Docker handles daemonized apps natively",
+        "Must run two containers, one for the daemon and one empty",
+        "Use --restart=always to compensate"
+      ],
+      "answer": "Daemonizing breaks the foreground-process model; run it with a flag/wrapper that keeps it in the foreground as PID 1",
+      "explanation": "If the app forks itself into the background and the parent process exits, Docker sees PID 1 exit and stops the container immediately, even though the 'real' daemon is technically still conceptually running (it isn't, since the whole container/namespace tears down). Most daemons have a foreground flag (e.g., nginx's 'daemon off;', or '-f'/'--foreground' options); use that, or wrap with a supervisor like tini/supervisord configured to run it in the foreground and reap children properly.",
+      "difficulty": "hard",
+      "subcategory": "troubleshooting",
+      "category": "docker"
+    },
+    {
+      "question": "How would you architect image tagging and promotion so the exact image tested in staging is guaranteed to be what's deployed to production?",
+      "options": [
+        "Build once, tag immutably (e.g., by digest/git-sha), and re-tag/promote the SAME artifact through environments rather than rebuilding per environment",
+        "Rebuild the image fresh for each environment from the same Dockerfile",
+        "Use 'latest' tag everywhere and trust the registry cache",
+        "Manually verify checksums by eye before each deploy"
+      ],
+      "answer": "Build once, tag immutably (e.g., by digest/git-sha), and re-tag/promote the SAME artifact through environments rather than rebuilding per environment",
+      "explanation": "The 'build once, promote everywhere' pattern builds a single immutable image (tagged by git SHA or a build number) and pushes it once to the registry. Promoting to staging/prod means re-tagging or referencing that exact same image digest in each environment's deployment config, never rebuilding. This eliminates the risk of subtle differences (dependency resolution changes, base image updates between builds) between what was tested and what actually runs in production.",
+      "difficulty": "hard",
+      "subcategory": "best-practices",
+      "category": "docker"
+    },
+    {
+      "question": "A container running a web server responds fine to HEALTHCHECK curl requests but real user traffic times out. What's a likely gap in the healthcheck design?",
+      "options": [
+        "The healthcheck only tests a shallow endpoint, not downstream dependencies (DB, cache) that real requests actually need",
+        "HEALTHCHECK cannot use curl at all",
+        "The container needs --network=host to fix this",
+        "Healthchecks always guarantee full request path correctness"
+      ],
+      "answer": "The healthcheck only tests a shallow endpoint, not downstream dependencies (DB, cache) that real requests actually need",
+      "explanation": "A common mistake is a healthcheck hitting a trivial '/ping' route that only confirms the web server process is alive, while real user requests fail because a downstream dependency (database connection pool exhausted, cache unreachable) is broken. Design healthchecks to reflect actual serving capability, e.g. a '/health' endpoint that checks critical dependencies, balanced against not making the healthcheck itself so heavy it causes false failures under load.",
+      "difficulty": "hard",
+      "subcategory": "troubleshooting",
+      "category": "docker"
+    },
+    {
+      "question": "You need to enforce that every image pushed to your registry includes an SBOM (Software Bill of Materials) for compliance.",
+      "options": [
+        "Generate SBOM at build time (docker buildx with --sbom, or Syft) and attach/push it alongside the image, gated in CI",
+        "SBOMs are automatically generated by Docker Hub for free",
+        "Manually list dependencies in a README",
+        "SBOMs only matter for open source projects, not internal images"
+      ],
+      "answer": "Generate SBOM at build time (docker buildx with --sbom, or Syft) and attach/push it alongside the image, gated in CI",
+      "explanation": "Use 'docker buildx build --sbom=true' or a tool like Anchore Syft ('syft <image> -o spdx-json') to generate a machine-readable inventory of every package/library in the image. Attach it to the image as an OCI artifact (e.g., via cosign attest) and enforce its presence as a CI gate, supporting compliance frameworks (SOC2, executive orders on software supply chain security) and enabling rapid impact assessment when a new CVE is disclosed.",
+      "difficulty": "hard",
+      "subcategory": "security",
+      "category": "docker"
+    },
+    {
+      "question": "How do you keep base images patched against newly disclosed OS-level CVEs without manually rebuilding every app image by hand?",
+      "options": [
+        "Automated base image update bot (e.g., Renovate/Dependabot) plus scheduled CI rebuilds triggered on base image changes",
+        "Manually check for CVEs once a year",
+        "Assume application-level patches cover OS vulnerabilities too",
+        "Never update base images once an app is stable, to avoid breakage"
+      ],
+      "answer": "Automated base image update bot (e.g., Renovate/Dependabot) plus scheduled CI rebuilds triggered on base image changes",
+      "explanation": "Configure Renovate or Dependabot to watch for new base image tags/digests and automatically open PRs bumping the FROM line when a patched version is released. Combine with a scheduled (e.g., nightly/weekly) CI rebuild-and-scan job even without source code changes, since a previously clean image can become vulnerable purely because a new CVE was disclosed in an unchanged OS package, requiring a rebuild against an updated base to pick up the fix.",
+      "difficulty": "medium",
+      "subcategory": "security",
+      "category": "docker"
+    }
+  ]
