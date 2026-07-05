@@ -1,1 +1,562 @@
-[]
+[
+  {
+    "question": "What component does Kubernetes use natively to expose basic resource usage (CPU/memory) for HPA and 'kubectl top'?",
+    "options": [
+      "metrics-server",
+      "Prometheus",
+      "cAdvisor standalone",
+      "kube-state-metrics"
+    ],
+    "answer": "metrics-server",
+    "explanation": "metrics-server aggregates resource usage from kubelets cluster-wide and exposes it via the Metrics API (metrics.k8s.io), which the Horizontal Pod Autoscaler and 'kubectl top nodes/pods' consume. It only provides current usage, not historical data.",
+    "difficulty": "easy",
+    "subcategory": "metrics-server",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why can't metrics-server alone be used for long-term monitoring or alerting?",
+    "options": [
+      "It only stores in-memory, real-time snapshots with no historical retention",
+      "It only monitors control plane components",
+      "It requires a paid license for history",
+      "It doesn't support any Kubernetes API"
+    ],
+    "answer": "It only stores in-memory, real-time snapshots with no historical retention",
+    "explanation": "metrics-server is intentionally lightweight, keeping only the latest data point per resource for autoscaling decisions. For dashboards, alerting, and trend analysis you need a time-series system like Prometheus with persistent storage.",
+    "difficulty": "easy",
+    "subcategory": "metrics-server",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is 'kube-state-metrics' and how does it differ from metrics-server?",
+    "options": [
+      "It exposes cluster object state (Deployment replicas, Pod status, etc.) as Prometheus metrics, rather than raw resource usage",
+      "It's a drop-in replacement for metrics-server",
+      "It only monitors etcd health",
+      "It collects logs, not metrics"
+    ],
+    "answer": "It exposes cluster object state (Deployment replicas, Pod status, etc.) as Prometheus metrics, rather than raw resource usage",
+    "explanation": "kube-state-metrics listens to the API server and generates metrics like kube_deployment_status_replicas or kube_pod_status_phase, giving visibility into object-level health/state, complementing metrics-server's CPU/memory usage numbers.",
+    "difficulty": "medium",
+    "subcategory": "exporters",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the role of cAdvisor in Kubernetes monitoring?",
+    "options": [
+      "It's built into kubelet and collects container-level resource usage (CPU, memory, disk, network) metrics",
+      "It's a separate exporter you must always deploy manually",
+      "It replaces Prometheus for alerting",
+      "It only monitors node-level, not container-level metrics"
+    ],
+    "answer": "It's built into kubelet and collects container-level resource usage (CPU, memory, disk, network) metrics",
+    "explanation": "cAdvisor is embedded in the kubelet and exposes per-container metrics at /metrics/cadvisor, which Prometheus typically scrapes to get fine-grained container resource consumption data.",
+    "difficulty": "medium",
+    "subcategory": "exporters",
+    "category": "kubernetes"
+  },
+  {
+    "question": "In the standard Prometheus Operator setup, what CRD defines what targets Prometheus should scrape from a Kubernetes Service?",
+    "options": [
+      "ServiceMonitor",
+      "ScrapeConfig only",
+      "PodMonitor exclusively",
+      "MetricTarget"
+    ],
+    "answer": "ServiceMonitor",
+    "explanation": "A ServiceMonitor selects Services (via label selectors) and tells Prometheus which port/path to scrape metrics from; PodMonitor is a sibling CRD for scraping Pods directly without going through a Service.",
+    "difficulty": "medium",
+    "subcategory": "prometheus",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the difference between a ServiceMonitor and a PodMonitor in Prometheus Operator?",
+    "options": [
+      "ServiceMonitor scrapes via a Service's endpoints; PodMonitor scrapes Pods directly, useful when there's no stable Service",
+      "They are functionally identical, just named differently",
+      "PodMonitor is deprecated in favor of ServiceMonitor",
+      "ServiceMonitor only works for system namespaces"
+    ],
+    "answer": "ServiceMonitor scrapes via a Service's endpoints; PodMonitor scrapes Pods directly, useful when there's no stable Service",
+    "explanation": "PodMonitor is handy for scraping Pods that aren't fronted by a stable Service (e.g. Jobs, DaemonSets without a Service), while ServiceMonitor relies on Service endpoint discovery for target selection.",
+    "difficulty": "medium",
+    "subcategory": "prometheus",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What query language does Prometheus use?",
+    "options": [
+      "PromQL",
+      "SQL",
+      "LogQL",
+      "GraphQL"
+    ],
+    "answer": "PromQL",
+    "explanation": "PromQL is Prometheus's functional query language for selecting and aggregating time-series data, supporting operations like rate(), sum by(), histogram_quantile(), and range vector selectors.",
+    "difficulty": "easy",
+    "subcategory": "prometheus",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What does the PromQL function rate() do, and why shouldn't you use it directly on a gauge?",
+    "options": [
+      "Computes per-second average rate of increase for a counter over a time window; gauges can go up/down so rate() gives meaningless results",
+      "It calculates a static percentage change over 24 hours only",
+      "It smooths gauge data using exponential decay",
+      "It converts histograms into counters"
+    ],
+    "answer": "Computes per-second average rate of increase for a counter over a time window; gauges can go up/down so rate() gives meaningless results",
+    "explanation": "rate() is designed for monotonically increasing counters (e.g. http_requests_total), correctly handling counter resets. Applying it to a gauge (which can decrease) produces incorrect or nonsensical results since gauges represent point-in-time values.",
+    "difficulty": "medium",
+    "subcategory": "prometheus",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the purpose of Prometheus recording rules?",
+    "options": [
+      "Precompute frequently-used or expensive PromQL expressions into new time series for faster querying and alerting",
+      "Define which targets to scrape",
+      "Store raw logs alongside metrics",
+      "Configure alert notification channels"
+    ],
+    "answer": "Precompute frequently-used or expensive PromQL expressions into new time series for faster querying and alerting",
+    "explanation": "Recording rules evaluate an expression on a schedule and save the result as a new metric, avoiding recomputation of expensive aggregations on every dashboard load or alert evaluation, improving performance at scale.",
+    "difficulty": "medium",
+    "subcategory": "prometheus",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How does Prometheus Alertmanager relate to Prometheus itself?",
+    "options": [
+      "Prometheus evaluates alerting rules and sends firing alerts to Alertmanager, which handles deduplication, grouping, silencing, and routing to notification channels",
+      "Alertmanager stores all the metrics data",
+      "Prometheus cannot fire alerts without Alertmanager present",
+      "They are the same binary with different flags"
+    ],
+    "answer": "Prometheus evaluates alerting rules and sends firing alerts to Alertmanager, which handles deduplication, grouping, silencing, and routing to notification channels",
+    "explanation": "Prometheus itself only evaluates rules and generates alert states; Alertmanager is a separate component responsible for grouping similar alerts, silencing/inhibition, and routing to Slack/PagerDuty/email based on label-matching routes.",
+    "difficulty": "medium",
+    "subcategory": "alerting",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is 'alert inhibition' in Alertmanager used for?",
+    "options": [
+      "Suppressing lower-priority alerts when a related higher-priority alert is already firing",
+      "Permanently disabling an alert rule",
+      "Rate-limiting how often alerts are evaluated",
+      "Encrypting alert payloads"
+    ],
+    "answer": "Suppressing lower-priority alerts when a related higher-priority alert is already firing",
+    "explanation": "Inhibition rules stop noisy downstream alerts (e.g. individual Pod-down alerts) from firing when a broader alert (e.g. NodeDown or cluster outage) already covers the root cause, reducing alert fatigue during incidents.",
+    "difficulty": "hard",
+    "subcategory": "alerting",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the difference between Alertmanager 'silence' and 'inhibition'?",
+    "options": [
+      "Silence is a manually/temporarily applied mute for matching alerts; inhibition is an automatic rule-based suppression triggered by another alert",
+      "They are identical features with different names",
+      "Silence disables Prometheus scraping; inhibition disables alert rules",
+      "Inhibition is permanent, silence is rule-based"
+    ],
+    "answer": "Silence is a manually/temporarily applied mute for matching alerts; inhibition is an automatic rule-based suppression triggered by another alert",
+    "explanation": "Silences are typically created ad-hoc (e.g. during planned maintenance) with a time window and label matchers, while inhibitions are pre-configured relationships between alert types that apply automatically whenever conditions match.",
+    "difficulty": "medium",
+    "subcategory": "alerting",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What does the Horizontal Pod Autoscaler use to make scaling decisions on custom or external metrics beyond CPU/memory?",
+    "options": [
+      "The custom.metrics.k8s.io or external.metrics.k8s.io APIs, typically backed by the Prometheus Adapter",
+      "Only metrics-server, no other source is supported",
+      "Direct queries to Alertmanager",
+      "kube-state-metrics exclusively"
+    ],
+    "answer": "The custom.metrics.k8s.io or external.metrics.k8s.io APIs, typically backed by the Prometheus Adapter",
+    "explanation": "To autoscale on metrics like queue length or requests-per-second, you deploy the Prometheus Adapter which implements the custom/external metrics APIs by querying Prometheus, letting HPA reference those metrics in its scaling policy.",
+    "difficulty": "hard",
+    "subcategory": "hpa",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is a 'Service Level Objective' (SLO) and how does it typically relate to Prometheus-based monitoring?",
+    "options": [
+      "A target reliability threshold (e.g., 99.9% availability) tracked via SLIs computed from metrics, often with burn-rate alerts",
+      "A Kubernetes CRD that automatically enforces uptime",
+      "A replacement for readiness probes",
+      "A billing metric for cloud cost tracking"
+    ],
+    "answer": "A target reliability threshold (e.g., 99.9% availability) tracked via SLIs computed from metrics, often with burn-rate alerts",
+    "explanation": "SLOs are defined against Service Level Indicators (e.g., success rate, latency) computed from Prometheus metrics; multi-window multi-burn-rate alerts (a common SRE pattern) alert when the error budget is being consumed too fast relative to the SLO window.",
+    "difficulty": "hard",
+    "subcategory": "slos",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is an 'error budget' in the context of SLOs?",
+    "options": [
+      "The allowed amount of unreliability (e.g., 0.1% downtime) before an SLO is violated, over a given time window",
+      "A budget allocated for cloud infrastructure spend",
+      "A quota for how many alerts can fire per day",
+      "A metric tracking Prometheus storage errors"
+    ],
+    "answer": "The allowed amount of unreliability (e.g., 0.1% downtime) before an SLO is violated, over a given time window",
+    "explanation": "If your SLO is 99.9% availability over 30 days, your error budget is the remaining 0.1% (~43 minutes) of allowed failures; teams use budget burn rate to decide whether to slow down releases or focus on reliability work.",
+    "difficulty": "hard",
+    "subcategory": "slos",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the primary purpose of Grafana in a Kubernetes monitoring stack?",
+    "options": [
+      "Visualization/dashboarding layer that queries data sources like Prometheus, Loki, or Elasticsearch",
+      "A metrics collection agent replacing Prometheus",
+      "A log aggregation storage backend",
+      "An alerting rules engine independent of any data source"
+    ],
+    "answer": "Visualization/dashboarding layer that queries data sources like Prometheus, Loki, or Elasticsearch",
+    "explanation": "Grafana itself doesn't collect or store metrics; it queries configured data sources (commonly Prometheus for metrics, Loki for logs) and renders dashboards, and can also fire its own alerts based on those queries.",
+    "difficulty": "easy",
+    "subcategory": "grafana",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the difference between Grafana's built-in alerting and Prometheus Alertmanager?",
+    "options": [
+      "Grafana alerting evaluates queries across any data source and can route directly or via a contact point; Alertmanager is Prometheus-native and handles grouping/inhibition/silencing more richly",
+      "They are the exact same system",
+      "Grafana cannot alert at all, only display data",
+      "Alertmanager only works with Grafana dashboards"
+    ],
+    "answer": "Grafana alerting evaluates queries across any data source and can route directly or via a contact point; Alertmanager is Prometheus-native and handles grouping/inhibition/silencing more richly",
+    "explanation": "Grafana unified alerting is data-source agnostic and increasingly featureful, but many production Prometheus setups still route through Alertmanager for its mature grouping/inhibition/silence model and multi-Prometheus federation support.",
+    "difficulty": "medium",
+    "subcategory": "grafana",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What log aggregation tool is designed to work natively with Grafana and uses labels similar to Prometheus, but only indexes metadata (not full text)?",
+    "options": [
+      "Loki",
+      "Elasticsearch",
+      "Fluentd",
+      "Filebeat"
+    ],
+    "answer": "Loki",
+    "explanation": "Grafana Loki indexes only log labels/metadata (like Prometheus does for metrics) rather than full-text content, making it cheaper to run at scale; actual log lines are stored compressed and queried with LogQL.",
+    "difficulty": "medium",
+    "subcategory": "logging",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What DaemonSet-based tool is commonly used to ship container logs from every node to a central logging backend?",
+    "options": [
+      "Fluent Bit / Fluentd",
+      "kube-state-metrics",
+      "metrics-server",
+      "cAdvisor"
+    ],
+    "answer": "Fluent Bit / Fluentd",
+    "explanation": "Deployed as a DaemonSet, Fluent Bit or Fluentd tails container log files (or reads via the container runtime API) on each node, parses/enriches them with Kubernetes metadata, and forwards to backends like Elasticsearch, Loki, or a SIEM.",
+    "difficulty": "easy",
+    "subcategory": "logging",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why is centralized logging important in Kubernetes, given container log files on nodes?",
+    "options": [
+      "Container/Pod logs are ephemeral and lost when a Pod is deleted or a node fails, so centralization preserves history for debugging",
+      "Kubernetes stores logs indefinitely on the API server otherwise",
+      "Local node logs are automatically replicated across nodes",
+      "It's only needed for compliance, not debugging"
+    ],
+    "answer": "Container/Pod logs are ephemeral and lost when a Pod is deleted or a node fails, so centralization preserves history for debugging",
+    "explanation": "kubectl logs reads from the kubelet/container runtime's local log files, which are deleted along with the Pod/container. A dedicated logging pipeline (Fluent Bit -> Loki/ES) preserves logs beyond Pod lifecycle and enables cross-Pod search.",
+    "difficulty": "easy",
+    "subcategory": "logging",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is distributed tracing used for in a microservices Kubernetes environment, and what's a common implementation?",
+    "options": [
+      "Tracking a single request's path and latency across multiple services, commonly via OpenTelemetry and Jaeger/Tempo",
+      "Tracing which node a Pod was scheduled to",
+      "Logging RBAC decisions across the cluster",
+      "Tracking container image build history"
+    ],
+    "answer": "Tracking a single request's path and latency across multiple services, commonly via OpenTelemetry and Jaeger/Tempo",
+    "explanation": "Distributed tracing propagates a trace ID across service calls, letting tools like Jaeger or Grafana Tempo visualize per-span latency across the whole request path, which is essential for pinpointing slow services in a microservices architecture.",
+    "difficulty": "medium",
+    "subcategory": "tracing",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is OpenTelemetry, and how does it relate to Prometheus/Jaeger?",
+    "options": [
+      "A vendor-neutral standard/SDK for collecting metrics, logs, and traces that can export to backends like Prometheus and Jaeger",
+      "A replacement for Kubernetes itself",
+      "A Grafana-only plugin",
+      "An alerting protocol"
+    ],
+    "answer": "A vendor-neutral standard/SDK for collecting metrics, logs, and traces that can export to backends like Prometheus and Jaeger",
+    "explanation": "OpenTelemetry provides standardized instrumentation APIs/SDKs and a Collector that can receive telemetry data and export it to multiple backends (Prometheus for metrics, Jaeger/Tempo for traces), avoiding vendor lock-in for instrumentation.",
+    "difficulty": "medium",
+    "subcategory": "tracing",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How would you monitor the health of the Kubernetes control plane components (API server, scheduler, controller-manager) themselves?",
+    "options": [
+      "Scrape their /metrics endpoints with Prometheus (kube-apiserver, scheduler, controller-manager all expose Prometheus metrics)",
+      "Control plane components cannot be monitored, only Pods can",
+      "Use kubectl top on control plane pods only",
+      "Rely solely on cloud provider dashboards with no direct access"
+    ],
+    "answer": "Scrape their /metrics endpoints with Prometheus (kube-apiserver, scheduler, controller-manager all expose Prometheus metrics)",
+    "explanation": "Each control plane component exposes a /metrics endpoint (apiserver_request_duration_seconds, scheduler_scheduling_duration_seconds, workqueue metrics, etc.) that Prometheus can scrape, giving visibility into API latency, scheduling throughput, and reconciliation queue depth.",
+    "difficulty": "medium",
+    "subcategory": "monitoring-control-plane",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What does a high 'apiserver_request_duration_seconds' or growing workqueue depth typically indicate?",
+    "options": [
+      "API server or controller performance degradation, possibly due to etcd latency, high request volume, or resource starvation",
+      "Normal, expected baseline behavior always",
+      "A DNS resolution problem only",
+      "A misconfigured Ingress"
+    ],
+    "answer": "API server or controller performance degradation, possibly due to etcd latency, high request volume, or resource starvation",
+    "explanation": "Rising latency percentiles or workqueue backlog are classic early-warning signals of control-plane strain \u2014 often caused by etcd disk I/O bottlenecks, excessive watch/list load from clients, or insufficient CPU/memory on control plane nodes.",
+    "difficulty": "hard",
+    "subcategory": "monitoring-control-plane",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why is etcd disk latency such a critical metric to monitor in a self-managed Kubernetes cluster?",
+    "options": [
+      "etcd requires fast, consistent disk fsync for its Raft consensus; high latency causes leader elections and API server slowness/timeouts",
+      "etcd doesn't use disk at all, purely in-memory",
+      "Disk latency only affects logging, not etcd",
+      "etcd automatically recovers from any disk latency with no impact"
+    ],
+    "answer": "etcd requires fast, consistent disk fsync for its Raft consensus; high latency causes leader elections and API server slowness/timeouts",
+    "explanation": "etcd's Raft protocol needs fast fsync to disk for write acknowledgments; slow disks (e.g., noisy-neighbor cloud storage) cause missed heartbeats, unnecessary leader elections, and cascading API server latency/timeouts across the whole cluster.",
+    "difficulty": "hard",
+    "subcategory": "monitoring-control-plane",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the 'four golden signals' framework (from Google SRE) commonly monitored for services?",
+    "options": [
+      "Latency, traffic, errors, and saturation",
+      "CPU, memory, disk, network",
+      "Uptime, cost, security, compliance",
+      "Pods, nodes, namespaces, clusters"
+    ],
+    "answer": "Latency, traffic, errors, and saturation",
+    "explanation": "These four signals form the baseline dashboard for almost any service: how long requests take (latency), how much demand exists (traffic), how often things fail (errors), and how full/utilized the system is (saturation), guiding both dashboards and SLOs.",
+    "difficulty": "medium",
+    "subcategory": "slos",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What are the 'RED' and 'USE' monitoring methodologies?",
+    "options": [
+      "RED (Rate, Errors, Duration) focuses on request-driven services; USE (Utilization, Saturation, Errors) focuses on resources like CPU/disk",
+      "Both are the same methodology with different names",
+      "RED is for logs, USE is for metrics exclusively",
+      "They apply only to network monitoring"
+    ],
+    "answer": "RED (Rate, Errors, Duration) focuses on request-driven services; USE (Utilization, Saturation, Errors) focuses on resources like CPU/disk",
+    "explanation": "RED is best applied to services/APIs (request rate, error rate, duration percentiles), while USE (from Brendan Gregg) is aimed at infrastructure resources like CPUs, disks, and network interfaces, checking utilization, saturation queue, and error counts.",
+    "difficulty": "medium",
+    "subcategory": "slos",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How can you monitor and alert on Pods stuck in CrashLoopBackOff across a cluster?",
+    "options": [
+      "Alert on kube_pod_container_status_restarts_total (from kube-state-metrics) rate or on kube_pod_status_phase/reason",
+      "There's no metric for this; must manually check every Pod",
+      "Only visible via 'kubectl describe', not queryable",
+      "Use metrics-server's crash counter"
+    ],
+    "answer": "Alert on kube_pod_container_status_restarts_total (from kube-state-metrics) rate or on kube_pod_status_phase/reason",
+    "explanation": "kube-state-metrics exposes restart counts and waiting-state reasons per container; a PromQL alert on a high rate of increase (or the presence of reason='CrashLoopBackOff') catches crash-looping workloads cluster-wide without manual inspection.",
+    "difficulty": "medium",
+    "subcategory": "exporters",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is 'black-box' monitoring versus 'white-box' monitoring?",
+    "options": [
+      "Black-box tests external behavior (e.g., HTTP probes via Blackbox Exporter) without internal visibility; white-box uses internally exposed metrics/logs",
+      "Black-box only applies to security scanning",
+      "White-box means monitoring is disabled",
+      "They refer to different Kubernetes namespaces"
+    ],
+    "answer": "Black-box tests external behavior (e.g., HTTP probes via Blackbox Exporter) without internal visibility; white-box uses internally exposed metrics/logs",
+    "explanation": "Black-box monitoring (e.g. Prometheus Blackbox Exporter doing synthetic HTTP/TCP/ICMP probes) checks a system the way a user would, from outside, while white-box monitoring relies on metrics and logs the application itself exposes, giving deeper internal context.",
+    "difficulty": "medium",
+    "subcategory": "monitoring-approaches",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is Prometheus 'federation' used for?",
+    "options": [
+      "Aggregating/selecting a subset of metrics from one Prometheus server into another, e.g. for a global view across clusters",
+      "Backing up Prometheus data to S3",
+      "Automatically discovering new Kubernetes clusters",
+      "Encrypting metric payloads between scrape targets"
+    ],
+    "answer": "Aggregating/selecting a subset of metrics from one Prometheus server into another, e.g. for a global view across clusters",
+    "explanation": "A higher-level 'global' Prometheus scrapes the /federate endpoint of per-cluster Prometheus servers for selected aggregated metrics, enabling cross-cluster dashboards without shipping every raw metric to a central store.",
+    "difficulty": "hard",
+    "subcategory": "prometheus",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is Thanos or Mimir primarily used for in large-scale Prometheus deployments?",
+    "options": [
+      "Long-term, horizontally scalable metric storage and global query view across multiple Prometheus instances",
+      "Replacing kubelet's cAdvisor",
+      "Log aggregation instead of metrics",
+      "Ingress traffic routing"
+    ],
+    "answer": "Long-term, horizontally scalable metric storage and global query view across multiple Prometheus instances",
+    "explanation": "Thanos (and Grafana Mimir) extend vanilla Prometheus, which has limited local retention and no native clustering, by offering object-storage-backed long-term retention, deduplication, and a unified query layer across many Prometheus replicas/clusters.",
+    "difficulty": "hard",
+    "subcategory": "prometheus",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why is Prometheus's default local storage considered unsuitable for very long retention or high availability out of the box?",
+    "options": [
+      "It's a single-node time-series database on local disk with no built-in replication or long-term durability",
+      "Prometheus stores everything in etcd, which has size limits",
+      "Prometheus cannot store more than 1 hour of data at all",
+      "It requires a commercial license after 24 hours"
+    ],
+    "answer": "It's a single-node time-series database on local disk with no built-in replication or long-term durability",
+    "explanation": "Vanilla Prometheus is designed as an ephemeral, single-server TSDB; losing the disk loses the data, and retention is bounded by local storage size/time. Production setups add remote-write to Thanos/Mimir/Cortex or cloud-managed services for durability and long retention.",
+    "difficulty": "medium",
+    "subcategory": "prometheus",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What does 'cardinality explosion' mean in the context of Prometheus metrics, and why is it dangerous?",
+    "options": [
+      "Too many unique label value combinations create excessive time series, consuming memory/disk and slowing queries",
+      "Too many Prometheus servers running simultaneously",
+      "Alerts firing too frequently",
+      "Grafana dashboards loading too many panels"
+    ],
+    "answer": "Too many unique label value combinations create excessive time series, consuming memory/disk and slowing queries",
+    "explanation": "Labels with high-cardinality values (like raw user IDs, full request paths, or Pod IPs) multiply the number of distinct time series exponentially, which can exhaust Prometheus memory and severely degrade query performance \u2014 a very common production incident cause.",
+    "difficulty": "hard",
+    "subcategory": "prometheus",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How would you troubleshoot a Prometheus target showing as 'DOWN' in the Targets page?",
+    "options": [
+      "Check network connectivity/NetworkPolicy to the target, verify the scrape port/path is correct, and check target Pod logs for the /metrics endpoint",
+      "Restart Prometheus, that always fixes target issues",
+      "Delete and recreate the ServiceMonitor blindly",
+      "Increase scrape_interval globally"
+    ],
+    "answer": "Check network connectivity/NetworkPolicy to the target, verify the scrape port/path is correct, and check target Pod logs for the /metrics endpoint",
+    "explanation": "Common causes: wrong port/path in the ServiceMonitor, missing metrics endpoint on the app, firewall/NetworkPolicy blocking Prometheus's Pod, or the target Pod being unready/crashed \u2014 systematically check each layer rather than assuming Prometheus itself is broken.",
+    "difficulty": "medium",
+    "subcategory": "troubleshooting",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the purpose of the 'up' metric that Prometheus automatically generates for every scrape target?",
+    "options": [
+      "Indicates (1 or 0) whether the last scrape of that target succeeded",
+      "Tracks node uptime in seconds",
+      "Shows cluster CPU utilization",
+      "Counts the number of active alerts"
+    ],
+    "answer": "Indicates (1 or 0) whether the last scrape of that target succeeded",
+    "explanation": "'up' is auto-generated per target and is fundamental for meta-monitoring: alerting on 'up == 0' for critical exporters/services tells you your monitoring pipeline itself lost visibility into that target, distinct from the target's own application-level metrics.",
+    "difficulty": "easy",
+    "subcategory": "prometheus",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How can you monitor GPU utilization for ML workloads running on Kubernetes?",
+    "options": [
+      "Deploy the NVIDIA DCGM Exporter as a DaemonSet and scrape it with Prometheus",
+      "GPUs cannot be monitored in Kubernetes",
+      "Use metrics-server, which supports GPU metrics natively",
+      "Only cloud-provider dashboards can show GPU metrics"
+    ],
+    "answer": "Deploy the NVIDIA DCGM Exporter as a DaemonSet and scrape it with Prometheus",
+    "explanation": "DCGM Exporter runs alongside the NVIDIA device plugin on GPU nodes, exposing per-GPU utilization, memory, temperature, and power metrics in Prometheus format, which Grafana can then visualize alongside standard cluster metrics.",
+    "difficulty": "hard",
+    "subcategory": "exporters",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What Kubernetes-native mechanism can trigger a Pod restart if it becomes unresponsive, tying into monitoring/self-healing?",
+    "options": [
+      "Liveness probes, which kubelet uses to restart containers failing health checks",
+      "Only external monitoring tools can restart Pods, never Kubernetes itself",
+      "ResourceQuota triggers automatic restarts",
+      "HPA restarts unhealthy pods directly"
+    ],
+    "answer": "Liveness probes, which kubelet uses to restart containers failing health checks",
+    "explanation": "Liveness probes are Kubernetes' built-in self-healing signal: if a container repeatedly fails its liveness check (HTTP/TCP/exec), kubelet kills and restarts it, working alongside external monitoring/alerting rather than replacing it for deeper issue diagnosis.",
+    "difficulty": "easy",
+    "subcategory": "monitoring-approaches",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why should alerting thresholds generally be based on symptoms (e.g., error rate, latency) rather than causes (e.g., CPU usage) where possible?",
+    "options": [
+      "Symptom-based alerts directly reflect user impact, reducing false positives from causes that don't actually degrade the service",
+      "Cause-based alerts are always more accurate",
+      "Kubernetes only supports symptom-based alerting technically",
+      "There's no meaningful difference in practice"
+    ],
+    "answer": "Symptom-based alerts directly reflect user impact, reducing false positives from causes that don't actually degrade the service",
+    "explanation": "High CPU alone might not affect users if latency/error rate stay fine, causing noisy false alarms; SRE best practice favors paging on symptoms that indicate actual user-facing degradation, using cause metrics mainly for root-cause diagnosis after the page.",
+    "difficulty": "medium",
+    "subcategory": "alerting",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you estimate Prometheus memory requirements for a cluster with a given number of active time series?",
+    "options": [
+      "Roughly ~1-3KB per active series in memory (plus WAL), so total memory scales with active series count and scrape frequency",
+      "Memory usage is fixed regardless of series count",
+      "Prometheus uses disk exclusively, no meaningful RAM usage",
+      "It depends only on the number of Grafana dashboards"
+    ],
+    "answer": "Roughly ~1-3KB per active series in memory (plus WAL), so total memory scales with active series count and scrape frequency",
+    "explanation": "Prometheus keeps recent chunks of every active series in memory before flushing to disk; capacity planning generally estimates a few KB per series, so teams track scrape target count/cardinality growth to size Prometheus memory and plan for sharding/federation before hitting OOM.",
+    "difficulty": "hard",
+    "subcategory": "prometheus",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the purpose of the Node Exporter in a Kubernetes monitoring stack?",
+    "options": [
+      "Exposes host-level OS metrics (CPU, memory, disk I/O, filesystem, network) for each node, run as a DaemonSet",
+      "Exposes Kubernetes object state like Deployments/Pods",
+      "Replaces kubelet for node management",
+      "Only used for GPU monitoring"
+    ],
+    "answer": "Exposes host-level OS metrics (CPU, memory, disk I/O, filesystem, network) for each node, run as a DaemonSet",
+    "explanation": "Node Exporter runs on every node (typically as a DaemonSet with hostNetwork/hostPID) and exposes low-level OS metrics from /proc and /sys, complementing cAdvisor's container-level metrics with node/host-level visibility for capacity planning and hardware issue detection.",
+    "difficulty": "easy",
+    "subcategory": "exporters",
+    "category": "kubernetes"
+  }
+]
