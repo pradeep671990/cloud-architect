@@ -1,1 +1,562 @@
-[]
+[
+  {
+    "question": "What is a Helm 'Chart'?",
+    "options": [
+      "A packaged collection of Kubernetes YAML templates and metadata",
+      "A running instance of an application",
+      "A CLI plugin manager",
+      "A container registry"
+    ],
+    "answer": "A packaged collection of Kubernetes YAML templates and metadata",
+    "explanation": "A Chart is Helm's packaging format: a directory (or .tgz) containing Chart.yaml metadata, templates/, values.yaml defaults, and optional subcharts. It describes a related set of Kubernetes resources.",
+    "difficulty": "easy",
+    "subcategory": "charts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What command installs a Helm chart as a new release?",
+    "options": [
+      "helm install",
+      "helm apply",
+      "helm create",
+      "helm deploy"
+    ],
+    "answer": "helm install",
+    "explanation": "'helm install <release-name> <chart>' renders templates with values and applies the resulting manifests to the cluster, tracked as a named release.",
+    "difficulty": "easy",
+    "subcategory": "releases",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you upgrade an existing Helm release with new values without losing history?",
+    "options": [
+      "helm upgrade -f values.yaml <release> <chart>",
+      "helm install --force",
+      "helm delete then helm install",
+      "kubectl apply -f chart/"
+    ],
+    "answer": "helm upgrade -f values.yaml <release> <chart>",
+    "explanation": "'helm upgrade' diffs the new rendered manifests against the current release and applies changes, storing a new revision so you can roll back later with 'helm rollback'.",
+    "difficulty": "easy",
+    "subcategory": "releases",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the purpose of values.yaml in a Helm chart?",
+    "options": [
+      "Provide default configurable parameters injected into templates",
+      "Store the chart's compiled binary",
+      "Define RBAC rules only",
+      "Cache previous release manifests"
+    ],
+    "answer": "Provide default configurable parameters injected into templates",
+    "explanation": "values.yaml supplies default configuration values that templates reference via {{ .Values.x }}. Users override them with --set or -f custom-values.yaml at install/upgrade time.",
+    "difficulty": "easy",
+    "subcategory": "values",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you override a single value on the command line during install?",
+    "options": [
+      "--set key=value",
+      "--values key=value",
+      "--override key=value",
+      "--param key=value"
+    ],
+    "answer": "--set key=value",
+    "explanation": "--set lets you override individual values inline (e.g. --set replicaCount=3,image.tag=1.2.0), which take precedence over values.yaml but are overridden by a later -f file or --set-string with higher precedence order.",
+    "difficulty": "easy",
+    "subcategory": "values",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the precedence order when multiple values sources are used (highest to lowest)?",
+    "options": [
+      "--set > -f (last file wins) > values.yaml",
+      "values.yaml > -f > --set",
+      "--set > values.yaml > -f",
+      "-f > --set > values.yaml"
+    ],
+    "answer": "--set > -f (last file wins) > values.yaml",
+    "explanation": "Helm merges values.yaml defaults with -f files (later files override earlier ones) and finally --set/--set-string flags, which have the highest precedence.",
+    "difficulty": "medium",
+    "subcategory": "values",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Which command renders chart templates locally without installing to the cluster?",
+    "options": [
+      "helm template",
+      "helm render",
+      "helm dry-install",
+      "helm preview"
+    ],
+    "answer": "helm template",
+    "explanation": "'helm template' renders manifests locally using the chart and values, useful for reviewing output, piping to kubectl diff, or CI validation without touching the cluster.",
+    "difficulty": "easy",
+    "subcategory": "templating",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What does 'helm install --dry-run --debug' do?",
+    "options": [
+      "Simulates install, showing rendered manifests without applying them",
+      "Installs only CRDs",
+      "Skips hooks but installs resources",
+      "Validates chart syntax only, no rendering"
+    ],
+    "answer": "Simulates install, showing rendered manifests without applying them",
+    "explanation": "--dry-run renders and validates against the API server (server-side validation) without persisting objects, and --debug prints computed values and verbose output for troubleshooting templates.",
+    "difficulty": "medium",
+    "subcategory": "templating",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you roll back a Helm release to a previous revision?",
+    "options": [
+      "helm rollback <release> <revision>",
+      "helm undo <release>",
+      "helm revert <release>",
+      "kubectl rollout undo helm/<release>"
+    ],
+    "answer": "helm rollback <release> <revision>",
+    "explanation": "Helm keeps a history of revisions (configurable retention). 'helm rollback myrelease 3' reapplies the manifests from revision 3, creating a new revision entry.",
+    "difficulty": "easy",
+    "subcategory": "releases",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What Helm template function is used to include a named template/partial?",
+    "options": [
+      "{{ include \"name\" . }}",
+      "{{ import \"name\" }}",
+      "{{ require \"name\" }}",
+      "{{ template.load \"name\" }}"
+    ],
+    "answer": "{{ include \"name\" . }}",
+    "explanation": "'include' calls a named template (defined with {{ define }}) and returns its output as a string so it can be piped into functions like 'nindent'; 'template' can also call it but can't be piped.",
+    "difficulty": "medium",
+    "subcategory": "templating",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why is 'include' generally preferred over 'template' in Helm charts?",
+    "options": [
+      "'include' output can be piped to functions like indent/nindent",
+      "'template' is deprecated",
+      "'include' runs faster",
+      "'template' cannot access .Values"
+    ],
+    "answer": "'include' output can be piped to functions like indent/nindent",
+    "explanation": "Since 'template' writes directly to output and can't be used in a pipeline, 'include' is preferred whenever you need to post-process the result, e.g. {{ include \"mychart.labels\" . | nindent 4 }}.",
+    "difficulty": "medium",
+    "subcategory": "templating",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is a Helm hook (e.g. pre-install, post-upgrade)?",
+    "options": [
+      "An annotation that runs a resource at a specific point in the release lifecycle",
+      "A webhook for admission control",
+      "A Git pre-commit hook",
+      "A Helm plugin trigger"
+    ],
+    "answer": "An annotation that runs a resource at a specific point in the release lifecycle",
+    "explanation": "Adding annotation 'helm.sh/hook: pre-install' to a Job/Pod manifest tells Helm to run it at that lifecycle phase (pre-install, post-install, pre-upgrade, post-upgrade, pre-delete, etc.), useful for DB migrations or backups.",
+    "difficulty": "medium",
+    "subcategory": "hooks",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you control the execution order of multiple Helm hooks in the same phase?",
+    "options": [
+      "helm.sh/hook-weight annotation, lower runs first",
+      "Alphabetical order of resource names",
+      "Order they appear in templates/ directory",
+      "Hooks always run in parallel"
+    ],
+    "answer": "helm.sh/hook-weight annotation, lower runs first",
+    "explanation": "helm.sh/hook-weight accepts a string integer; hooks are sorted ascending by weight before execution, allowing deterministic ordering of multiple hook resources within the same phase.",
+    "difficulty": "hard",
+    "subcategory": "hooks",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What does 'helm.sh/hook-delete-policy' control?",
+    "options": [
+      "When hook resources are deleted (before creation, on success, on failure)",
+      "When the chart is deleted from the repo",
+      "How long to wait before rollback",
+      "Which namespace hooks deploy to"
+    ],
+    "answer": "When hook resources are deleted (before creation, on success, on failure)",
+    "explanation": "Values like before-hook-creation, hook-succeeded, hook-failed determine cleanup behavior of hook Jobs/Pods, preventing leftover completed Job objects from cluttering the cluster.",
+    "difficulty": "hard",
+    "subcategory": "hooks",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the difference between a Helm 'library chart' and a normal chart?",
+    "options": [
+      "Library charts provide reusable template snippets and cannot be installed directly",
+      "Library charts can only contain CRDs",
+      "Library charts run as sidecars",
+      "There is no difference"
+    ],
+    "answer": "Library charts provide reusable template snippets and cannot be installed directly",
+    "explanation": "Charts with type: library in Chart.yaml define common helpers (labels, common resource templates) consumed by other charts via 'include', but produce no Kubernetes objects of their own and can't be 'helm install'ed.",
+    "difficulty": "hard",
+    "subcategory": "charts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How does a Helm chart declare a dependency on another chart?",
+    "options": [
+      "dependencies section in Chart.yaml with name/version/repository",
+      "requirements.txt file",
+      "import-values.yaml only",
+      "A Kubernetes ConfigMap"
+    ],
+    "answer": "dependencies section in Chart.yaml with name/version/repository",
+    "explanation": "Chart.yaml's 'dependencies' list specifies subchart name, version constraint, and repository URL; 'helm dependency update' downloads them into the charts/ directory as .tgz archives.",
+    "difficulty": "medium",
+    "subcategory": "dependencies",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What does 'helm dependency update' do?",
+    "options": [
+      "Downloads chart dependencies listed in Chart.yaml into charts/",
+      "Upgrades the running release to latest chart version",
+      "Updates values.yaml with new defaults",
+      "Refreshes the local Helm repo cache only"
+    ],
+    "answer": "Downloads chart dependencies listed in Chart.yaml into charts/",
+    "explanation": "It reads Chart.yaml dependencies, resolves versions against Chart.lock/repositories, and fetches the .tgz packages into the charts/ subdirectory, generating/updating Chart.lock.",
+    "difficulty": "medium",
+    "subcategory": "dependencies",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How can a parent chart pass a subset of its values to a subchart under a different structure?",
+    "options": [
+      "import-values / export-values in Chart.yaml dependency block",
+      "Subcharts always inherit all parent values automatically",
+      "Using --set-subchart flag",
+      "Subcharts cannot receive parent values"
+    ],
+    "answer": "import-values / export-values in Chart.yaml dependency block",
+    "explanation": "By default subcharts see values nested under their own name in the parent's values.yaml (global excepted). 'import-values' lets a parent chart import specific keys from a subchart's exports into its own scope.",
+    "difficulty": "hard",
+    "subcategory": "dependencies",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the purpose of the 'global' key in Helm values?",
+    "options": [
+      "Values accessible by the parent chart and all subcharts",
+      "A value that cannot be overridden",
+      "A reserved key for Helm's internal use only",
+      "Defines cluster-wide RBAC"
+    ],
+    "answer": "Values accessible by the parent chart and all subcharts",
+    "explanation": "Unlike normal namespaced subchart values, anything under .Values.global is passed down unmodified to every subchart, useful for shared settings like image registry or environment name.",
+    "difficulty": "medium",
+    "subcategory": "values",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What command lists all installed Helm releases in a namespace?",
+    "options": [
+      "helm list",
+      "helm ls --releases",
+      "helm get releases",
+      "kubectl get helmreleases"
+    ],
+    "answer": "helm list",
+    "explanation": "'helm list' (or 'helm ls') shows releases in the current namespace with status, revision, and chart version; add -A/--all-namespaces to see releases across the cluster.",
+    "difficulty": "easy",
+    "subcategory": "releases",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you view the final rendered manifest that was actually applied for a release?",
+    "options": [
+      "helm get manifest <release>",
+      "helm show manifest <chart>",
+      "kubectl get manifest <release>",
+      "helm template --applied"
+    ],
+    "answer": "helm get manifest <release>",
+    "explanation": "'helm get manifest' returns the exact Kubernetes YAML that Helm applied for that release/revision, useful for auditing drift versus 'helm template' which re-renders fresh from the chart.",
+    "difficulty": "medium",
+    "subcategory": "releases",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Where does Helm 3 store release state by default?",
+    "options": [
+      "Secrets in the release's namespace",
+      "A dedicated tiller Deployment",
+      "ConfigMaps in kube-system only",
+      "A local SQLite file"
+    ],
+    "answer": "Secrets in the release's namespace",
+    "explanation": "Helm 3 removed Tiller; release metadata (values, manifest, chart) is stored as Secret objects (type helm.sh/release.v1) in the namespace the release is deployed to, one per revision.",
+    "difficulty": "medium",
+    "subcategory": "releases",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What major architectural change happened between Helm 2 and Helm 3?",
+    "options": [
+      "Removal of the server-side Tiller component",
+      "Introduction of values.yaml",
+      "Charts became mandatory Docker images",
+      "Addition of the 'helm install' command"
+    ],
+    "answer": "Removal of the server-side Tiller component",
+    "explanation": "Helm 2 required a cluster-side Tiller pod with broad RBAC permissions, a security concern. Helm 3 is client-only, uses the user's kubeconfig/RBAC directly, and stores release info as Secrets.",
+    "difficulty": "medium",
+    "subcategory": "architecture",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you add a new chart repository to Helm?",
+    "options": [
+      "helm repo add <name> <url>",
+      "helm source add <url>",
+      "helm chart register <url>",
+      "helm install --repo <url>"
+    ],
+    "answer": "helm repo add <name> <url>",
+    "explanation": "'helm repo add bitnami https://charts.bitnami.com/bitnami' registers a repo locally; run 'helm repo update' afterward to refresh the local index of available charts/versions.",
+    "difficulty": "easy",
+    "subcategory": "repositories",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What file format describes a Helm chart repository's available charts?",
+    "options": [
+      "index.yaml",
+      "catalog.json",
+      "Chart.lock",
+      "repo-manifest.yaml"
+    ],
+    "answer": "index.yaml",
+    "explanation": "A chart repo is simply an HTTP server hosting packaged .tgz charts plus an index.yaml listing chart names, versions, and download URLs, which 'helm repo update' fetches and caches locally.",
+    "difficulty": "medium",
+    "subcategory": "repositories",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How can Helm charts be distributed using OCI registries instead of classic HTTP repos?",
+    "options": [
+      "helm push/pull using oci:// registry references",
+      "Only via GitHub releases",
+      "Helm does not support OCI",
+      "Converting charts to Docker images manually"
+    ],
+    "answer": "helm push/pull using oci:// registry references",
+    "explanation": "Helm 3.8+ supports OCI natively: 'helm push chart.tgz oci://registry/repo' and 'helm install myrel oci://registry/repo/chart --version 1.0.0' let you store/distribute charts in any OCI-compliant registry (ECR, ACR, GHCR, Harbor).",
+    "difficulty": "hard",
+    "subcategory": "repositories",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What does 'helm lint' check?",
+    "options": [
+      "Chart structure and template syntax/best-practice issues",
+      "Kubernetes cluster health",
+      "Container image vulnerabilities",
+      "Network policy conflicts"
+    ],
+    "answer": "Chart structure and template syntax/best-practice issues",
+    "explanation": "helm lint validates Chart.yaml required fields, template rendering errors, and common issues (missing values, malformed YAML) before you attempt an install, catching problems early in CI.",
+    "difficulty": "easy",
+    "subcategory": "testing",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you write automated tests for a Helm chart that run after install?",
+    "options": [
+      "Define a Pod/Job manifest with helm.sh/hook: test annotation, run via 'helm test'",
+      "Write Go unit tests only",
+      "Use kubectl test command",
+      "Tests aren't supported in Helm"
+    ],
+    "answer": "Define a Pod/Job manifest with helm.sh/hook: test annotation, run via 'helm test'",
+    "explanation": "Templates under templates/tests/ annotated with 'helm.sh/hook: test' are executed on demand with 'helm test <release>', typically running connectivity or smoke checks against the deployed release.",
+    "difficulty": "medium",
+    "subcategory": "testing",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is 'helm-unittest' commonly used for?",
+    "options": [
+      "Unit testing chart template rendering output against expected YAML, without a cluster",
+      "Load testing the application",
+      "Scanning images for CVEs",
+      "Linting Go code in chart hooks"
+    ],
+    "answer": "Unit testing chart template rendering output against expected YAML, without a cluster",
+    "explanation": "It's a popular community plugin that renders templates with given values and asserts on the resulting manifests (e.g. replica count, labels) purely offline, ideal for fast CI feedback before real deployment.",
+    "difficulty": "hard",
+    "subcategory": "testing",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you securely manage secret values (passwords, tokens) used in Helm charts?",
+    "options": [
+      "Use helm-secrets/SOPS or external secret managers instead of committing plaintext values",
+      "Store them directly in values.yaml in Git",
+      "Hardcode them in templates",
+      "Pass them as chart labels"
+    ],
+    "answer": "Use helm-secrets/SOPS or external secret managers instead of committing plaintext values",
+    "explanation": "Plaintext secrets in values.yaml/Git are a security risk. Common patterns: helm-secrets plugin (SOPS-encrypted values files), External Secrets Operator, or Vault injection so Helm only references secret names, not values.",
+    "difficulty": "medium",
+    "subcategory": "security",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why should Helm release Secrets in Helm 3 be protected via RBAC?",
+    "options": [
+      "They contain the full rendered manifest and values, potentially including sensitive data",
+      "They store cluster admin kubeconfig",
+      "They contain Tiller's credentials",
+      "They are world-readable by default with no RBAC"
+    ],
+    "answer": "They contain the full rendered manifest and values, potentially including sensitive data",
+    "explanation": "Since release history (including any secret values passed in) lives in Secret objects, anyone who can 'kubectl get secrets' in that namespace could read historical/current release data \u2014 scope RBAC accordingly.",
+    "difficulty": "medium",
+    "subcategory": "security",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What happens to Kubernetes resources when you run 'helm uninstall'?",
+    "options": [
+      "All resources owned by the release are deleted, and hooks/history removed unless --keep-history is set",
+      "Only the release record is deleted, resources remain",
+      "Resources are scaled to zero but not deleted",
+      "Nothing, uninstall only removes local cache"
+    ],
+    "answer": "All resources owned by the release are deleted, and hooks/history removed unless --keep-history is set",
+    "explanation": "'helm uninstall' deletes every object rendered for that release. Use --keep-history to retain revision history/secrets for potential 'helm rollback', otherwise the release is fully purged.",
+    "difficulty": "easy",
+    "subcategory": "releases",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How does Helm decide whether a resource should be replaced or patched during upgrade?",
+    "options": [
+      "It computes a 3-way merge/diff between the last applied state, live state, and new desired state",
+      "It always deletes and recreates every resource",
+      "It only applies resources that changed name",
+      "It relies on kubectl apply --force always"
+    ],
+    "answer": "It computes a 3-way merge/diff between the last applied state, live state, and new desired state",
+    "explanation": "Similar to kubectl apply, Helm 3 performs a 3-way strategic merge patch (previous manifest, live cluster state, new manifest) to compute the minimal update, preserving fields set by the cluster (e.g. autoscaler-managed replicas) when configured.",
+    "difficulty": "hard",
+    "subcategory": "releases",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What annotation prevents Helm from managing/deleting a specific resource on uninstall while still creating it once?",
+    "options": [
+      "helm.sh/resource-policy: keep",
+      "helm.sh/hook: skip-delete",
+      "helm.sh/no-manage: true",
+      "kubernetes.io/persist: true"
+    ],
+    "answer": "helm.sh/resource-policy: keep",
+    "explanation": "Adding 'helm.sh/resource-policy: keep' to a resource (commonly PVCs) tells Helm to leave it in place during uninstall/upgrade cleanup, protecting stateful data from accidental deletion.",
+    "difficulty": "hard",
+    "subcategory": "hooks",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do CRDs get handled differently from regular templates in a Helm chart?",
+    "options": [
+      "CRDs go in a special crds/ directory, installed once and not templated or upgraded by Helm",
+      "CRDs must go in templates/ like everything else",
+      "Helm refuses to install charts with CRDs",
+      "CRDs are automatically converted to ConfigMaps"
+    ],
+    "answer": "CRDs go in a special crds/ directory, installed once and not templated or upgraded by Helm",
+    "explanation": "Files under crds/ are installed before any other templates on first install, are not templated (no .Values access), and Helm will not upgrade or delete them automatically to avoid destructive changes to shared CRDs.",
+    "difficulty": "hard",
+    "subcategory": "charts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the purpose of Chart.yaml's 'appVersion' field versus 'version'?",
+    "options": [
+      "'version' is the chart's own version; 'appVersion' reflects the version of the packaged application",
+      "They are interchangeable aliases",
+      "'appVersion' controls the Kubernetes API version used",
+      "'version' is only for subcharts"
+    ],
+    "answer": "'version' is the chart's own version; 'appVersion' reflects the version of the packaged application",
+    "explanation": "Chart 'version' follows semver for the chart/template changes themselves, while 'appVersion' documents which version of the underlying application (e.g. nginx 1.25) the chart currently deploys \u2014 they can change independently.",
+    "difficulty": "easy",
+    "subcategory": "charts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How can you validate that a chart's rendered manifests conform to your organization's policies (e.g., no privileged containers) before deploying?",
+    "options": [
+      "Pipe 'helm template' output into policy tools like OPA/Conftest or kubeconform in CI",
+      "Rely solely on 'helm lint'",
+      "There is no way to check this pre-deploy",
+      "Manually review YAML every time"
+    ],
+    "answer": "Pipe 'helm template' output into policy tools like OPA/Conftest or kubeconform in CI",
+    "explanation": "Because 'helm template' produces plain manifests without touching the cluster, CI pipelines commonly feed that output to OPA/Conftest, Kyverno CLI, or kubeconform/kubeval for schema and policy validation before 'helm upgrade' runs.",
+    "difficulty": "hard",
+    "subcategory": "security",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What does the 'helm show values <chart>' command do?",
+    "options": [
+      "Prints the default values.yaml of a chart without installing it",
+      "Shows currently applied values for a running release",
+      "Displays Kubernetes Secrets values",
+      "Lists all --set overrides used historically"
+    ],
+    "answer": "Prints the default values.yaml of a chart without installing it",
+    "explanation": "Useful for inspecting a third-party chart's configurable options (e.g. from a Helm repo) before writing your own override file, without needing to download or install the chart first.",
+    "difficulty": "easy",
+    "subcategory": "values",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you atomically roll back an upgrade automatically if it fails?",
+    "options": [
+      "helm upgrade --atomic",
+      "helm upgrade --safe",
+      "helm upgrade --rollback-on-fail",
+      "This requires a separate script; Helm has no such flag"
+    ],
+    "answer": "helm upgrade --atomic",
+    "explanation": "--atomic makes Helm wait for resources to become ready (implies --wait) and automatically triggers a rollback to the previous stable revision if the upgrade fails, reducing the chance of leaving a broken release in place.",
+    "difficulty": "medium",
+    "subcategory": "releases",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the effect of the --wait flag on 'helm install/upgrade'?",
+    "options": [
+      "Helm blocks until Deployments/StatefulSets/Services report ready, or times out",
+      "It pauses the release for manual approval",
+      "It waits for the next scheduled maintenance window",
+      "It delays only Job hooks, not core resources"
+    ],
+    "answer": "Helm blocks until Deployments/StatefulSets/Services report ready, or times out",
+    "explanation": "--wait polls resource readiness (minimum replicas available, Services having endpoints, PVCs bound) up to --timeout duration, letting CI/CD pipelines fail fast if a rollout doesn't converge instead of reporting false success.",
+    "difficulty": "medium",
+    "subcategory": "releases",
+    "category": "kubernetes"
+  }
+]
