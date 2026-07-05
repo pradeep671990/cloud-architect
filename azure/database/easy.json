@@ -1,703 +1,142 @@
 [
-    {
-      "question": "Which Azure service provides managed SQL databases? (Easy Azure #1)",
-      "options": [
-        "Azure SQL Database",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure SQL Database",
-      "explanation": "Azure SQL Database is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "relational-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides globally distributed NoSQL databases? (Easy Azure #2)",
-      "options": [
-        "Azure Cosmos DB",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "global-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides Redis caching? (Easy Azure #3)",
-      "options": [
-        "Azure Cache for Redis",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Cache for Redis",
-      "explanation": "Azure Cache for Redis is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "cache-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides analytics warehousing? (Easy Azure #4)",
-      "options": [
-        "Azure Synapse Analytics",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Synapse Analytics",
-      "explanation": "Azure Synapse Analytics is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "analytics-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides managed PostgreSQL? (Easy Azure #5)",
-      "options": [
-        "Azure Database for PostgreSQL",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Database for PostgreSQL",
-      "explanation": "Azure Database for PostgreSQL is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "relational-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides managed MySQL? (Easy Azure #6)",
-      "options": [
-        "Azure Database for MySQL",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Database for MySQL",
-      "explanation": "Azure Database for MySQL is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "relational-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service stores secrets securely? (Easy Azure #7)",
-      "options": [
-        "Azure Key Vault",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Key Vault",
-      "explanation": "Azure Key Vault is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "database-security",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service monitors databases? (Easy Azure #8)",
-      "options": [
-        "Azure Monitor",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Monitor",
-      "explanation": "Azure Monitor is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "database-monitoring",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service supports graph databases? (Easy Azure #9)",
-      "options": [
-        "Azure Cosmos DB Gremlin API",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Cosmos DB Gremlin API",
-      "explanation": "Azure Cosmos DB Gremlin API is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "graph-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service migrates databases to Azure? (Easy Azure #10)",
-      "options": [
-        "Azure Database Migration Service",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Database Migration Service",
-      "explanation": "Azure Database Migration Service is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "database-migration",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides managed SQL databases? (Easy Azure #11)",
-      "options": [
-        "Azure SQL Database",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure SQL Database",
-      "explanation": "Azure SQL Database is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "relational-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides globally distributed NoSQL databases? (Easy Azure #12)",
-      "options": [
-        "Azure Cosmos DB",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "global-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides Redis caching? (Easy Azure #13)",
-      "options": [
-        "Azure Cache for Redis",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Cache for Redis",
-      "explanation": "Azure Cache for Redis is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "cache-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides analytics warehousing? (Easy Azure #14)",
-      "options": [
-        "Azure Synapse Analytics",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Synapse Analytics",
-      "explanation": "Azure Synapse Analytics is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "analytics-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides managed PostgreSQL? (Easy Azure #15)",
-      "options": [
-        "Azure Database for PostgreSQL",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Database for PostgreSQL",
-      "explanation": "Azure Database for PostgreSQL is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "relational-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides managed MySQL? (Easy Azure #16)",
-      "options": [
-        "Azure Database for MySQL",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Database for MySQL",
-      "explanation": "Azure Database for MySQL is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "relational-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service stores secrets securely? (Easy Azure #17)",
-      "options": [
-        "Azure Key Vault",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Key Vault",
-      "explanation": "Azure Key Vault is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "database-security",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service monitors databases? (Easy Azure #18)",
-      "options": [
-        "Azure Monitor",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Monitor",
-      "explanation": "Azure Monitor is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "database-monitoring",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service supports graph databases? (Easy Azure #19)",
-      "options": [
-        "Azure Cosmos DB Gremlin API",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Cosmos DB Gremlin API",
-      "explanation": "Azure Cosmos DB Gremlin API is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "graph-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service migrates databases to Azure? (Easy Azure #20)",
-      "options": [
-        "Azure Database Migration Service",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Database Migration Service",
-      "explanation": "Azure Database Migration Service is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "database-migration",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides managed SQL databases? (Easy Azure #21)",
-      "options": [
-        "Azure SQL Database",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure SQL Database",
-      "explanation": "Azure SQL Database is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "relational-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides globally distributed NoSQL databases? (Easy Azure #22)",
-      "options": [
-        "Azure Cosmos DB",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "global-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides Redis caching? (Easy Azure #23)",
-      "options": [
-        "Azure Cache for Redis",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Cache for Redis",
-      "explanation": "Azure Cache for Redis is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "cache-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides analytics warehousing? (Easy Azure #24)",
-      "options": [
-        "Azure Synapse Analytics",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Synapse Analytics",
-      "explanation": "Azure Synapse Analytics is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "analytics-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides managed PostgreSQL? (Easy Azure #25)",
-      "options": [
-        "Azure Database for PostgreSQL",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Database for PostgreSQL",
-      "explanation": "Azure Database for PostgreSQL is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "relational-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides managed MySQL? (Easy Azure #26)",
-      "options": [
-        "Azure Database for MySQL",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Database for MySQL",
-      "explanation": "Azure Database for MySQL is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "relational-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service stores secrets securely? (Easy Azure #27)",
-      "options": [
-        "Azure Key Vault",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Key Vault",
-      "explanation": "Azure Key Vault is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "database-security",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service monitors databases? (Easy Azure #28)",
-      "options": [
-        "Azure Monitor",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Monitor",
-      "explanation": "Azure Monitor is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "database-monitoring",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service supports graph databases? (Easy Azure #29)",
-      "options": [
-        "Azure Cosmos DB Gremlin API",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Cosmos DB Gremlin API",
-      "explanation": "Azure Cosmos DB Gremlin API is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "graph-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service migrates databases to Azure? (Easy Azure #30)",
-      "options": [
-        "Azure Database Migration Service",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Database Migration Service",
-      "explanation": "Azure Database Migration Service is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "database-migration",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides managed SQL databases? (Easy Azure #31)",
-      "options": [
-        "Azure SQL Database",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure SQL Database",
-      "explanation": "Azure SQL Database is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "relational-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides globally distributed NoSQL databases? (Easy Azure #32)",
-      "options": [
-        "Azure Cosmos DB",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "global-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides Redis caching? (Easy Azure #33)",
-      "options": [
-        "Azure Cache for Redis",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Cache for Redis",
-      "explanation": "Azure Cache for Redis is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "cache-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides analytics warehousing? (Easy Azure #34)",
-      "options": [
-        "Azure Synapse Analytics",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Synapse Analytics",
-      "explanation": "Azure Synapse Analytics is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "analytics-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides managed PostgreSQL? (Easy Azure #35)",
-      "options": [
-        "Azure Database for PostgreSQL",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Database for PostgreSQL",
-      "explanation": "Azure Database for PostgreSQL is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "relational-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides managed MySQL? (Easy Azure #36)",
-      "options": [
-        "Azure Database for MySQL",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Database for MySQL",
-      "explanation": "Azure Database for MySQL is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "relational-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service stores secrets securely? (Easy Azure #37)",
-      "options": [
-        "Azure Key Vault",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Key Vault",
-      "explanation": "Azure Key Vault is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "database-security",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service monitors databases? (Easy Azure #38)",
-      "options": [
-        "Azure Monitor",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Monitor",
-      "explanation": "Azure Monitor is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "database-monitoring",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service supports graph databases? (Easy Azure #39)",
-      "options": [
-        "Azure Cosmos DB Gremlin API",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Cosmos DB Gremlin API",
-      "explanation": "Azure Cosmos DB Gremlin API is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "graph-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service migrates databases to Azure? (Easy Azure #40)",
-      "options": [
-        "Azure Database Migration Service",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Database Migration Service",
-      "explanation": "Azure Database Migration Service is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "database-migration",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides managed SQL databases? (Easy Azure #41)",
-      "options": [
-        "Azure SQL Database",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure SQL Database",
-      "explanation": "Azure SQL Database is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "relational-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides globally distributed NoSQL databases? (Easy Azure #42)",
-      "options": [
-        "Azure Cosmos DB",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Cosmos DB",
-      "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "global-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides Redis caching? (Easy Azure #43)",
-      "options": [
-        "Azure Cache for Redis",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Cache for Redis",
-      "explanation": "Azure Cache for Redis is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "cache-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides analytics warehousing? (Easy Azure #44)",
-      "options": [
-        "Azure Synapse Analytics",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Synapse Analytics",
-      "explanation": "Azure Synapse Analytics is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "analytics-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides managed PostgreSQL? (Easy Azure #45)",
-      "options": [
-        "Azure Database for PostgreSQL",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Database for PostgreSQL",
-      "explanation": "Azure Database for PostgreSQL is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "relational-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service provides managed MySQL? (Easy Azure #46)",
-      "options": [
-        "Azure Database for MySQL",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Database for MySQL",
-      "explanation": "Azure Database for MySQL is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "relational-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service stores secrets securely? (Easy Azure #47)",
-      "options": [
-        "Azure Key Vault",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Key Vault",
-      "explanation": "Azure Key Vault is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "database-security",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service monitors databases? (Easy Azure #48)",
-      "options": [
-        "Azure Monitor",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Monitor",
-      "explanation": "Azure Monitor is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "database-monitoring",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service supports graph databases? (Easy Azure #49)",
-      "options": [
-        "Azure Cosmos DB Gremlin API",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Cosmos DB Gremlin API",
-      "explanation": "Azure Cosmos DB Gremlin API is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "graph-database",
-      "category": "azure"
-    },
-    {
-      "question": "Which Azure service migrates databases to Azure? (Easy Azure #50)",
-      "options": [
-        "Azure Database Migration Service",
-        "Azure CDN",
-        "Azure DNS",
-        "Azure Bastion"
-      ],
-      "answer": "Azure Database Migration Service",
-      "explanation": "Azure Database Migration Service is the correct answer for this AZURE database service question.",
-      "difficulty": "easy",
-      "subcategory": "database-migration",
-      "category": "azure"
-    }
-
-  ]
+  {
+    "question": "Which Azure service provides managed SQL databases?",
+    "options": [
+      "Azure SQL Database",
+      "Azure CDN",
+      "Azure DNS",
+      "Azure Bastion"
+    ],
+    "answer": "Azure SQL Database",
+    "explanation": "Azure SQL Database is the correct answer for this AZURE database service question.",
+    "difficulty": "easy",
+    "subcategory": "relational-database",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service provides globally distributed NoSQL databases?",
+    "options": [
+      "Azure Cosmos DB",
+      "Azure CDN",
+      "Azure DNS",
+      "Azure Bastion"
+    ],
+    "answer": "Azure Cosmos DB",
+    "explanation": "Azure Cosmos DB is the correct answer for this AZURE database service question.",
+    "difficulty": "easy",
+    "subcategory": "global-database",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service provides Redis caching?",
+    "options": [
+      "Azure Cache for Redis",
+      "Azure CDN",
+      "Azure DNS",
+      "Azure Bastion"
+    ],
+    "answer": "Azure Cache for Redis",
+    "explanation": "Azure Cache for Redis is the correct answer for this AZURE database service question.",
+    "difficulty": "easy",
+    "subcategory": "cache-database",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service provides analytics warehousing?",
+    "options": [
+      "Azure Synapse Analytics",
+      "Azure CDN",
+      "Azure DNS",
+      "Azure Bastion"
+    ],
+    "answer": "Azure Synapse Analytics",
+    "explanation": "Azure Synapse Analytics is the correct answer for this AZURE database service question.",
+    "difficulty": "easy",
+    "subcategory": "analytics-database",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service provides managed PostgreSQL?",
+    "options": [
+      "Azure Database for PostgreSQL",
+      "Azure CDN",
+      "Azure DNS",
+      "Azure Bastion"
+    ],
+    "answer": "Azure Database for PostgreSQL",
+    "explanation": "Azure Database for PostgreSQL is the correct answer for this AZURE database service question.",
+    "difficulty": "easy",
+    "subcategory": "relational-database",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service provides managed MySQL?",
+    "options": [
+      "Azure Database for MySQL",
+      "Azure CDN",
+      "Azure DNS",
+      "Azure Bastion"
+    ],
+    "answer": "Azure Database for MySQL",
+    "explanation": "Azure Database for MySQL is the correct answer for this AZURE database service question.",
+    "difficulty": "easy",
+    "subcategory": "relational-database",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service stores secrets securely?",
+    "options": [
+      "Azure Key Vault",
+      "Azure CDN",
+      "Azure DNS",
+      "Azure Bastion"
+    ],
+    "answer": "Azure Key Vault",
+    "explanation": "Azure Key Vault is the correct answer for this AZURE database service question.",
+    "difficulty": "easy",
+    "subcategory": "database-security",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service monitors databases?",
+    "options": [
+      "Azure Monitor",
+      "Azure CDN",
+      "Azure DNS",
+      "Azure Bastion"
+    ],
+    "answer": "Azure Monitor",
+    "explanation": "Azure Monitor is the correct answer for this AZURE database service question.",
+    "difficulty": "easy",
+    "subcategory": "database-monitoring",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service supports graph databases?",
+    "options": [
+      "Azure Cosmos DB Gremlin API",
+      "Azure CDN",
+      "Azure DNS",
+      "Azure Bastion"
+    ],
+    "answer": "Azure Cosmos DB Gremlin API",
+    "explanation": "Azure Cosmos DB Gremlin API is the correct answer for this AZURE database service question.",
+    "difficulty": "easy",
+    "subcategory": "graph-database",
+    "category": "azure"
+  },
+  {
+    "question": "Which Azure service migrates databases to Azure?",
+    "options": [
+      "Azure Database Migration Service",
+      "Azure CDN",
+      "Azure DNS",
+      "Azure Bastion"
+    ],
+    "answer": "Azure Database Migration Service",
+    "explanation": "Azure Database Migration Service is the correct answer for this AZURE database service question.",
+    "difficulty": "easy",
+    "subcategory": "database-migration",
+    "category": "azure"
+  }
+]
