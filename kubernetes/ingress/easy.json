@@ -1,1 +1,562 @@
-[]
+[
+  {
+    "question": "What is the primary purpose of a Kubernetes Ingress resource?",
+    "options": [
+      "Define HTTP/HTTPS routing rules to expose Services externally via a single entry point",
+      "Replace Services entirely for all traffic types",
+      "Assign IP addresses to Pods",
+      "Manage internal cluster DNS records"
+    ],
+    "answer": "Define HTTP/HTTPS routing rules to expose Services externally via a single entry point",
+    "explanation": "Ingress lets you consolidate host/path-based routing, TLS termination, and load balancing for multiple Services behind one external IP/load balancer, instead of provisioning a separate LoadBalancer Service per app.",
+    "difficulty": "easy",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why does an Ingress resource alone do nothing without an Ingress controller?",
+    "options": [
+      "Ingress is just a spec; a controller (nginx, ALB, Traefik, etc.) watches and implements the routing rules",
+      "Ingress resources are automatically compiled into iptables by kubelet",
+      "The API server directly proxies Ingress traffic",
+      "Ingress objects are deprecated and non-functional"
+    ],
+    "answer": "Ingress is just a spec; a controller (nginx, ALB, Traefik, etc.) watches and implements the routing rules",
+    "explanation": "Kubernetes ships the Ingress API but no built-in implementation. You must deploy an Ingress controller (ingress-nginx, AWS Load Balancer Controller, Traefik, HAProxy, etc.) that watches Ingress objects and configures a real proxy/load balancer accordingly.",
+    "difficulty": "easy",
+    "subcategory": "controllers",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What field associates an Ingress resource with a specific Ingress controller in a multi-controller cluster?",
+    "options": [
+      "spec.ingressClassName",
+      "metadata.controller",
+      "spec.ingressController",
+      "annotations.controller-name only, mandatory"
+    ],
+    "answer": "spec.ingressClassName",
+    "explanation": "spec.ingressClassName references an IngressClass object, which in turn maps to a controller implementation (via its 'controller' field), letting multiple ingress controllers coexist and each only process Ingresses that reference them.",
+    "difficulty": "medium",
+    "subcategory": "ingressclass",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What replaced the deprecated 'kubernetes.io/ingress.class' annotation?",
+    "options": [
+      "The IngressClass resource and spec.ingressClassName field",
+      "spec.className",
+      "metadata.labels.class",
+      "There is no replacement, the annotation is still required"
+    ],
+    "answer": "The IngressClass resource and spec.ingressClassName field",
+    "explanation": "Since networking.k8s.io/v1, the annotation-based class selection was replaced by a proper IngressClass API object and the ingressClassName field on the Ingress spec, providing a cluster-scoped, typed way to select controllers.",
+    "difficulty": "medium",
+    "subcategory": "ingressclass",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you configure host-based routing in an Ingress (e.g., api.example.com vs www.example.com)?",
+    "options": [
+      "Define multiple 'rules' entries each with a different 'host' field",
+      "Use separate Ingress controllers per host only",
+      "Set host in the Service spec",
+      "Host routing isn't supported by Ingress"
+    ],
+    "answer": "Define multiple 'rules' entries each with a different 'host' field",
+    "explanation": "Each entry under spec.rules can specify a distinct 'host', and the controller uses the incoming HTTP Host header to route to the matching rule's backend paths \u2014 enabling many virtual hosts behind one Ingress/load balancer.",
+    "difficulty": "easy",
+    "subcategory": "rules",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the difference between pathType 'Prefix' and 'Exact' in an Ingress rule?",
+    "options": [
+      "Prefix matches path and all sub-paths; Exact requires a case-sensitive full path match",
+      "Prefix only matches query strings; Exact matches headers",
+      "Exact is deprecated in favor of Prefix",
+      "There is no functional difference"
+    ],
+    "answer": "Prefix matches path and all sub-paths; Exact requires a case-sensitive full path match",
+    "explanation": "pathType: Prefix (e.g. /api) matches /api, /api/, /api/v1 etc. on element boundaries, while Exact requires the request path to match precisely, letter for letter, with no trailing segments.",
+    "difficulty": "medium",
+    "subcategory": "path-types",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What does pathType 'ImplementationSpecific' mean?",
+    "options": [
+      "Matching behavior is defined by the particular Ingress controller, not a fixed Kubernetes standard",
+      "It only works with cloud load balancers",
+      "It is identical to Prefix for all controllers",
+      "It disables path matching entirely"
+    ],
+    "answer": "Matching behavior is defined by the particular Ingress controller, not a fixed Kubernetes standard",
+    "explanation": "This pathType leaves interpretation (e.g. regex support) up to the controller implementation \u2014 for example ingress-nginx allows regex paths with this type when the rewrite/annotation-based regex feature is enabled.",
+    "difficulty": "hard",
+    "subcategory": "path-types",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you configure TLS termination on an Ingress resource?",
+    "options": [
+      "spec.tls with hosts and a secretName referencing a TLS Secret",
+      "Set tls: true on the Service",
+      "Add a tls.crt file to the controller Pod manually only",
+      "TLS must be terminated at the application, Ingress never handles it"
+    ],
+    "answer": "spec.tls with hosts and a secretName referencing a TLS Secret",
+    "explanation": "The tls block lists hostnames and a Kubernetes Secret of type kubernetes.io/tls (containing tls.crt/tls.key); the Ingress controller uses that certificate to terminate HTTPS for matching SNI hostnames.",
+    "difficulty": "easy",
+    "subcategory": "tls",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How does cert-manager automate TLS certificates for Ingress resources?",
+    "options": [
+      "It watches Ingress annotations/Certificate CRDs and requests certs from an ACME issuer (e.g., Let's Encrypt), storing them as Secrets",
+      "It replaces the Ingress controller entirely",
+      "It manually issues certs that must be uploaded by hand",
+      "It only works with self-signed certs"
+    ],
+    "answer": "It watches Ingress annotations/Certificate CRDs and requests certs from an ACME issuer (e.g., Let's Encrypt), storing them as Secrets",
+    "explanation": "With annotation 'cert-manager.io/cluster-issuer' on an Ingress, cert-manager creates a Certificate resource, performs HTTP-01/DNS-01 challenges, and populates the referenced TLS Secret automatically, renewing before expiry.",
+    "difficulty": "medium",
+    "subcategory": "tls",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What common ingress-nginx annotation is used to rewrite the request path before forwarding to the backend?",
+    "options": [
+      "nginx.ingress.kubernetes.io/rewrite-target",
+      "nginx.ingress.kubernetes.io/path-rewrite",
+      "ingress.kubernetes.io/redirect-path",
+      "nginx.ingress.kubernetes.io/backend-path"
+    ],
+    "answer": "nginx.ingress.kubernetes.io/rewrite-target",
+    "explanation": "Combined with capture groups in the path (e.g. /service/(.*)), rewrite-target: /$1 strips a prefix before proxying to the backend Service, commonly used so multiple services share one domain under different path prefixes.",
+    "difficulty": "medium",
+    "subcategory": "annotations",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How would you configure session affinity (sticky sessions) on ingress-nginx?",
+    "options": [
+      "Annotations like nginx.ingress.kubernetes.io/affinity: cookie",
+      "Set sessionAffinity in the Ingress spec directly",
+      "It's not possible with Ingress, only with Services",
+      "Use a StatefulSet backend instead"
+    ],
+    "answer": "Annotations like nginx.ingress.kubernetes.io/affinity: cookie",
+    "explanation": "ingress-nginx supports cookie-based affinity via annotations (affinity: cookie, affinity-mode, session-cookie-name), causing the controller to consistently route a client's requests to the same backend Pod using a cookie.",
+    "difficulty": "medium",
+    "subcategory": "annotations",
+    "category": "kubernetes"
+  },
+  {
+    "question": "In AWS EKS, what does the AWS Load Balancer Controller do when you create an Ingress with ingressClassName 'alb'?",
+    "options": [
+      "Provisions and configures an Application Load Balancer to implement the routing rules",
+      "Creates a classic ELB only, ALB unsupported",
+      "Routes traffic through kube-proxy exclusively",
+      "Requires manual ALB creation and only manages target groups"
+    ],
+    "answer": "Provisions and configures an Application Load Balancer to implement the routing rules",
+    "explanation": "The controller watches Ingress objects annotated/classed for 'alb', then creates/updates an ALB, listener rules, and target groups (targeting Pod IPs or Node ports depending on target-type) to match the Ingress spec.",
+    "difficulty": "medium",
+    "subcategory": "controllers",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the difference between ALB target-type 'instance' and 'ip' in AWS Load Balancer Controller annotations?",
+    "options": [
+      "'instance' routes to NodePort on EC2 instances; 'ip' routes directly to Pod IPs (required for Fargate)",
+      "'ip' is deprecated",
+      "'instance' only works with Fargate",
+      "They behave identically"
+    ],
+    "answer": "'instance' routes to NodePort on EC2 instances; 'ip' routes directly to Pod IPs (required for Fargate)",
+    "explanation": "target-type: ip requires the VPC CNI (Pod IPs routable in VPC) and is mandatory for Fargate pods since there's no NodePort; 'instance' registers EC2 instances and relies on NodePort/kube-proxy for the final hop.",
+    "difficulty": "hard",
+    "subcategory": "controllers",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How can you expose multiple backend Services under different paths of the same host in one Ingress?",
+    "options": [
+      "Add multiple 'paths' entries under the same host's rule, each with its own backend Service",
+      "Create a separate Ingress per path always",
+      "Use a single Service with multiple ports",
+      "Not possible; each path needs its own host"
+    ],
+    "answer": "Add multiple 'paths' entries under the same host's rule, each with its own backend Service",
+    "explanation": "Under spec.rules[].http.paths, you can list several path/backend pairs (e.g. /app1 -> svc1, /app2 -> svc2) so one host fan-outs to multiple Services through a single Ingress object and load balancer.",
+    "difficulty": "easy",
+    "subcategory": "rules",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What happens if two Ingress resources define conflicting rules for the same host and path?",
+    "options": [
+      "Behavior is controller-specific/undefined; typically the first-created or alphabetically first wins, causing ambiguity",
+      "Kubernetes API server rejects the second Ingress automatically",
+      "Traffic is load-balanced 50/50 between both automatically",
+      "Both rules are merged deterministically per spec"
+    ],
+    "answer": "Behavior is controller-specific/undefined; typically the first-created or alphabetically first wins, causing ambiguity",
+    "explanation": "The Ingress spec doesn't strictly define conflict resolution across resources; different controllers may pick different winners, so best practice is to avoid overlapping host/path definitions across separate Ingress objects.",
+    "difficulty": "hard",
+    "subcategory": "troubleshooting",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you perform canary releases using ingress-nginx annotations?",
+    "options": [
+      "nginx.ingress.kubernetes.io/canary and canary-weight annotations on a second Ingress pointing to the new version",
+      "Ingress doesn't support canaries, only service mesh does",
+      "Create two separate unrelated Services with no Ingress link",
+      "Use readiness probes to control canary traffic"
+    ],
+    "answer": "nginx.ingress.kubernetes.io/canary and canary-weight annotations on a second Ingress pointing to the new version",
+    "explanation": "You create a second Ingress for the same host/path marked canary: 'true' with canary-weight (e.g. 10 for 10%) or header-based rules, and ingress-nginx splits traffic between the stable and canary backend accordingly.",
+    "difficulty": "hard",
+    "subcategory": "canary",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the purpose of a default backend in an Ingress controller?",
+    "options": [
+      "Handles requests that don't match any defined Ingress rule (typically returns 404)",
+      "Serves as the primary application backend",
+      "Replaces the need for any Ingress rules",
+      "Only used for health checks of the controller itself"
+    ],
+    "answer": "Handles requests that don't match any defined Ingress rule (typically returns 404)",
+    "explanation": "Most controllers (e.g. ingress-nginx) let you configure a defaultBackend Service to catch unmatched host/path combinations, returning a custom error page instead of a generic connection failure.",
+    "difficulty": "medium",
+    "subcategory": "controllers",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How can an Ingress route traffic to a Service in a different namespace?",
+    "options": [
+      "Ingress and its backend Services must be in the same namespace; cross-namespace requires ExternalName Services or a gateway API HTTPRoute",
+      "Simply reference namespace in the backend field",
+      "Any namespace works natively with backend.service.namespace field",
+      "Cross-namespace routing is impossible in Kubernetes entirely"
+    ],
+    "answer": "Ingress and its backend Services must be in the same namespace; cross-namespace requires ExternalName Services or a gateway API HTTPRoute",
+    "explanation": "Standard Ingress backends can only reference Services in the same namespace as the Ingress object. Common workarounds include an ExternalName Service proxy or migrating to Gateway API, which supports cross-namespace routing with ReferenceGrants.",
+    "difficulty": "hard",
+    "subcategory": "rules",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the Gateway API and how does it relate to Ingress?",
+    "options": [
+      "A newer, more expressive API (Gateway, HTTPRoute, etc.) intended as a successor/complement to Ingress for advanced traffic routing",
+      "A CLI tool for managing Ingress objects",
+      "A deprecated predecessor to Ingress",
+      "A vendor-specific AWS-only API"
+    ],
+    "answer": "A newer, more expressive API (Gateway, HTTPRoute, etc.) intended as a successor/complement to Ingress for advanced traffic routing",
+    "explanation": "Gateway API (SIG-Network) splits infrastructure (GatewayClass/Gateway) from routing rules (HTTPRoute, TCPRoute) and supports richer features like weighted traffic splitting, cross-namespace routing, and header matching natively, addressing many Ingress limitations.",
+    "difficulty": "medium",
+    "subcategory": "controllers",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you force HTTP to HTTPS redirection on ingress-nginx?",
+    "options": [
+      "nginx.ingress.kubernetes.io/ssl-redirect: 'true' (often enabled by default when TLS is configured)",
+      "Manually configure iptables rules on nodes",
+      "It's automatic and cannot be disabled",
+      "Set spec.tls to 'redirect'"
+    ],
+    "answer": "nginx.ingress.kubernetes.io/ssl-redirect: 'true' (often enabled by default when TLS is configured)",
+    "explanation": "ingress-nginx automatically issues a 308 redirect from HTTP to HTTPS whenever TLS is configured for a host, controllable via ssl-redirect/force-ssl-redirect annotations if you need to override the default behavior.",
+    "difficulty": "easy",
+    "subcategory": "tls",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is 'wildcard' TLS certificate support in Ingress used for?",
+    "options": [
+      "Terminating TLS for many subdomains (*.example.com) with a single certificate/Secret",
+      "Encrypting traffic between all namespaces automatically",
+      "Allowing any Ingress class to use any certificate",
+      "Disabling TLS validation for testing"
+    ],
+    "answer": "Terminating TLS for many subdomains (*.example.com) with a single certificate/Secret",
+    "explanation": "A wildcard cert covers *.example.com, so one TLS Secret referenced across multiple Ingress hosts (api.example.com, app.example.com) avoids needing per-subdomain certificates, though it requires DNS-01 challenge validation typically.",
+    "difficulty": "medium",
+    "subcategory": "tls",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why might an Ingress show an external IP/hostname as <pending> indefinitely?",
+    "options": [
+      "No Ingress controller is running/watching that IngressClass, or the cloud provider integration failed to provision a load balancer",
+      "The Ingress YAML has a syntax error only",
+      "DNS hasn't propagated yet, unrelated to the controller",
+      "Pods behind the Service aren't ready"
+    ],
+    "answer": "No Ingress controller is running/watching that IngressClass, or the cloud provider integration failed to provision a load balancer",
+    "explanation": "A stuck ADDRESS field usually means either there's no controller Pod actively reconciling that Ingress (missing/misconfigured IngressClass), or the controller's cloud API calls to create the LB are failing (check controller logs and IAM/permissions).",
+    "difficulty": "medium",
+    "subcategory": "troubleshooting",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you debug why an Ingress rule returns 502/504 errors from the backend?",
+    "options": [
+      "Check backend Pod readiness, Service endpoints, and controller logs for upstream connection/timeout errors",
+      "Only check the Ingress YAML syntax",
+      "Restart the entire cluster",
+      "Increase the Ingress replica count"
+    ],
+    "answer": "Check backend Pod readiness, Service endpoints, and controller logs for upstream connection/timeout errors",
+    "explanation": "502 (Bad Gateway) often means the backend Pod isn't responding/crashed; 504 (Gateway Timeout) means it's too slow. Verify 'kubectl get endpoints', Pod readiness probes, and controller logs (e.g. nginx error log) for the specific upstream failure.",
+    "difficulty": "medium",
+    "subcategory": "troubleshooting",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What could cause an Ingress to work for HTTP but fail TLS handshake for HTTPS?",
+    "options": [
+      "Missing/incorrect TLS Secret, wrong SNI hostname match, or certificate not covering the requested domain",
+      "The Service selector is misconfigured",
+      "The Ingress controller doesn't support HTTP at all",
+      "NodePort range is exhausted"
+    ],
+    "answer": "Missing/incorrect TLS Secret, wrong SNI hostname match, or certificate not covering the requested domain",
+    "explanation": "Common causes: the referenced Secret doesn't exist or has wrong keys, the cert's CN/SAN doesn't include the requested host, or the client isn't sending proper SNI, causing the controller to fall back to a default/self-signed cert and fail validation.",
+    "difficulty": "medium",
+    "subcategory": "troubleshooting",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you limit request size (e.g., large file uploads) on ingress-nginx?",
+    "options": [
+      "nginx.ingress.kubernetes.io/proxy-body-size annotation",
+      "spec.maxRequestSize field on Ingress",
+      "It's controlled solely by the backend application",
+      "Kubernetes enforces a fixed 1MB limit, non-configurable"
+    ],
+    "answer": "nginx.ingress.kubernetes.io/proxy-body-size annotation",
+    "explanation": "By default nginx limits client body size to 1m; setting proxy-body-size: '50m' (or '0' for unlimited) on the Ingress allows larger uploads to pass through the proxy to the backend.",
+    "difficulty": "medium",
+    "subcategory": "annotations",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How would you implement rate limiting at the Ingress layer?",
+    "options": [
+      "Controller-specific annotations (e.g., nginx.ingress.kubernetes.io/limit-rps) or a WAF/API gateway in front",
+      "Rate limiting must be implemented in every backend application",
+      "Kubernetes Services provide built-in rate limiting",
+      "Use resource quotas on the Ingress object"
+    ],
+    "answer": "Controller-specific annotations (e.g., nginx.ingress.kubernetes.io/limit-rps) or a WAF/API gateway in front",
+    "explanation": "ingress-nginx supports limit-rps/limit-connections annotations for basic per-IP rate limiting; more advanced needs (per-user, burst, distributed) typically go through an API gateway or service mesh (e.g. Envoy/Istio) layered with or replacing Ingress.",
+    "difficulty": "hard",
+    "subcategory": "annotations",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's a key difference between an Ingress and a Service of type LoadBalancer?",
+    "options": [
+      "Ingress provides L7 (HTTP/HTTPS) routing with host/path rules through one entry point; LoadBalancer Service exposes L4 access per-Service, one LB each",
+      "They are functionally identical",
+      "LoadBalancer only works on-prem; Ingress only works in cloud",
+      "Ingress requires no controller while LoadBalancer does"
+    ],
+    "answer": "Ingress provides L7 (HTTP/HTTPS) routing with host/path rules through one entry point; LoadBalancer Service exposes L4 access per-Service, one LB each",
+    "explanation": "type: LoadBalancer typically provisions one cloud load balancer per Service (costly at scale, L4 only), while Ingress consolidates many Services behind a single L7-aware load balancer/proxy that can host-route/path-route and terminate TLS.",
+    "difficulty": "easy",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How does the Ingress controller typically obtain the client's real source IP when behind a cloud load balancer?",
+    "options": [
+      "Enabling proxy protocol or X-Forwarded-For header passthrough, plus externalTrafficPolicy: Local on the controller's Service",
+      "It's impossible to get real client IP",
+      "DNS reverse lookup on the controller",
+      "Only visible in the application logs, never at the Ingress layer"
+    ],
+    "answer": "Enabling proxy protocol or X-Forwarded-For header passthrough, plus externalTrafficPolicy: Local on the controller's Service",
+    "explanation": "Without these, source NAT at the node/LB level replaces the client IP. Enabling proxy protocol on the LB and setting the controller Service's externalTrafficPolicy to Local preserves the original client IP through to the controller and X-Forwarded-For header.",
+    "difficulty": "hard",
+    "subcategory": "networking",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What does 'nginx.ingress.kubernetes.io/whitelist-source-range' do?",
+    "options": [
+      "Restricts access to the Ingress path to specific CIDR ranges",
+      "Whitelists which backend Pods can be reached",
+      "Configures allowed DNS servers",
+      "Sets which node the controller runs on"
+    ],
+    "answer": "Restricts access to the Ingress path to specific CIDR ranges",
+    "explanation": "This annotation applies an IP allowlist (comma-separated CIDRs) at the nginx layer, rejecting requests from any source IP outside the specified ranges \u2014 useful for restricting admin endpoints to office/VPN IPs.",
+    "difficulty": "medium",
+    "subcategory": "annotations",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Can a single Ingress controller serve multiple IngressClasses?",
+    "options": [
+      "No, typically one controller deployment is associated with one or more specific IngressClasses it's configured to watch, but you can run multiple controller instances each with a distinct class",
+      "Yes, always automatically, with no configuration",
+      "IngressClass is unrelated to which controller processes requests",
+      "Only Istio-based controllers support multiple classes"
+    ],
+    "answer": "No, typically one controller deployment is associated with one or more specific IngressClasses it's configured to watch, but you can run multiple controller instances each with a distinct class",
+    "explanation": "You can deploy separate ingress-nginx installations (e.g. 'internal' and 'external') each watching a different IngressClass via the --ingress-class flag/controller field, letting them coexist without processing each other's Ingress objects.",
+    "difficulty": "hard",
+    "subcategory": "ingressclass",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you mark one IngressClass as the cluster default?",
+    "options": [
+      "Set the annotation ingressclass.kubernetes.io/is-default-class: 'true' on the IngressClass object",
+      "Name it 'default'",
+      "Set spec.default: true in Ingress",
+      "There is no concept of a default IngressClass"
+    ],
+    "answer": "Set the annotation ingressclass.kubernetes.io/is-default-class: 'true' on the IngressClass object",
+    "explanation": "When exactly one IngressClass carries this annotation, any Ingress created without an explicit ingressClassName automatically uses that class, simplifying config for clusters with a single primary controller.",
+    "difficulty": "medium",
+    "subcategory": "ingressclass",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's a common cause of 'ingress-nginx' returning 413 Request Entity Too Large?",
+    "options": [
+      "Client upload exceeds proxy-body-size limit (default 1m)",
+      "The backend Service has no endpoints",
+      "TLS certificate mismatch",
+      "IngressClass misconfiguration"
+    ],
+    "answer": "Client upload exceeds proxy-body-size limit (default 1m)",
+    "explanation": "413 errors from nginx specifically indicate the request body exceeded client_max_body_size; resolve by raising nginx.ingress.kubernetes.io/proxy-body-size for that Ingress or globally in the controller ConfigMap.",
+    "difficulty": "medium",
+    "subcategory": "troubleshooting",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How can you route gRPC traffic through an Ingress?",
+    "options": [
+      "Use an Ingress controller/annotation supporting HTTP/2 and gRPC backend protocol (e.g., nginx.ingress.kubernetes.io/backend-protocol: 'GRPC')",
+      "gRPC cannot be routed through any Ingress",
+      "Convert gRPC to REST before the Ingress always",
+      "Use only NodePort for gRPC"
+    ],
+    "answer": "Use an Ingress controller/annotation supporting HTTP/2 and gRPC backend protocol (e.g., nginx.ingress.kubernetes.io/backend-protocol: 'GRPC')",
+    "explanation": "gRPC requires HTTP/2 end-to-end; ingress-nginx supports this via the backend-protocol annotation and TLS (since browsers/most LBs require TLS for HTTP/2), correctly proxying gRPC streams to backend Pods.",
+    "difficulty": "hard",
+    "subcategory": "annotations",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the purpose of an 'ExternalName' Service when used in conjunction with Ingress?",
+    "options": [
+      "Acts as a DNS CNAME alias to route Ingress traffic to an external hostname outside the cluster",
+      "Provides load balancing across Pods",
+      "Enables mutual TLS automatically",
+      "Required for every Ingress backend"
+    ],
+    "answer": "Acts as a DNS CNAME alias to route Ingress traffic to an external hostname outside the cluster",
+    "explanation": "An ExternalName Service has no selectors/Endpoints; it simply returns a CNAME to an external DNS name. Some controllers can proxy Ingress paths to it, effectively using Ingress as a reverse proxy to external systems.",
+    "difficulty": "hard",
+    "subcategory": "rules",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do NetworkPolicies interact with Ingress controller traffic?",
+    "options": [
+      "The Ingress controller Pod's traffic to backend Pods must be explicitly allowed by NetworkPolicy if default-deny policies are in place",
+      "NetworkPolicies never apply to Ingress-routed traffic",
+      "Ingress traffic bypasses NetworkPolicy always",
+      "NetworkPolicy replaces the need for Ingress rules"
+    ],
+    "answer": "The Ingress controller Pod's traffic to backend Pods must be explicitly allowed by NetworkPolicy if default-deny policies are in place",
+    "explanation": "Since the controller is just another Pod making requests to backend Pod IPs, a namespace-wide default-deny NetworkPolicy will block it too unless you add an ingress rule allowing traffic from the controller's namespace/labels.",
+    "difficulty": "hard",
+    "subcategory": "security",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What does 'spec.defaultBackend' at the top level of an Ingress object do (vs per-rule backend)?",
+    "options": [
+      "Specifies a fallback Service for requests not matching any rule in that specific Ingress",
+      "Sets the default TLS certificate",
+      "Defines default resource limits for the controller",
+      "Configures default namespace routing"
+    ],
+    "answer": "Specifies a fallback Service for requests not matching any rule in that specific Ingress",
+    "explanation": "Unlike the controller-wide default backend (cluster fallback), this per-Ingress defaultBackend field lets that specific Ingress object route otherwise-unmatched requests within its own host/path space to a chosen Service.",
+    "difficulty": "medium",
+    "subcategory": "rules",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you test Ingress routing locally before DNS is set up, for a host like app.example.com?",
+    "options": [
+      "Use curl --resolve or edit /etc/hosts to map the hostname to the Ingress controller's IP",
+      "Ingress cannot be tested without real DNS",
+      "Change the Service type to NodePort temporarily only",
+      "Modify the Kubernetes API server's DNS settings"
+    ],
+    "answer": "Use curl --resolve or edit /etc/hosts to map the hostname to the Ingress controller's IP",
+    "explanation": "'curl --resolve app.example.com:443:<controller-ip> https://app.example.com' (or a hosts file entry) forces the hostname to resolve to the controller's external IP so you can validate host-based routing rules before real DNS records exist.",
+    "difficulty": "medium",
+    "subcategory": "troubleshooting",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is 'IngressClassParams' used for in the AWS Load Balancer Controller?",
+    "options": [
+      "Custom resource specifying ALB-specific configuration (scheme, subnets, tags) associated with an IngressClass",
+      "Defines RBAC roles for the Ingress controller",
+      "Configures node affinity for controller Pods",
+      "Replaces the need for annotations entirely, mandatory for every setup"
+    ],
+    "answer": "Custom resource specifying ALB-specific configuration (scheme, subnets, tags) associated with an IngressClass",
+    "explanation": "IngressClassParams is a CRD that lets cluster admins centrally define shared ALB settings (like internal vs internet-facing scheme, subnet IDs, load balancer attributes) referenced by an IngressClass, instead of repeating annotations on every Ingress.",
+    "difficulty": "hard",
+    "subcategory": "controllers",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why might you choose Traefik over ingress-nginx as your Ingress controller?",
+    "options": [
+      "Traefik offers native dynamic configuration, built-in dashboard, and additional CRDs (IngressRoute) for advanced routing without reloads",
+      "Traefik is the only controller supporting TLS",
+      "ingress-nginx cannot handle HTTPS",
+      "Traefik is required for bare-metal clusters"
+    ],
+    "answer": "Traefik offers native dynamic configuration, built-in dashboard, and additional CRDs (IngressRoute) for advanced routing without reloads",
+    "explanation": "Traefik auto-discovers backends and updates routing dynamically without reloading a config file (unlike nginx's reload-based model), and its IngressRoute CRD supports advanced middleware chaining (auth, rate limiting, retries) beyond plain Ingress capabilities.",
+    "difficulty": "medium",
+    "subcategory": "controllers",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What security risk exists if you don't restrict who can create/edit Ingress objects in a shared cluster?",
+    "options": [
+      "Users could hijack hostnames/paths already used by other teams, causing routing conflicts or traffic interception",
+      "Ingress objects have no security implications",
+      "Only cluster-admin can ever create Ingress by default",
+      "RBAC cannot restrict Ingress objects"
+    ],
+    "answer": "Users could hijack hostnames/paths already used by other teams, causing routing conflicts or traffic interception",
+    "explanation": "Without restricting Ingress creation via RBAC/admission policy (e.g., validating host uniqueness), a malicious or careless team could claim a hostname another team is using, intercepting or disrupting their traffic \u2014 a real multi-tenant concern.",
+    "difficulty": "hard",
+    "subcategory": "security",
+    "category": "kubernetes"
+  }
+]
