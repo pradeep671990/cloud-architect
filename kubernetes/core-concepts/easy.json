@@ -1,1 +1,702 @@
-[]
+[
+  {
+    "question": "What's the smallest deployable unit in Kubernetes, and why does Kubernetes not schedule bare containers directly?",
+    "options": [
+      "Pod",
+      "Container",
+      "ReplicaSet",
+      "Node"
+    ],
+    "answer": "Pod",
+    "explanation": "A Pod wraps one or more containers that share network namespace (same IP/port space) and storage volumes, modeling tightly-coupled processes (e.g., an app plus a log-shipping sidecar) as a single schedulable unit. Kubernetes never schedules a container in isolation; the Pod is the atomic unit the scheduler places on a node.",
+    "difficulty": "easy",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Two containers in the same Pod need to communicate over localhost and share files. What makes this possible?",
+    "options": [
+      "Shared network and IPC namespaces, plus shared Volumes",
+      "Separate networks bridged automatically",
+      "A Service object between them",
+      "ConfigMap injection"
+    ],
+    "answer": "Shared network and IPC namespaces, plus shared Volumes",
+    "explanation": "All containers in a Pod share the same network namespace (one IP, so they reach each other via localhost:port) and can share mounted Volumes for files. This is the defining property of a Pod versus running containers separately, and it's why sidecars (log shippers, proxies) are colocated in the same Pod as their main container.",
+    "difficulty": "easy",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You need a component that continuously reconciles the actual cluster state toward the desired state declared in manifests. What is this pattern called?",
+    "options": [
+      "Controller reconciliation loop",
+      "Imperative scripting",
+      "Webhook admission",
+      "Static Pod manifest"
+    ],
+    "answer": "Controller reconciliation loop",
+    "explanation": "Kubernetes controllers (Deployment controller, ReplicaSet controller, etc.) run continuous loops: observe current state via the API server, compare to desired state (spec), and take action to converge them. This declarative, level-triggered reconciliation (not one-shot imperative commands) is why Kubernetes self-heals when Pods die or nodes fail.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the single source of truth for cluster state that all Kubernetes components read from and write to?",
+    "options": [
+      "etcd (accessed via the API server)",
+      "Local files on each node",
+      "The kubelet's in-memory cache",
+      "The Kubernetes Dashboard database"
+    ],
+    "answer": "etcd (accessed via the API server)",
+    "explanation": "etcd is a distributed, consistent key-value store holding all cluster object state (Pods, Services, ConfigMaps, etc.). No component talks to etcd directly except the API server; every controller, scheduler, and kubelet interacts only through the API server, which enforces validation, authentication, and admission control before persisting changes.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why does deleting etcd's data (without a backup) constitute total cluster data loss, even if all nodes and Pods are still running?",
+    "options": [
+      "etcd is the only persistent store of cluster object definitions; nodes/Pods have no independent record of desired state",
+      "Nodes automatically re-register their own state into a new etcd",
+      "Pods can rebuild the cluster state from their own metadata",
+      "kube-apiserver caches everything permanently in memory"
+    ],
+    "answer": "etcd is the only persistent store of cluster object definitions; nodes/Pods have no independent record of desired state",
+    "explanation": "Running Pods and kubelets don't retain a durable copy of the cluster's declared intent (Deployments, Services, RBAC rules, etc.); that all lives solely in etcd. If etcd data is lost without a snapshot backup, the cluster has no way to reconstruct what should exist, which is why regular etcd backups (etcdctl snapshot save) are a critical operational practice.",
+    "difficulty": "hard",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What component on the control plane is responsible for deciding which node a newly created Pod should run on?",
+    "options": [
+      "kube-scheduler",
+      "kubelet",
+      "kube-proxy",
+      "controller-manager"
+    ],
+    "answer": "kube-scheduler",
+    "explanation": "kube-scheduler watches for Pods with no assigned node, then evaluates all eligible nodes using filtering (predicates: resource availability, taints/tolerations, node selectors) and scoring (priorities: spreading, affinity preferences) to pick the best fit, writing the decision back via the API server as a binding.",
+    "difficulty": "easy",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What agent runs on every worker node and is responsible for actually starting/stopping containers per the Pod spec assigned to that node?",
+    "options": [
+      "kubelet",
+      "kube-scheduler",
+      "etcd",
+      "kube-controller-manager"
+    ],
+    "answer": "kubelet",
+    "explanation": "kubelet is the node-level agent that watches the API server for Pods scheduled to its node, then instructs the container runtime (via CRI) to pull images and start/stop containers accordingly, reports Pod/node status back, and executes liveness/readiness probes and resource limit enforcement locally.",
+    "difficulty": "easy",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How does kubelet actually talk to different container runtimes (containerd, CRI-O) in a standardized way?",
+    "options": [
+      "Container Runtime Interface (CRI)",
+      "Docker Engine API directly, always",
+      "SSH into the runtime's daemon",
+      "kubelet has no runtime abstraction; each is hardcoded"
+    ],
+    "answer": "Container Runtime Interface (CRI)",
+    "explanation": "CRI is a gRPC-based plugin interface that decouples kubelet from any specific container runtime implementation. Any runtime implementing CRI (containerd, CRI-O) can be used interchangeably; this is why Docker Engine support was deprecated and removed from kubelet directly (dockershim), since Docker itself didn't natively implement CRI.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What component implements Kubernetes Services by programming iptables/IPVS rules on each node for load balancing?",
+    "options": [
+      "kube-proxy",
+      "kube-scheduler",
+      "CoreDNS",
+      "kubelet"
+    ],
+    "answer": "kube-proxy",
+    "explanation": "kube-proxy runs on every node and watches Services/Endpoints, translating them into local packet-forwarding rules (iptables NAT rules by default, or IPVS for higher performance at scale) so traffic to a Service's ClusterIP gets load-balanced across the Pods backing it, entirely in the kernel data path without a userspace proxy hop.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You need Pods to resolve other Services by name (e.g., 'my-svc.my-namespace.svc.cluster.local'). What provides this?",
+    "options": [
+      "CoreDNS",
+      "kube-proxy",
+      "etcd",
+      "kubelet's local resolver"
+    ],
+    "answer": "CoreDNS",
+    "explanation": "CoreDNS runs as cluster-internal Pods providing DNS resolution for Service and Pod names in the standard '<service>.<namespace>.svc.cluster.local' format. It watches the API server for Service/Endpoint changes and updates DNS records dynamically, replacing the older kube-dns as the default cluster DNS addon since Kubernetes 1.13.",
+    "difficulty": "easy",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the difference between a Kubernetes 'object's desired state (spec)' and its 'observed state (status)'?",
+    "options": [
+      "spec is what the user declares they want; status is what the system currently observes/reports about actual state",
+      "They are the same field, just different names",
+      "status is user-editable; spec is read-only, set by controllers",
+      "spec only applies to Pods, status only applies to Nodes"
+    ],
+    "answer": "spec is what the user declares they want; status is what the system currently observes/reports about actual state",
+    "explanation": "Every Kubernetes object follows this convention: 'spec' is written by the user/client (declarative intent, e.g. 'replicas: 3'), while 'status' is written by controllers reporting what's actually true (e.g., 'readyReplicas: 2'). Reconciliation loops continuously compare spec against status and act to close any gap.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you group and isolate a set of related resources (Deployments, Services, ConfigMaps) for one team or environment within the same cluster?",
+    "options": [
+      "Namespace",
+      "Label selector alone",
+      "Node pool",
+      "ClusterRole"
+    ],
+    "answer": "Namespace",
+    "explanation": "Namespaces partition a cluster into virtual sub-clusters, scoping resource names (two Pods can share a name if in different namespaces), enabling per-namespace RBAC policies, ResourceQuotas, and NetworkPolicies. Cluster-scoped resources (Nodes, PersistentVolumes, ClusterRoles) exist outside any namespace and are visible cluster-wide.",
+    "difficulty": "easy",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You want to tag Pods with metadata (like 'env=prod', 'tier=frontend') that Services and other objects can select on. What mechanism is this?",
+    "options": [
+      "Labels and label selectors",
+      "Annotations",
+      "Namespaces",
+      "Finalizers"
+    ],
+    "answer": "Labels and label selectors",
+    "explanation": "Labels are key-value pairs attached to objects specifically designed for identification and selection; Services, ReplicaSets, and NetworkPolicies use label selectors to dynamically determine which Pods they apply to. Annotations, by contrast, hold arbitrary non-identifying metadata (like build info or tool-specific config) and are not selectable.",
+    "difficulty": "easy",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the key difference between Labels and Annotations in Kubernetes object metadata?",
+    "options": [
+      "Labels are used for selection/grouping and have syntax restrictions; Annotations hold arbitrary non-identifying metadata with looser constraints",
+      "They are functionally identical, just named differently",
+      "Annotations support selectors; Labels do not",
+      "Labels can only be set on Nodes, Annotations only on Pods"
+    ],
+    "answer": "Labels are used for selection/grouping and have syntax restrictions; Annotations hold arbitrary non-identifying metadata with looser constraints",
+    "explanation": "Labels must follow a strict key/value syntax (63 char limit, specific allowed characters) because they're indexed and used in selectors for querying and grouping objects. Annotations have much looser size/format constraints and are meant for non-identifying info like tool metadata, build timestamps, or configuration hints that controllers/tools read but never select on.",
+    "difficulty": "easy",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How does the Kubernetes API server ensure that concurrent updates to the same object don't silently overwrite each other's changes (lost update problem)?",
+    "options": [
+      "Optimistic concurrency control via resourceVersion",
+      "Global cluster-wide locking on every write",
+      "Last-write-wins with no conflict detection",
+      "Pessimistic row-level locking in etcd"
+    ],
+    "answer": "Optimistic concurrency control via resourceVersion",
+    "explanation": "Every object carries a 'resourceVersion' field. An update request must include the version it read; if another client already modified the object (bumping resourceVersion) in the meantime, the API server rejects the conflicting update with a 409 Conflict, forcing the client to re-fetch and retry rather than silently clobbering the other change.",
+    "difficulty": "hard",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the purpose of a Kubernetes 'finalizer' on an object, and why might a namespace get stuck in 'Terminating' state forever?",
+    "options": [
+      "Finalizers block deletion until specific cleanup logic completes; a controller that should remove the finalizer may have crashed or lost access, stalling deletion indefinitely",
+      "Finalizers are purely cosmetic metadata with no functional effect",
+      "Terminating namespaces always resolve automatically within a fixed timeout",
+      "Finalizers only exist on Pods, never namespaces"
+    ],
+    "answer": "Finalizers block deletion until specific cleanup logic completes; a controller that should remove the finalizer may have crashed or lost access, stalling deletion indefinitely",
+    "explanation": "A finalizer is a string on an object's metadata that tells the API server 'don't fully delete this until whichever controller owns this finalizer removes it', used for cleanup tasks like deprovisioning cloud load balancers. If that controller is down, misconfigured, or lost RBAC permissions, the object (or namespace, which waits for all its contained objects' finalizers) remains stuck in Terminating indefinitely until manually resolved.",
+    "difficulty": "hard",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you apply configuration changes to a cluster in a way that's declarative and idempotent, rather than issuing individual imperative commands?",
+    "options": [
+      "kubectl apply -f manifest.yaml",
+      "kubectl create, re-run every time",
+      "kubectl edit interactively for every change",
+      "kubectl run with explicit flags for each field"
+    ],
+    "answer": "kubectl apply -f manifest.yaml",
+    "explanation": "'kubectl apply' computes a three-way merge between the last-applied config (stored in an annotation), the local manifest, and the live object, applying only the diff. This makes it safe to re-run repeatedly (idempotent) and is the foundation of GitOps workflows, unlike 'kubectl create' which fails on already-existing objects, or 'kubectl edit' which isn't reproducible/scriptable.",
+    "difficulty": "easy",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the difference between 'kubectl apply' and 'kubectl replace' when updating an existing object?",
+    "options": [
+      "apply does a merge based on diffs and works even if the object doesn't exist yet; replace overwrites the entire object and requires it to already exist",
+      "They are functionally identical commands",
+      "replace merges fields; apply always overwrites everything",
+      "apply only works on Pods; replace works on all object types"
+    ],
+    "answer": "apply does a merge based on diffs and works even if the object doesn't exist yet; replace overwrites the entire object and requires it to already exist",
+    "explanation": "'kubectl replace -f file.yaml' sends a full PUT, replacing the entire object with what's in the file (and fails if the object doesn't already exist, unless combined with --force in some cases), so any field not in your file gets removed. 'kubectl apply' instead computes a patch based on the last-applied-configuration annotation, preserving fields managed by other means (e.g., a field set by a mutating webhook) that aren't explicitly in your manifest.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You want to extend the Kubernetes API with your own custom object type (e.g., 'Database') that behaves like a native resource. What do you create?",
+    "options": [
+      "CustomResourceDefinition (CRD)",
+      "A new Namespace",
+      "A ConfigMap schema",
+      "An Ingress class"
+    ],
+    "answer": "CustomResourceDefinition (CRD)",
+    "explanation": "A CRD registers a new resource type with the API server, giving it its own API group/version/kind, validation schema, and kubectl support just like built-in resources (Pods, Deployments). Typically paired with a custom Controller/Operator that watches instances of the CRD and reconciles real-world state (e.g., provisioning an actual database) to match the declared spec.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the relationship between a CustomResourceDefinition (CRD) and an Operator?",
+    "options": [
+      "A CRD defines the schema/API shape of a custom object; an Operator is the controller logic that watches and reconciles instances of that CRD",
+      "They are the same thing with two different names",
+      "An Operator must be written in Go; a CRD is language-agnostic YAML only",
+      "A CRD replaces the need for any controller logic entirely"
+    ],
+    "answer": "A CRD defines the schema/API shape of a custom object; an Operator is the controller logic that watches and reconciles instances of that CRD",
+    "explanation": "The CRD alone just teaches the API server about a new object type (e.g., 'PostgresCluster') and lets you store/retrieve instances via kubectl/API, but does nothing on its own. An Operator is a custom controller (often built with kubebuilder or the Operator SDK) that watches those custom objects and performs the actual reconciliation work (provisioning pods, backups, failover) to make real infrastructure match the declared custom resource spec.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you intercept and validate/modify API requests before they're persisted, e.g., to enforce a policy like 'no image tags allowed, only digests'?",
+    "options": [
+      "Admission webhooks (ValidatingAdmissionWebhook / MutatingAdmissionWebhook)",
+      "RBAC Role bindings",
+      "NetworkPolicy objects",
+      "PodDisruptionBudget"
+    ],
+    "answer": "Admission webhooks (ValidatingAdmissionWebhook / MutatingAdmissionWebhook)",
+    "explanation": "Admission webhooks are called by the API server after authentication/authorization but before an object is persisted to etcd. Mutating webhooks can modify the request (e.g., auto-inject a sidecar), while validating webhooks can accept/reject it (e.g., reject Pods using ':latest' tags). Tools like OPA Gatekeeper and Kyverno implement policy enforcement using this mechanism.",
+    "difficulty": "hard",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the order of operations an API request goes through inside kube-apiserver before being persisted?",
+    "options": [
+      "Authentication -> Authorization (RBAC) -> Admission control (mutating then validating) -> persisted to etcd",
+      "Admission control -> Authentication -> Authorization -> etcd",
+      "etcd write first, then validated retroactively",
+      "Authorization only, with no other checks"
+    ],
+    "answer": "Authentication -> Authorization (RBAC) -> Admission control (mutating then validating) -> persisted to etcd",
+    "explanation": "Every request first proves identity (authentication: certs, tokens, OIDC), then is checked against RBAC policy (authorization: is this identity allowed to do this verb on this resource), then passes through admission controllers (mutating webhooks first, potentially altering the object, followed by validating webhooks/built-in admission plugins that can reject it), and only then is it written to etcd.",
+    "difficulty": "hard",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why does Kubernetes recommend running an odd number of etcd members (3, 5, 7) in a highly available control plane?",
+    "options": [
+      "etcd uses Raft consensus requiring a majority quorum; odd numbers avoid wasted nodes that don't improve fault tolerance over the next lower odd number",
+      "Even numbers of etcd nodes are technically disallowed by etcd software",
+      "More nodes always means proportionally more fault tolerance, regardless of parity",
+      "It's purely a networking/DNS constraint, unrelated to consensus"
+    ],
+    "answer": "etcd uses Raft consensus requiring a majority quorum; odd numbers avoid wasted nodes that don't improve fault tolerance over the next lower odd number",
+    "explanation": "With 3 etcd members, the cluster tolerates 1 failure (needs 2/3 for quorum); with 4 members it still only tolerates 1 failure (needs 3/4) despite the extra node, so 4 offers no benefit over 3 while adding cost and consensus overhead. 5 members tolerates 2 failures. This is why 3 or 5 are the standard recommended sizes.",
+    "difficulty": "hard",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You need to run kubectl commands against multiple clusters (dev, staging, prod) from one machine, switching easily between them. What manages this?",
+    "options": [
+      "kubeconfig contexts (kubectl config use-context)",
+      "Separate physical machines per cluster",
+      "Editing the API server's IP manually every time",
+      "kubectl doesn't support multi-cluster access"
+    ],
+    "answer": "kubeconfig contexts (kubectl config use-context)",
+    "explanation": "A kubeconfig file defines clusters (API server endpoints/CA certs), users (credentials), and contexts (a named cluster+user+namespace combination). 'kubectl config use-context prod' switches the active context so subsequent commands target that cluster, and 'kubectl config get-contexts' lists all available ones, avoiding the need to manually re-specify server/credentials on every command.",
+    "difficulty": "easy",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the practical difference between a Kubernetes 'Deployment' and the 'ReplicaSet' it creates under the hood?",
+    "options": [
+      "Deployment manages rolling updates/rollback history by creating and orphaning ReplicaSets over time; a ReplicaSet alone just maintains a fixed replica count with no update strategy",
+      "They are exactly the same object with a different name",
+      "ReplicaSet supports rolling updates; Deployment does not",
+      "Deployment is deprecated in favor of ReplicaSet"
+    ],
+    "answer": "Deployment manages rolling updates/rollback history by creating and orphaning ReplicaSets over time; a ReplicaSet alone just maintains a fixed replica count with no update strategy",
+    "explanation": "A ReplicaSet's only job is ensuring N identical Pod replicas exist matching a fixed Pod template; it has no concept of versioned updates. A Deployment sits a layer above: when you change its Pod template (e.g., new image), it creates a NEW ReplicaSet and gradually shifts replica counts from the old to the new one (rolling update), keeping old ReplicaSets around (scaled to 0) to support rollback via revision history.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How does Kubernetes know that a set of Pods 'belongs to' a specific ReplicaSet, enabling it to know which ones to delete when scaling down?",
+    "options": [
+      "ownerReferences metadata field on the Pods, pointing back to the owning ReplicaSet, combined with label selector matching",
+      "Pod names alone, parsed as strings",
+      "A separate mapping table stored outside etcd",
+      "Namespace membership alone determines ownership"
+    ],
+    "answer": "ownerReferences metadata field on the Pods, pointing back to the owning ReplicaSet, combined with label selector matching",
+    "explanation": "Every Pod created by a ReplicaSet gets an 'ownerReferences' entry identifying its controlling ReplicaSet (used for garbage collection: deleting the ReplicaSet cascades to delete owned Pods). The ReplicaSet controller itself uses label selectors to find which existing Pods currently 'count' toward its desired replica count, which is also how it can adopt orphaned Pods matching its selector.",
+    "difficulty": "hard",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What Kubernetes API mechanism lets clients efficiently receive real-time updates about object changes instead of continuously polling?",
+    "options": [
+      "Watch (long-lived HTTP connection streaming change events)",
+      "Polling every second via cron",
+      "Webhook push notifications sent by etcd directly",
+      "Server-sent emails on every change"
+    ],
+    "answer": "Watch (long-lived HTTP connection streaming change events)",
+    "explanation": "The 'watch' API allows a client to open a long-lived connection and receive a stream of ADDED/MODIFIED/DELETED events for objects matching a query, starting from a given resourceVersion. Controllers, kubectl (with --watch), and client-go's informer/cache machinery all rely on this instead of inefficient polling, and it's how the whole reconciliation-loop model stays responsive at scale.",
+    "difficulty": "hard",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why do most production controllers use 'informers' (from client-go) rather than calling List/Watch APIs directly themselves?",
+    "options": [
+      "Informers provide a local, thread-safe cache with efficient event-driven callbacks, reducing API server load from many controllers independently listing/watching the same resources",
+      "Informers are just a different name for the same List/Watch calls with no real benefit",
+      "Direct API calls are always faster than informers in every scenario",
+      "Informers eliminate the need for the API server entirely"
+    ],
+    "answer": "Informers provide a local, thread-safe cache with efficient event-driven callbacks, reducing API server load from many controllers independently listing/watching the same resources",
+    "explanation": "An informer maintains a local in-memory cache kept in sync via a single shared watch connection, and dispatches Add/Update/Delete events to registered handlers. This means multiple pieces of logic within (or across) controllers can share one underlying watch/cache rather than each independently hammering the API server with redundant List/Watch calls, which matters a lot at cluster scale.",
+    "difficulty": "hard",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the purpose of the 'kube-controller-manager' component, and name two controllers it runs.",
+    "options": [
+      "Runs core built-in control loops as a single binary, e.g., the Node controller and the ReplicaSet controller",
+      "It's just an alias for kubelet running on the control plane",
+      "It only manages RBAC roles, nothing else",
+      "It replaces the need for kube-scheduler entirely"
+    ],
+    "answer": "Runs core built-in control loops as a single binary, e.g., the Node controller and the ReplicaSet controller",
+    "explanation": "kube-controller-manager bundles many independent reconciliation loops into one process for operational simplicity: the Node controller (marks nodes NotReady/evicts Pods after a timeout), ReplicaSet controller, Deployment controller, Job controller, Endpoint controller, and more, each watching relevant objects and driving actual state toward desired state.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What does 'cloud-controller-manager' do, and why was it split out from kube-controller-manager?",
+    "options": [
+      "Runs cloud-provider-specific logic (load balancer provisioning, node lifecycle from the cloud's perspective, routes) separately, decoupling Kubernetes core from vendor-specific cloud APIs",
+      "It's an alternative to kube-scheduler for cloud environments",
+      "It manages only DNS records, nothing cloud-related",
+      "It's deprecated and no longer used in any cluster"
+    ],
+    "answer": "Runs cloud-provider-specific logic (load balancer provisioning, node lifecycle from the cloud's perspective, routes) separately, decoupling Kubernetes core from vendor-specific cloud APIs",
+    "explanation": "Historically, cloud-specific code lived inside kube-controller-manager itself, coupling core Kubernetes releases to every supported cloud vendor's API changes. Splitting it into a separate 'cloud-controller-manager' binary (implementing things like provisioning an AWS ELB when a Service of type LoadBalancer is created) let cloud vendors iterate independently and keeps the Kubernetes core provider-agnostic.",
+    "difficulty": "hard",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you check the overall health and version information of your cluster's control plane components quickly?",
+    "options": [
+      "kubectl get componentstatuses (deprecated) or kubectl version / cluster-info, plus checking control plane Pod status in kube-system",
+      "There is no way to check control plane health from kubectl",
+      "Only SSH access to master nodes reveals health status",
+      "kubectl get pods -A always shows control plane health explicitly by default"
+    ],
+    "answer": "kubectl get componentstatuses (deprecated) or kubectl version / cluster-info, plus checking control plane Pod status in kube-system",
+    "explanation": "'kubectl cluster-info' shows control plane endpoint URLs; 'kubectl version' confirms client/server version skew. For managed control planes (EKS/GKE/AKS) you often can't directly inspect control plane Pods, but for self-managed/kubeadm clusters, control plane components typically run as static Pods in the 'kube-system' namespace, checkable via 'kubectl get pods -n kube-system'.",
+    "difficulty": "easy",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's a 'static Pod' in Kubernetes, and how does it differ from a normal Pod managed by the API server/scheduler?",
+    "options": [
+      "A Pod defined by a manifest file directly on a node's filesystem, managed by kubelet alone without going through the scheduler or being fully controlled by the API server",
+      "A Pod that never restarts under any circumstances",
+      "A Pod pinned to a specific node via nodeSelector",
+      "A Pod that has no network connectivity by design"
+    ],
+    "answer": "A Pod defined by a manifest file directly on a node's filesystem, managed by kubelet alone without going through the scheduler or being fully controlled by the API server",
+    "explanation": "kubelet watches a specific directory (e.g., /etc/kubernetes/manifests) for Pod manifest files and runs them directly, bypassing the scheduler entirely. This is exactly how kubeadm-based clusters bootstrap the control plane itself (etcd, kube-apiserver, kube-scheduler run as static Pods on control plane nodes), solving the chicken-and-egg problem of needing a running API server to schedule the API server.",
+    "difficulty": "hard",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How does the API server's OpenAPI schema and validation benefit cluster operators when they submit a manifest with a typo in a field name?",
+    "options": [
+      "Server-side (and client-side with kubectl --validate) schema validation rejects unknown/malformed fields immediately with a clear error rather than silently ignoring them",
+      "Typos are silently accepted and ignored with no warning at all",
+      "Validation is entirely optional and disabled by default in all clusters",
+      "Only custom resources are validated; built-in types skip validation"
+    ],
+    "answer": "Server-side (and client-side with kubectl --validate) schema validation rejects unknown/malformed fields immediately with a clear error rather than silently ignoring them",
+    "explanation": "Kubernetes objects are validated against their OpenAPI v3 schema both client-side (kubectl performs local validation before sending) and server-side (the API server always validates). A typo'd field name (e.g., 'replias' instead of 'replicas') is caught and rejected rather than being silently accepted and having no effect, which would otherwise cause confusing 'why isn't this working' debugging sessions.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's an API 'group/version/kind' (GVK) and why does it matter when Kubernetes evolves an API like Deployment from apps/v1beta1 to apps/v1?",
+    "options": [
+      "It identifies exactly which API surface/schema/behavior a manifest targets, letting Kubernetes support multiple versions of an object's API simultaneously during migrations",
+      "It's just cosmetic metadata with no functional impact on behavior",
+      "GVK only applies to CustomResourceDefinitions, never built-in types",
+      "Old API versions are immediately deleted the moment a new version ships"
+    ],
+    "answer": "It identifies exactly which API surface/schema/behavior a manifest targets, letting Kubernetes support multiple versions of an object's API simultaneously during migrations",
+    "explanation": "'apiVersion: apps/v1' + 'kind: Deployment' together form the GVK, telling the API server exactly which registered schema/behavior to apply. Kubernetes commonly supports several versions of the same Kind concurrently (with automatic conversion between them) during a deprecation period, so clients can migrate from an older, deprecated version (eventually removed after enough release cycles) to a newer stable one without a hard cutover.",
+    "difficulty": "hard",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You need to understand exactly why a Pod isn't running as expected. Which single kubectl command gives the richest combined view (events, conditions, container statuses)?",
+    "options": [
+      "kubectl describe pod <name>",
+      "kubectl get pod <name> -o yaml only",
+      "kubectl logs <name> alone",
+      "kubectl top pod <name>"
+    ],
+    "answer": "kubectl describe pod <name>",
+    "explanation": "'kubectl describe pod' aggregates the Pod's spec summary, current conditions (PodScheduled, Ready, etc.), container statuses (waiting/running/terminated with reasons), resource requests/limits, volumes, and, crucially, recent Events (like 'FailedScheduling: insufficient memory' or 'ImagePullBackOff'), which is usually the fastest single command to diagnose why a Pod isn't behaving as expected.",
+    "difficulty": "easy",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the difference between a Pod's 'Ready' condition and its overall 'Phase' (like Running)?",
+    "options": [
+      "Phase is a coarse lifecycle stage (Pending/Running/Succeeded/Failed); Ready is a specific condition reflecting whether ALL containers pass their readiness probes right now",
+      "They are the same value represented in two different formats",
+      "Phase only applies to Jobs; Ready only applies to Deployments",
+      "Ready always matches Phase exactly with no possible divergence"
+    ],
+    "answer": "Phase is a coarse lifecycle stage (Pending/Running/Succeeded/Failed); Ready is a specific condition reflecting whether ALL containers pass their readiness probes right now",
+    "explanation": "A Pod's Phase describes its high-level lifecycle stage and is quite coarse; a Pod can be Phase='Running' (its containers are executing) while its Ready condition is False because a readiness probe is currently failing (e.g., app still warming up or a downstream dependency unavailable). Services only route traffic to Pods with Ready=True, making this the more operationally meaningful signal for traffic routing than Phase alone.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How is a Kubernetes cluster's version skew policy typically constrained between the API server and kubelet versions?",
+    "options": [
+      "kubelet may be up to a few minor versions older than the API server (per official skew policy), never newer",
+      "kubelet and API server must always match the exact same version",
+      "kubelet can be any arbitrary number of versions ahead of the API server",
+      "There is no supported version skew; any mismatch is unsupported and will fail immediately"
+    ],
+    "answer": "kubelet may be up to a few minor versions older than the API server (per official skew policy), never newer",
+    "explanation": "Kubernetes' official version skew policy allows kubelet to lag the control plane by a limited number of minor versions (historically up to 2, tightened over releases), supporting realistic rolling upgrade scenarios in large fleets, but kubelet should never be NEWER than the API server. Other components (kube-scheduler, kube-controller-manager) generally should match the API server's minor version.",
+    "difficulty": "hard",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why might 'kubectl get pods' show a Pod as 'Running' immediately after creation, then transition to 'CrashLoopBackOff' a few seconds later?",
+    "options": [
+      "The container started successfully (Running) but then its main process exited/crashed repeatedly, triggering the exponential backoff restart policy",
+      "CrashLoopBackOff means the Pod was never actually scheduled",
+      "This state transition indicates a Kubernetes API server bug",
+      "Running and CrashLoopBackOff cannot logically follow one another"
+    ],
+    "answer": "The container started successfully (Running) but then its main process exited/crashed repeatedly, triggering the exponential backoff restart policy",
+    "explanation": "'CrashLoopBackOff' isn't an initial failure state; it appears only after the container has actually started and then exited (crashed) at least once, with kubelet applying exponentially increasing delays between restart attempts per the Pod's restart policy. The transition from Running to CrashLoopBackOff is completely normal and indicates the app itself is failing shortly after startup, not a scheduling problem.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What garbage collection mechanism ensures that deleting a Deployment also cleans up its ReplicaSets and Pods, without leaving orphans?",
+    "options": [
+      "Owner references combined with cascading deletion (garbage collector controller)",
+      "A nightly cron job that sweeps for orphaned objects",
+      "Manual kubectl delete for every child object individually, no automation exists",
+      "Finalizers alone handle 100% of cleanup with no owner reference involvement"
+    ],
+    "answer": "Owner references combined with cascading deletion (garbage collector controller)",
+    "explanation": "Every child object created by a controller (ReplicaSet by Deployment, Pod by ReplicaSet) carries an 'ownerReferences' entry back to its parent. The built-in garbage collector controller watches for deleted owners and, by default, cascades deletion to dependents (foreground or background cascading, configurable via '--cascade' in kubectl delete), preventing orphaned resources from accumulating.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why does Kubernetes favor a declarative, level-triggered reconciliation model over an edge-triggered, event-driven imperative model for controllers?",
+    "options": [
+      "Level-triggered reconciliation is self-correcting and resilient to missed events (e.g., after a controller restart or dropped watch connection), since it just re-evaluates current vs desired state directly",
+      "Edge-triggered systems are strictly faster in 100% of cases with no downside",
+      "Level-triggered systems cannot recover from any missed event ever",
+      "There is no meaningful difference; both models behave identically in Kubernetes"
+    ],
+    "answer": "Level-triggered reconciliation is self-correcting and resilient to missed events (e.g., after a controller restart or dropped watch connection), since it just re-evaluates current vs desired state directly",
+    "explanation": "In a purely edge-triggered model, missing a single event (e.g., due to a controller crash or network blip during a watch) could leave the system permanently out of sync since there's no compensating mechanism. Kubernetes controllers periodically re-list/resync in addition to watching, and always compare full current state vs desired spec rather than trying to process a perfect, unbroken stream of diffs, making the system naturally self-healing even after disruptions.",
+    "difficulty": "hard",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the significance of a Pod's UID versus its name, especially for a Pod that gets recreated with the identical name after being deleted?",
+    "options": [
+      "UID is a unique, immutable identifier for that specific instantiation; a recreated Pod with the same name gets a brand-new UID, distinguishing it from the previous instance",
+      "UID and name are always identical values",
+      "UID changes on every kubectl get call for the same Pod",
+      "Names are globally unique cluster-wide; UIDs are only unique within a namespace"
+    ],
+    "answer": "UID is a unique, immutable identifier for that specific instantiation; a recreated Pod with the same name gets a brand-new UID, distinguishing it from the previous instance",
+    "explanation": "Pod names can be reused (e.g., a Deployment recreates a Pod with the exact same generated name after deletion), but each individual creation gets a fresh, cluster-wide unique UID. This matters for correctly tracking object identity across recreation events, e.g., in owner references or when distinguishing genuinely 'the same' object instance from a same-named replacement in logs/events/tracing.",
+    "difficulty": "hard",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the difference between 'kubectl delete pod <name>' with the default grace period versus '--grace-period=0 --force'?",
+    "options": [
+      "Default sends SIGTERM and waits for graceful shutdown (default 30s) before SIGKILL; --force with grace-period=0 skips waiting and immediately removes the object from the API, potentially before the container is actually gone",
+      "They are functionally identical in every case",
+      "--force always guarantees a cleaner shutdown than the default",
+      "grace-period=0 only affects Deployments, not individual Pods"
+    ],
+    "answer": "Default sends SIGTERM and waits for graceful shutdown (default 30s) before SIGKILL; --force with grace-period=0 skips waiting and immediately removes the object from the API, potentially before the container is actually gone",
+    "explanation": "Normal deletion respects 'terminationGracePeriodSeconds', giving the container time to shut down cleanly. Force-deleting with a zero grace period is a last resort for stuck Pods (e.g., on an unreachable/dead node) since it removes the object from etcd immediately without confirmation the actual container process has stopped, which can risk two instances of a stateful workload briefly existing (a known danger, especially for StatefulSets on split-brain nodes).",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why is directly editing a live object with 'kubectl edit' generally discouraged for production changes managed via GitOps?",
+    "options": [
+      "It creates configuration drift between the live cluster state and the source-controlled manifests, which GitOps reconciliation will eventually overwrite or which becomes an undocumented, untracked change",
+      "kubectl edit is technically incapable of modifying production objects",
+      "It always requires cluster admin privileges regardless of the object",
+      "kubectl edit only works on custom resources, never built-ins"
+    ],
+    "answer": "It creates configuration drift between the live cluster state and the source-controlled manifests, which GitOps reconciliation will eventually overwrite or which becomes an undocumented, untracked change",
+    "explanation": "In a GitOps workflow (ArgoCD, Flux), the desired state lives in a Git repository and a controller continuously reconciles the cluster to match it. A manual 'kubectl edit' change bypasses that source of truth entirely: either the GitOps controller detects and reverts the drift on its next sync (silently undoing your manual fix), or the drift persists undetected and untracked, both of which undermine auditability and reproducibility.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What does 'kubectl diff -f manifest.yaml' do, and why is it valuable before running 'kubectl apply' in a CI/CD pipeline?",
+    "options": [
+      "Shows exactly what would change on the live cluster if the manifest were applied, without actually applying it, enabling a review step",
+      "It's identical to 'kubectl apply --dry-run' with no additional information",
+      "It compares two local YAML files only, never the live cluster",
+      "It only works for Namespace objects, not other resource types"
+    ],
+    "answer": "Shows exactly what would change on the live cluster if the manifest were applied, without actually applying it, enabling a review step",
+    "explanation": "'kubectl diff' performs a server-side dry-run comparison, showing a unified diff between the current live object and what would result from applying your manifest. This is valuable as an explicit human or automated review gate in a deployment pipeline, catching unintended changes (e.g., an accidentally removed field, or a change to a field you didn't mean to touch) before they're actually committed to the cluster.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do 'ephemeral containers' help debug a running Pod built from a minimal/distroless image with no shell?",
+    "options": [
+      "They let you attach a new, temporary debugging container to an already-running Pod's namespaces without modifying or restarting the original Pod spec",
+      "They permanently replace the main container with a debug image",
+      "They require rebuilding the image with debug tools included",
+      "Ephemeral containers only work for Jobs, never long-running Pods"
+    ],
+    "answer": "They let you attach a new, temporary debugging container to an already-running Pod's namespaces without modifying or restarting the original Pod spec",
+    "explanation": "'kubectl debug -it <pod> --image=busybox --target=<container>' adds an ephemeral container sharing the target's process namespace (with --target) to a live Pod, letting you run diagnostic tools (shell, netstat, strace) against a production Pod built from a shell-less distroless image, without needing to modify the original Pod spec or trigger a disruptive restart.",
+    "difficulty": "hard",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How is a Kubernetes 'Event' object different from a container log line, and what's a limitation of relying on Events for long-term auditing?",
+    "options": [
+      "Events are cluster-level records of state changes/errors emitted by the API server/controllers (not app output), and by default they're garbage-collected after about an hour, unsuitable for long-term history",
+      "Events and logs are stored in exactly the same place with the same retention",
+      "Events never expire and are kept forever by default",
+      "Events only capture Pod-level information, never node or cluster-level issues"
+    ],
+    "answer": "Events are cluster-level records of state changes/errors emitted by the API server/controllers (not app output), and by default they're garbage-collected after about an hour, unsuitable for long-term history",
+    "explanation": "Events (like 'Scheduled', 'Pulled', 'FailedMount') are separate from application logs; they reflect Kubernetes-level lifecycle occurrences and are visible via 'kubectl get events' or within 'kubectl describe'. Critically, the default etcd TTL for Events is short (historically ~1 hour), so for real observability you need to ship them to a persistent store (via an event exporter to logging/monitoring systems) rather than relying on 'kubectl get events' for anything beyond immediate, recent debugging.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the conceptual difference between a Kubernetes 'Node' object in the API and the actual physical/virtual machine it represents?",
+    "options": [
+      "The Node object is metadata/status representing the machine as known to the cluster (capacity, conditions, addresses); deleting the API object doesn't destroy the underlying machine, and vice versa",
+      "They are strictly the same thing; deleting one always deletes the other",
+      "A Node object can represent multiple physical machines simultaneously by design",
+      "The underlying machine is irrelevant once registered; only the API object matters"
+    ],
+    "answer": "The Node object is metadata/status representing the machine as known to the cluster (capacity, conditions, addresses); deleting the API object doesn't destroy the underlying machine, and vice versa",
+    "explanation": "The Node API object is kubelet's registered representation of itself, reporting capacity/allocatable resources, conditions (Ready, MemoryPressure), and addresses. 'kubectl delete node' only removes this bookkeeping record from the cluster (the kubelet process and VM keep running and can re-register), and conversely, terminating the actual VM without deregistering leaves a stale Node object until the Node controller eventually marks it NotReady/Unknown and evicts its Pods after a timeout.",
+    "difficulty": "hard",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why might 'kubectl get pods' and the actual container runtime's view of running containers (e.g., via 'crictl ps' on the node) diverge temporarily?",
+    "options": [
+      "There's inherent eventual-consistency latency between kubelet's local runtime actions and its status reports reaching the API server, especially under node pressure or during transient failures",
+      "The two views are guaranteed to always be perfectly synchronized instantaneously",
+      "crictl and kubectl query the exact same cached data source with zero possible divergence",
+      "Divergence only ever happens due to Kubernetes bugs, never normal operation"
+    ],
+    "answer": "There's inherent eventual-consistency latency between kubelet's local runtime actions and its status reports reaching the API server, especially under node pressure or during transient failures",
+    "explanation": "kubelet acts on the container runtime locally first (start/stop containers) and then reports status back to the API server on its own sync loop interval; under normal conditions this lag is small, but during node resource pressure, network issues between kubelet and the API server, or kubelet restarts, the API server's view can temporarily lag behind ground truth, which is why direct node-level tools (crictl, docker ps if applicable) are sometimes needed for the most current low-level state during deep troubleshooting.",
+    "difficulty": "hard",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the significance of Kubernetes' API being 'declarative and extensible' for building higher-level platform tooling (like internal developer platforms)?",
+    "options": [
+      "Uniform CRUD/watch semantics across built-in and custom resources let platform teams build consistent tooling and abstractions (e.g., a self-service CRD) on the same API conventions users already know",
+      "The API is imperative-only, which actually makes higher-level tooling harder to build",
+      "Extensibility via CRDs is discouraged and rarely used in real platform engineering",
+      "Declarative APIs prevent any form of automation or abstraction layer entirely"
+    ],
+    "answer": "Uniform CRUD/watch semantics across built-in and custom resources let platform teams build consistent tooling and abstractions (e.g., a self-service CRD) on the same API conventions users already know",
+    "explanation": "Because CRDs behave exactly like built-in resources (same kubectl verbs, watch semantics, RBAC model, admission control hooks), platform teams can expose higher-level, opinionated abstractions (e.g., a simplified 'WebApp' CRD that an Operator translates into Deployment+Service+Ingress) without inventing an entirely separate API paradigm, letting developers use familiar tools (kubectl, GitOps) against these custom, business-specific objects.",
+    "difficulty": "hard",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How does 'kubectl explain <resource>.<field>' help when writing a manifest for an unfamiliar field, without needing to search external documentation?",
+    "options": [
+      "It queries the API server's live OpenAPI schema and prints the field's type, description, and whether it's required, directly from the cluster's actual installed version",
+      "It only shows generic, version-agnostic documentation unrelated to your cluster",
+      "It requires internet access to fetch documentation from kubernetes.io",
+      "It only works for Pod resources, not other Kinds"
+    ],
+    "answer": "It queries the API server's live OpenAPI schema and prints the field's type, description, and whether it's required, directly from the cluster's actual installed version",
+    "explanation": "'kubectl explain deployment.spec.strategy.rollingUpdate.maxSurge' walks the OpenAPI schema tree and returns the exact field description, type, and requiredness as defined by the API server you're actually connected to, which is more reliable than external docs when your cluster runs an older/newer version or has custom API extensions (like CRDs, which 'kubectl explain' also supports).",
+    "difficulty": "easy",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  }
+]
