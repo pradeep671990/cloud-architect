@@ -1,1 +1,562 @@
-[]
+[
+  {
+    "question": "What are the three fundamental networking rules the Kubernetes network model requires?",
+    "options": [
+      "Every Pod gets its own IP; Pods can communicate with all other Pods without NAT; a Pod sees its own IP as others see it",
+      "Only Nodes get IPs; Pods share the Node's IP always",
+      "Pods communicate only through the API server",
+      "NAT is mandatory between all Pods for isolation"
+    ],
+    "answer": "Every Pod gets its own IP; Pods can communicate with all other Pods without NAT; a Pod sees its own IP as others see it",
+    "explanation": "This flat, NAT-less network model is foundational to Kubernetes networking: any Pod can reach any other Pod's IP directly (across nodes too) without address translation, simplifying service discovery and avoiding the port-mapping complexity of Docker's default bridge network.",
+    "difficulty": "easy",
+    "subcategory": "cni",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the role of a CNI (Container Network Interface) plugin in Kubernetes?",
+    "options": [
+      "Implements Pod networking: IP allocation, routing, and connectivity between Pods across nodes",
+      "Manages DNS resolution for Services only",
+      "Handles Ingress traffic exclusively",
+      "Provides the container runtime itself"
+    ],
+    "answer": "Implements Pod networking: IP allocation, routing, and connectivity between Pods across nodes",
+    "explanation": "Kubernetes delegates actual Pod network setup to a CNI plugin (Calico, Cilium, Flannel, AWS VPC CNI, etc.), which kubelet invokes when a Pod is created to assign an IP and wire up routing/interfaces per the cluster's chosen network model.",
+    "difficulty": "easy",
+    "subcategory": "cni",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the key architectural difference between Flannel and Calico?",
+    "options": [
+      "Flannel typically uses simple overlay networking (VXLAN); Calico can use pure L3 routing with BGP and supports rich NetworkPolicy enforcement",
+      "Flannel supports NetworkPolicy natively while Calico does not",
+      "They are functionally identical",
+      "Calico requires a service mesh, Flannel does not"
+    ],
+    "answer": "Flannel typically uses simple overlay networking (VXLAN); Calico can use pure L3 routing with BGP and supports rich NetworkPolicy enforcement",
+    "explanation": "Flannel is simple and easy to set up (VXLAN overlay by default) but has limited/no native NetworkPolicy enforcement, while Calico offers native NetworkPolicy support, can run overlay-free using BGP peering for better performance, and scales well in larger clusters.",
+    "difficulty": "medium",
+    "subcategory": "cni",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is Cilium's key differentiator compared to traditional CNI plugins like Calico/Flannel?",
+    "options": [
+      "It uses eBPF for data-plane networking, load balancing, and policy enforcement instead of iptables",
+      "It only works on bare-metal, not cloud",
+      "It doesn't support NetworkPolicy",
+      "It requires Istio to function at all"
+    ],
+    "answer": "It uses eBPF for data-plane networking, load balancing, and policy enforcement instead of iptables",
+    "explanation": "Cilium programs the Linux kernel's eBPF hooks directly for packet forwarding, load balancing, and policy decisions, avoiding the performance/scale limitations of iptables-based kube-proxy and enabling deep L3-L7 visibility (e.g., Hubble) and identity-based policies.",
+    "difficulty": "medium",
+    "subcategory": "cni",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the purpose of kube-proxy?",
+    "options": [
+      "Implements Service virtual IP routing, forwarding traffic to backend Pod endpoints via iptables/IPVS/nftables rules",
+      "Assigns Pod IP addresses",
+      "Handles DNS resolution for Services",
+      "Encrypts all cluster traffic"
+    ],
+    "answer": "Implements Service virtual IP routing, forwarding traffic to backend Pod endpoints via iptables/IPVS/nftables rules",
+    "explanation": "kube-proxy runs on every node and watches Services/Endpoints, programming local rules (iptables, IPVS, or nftables mode) so traffic sent to a Service's ClusterIP gets load-balanced/DNAT'd to one of the healthy backing Pods.",
+    "difficulty": "easy",
+    "subcategory": "services",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the difference between kube-proxy's iptables mode and IPVS mode?",
+    "options": [
+      "IPVS uses kernel-level hash tables for O(1) lookup and better performance at scale; iptables uses sequential rule chains that degrade with many Services",
+      "iptables mode is always faster than IPVS",
+      "IPVS mode doesn't support ClusterIP Services",
+      "They produce identical performance regardless of scale"
+    ],
+    "answer": "IPVS uses kernel-level hash tables for O(1) lookup and better performance at scale; iptables uses sequential rule chains that degrade with many Services",
+    "explanation": "With thousands of Services, iptables rule evaluation becomes a linear scan bottleneck (each packet potentially traverses many chains), while IPVS uses efficient hash-based lookups and supports more load-balancing algorithms (round robin, least connection, etc.), making it preferable for large clusters.",
+    "difficulty": "hard",
+    "subcategory": "services",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What are the four Kubernetes Service types?",
+    "options": [
+      "ClusterIP, NodePort, LoadBalancer, ExternalName",
+      "ClusterIP, Ingress, Gateway, Egress",
+      "Internal, External, Hybrid, Headless only",
+      "Pod, Node, Cluster, Global"
+    ],
+    "answer": "ClusterIP, NodePort, LoadBalancer, ExternalName",
+    "explanation": "ClusterIP (default, internal-only virtual IP), NodePort (exposes a port on every node), LoadBalancer (provisions a cloud LB, builds on NodePort), and ExternalName (DNS CNAME alias to an external name) cover the standard Service exposure models.",
+    "difficulty": "easy",
+    "subcategory": "services",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is a 'headless' Service in Kubernetes and when is it used?",
+    "options": [
+      "A Service with clusterIP: None, returning individual Pod IPs via DNS instead of a virtual IP \u2014 used for StatefulSets needing direct Pod addressing",
+      "A Service with no selector at all",
+      "A Service that cannot be reached externally",
+      "A deprecated Service type"
+    ],
+    "answer": "A Service with clusterIP: None, returning individual Pod IPs via DNS instead of a virtual IP \u2014 used for StatefulSets needing direct Pod addressing",
+    "explanation": "Headless Services skip virtual-IP load balancing; DNS lookups return all backing Pod IPs (or in StatefulSets, per-Pod stable DNS names like pod-0.svc.namespace.svc.cluster.local), which is essential for clustered databases needing direct peer-to-peer addressing.",
+    "difficulty": "medium",
+    "subcategory": "services",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How does Kubernetes DNS (CoreDNS) resolve a Service name like 'myservice' from within a Pod in the same namespace?",
+    "options": [
+      "It resolves via search domains to myservice.namespace.svc.cluster.local, returning the Service's ClusterIP",
+      "It requires the fully qualified name always, no short names supported",
+      "DNS resolution isn't provided by Kubernetes natively",
+      "It queries the API server directly at request time, bypassing DNS"
+    ],
+    "answer": "It resolves via search domains to myservice.namespace.svc.cluster.local, returning the Service's ClusterIP",
+    "explanation": "Pods get a resolv.conf with search domains (namespace.svc.cluster.local, svc.cluster.local, cluster.local) so a short name like 'myservice' automatically expands and resolves through CoreDNS, which serves DNS records generated from the Service/Endpoints objects.",
+    "difficulty": "medium",
+    "subcategory": "dns",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What Kubernetes component replaced kube-dns as the default cluster DNS server?",
+    "options": [
+      "CoreDNS",
+      "kube-proxy",
+      "etcd",
+      "Calico DNS"
+    ],
+    "answer": "CoreDNS",
+    "explanation": "CoreDNS became the default cluster DNS add-on starting around Kubernetes 1.13, replacing kube-dns; it's a flexible, plugin-based DNS server configured via a Corefile and deployed as a Deployment with a Service (kube-dns name kept for compatibility).",
+    "difficulty": "easy",
+    "subcategory": "dns",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What does the CoreDNS 'ndots' setting in Pod's resolv.conf commonly cause issues with?",
+    "options": [
+      "Excessive/slow DNS lookups for external FQDNs because Kubernetes sets ndots:5 by default, causing multiple search-domain attempts before trying the absolute name",
+      "It prevents any external DNS resolution entirely",
+      "It disables internal Service DNS resolution",
+      "It only affects IPv6 clusters"
+    ],
+    "answer": "Excessive/slow DNS lookups for external FQDNs because Kubernetes sets ndots:5 by default, causing multiple search-domain attempts before trying the absolute name",
+    "explanation": "With ndots:5, any external domain with fewer than 5 dots (e.g., api.stripe.com) triggers several failed lookups against the internal search domains before finally trying the name as absolute, adding latency; common fixes include appending a trailing dot or tuning dnsConfig per Pod.",
+    "difficulty": "hard",
+    "subcategory": "dns",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is a NetworkPolicy in Kubernetes?",
+    "options": [
+      "A namespaced resource defining allowed ingress/egress traffic rules between Pods, enforced by the CNI plugin",
+      "A global firewall configured on the API server",
+      "A Service-level access control list",
+      "A CRD only supported by cloud providers"
+    ],
+    "answer": "A namespaced resource defining allowed ingress/egress traffic rules between Pods, enforced by the CNI plugin",
+    "explanation": "NetworkPolicy uses label selectors to specify which Pods a policy applies to and which ingress/egress traffic (by Pod/namespace selector, IP block, and port) is allowed; it requires a CNI that implements policy enforcement (e.g. Calico, Cilium) \u2014 plain Flannel does not enforce it.",
+    "difficulty": "medium",
+    "subcategory": "network-policy",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What happens by default if no NetworkPolicy selects a given Pod?",
+    "options": [
+      "All ingress and egress traffic is allowed (default-allow)",
+      "All traffic is denied by default",
+      "Only traffic from the same namespace is allowed",
+      "Only DNS traffic is allowed"
+    ],
+    "answer": "All ingress and egress traffic is allowed (default-allow)",
+    "explanation": "Kubernetes networking is permissive by default; NetworkPolicies are additive-allow once at least one policy selects a Pod for a given direction (ingress/egress), it becomes default-deny for that direction except what's explicitly allowed by matching policies.",
+    "difficulty": "medium",
+    "subcategory": "network-policy",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you create a 'default deny all ingress' NetworkPolicy for a namespace?",
+    "options": [
+      "A NetworkPolicy with podSelector: {} and policyTypes: [Ingress], with no ingress rules specified",
+      "Delete the namespace's default Service",
+      "Set spec.denyAll: true on the namespace",
+      "This isn't possible; you must deny each Pod individually"
+    ],
+    "answer": "A NetworkPolicy with podSelector: {} and policyTypes: [Ingress], with no ingress rules specified",
+    "explanation": "An empty podSelector matches all Pods in the namespace; specifying policyTypes: [Ingress] with an empty (absent) 'ingress' rules list means no traffic is explicitly allowed, effectively blocking all inbound traffic to every Pod unless another policy allows specific traffic.",
+    "difficulty": "medium",
+    "subcategory": "network-policy",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Can a standard Kubernetes NetworkPolicy restrict traffic based on DNS name / FQDN (e.g., allow only *.amazonaws.com)?",
+    "options": [
+      "No, standard NetworkPolicy only supports IP blocks/CIDR and Pod/namespace selectors; FQDN filtering requires CNI extensions like Cilium's CiliumNetworkPolicy",
+      "Yes, it's a core native feature via 'dnsSelector'",
+      "Yes, but only for ingress rules",
+      "No, NetworkPolicy cannot filter egress at all"
+    ],
+    "answer": "No, standard NetworkPolicy only supports IP blocks/CIDR and Pod/namespace selectors; FQDN filtering requires CNI extensions like Cilium's CiliumNetworkPolicy",
+    "explanation": "The core Kubernetes NetworkPolicy API is limited to podSelector, namespaceSelector, and ipBlock (CIDR) matching. For domain-name-based egress control, you need a CNI-specific CRD like CiliumNetworkPolicy's toFQDNs field or an egress gateway/proxy solution.",
+    "difficulty": "hard",
+    "subcategory": "network-policy",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the difference between ClusterIP and 'externalTrafficPolicy: Local' on a NodePort/LoadBalancer Service?",
+    "options": [
+      "Local preserves the client source IP and only routes to Pods on the receiving node (avoiding an extra hop), at the risk of uneven load if Pods aren't on every node",
+      "Local disables the Service entirely for external traffic",
+      "Cluster and Local are identical in behavior",
+      "Local only works with ClusterIP Services"
+    ],
+    "answer": "Local preserves the client source IP and only routes to Pods on the receiving node (avoiding an extra hop), at the risk of uneven load if Pods aren't on every node",
+    "explanation": "Default 'Cluster' policy may forward to a Pod on any node (extra hop, SNAT hides client IP); 'Local' only forwards to Pods on the node that received the packet, preserving source IP for logging/policy but potentially causing imbalanced traffic if Pods are unevenly distributed.",
+    "difficulty": "hard",
+    "subcategory": "load-balancing",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the purpose of 'Endpoints'/'EndpointSlice' objects in Kubernetes?",
+    "options": [
+      "Track the actual Pod IPs and ports backing a Service, used by kube-proxy and DNS to route traffic",
+      "Define network policy rules",
+      "Store node capacity info",
+      "Represent Ingress backend configuration"
+    ],
+    "answer": "Track the actual Pod IPs and ports backing a Service, used by kube-proxy and DNS to route traffic",
+    "explanation": "When a Service's selector matches Pods, the Endpoints/EndpointSlice controller continuously updates the list of ready Pod IP:port combinations; kube-proxy watches these to program load-balancing rules, and this is why a Service with no matching ready Pods has empty Endpoints.",
+    "difficulty": "medium",
+    "subcategory": "services",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why did Kubernetes introduce EndpointSlices to replace/supplement the older Endpoints API?",
+    "options": [
+      "EndpointSlices scale better by splitting large endpoint lists into multiple smaller objects, reducing update overhead for Services with many Pods",
+      "EndpointSlices remove the need for kube-proxy entirely",
+      "EndpointSlices are only used for Ingress objects",
+      "There is no functional difference, just a rename"
+    ],
+    "answer": "EndpointSlices scale better by splitting large endpoint lists into multiple smaller objects, reducing update overhead for Services with many Pods",
+    "explanation": "A single Endpoints object holding thousands of Pod IPs became a bottleneck (one huge object updated on every Pod change, re-broadcast to every watcher). EndpointSlices shard endpoints into multiple smaller, more efficiently-updated objects (default max 100 per slice).",
+    "difficulty": "hard",
+    "subcategory": "services",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the purpose of a Service Mesh (e.g., Istio, Linkerd) in Kubernetes networking?",
+    "options": [
+      "Adds a data-plane layer (usually sidecar proxies) providing mTLS, traffic management, retries, and observability between services",
+      "Replaces the CNI plugin entirely for Pod IP allocation",
+      "Only used for external Ingress traffic",
+      "Provides DNS resolution instead of CoreDNS"
+    ],
+    "answer": "Adds a data-plane layer (usually sidecar proxies) providing mTLS, traffic management, retries, and observability between services",
+    "explanation": "A service mesh intercepts service-to-service traffic (typically via an Envoy or similar sidecar injected per Pod) to add mutual TLS encryption, fine-grained traffic splitting/routing, automatic retries/circuit breaking, and rich telemetry, without changing application code.",
+    "difficulty": "medium",
+    "subcategory": "service-mesh",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the 'sidecar' pattern commonly used by service meshes, and what's a downside?",
+    "options": [
+      "An extra proxy container injected into every Pod to intercept traffic; downside is added resource overhead and latency per Pod",
+      "A separate Deployment that proxies for the whole cluster with no per-Pod cost",
+      "A DaemonSet-only approach with zero per-Pod impact",
+      "A kernel module with no container overhead"
+    ],
+    "answer": "An extra proxy container injected into every Pod to intercept traffic; downside is added resource overhead and latency per Pod",
+    "explanation": "Sidecars (e.g., Envoy in Istio) run alongside the application container in the same Pod, transparently intercepting inbound/outbound traffic via iptables redirection, but multiply resource consumption per Pod and add a network hop of latency, which newer 'ambient mesh' architectures try to avoid.",
+    "difficulty": "medium",
+    "subcategory": "service-mesh",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the difference between a Kubernetes Service and a Kubernetes Ingress in terms of OSI layer?",
+    "options": [
+      "Service operates mostly at L4 (TCP/UDP, IP+port); Ingress operates at L7 (HTTP/HTTPS routing by host/path)",
+      "Service is L7 and Ingress is L4",
+      "Both operate exclusively at L3",
+      "There is no OSI layer distinction, they're the same"
+    ],
+    "answer": "Service is L4 and Ingress is L7",
+    "explanation": "A ClusterIP/NodePort Service load-balances TCP/UDP connections without understanding HTTP content, while Ingress (via its controller) inspects HTTP headers like Host and Path to make L7 routing decisions, TLS termination, and more advanced traffic management.",
+    "difficulty": "easy",
+    "subcategory": "load-balancing",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is 'dual-stack' networking in Kubernetes?",
+    "options": [
+      "Simultaneous support for both IPv4 and IPv6 addresses on Pods and Services",
+      "Running two separate CNI plugins for redundancy",
+      "Running two kube-proxy instances per node",
+      "A term for having both overlay and non-overlay networking active"
+    ],
+    "answer": "Simultaneous support for both IPv4 and IPv6 addresses on Pods and Services",
+    "explanation": "Dual-stack clusters assign each Pod both an IPv4 and IPv6 address (and Services can have IPv4 and IPv6 ClusterIPs), enabling gradual migration to IPv6 or serving clients over either protocol, requiring dual-stack support in the CNI plugin and cluster configuration.",
+    "difficulty": "medium",
+    "subcategory": "dual-stack",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How does the AWS VPC CNI differ from an overlay-based CNI like Flannel?",
+    "options": [
+      "AWS VPC CNI assigns Pods real VPC-routable IP addresses directly from ENIs, avoiding encapsulation overhead but consuming VPC IP address space per Pod",
+      "AWS VPC CNI uses VXLAN encapsulation like Flannel",
+      "They behave identically on AWS",
+      "VPC CNI doesn't support NetworkPolicy under any configuration"
+    ],
+    "answer": "AWS VPC CNI assigns Pods real VPC-routable IP addresses directly from ENIs, avoiding encapsulation overhead but consuming VPC IP address space per Pod",
+    "explanation": "Instead of an overlay network with VXLAN tunneling, AWS VPC CNI attaches secondary IPs from Elastic Network Interfaces directly to Pods, so Pod IPs are natively routable within the VPC (great for AWS service integration) \u2014 but this can exhaust subnet IP space and requires careful ENI/IP capacity planning per instance type.",
+    "difficulty": "hard",
+    "subcategory": "cni",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is 'hairpin NAT' (or hairpinning) in Kubernetes networking, and why is it needed?",
+    "options": [
+      "Allows a Pod to reach itself via its own Service's ClusterIP, which normally requires special handling since the traffic would otherwise be dropped or not routed correctly",
+      "A security feature to block loopback traffic",
+      "A DNS caching optimization",
+      "A method to speed up cross-node Pod traffic"
+    ],
+    "answer": "Allows a Pod to reach itself via its own Service's ClusterIP, which normally requires special handling since the traffic would otherwise be dropped or not routed correctly",
+    "explanation": "When a Pod calls a Service that routes back to itself, the packet's source and destination can collide without special NAT rules ('hairpin mode') on the bridge/interface, which kube-proxy and the CNI must handle so Pod-to-self-via-Service calls work correctly.",
+    "difficulty": "hard",
+    "subcategory": "networking-internals",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How would you troubleshoot two Pods in different namespaces unable to communicate?",
+    "options": [
+      "Check for NetworkPolicies blocking traffic, verify Service/Endpoints are correct, and test raw Pod-to-Pod connectivity with a debug tool like netshoot",
+      "Assume it's always a DNS issue and only check CoreDNS",
+      "Immediately restart kube-proxy on all nodes",
+      "Recreate the entire cluster's CNI"
+    ],
+    "answer": "Check for NetworkPolicies blocking traffic, verify Service/Endpoints are correct, and test raw Pod-to-Pod connectivity with a debug tool like netshoot",
+    "explanation": "A layered approach: first test direct Pod-IP-to-Pod-IP connectivity (rules out CNI/policy issues if it fails), then test via Service DNS name/ClusterIP (isolates kube-proxy/DNS issues), and review any NetworkPolicy resources selecting either Pod that might deny traffic between the namespaces.",
+    "difficulty": "medium",
+    "subcategory": "troubleshooting",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What might cause intermittent connection resets or timeouts specifically under IPVS mode kube-proxy at high connection churn?",
+    "options": [
+      "conntrack table exhaustion or IPVS timeout settings mismatched with workload connection patterns",
+      "IPVS mode never has performance issues",
+      "It's always a CNI plugin bug, unrelated to kube-proxy",
+      "DNS caching in CoreDNS causes this exclusively"
+    ],
+    "answer": "conntrack table exhaustion or IPVS timeout settings mismatched with workload connection patterns",
+    "explanation": "High connection churn (many short-lived connections) can exhaust the kernel's conntrack table (nf_conntrack_max) causing dropped packets, or default IPVS TCP timeout settings may not suit workloads with long-idle connections, both requiring kernel/sysctl or kube-proxy config tuning.",
+    "difficulty": "hard",
+    "subcategory": "troubleshooting",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you verify what NetworkPolicies are currently applied and affecting a specific Pod?",
+    "options": [
+      "kubectl get networkpolicy -n <namespace> and inspect podSelector/policyTypes to see which policies match the Pod's labels",
+      "kubectl describe pod always shows applied NetworkPolicies directly",
+      "NetworkPolicies cannot be listed, only inferred from behavior",
+      "Check the CNI plugin's binary logs only, no kubectl support"
+    ],
+    "answer": "kubectl get networkpolicy -n <namespace> and inspect podSelector/policyTypes to see which policies match the Pod's labels",
+    "explanation": "Kubernetes doesn't show 'effective policies per Pod' natively in kubectl describe, so you list NetworkPolicy objects in the namespace and manually (or via tools like kubectl-np-viewer/Cilium's policy trace) cross-reference their podSelector against the target Pod's labels to determine applicability.",
+    "difficulty": "medium",
+    "subcategory": "troubleshooting",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What tool/feature does Cilium provide for real-time network flow visibility and troubleshooting?",
+    "options": [
+      "Hubble",
+      "kube-proxy metrics",
+      "Calicoctl",
+      "Flannel dashboard"
+    ],
+    "answer": "Hubble",
+    "explanation": "Hubble is Cilium's observability component, providing a live view of network flows (allowed/denied, by identity/policy), DNS queries, and L7 HTTP visibility, which is invaluable for debugging NetworkPolicy denials or diagnosing connectivity issues in real time.",
+    "difficulty": "medium",
+    "subcategory": "troubleshooting",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the purpose of the 'Egress' NetworkPolicy type as opposed to 'Ingress'?",
+    "options": [
+      "Controls outbound traffic leaving a selected Pod, as opposed to Ingress which controls inbound traffic to it",
+      "Egress only applies to Ingress controller Pods",
+      "Egress and Ingress are the same, just labeled differently for clarity",
+      "Egress controls traffic between nodes only, not Pods"
+    ],
+    "answer": "Controls outbound traffic leaving a selected Pod, as opposed to Ingress which controls inbound traffic to it",
+    "explanation": "A NetworkPolicy with policyTypes: [Egress] and egress rules restricts what destinations (Pods, namespaces, or CIDRs) the selected Pods are allowed to send traffic to \u2014 critical for restricting a compromised Pod from exfiltrating data or reaching sensitive internal services.",
+    "difficulty": "easy",
+    "subcategory": "network-policy",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why must you often explicitly allow DNS (port 53 to kube-dns/CoreDNS) in an egress-restrictive NetworkPolicy?",
+    "options": [
+      "A default-deny egress policy also blocks DNS lookups by default since NetworkPolicy has no built-in DNS exception",
+      "DNS traffic is automatically exempt from all NetworkPolicies",
+      "CoreDNS runs outside the cluster, exempting it structurally",
+      "DNS uses a special always-allowed port range 1024-2000"
+    ],
+    "answer": "A default-deny egress policy also blocks DNS lookups by default since NetworkPolicy has no built-in DNS exception",
+    "explanation": "A common misconfiguration is applying a default-deny egress policy and then finding all Pods fail because they can no longer resolve any DNS names \u2014 you must add an explicit egress rule allowing UDP/TCP port 53 to the kube-system namespace's DNS Pods.",
+    "difficulty": "medium",
+    "subcategory": "network-policy",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is 'MTU mismatch' and how can it cause subtle network issues in overlay CNI setups?",
+    "options": [
+      "Overlay encapsulation (e.g., VXLAN) adds header overhead, so the effective Pod MTU must be reduced from the underlying interface MTU or fragmentation/drops occur",
+      "MTU only affects DNS resolution speed",
+      "MTU mismatches only occur with IPv6, never IPv4",
+      "MTU has no effect within Kubernetes clusters"
+    ],
+    "answer": "Overlay encapsulation (e.g., VXLAN) adds header overhead, so the effective Pod MTU must be reduced from the underlying interface MTU or fragmentation/drops occur",
+    "explanation": "VXLAN adds ~50 bytes of overhead per packet; if the Pod interface MTU isn't lowered accordingly (e.g., from 1500 to ~1450), larger packets get fragmented or silently dropped by intermediate network gear, causing hard-to-diagnose intermittent failures especially with larger payloads.",
+    "difficulty": "hard",
+    "subcategory": "networking-internals",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the purpose of 'Topology Aware Routing' (formerly Topology Aware Hints) for Services?",
+    "options": [
+      "Prefers routing Service traffic to endpoints in the same zone/region as the client to reduce cross-zone latency and data transfer cost",
+      "Automatically encrypts cross-zone traffic",
+      "Replaces NetworkPolicy for zone isolation",
+      "Only applies to LoadBalancer Services, not ClusterIP"
+    ],
+    "answer": "Prefers routing Service traffic to endpoints in the same zone/region as the client to reduce cross-zone latency and data transfer cost",
+    "explanation": "By annotating hints on EndpointSlices based on zone, kube-proxy can preferentially route to same-zone backends when possible, reducing cross-AZ data transfer charges and latency in cloud environments, while falling back to cross-zone if local capacity is insufficient.",
+    "difficulty": "hard",
+    "subcategory": "load-balancing",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How can you restrict egress traffic from Pods to only specific external IP ranges (e.g., a third-party API)?",
+    "options": [
+      "A NetworkPolicy egress rule with an ipBlock CIDR matching the allowed external range, combined with default-deny egress",
+      "Only a cloud provider firewall/security group can do this, not Kubernetes",
+      "Use a readiness probe pointing at the external IP",
+      "This requires modifying the CNI plugin's source code"
+    ],
+    "answer": "A NetworkPolicy egress rule with an ipBlock CIDR matching the allowed external range, combined with default-deny egress",
+    "explanation": "Combine a default-deny egress policy for the namespace with a specific egress rule allowing an ipBlock (CIDR range) for the required external service, ensuring least-privilege network access \u2014 often paired with cloud-level egress controls (NAT gateway allowlists) for defense in depth.",
+    "difficulty": "medium",
+    "subcategory": "network-policy",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is BGP's role when Calico is configured in 'non-overlay' mode?",
+    "options": [
+      "Each node peers via BGP to advertise its Pod CIDR routes to the rest of the network, enabling direct L3 routing without encapsulation",
+      "BGP replaces the Kubernetes API server for scheduling",
+      "BGP is used only for DNS record propagation",
+      "BGP handles TLS certificate exchange between nodes"
+    ],
+    "answer": "Each node peers via BGP to advertise its Pod CIDR routes to the rest of the network, enabling direct L3 routing without encapsulation",
+    "explanation": "In BGP mode, Calico's Felix/BIRD agents on each node announce that node's Pod subnet to peer nodes (or upstream routers), so packets are routed natively at L3 without VXLAN/IPIP tunneling overhead \u2014 this requires a network environment (e.g., bare metal or supporting cloud VPC) that permits such routing.",
+    "difficulty": "hard",
+    "subcategory": "cni",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why might Pod-to-Pod communication work fine on the same node but fail across nodes?",
+    "options": [
+      "Cross-node routing relies on the CNI's overlay/BGP setup, tunnel interfaces, or cloud route tables which may be misconfigured, unlike same-node traffic that stays on a local bridge",
+      "Cross-node communication is not supported by Kubernetes by design",
+      "It always indicates a DNS problem",
+      "This scenario is impossible given the Kubernetes network model"
+    ],
+    "answer": "Cross-node routing relies on the CNI's overlay/BGP setup, tunnel interfaces, or cloud route tables which may be misconfigured, unlike same-node traffic that stays on a local bridge",
+    "explanation": "Same-node Pod traffic often just traverses a local Linux bridge/veth pairs, masking underlying cross-node routing problems. Cross-node failures point to issues like missing cloud route table entries for Pod CIDRs, firewall rules blocking the overlay protocol (e.g., UDP 8472 for VXLAN), or BGP peering failures.",
+    "difficulty": "hard",
+    "subcategory": "troubleshooting",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the purpose of 'kubectl port-forward' and how does it differ from a Service?",
+    "options": [
+      "Creates a temporary local tunnel directly to a Pod for debugging, bypassing Service load balancing and DNS entirely",
+      "It's a permanent replacement for Services in production",
+      "It only works for HTTP traffic",
+      "It exposes the Pod externally to the internet automatically"
+    ],
+    "answer": "Creates a temporary local tunnel directly to a Pod for debugging, bypassing Service load balancing and DNS entirely",
+    "explanation": "port-forward proxies a local port through the API server directly to a single Pod's port, useful for quick debugging (e.g., connecting to a database Pod locally) but not a substitute for Services since it's ephemeral, single-Pod, and requires an active kubectl session.",
+    "difficulty": "easy",
+    "subcategory": "troubleshooting",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What load-balancing algorithm does kube-proxy use by default in iptables mode when multiple Pods back a Service?",
+    "options": [
+      "Random selection among available endpoints (roughly even distribution via iptables statistic module)",
+      "Strict round robin per connection",
+      "Least-connections",
+      "Weighted based on Pod CPU usage"
+    ],
+    "answer": "Random selection among available endpoints (roughly even distribution via iptables statistic module)",
+    "explanation": "iptables mode uses the 'statistic' match module with random probability weighting across DNAT rules for each endpoint, which approximates even distribution over many connections but isn't a strict round robin; IPVS mode offers explicit algorithm choices like round robin or least connection.",
+    "difficulty": "hard",
+    "subcategory": "load-balancing",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the difference between a Pod CIDR and a Service CIDR in a Kubernetes cluster?",
+    "options": [
+      "Pod CIDR is the address range for actual Pod IPs; Service CIDR is a virtual range used only for ClusterIPs, never assigned to real interfaces",
+      "They are the same range, just different names",
+      "Service CIDR is for Node IPs",
+      "Pod CIDR is only used by the Ingress controller"
+    ],
+    "answer": "Pod CIDR is the address range for actual Pod IPs; Service CIDR is a virtual range used only for ClusterIPs, never assigned to real interfaces",
+    "explanation": "The Pod CIDR (often split per-node into smaller subnets) is where real Pod network interfaces get IPs from, while the Service CIDR is a purely virtual address space kube-proxy uses for ClusterIPs \u2014 packets to a ClusterIP get DNAT'd to a real Pod IP, so Service CIDR addresses never appear on any actual network interface.",
+    "difficulty": "medium",
+    "subcategory": "cni",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How does 'externalIPs' differ from a LoadBalancer Service's external IP?",
+    "options": [
+      "externalIPs are manually specified IPs that must already be routed to a node, with no automatic provisioning, unlike LoadBalancer which provisions a cloud LB automatically",
+      "externalIPs and LoadBalancer IPs are identical in behavior",
+      "externalIPs only work with NodePort Services, never ClusterIP",
+      "LoadBalancer type doesn't actually assign any real IP"
+    ],
+    "answer": "externalIPs are manually specified IPs that must already be routed to a node, with no automatic provisioning, unlike LoadBalancer which provisions a cloud LB automatically",
+    "explanation": "Setting spec.externalIPs on a Service tells kube-proxy to accept and route traffic destined for that IP on any node, but you're responsible for ensuring that IP actually routes to your nodes (e.g., via existing infra) \u2014 unlike type: LoadBalancer, which triggers your cloud provider's controller to provision and configure a real load balancer automatically.",
+    "difficulty": "hard",
+    "subcategory": "services",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is 'Multus CNI' used for?",
+    "options": [
+      "Attaching multiple network interfaces to a single Pod by chaining multiple CNI plugins",
+      "Replacing kube-proxy for load balancing",
+      "Providing DNS failover between clusters",
+      "Encrypting Pod-to-Pod traffic automatically"
+    ],
+    "answer": "Attaching multiple network interfaces to a single Pod by chaining multiple CNI plugins",
+    "explanation": "Multus acts as a 'meta-plugin,' allowing a Pod to have a default cluster network interface plus one or more additional interfaces (e.g., a dedicated high-throughput NIC for a telco/NFV workload) by invoking multiple underlying CNI plugins for a single Pod.",
+    "difficulty": "hard",
+    "subcategory": "cni",
+    "category": "kubernetes"
+  }
+]
