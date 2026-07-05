@@ -1,1 +1,452 @@
-[]
+[
+  {
+    "question": "You need to bootstrap a new self-managed Kubernetes control plane on bare VMs from scratch. What's the standard tool for this?",
+    "options": ["kubeadm", "kubectl create cluster", "helm install kubernetes", "docker swarm init"],
+    "answer": "kubeadm",
+    "explanation": "'kubeadm init' bootstraps a control plane node (generating certs, static Pod manifests for etcd/apiserver/scheduler/controller-manager, and a join token), while 'kubeadm join' adds worker or additional control plane nodes. It intentionally handles only the cluster bootstrap mechanics, leaving CNI plugin choice and cloud integration to the operator.",
+    "difficulty": "easy",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you safely remove a node from a cluster for maintenance (kernel patching) without abruptly killing the Pods running on it?",
+    "options": ["kubectl drain <node>", "kubectl delete node <node>", "kubectl cordon <node> alone is sufficient", "Just power off the machine directly"],
+    "answer": "kubectl drain <node>",
+    "explanation": "'kubectl drain' first cordons the node (marks unschedulable so no new Pods land there), then evicts existing Pods respecting PodDisruptionBudgets and graceful termination, letting controllers reschedule replicated workloads elsewhere. 'delete node' just removes the API object without gracefully relocating workloads, and 'cordon' alone doesn't move already-running Pods off the node.",
+    "difficulty": "easy",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the difference between 'kubectl cordon' and 'kubectl drain'?",
+    "options": ["cordon only marks a node unschedulable for NEW Pods; drain additionally evicts existing Pods off that node", "They are identical commands with different names", "drain only affects new Pods; cordon evicts existing ones", "cordon permanently removes the node from the cluster"],
+    "answer": "cordon only marks a node unschedulable for NEW Pods; drain additionally evicts existing Pods off that node",
+    "explanation": "'kubectl cordon node1' sets the node's 'Unschedulable' flag so the scheduler skips it for future placements, but Pods already running there are untouched. 'kubectl drain' does that AND evicts existing Pods (respecting PDBs/grace periods), which is the actual mechanism used before performing maintenance that requires the node to be empty.",
+    "difficulty": "easy",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "A drain is stuck because a Pod has a PodDisruptionBudget requiring minimum availability that would be violated by evicting it. How do you proceed responsibly?",
+    "options": ["Wait for other replicas to become healthy/scale up first, or use --disable-eviction only as an informed last resort bypassing the PDB", "Immediately force-delete the Pod ignoring the PDB with no further thought", "Delete the PodDisruptionBudget object permanently", "Restart the entire cluster to reset the PDB state"],
+    "answer": "Wait for other replicas to become healthy/scale up first, or use --disable-eviction only as an informed last resort bypassing the PDB",
+    "explanation": "A PDB blocking eviction is a deliberate safety mechanism protecting availability (e.g., 'at least 2 of 3 replicas must stay up'). The correct response is usually to investigate why other replicas aren't healthy/available (fix that root cause) or temporarily scale up so the eviction doesn't violate the minimum, rather than blindly overriding the safety check, which risks a genuine availability outage for that workload.",
+    "difficulty": "medium",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you upgrade a kubeadm-managed cluster's control plane to a new minor version safely?",
+    "options": ["Upgrade one minor version at a time using kubeadm upgrade plan/apply, then upgrade kubelet/kubectl on each node afterward", "Jump directly from v1.24 to v1.29 in a single step", "Only upgrade kubelet; the API server updates itself automatically", "Delete and recreate the entire cluster for every upgrade"],
+    "answer": "Upgrade one minor version at a time using kubeadm upgrade plan/apply, then upgrade kubelet/kubectl on each node afterward",
+    "explanation": "Kubernetes' supported upgrade path is strictly sequential by minor version (e.g., 1.27 -> 1.28 -> 1.29), since skipping versions isn't tested/supported and can hit unhandled API deprecations or behavior changes. 'kubeadm upgrade plan' shows what's available, 'kubeadm upgrade apply v1.x' upgrades the control plane, and each node's kubelet/kubectl must then be upgraded to match, typically one node at a time with draining.",
+    "difficulty": "medium",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why does upgrading kube-apiserver before kubelet on worker nodes (not the reverse) matter for a smooth cluster upgrade?",
+    "options": ["The version skew policy requires kubelet to be at or below the API server's version, so upgrading the API server first keeps this constraint satisfied throughout the rollout", "Order doesn't matter at all for Kubernetes upgrades", "kubelet must always be upgraded strictly before the API server in every case", "This only matters for etcd, not the API server or kubelet"],
+    "answer": "The version skew policy requires kubelet to be at or below the API server's version, so upgrading the API server first keeps this constraint satisfied throughout the rollout",
+    "explanation": "Since kubelet is allowed to be at most a few minor versions behind the API server (never ahead), upgrading control plane components first and then rolling worker node kubelets afterward keeps the cluster in a supported skew state throughout the entire multi-step upgrade process, avoiding a window where kubelet is ahead of an unupgraded API server, which is explicitly unsupported.",
+    "difficulty": "hard",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You need to take a reliable backup of your self-managed cluster's entire state for disaster recovery. What's the single most critical thing to back up?",
+    "options": ["etcd snapshot (via etcdctl snapshot save)", "The kubeconfig file only", "A copy of all container images", "The kube-scheduler binary"],
+    "answer": "etcd snapshot (via etcdctl snapshot save)",
+    "explanation": "Since etcd holds the entirety of cluster object state, 'etcdctl snapshot save backup.db' (run against each etcd member or coordinated for a consistent point-in-time snapshot) is the critical backup artifact. Restoring it ('etcdctl snapshot restore') onto fresh etcd members, combined with reissuing/reusing the correct certs, can reconstruct a cluster's full desired-state configuration after catastrophic control plane loss.",
+    "difficulty": "medium",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do managed Kubernetes services (EKS, GKE, AKS) change the operational responsibilities compared to a fully self-managed cluster?",
+    "options": ["The cloud provider manages control plane availability/upgrades/etcd, while the customer remains responsible for worker nodes, workloads, and cluster-level configuration (RBAC, networking policy, add-ons)", "Managed services eliminate all operational responsibility for the customer entirely", "Managed services only handle worker nodes; the customer still manages the control plane fully", "There's no meaningful difference between managed and self-managed clusters"],
+    "answer": "The cloud provider manages control plane availability/upgrades/etcd, while the customer remains responsible for worker nodes, workloads, and cluster-level configuration (RBAC, networking policy, add-ons)",
+    "explanation": "EKS/GKE/AKS abstract away etcd backups, control plane HA, and API server patching (though the customer still typically initiates/schedules the actual version upgrade), which removes significant operational burden. The customer remains responsible for node pool management (or fully offloads it too with serverless node options like Fargate/Autopilot), application workloads, RBAC configuration, network policies, and often for keeping worker node OS/kubelet versions in sync with the control plane.",
+    "difficulty": "medium",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You need worker nodes to automatically join a cluster and scale based on pending, unschedulable Pod demand. What component handles this?",
+    "options": ["Cluster Autoscaler", "kube-scheduler alone", "HorizontalPodAutoscaler", "kubelet's built-in scaling logic"],
+    "answer": "Cluster Autoscaler",
+    "explanation": "Cluster Autoscaler watches for Pods that are Pending due to insufficient cluster resources and, if configured against a cloud provider's node group/ASG/VMSS, increases node group size to accommodate them; it also scales node groups down when nodes are underutilized and their Pods can be safely rescheduled elsewhere. This is distinct from HPA, which scales Pod replica counts, not the underlying node count.",
+    "difficulty": "medium",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the difference between Cluster Autoscaler and newer node-provisioning tools like Karpenter?",
+    "options": ["Cluster Autoscaler scales predefined node groups up/down; Karpenter provisions right-sized nodes directly and flexibly based on actual Pod requirements without needing predefined node group shapes", "They are functionally identical with no meaningful difference", "Karpenter only works for scaling down, never up", "Cluster Autoscaler doesn't require any cloud provider integration at all"],
+    "answer": "Cluster Autoscaler scales predefined node groups up/down; Karpenter provisions right-sized nodes directly and flexibly based on actual Pod requirements without needing predefined node group shapes",
+    "explanation": "Cluster Autoscaler works within the constraints of existing, admin-defined node groups (each with a fixed instance type/size), scaling their replica count. Karpenter instead observes unschedulable Pods and directly provisions appropriately-sized/typed compute (choosing from a flexible range of instance types) tailored to actual pending workload requirements, often achieving faster scaling and better bin-packing/cost efficiency without needing to pre-define many node group shapes.",
+    "difficulty": "hard",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you safely renew Kubernetes cluster certificates (API server, etcd, kubelet) before they expire in a kubeadm-managed cluster?",
+    "options": ["kubeadm certs renew (or kubeadm certs check-expiration to audit first)", "Manually regenerate every cert with openssl with no tooling support", "Certificates never expire in Kubernetes by design", "Restart the API server, which automatically renews all certs"],
+    "answer": "kubeadm certs renew (or kubeadm certs check-expiration to audit first)",
+    "explanation": "kubeadm-managed clusters use certificates with a default 1-year validity (client certs, not the long-lived CA). 'kubeadm certs check-expiration' audits current expiry dates, and 'kubeadm certs renew all' regenerates them (also done automatically as part of 'kubeadm upgrade apply' if certs are close to expiring). Expired certificates cause hard-to-diagnose authentication failures across the entire control plane, making proactive monitoring of expiry dates important.",
+    "difficulty": "medium",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the operational risk of running a single control plane node (no HA) in a production cluster?",
+    "options": ["Any failure of that single node causes complete API server unavailability, meaning no new deployments/scaling/self-healing actions can be scheduled, even though already-running Pods keep running temporarily", "There is no risk since Kubernetes always self-heals the control plane automatically", "Single control plane nodes cannot run any workloads at all", "Worker nodes immediately go offline the moment the control plane node fails"],
+    "answer": "Any failure of that single node causes complete API server unavailability, meaning no new deployments/scaling/self-healing actions can be scheduled, even though already-running Pods keep running temporarily",
+    "explanation": "Existing Pods keep running on worker nodes even with the control plane down (kubelet operates somewhat independently in the short term), but you lose the ability to deploy changes, and critically, self-healing reconciliation loops (rescheduling Pods from a failed node, restarting crashed replicas) stop functioning entirely until the control plane is restored, which is why production clusters use 3+ control plane nodes behind a load balancer for HA.",
+    "difficulty": "medium",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you enforce that no more than a defined percentage of a namespace's Pods can be evicted simultaneously during voluntary disruptions like node drains?",
+    "options": ["PodDisruptionBudget (PDB)", "ResourceQuota", "LimitRange", "NetworkPolicy"],
+    "answer": "PodDisruptionBudget (PDB)",
+    "explanation": "A PDB specifies 'minAvailable' or 'maxUnavailable' for a set of Pods (matched via label selector), which the eviction API (used by 'kubectl drain' and Cluster Autoscaler) respects, refusing evictions that would violate the budget. This protects against multiple voluntary disruptions (planned maintenance, scaling) simultaneously taking down too many replicas of a critical service, though it has no effect on involuntary disruptions like a node crashing unexpectedly.",
+    "difficulty": "medium",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You're managing multiple clusters (dev/staging/prod) with slightly different configurations that should stay consistent over time. What GitOps tool pattern addresses this?",
+    "options": ["ArgoCD or Flux continuously reconciling each cluster from a Git repository, often using an App-of-Apps or Kustomize overlay pattern per environment", "SSH into each cluster and manually apply the same YAML by hand every time", "Rely purely on tribal knowledge and manual kubectl apply per environment", "There's no tooling for multi-cluster consistency; it must be done ad hoc"],
+    "answer": "ArgoCD or Flux continuously reconciling each cluster from a Git repository, often using an App-of-Apps or Kustomize overlay pattern per environment",
+    "explanation": "GitOps controllers like ArgoCD/Flux watch a Git repo (source of truth) and continuously reconcile each target cluster to match it, automatically detecting and correcting drift. Combined with Kustomize overlays or Helm value files per environment, teams get consistent base configuration with intentional, explicit, version-controlled per-environment differences, rather than configuration drifting apart through undocumented manual changes over time.",
+    "difficulty": "medium",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you view the resource requests/limits capacity and current allocation across all nodes in a cluster to plan capacity?",
+    "options": ["kubectl describe nodes (Allocated resources section) or kubectl top nodes combined with a capacity-planning tool", "kubectl get pods -A alone shows this directly", "Only accessible via direct SSH into each node", "kubectl get namespaces shows cluster-wide capacity"],
+    "answer": "kubectl describe nodes (Allocated resources section) or kubectl top nodes combined with a capacity-planning tool",
+    "explanation": "'kubectl describe node <name>' shows a table of allocated CPU/memory requests and limits (as a percentage of the node's allocatable capacity) from all Pods scheduled there, while 'kubectl top nodes' (requires metrics-server) shows actual real-time usage. Combining both views across all nodes reveals both committed capacity (requests, which the scheduler uses for placement decisions) and actual utilization, both important but distinct dimensions for capacity planning.",
+    "difficulty": "medium",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's 'allocatable' capacity on a node, and why is it always less than the node's total physical resources?",
+    "options": ["Allocatable subtracts resources reserved for the OS, kubelet, and eviction thresholds from total capacity, leaving what's actually available for Pod scheduling", "Allocatable and Capacity are always identical values on every node", "Allocatable only applies to memory, never CPU", "It's an arbitrary cloud-provider marketing number with no technical basis"],
+    "answer": "Allocatable subtracts resources reserved for the OS, kubelet, and eviction thresholds from total capacity, leaving what's actually available for Pod scheduling",
+    "explanation": "Node 'Capacity' reflects total physical resources (e.g., 16GB RAM), while 'Allocatable' subtracts reservations for system daemons (kube-reserved, system-reserved) and a soft eviction threshold buffer, giving the actual quantity the scheduler considers available for Pod requests. Cloud providers often reserve a meaningful chunk (e.g., 20%+ on smaller instance types) for their own node-management agents, which is why raw instance specs overstate truly schedulable capacity.",
+    "difficulty": "hard",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you cordon and drain an entire node pool (multiple nodes) safely for a rolling infrastructure change, like an OS image upgrade?",
+    "options": ["Drain nodes one at a time (or a small controlled batch), verify workload health after each, rather than draining all simultaneously", "Drain all nodes in the pool at exactly the same moment for speed", "Delete the entire node pool immediately and recreate it from scratch", "Node pools cannot be drained; only individual nodes support draining"],
+    "answer": "Drain nodes one at a time (or a small controlled batch), verify workload health after each, rather than draining all simultaneously",
+    "explanation": "Draining an entire pool simultaneously risks exceeding PodDisruptionBudgets cluster-wide and can cause a capacity crunch if remaining nodes can't absorb all rescheduled Pods at once, leading to Pending Pods and potential outages. Rolling the change through nodes incrementally (many managed node pool upgrade features do this automatically) lets the scheduler redistribute workloads gradually while maintaining overall availability throughout the process.",
+    "difficulty": "medium",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You need multiple teams to share one physical cluster while keeping their resource usage capped and isolated at the namespace level. What's the primary tool?",
+    "options": ["ResourceQuota per namespace, combined with RBAC and NetworkPolicy", "Separate physical clusters per team is the only real option", "LimitRange alone, with no ResourceQuota needed", "Labels alone provide sufficient isolation"],
+    "answer": "ResourceQuota per namespace, combined with RBAC and NetworkPolicy",
+    "explanation": "A ResourceQuota object caps total CPU/memory requests/limits, object counts (Pods, Services, PVCs), and more within a namespace, preventing one team from consuming disproportionate cluster resources. Combined with RBAC (restricting what each team can do) and NetworkPolicy (restricting cross-namespace traffic), this forms the standard multi-tenancy pattern for soft-isolated shared clusters, though it's not as strong an isolation boundary as fully separate clusters or dedicated node pools for hard multi-tenancy requirements.",
+    "difficulty": "medium",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you ensure that Pods without explicitly specified resource requests/limits still get sane defaults applied automatically per namespace?",
+    "options": ["LimitRange object in the namespace", "ResourceQuota alone handles default injection", "PodDisruptionBudget", "Admission is not possible; every Pod must specify requests explicitly"],
+    "answer": "LimitRange object in the namespace",
+    "explanation": "A LimitRange can define default request/limit values automatically injected into Pods/containers in its namespace that don't explicitly specify them, as well as min/max constraints rejecting Pods outside acceptable bounds. This prevents the common problem of unbounded (or completely unspecified) resource requests leading to poor scheduling decisions or one workload starving others on a shared node.",
+    "difficulty": "medium",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the danger of NOT setting a ResourceQuota in a shared multi-tenant namespace-per-team model?",
+    "options": ["One team's workloads could consume unbounded cluster resources, starving other teams and potentially destabilizing the whole cluster (noisy neighbor problem)", "There is no real risk; Kubernetes automatically balances resources fairly regardless", "Namespaces without ResourceQuota are automatically limited to a hardcoded default", "This only matters for storage, never CPU/memory"],
+    "answer": "One team's workloads could consume unbounded cluster resources, starving other teams and potentially destabilizing the whole cluster (noisy neighbor problem)",
+    "explanation": "Without a ResourceQuota, there's no cap on how much aggregate CPU/memory/object count a namespace's workloads can request, so a runaway deployment, an accidental infinite scale-up, or simply an under-resourced team could consume disproportionate cluster capacity, causing Pending Pods or resource contention for every other tenant sharing that cluster, a classic 'noisy neighbor' failure mode in multi-tenant environments.",
+    "difficulty": "medium",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How would you plan and execute a zero-downtime migration of workloads from an old cluster to a brand-new cluster (e.g., major version jump too risky for in-place upgrade)?",
+    "options": ["Stand up the new cluster in parallel, gradually shift traffic (DNS/load balancer weighting) while validating workloads, then decommission the old cluster once fully migrated", "Immediately point all DNS at the new cluster the moment it's created, with no validation window", "Delete the old cluster first, then create the new one from scratch", "In-place migration is the only supported approach; parallel clusters are never used"],
+    "answer": "Stand up the new cluster in parallel, gradually shift traffic (DNS/load balancer weighting) while validating workloads, then decommission the old cluster once fully migrated",
+    "explanation": "A blue-green cluster migration pattern: build and validate the new cluster fully (including data migration/replication for stateful components) before any production traffic touches it, then incrementally shift live traffic (weighted DNS, global load balancer) while monitoring closely, keeping the old cluster as an immediate rollback target until confidence is high, only decommissioning it after a safe soak period with all traffic successfully on the new cluster.",
+    "difficulty": "hard",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the purpose of node taints combined with tolerations in cluster-wide workload placement strategy (beyond just scheduling preference)?",
+    "options": ["Taints let a node actively repel Pods that don't explicitly tolerate them, useful for dedicating nodes (e.g., GPU nodes) to specific workloads and keeping general workloads off them", "Taints only affect networking, never scheduling", "Tolerations force a Pod onto a specific node unconditionally", "Taints and tolerations are purely cosmetic labels with no scheduling effect"],
+    "answer": "Taints let a node actively repel Pods that don't explicitly tolerate them, useful for dedicating nodes (e.g., GPU nodes) to specific workloads and keeping general workloads off them",
+    "explanation": "Unlike node affinity (a Pod expressing a preference/requirement for certain nodes), taints work from the node's side: 'kubectl taint node gpu-node1 dedicated=gpu:NoSchedule' actively prevents any Pod from being scheduled there UNLESS that Pod has a matching toleration. This is the standard mechanism for reserving specialized/expensive nodes (GPU, high-memory) exclusively for the workloads that need them, rather than having them get filled by unrelated general workloads.",
+    "difficulty": "medium",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you determine why a specific node was automatically cordoned/marked unschedulable by the system rather than an operator?",
+    "options": ["kubectl describe node shows Conditions (e.g., MemoryPressure, DiskPressure) that automatically trigger tainting/cordoning by the kubelet/node controller", "Automatic cordoning never happens; only manual kubectl cordon can mark a node unschedulable", "Check kube-scheduler logs exclusively, since nodes are cordoned by the scheduler alone", "Node cordoning is always random and has no discoverable cause"],
+    "answer": "kubectl describe node shows Conditions (e.g., MemoryPressure, DiskPressure) that automatically trigger tainting/cordoning by the kubelet/node controller",
+    "explanation": "kubelet continuously reports node Conditions like 'MemoryPressure', 'DiskPressure', 'PIDPressure', and 'Ready'; when unhealthy conditions are detected, corresponding taints get automatically applied (e.g., 'node.kubernetes.io/memory-pressure:NoSchedule'), effectively cordoning the node for new workloads without any operator action. 'kubectl describe node' surfaces both the Conditions and any resulting Taints, letting you trace the automatic cause (e.g., disk filling up from log accumulation) rather than assuming it was a manual action.",
+    "difficulty": "medium",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You're designing a DR (disaster recovery) strategy for a stateful Kubernetes workload spanning multiple availability zones. What's a key consideration beyond just backing up etcd?",
+    "options": ["Persistent data (databases, object storage) needs its own backup/replication strategy independent of etcd, since etcd only holds Kubernetes object definitions, not application data itself", "Backing up etcd alone is always fully sufficient for any DR scenario", "Stateful workloads cannot be protected by any DR strategy in Kubernetes", "Multi-AZ deployment alone eliminates the need for any backup strategy"],
+    "answer": "Persistent data (databases, object storage) needs its own backup/replication strategy independent of etcd, since etcd only holds Kubernetes object definitions, not application data itself",
+    "explanation": "etcd backups restore the Kubernetes API objects (Deployments, PVC definitions, Secrets) but NOT the actual bytes sitting in a PersistentVolume backing a database. A complete DR plan needs application/data-layer backup (database dumps, volume snapshots via CSI snapshot support, or application-level replication like Postgres streaming replication to a standby region) layered on top of etcd/cluster-config backups, since these solve different problems (cluster configuration vs. actual application state).",
+    "difficulty": "hard",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How does 'kubectl top nodes/pods' get its resource usage data, and what happens if this data source isn't installed?",
+    "options": ["It queries the metrics-server add-on; without it, kubectl top returns an error and HPA based on CPU/memory also can't function", "It's built directly into the API server with no additional components needed", "It reads directly from Prometheus by default in every cluster", "It queries the container runtime's socket directly, bypassing Kubernetes entirely"],
+    "answer": "It queries the metrics-server add-on; without it, kubectl top returns an error and HPA based on CPU/memory also can't function",
+    "explanation": "metrics-server is a lightweight, cluster-wide aggregator that collects resource usage from kubelets (via the Summary API, which itself sources from cAdvisor) and exposes it through the Kubernetes Metrics API. It's not installed by default on all distributions, and its absence breaks not just 'kubectl top' but also standard CPU/memory-based HorizontalPodAutoscaler functionality, which depends on the same Metrics API.",
+    "difficulty": "medium",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the risk of manually editing static Pod manifests directly on a control plane node's filesystem (e.g., /etc/kubernetes/manifests/kube-apiserver.yaml) without care?",
+    "options": ["kubelet watches this directory and will immediately restart the affected static Pod on any file change, potentially causing a control plane component outage if the edit is invalid", "Static Pod manifests are read-only and changes have no effect until a manual reload command is issued", "Editing these files requires a full cluster restart to take effect, giving time to catch mistakes", "Static Pods are not actually managed by kubelet, so file edits are inert"],
+    "answer": "kubelet watches this directory and will immediately restart the affected static Pod on any file change, potentially causing a control plane component outage if the edit is invalid",
+    "explanation": "kubelet actively watches the static Pod manifest directory and reacts to changes essentially in real time, tearing down and recreating the corresponding Pod. If you introduce a typo or invalid flag while editing, say, the kube-apiserver static Pod manifest, the API server can fail to start, and since it's the API server itself failing, you may temporarily lose the ability to use kubectl against that control plane node until the manifest is corrected directly on disk.",
+    "difficulty": "hard",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you audit who did what in your cluster (e.g., who deleted a critical Deployment) after the fact?",
+    "options": ["Kubernetes audit logging (configured via an audit policy on the API server) recording API requests with user identity, verb, and resource", "There is no built-in mechanism; you must rely entirely on application logs", "kubectl get events retains a permanent, unlimited history of all actions", "Only cloud-provider IAM logs can show this, never Kubernetes-native logging"],
+    "answer": "Kubernetes audit logging (configured via an audit policy on the API server) recording API requests with user identity, verb, and resource",
+    "explanation": "API server audit logging, configured with an audit policy (defining what to log at what detail level: Metadata, Request, RequestResponse) and a backend (log file or webhook), records every API request including the authenticated user/service account, verb (delete, create, patch), target resource, and timestamp. This is the authoritative source for answering 'who deleted this Deployment and when', unlike ephemeral Events which don't reliably capture user identity for every action type.",
+    "difficulty": "medium",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You need to test a risky cluster-wide change (like a new admission webhook) without affecting the production cluster. What's a sound approach?",
+    "options": ["Validate in a staging/ephemeral cluster (or via dry-run/audit-only webhook mode) that mirrors production configuration before rolling out to production", "Apply directly to production and monitor for problems as they occur", "There's no safe way to test cluster-wide changes; always risk production directly", "Only test on a single Pod in production, ignoring cluster-wide implications"],
+    "answer": "Validate in a staging/ephemeral cluster (or via dry-run/audit-only webhook mode) that mirrors production configuration before rolling out to production",
+    "explanation": "For cluster-wide, blast-radius-large changes, best practice is testing in an environment that closely mirrors production (same Kubernetes version, similar workload mix) before rollout, and many admission control tools (like OPA Gatekeeper/Kyverno) support an 'audit' or 'dry-run' mode that logs would-be violations without actually blocking/mutating requests, letting you observe real-world impact safely before flipping to full enforcement.",
+    "difficulty": "medium",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you determine the exact Kubernetes API versions that are deprecated or will be removed in your next planned cluster upgrade, before actually upgrading?",
+    "options": ["Consult the Kubernetes deprecated API migration guide for the target version, and run a tool like Pluto or 'kubectl deprecations' style scanners against your current manifests", "Just upgrade and see what breaks afterward, then fix reactively", "API deprecations are always automatically handled with zero manifest changes needed", "Only the API server logs show deprecation warnings, with no other tooling available"],
+    "answer": "Consult the Kubernetes deprecated API migration guide for the target version, and run a tool like Pluto or 'kubectl deprecations' style scanners against your current manifests",
+    "explanation": "Kubernetes has a formal API deprecation policy with defined removal timelines. Before a major upgrade, proactively scan existing manifests/Helm charts for use of soon-to-be-removed API versions (tools like FairwindsOps Pluto, or 'kubectl-convert', or checking API server logs for deprecation warnings on current usage) so you can update manifests to the replacement API version ahead of time, rather than discovering broken deployments only after the upgrade when the old API version simply stops being served.",
+    "difficulty": "hard",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's a 'control plane node' versus a 'worker node' in terms of what typically runs where, and can a node be both?",
+    "options": ["Control plane nodes run etcd/apiserver/scheduler/controller-manager; worker nodes run kubelet/kube-proxy and actual workload Pods; a node can technically run both roles (common in small/dev clusters) though usually separated in production", "Control plane and worker nodes are mutually exclusive concepts that can never coexist on any single machine", "Worker nodes run the API server; control plane nodes only run application workloads", "There is no distinction; all nodes in Kubernetes are functionally identical"],
+    "answer": "Control plane nodes run etcd/apiserver/scheduler/controller-manager; worker nodes run kubelet/kube-proxy and actual workload Pods; a node can technically run both roles (common in small/dev clusters) though usually separated in production",
+    "explanation": "In production, control plane nodes are typically tainted ('node-role.kubernetes.io/control-plane:NoSchedule') to prevent ordinary workloads from being scheduled there, isolating control plane stability from application resource contention. Smaller clusters (dev/test, or resource-constrained edge deployments) sometimes remove this taint to let control plane nodes also run workloads, trading isolation for resource efficiency in a lower-stakes environment.",
+    "difficulty": "easy",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How would you approach right-sizing a cluster's node instance types to balance cost efficiency against Pod bin-packing waste?",
+    "options": ["Analyze actual Pod resource requests/usage patterns (via metrics/VPA recommendations) against candidate instance type shapes, minimizing both stranded/unused capacity per node and excessive fragmentation", "Always choose the single largest instance type available regardless of workload shape", "Instance type choice has no measurable impact on cluster efficiency", "Always choose the smallest instance type to minimize any single point of failure"],
+    "answer": "Analyze actual Pod resource requests/usage patterns (via metrics/VPA recommendations) against candidate instance type shapes, minimizing both stranded/unused capacity per node and excessive fragmentation", 
+    "explanation": "Choosing node sizes that poorly match typical Pod request shapes leads to stranded capacity (e.g., 2-CPU Pods on 8-CPU nodes leaving fractional unusable CPU after each placement) or excessive per-node system overhead relative to workload capacity on very small nodes. Tools like the Vertical Pod Autoscaler in recommendation-only mode, combined with historical usage analysis, help right-size both individual Pod requests and the node shapes chosen to host them efficiently, often revisited periodically as workload patterns evolve.",
+    "difficulty": "hard",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You suspect the cluster's etcd is experiencing performance issues (slow API responses cluster-wide). What are common root causes to investigate?",
+    "options": ["Disk I/O latency (etcd is extremely latency-sensitive to disk fsync), excessive object/watch load, or etcd database size approaching its configured quota", "etcd performance is never a bottleneck; the API server is always the sole cause of slowness", "Only network bandwidth between nodes affects etcd performance, never disk", "etcd doesn't have any measurable performance characteristics worth investigating"],
+    "answer": "Disk I/O latency (etcd is extremely latency-sensitive to disk fsync), excessive object/watch load, or etcd database size approaching its configured quota",
+    "explanation": "etcd's Raft consensus requires fsync-ing writes to disk before acknowledging, making it highly sensitive to slow/high-latency storage (a common cause of degraded etcd performance on underprovisioned or network-attached disks). Other common culprits: too many watchers/heavy List calls from misbehaving controllers, or the etcd database approaching its default 2-8GB quota, triggering alarms that put etcd into a degraded read-only mode until compacted/defragmented.",
+    "difficulty": "hard",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's 'etcd defragmentation' and why is it periodically necessary in a long-running cluster?",
+    "options": ["etcd's on-disk storage can become fragmented after heavy write/delete churn, wasting space and degrading performance; defragmentation reclaims that space", "Defragmentation is only relevant to traditional relational databases, not etcd", "etcd automatically and continuously defragments itself with zero operator involvement ever needed", "Defragmentation is destructive and should never be run on a live cluster"],
+    "answer": "etcd's on-disk storage can become fragmented after heavy write/delete churn, wasting space and degrading performance; defragmentation reclaims that space",
+    "explanation": "etcd's underlying boltdb storage doesn't automatically shrink its allocated file size after deletes/compaction (old space becomes free internally but the file doesn't shrink), leading to growing disk usage and potential performance degradation over time in write-heavy clusters. Periodic 'etcdctl defrag' (run carefully, one member at a time, since it briefly blocks that member) reclaims this space; many managed etcd operators/tools automate this on a schedule.",
+    "difficulty": "hard",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you handle graceful cluster-wide maintenance windows where you need to patch the OS on every node without any workload downtime?",
+    "options": ["Rolling maintenance: drain one node at a time, patch/reboot, uncordon, verify healthy, then move to the next, relying on sufficient replica counts and PDBs to maintain availability throughout", "Patch all nodes simultaneously and accept the resulting full outage", "OS patching requires a full cluster teardown and rebuild every time", "Only patch nodes during active peak traffic hours for visibility into issues"],
+    "answer": "Rolling maintenance: drain one node at a time, patch/reboot, uncordon, verify healthy, then move to the next, relying on sufficient replica counts and PDBs to maintain availability throughout",
+    "explanation": "Standard practice is a rolling, one-(or few)-node-at-a-time maintenance loop: cordon and drain, apply OS patches/reboot, verify the node rejoins healthy, uncordon it, then proceed to the next node, throughout which properly configured PodDisruptionBudgets and adequate replica counts across multiple nodes ensure the overall service stays available even as individual nodes cycle through maintenance, typically automated via tools like kured (Kubernetes Reboot Daemon) for unattended patch/reboot cycles.",
+    "difficulty": "medium",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you enforce a consistent, organization-wide policy (e.g., 'all Pods must have resource limits set') across many clusters without manually reviewing every manifest?",
+    "options": ["Policy engines like OPA Gatekeeper or Kyverno enforced via admission control, ideally deployed consistently across all clusters via a GitOps/fleet management pattern", "Rely entirely on manual code review for every single manifest change forever", "Policies can only be enforced manually one cluster at a time with no automation possible", "Use only documentation and trust that developers follow it without technical enforcement"],
+    "answer": "Policy engines like OPA Gatekeeper or Kyverno enforced via admission control, ideally deployed consistently across all clusters via a GitOps/fleet management pattern",
+    "explanation": "Admission-control-based policy engines automatically reject or mutate non-compliant objects at the API server level, providing real enforcement rather than relying on human review discipline. For fleets of many clusters, tools like ArgoCD ApplicationSets, Fleet (Rancher), or Kyverno's policy reporting integrate with a central management layer to ensure the same policy set is consistently deployed and enforced everywhere, with centralized visibility into compliance status across the fleet.",
+    "difficulty": "hard",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You need to temporarily give a contractor limited, time-bound access to a production cluster for an urgent fix. What's a sound approach beyond just sharing the admin kubeconfig?",
+    "options": ["Issue a scoped RBAC Role/RoleBinding limited to specific namespaces/verbs, tied to a short-lived credential (e.g., OIDC token with limited TTL), revoked after the task completes", "Share the cluster-admin kubeconfig file directly via email or chat for convenience", "Grant permanent cluster-admin access since revoking it later is too much effort", "There's no way to grant temporary, scoped access in Kubernetes"],
+    "answer": "Issue a scoped RBAC Role/RoleBinding limited to specific namespaces/verbs, tied to a short-lived credential (e.g., OIDC token with limited TTL), revoked after the task completes",
+    "explanation": "Least-privilege access management means creating a narrowly scoped Role (only the verbs/resources actually needed) and RoleBinding for the contractor's specific identity, ideally backed by an external identity provider (OIDC) issuing short-lived tokens rather than a long-lived static credential, and explicitly deleting the RoleBinding (or letting the token expire) once the urgent task is done, minimizing the window and blast radius of external access to production.",
+    "difficulty": "medium",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the significance of the Kubernetes 'conformance test suite' for a distribution or managed offering claiming to be 'Kubernetes compliant'?",
+    "options": ["It verifies the distribution correctly implements the standardized Kubernetes API behavior, so workloads/tools built against vanilla Kubernetes work portably across CNCF-certified conformant distributions", "It only tests raw performance benchmarks, unrelated to API correctness", "Conformance testing is optional marketing with no technical substance behind the certification", "It only applies to self-managed clusters, never to managed cloud offerings"],
+    "answer": "It verifies the distribution correctly implements the standardized Kubernetes API behavior, so workloads/tools built against vanilla Kubernetes work portably across CNCF-certified conformant distributions",
+    "explanation": "The CNCF's Certified Kubernetes conformance program requires passing a defined test suite (Sonobuoy-based) validating API behavior matches the upstream specification closely enough that portable workloads and standard tooling (kubectl, Helm, common Operators) work correctly regardless of underlying distribution or cloud vendor, which is a key reason Kubernetes avoids the vendor lock-in fragmentation that affected some earlier container orchestration ecosystems.",
+    "difficulty": "hard",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How would you approach reducing a cluster's blast radius so that a single misconfigured Deployment in one namespace can't take down unrelated services in another namespace?",
+    "options": ["Combine ResourceQuotas (preventing resource exhaustion), NetworkPolicies (preventing unwanted traffic), and PodDisruptionBudgets/anti-affinity spreading, rather than relying on any single mechanism alone", "Namespaces alone provide complete, sufficient blast-radius isolation with no further action needed", "Blast radius containment is impossible within a single shared cluster under any configuration", "Only physically separate clusters can achieve any meaningful blast radius reduction"],
+    "answer": "Combine ResourceQuotas (preventing resource exhaustion), NetworkPolicies (preventing unwanted traffic), and PodDisruptionBudgets/anti-affinity spreading, rather than relying on any single mechanism alone",
+    "explanation": "Namespaces alone provide naming/RBAC scoping but don't prevent resource exhaustion (a runaway Deployment consuming all node CPU/memory can still starve Pods in other namespaces scheduled on the same nodes) or network-level blast radius (without NetworkPolicy, all Pods can reach each other by default). Layering ResourceQuotas, NetworkPolicies, and topology spread constraints/anti-affinity (so a single node failure doesn't disproportionately impact one namespace's availability) together meaningfully reduces cross-namespace blast radius within a shared cluster.",
+    "difficulty": "hard",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you determine the maximum number of Pods a given node can actually host, and why might this be lower than raw CPU/memory capacity would suggest?",
+    "options": ["The node's configured max-pods kubelet setting (often defaulting to 110, or lower on cloud providers due to IP address allocation per-node limits like AWS ENI constraints) caps Pod count independent of raw resource capacity", "There is no limit on Pods per node beyond available CPU/memory", "Pod count per node is always exactly equal to the number of CPU cores available", "max-pods only applies to control plane nodes, never worker nodes"],
+    "answer": "The node's configured max-pods kubelet setting (often defaulting to 110, or lower on cloud providers due to IP address allocation per-node limits like AWS ENI constraints) caps Pod count independent of raw resource capacity",
+    "explanation": "kubelet's '--max-pods' flag hard-caps Pod density per node regardless of remaining CPU/memory headroom, both to bound per-node overhead (e.g., iptables rule count, cgroup management) and, on some cloud providers, because networking (like AWS VPC CNI's ENI-based IP allocation) imposes its own per-instance-type IP address ceiling, meaning smaller instance types can hit their Pod limit well before exhausting CPU/memory, an easy-to-overlook capacity planning gotcha.",
+    "difficulty": "hard",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You need to test that your cluster's disaster recovery plan actually works, not just assume the documented steps are correct. What practice validates this?",
+    "options": ["Regular, scheduled DR drills/game days that actually execute the recovery procedure against a non-production environment (or occasionally production, with care) and measure recovery time", "Trust the written runbook is correct since it was reviewed once at creation time", "DR plans don't need testing since Kubernetes handles all failure scenarios automatically", "Only test DR procedures after an actual real incident has already occurred"],
+    "answer": "Regular, scheduled DR drills/game days that actually execute the recovery procedure against a non-production environment (or occasionally production, with care) and measure recovery time",
+    "explanation": "An untested DR runbook frequently contains subtle inaccuracies (outdated steps, missing permissions, tools no longer available) that only surface during an actual crisis, the worst possible time to discover them. Scheduled game days that genuinely execute the etcd restore, cluster rebuild, or failover procedure (measuring actual RTO/RPO against targets) build real operational confidence and surface documentation/tooling gaps in a controlled setting rather than during a real production emergency.",
+    "difficulty": "medium",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do 'admission control' feature gates and API server flags differ from RBAC in terms of what they can enforce cluster-wide?",
+    "options": ["RBAC controls WHO can perform WHAT actions on WHICH resources; admission control (webhooks/built-in plugins) can inspect and reject/mutate the CONTENT of requests regardless of who's making them", "RBAC and admission control are two names for exactly the same mechanism", "Admission control only applies to authentication, never to authorization or content validation", "RBAC can validate object content/fields; admission control only checks user identity"],
+    "answer": "RBAC controls WHO can perform WHAT actions on WHICH resources; admission control (webhooks/built-in plugins) can inspect and reject/mutate the CONTENT of requests regardless of who's making them",
+    "explanation": "RBAC answers 'is this user/service account allowed to create a Pod in this namespace at all', a coarse-grained identity-and-verb check. Admission control operates AFTER that authorization check passes, inspecting the actual object content, e.g., rejecting a Pod (even from an authorized user) that requests privileged mode, uses a disallowed image registry, or lacks required labels, enforcing organization-wide content policies that RBAC's identity-based model simply isn't designed to express.",
+    "difficulty": "hard",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the operational value of running a 'canary' cluster upgrade approach (upgrading a subset of clusters first) across a fleet of many clusters?",
+    "options": ["It limits blast radius by surfacing version-specific regressions or workload compatibility issues in a small subset before rolling the same upgrade out to the entire fleet", "Canary upgrades provide no real benefit since all clusters always behave identically", "Canary clusters must always be entirely separate hardware with no relation to the production fleet", "This approach is only relevant for application deployments, never for cluster-level upgrades"],
+    "answer": "It limits blast radius by surfacing version-specific regressions or workload compatibility issues in a small subset before rolling the same upgrade out to the entire fleet",
+    "explanation": "Even with careful staging environment testing, real production traffic patterns and the exact mix of workloads/CRDs/webhooks in different clusters can reveal upgrade issues that staging didn't catch. Upgrading a small, representative subset of production clusters first (monitored closely for a soak period) before proceeding to the rest of the fleet limits the number of clusters affected by any unforeseen regression, trading a slightly longer overall rollout timeline for significantly reduced fleet-wide risk.",
+    "difficulty": "hard",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you handle the scenario where a critical CRD's API version needs to be upgraded (e.g., v1alpha1 to v1) across a cluster with many existing custom resource instances?",
+    "options": ["Implement conversion webhooks (or rely on the API server's built-in conversion for compatible schema changes) so existing stored objects can be served correctly under both old and new API versions during a transition period", "Delete all existing instances of the CRD before changing its version, losing all prior data", "API version changes for CRDs always require a full cluster rebuild from scratch", "CRD versions cannot be changed once any instances exist; a brand new CRD name is always required"],
+    "answer": "Implement conversion webhooks (or rely on the API server's built-in conversion for compatible schema changes) so existing stored objects can be served correctly under both old and new API versions during a transition period",
+    "explanation": "CRDs support multiple served versions simultaneously with a designated storage version; a conversion webhook translates between versions when an object stored under one version's schema is requested via a different version, letting existing consumers (which might still reference v1alpha1) keep working while new consumers adopt v1, with a clear deprecation timeline for eventually retiring the old version entirely once all clients have migrated.",
+    "difficulty": "hard",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why might a cluster administrator choose to run multiple smaller clusters per environment/region rather than one large global cluster?",
+    "options": ["Smaller clusters reduce blast radius (a control plane issue affects fewer workloads), can align with regional data residency/latency requirements, and avoid hitting single-cluster scalability ceilings (etcd size, API server load)", "Multiple smaller clusters always cost strictly more with zero operational or architectural benefit", "Kubernetes technically cannot support more than a fixed small number of nodes in any single cluster", "There's no meaningful difference in risk profile between one large cluster and many smaller ones"],
+    "answer": "Smaller clusters reduce blast radius (a control plane issue affects fewer workloads), can align with regional data residency/latency requirements, and avoid hitting single-cluster scalability ceilings (etcd size, API server load)",
+    "explanation": "While Kubernetes does technically support large clusters (thousands of nodes, per published scalability limits), architectural and organizational reasons often favor multiple smaller clusters: regional/latency requirements naturally partition by geography, data residency/compliance regulations may mandate data staying within specific jurisdictions, and reducing blast radius (an etcd corruption or control plane bug in one cluster doesn't cascade globally) provides meaningful resilience benefits, at the cost of increased fleet management overhead which multi-cluster tooling aims to address.",
+    "difficulty": "hard",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you validate that a planned cluster upgrade won't break existing workloads due to removed or changed API behavior, as part of a pre-upgrade checklist?",
+    "options": ["Review the target version's changelog/release notes for breaking changes and deprecated API removals, run a compatibility scanning tool against current manifests, and test the upgrade in a staging environment mirroring production workloads first", "Assume all upgrades are always fully backward compatible with zero possible breakage", "Only check the API server's version number; no further validation is needed", "Breaking changes are always automatically fixed by the upgrade process itself"],
+    "answer": "Review the target version's changelog/release notes for breaking changes and deprecated API removals, run a compatibility scanning tool against current manifests, and test the upgrade in a staging environment mirroring production workloads first",
+    "explanation": "A responsible pre-upgrade checklist combines reading the specific release's changelog (Kubernetes documents breaking changes and API removals clearly per version), scanning existing manifests/Helm releases for usage of anything being removed (using tools like Pluto, or checking API server deprecation warning logs from recent traffic), and actually exercising the upgrade against a staging cluster carrying a realistic workload mix before touching production, since no single step alone catches every possible issue.",
+    "difficulty": "medium",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the purpose of a 'PriorityClass' at the cluster level, and how does it interact with node pressure/eviction decisions?",
+    "options": ["PriorityClass assigns a numeric priority to Pods, influencing both scheduling order (higher priority Pods can preempt lower priority ones) and which Pods are evicted first under node resource pressure", "PriorityClass only affects the order Pods appear in kubectl get output, with no functional scheduling impact", "All Pods always have identical priority regardless of any PriorityClass configuration", "PriorityClass is exclusively used for RBAC authorization decisions, unrelated to scheduling"],
+    "answer": "PriorityClass assigns a numeric priority to Pods, influencing both scheduling order (higher priority Pods can preempt lower priority ones) and which Pods are evicted first under node resource pressure",
+    "explanation": "A PriorityClass (referenced via a Pod's 'priorityClassName') gives it a numeric value used by the scheduler: if cluster resources are insufficient to schedule a higher-priority Pending Pod, the scheduler can preempt (evict) lower-priority Pods elsewhere to make room. The kubelet's eviction manager similarly considers priority when choosing which Pods to evict first under local node resource pressure, protecting critical workloads (like system-critical add-ons) over less important batch jobs during resource contention.",
+    "difficulty": "hard",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How would you diagnose a cluster-wide slowdown where 'kubectl' commands and controller reconciliation both feel sluggish, but individual application Pods seem to be running fine?",
+    "options": ["Investigate control plane health first: API server latency/load, etcd performance, and controller-manager/scheduler resource usage, since app-level Pod health doesn't reflect control-plane-layer problems", "Assume it's always an application-level bug since Pods are reportedly running fine", "Restart every worker node in the cluster immediately as the first troubleshooting step", "This symptom pattern is impossible; app health and cluster responsiveness always move together"],
+    "answer": "Investigate control plane health first: API server latency/load, etcd performance, and controller-manager/scheduler resource usage, since app-level Pod health doesn't reflect control-plane-layer problems",
+    "explanation": "Already-running application Pods can continue serving traffic perfectly fine even while the control plane itself (API server, etcd, scheduler) is degraded, since the data plane (actual running containers, kube-proxy's already-programmed iptables rules) operates largely independently of control plane responsiveness in the short term. Symptoms like sluggish kubectl and slow reconciliation point specifically at control-plane-layer investigation: API server request latency metrics, etcd disk I/O and leader election stability, and control plane component resource saturation.",
+    "difficulty": "hard",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why is it important to separate the concerns of 'infrastructure provisioning' (Terraform creating the cluster/node pools) from 'in-cluster configuration' (Helm/kubectl/ArgoCD deploying workloads) in a mature platform setup?",
+    "options": ["Different tools/workflows with different change cadences and blast radii are better suited to each layer; conflating them makes both harder to reason about, test, and roll back independently", "There's no benefit to separating these concerns; a single unified tool should always handle both", "Infrastructure provisioning and in-cluster configuration are technically identical operations under the hood", "Separating these concerns is only a stylistic preference with zero practical operational impact"],
+    "answer": "Different tools/workflows with different change cadences and blast radii are better suited to each layer; conflating them makads both harder to reason about, test, and roll back independently",
+    "explanation": "Infrastructure-level changes (creating/resizing node pools, VPC config) are typically slower-moving, higher-blast-radius, and best managed declaratively via IaC tools (Terraform, Pulumi) with their own state and review process, while in-cluster application/config changes happen far more frequently and benefit from Kubernetes-native GitOps tooling (ArgoCD, Flux, Helm) with its own reconciliation model. Keeping these as distinct layers with clear ownership boundaries lets each evolve, be tested, and be rolled back independently without one accidentally clobbering the other's state.",
+    "difficulty": "hard",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you keep third-party CRDs and their controllers (e.g., cert-manager, external-dns) up to date across a fleet of clusters without manual per-cluster upgrades?",
+    "options": ["Manage them via a GitOps-controlled Helm chart or manifest bundle applied consistently across the fleet, versioned and upgraded through the same pipeline as application workloads", "Manually SSH/kubectl apply the latest version on each cluster individually, tracked in a personal notes document", "Third-party CRDs never need updates once initially installed", "Rely on each cluster auto-updating its own add-ons with no version control or testing"],
+    "answer": "Manage them via a GitOps-controlled Helm chart or manifest bundle applied consistently across the fleet, versioned and upgraded through the same pipeline as application workloads",
+    "explanation": "Treating cluster add-ons (cert-manager, external-dns, ingress controllers, monitoring stacks) as versioned, GitOps-managed deployments just like application workloads gives you the same auditability, staged rollout, and rollback capability for infrastructure components as for apps, avoiding the common anti-pattern of hand-installed add-ons whose versions silently drift and become inconsistent across a growing fleet of clusters over time.",
+    "difficulty": "medium",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You're onboarding a new cluster into an existing fleet-wide monitoring/alerting system. What's the minimum set of signals you'd wire up first for basic operational visibility?",
+    "options": ["Control plane health/API latency, node resource utilization and conditions, and Pod-level restart/crash rates, before adding deeper application-specific metrics", "Only application-level business metrics matter; infrastructure metrics can wait indefinitely", "A single 'cluster is up' ping check is fully sufficient for production readiness", "Monitoring should only be added after the first production incident occurs"],
+    "answer": "Control plane health/API latency, node resource utilization and conditions, and Pod-level restart/crash rates, before adding deeper application-specific metrics",
+    "explanation": "A sound baseline prioritizes signals that reflect whether the cluster itself is functioning correctly and has headroom: API server availability/latency (is the control plane responsive), node conditions and utilization (is capacity healthy), and Pod restart/crash-loop rates (is something broadly unstable). This infrastructure-layer visibility should be in place before or alongside deeper application-specific metrics, since a cluster-level problem can otherwise masquerade as many disconnected application incidents.",
+    "difficulty": "medium",
+    "subcategory": "cluster-management",
+    "category": "kubernetes"
+  }
+]
