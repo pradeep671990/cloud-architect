@@ -1,1 +1,562 @@
-[]
+[
+  {
+    "question": "What does RBAC stand for in Kubernetes, and what is its core purpose?",
+    "options": [
+      "Role-Based Access Control; it authorizes who can perform which actions on which resources",
+      "Resource-Based Access Control; it limits CPU/memory usage per user",
+      "Remote Backup Access Configuration; it manages etcd backups",
+      "Role Binding Admission Control; it validates admission webhooks"
+    ],
+    "answer": "Role-Based Access Control; it authorizes who can perform which actions on which resources",
+    "explanation": "RBAC is Kubernetes' primary authorization mechanism, letting cluster admins define granular permissions (verbs like get/list/create/delete on resources like pods/secrets) and bind them to users, groups, or service accounts, rather than every subject having blanket access.",
+    "difficulty": "easy",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the difference between a Role and a ClusterRole?",
+    "options": [
+      "Role is namespaced and grants permissions within one namespace; ClusterRole is cluster-scoped and can grant permissions cluster-wide or be reused across namespaces",
+      "Role only applies to Pods; ClusterRole applies to all resources",
+      "ClusterRole is deprecated in favor of Role",
+      "They are functionally identical, differing only in name"
+    ],
+    "answer": "Role is namespaced and grants permissions within one namespace; ClusterRole is cluster-scoped and can grant permissions cluster-wide or be reused across namespaces",
+    "explanation": "A Role's rules only apply within the namespace it's created in. A ClusterRole can grant cluster-scoped resource access (like Nodes, PersistentVolumes) or be bound via a RoleBinding to apply to just one namespace, making it reusable across many namespaces.",
+    "difficulty": "easy",
+    "subcategory": "roles",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the difference between a RoleBinding and a ClusterRoleBinding?",
+    "options": [
+      "RoleBinding grants permissions within a specific namespace (can reference a Role or ClusterRole); ClusterRoleBinding grants permissions cluster-wide across all namespaces",
+      "RoleBinding can only bind to a ClusterRole, never a Role",
+      "ClusterRoleBinding is namespaced",
+      "They both only work with ClusterRoles"
+    ],
+    "answer": "RoleBinding grants permissions within a specific namespace (can reference a Role or ClusterRole); ClusterRoleBinding grants permissions cluster-wide across all namespaces",
+    "explanation": "A RoleBinding scopes the granted permissions to its own namespace even when referencing a ClusterRole (a common pattern for reusing one ClusterRole across many namespaces), while a ClusterRoleBinding applies those permissions across every namespace in the cluster.",
+    "difficulty": "medium",
+    "subcategory": "role-bindings",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How can you reuse a single ClusterRole to grant namespace-scoped permissions in multiple different namespaces?",
+    "options": [
+      "Create a separate RoleBinding in each namespace that references the same ClusterRole",
+      "Create a single ClusterRoleBinding, which will automatically scope per namespace",
+      "Roles cannot reference ClusterRoles",
+      "Duplicate the ClusterRole once per namespace"
+    ],
+    "answer": "Create a separate RoleBinding in each namespace that references the same ClusterRole",
+    "explanation": "This is a common best practice: define permissions once as a ClusterRole (e.g., 'view-pods'), then bind it per-namespace via individual RoleBindings, scoping the effective permission to just that namespace despite the ClusterRole itself being cluster-scoped in definition.",
+    "difficulty": "medium",
+    "subcategory": "role-bindings",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What are the three fields that define a single RBAC rule within a Role/ClusterRole?",
+    "options": [
+      "apiGroups, resources, verbs",
+      "namespaces, users, groups",
+      "subjects, roleRef, kind",
+      "actions, targets, effects"
+    ],
+    "answer": "apiGroups, resources, verbs",
+    "explanation": "Each rule specifies which API groups (e.g., '', 'apps', 'batch'), which resources within those groups (e.g., pods, deployments), and which verbs (get, list, watch, create, update, patch, delete) are permitted \u2014 omitting a match means that action isn't granted by this rule.",
+    "difficulty": "easy",
+    "subcategory": "roles",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What does the empty string \"\" represent in the apiGroups field of an RBAC rule?",
+    "options": [
+      "The core/legacy API group (e.g., pods, services, configmaps, secrets)",
+      "A wildcard matching all API groups",
+      "An invalid/placeholder value that must be replaced",
+      "The 'apps' API group specifically"
+    ],
+    "answer": "The core/legacy API group (e.g., pods, services, configmaps, secrets)",
+    "explanation": "Kubernetes' original core resources (Pods, Services, ConfigMaps, Secrets, Namespaces, Nodes, etc.) live in the unnamed 'core' group, represented as \"\" in RBAC rules and API paths (/api/v1/...) as opposed to named groups like apps/v1 or batch/v1.",
+    "difficulty": "medium",
+    "subcategory": "roles",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you restrict a Role's permissions to only specific named resources (e.g., only one particular Secret) rather than all Secrets?",
+    "options": [
+      "Use the resourceNames field in the rule to list specific object names",
+      "Add a namespaceSelector to the rule",
+      "Use a label selector in the rule's 'resources' field",
+      "This granularity isn't supported by RBAC"
+    ],
+    "answer": "Use the resourceNames field in the rule to list specific object names",
+    "explanation": "resourceNames restricts a rule to only the named objects (e.g., resourceNames: [\"db-credentials\"]), useful for narrowly scoping access like allowing get on just one Secret rather than all Secrets in the namespace \u2014 note this only works with get/update/delete verbs, not list/watch effectively.",
+    "difficulty": "hard",
+    "subcategory": "roles",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is a ServiceAccount and how does it differ from a User in Kubernetes RBAC?",
+    "options": [
+      "ServiceAccount is a Kubernetes API object representing an in-cluster identity for Pods/processes; User is an external identity Kubernetes doesn't manage directly (usually via certs or OIDC)",
+      "They are identical concepts with different names",
+      "ServiceAccount is only for humans, User is for machines",
+      "User accounts are stored as Kubernetes objects, ServiceAccounts are not"
+    ],
+    "answer": "ServiceAccount is a Kubernetes API object representing an in-cluster identity for Pods/processes; User is an external identity Kubernetes doesn't manage directly (usually via certs or OIDC)",
+    "explanation": "Kubernetes has no built-in User object/database \u2014 users are typically authenticated via client certs, tokens, or an external OIDC provider \u2014 while ServiceAccounts are first-class API objects the cluster manages, automatically mounted into Pods for authenticating to the API server.",
+    "difficulty": "medium",
+    "subcategory": "service-accounts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How is a ServiceAccount's identity typically presented when a Pod calls the Kubernetes API?",
+    "options": [
+      "A projected/mounted ServiceAccount token (JWT) is automatically included as a Bearer token in API requests",
+      "The Pod's IP address is used as the identity",
+      "A shared cluster-wide API key",
+      "The node's kubelet certificate is reused"
+    ],
+    "answer": "A projected/mounted ServiceAccount token (JWT) is automatically included as a Bearer token in API requests",
+    "explanation": "Kubernetes automatically mounts a ServiceAccount token (a signed, audience-bound, time-limited JWT since the TokenRequest API/BoundServiceAccountTokens feature) into the Pod at /var/run/secrets/kubernetes.io/serviceaccount/token, which client libraries use as a Bearer token for API calls.",
+    "difficulty": "medium",
+    "subcategory": "service-accounts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why is it a security best practice to disable automatic ServiceAccount token mounting for Pods that don't call the Kubernetes API?",
+    "options": [
+      "Reduces attack surface \u2014 a compromised Pod can't use the token to make unintended API calls if it was never given one",
+      "It significantly improves Pod startup performance",
+      "Kubernetes requires this for all system Pods",
+      "It's required for HPA to function"
+    ],
+    "answer": "Reduces attack surface \u2014 a compromised Pod can't use the token to make unintended API calls if it was never given one",
+    "explanation": "Setting automountServiceAccountToken: false on the Pod or ServiceAccount prevents an unnecessary credential from being present if that workload never talks to the API server, following the principle of least privilege and shrinking the blast radius of a container compromise.",
+    "difficulty": "medium",
+    "subcategory": "service-accounts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What happens if a Pod doesn't specify a serviceAccountName?",
+    "options": [
+      "It uses the 'default' ServiceAccount of its namespace, which typically has minimal/no permissions by default",
+      "The Pod fails to schedule",
+      "It runs with full cluster-admin privileges",
+      "It uses the node's kubelet identity"
+    ],
+    "answer": "It uses the 'default' ServiceAccount of its namespace, which typically has minimal/no permissions by default",
+    "explanation": "Every namespace automatically gets a 'default' ServiceAccount; unless explicitly bound to Roles/ClusterRoles, it has no RBAC permissions beyond what's granted to 'system:authenticated' or similar broad groups, so a Pod using it typically can't do much against the API without additional bindings.",
+    "difficulty": "easy",
+    "subcategory": "service-accounts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What does the RBAC principle of 'least privilege' mean in practice for Kubernetes clusters?",
+    "options": [
+      "Granting only the exact verbs/resources a subject needs to perform its job, avoiding broad wildcard permissions",
+      "Giving every subject cluster-admin for simplicity, then restricting later",
+      "Only applying RBAC to production namespaces",
+      "Disabling RBAC entirely for internal tools"
+    ],
+    "answer": "Granting only the exact verbs/resources a subject needs to perform its job, avoiding broad wildcard permissions",
+    "explanation": "Rather than using wildcard rules (resources: [\"*\"], verbs: [\"*\"]), least privilege means crafting Roles with the minimum necessary verbs (e.g., just get/list/watch for a monitoring tool) scoped to only the resources/namespaces actually required, limiting damage from compromised credentials.",
+    "difficulty": "easy",
+    "subcategory": "least-privilege",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How can you check what permissions a specific user or ServiceAccount actually has?",
+    "options": [
+      "kubectl auth can-i --list --as=<user> or --as=system:serviceaccount:<ns>:<name>",
+      "kubectl describe rolebinding shows all effective permissions directly",
+      "There's no built-in way; must manually trace every RoleBinding",
+      "kubectl get permissions <user>"
+    ],
+    "answer": "kubectl auth can-i --list --as=<user> or --as=system:serviceaccount:<ns>:<name>",
+    "explanation": "'kubectl auth can-i --list --as=jane' (optionally with --namespace) impersonates that identity and lists everything it's allowed to do, which is the standard way to audit effective RBAC permissions without manually cross-referencing every Role/RoleBinding.",
+    "difficulty": "medium",
+    "subcategory": "auditing",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What does 'kubectl auth can-i create pods --namespace dev --as system:serviceaccount:dev:deployer' check?",
+    "options": [
+      "Whether the 'deployer' ServiceAccount in namespace 'dev' is authorized to create Pods in the 'dev' namespace",
+      "Whether the current user can create ServiceAccounts",
+      "Whether Pods exist already in the dev namespace",
+      "Whether the API server itself can create pods"
+    ],
+    "answer": "Whether the 'deployer' ServiceAccount in namespace 'dev' is authorized to create Pods in the 'dev' namespace",
+    "explanation": "This impersonates the given ServiceAccount identity and asks the authorization layer a specific yes/no question, extremely useful for pre-validating pipeline permissions or debugging 'Forbidden' errors without needing to actually attempt the operation as that identity.",
+    "difficulty": "easy",
+    "subcategory": "auditing",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is RBAC 'aggregation' and how is it configured on a ClusterRole?",
+    "options": [
+      "Combining rules from multiple ClusterRoles into one via aggregationRule with a label selector, so matching ClusterRoles' rules get merged automatically",
+      "Merging multiple RoleBindings into a single object",
+      "Automatically summing resource quotas across roles",
+      "A deprecated Helm-only feature"
+    ],
+    "answer": "Combining rules from multiple ClusterRoles into one via aggregationRule with a label selector, so matching ClusterRoles' rules get merged automatically",
+    "explanation": "An aggregated ClusterRole defines aggregationRule.clusterRoleSelectors (label selectors); the control plane automatically populates that ClusterRole's rules by unioning any ClusterRole matching those labels, letting add-ons extend built-in roles like 'edit' or 'view' declaratively without editing them directly.",
+    "difficulty": "hard",
+    "subcategory": "aggregation",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What are the four default user-facing ClusterRoles Kubernetes ships with?",
+    "options": [
+      "cluster-admin, admin, edit, view",
+      "superuser, poweruser, standard, guest",
+      "system:master, system:node, system:admin, system:user",
+      "root, wheel, sudo, readonly"
+    ],
+    "answer": "cluster-admin, admin, edit, view",
+    "explanation": "cluster-admin grants unrestricted access cluster-wide; admin grants full namespace management (excluding resource quotas/roles typically); edit allows modifying most objects but not roles/rolebindings; view allows read-only access to most objects except secrets, forming a sensible default hierarchy.",
+    "difficulty": "medium",
+    "subcategory": "roles",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why does the default 'view' ClusterRole exclude reading Secrets?",
+    "options": [
+      "To prevent read-only users from exfiltrating sensitive credentials that are often stored as Secret data",
+      "Secrets aren't part of the core API group so they can't be included",
+      "'view' technically can read secrets, this is a myth",
+      "Because Secrets are always encrypted and unreadable regardless of RBAC"
+    ],
+    "answer": "To prevent read-only users from exfiltrating sensitive credentials that are often stored as Secret data",
+    "explanation": "Even 'view' access is a security-sensitive decision \u2014 Secrets frequently contain passwords, API keys, and certificates, so Kubernetes deliberately omits secret read access from the default view role to avoid casually granting broad credential visibility to any read-only user.",
+    "difficulty": "medium",
+    "subcategory": "security",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Can RBAC rules explicitly deny access to a specific resource (an explicit 'deny' rule)?",
+    "options": [
+      "No, Kubernetes RBAC is purely additive/allow-only; there's no native deny rule mechanism",
+      "Yes, using verbs: [\"deny\"]",
+      "Yes, using a negative resourceNames prefix",
+      "Yes, but only via ClusterRoleBinding"
+    ],
+    "answer": "No, Kubernetes RBAC is purely additive/allow-only; there's no native deny rule mechanism",
+    "explanation": "RBAC only grants permissions \u2014 there's no way to write a rule that subtracts/denies access once granted elsewhere. To implement 'deny' semantics, you must avoid granting the permission in the first place or use admission control (e.g., OPA/Gatekeeper, Kyverno) for more nuanced policy enforcement.",
+    "difficulty": "medium",
+    "subcategory": "core-concepts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the security risk of a Role/ClusterRole granting the 'escalate' verb on roles/clusterroles resources?",
+    "options": [
+      "It lets the subject grant itself or others additional permissions beyond what they currently have, potentially leading to privilege escalation",
+      "It only allows viewing role definitions, no real risk",
+      "It's a no-op verb with no practical effect",
+      "It only applies to the 'view' ClusterRole"
+    ],
+    "answer": "It lets the subject grant itself or others additional permissions beyond what they currently have, potentially leading to privilege escalation",
+    "explanation": "By default RBAC prevents users from granting permissions they don't already have (an escalation check), but explicit 'escalate' or 'bind' verb grants on roles/rolebindings resources can bypass that protection, letting a subject create a Role/RoleBinding with permissions beyond their current access.",
+    "difficulty": "hard",
+    "subcategory": "security",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the purpose of the RBAC 'bind' verb on roles/clusterroles?",
+    "options": [
+      "Allows a subject to create RoleBindings/ClusterRoleBindings that reference a Role/ClusterRole, even without having escalate permission, as long as they already have equivalent permissions",
+      "Allows binding a Pod to a specific node",
+      "Grants permission to attach PersistentVolumes",
+      "Controls binding of Services to Endpoints"
+    ],
+    "answer": "Allows a subject to create RoleBindings/ClusterRoleBindings that reference a Role/ClusterRole, even without having escalate permission, as long as they already have equivalent permissions",
+    "explanation": "The 'bind' verb, combined with the default privilege-escalation check, lets a user create bindings referencing a Role/ClusterRole only if either they already hold equivalent permissions, or they were explicitly granted 'bind' rights on that specific role, providing controlled delegation of binding rights.",
+    "difficulty": "hard",
+    "subcategory": "security",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How would you design RBAC for a CI/CD pipeline that needs to deploy to a specific namespace but shouldn't be able to read Secrets in other namespaces?",
+    "options": [
+      "Create a namespace-scoped Role with only necessary verbs (create/update/get on Deployments, Services, etc.) bound via RoleBinding to a dedicated ServiceAccount in that namespace",
+      "Grant cluster-admin to the pipeline's ServiceAccount for simplicity",
+      "Use a ClusterRoleBinding so it works across all namespaces automatically",
+      "Give the pipeline the 'view' ClusterRole cluster-wide"
+    ],
+    "answer": "Create a namespace-scoped Role with only necessary verbs (create/update/get on Deployments, Services, etc.) bound via RoleBinding to a dedicated ServiceAccount in that namespace",
+    "explanation": "Scoping the Role and RoleBinding to just the target namespace, with a dedicated ServiceAccount and only the verbs/resources the pipeline actually needs (excluding Secrets unless required), keeps the blast radius contained if the pipeline's credentials are ever compromised.",
+    "difficulty": "medium",
+    "subcategory": "least-privilege",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is impersonation in Kubernetes RBAC, and what permission does it require?",
+    "options": [
+      "Acting as another user/group/ServiceAccount for a request, requiring the 'impersonate' verb on users/groups/serviceaccounts resources",
+      "A way to bypass authentication entirely",
+      "Automatically inherited by all cluster-admins with no explicit grant",
+      "Only available to the kubelet, not human users"
+    ],
+    "answer": "Acting as another user/group/ServiceAccount for a request, requiring the 'impersonate' verb on users/groups/serviceaccounts resources",
+    "explanation": "Using --as/--as-group flags (as in kubectl auth can-i --as), a caller with the 'impersonate' verb on the authentication.k8s.io API group can make requests on behalf of another identity, useful for admin debugging or automation tools that act on behalf of end users, but risky if over-granted.",
+    "difficulty": "hard",
+    "subcategory": "security",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How does Kubernetes RBAC integrate with external identity providers like OIDC (e.g., Okta, Azure AD)?",
+    "options": [
+      "The API server's OIDC authenticator validates the ID token and maps claims (username/groups) to Kubernetes identities, which RBAC then authorizes against Roles/ClusterRoleBindings using those group names",
+      "RBAC has no support for external identity, only ServiceAccounts work",
+      "OIDC replaces RBAC entirely for authorization decisions",
+      "Kubernetes requires LDAP specifically, OIDC isn't supported"
+    ],
+    "answer": "The API server's OIDC authenticator validates the ID token and maps claims (username/groups) to Kubernetes identities, which RBAC then authorizes against Roles/ClusterRoleBindings using those group names",
+    "explanation": "With --oidc-issuer-url and related flags configured on the API server, users authenticate via their IdP and present an ID token; the API server extracts username/groups claims, and RBAC RoleBindings/ClusterRoleBindings can reference those group names directly (kind: Group) to grant permissions.",
+    "difficulty": "medium",
+    "subcategory": "authentication",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why can't you directly bind RBAC permissions to an OIDC group without a RoleBinding subject of kind 'Group'?",
+    "options": [
+      "RBAC subjects can be User, Group, or ServiceAccount; groups from your identity provider are represented as kind: Group subjects in bindings",
+      "OIDC groups aren't supported by Kubernetes at all",
+      "You must convert every OIDC group into a ServiceAccount first",
+      "Group subjects require a separate CRD to define"
+    ],
+    "answer": "RBAC subjects can be User, Group, or ServiceAccount; groups from your identity provider are represented as kind: Group subjects in bindings",
+    "explanation": "A RoleBinding/ClusterRoleBinding subject can reference kind: Group with the exact group name asserted by your OIDC provider's token claims (e.g., 'platform-team'), letting you manage access for entire teams centrally in your IdP rather than binding individual users.",
+    "difficulty": "medium",
+    "subcategory": "authentication",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is a common tool used to write and test policy-as-code that goes beyond what native RBAC can express (e.g., disallow privileged containers)?",
+    "options": [
+      "OPA/Gatekeeper or Kyverno admission controllers",
+      "RBAC ClusterRoles with wildcard verbs",
+      "NetworkPolicy objects",
+      "kube-state-metrics"
+    ],
+    "answer": "OPA/Gatekeeper or Kyverno admission controllers",
+    "explanation": "RBAC only governs who-can-do-what on the API, not the content of what they submit; admission controllers like OPA/Gatekeeper (Rego policies) or Kyverno (YAML policies) validate/mutate object specs (e.g., blocking privileged: true or requiring resource limits), complementing RBAC's identity-based authorization.",
+    "difficulty": "medium",
+    "subcategory": "least-privilege",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How would you audit who has cluster-admin access across a cluster?",
+    "options": [
+      "List all ClusterRoleBindings referencing the cluster-admin ClusterRole and inspect their subjects",
+      "Check the audit log for the string 'cluster-admin' only",
+      "There's no way to list this; must ask every team individually",
+      "Check every namespace's default ServiceAccount"
+    ],
+    "answer": "List all ClusterRoleBindings referencing the cluster-admin ClusterRole and inspect their subjects",
+    "explanation": "'kubectl get clusterrolebindings -o json' filtered/jq'd for roleRef.name == \"cluster-admin\" reveals every subject (users, groups, ServiceAccounts) granted that binding, which should be a short, carefully reviewed list in any well-governed cluster.",
+    "difficulty": "medium",
+    "subcategory": "auditing",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What does Kubernetes audit logging capture that's relevant for RBAC-related security investigations?",
+    "options": [
+      "A record of API requests including who made them, what resource/verb, and whether they were allowed or denied",
+      "Only failed login attempts to the dashboard",
+      "CPU/memory metrics per Pod",
+      "NetworkPolicy violations exclusively"
+    ],
+    "answer": "A record of API requests including who made them, what resource/verb, and whether they were allowed or denied",
+    "explanation": "Kubernetes audit logs (configured via an audit policy on the API server) record structured events for API calls \u2014 user identity, verb, resource, timestamp, and the authorization decision \u2014 which are essential for detecting privilege misuse, forensic investigation, and compliance reporting.",
+    "difficulty": "medium",
+    "subcategory": "auditing",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the risk of using wildcard '*' for resources and verbs in a custom ClusterRole?",
+    "options": [
+      "It effectively grants unrestricted access to every current and future resource type, violating least privilege and risking privilege escalation",
+      "Wildcards are purely cosmetic and don't actually expand permissions",
+      "Wildcards only work for the 'view' role",
+      "Kubernetes rejects wildcard rules at admission time"
+    ],
+    "answer": "It effectively grants unrestricted access to every current and future resource type, violating least privilege and risking privilege escalation",
+    "explanation": "A rule like apiGroups: [\"*\"], resources: [\"*\"], verbs: [\"*\"] is equivalent to cluster-admin in scope for whatever it's bound to, including future CRDs installed later \u2014 a common misconfiguration audit finding that should be replaced with explicit, minimal rule sets.",
+    "difficulty": "medium",
+    "subcategory": "security",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why should you avoid binding permissions directly to individual Kubernetes 'User' identities in large organizations?",
+    "options": [
+      "Managing bindings per-user doesn't scale and complicates offboarding; group-based bindings synced from an IdP are easier to maintain",
+      "Kubernetes doesn't actually support binding to Users at all",
+      "User-based bindings are automatically temporary and expire after 24 hours",
+      "There's no practical difference in maintainability"
+    ],
+    "answer": "Managing bindings per-user doesn't scale and complicates offboarding; group-based bindings synced from an IdP are easier to maintain",
+    "explanation": "With individual user bindings, every new hire, role change, or departure requires manual RBAC updates across potentially many namespaces. Binding to Groups synced from your OIDC/LDAP provider centralizes access management: removing someone from the IdP group instantly revokes cluster access.",
+    "difficulty": "medium",
+    "subcategory": "least-privilege",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the purpose of 'system:masters' group in Kubernetes, and why is it dangerous if overused?",
+    "options": [
+      "It's a built-in group bound to cluster-admin that bypasses all RBAC checks entirely (hardcoded), so anyone in it has unconditional full access",
+      "It's a deprecated group with no special meaning today",
+      "It only grants read access to system namespaces",
+      "It's automatically assigned to all authenticated users"
+    ],
+    "answer": "It's a built-in group bound to cluster-admin that bypasses all RBAC checks entirely (hardcoded), so anyone in it has unconditional full access",
+    "explanation": "system:masters is special-cased in the authorization code itself (not just a normal ClusterRoleBinding), giving unconditional superuser access that can't be restricted by modifying RBAC objects \u2014 certificates/tokens with this group should be extremely tightly controlled and rarely used.",
+    "difficulty": "hard",
+    "subcategory": "security",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How can Namespace-scoped RBAC combined with ResourceQuota help implement multi-tenancy?",
+    "options": [
+      "RBAC restricts who can act within a namespace while ResourceQuota caps how much compute/object count that namespace's tenants can consume, together limiting both access and resource abuse",
+      "ResourceQuota replaces the need for RBAC entirely",
+      "RBAC alone fully prevents noisy-neighbor resource issues without quotas",
+      "Namespaces provide network isolation automatically without policies"
+    ],
+    "answer": "RBAC restricts who can act within a namespace while ResourceQuota caps how much compute/object count that namespace's tenants can consume, together limiting both access and resource abuse",
+    "explanation": "Namespace-per-tenant multi-tenancy typically layers RBAC (identity/access boundary), ResourceQuota/LimitRange (resource consumption boundary), and NetworkPolicy (network boundary) together \u2014 RBAC alone doesn't prevent a tenant from consuming excessive cluster resources.",
+    "difficulty": "medium",
+    "subcategory": "least-privilege",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the effect of granting the 'create' verb on 'pods/exec' subresource?",
+    "options": [
+      "Allows the subject to exec into (get a shell in) running containers, a highly privileged action equivalent to arbitrary code execution in that Pod",
+      "Allows creating new Pods only, not existing ones",
+      "Grants permission to view Pod logs only",
+      "Has no practical security implication"
+    ],
+    "answer": "Allows the subject to exec into (get a shell in) running containers, a highly privileged action equivalent to arbitrary code execution in that Pod",
+    "explanation": "'pods/exec' create access is one of the most sensitive RBAC grants \u2014 it effectively gives shell access inside any matching Pod's containers, which combined with a privileged/hostPath-mounted Pod could lead to node or cluster compromise, so it should be tightly restricted and audited.",
+    "difficulty": "hard",
+    "subcategory": "security",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How would you grant a monitoring tool read-only access to Pods and Nodes across the entire cluster?",
+    "options": [
+      "Create a ClusterRole with get/list/watch on pods and nodes, bound via a ClusterRoleBinding to its ServiceAccount",
+      "Create a namespace-scoped Role bound in every namespace individually",
+      "Use the built-in 'view' ClusterRole, which already includes node access by default",
+      "Grant cluster-admin since monitoring needs broad visibility"
+    ],
+    "answer": "Create a ClusterRole with get/list/watch on pods and nodes, bound via a ClusterRoleBinding to its ServiceAccount",
+    "explanation": "Since Nodes are cluster-scoped resources and the tool needs visibility across all namespaces for Pods, a ClusterRole (not just a Role) with minimal read verbs, bound cluster-wide via ClusterRoleBinding to a dedicated monitoring ServiceAccount, is the properly scoped, least-privilege approach.",
+    "difficulty": "medium",
+    "subcategory": "roles",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What does 'kubectl create rolebinding --clusterrole=view --serviceaccount=dev:monitor --namespace=dev' accomplish?",
+    "options": [
+      "Grants the 'monitor' ServiceAccount in the 'dev' namespace the permissions from the built-in 'view' ClusterRole, scoped only to the 'dev' namespace",
+      "Grants cluster-wide view access to the ServiceAccount",
+      "Creates a new ClusterRole named 'view'",
+      "Grants view access only to Pods, ignoring other resources"
+    ],
+    "answer": "Grants the 'monitor' ServiceAccount in the 'dev' namespace the permissions from the built-in 'view' ClusterRole, scoped only to the 'dev' namespace",
+    "explanation": "This is a canonical example of reusing a built-in ClusterRole in a namespace-scoped way: the RoleBinding itself lives in and applies only to the 'dev' namespace, even though it references a cluster-scoped ClusterRole definition for its rule set.",
+    "difficulty": "easy",
+    "subcategory": "role-bindings",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why might a Pod fail with a 'Forbidden' error even though its ServiceAccount has a RoleBinding that appears correct?",
+    "options": [
+      "The RoleBinding might be in the wrong namespace, reference the wrong Role/ClusterRole name, or the ServiceAccount subject namespace field might be mismatched",
+      "Forbidden errors are always caused by NetworkPolicy, not RBAC",
+      "RBAC changes are never applied without restarting the API server",
+      "The Pod's node lacks the correct kubelet certificate"
+    ],
+    "answer": "The RoleBinding might be in the wrong namespace, reference the wrong Role/ClusterRole name, or the ServiceAccount subject namespace field might be mismatched",
+    "explanation": "Common RBAC misconfigurations include a typo in roleRef.name, forgetting that a RoleBinding only applies in its own namespace, or specifying the wrong 'namespace' field under the ServiceAccount subject \u2014 use 'kubectl auth can-i --as=system:serviceaccount:ns:name' to pinpoint the exact gap.",
+    "difficulty": "medium",
+    "subcategory": "troubleshooting",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do RBAC permissions interact with Custom Resource Definitions (CRDs)?",
+    "options": [
+      "CRDs introduce new API resources that RBAC rules must explicitly reference by their group/resource name to grant access, just like built-in resources",
+      "CRDs are automatically accessible to everyone regardless of RBAC",
+      "RBAC cannot govern access to CRDs at all",
+      "CRDs require a separate authorization system outside RBAC"
+    ],
+    "answer": "CRDs introduce new API resources that RBAC rules must explicitly reference by their group/resource name to grant access, just like built-in resources",
+    "explanation": "Once a CRD (e.g., certificates.cert-manager.io) is installed, it behaves like any other API resource for RBAC purposes \u2014 you write rules with the CRD's apiGroup and resource plural name and appropriate verbs, and existing wildcard ClusterRoles will also automatically include newly installed CRDs, which is a common oversight.",
+    "difficulty": "medium",
+    "subcategory": "roles",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What verb is required to allow a subject to watch resources for changes (e.g., used by controllers/operators)?",
+    "options": [
+      "watch",
+      "get",
+      "list",
+      "observe"
+    ],
+    "answer": "watch",
+    "explanation": "'watch' establishes a long-lived connection streaming change events for a resource, distinct from 'get' (single object) and 'list' (snapshot collection); controllers/operators typically need get+list+watch together to build and maintain an informer cache.",
+    "difficulty": "easy",
+    "subcategory": "roles",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why is it good practice to create a dedicated ServiceAccount per application/workload rather than reusing the namespace's default ServiceAccount?",
+    "options": [
+      "It allows scoping distinct, minimal RBAC permissions per workload and makes auditing/revocation targeted instead of affecting every Pod in the namespace",
+      "The default ServiceAccount cannot be mounted into Pods at all",
+      "Kubernetes requires a unique ServiceAccount per Pod by validation rules",
+      "There is no functional benefit, it's purely cosmetic"
+    ],
+    "answer": "It allows scoping distinct, minimal RBAC permissions per workload and makes auditing/revocation targeted instead of affecting every Pod in the namespace",
+    "explanation": "If every Pod in a namespace shares the 'default' ServiceAccount, granting any permission to it affects all workloads indiscriminately. Dedicated ServiceAccounts let you tailor least-privilege RBAC per application and revoke/rotate access for one workload without impacting others.",
+    "difficulty": "medium",
+    "subcategory": "service-accounts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the purpose of the TokenRequest API and 'bound' ServiceAccount tokens introduced in newer Kubernetes versions?",
+    "options": [
+      "Issues short-lived, audience-scoped tokens tied to a specific Pod that expire automatically, replacing long-lived static ServiceAccount Secret tokens",
+      "Replaces RBAC entirely with a token-based system",
+      "Only used for Node bootstrapping, unrelated to ServiceAccounts",
+      "Disables authentication for internal traffic"
+    ],
+    "answer": "Issues short-lived, audience-scoped tokens tied to a specific Pod that expire automatically, replacing long-lived static ServiceAccount Secret tokens",
+    "explanation": "Older Kubernetes auto-created a non-expiring Secret-based token per ServiceAccount, a long-lived credential risk. The TokenRequest API/BoundServiceAccountTokens feature issues short-lived, audience-restricted JWTs bound to the specific Pod's lifetime, automatically rotated by kubelet, reducing the impact of leaked tokens.",
+    "difficulty": "hard",
+    "subcategory": "service-accounts",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How would you prevent a compromised application Pod's ServiceAccount token from being used to escalate privileges by creating new RoleBindings?",
+    "options": [
+      "Don't grant that ServiceAccount 'create'/'bind'/'escalate' verbs on rbac.authorization.k8s.io resources, keeping its permissions strictly limited to what the app needs",
+      "Rely on NetworkPolicy alone to prevent this",
+      "It's impossible to prevent since all ServiceAccounts can modify RBAC by default",
+      "Rotate the cluster's root CA certificate daily"
+    ],
+    "answer": "Don't grant that ServiceAccount 'create'/'bind'/'escalate' verbs on rbac.authorization.k8s.io resources, keeping its permissions strictly limited to what the app needs",
+    "explanation": "By default, ServiceAccounts have no RBAC permissions at all unless explicitly granted; the escalation risk only exists if you've mistakenly given a workload's ServiceAccount rights to manage Roles/RoleBindings/ClusterRoles it doesn't need \u2014 least-privilege design is the primary defense.",
+    "difficulty": "hard",
+    "subcategory": "security",
+    "category": "kubernetes"
+  }
+]
