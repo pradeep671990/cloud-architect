@@ -1,1 +1,506 @@
-[]
+[
+  {
+    "question": "You need to run a stateless web app with 5 identical replicas that self-heal if any Pod dies. What workload object fits best?",
+    "options": ["Deployment", "StatefulSet", "DaemonSet", "Job"],
+    "answer": "Deployment",
+    "explanation": "Deployment is purpose-built for stateless, interchangeable replicas: it manages a ReplicaSet ensuring N Pods are always running, supports rolling updates/rollbacks, and doesn't care about Pod identity or ordering, unlike StatefulSet which is for workloads needing stable network identity and storage per replica.",
+    "difficulty": "easy",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You're deploying a clustered database (like Cassandra) where each replica needs a stable hostname and its own persistent volume that follows it across rescheduling. What object do you use?",
+    "options": ["StatefulSet", "Deployment", "ReplicaSet", "DaemonSet"],
+    "answer": "StatefulSet",
+    "explanation": "StatefulSet provides stable, predictable Pod names (pod-0, pod-1, pod-2), stable network identity via a headless Service, and stable storage by binding each ordinal a dedicated PersistentVolumeClaim via volumeClaimTemplates that persists across Pod rescheduling, exactly what clustered stateful systems like databases or message queues typically require for correct peer discovery and data continuity.",
+    "difficulty": "easy",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You need exactly one instance of a log-collection agent running on every single node in the cluster, including newly added ones automatically.",
+    "options": ["DaemonSet", "Deployment with replicas equal to node count", "StatefulSet", "CronJob"],
+    "answer": "DaemonSet",
+    "explanation": "A DaemonSet ensures exactly one copy of a Pod runs on every node matching its (optional) node selector, automatically adding a Pod when a new node joins and removing it when a node leaves, which is exactly the pattern needed for per-node infrastructure agents like log shippers (Fluentd), monitoring agents (node-exporter), or CNI/storage plugins.",
+    "difficulty": "easy",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You need to run a database migration task exactly once to completion, with automatic retry on failure, then never run again.",
+    "options": ["Job", "CronJob", "Deployment with replicas=1", "Pod with restartPolicy: Always"],
+    "answer": "Job",
+    "explanation": "A Job creates one or more Pods and ensures a specified number successfully terminate (completions), retrying failed Pods up to 'backoffLimit' times, then stops, which is exactly the semantics needed for a one-shot task like a migration. Unlike a Deployment, a Job's Pods are expected to exit with success rather than run forever, and 'restartPolicy' for a Job's Pods must be OnFailure or Never, not Always.",
+    "difficulty": "easy",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You need a nightly database backup task to run automatically at 2 AM every day.",
+    "options": ["CronJob", "Job with a sleep loop inside the container", "DaemonSet with a time-based node selector", "StatefulSet with a scheduled annotation"],
+    "answer": "CronJob",
+    "explanation": "A CronJob wraps the Job pattern with a cron schedule expression (e.g., '0 2 * * *'), automatically creating a new Job (and its Pods) at each scheduled time. It also supports concurrency policy (Forbid/Allow/Replace) to control what happens if a previous run is still in progress when the next scheduled time arrives, and history limits to bound how many completed/failed Job objects are retained.",
+    "difficulty": "easy",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How does a Deployment perform a rolling update by default when you change the container image, and what two fields control the pace?",
+    "options": ["maxSurge and maxUnavailable under the RollingUpdate strategy", "replicas and selector fields alone control the rollout pace", "minReadySeconds is the only field affecting rollout speed", "Rolling updates have no configurable pace; they're always instantaneous"],
+    "answer": "maxSurge and maxUnavailable under the RollingUpdate strategy",
+    "explanation": "'maxSurge' controls how many extra Pods beyond the desired replica count can be created temporarily during the rollout (speeding it up at the cost of brief extra resource usage), and 'maxUnavailable' controls how many existing Pods can be taken down simultaneously before their replacements are ready (trading rollout speed against availability). Together they let you tune between a fast, resource-hungry rollout and a slow, conservative, always-available one.",
+    "difficulty": "medium",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "A Deployment rollout introduced a bug in production. How do you revert to the previous working version quickly?",
+    "options": ["kubectl rollout undo deployment/<name>", "kubectl delete deployment and recreate from an old YAML manually", "kubectl scale deployment/<name> --replicas=0 then back up", "Manually edit each Pod's image individually"],
+    "answer": "kubectl rollout undo deployment/<name>",
+    "explanation": "Deployments keep a revision history of previous ReplicaSets (controlled by 'revisionHistoryLimit'). 'kubectl rollout undo' reverts to the immediately prior revision (or a specific one via '--to-revision=N'), which Kubernetes achieves by scaling the old ReplicaSet back up and the current one down, following the same rolling update mechanics as a forward rollout, giving a fast, native rollback path.",
+    "difficulty": "easy",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you check the rollout status and history of a Deployment to see what revisions exist and what changed between them?",
+    "options": ["kubectl rollout status / kubectl rollout history deployment/<name>", "kubectl get events only", "kubectl describe replicaset for every ReplicaSet manually", "There's no built-in way to view rollout history"],
+    "answer": "kubectl rollout status / kubectl rollout history deployment/<name>",
+    "explanation": "'kubectl rollout status' blocks and reports on an in-progress rollout's completion (useful in CI/CD pipelines to wait for a deploy to finish before proceeding). 'kubectl rollout history' lists past revisions (with '--revision=N' showing the exact Pod template diff for that revision), letting you understand exactly what changed across the Deployment's update history, assuming change-cause annotations were recorded.",
+    "difficulty": "easy",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You want a Deployment's rollout to automatically pause if the new Pods fail their readiness probes too many times, avoiding a full bad rollout.",
+    "options": ["This isn't automatic in vanilla Deployments; use a Deployment's minReadySeconds plus progressDeadlineSeconds to detect stuck rollouts, or adopt a more advanced strategy like Argo Rollouts for automated analysis/rollback", "Deployments automatically halt and roll back on any single failed readiness probe by default", "Set replicas to 0 to prevent any rollout from ever starting", "This is only possible with StatefulSets, never Deployments"],
+    "answer": "This isn't automatic in vanilla Deployments; use a Deployment's minReadySeconds plus progressDeadlineSeconds to detect stuck rollouts, or adopt a more advanced strategy like Argo Rollouts for automated analysis/rollback",
+    "explanation": "A plain Deployment will keep attempting the rolling update per maxSurge/maxUnavailable even if new Pods are failing readiness, only reporting the rollout as stuck (via 'progressDeadlineSeconds' timeout, surfaced as a 'ProgressDeadlineExceeded' condition) rather than automatically rolling back. For genuinely automated analysis-based rollback (checking metrics/success rate and reverting automatically), progressive delivery tools like Argo Rollouts or Flagger add canary analysis and automatic rollback capabilities on top of the basic Deployment/ReplicaSet primitives.",
+    "difficulty": "hard",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How does a StatefulSet's default rolling update strategy differ in ORDER from a Deployment's?",
+    "options": ["StatefulSet updates Pods in strict reverse ordinal order (highest number first, one at a time by default), while Deployment's rolling update has no such strict per-replica ordering guarantee", "They use the exact same unordered, parallel update strategy", "StatefulSet always updates all Pods simultaneously with no ordering", "Deployment updates in reverse ordinal order; StatefulSet updates all at once"],
+    "answer": "StatefulSet updates Pods in strict reverse ordinal order (highest number first, one at a time by default), while Deployment's rolling update has no such strict per-replica ordering guarantee",
+    "explanation": "StatefulSet's default 'RollingUpdate' strategy terminates and recreates Pods starting from the highest ordinal (e.g., web-2, then web-1, then web-0) one at a time, waiting for each to become Ready before proceeding to the next, respecting the ordering guarantees that stateful, identity-sensitive workloads often depend on (e.g., updating a replica before its primary). Deployment's ReplicaSet-based Pods have no inherent identity/order, so its rolling update just manages surge/unavailable counts without any specific per-Pod ordering.",
+    "difficulty": "hard",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You need only Pod ordinals 3 and above to receive a StatefulSet update, keeping 0-2 on the old version for a partial canary rollout.",
+    "options": ["StatefulSet's partition field under RollingUpdate strategy", "Deployment's maxSurge field", "A separate StatefulSet for each ordinal", "This is not achievable with StatefulSets"],
+    "answer": "StatefulSet's partition field under RollingUpdate strategy",
+    "explanation": "Setting 'updateStrategy.rollingUpdate.partition: 3' tells the StatefulSet controller to only update Pods with an ordinal greater than or equal to 3, leaving lower-numbered Pods untouched even if the Pod template changes. This enables a manual, controlled canary-style rollout for stateful workloads, gradually lowering the partition value as confidence increases until it reaches 0, at which point all Pods are updated.",
+    "difficulty": "hard",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How does a StatefulSet ensure stable network identity for each replica, letting other Pods reliably address 'web-0' specifically rather than any arbitrary replica?",
+    "options": ["A headless Service (clusterIP: None) combined with the StatefulSet's stable pod naming convention creates predictable per-Pod DNS records", "Regular ClusterIP Services automatically provide this out of the box for any workload", "Each Pod gets a hardcoded static IP assigned manually by the administrator", "StatefulSets don't provide any network identity; this requires an external service mesh"],
+    "answer": "A headless Service (clusterIP: None) combined with the StatefulSet's stable pod naming convention creates predictable per-Pod DNS records",
+    "explanation": "A headless Service associated with a StatefulSet doesn't load-balance; instead, it creates individual DNS A records for each Pod in the form '<pod-name>.<service-name>.<namespace>.svc.cluster.local' (e.g., 'web-0.web-headless.default.svc.cluster.local'), giving other components a reliable way to address a SPECIFIC replica by its stable ordinal identity, essential for peer discovery in clustered systems like Cassandra or Kafka.",
+    "difficulty": "medium",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "A DaemonSet Pod needs to bypass normal node resource-based scheduling filtering since it must run on every node regardless of other Pod resource pressure, for critical infrastructure like a CNI plugin.",
+    "options": ["Mark the DaemonSet Pod with a high PriorityClass and appropriate tolerations for control-plane/other taints, ensuring it's scheduled and not preempted", "DaemonSets automatically bypass all scheduling constraints with no configuration needed", "This isn't possible; DaemonSets are always subject to standard resource-based scheduling like any other Pod", "Only StatefulSets can bypass normal scheduling filters, never DaemonSets"],
+    "answer": "Mark the DaemonSet Pod with a high PriorityClass and appropriate tolerations for control-plane/other taints, ensuring it's scheduled and not preempted",
+    "explanation": "By default, DaemonSet Pods are still subject to normal resource-fit scheduling and taints (they simply target all matching nodes rather than being placed by the scheduler's normal scoring). Critical infrastructure DaemonSets (CNI, kube-proxy) typically set a high/system PriorityClass (like system-node-critical) so they're prioritized during resource pressure and preemption decisions, plus explicit tolerations for control-plane taints and NoSchedule/NoExecute taints so they still land on nodes that would otherwise repel ordinary workloads.",
+    "difficulty": "hard",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How would you run a fixed batch of 10 independent parallel work items (like processing 10 files), each needing exactly one successful completion?",
+    "options": ["A Job with completions: 10 and an appropriate parallelism value", "A Deployment with replicas: 10", "10 separate CronJobs, one per file", "A single Pod with a loop processing all 10 files sequentially inside one container"],
+    "answer": "A Job with completions: 10 and an appropriate parallelism value",
+    "explanation": "Setting 'completions: 10' tells the Job it needs 10 total successful Pod completions, while 'parallelism: N' controls how many Pods run concurrently at once (e.g., parallelism: 3 processes items 3-at-a-time until all 10 succeed). Kubernetes tracks completions independently of which specific Pod succeeded, retrying failed attempts automatically up to the backoffLimit, well-suited for embarrassingly parallel batch workloads.",
+    "difficulty": "medium",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the difference between a Job's 'completions' field being unset versus explicitly set to 1 with a high 'parallelism'?",
+    "options": ["Unset completions defaults to 1 (a single successful Pod is enough regardless of parallelism); this is distinct from wanting many parallel Pods where only overall completions count toward the target", "They behave identically in every configuration", "Unset completions means unlimited/infinite completions are required forever", "parallelism has no effect unless completions is also explicitly set to a value greater than 1"],
+    "answer": "Unset completions defaults to 1 (a single successful Pod is enough regardless of parallelism); this is distinct from wanting many parallel Pods where only overall completions count toward the target",
+    "explanation": "If 'completions' is omitted, the Job defaults to needing just one successful Pod completion overall; setting 'parallelism' higher than 1 in that default mode would actually be for a 'work queue' pattern where multiple Pods race to pull from an external queue and any one success is enough (less common) versus explicitly setting completions to a specific count for a fixed, known amount of work that must ALL be completed regardless of how many Pods run it in parallel.",
+    "difficulty": "hard",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "A long-running Job's Pod appears stuck (hung, not progressing) with no automatic timeout. How do you bound the total time a Job is allowed to run?",
+    "options": ["activeDeadlineSeconds on the Job spec", "backoffLimit alone bounds total time", "restartPolicy: Never automatically imposes a timeout", "Jobs have an implicit hardcoded timeout of 1 hour"],
+    "answer": "activeDeadlineSeconds on the Job spec",
+    "explanation": "'activeDeadlineSeconds' sets a wall-clock limit on the total time a Job is allowed to remain active; once exceeded, Kubernetes terminates all its Pods and marks the Job as Failed with reason 'DeadlineExceeded', regardless of 'backoffLimit' (which instead caps the number of RETRY attempts, not elapsed time). This is important for preventing a genuinely hung task from consuming cluster resources indefinitely with no other bound.",
+    "difficulty": "medium",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You need a CronJob's scheduled runs to never overlap, even if a previous run is still executing when the next scheduled time arrives.",
+    "options": ["concurrencyPolicy: Forbid", "concurrencyPolicy: Allow (the default)", "concurrencyPolicy: Replace", "Set parallelism: 1 on the CronJob directly"],
+    "answer": "concurrencyPolicy: Forbid",
+    "explanation": "'concurrencyPolicy: Forbid' skips creating a new Job run if the previous one from this CronJob is still active, ensuring strict non-overlap, important for tasks like database migrations or reports where concurrent execution could cause data corruption or duplicate side effects. 'Replace' instead kills the still-running previous Job and starts the new one; the default 'Allow' lets them run concurrently, which is fine only for genuinely independent, idempotent tasks.",
+    "difficulty": "medium",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why might a CronJob silently 'miss' a scheduled execution entirely, and what field controls the tolerance for this?",
+    "options": ["startingDeadlineSeconds bounds how late a missed schedule can still be started; if the CronJob controller was down/unavailable longer than this window, the missed run is skipped entirely", "CronJobs never miss scheduled runs under any circumstances", "Missed runs are always automatically queued and run immediately whenever the controller recovers, with no bound", "Only concurrencyPolicy affects whether a run is considered missed"],
+    "answer": "startingDeadlineSeconds bounds how late a missed schedule can still be started; if the CronJob controller was down/unavailable longer than this window, the missed run is skipped entirely",
+    "explanation": "If the kube-controller-manager (which runs the CronJob controller) is unavailable across a scheduled trigger time (e.g., during a control plane outage), and comes back after 'startingDeadlineSeconds' has already elapsed past that missed time, the controller considers that specific scheduled run 'too late' and skips it rather than starting a late-and-possibly-meaningless job run, logging this as a missed schedule rather than silently succeeding or endlessly catching up on every missed slot.",
+    "difficulty": "hard",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you run a helper container that must complete BEFORE the main application container starts (e.g., waiting for a dependency or fetching config)?",
+    "options": ["initContainers in the Pod spec", "A second regular container in the same Pod, hoping it finishes first by chance", "A sidecar container with a sleep at the start", "This requires a separate Pod entirely, run beforehand"],
+    "answer": "initContainers in the Pod spec",
+    "explanation": "'initContainers' run sequentially to completion, in order, BEFORE any of the Pod's regular containers start. If an init container fails, the kubelet retries it (per the Pod's restart policy) rather than proceeding, guaranteeing the main containers never start until all init containers have genuinely succeeded, a clean and explicit pattern for setup tasks like schema migrations, config templating, or dependency readiness checks.",
+    "difficulty": "medium",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the difference between a regular sidecar pattern (a second container in a Pod) and the newer, formalized 'native sidecar' feature (initContainers with restartPolicy: Always)?",
+    "options": ["Native sidecars start before the main container (like init containers) but keep running alongside it for the Pod's lifetime, and are guaranteed to terminate after the main container on shutdown, unlike ordinary co-located containers with no defined startup/shutdown ordering", "There is no meaningful difference; both patterns behave identically in every version of Kubernetes", "Native sidecars can only be used with StatefulSets, never Deployments", "Native sidecars replace the need for initContainers entirely in all scenarios"],
+    "answer": "Native sidecars start before the main container (like init containers) but keep running alongside it for the Pod's lifetime, and are guaranteed to terminate after the main container on shutdown, unlike ordinary co-located containers with no defined startup/shutdown ordering",
+    "explanation": "Historically, sidecars (like an Envoy proxy) were just ordinary additional containers with no guaranteed start-before/stop-after ordering relative to the main container, causing subtle issues like a Job's main container finishing while its sidecar keeps the Pod alive forever, or a proxy sidecar not being ready when the main container's very first request goes out. The native sidecar feature (an initContainer with 'restartPolicy: Always') solves both: it starts before the main container like a normal init container but keeps running throughout the Pod's life, and is deliberately terminated only after the main container exits.",
+    "difficulty": "hard",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you make Kubernetes automatically restart a container if its application-level liveness check fails, even though the process itself hasn't crashed (e.g., deadlocked)?",
+    "options": ["livenessProbe on the container", "readinessProbe alone triggers restarts", "restartPolicy: Always is sufficient by itself with no probe needed", "startupProbe alone handles ongoing liveness checking"],
+    "answer": "livenessProbe on the container",
+    "explanation": "A livenessProbe (HTTP GET, TCP socket, gRPC, or exec command) periodically checks whether the app is still functioning correctly; if it fails enough consecutive times (per 'failureThreshold'), kubelet kills and restarts the container, addressing the specific failure mode of a process that's technically alive but functionally stuck/deadlocked, which a simple 'is the process running' check would never catch. A readinessProbe instead only controls Service traffic routing, not restarts.",
+    "difficulty": "easy",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the risk of setting a livenessProbe with too aggressive a threshold/timeout on a container that occasionally has legitimate slow responses under load?",
+    "options": ["The probe can falsely trigger unnecessary restarts during transient slowness, potentially causing a cascading failure where restarts under load make the underlying load problem worse", "There is no risk; aggressive liveness probes are always strictly beneficial", "Overly aggressive liveness probes only affect readiness, never trigger restarts", "This only matters for readinessProbe configuration, not livenessProbe"],
+    "answer": "The probe can falsely trigger unnecessary restarts during transient slowness, potentially causing a cascading failure where restarts under load make the underlying load problem worse",
+    "explanation": "A livenessProbe that's too strict (short timeout, low failureThreshold) on an app that occasionally responds slowly under legitimate high load can misinterpret temporary slowness as a genuine hang, triggering a restart. Restarting a Pod that was actually fine (just briefly overloaded) often makes things worse: it loses in-flight work, adds cold-start overhead, and can shift more load onto remaining replicas, potentially causing a self-reinforcing cascade of unnecessary restarts across the whole Deployment under sustained load.",
+    "difficulty": "hard",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "A Java application takes 90 seconds to fully start (JVM warm-up) but your livenessProbe with a 10-second initial delay keeps killing it before it's ready. What's the correct fix?",
+    "options": ["Add a startupProbe with a generous failureThreshold/period to cover the slow startup window, after which the livenessProbe takes over with normal, tighter thresholds", "Simply increase the livenessProbe's initialDelaySeconds to 90+ seconds forever, even after the app is stable and running fast", "Remove the livenessProbe entirely for this container to avoid the issue", "This isn't fixable with probes; it requires a code change to the application"],
+    "answer": "Add a startupProbe with a generous failureThreshold/period to cover the slow startup window, after which the livenessProbe takes over with normal, tighter thresholds",
+    "explanation": "A startupProbe is specifically designed for this exact problem: while it's failing (app still starting up), the livenessProbe and readinessProbe are effectively disabled/deferred, so slow-starting apps get a generous grace period without needing to permanently loosen the LIVENESS probe's settings (which would make it less responsive to genuine post-startup hangs). Once the startupProbe succeeds once, normal liveness/readiness probing with tighter, appropriate thresholds begins.",
+    "difficulty": "medium",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How does a readinessProbe failing differ in consequence from a livenessProbe failing, for a running Pod?",
+    "options": ["Failing readiness removes the Pod from Service endpoints (no traffic routed) without restarting it; failing liveness causes kubelet to kill and restart the container", "They have identical consequences: both immediately restart the container", "Failing readiness always triggers Pod deletion entirely, not just endpoint removal", "Failing liveness only logs a warning with no actual restart action taken"],
+    "answer": "Failing readiness removes the Pod from Service endpoints (no traffic routed) without restarting it; failing liveness causes kubelet to kill and restart the container",
+    "explanation": "readinessProbe failures are about TRAFFIC ROUTING: the Pod is temporarily removed from the Service's Endpoints/EndpointSlice so no new requests are sent to it (useful for a Pod that's briefly overloaded or a dependency is down, without needing a disruptive restart), and it can automatically rejoin once ready again. livenessProbe failures are about PROCESS HEALTH: enough consecutive failures cause kubelet to actually kill and restart the container, a much more disruptive action reserved for genuinely stuck/hung processes.",
+    "difficulty": "medium",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you configure a Deployment so its Pods have a graceful shutdown period long enough to drain in-flight HTTP requests (e.g., 45 seconds) before being forcibly killed?",
+    "options": ["terminationGracePeriodSeconds on the Pod spec, combined with proper SIGTERM handling in the application", "readinessProbe's periodSeconds field controls shutdown grace time", "This is only configurable at the container runtime level, not in the Pod spec", "restartPolicy: Never automatically grants unlimited graceful shutdown time"],
+    "answer": "terminationGracePeriodSeconds on the Pod spec, combined with proper SIGTERM handling in the application",
+    "explanation": "'terminationGracePeriodSeconds: 45' tells kubelet to wait up to 45 seconds after sending SIGTERM before force-killing with SIGKILL, giving the application time to stop accepting new connections and finish in-flight requests. Critically, the application itself must actually catch SIGTERM and perform this graceful drain logic; simply setting a longer grace period without corresponding application behavior just delays an eventual hard kill without any real benefit.",
+    "difficulty": "medium",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why might a rolling Deployment update still cause brief user-facing errors even with correctly configured readiness probes and terminationGracePeriodSeconds?",
+    "options": ["A race exists between the Pod actually stopping and the Service's Endpoints/kube-proxy rules being updated everywhere; a preStop hook adding a short delay before SIGTERM helps close this gap", "Rolling updates with correct probes and grace periods are always 100% guaranteed to be error-free with zero exceptions", "This scenario is impossible; readiness probes fully eliminate any possibility of dropped requests", "Only livenessProbe misconfiguration, never readinessProbe, can cause this symptom"],
+    "answer": "A race exists between the Pod actually stopping and the Service's Endpoints/kube-proxy rules being updated everywhere; a preStop hook adding a short delay before SIGTERM helps close this gap",
+    "explanation": "When a Pod is deleted, Kubernetes removes it from Endpoints AND sends SIGTERM roughly concurrently, but propagating that Endpoints removal to every kube-proxy/node's iptables rules across the cluster isn't instantaneous, so a request routed just before the Pod started terminating might still land on it briefly. A common mitigation is a 'preStop' lifecycle hook that sleeps for a few seconds before the actual SIGTERM is delivered, giving Endpoint propagation time to catch up before the app actually starts shutting down.",
+    "difficulty": "hard",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you inject configuration data (like a database URL) into a Pod's environment variables without hardcoding it in the Pod spec?",
+    "options": ["ConfigMap referenced via env/envFrom or a mounted volume", "Only Secrets can hold non-sensitive configuration data", "Hardcode it directly in the container image's Dockerfile ENV instruction", "Pod annotations are the standard mechanism for injecting configuration"],
+    "answer": "ConfigMap referenced via env/envFrom or a mounted volume",
+    "explanation": "A ConfigMap holds non-sensitive key-value configuration data, consumable by Pods either as individual environment variables ('valueFrom.configMapKeyRef'), as a bulk set of environment variables ('envFrom.configMapRef'), or mounted as files in a volume (useful for full config files, not just simple key-values), decoupling configuration from the container image so the same image can be reused across environments with different config.",
+    "difficulty": "easy",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You update a ConfigMap that's mounted as a volume into a running Pod. Does the Pod automatically see the new values without a restart?",
+    "options": ["Yes, mounted ConfigMap volumes are eventually updated in place (within the kubelet sync period), but environment-variable-injected values from a ConfigMap are NOT updated without a Pod restart", "No, neither volume-mounted nor environment-variable ConfigMap values ever update without a full Pod restart", "Yes, both volume mounts and environment variables update live automatically with no restart", "ConfigMap changes are entirely blocked/rejected by the API server once referenced by a running Pod"],
+    "answer": "Yes, mounted ConfigMap volumes are eventually updated in place (within the kubelet sync period), but environment-variable-injected values from a ConfigMap are NOT updated without a Pod restart",
+    "explanation": "kubelet periodically syncs mounted ConfigMap/Secret volume content, so a file-based mount typically reflects updates within roughly a minute (subject to kubelet's sync frequency and caching), and the application must itself watch for file changes to actually use the new value. Environment variables, however, are only evaluated once at container start time, so a ConfigMap change never affects an already-running container's environment variables until that Pod is recreated, an important distinction when deciding which consumption method to use for values that need dynamic updates.",
+    "difficulty": "hard",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you store a database password so it's referenced by a Pod but not stored as easily-readable plaintext directly in the Pod manifest?",
+    "options": ["Kubernetes Secret, referenced via env.valueFrom.secretKeyRef or a mounted volume", "A ConfigMap, since ConfigMaps and Secrets are functionally identical", "Directly embedding it in an annotation on the Pod", "Base64-encoding it inline in the Pod spec's env value field"],
+    "answer": "Kubernetes Secret, referenced via env.valueFrom.secretKeyRef or a mounted volume",
+    "explanation": "Secrets are stored base64-encoded in etcd (note: base64 is encoding, NOT encryption, so etcd encryption-at-rest and RBAC restricting Secret read access remain important for actual protection) and referenced similarly to ConfigMaps, either as individual env vars or mounted files. Unlike ConfigMaps, Secrets get some additional handling considerations (e.g., not being displayed in plaintext by 'kubectl get -o yaml' by default in newer versions, and being held in tmpfs when mounted as a volume rather than written to node disk).",
+    "difficulty": "easy",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You need to override a container's default ENTRYPOINT and CMD from within a Pod spec, without modifying the image itself. What fields do this?",
+    "options": ["command (overrides ENTRYPOINT) and args (overrides CMD)", "env variables alone can override the entrypoint", "lifecycle.postStart hook replaces the entrypoint", "This isn't possible; only rebuilding the image can change the entrypoint"],
+    "answer": "command (overrides ENTRYPOINT) and args (overrides CMD)",
+    "explanation": "In a Pod's container spec, 'command' maps to and overrides the Docker image's ENTRYPOINT, while 'args' maps to and overrides CMD. This lets you reuse the exact same image for different purposes (e.g., a debug shell versus the normal server process) purely through Pod spec configuration, without needing separate image builds for each variant.",
+    "difficulty": "easy",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How would you run a short one-off diagnostic Pod interactively and have it automatically clean itself up after you exit?",
+    "options": ["kubectl run -it --rm debug-pod --image=busybox -- sh", "kubectl create pod manually, then remember to delete it afterward", "kubectl apply -f with a Job manifest is the only supported way", "This requires writing a full Deployment manifest for a one-off diagnostic"],
+    "answer": "kubectl run -it --rm debug-pod --image=busybox -- sh",
+    "explanation": "'kubectl run -it --rm' creates a temporary interactive Pod, attaches your terminal to it, and automatically deletes the Pod once you exit the shell/session, ideal for quick ad-hoc diagnostics (like testing DNS resolution or connectivity from inside the cluster) without leaving stray debug Pods lying around that need manual cleanup afterward.",
+    "difficulty": "easy",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You want to guarantee that no two replicas of a critical Deployment ever land on the same physical node, for resilience against a single node failure.",
+    "options": ["Pod anti-affinity with topologyKey: kubernetes.io/hostname", "Pod affinity with a matching topologyKey", "nodeSelector targeting a single specific node", "This requires manual scheduling with no built-in Kubernetes mechanism"],
+    "answer": "Pod anti-affinity with topologyKey: kubernetes.io/hostname",
+    "explanation": "'podAntiAffinity' with a 'requiredDuringSchedulingIgnoredDuringExecution' rule matching the Deployment's own labels and 'topologyKey: kubernetes.io/hostname' tells the scheduler to never place two Pods sharing that label on the same node, since each unique hostname value defines a separate topology domain. Using 'preferred' instead of 'required' gives a soft preference the scheduler tries to honor but won't block scheduling entirely if it can't be satisfied.",
+    "difficulty": "medium",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How is 'topologySpreadConstraints' different from Pod anti-affinity for achieving even distribution of replicas across failure domains (zones/nodes)?",
+    "options": ["topologySpreadConstraints natively expresses 'spread evenly with at most N skew' across a topology domain, which is more precise and scalable than anti-affinity's simpler 'avoid colocating' semantics", "They are functionally identical mechanisms with different YAML syntax only", "topologySpreadConstraints only works for DaemonSets, never Deployments", "Anti-affinity is strictly newer and has fully replaced topologySpreadConstraints"],
+    "answer": "topologySpreadConstraints natively expresses 'spread evenly with at most N skew' across a topology domain, which is more precise and scalable than anti-affinity's simpler 'avoid colocating' semantics",
+    "explanation": "Pod anti-affinity is fundamentally about pairwise 'avoid being near Pods matching this selector', which becomes computationally expensive and imprecise for even distribution across many replicas/nodes at scale. 'topologySpreadConstraints' directly expresses the actual goal, spread Pods across a given topology key (zone, node) keeping the max difference in Pod count between domains within 'maxSkew', which is both more efficient for the scheduler to evaluate and more directly aligned with the actual even-distribution goal for resilience across zones or nodes.",
+    "difficulty": "hard",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You want a Pod to be scheduled preferentially (not strictly required) onto nodes labeled with 'disktype=ssd', but still schedulable elsewhere if no SSD node has capacity.",
+    "options": ["nodeAffinity with preferredDuringSchedulingIgnoredDuringExecution", "nodeAffinity with requiredDuringSchedulingIgnoredDuringExecution", "nodeSelector alone (which is always a hard requirement)", "A taint on non-SSD nodes"],
+    "answer": "nodeAffinity with preferredDuringSchedulingIgnoredDuringExecution",
+    "explanation": "'preferredDuringSchedulingIgnoredDuringExecution' node affinity expresses a weighted, soft preference: the scheduler favors matching nodes but will still place the Pod on a non-matching node rather than leaving it Pending if no preferred node has room. This contrasts with 'requiredDuringSchedulingIgnoredDuringExecution' (a hard constraint, effectively like a smarter, more expressive nodeSelector) or plain 'nodeSelector' (always a hard, simple equality match with no soft-preference option).",
+    "difficulty": "medium",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What does 'IgnoredDuringExecution' mean in affinity rule names like 'requiredDuringSchedulingIgnoredDuringExecution', and what's the practical implication?",
+    "options": ["The affinity rule is only evaluated at scheduling time; if labels change afterward making a running Pod's placement technically non-compliant, it is NOT automatically evicted/rescheduled", "It means the rule is completely ignored and has no effect at any point", "It means the Pod is immediately killed if node labels ever change post-scheduling", "IgnoredDuringExecution only applies to taints, never to affinity rules"],
+    "answer": "The affinity rule is only evaluated at scheduling time; if labels change afterward making a running Pod's placement technically non-compliant, it is NOT automatically evicted/rescheduled",
+    "explanation": "Currently, all standard Kubernetes affinity/anti-affinity rules use 'IgnoredDuringExecution' semantics (there's no built-in 'RequiredDuringExecution' variant yet), meaning the constraint is checked once at Pod scheduling time; if the underlying node's labels change afterward such that the already-running Pod's placement would now violate the rule, Kubernetes does not proactively evict or reschedule it, it simply continues running where it is until some other reason (deletion, node failure) causes it to be rescheduled, at which point the rule is re-evaluated against current labels.",
+    "difficulty": "hard",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you gracefully drain traffic away from a Pod for a few minutes (e.g., for manual investigation) without deleting it or scaling down the Deployment?",
+    "options": ["Temporarily remove/change the Pod's labels so it no longer matches the Service's selector, or patch the Pod to fail its readinessProbe deliberately", "Delete the Pod, since there's no way to keep it running while removing it from Service routing", "Scale the entire Deployment to 0 replicas, affecting all Pods, not just the one under investigation", "This isn't possible; a Pod matching a Service's selector can never be excluded from routing while alive"],
+    "answer": "Temporarily remove/change the Pod's labels so it no longer matches the Service's selector, or patch the Pod to fail its readinessProbe deliberately", 
+    "explanation": "Since Services route only to Pods matching their label selector AND currently passing readiness checks, you can surgically exclude one specific Pod from traffic (while keeping it alive for debugging via 'kubectl exec') either by relabeling it so the Service selector no longer matches (careful: this may cause its owning ReplicaSet to spin up a replacement, since it'll appear to be 'missing' from the ReplicaSet's perspective too, unless you account for that) or by manipulating its readiness state directly if the app exposes a way to do so.",
+    "difficulty": "hard",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How would you safely perform a schema-breaking database migration alongside a Deployment update, avoiding a period where old and new Pod versions both run against an incompatible schema?",
+    "options": ["Use a backward/forward-compatible ('expand-contract') migration strategy so both old and new application versions can operate against the schema during the rollout window, rather than a single atomic breaking change", "Deployments always guarantee zero overlap between old and new Pods, so this isn't a real concern", "Immediately switch the schema in one step and accept a brief outage during rollout", "Always scale to zero replicas before every schema migration, regardless of the change's nature"],
+    "answer": "Use a backward/forward-compatible ('expand-contract') migration strategy so both old and new application versions can operate against the schema during the rollout window, rather than a single atomic breaking change",
+    "explanation": "A rolling update inherently has a window where both old and new Pod versions serve traffic simultaneously; if the accompanying migration breaks compatibility with the OLD code (e.g., dropping a column the old version still reads), that window causes errors. The standard solution is the expand-contract pattern: first deploy a migration that only ADDS new schema elements (both old and new app code tolerate this), roll out the new application code that uses the new schema, then in a LATER, separate step remove/contract the old, now-unused schema elements once the old code is fully retired.",
+    "difficulty": "hard",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You need a Pod to have two containers where one (a proxy) must always be scheduled and terminated together with the main app, sharing the same lifecycle exactly.",
+    "options": ["Both containers defined in the same Pod's containers list (the sidecar pattern), since Pods are the atomic unit of scheduling/lifecycle", "Two separate Pods linked via a Service", "Two separate Deployments with matching replica counts", "A single container image containing both applications multiplexed internally"],
+    "answer": "Both containers defined in the same Pod's containers list (the sidecar pattern), since Pods are the atomic unit of scheduling/lifecycle",
+    "explanation": "Since a Pod is Kubernetes' atomic unit of scheduling (always scheduled together onto the same node) and lifecycle (created/terminated as a unit), colocating tightly-coupled containers (like an app plus its Envoy sidecar proxy) within a single Pod's 'containers' list is the correct pattern whenever they must always exist and move together, which two separate Pods (potentially landing on different nodes, with independent lifecycles) simply cannot guarantee.",
+    "difficulty": "easy",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's a practical use case for a Kubernetes Job's 'ttlSecondsAfterFinished' field?",
+    "options": ["Automatically clean up completed/failed Job objects (and their Pods) after a set time, preventing indefinite accumulation of finished Job/Pod objects cluttering the cluster", "It controls how long a Job is allowed to run before being force-terminated", "It sets how long the scheduler waits before starting the Job's first Pod", "It determines the CronJob's schedule interval instead of a cron expression"],
+    "answer": "Automatically clean up completed/failed Job objects (and their Pods) after a set time, preventing indefinite accumulation of finished Job/Pod objects cluttering the cluster",
+    "explanation": "Without this field, completed Jobs and their Pods remain in the cluster indefinitely (or until CronJob's own history limits/manual cleanup remove them), which for frequently-run batch/CronJob workloads can accumulate significant clutter over time. Setting 'ttlSecondsAfterFinished: 3600' automatically garbage-collects the Job and its Pods an hour after completion, keeping 'kubectl get jobs/pods' outputs manageable without requiring separate manual or scripted cleanup.",
+    "difficulty": "medium",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you configure a Pod so a specific container is allowed to fail/restart without the whole Pod being considered unhealthy, distinguishing a truly critical container from an optional one?",
+    "options": ["Kubernetes doesn't distinguish container criticality within a Pod natively; Pod-level readiness reflects ALL containers by default, so design Pod composition carefully or use separate Pods for independently-failable components", "Set restartPolicy: Optional on the less-critical container", "Use a lower livenessProbe failureThreshold on non-critical containers to reduce their impact automatically", "This is handled automatically; non-critical containers never affect Pod-level health"],
+    "answer": "Kubernetes doesn't distinguish container criticality within a Pod natively; Pod-level readiness reflects ALL containers by default, so design Pod composition carefully or use separate Pods for independently-failable components",
+    "explanation": "By default, a Pod's overall 'Ready' condition requires ALL of its containers to be individually ready (each passing its own readinessProbe, or having none defined which defaults to ready once running), meaning even a non-critical sidecar failing readiness marks the WHOLE Pod not-ready, potentially removing it from Service endpoints unnecessarily. If two components genuinely have independent failure/health semantics that shouldn't affect each other, the cleaner design is often separate Pods (and possibly separate Deployments) rather than forcing artificially independent health semantics onto containers sharing one Pod.",
+    "difficulty": "hard",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You need a workload that behaves like a Deployment but must maintain a stable, ordered set of Pods even during a full-cluster power-loss-style recovery. What guarantee does StatefulSet uniquely provide here?",
+    "options": ["It guarantees at-most-one Pod for a given ordinal identity is running at any time (never launching a replacement until the old one is confirmed fully terminated), preventing split-brain scenarios", "It guarantees Pods start in parallel and simultaneously for maximum recovery speed", "It provides no stronger guarantee than a Deployment; both behave identically during recovery", "It automatically resolves any application-level split-brain conflicts without any app-level coordination logic"],
+    "answer": "It guarantees at-most-one Pod for a given ordinal identity is running at any time (never launching a replacement until the old one is confirmed fully terminated), preventing split-brain scenarios",
+    "explanation": "Unlike a Deployment's ReplicaSet (which can, in some scenarios, briefly have more Pods matching its selector than desired during transitions), StatefulSet is deliberately conservative: it will NOT create a replacement for a given ordinal (e.g., web-0) until it has confirmed the old web-0 Pod is fully terminated (not just deleted from the API, but actually confirmed gone at the kubelet/node level), which matters critically for stateful systems where two instances simultaneously believing they own the same identity/storage could cause data corruption or split-brain, especially relevant during unclear node-failure scenarios like a node becoming unreachable but not confirmed dead.",
+    "difficulty": "hard",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How would you migrate a stateless application currently deployed as a raw, manually-managed set of Pods (no controller) to a properly managed Deployment, with minimal downtime?",
+    "options": ["Create the Deployment (it will create new, additional Pods matching its own selector/labels), verify the new Pods are healthy, shift traffic, then delete the old manually-managed Pods", "Simply add a 'deployment' label to the existing raw Pods and expect a Deployment to automatically manage them retroactively", "Delete all existing Pods first, causing an outage, then create the Deployment afterward", "This migration is impossible without first taking the entire application offline"],
+    "answer": "Create the Deployment (it will create new, additional Pods matching its own selector/labels), verify the new Pods are healthy, shift traffic, then delete the old manually-managed Pods",
+    "explanation": "A Deployment only manages Pods it directly creates (tracked via ownerReferences back to its ReplicaSet); it cannot simply 'adopt' arbitrary pre-existing raw Pods just by matching labels (adoption only happens for Pods created by a matching, but orphaned, ReplicaSet, not truly unmanaged raw Pods). The safe migration path is to create the new Deployment alongside the old Pods (using a distinguishing label so they don't collide), validate the new managed Pods work correctly (perhaps behind the same Service once ready), then decommission the old unmanaged Pods once traffic has fully shifted, achieving a near-zero-downtime transition to proper management.",
+    "difficulty": "hard",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What happens to a StatefulSet's PersistentVolumeClaims when you scale it down from 3 replicas to 1, and then back up to 3 again?",
+    "options": ["By default, PVCs for terminated ordinals (1 and 2) are NOT automatically deleted; scaling back up reattaches the SAME PVCs to the recreated Pods, preserving their original data", "All PVCs are immediately and permanently deleted the moment their Pod is scaled down", "Scaling back up always creates entirely new, empty PVCs, losing prior data for those ordinals", "PVC behavior on scale down/up is undefined and varies randomly by cluster"],
+    "answer": "By default, PVCs for terminated ordinals (1 and 2) are NOT automatically deleted; scaling back up reattaches the SAME PVCs to the recreated Pods, preserving their original data",
+    "explanation": "StatefulSet's default behavior deliberately preserves PVCs created via 'volumeClaimTemplates' even after their corresponding Pod ordinal is scaled down, specifically so that scaling back up restores the exact same persistent data rather than starting fresh, which is essential for stateful systems where losing a replica's data on a temporary scale-down would be highly disruptive. Newer Kubernetes versions added an optional 'persistentVolumeClaimRetentionPolicy' field to explicitly control this behavior (e.g., opt into automatic deletion on scale-down) if the default retain-forever behavior isn't desired.",
+    "difficulty": "hard",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you run a Pod that must have privileged access to host networking (e.g., a network monitoring tool needing to see all host traffic)?",
+    "options": ["hostNetwork: true in the Pod spec (used carefully, with awareness of the security implications)", "A regular Pod always has full host network visibility by default", "This requires a completely separate VM outside of Kubernetes entirely", "NetworkPolicy alone can grant this level of visibility"],
+    "answer": "hostNetwork: true in the Pod spec (used carefully, with awareness of the security implications)",
+    "explanation": "'hostNetwork: true' makes the Pod share the host's network namespace directly rather than getting its own isolated network namespace, letting it see and bind to the host's actual network interfaces (used by things like kube-proxy, CNI plugins, or network monitoring/packet-capture tools). This significantly reduces network isolation for that Pod (it can potentially see other Pods' traffic on the host and bind to any host port), so it should be reserved for genuinely trusted infrastructure workloads, not general application Pods.",
+    "difficulty": "medium",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You want a DaemonSet's Pods to run ONLY on nodes with a specific label (e.g., a monitoring agent only for GPU nodes), not literally every node in the cluster.",
+    "options": ["nodeSelector (or nodeAffinity) on the DaemonSet's Pod template", "This isn't possible; DaemonSets always run on every single node with no filtering option", "Use a taint on the GPU nodes with no toleration on other nodes' agents", "Create a separate, entirely different workload type instead of a DaemonSet"],
+    "answer": "nodeSelector (or nodeAffinity) on the DaemonSet's Pod template",
+    "explanation": "A DaemonSet's Pod template supports the same 'nodeSelector'/'nodeAffinity' fields as any other Pod; the DaemonSet controller uses these to determine ITS OWN definition of 'every matching node' rather than literally every node in the cluster, so 'nodeSelector: { gpu: \"true\" }' correctly limits the DaemonSet to only nodes carrying that label, expanding/contracting automatically as matching nodes join or leave.",
+    "difficulty": "easy",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How does the 'restartPolicy' field's allowed values differ between a plain Pod meant to run forever versus a Pod created by a Job?",
+    "options": ["A long-running Pod (e.g., under a Deployment) uses restartPolicy: Always (the default); a Job's Pods must use OnFailure or Never, since Always would conflict with the Job's expectation of eventual successful completion", "restartPolicy has no meaningful constraint differences between Pods and Job-owned Pods", "Job Pods must always use restartPolicy: Always, identical to Deployment Pods", "restartPolicy can only be set on Jobs, never on plain Pods or Deployments"],
+    "answer": "A long-running Pod (e.g., under a Deployment) uses restartPolicy: Always (the default); a Job's Pods must use OnFailure or Never, since Always would conflict with the Job's expectation of eventual successful completion",
+    "explanation": "'restartPolicy: Always' (the default for most Pods) is appropriate for workloads expected to run forever (Deployment/StatefulSet/DaemonSet Pods), continuously restarting on any exit. Jobs, however, model tasks expected to eventually SUCCEED and stop, so their Pod template must specify either 'OnFailure' (retry only on non-zero exit, managed via the Job's own backoffLimit-controlled Pod recreation) or 'Never' (don't restart the container at all, let the Job controller create a brand new Pod instead if a retry is needed); the API server actively rejects a Job Pod template specifying 'Always'.",
+    "difficulty": "medium",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You need a Pod's container to run a cleanup command right before it terminates (e.g., deregister from a service registry), separate from the application's own SIGTERM handling.",
+    "options": ["lifecycle.preStop hook", "lifecycle.postStart hook", "An additional initContainer at the end of the list", "terminationMessagePath field"],
+    "answer": "lifecycle.preStop hook",
+    "explanation": "A 'preStop' lifecycle hook (either an exec command or an HTTP GET) runs synchronously BEFORE SIGTERM is sent to the container's main process, and the container's terminationGracePeriod countdown effectively includes this hook's execution time. This is commonly used for deregistration tasks, or the earlier-mentioned pattern of a brief sleep to let Service Endpoint propagation catch up, separate from and prior to whatever the application's own SIGTERM handler does.",
+    "difficulty": "medium",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the difference between a 'postStart' and 'preStop' lifecycle hook, and a key caveat about postStart's timing guarantee?",
+    "options": ["postStart runs after the container is created but is NOT guaranteed to run before the container's main ENTRYPOINT/command begins executing (they can race); preStop runs before termination and does block the shutdown sequence", "postStart is guaranteed to always complete before the main process starts, with no possible race condition", "Both hooks are guaranteed to run strictly before their respective lifecycle transition with identical timing semantics", "preStop hooks run asynchronously and never block the container's actual termination"],
+    "answer": "postStart runs after the container is created but is NOT guaranteed to run before the container's main ENTRYPOINT/command begins executing (they can race); preStop runs before termination and does block the shutdown sequence",
+    "explanation": "A commonly misunderstood caveat: 'postStart' fires roughly concurrently with container startup, with no strict guarantee it completes (or even starts) before the container's main process begins running, so it's unsuitable for setup that the main process absolutely depends on existing first (use an initContainer for guaranteed-before-main-process-starts logic instead). 'preStop', by contrast, DOES reliably block: the container won't receive SIGTERM until the preStop hook completes (or times out), making it dependable for pre-shutdown cleanup ordering.",
+    "difficulty": "hard",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How would you design a fan-out/fan-in batch processing pipeline in Kubernetes where step 2 must only start after ALL of step 1's parallel work items finish?",
+    "options": ["Separate Job objects per pipeline stage, with an orchestration layer (or an Argo Workflows DAG) triggering step 2's Job only after step 1's Job reports full completion", "A single Job with a very high parallelism value handles this automatically with no orchestration needed", "Kubernetes Jobs have no way to express any pipeline/stage dependency; must be built entirely outside Kubernetes", "CronJob's concurrencyPolicy field directly expresses stage dependencies"],
+    "answer": "Separate Job objects per pipeline stage, with an orchestration layer (or an Argo Workflows DAG) triggering step 2's Job only after step 1's Job reports full completion",
+    "explanation": "Vanilla Kubernetes Jobs have no native concept of a multi-stage DAG/pipeline with dependencies between distinct Job objects; that orchestration logic must come from somewhere else, either custom application/script logic (watch Job 1's completion status via the API, then create Job 2), or purpose-built workflow engines like Argo Workflows or Tekton Pipelines, which model exactly this fan-out/fan-in DAG pattern natively as Kubernetes-native CRDs on top of the underlying Pod/Job primitives.",
+    "difficulty": "hard",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you make a Deployment's Pods automatically pick up an updated 'latest'-tagged image without changing the Deployment spec at all?",
+    "options": ["You generally can't/shouldn't rely on this; Kubernetes doesn't automatically re-pull and restart Pods just because a mutable tag's underlying image changed upstream, without an explicit trigger like imagePullPolicy: Always plus a Pod restart", "Deployments automatically detect and roll out new image content for any tag every few minutes by default", "Set replicas to a negative number to force continuous re-pulling", "This is achieved automatically via the readinessProbe mechanism"],
+    "answer": "You generally can't/shouldn't rely on this; Kubernetes doesn't automatically re-pull and restart Pods just because a mutable tag's underlying image changed upstream, without an explicit trigger like imagePullPolicy: Always plus a Pod restart", 
+    "explanation": "Kubernetes only pulls a new image when a Pod is actually (re)created (subject to 'imagePullPolicy'; 'Always' re-checks the registry on every Pod start, but this still requires the Pod to actually restart/recreate for that check to happen at all). There's no built-in watcher that detects 'the remote latest tag's digest changed' and proactively restarts already-running Pods; this is exactly why immutable, explicit tags (or digests) plus an explicit deployment trigger (CI/CD updating the Deployment's image field, prompting a proper rolling update) is the recommended pattern instead of relying on mutable tags.",
+    "difficulty": "medium",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You need a Deployment to never have zero available replicas during a rolling update, even briefly, prioritizing availability over rollout speed.",
+    "options": ["Set maxUnavailable: 0 (forcing all replacements via surge only)", "Set maxSurge: 0 and maxUnavailable: 100%", "This isn't configurable; some brief unavailability is always unavoidable", "Set replicas: 0 during the update window intentionally"],
+    "answer": "Set maxUnavailable: 0 (forcing all replacements via surge only)",
+    "explanation": "With 'maxUnavailable: 0', the rollout can never take down an existing Pod until its replacement is fully ready, meaning ALL progress happens via 'maxSurge' (creating extra new Pods above the desired count first), guaranteeing full desired capacity is maintained throughout, at the cost of requiring enough spare cluster resource headroom to run the surge Pods alongside the full existing set temporarily.",
+    "difficulty": "medium",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How would you architect a workload that needs both a stateless, horizontally-scalable frontend tier and a stateful, ordered backend tier within the same application?",
+    "options": ["A Deployment for the stateless frontend (arbitrary replica count, interchangeable Pods) and a separate StatefulSet for the stateful backend (stable identity/storage), connected via appropriate Services", "A single StatefulSet handling both tiers together, since StatefulSets are a strict superset of Deployment functionality", "A single Deployment for both tiers, since Kubernetes doesn't distinguish stateful vs stateless workload needs", "Both tiers must always be combined into one Pod regardless of their different scaling/identity requirements"],
+    "answer": "A Deployment for the stateless frontend (arbitrary replica count, interchangeable Pods) and a separate StatefulSet for the stateful backend (stable identity/storage), connected via appropriate Services",
+    "explanation": "Matching the right controller to each tier's actual requirements is the standard architecture: the frontend, having no need for stable identity or per-replica storage, scales most simply and efficiently as a Deployment (arbitrary replica count, any Pod is interchangeable with any other), while the backend's need for stable network identity and dedicated persistent storage per replica is exactly what StatefulSet is designed for; forcing either workload into the wrong controller type adds unnecessary complexity or loses needed guarantees.",
+    "difficulty": "medium",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's a key operational risk of a Job's 'backoffLimit' being set very high (e.g., 100) for a task that fails due to a persistent, non-transient bug?",
+    "options": ["The Job will keep retrying (with exponential backoff between attempts) for a long time before finally giving up, potentially masking a genuine, immediately-actionable bug behind many hours of pointless retries", "A high backoffLimit has no practical downside in any scenario", "backoffLimit only affects successful completions, never failure handling", "Setting backoffLimit above 10 is technically disallowed by the API server"],
+    "answer": "The Job will keep retrying (with exponential backoff between attempts) for a long time before finally giving up, potentially masking a genuine, immediately-actionable bug behind many hours of pointless retries",
+    "explanation": "Kubernetes applies exponential backoff between Job Pod retry attempts (capped at a max delay), so a high 'backoffLimit' for a deterministically-failing task (e.g., a bug causing every attempt to fail identically, not a transient issue like a brief network blip) means the Job keeps consuming resources and delaying visible failure for a potentially very long time before finally being marked Failed, when a lower backoffLimit combined with good alerting on Job failures would surface the actionable bug to engineers much faster.",
+    "difficulty": "medium",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do you run a workload that needs to process messages from a queue, scaling the number of consumer Pods based on queue depth rather than CPU/memory usage?",
+    "options": ["A Deployment scaled by a HorizontalPodAutoscaler using a custom/external metric (queue depth) via the custom metrics API, often with KEDA", "A Job with a fixed, unchanging parallelism value set once and never adjusted", "This is impossible in Kubernetes without a fully custom-built controller from scratch", "A DaemonSet, since queue consumers should always run one per node"],
+    "answer": "A Deployment scaled by a HorizontalPodAutoscaler using a custom/external metric (queue depth) via the custom metrics API, often with KEDA",
+    "explanation": "KEDA (Kubernetes Event-Driven Autoscaling) is the widely-adopted pattern for this: it acts as a custom/external metrics provider, letting an HPA scale a Deployment's replica count based on queue-specific metrics (like SQS/RabbitMQ/Kafka queue depth) rather than being limited to just CPU/memory, and can even scale a Deployment down to zero replicas when the queue is empty, which vanilla HPA (without KEDA) cannot do since it only supports scaling down to a minimum of 1 by default.",
+    "difficulty": "hard",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "You need a Pod's container to have read access to information about itself (like its own Pod name, namespace, or IP) without hardcoding it, for logging/identification purposes.",
+    "options": ["Downward API (via env valueFrom.fieldRef, or a downward API volume)", "The container must call the Kubernetes API server directly to discover its own metadata", "This information is never available to a container; only external tooling can determine it", "hostNetwork: true is required to access this information"],
+    "answer": "Downward API (via env valueFrom.fieldRef, or a downward API volume)",
+    "explanation": "The Downward API exposes a Pod's own metadata (name, namespace, labels, annotations, IP, node name, resource requests/limits) directly as environment variables ('valueFrom: { fieldRef: { fieldPath: metadata.name } }') or as files in a mounted volume, without the container needing any Kubernetes API access/credentials at all, since this info is injected by kubelet at container start time based on the already-scheduled Pod's actual spec/status.",
+    "difficulty": "medium",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What's the tradeoff of using a single large Pod with many containers versus splitting the same functionality into multiple smaller Pods coordinated via Services?",
+    "options": ["A single Pod guarantees co-scheduling/shared lifecycle/localhost networking but couples scaling and failure domains together; multiple Pods scale and fail independently but need network-based (not localhost) communication and lose atomic co-scheduling guarantees", "There is no meaningful tradeoff; both approaches are functionally and operationally identical in every respect", "Multiple smaller Pods always guarantee better performance than a single Pod in every scenario", "A single Pod with many containers is always the objectively correct choice regardless of the components' actual coupling"],
+    "answer": "A single Pod guarantees co-scheduling/shared lifecycle/localhost networking but couples scaling and failure domains together; multiple Pods scale and fail independently but need network-based (not localhost) communication and lose atomic co-scheduling guarantees",
+    "explanation": "The right choice depends on actual coupling: genuinely tightly-coupled components (a proxy that must always exist alongside its app, sharing localhost) belong in one Pod, accepting that they scale and restart together. Genuinely independent components (a frontend and backend that can reasonably scale to different replica counts and survive each other's failures) are better as separate Pods/Deployments communicating over the network via Services, trading the convenience of localhost/shared-lifecycle for independent scalability and fault isolation.",
+    "difficulty": "medium",
+    "subcategory": "workloads",
+    "category": "kubernetes"
+  }
+]
