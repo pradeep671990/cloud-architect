@@ -1,1 +1,562 @@
-[]
+[
+  {
+    "question": "What is the primary job of the kube-scheduler?",
+    "options": [
+      "Selecting the best node for each newly created unscheduled Pod based on constraints and policies",
+      "Running containers directly on nodes",
+      "Managing Service DNS entries",
+      "Enforcing RBAC authorization decisions"
+    ],
+    "answer": "Selecting the best node for each newly created unscheduled Pod based on constraints and policies",
+    "explanation": "kube-scheduler watches for Pods with an empty nodeName, filters nodes that satisfy hard constraints (resources, taints, affinity), scores the remaining feasible nodes, and binds the Pod to the highest-scoring node \u2014 it doesn't run containers itself, just assigns placement.",
+    "difficulty": "easy",
+    "subcategory": "scheduler",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What are the two main phases of the kube-scheduler's scheduling cycle?",
+    "options": [
+      "Filtering (predicates) and Scoring (priorities)",
+      "Binding and Eviction",
+      "Admission and Validation",
+      "Reconciliation and Rollout"
+    ],
+    "answer": "Filtering (predicates) and Scoring (priorities)",
+    "explanation": "Filtering eliminates nodes that can't run the Pod at all (insufficient resources, taints without tolerations, node selectors not matching), then Scoring ranks the remaining feasible nodes using weighted plugins (e.g., spreading, resource balance) to pick the best fit.",
+    "difficulty": "medium",
+    "subcategory": "scheduler",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the Scheduling Framework in modern Kubernetes, and why was it introduced?",
+    "options": [
+      "A pluggable architecture with well-defined extension points (PreFilter, Filter, Score, Bind, etc.) replacing older monolithic scheduler policies/predicates",
+      "A UI dashboard for visualizing scheduling decisions",
+      "A separate scheduler binary for GPU workloads only",
+      "A deprecated legacy API replaced by taints/tolerations"
+    ],
+    "answer": "A pluggable architecture with well-defined extension points (PreFilter, Filter, Score, Bind, etc.) replacing older monolithic scheduler policies/predicates",
+    "explanation": "Introduced to make the scheduler extensible and maintainable, the Scheduling Framework exposes extension points (QueueSort, PreFilter, Filter, PostFilter, PreScore, Score, Reserve, Permit, PreBind, Bind, PostBind) that plugins hook into, replacing the older hardcoded predicate/priority function model.",
+    "difficulty": "hard",
+    "subcategory": "scheduler",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is a 'taint' on a Node, and what does it do?",
+    "options": [
+      "A key-value-effect marker that repels Pods from the node unless they have a matching toleration",
+      "A label used purely for organizational/reporting purposes",
+      "A metric indicating node health degradation",
+      "A field controlling node autoscaling"
+    ],
+    "answer": "A key-value-effect marker that repels Pods from the node unless they have a matching toleration",
+    "explanation": "Taints (key=value:effect, e.g., dedicated=gpu:NoSchedule) mark a node as unsuitable for Pods by default; only Pods with a matching toleration in their spec can be scheduled onto (or, for NoExecute, remain running on) that tainted node.",
+    "difficulty": "easy",
+    "subcategory": "taints-tolerations",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What are the three possible taint effects and what does each do?",
+    "options": [
+      "NoSchedule (blocks new scheduling), PreferNoSchedule (soft avoidance), NoExecute (evicts existing non-tolerating Pods too)",
+      "Allow, Deny, Warn",
+      "Hard, Soft, Medium",
+      "Block, Pass, Skip"
+    ],
+    "answer": "NoSchedule (blocks new scheduling), PreferNoSchedule (soft avoidance), NoExecute (evicts existing non-tolerating Pods too)",
+    "explanation": "NoSchedule strictly prevents new Pods without tolerations from being scheduled there; PreferNoSchedule is a soft preference the scheduler tries to honor but may violate if needed; NoExecute additionally evicts already-running Pods lacking a toleration, commonly used for node condition taints (e.g., node.kubernetes.io/not-ready).",
+    "difficulty": "medium",
+    "subcategory": "taints-tolerations",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the difference between a taint/toleration and node affinity?",
+    "options": [
+      "Taints/tolerations repel Pods from nodes unless explicitly tolerated (node-centric exclusion); node affinity attracts Pods to specific nodes based on labels (Pod-centric preference)",
+      "They are functionally identical mechanisms",
+      "Taints only work with GPU nodes; affinity works with all nodes",
+      "Node affinity is deprecated in favor of taints"
+    ],
+    "answer": "Taints/tolerations repel Pods from nodes unless explicitly tolerated (node-centric exclusion); node affinity attracts Pods to specific nodes based on labels (Pod-centric preference)",
+    "explanation": "Taints are set on the node and act as a default exclusion that Pods must opt out of via toleration; node affinity is set on the Pod and expresses a positive preference/requirement for nodes with certain labels \u2014 the two mechanisms are complementary, often used together (e.g., dedicated node pools).",
+    "difficulty": "medium",
+    "subcategory": "affinity",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the difference between 'requiredDuringSchedulingIgnoredDuringExecution' and 'preferredDuringSchedulingIgnoredDuringExecution' in node affinity?",
+    "options": [
+      "Required is a hard constraint the scheduler must satisfy; Preferred is a soft preference the scheduler tries to honor but may violate if no matching node exists",
+      "Required only applies to nodes; Preferred only applies to Pods",
+      "They are equivalent, just different syntax",
+      "Preferred is enforced at runtime; Required is enforced only at build time"
+    ],
+    "answer": "Required is a hard constraint the scheduler must satisfy; Preferred is a soft preference the scheduler tries to honor but may violate if no matching node exists",
+    "explanation": "'IgnoredDuringExecution' in both means the Pod won't be evicted if node labels change after scheduling. 'Required' filters out non-matching nodes entirely (Pod stays Pending if none match), while 'Preferred' just adds scoring weight, so the Pod can still schedule elsewhere if no preferred node is available.",
+    "difficulty": "medium",
+    "subcategory": "affinity",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is Pod affinity/anti-affinity used for?",
+    "options": [
+      "Scheduling Pods relative to other Pods' locations \u2014 e.g., co-locating related Pods together (affinity) or spreading them apart (anti-affinity)",
+      "Restricting Pods based on node hardware only",
+      "Assigning Pods to specific availability zones automatically without configuration",
+      "Preventing Pods from ever being rescheduled"
+    ],
+    "answer": "Scheduling Pods relative to other Pods' locations \u2014 e.g., co-locating related Pods together (affinity) or spreading them apart (anti-affinity)",
+    "explanation": "Using podAffinity/podAntiAffinity with a labelSelector and topologyKey, you can require/prefer that a Pod be scheduled near Pods matching a selector (e.g., same zone as a cache Pod) or away from them (e.g., spread replicas across different nodes/zones for HA).",
+    "difficulty": "medium",
+    "subcategory": "affinity",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why is a common pattern to use Pod anti-affinity with topologyKey 'kubernetes.io/hostname' for a Deployment's replicas?",
+    "options": [
+      "To ensure no two replicas of the same app land on the same node, improving availability if a node fails",
+      "To force all replicas onto exactly one node for performance",
+      "To disable scheduling for that Deployment entirely",
+      "To bind the Deployment to a single hostname permanently"
+    ],
+    "answer": "To ensure no two replicas of the same app land on the same node, improving availability if a node fails",
+    "explanation": "Anti-affinity keyed on hostname spreads replicas across distinct nodes, so a single node failure doesn't take down multiple replicas simultaneously \u2014 a standard high-availability pattern often used alongside PodDisruptionBudgets.",
+    "difficulty": "medium",
+    "subcategory": "affinity",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is a Pod's Topology Spread Constraint, and how does it differ from Pod anti-affinity?",
+    "options": [
+      "It provides finer-grained, more scalable control over even Pod distribution across topology domains (zones, nodes) using maxSkew, distinct from anti-affinity's simpler binary avoid-Pod logic",
+      "It's identical to anti-affinity, just newer syntax",
+      "Topology spread only applies to DaemonSets",
+      "Topology spread constraints can only be set cluster-wide, not per-Pod"
+    ],
+    "answer": "It provides finer-grained, more scalable control over even Pod distribution across topology domains (zones, nodes) using maxSkew, distinct from anti-affinity's simpler binary avoid-Pod logic",
+    "explanation": "topologySpreadConstraints lets you specify maxSkew (max allowed imbalance between domains) and whenUnsatisfiable (DoNotSchedule vs ScheduleAnyway), giving more precise and performant even-distribution control than the pairwise comparisons anti-affinity requires, which scales poorly with many Pods.",
+    "difficulty": "hard",
+    "subcategory": "scheduling-constraints",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What does 'maxSkew' control in a topologySpreadConstraint?",
+    "options": [
+      "The maximum allowed difference in Pod count between the topology domain with the most and least matching Pods",
+      "The maximum number of nodes allowed in a domain",
+      "The maximum CPU imbalance allowed per node",
+      "The maximum number of tolerations a Pod can have"
+    ],
+    "answer": "The maximum allowed difference in Pod count between the topology domain with the most and least matching Pods",
+    "explanation": "A maxSkew of 1 means the scheduler won't place a Pod in a domain if doing so would make the difference between the busiest and least-busy matching domain exceed 1, ensuring an even-as-possible spread across zones/nodes for the matching label selector.",
+    "difficulty": "hard",
+    "subcategory": "scheduling-constraints",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How does a Pod's resource 'requests' influence scheduling decisions, as opposed to 'limits'?",
+    "options": [
+      "The scheduler uses requests (not limits) to determine which nodes have sufficient allocatable capacity for the Pod",
+      "The scheduler uses limits, ignoring requests entirely",
+      "Both requests and limits are ignored by the scheduler; only labels matter",
+      "Requests only matter for the HPA, not the scheduler"
+    ],
+    "answer": "The scheduler uses requests (not limits) to determine which nodes have sufficient allocatable capacity for the Pod",
+    "explanation": "kube-scheduler sums up the requests of all Pods already assigned to a node and checks whether adding the new Pod's requests would exceed the node's allocatable resources; limits only matter at runtime for cgroup enforcement/OOM behavior, not for the initial placement decision.",
+    "difficulty": "medium",
+    "subcategory": "resource-requests",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What happens if a Pod has no resource requests specified at all?",
+    "options": [
+      "It's treated as 'BestEffort' QoS with essentially zero guaranteed resources, making it the first candidate for eviction under node pressure",
+      "It defaults to requesting all available node resources",
+      "The Pod fails admission and cannot be created",
+      "It automatically inherits the namespace's LimitRange defaults, always"
+    ],
+    "answer": "It's treated as 'BestEffort' QoS with essentially zero guaranteed resources, making it the first candidate for eviction under node pressure",
+    "explanation": "A Pod with no requests/limits on any container gets QoS class BestEffort, which the kubelet evicts first when a node experiences memory/disk pressure, since these Pods provide no resource guarantee \u2014 a common gotcha unless a namespace LimitRange sets sane defaults.",
+    "difficulty": "medium",
+    "subcategory": "resource-requests",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What are the three Kubernetes Pod QoS classes and how are they determined?",
+    "options": [
+      "Guaranteed (requests==limits for all resources/containers), Burstable (requests set but not equal to limits), BestEffort (no requests/limits set)",
+      "Gold, Silver, Bronze based on priorityClassName",
+      "High, Medium, Low based on node capacity",
+      "Critical, Standard, Preemptible"
+    ],
+    "answer": "Guaranteed (requests==limits for all resources/containers), Burstable (requests set but not equal to limits), BestEffort (no requests/limits set)",
+    "explanation": "QoS class is derived automatically from how requests/limits are configured across all containers in the Pod, and directly determines eviction priority order under resource pressure: BestEffort evicted first, then Burstable (by how much they exceed requests), Guaranteed evicted last.",
+    "difficulty": "medium",
+    "subcategory": "resource-requests",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is a PriorityClass, and how does it affect scheduling?",
+    "options": [
+      "Assigns an integer priority value to Pods, influencing scheduling order in the queue and eligibility for preemption of lower-priority Pods",
+      "Sets the Pod's CPU priority (nice value) inside the container",
+      "Controls DNS resolution priority for the Pod",
+      "Only affects logging verbosity for that Pod"
+    ],
+    "answer": "Assigns an integer priority value to Pods, influencing scheduling order in the queue and eligibility for preemption of lower-priority Pods",
+    "explanation": "Higher-priority Pods are scheduled ahead of lower-priority ones in the scheduling queue, and if a high-priority Pod can't fit due to resource constraints, the scheduler may preempt (evict) lower-priority Pods on a node to make room for it.",
+    "difficulty": "medium",
+    "subcategory": "priority",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is 'preemption' in the Kubernetes scheduler?",
+    "options": [
+      "Evicting lower-priority Pods from a node to make room for a higher-priority Pod that otherwise couldn't be scheduled",
+      "Automatically restarting failed Pods",
+      "Pausing scheduling during maintenance windows",
+      "Removing Pods that exceed their CPU limits"
+    ],
+    "answer": "Evicting lower-priority Pods from a node to make room for a higher-priority Pod that otherwise couldn't be scheduled",
+    "explanation": "When a Pod can't be scheduled anywhere due to insufficient resources, the scheduler looks for nodes where evicting one or more lower-priority Pods would free enough capacity, then preempts (gracefully terminates) those victim Pods so the higher-priority Pod can be placed.",
+    "difficulty": "medium",
+    "subcategory": "preemption",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How can you prevent certain critical Pods from ever being preempted, regardless of priority differences?",
+    "options": [
+      "Set podDisruptionBudget appropriately and use very high priority classes like system-cluster-critical for essential system Pods",
+      "Preemption cannot be controlled at all",
+      "Set 'nonPreemptible: true' directly on any Pod",
+      "Use a taint of NoExecute on all nodes"
+    ],
+    "answer": "Set podDisruptionBudget appropriately and use very high priority classes like system-cluster-critical for essential system Pods",
+    "explanation": "Kubernetes reserves system-cluster-critical and system-node-critical priority classes for essential add-ons (like CoreDNS, kube-proxy), which sit above normal user Pod priorities and are extremely unlikely to be preempted; PodDisruptionBudgets further protect against voluntary disruptions during preemption/eviction for regular workloads.",
+    "difficulty": "hard",
+    "subcategory": "preemption",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is a DaemonSet, and how does scheduling differ for it compared to a Deployment?",
+    "options": [
+      "A DaemonSet ensures exactly one Pod copy runs on every (or a selected subset of) node, bypassing normal scheduler load-balancing logic in favor of node coverage",
+      "A DaemonSet is identical to a Deployment but with a fixed replica count",
+      "DaemonSets run only on the control plane nodes",
+      "DaemonSets don't use the scheduler at all, ever"
+    ],
+    "answer": "A DaemonSet ensures exactly one Pod copy runs on every (or a selected subset of) node, bypassing normal scheduler load-balancing logic in favor of node coverage",
+    "explanation": "DaemonSets are used for node-level agents (log collectors, CNI plugins, monitoring exporters) that must run everywhere; since Kubernetes 1.12+, the default scheduler (not a separate DaemonSet controller scheduling path) places these Pods, respecting node selectors/taints to target specific node subsets if needed.",
+    "difficulty": "easy",
+    "subcategory": "daemonsets",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How does a DaemonSet Pod typically tolerate the control-plane node taint to also run on master/control-plane nodes?",
+    "options": [
+      "It includes a toleration for the node-role.kubernetes.io/control-plane (or master) taint in its Pod spec",
+      "Control-plane nodes cannot run any Pods under any circumstances",
+      "DaemonSets automatically ignore all taints by default",
+      "It requires disabling RBAC on control-plane nodes"
+    ],
+    "answer": "It includes a toleration for the node-role.kubernetes.io/control-plane (or master) taint in its Pod spec",
+    "explanation": "Control-plane nodes are typically tainted (e.g., NoSchedule) to keep regular workloads off them; system DaemonSets like kube-proxy or CNI agents explicitly add a matching toleration in their spec so they still get scheduled there, since these agents need to run cluster-wide including control-plane nodes.",
+    "difficulty": "medium",
+    "subcategory": "daemonsets",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What does 'nodeSelector' do, and how does it compare to node affinity?",
+    "options": [
+      "nodeSelector is a simple exact-match key-value map for hard node selection; node affinity supports richer expressions (In, NotIn, Exists) and soft preferences",
+      "nodeSelector supports OR logic across multiple labels natively",
+      "nodeSelector is deprecated and non-functional in current Kubernetes",
+      "Node affinity is only for anti-affinity use cases"
+    ],
+    "answer": "nodeSelector is a simple exact-match key-value map for hard node selection; node affinity supports richer expressions (In, NotIn, Exists) and soft preferences",
+    "explanation": "nodeSelector is the older, simpler mechanism requiring all specified labels to match exactly (implicit AND, no OR/NotIn support); node affinity is a more expressive superset supporting operators and soft/preferred rules, generally recommended for anything beyond trivial selection.",
+    "difficulty": "easy",
+    "subcategory": "affinity",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is a 'custom scheduler' in Kubernetes, and when would you use one?",
+    "options": [
+      "An alternative or additional scheduler binary implementing specialized placement logic, used via spec.schedulerName on Pods that need it (e.g., batch/HPC-optimized gang scheduling)",
+      "A modification to kubelet's local scheduling behavior",
+      "A required replacement for kube-scheduler in every cluster",
+      "A GUI tool for manually dragging Pods to nodes"
+    ],
+    "answer": "An alternative or additional scheduler binary implementing specialized placement logic, used via spec.schedulerName on Pods that need it (e.g., batch/HPC-optimized gang scheduling)",
+    "explanation": "You can run multiple schedulers simultaneously in a cluster; Pods specify which one to use via schedulerName. Custom schedulers (e.g., Volcano, YuniKorn) implement specialized algorithms like gang scheduling for batch/ML workloads that the default scheduler doesn't natively support.",
+    "difficulty": "hard",
+    "subcategory": "custom-schedulers",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is 'gang scheduling' and why is the default kube-scheduler poorly suited for it?",
+    "options": [
+      "Scheduling a group of related Pods (e.g., a distributed training job) all-or-nothing so partial scheduling doesn't waste resources; default scheduler schedules Pods independently one at a time",
+      "Scheduling Pods in alphabetical order of their names",
+      "A security feature preventing multiple Pods from sharing a node",
+      "Automatically scaling a Deployment's replica gang size"
+    ],
+    "answer": "Scheduling a group of related Pods (e.g., a distributed training job) all-or-nothing so partial scheduling doesn't waste resources; default scheduler schedules Pods independently one at a time",
+    "explanation": "For distributed jobs (e.g., MPI/TensorFlow workers) where partial deployment (some Pods scheduled, others stuck Pending) wastes resources and can deadlock, gang scheduling frameworks like Volcano or Kueue ensure the whole group is scheduled together or not at all, unlike the default scheduler's per-Pod independent approach.",
+    "difficulty": "hard",
+    "subcategory": "custom-schedulers",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the purpose of the Cluster Autoscaler in relation to the scheduler?",
+    "options": [
+      "Adds/removes nodes based on Pending Pods that can't be scheduled due to insufficient capacity, or removes underutilized nodes",
+      "Replaces the kube-scheduler entirely",
+      "Only scales Pods, not nodes",
+      "Automatically adjusts Pod resource requests"
+    ],
+    "answer": "Adds/removes nodes based on Pending Pods that can't be scheduled due to insufficient capacity, or removes underutilized nodes",
+    "explanation": "Cluster Autoscaler watches for unschedulable Pods (those the scheduler couldn't place due to resource shortage) and provisions new nodes to accommodate them, and conversely scales down nodes that are underutilized and whose Pods could be safely moved elsewhere, working alongside but separate from kube-scheduler.",
+    "difficulty": "medium",
+    "subcategory": "scheduler",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why might a Pod remain in 'Pending' state indefinitely, and how do you diagnose it?",
+    "options": [
+      "Check 'kubectl describe pod' Events for scheduling failure reasons like insufficient resources, unmatched node selectors/affinity, or untolerated taints",
+      "Pending Pods always resolve automatically within 5 minutes",
+      "Pending state only occurs due to image pull failures",
+      "Restarting the scheduler always fixes Pending Pods"
+    ],
+    "answer": "Check 'kubectl describe pod' Events for scheduling failure reasons like insufficient resources, unmatched node selectors/affinity, or untolerated taints",
+    "explanation": "The scheduler emits an Event on the Pod (e.g., '0/5 nodes are available: 3 Insufficient cpu, 2 node(s) had taint {...} that the pod didn't tolerate') explaining exactly why no node was feasible \u2014 this Events output is the primary diagnostic starting point for any Pending Pod.",
+    "difficulty": "medium",
+    "subcategory": "troubleshooting",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What could cause a Pod to schedule successfully but then get evicted shortly after (not crash, but Kubernetes-initiated eviction)?",
+    "options": [
+      "Node experiencing resource pressure (memory/disk) triggers kubelet eviction of lower-priority/BestEffort Pods to reclaim resources",
+      "Only manual kubectl delete can cause eviction, nothing automatic",
+      "Evictions only happen due to RBAC permission changes",
+      "Eviction only happens when the Deployment is deleted"
+    ],
+    "answer": "Node experiencing resource pressure (memory/disk) triggers kubelet eviction of lower-priority/BestEffort Pods to reclaim resources",
+    "explanation": "kubelet monitors node conditions (MemoryPressure, DiskPressure, PIDPressure) and proactively evicts Pods (typically lowest QoS/priority first) to reclaim resources before an OOM kill of the whole node occurs \u2014 visible via 'kubectl get events' and Pod status reason 'Evicted'.",
+    "difficulty": "medium",
+    "subcategory": "troubleshooting",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How does 'bin packing' scheduling strategy differ from 'spreading' (default) in terms of resource optimization?",
+    "options": [
+      "Bin packing consolidates Pods onto fewer, more-utilized nodes to allow scaling down idle nodes; spreading balances load evenly to minimize blast radius per node",
+      "Bin packing spreads Pods evenly; spreading consolidates them",
+      "They are identical strategies with different names",
+      "Bin packing only applies to StatefulSets"
+    ],
+    "answer": "Bin packing consolidates Pods onto fewer, more-utilized nodes to allow scaling down idle nodes; spreading balances load evenly to minimize blast radius per node",
+    "explanation": "The default scheduler favors spreading Pods across nodes (via the default resource scoring plugins) for resilience, but for cost optimization with autoscaling, you might configure the MostAllocated scoring strategy (bin packing) instead of LeastAllocated to pack nodes tighter and enable more aggressive scale-down of empty nodes.",
+    "difficulty": "hard",
+    "subcategory": "bin-packing",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What scheduler plugin/strategy configuration would you adjust to favor bin-packing over spreading?",
+    "options": [
+      "Configure the NodeResourcesFit plugin's scoringStrategy to MostAllocated instead of the default LeastAllocated",
+      "Set schedulerName to 'binpack' (a built-in alternate scheduler)",
+      "Change all Pods' priorityClassName to 'high'",
+      "There is no way to configure this without a custom scheduler"
+    ],
+    "answer": "Configure the NodeResourcesFit plugin's scoringStrategy to MostAllocated instead of the default LeastAllocated",
+    "explanation": "Via a KubeSchedulerConfiguration custom profile, you can set the NodeResourcesFit plugin's scoringStrategy.type to MostAllocated (favoring already-busier nodes) instead of the default LeastAllocated (favoring emptier nodes), effectively shifting the scheduler toward consolidation/bin-packing behavior.",
+    "difficulty": "hard",
+    "subcategory": "bin-packing",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the effect of setting 'schedulerName' to a non-existent scheduler on a Pod spec?",
+    "options": [
+      "The Pod stays Pending forever since no scheduler is watching for that schedulerName",
+      "Kubernetes falls back to the default scheduler automatically",
+      "The API server rejects Pod creation immediately",
+      "The Pod runs unscheduled on a random node"
+    ],
+    "answer": "The Pod stays Pending forever since no scheduler is watching for that schedulerName",
+    "explanation": "Only a scheduler explicitly configured to watch Pods with a matching schedulerName will attempt to schedule them; a typo or reference to an undeployed custom scheduler leaves the Pod indefinitely Pending with no scheduling attempts made at all, which can be a confusing troubleshooting scenario.",
+    "difficulty": "medium",
+    "subcategory": "troubleshooting",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is a PodDisruptionBudget (PDB) and how does it interact with scheduling/eviction operations?",
+    "options": [
+      "Limits how many Pods of a set can be voluntarily disrupted at once (e.g., during node drain or preemption), protecting application availability",
+      "Prevents Pods from ever being scheduled to certain nodes",
+      "Sets a hard limit on Pod restart count",
+      "Controls how CPU limits are enforced"
+    ],
+    "answer": "Limits how many Pods of a set can be voluntarily disrupted at once (e.g., during node drain or preemption), protecting application availability",
+    "explanation": "PDBs specify minAvailable or maxUnavailable for a set of Pods; voluntary disruptions like node drains, cluster autoscaler scale-down, or preemption respect this budget, refusing to evict Pods that would violate it, ensuring a minimum level of service remains available during planned operations.",
+    "difficulty": "medium",
+    "subcategory": "preemption",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How do 'extended resources' (e.g., custom hardware like FPGAs) get incorporated into scheduling decisions?",
+    "options": [
+      "Device plugins advertise custom resource types (e.g., example.com/fpga) as part of node capacity, which the scheduler treats like any other resource request/limit",
+      "Extended resources bypass the scheduler entirely and are handled by kubelet only",
+      "They require a separate scheduler binary specific to each hardware vendor",
+      "Extended resources can only be requested via annotations, not resource requests"
+    ],
+    "answer": "Device plugins advertise custom resource types (e.g., example.com/fpga) as part of node capacity, which the scheduler treats like any other resource request/limit",
+    "explanation": "The Kubernetes Device Plugin framework lets vendors (NVIDIA GPUs, FPGAs, etc.) register custom resources on Node.status.capacity/allocatable; Pods request them just like cpu/memory (e.g., limits: {nvidia.com/gpu: 1}), and the scheduler's NodeResourcesFit plugin naturally accounts for them during filtering.",
+    "difficulty": "hard",
+    "subcategory": "scheduler",
+    "category": "kubernetes"
+  },
+  {
+    "question": "Why does GPU scheduling typically use 'limits' only, without corresponding 'requests' needing to differ, and no fractional GPU sharing by default?",
+    "options": [
+      "Extended resources like GPUs must have requests==limits (Guaranteed-like behavior) since they represent indivisible physical devices allocated whole to a container",
+      "GPUs can always be fractionally shared like CPU by default",
+      "Kubernetes automatically time-slices GPU access across Pods",
+      "GPUs don't require any resource specification at all"
+    ],
+    "answer": "Extended resources like GPUs must have requests==limits (Guaranteed-like behavior) since they represent indivisible physical devices allocated whole to a container",
+    "explanation": "Unlike CPU/memory which can be overcommitted or throttled, most device plugins (including the standard NVIDIA plugin) allocate whole discrete devices to a container, so Kubernetes requires requests and limits to match for extended resources \u2014 fractional/shared GPU access requires special plugins like time-slicing or MIG configurations.",
+    "difficulty": "hard",
+    "subcategory": "scheduler",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is a common cause of uneven Pod distribution across nodes despite topology spread constraints being set?",
+    "options": [
+      "whenUnsatisfiable set to ScheduleAnyway allows the constraint to be violated if strict placement isn't possible, rather than blocking scheduling",
+      "Topology spread constraints are ignored by the scheduler entirely",
+      "Node affinity always overrides topology spread constraints",
+      "This is impossible if topology spread constraints are configured at all"
+    ],
+    "answer": "whenUnsatisfiable set to ScheduleAnyway allows the constraint to be violated if strict placement isn't possible, rather than blocking scheduling",
+    "explanation": "If whenUnsatisfiable is ScheduleAnyway (soft), the scheduler still tries to spread evenly but will place the Pod anyway (favoring more balanced nodes via scoring) even if it can't perfectly satisfy maxSkew, unlike DoNotSchedule (hard) which leaves the Pod Pending if the constraint can't be met.",
+    "difficulty": "hard",
+    "subcategory": "scheduling-constraints",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How would you dedicate a set of nodes exclusively to a specific team's workloads while preventing other teams' Pods from landing there accidentally?",
+    "options": [
+      "Taint the dedicated nodes and require matching tolerations plus a node affinity/selector on that team's Pods",
+      "Only use node labels, since taints are unnecessary for exclusivity",
+      "Rely on ResourceQuota alone to enforce node exclusivity",
+      "Use only NetworkPolicy to restrict which nodes a team can use"
+    ],
+    "answer": "Taint the dedicated nodes and require matching tolerations plus a node affinity/selector on that team's Pods",
+    "explanation": "Taints alone repel unwanted Pods but don't guarantee the target team's Pods land there (other tolerating Pods could too); combining a taint (exclusion) with a corresponding toleration plus a node affinity/selector (attraction) on that team's Pods achieves true dedicated-node isolation.",
+    "difficulty": "medium",
+    "subcategory": "taints-tolerations",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the 'tolerationSeconds' field used for on a NoExecute toleration?",
+    "options": [
+      "Specifies how long a Pod may continue running on a tainted node before being evicted, after the taint (e.g., node-not-ready) is applied",
+      "Sets a delay before the toleration takes effect at Pod creation",
+      "Controls how long the scheduler waits before retrying scheduling",
+      "Limits how long a Pod can be Pending before failing"
+    ],
+    "answer": "Specifies how long a Pod may continue running on a tainted node before being evicted, after the taint (e.g., node-not-ready) is applied",
+    "explanation": "When a node becomes NotReady/Unreachable, Kubernetes automatically adds NoExecute taints; Pods can tolerate this taint for a limited grace period via tolerationSeconds (e.g., 300s) before being evicted, balancing quick failover against tolerance for transient node blips.",
+    "difficulty": "hard",
+    "subcategory": "taints-tolerations",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What scheduling consideration is important for StatefulSet Pods regarding PersistentVolume topology (e.g., zone-local disks)?",
+    "options": [
+      "The scheduler must place the Pod in the same zone/topology as its bound PersistentVolume if the storage is zone-restricted (e.g., cloud block storage), which is handled via storage topology-aware scheduling",
+      "StatefulSet Pods always ignore volume topology constraints",
+      "PersistentVolumes are automatically zone-agnostic in every cloud provider",
+      "Volume topology only matters for DaemonSets, not StatefulSets"
+    ],
+    "answer": "The scheduler must place the Pod in the same zone/topology as its bound PersistentVolume if the storage is zone-restricted (e.g., cloud block storage), which is handled via storage topology-aware scheduling",
+    "explanation": "Cloud block storage (EBS, PD, etc.) is typically zone-local, so with volumeBindingMode: WaitForFirstConsumer, PV binding is delayed until a Pod is being scheduled, letting the scheduler consider both compute and storage topology together to avoid provisioning a volume in a zone with no eligible nodes.",
+    "difficulty": "hard",
+    "subcategory": "scheduler",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How can you verify why the scheduler chose a particular node for a Pod, or debug scoring decisions?",
+    "options": [
+      "Increase scheduler log verbosity (e.g., -v=10) or use the scheduler's metrics/trace, since standard kubectl output doesn't show detailed scoring breakdowns",
+      "kubectl describe pod always shows exact scoring math",
+      "There is no way to inspect scheduler scoring decisions",
+      "Only cloud provider consoles can show this information"
+    ],
+    "answer": "Increase scheduler log verbosity (e.g., -v=10) or use the scheduler's metrics/trace, since standard kubectl output doesn't show detailed scoring breakdowns",
+    "explanation": "kubectl describe only shows the final Events (scheduled/failed reasons), not per-node scores; deep debugging of scoring/filtering decisions typically requires raising kube-scheduler's log verbosity or examining scheduler_framework_extension_point_duration_seconds and related Prometheus metrics/logs for detailed plugin behavior.",
+    "difficulty": "hard",
+    "subcategory": "troubleshooting",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is the purpose of 'PreFilter' and 'PostFilter' extension points in the Scheduling Framework?",
+    "options": [
+      "PreFilter does cheap pre-computation/checks before Filter runs across all nodes; PostFilter runs when no node passed Filter, e.g., to attempt preemption",
+      "PreFilter runs after binding; PostFilter runs before scoring",
+      "Both are deprecated extension points no longer used",
+      "They only apply to DaemonSet Pods"
+    ],
+    "answer": "PreFilter does cheap pre-computation/checks before Filter runs across all nodes; PostFilter runs when no node passed Filter, e.g., to attempt preemption",
+    "explanation": "PreFilter plugins can precompute data or reject the Pod outright cheaply before the more expensive per-node Filter pass runs; if Filter finds zero feasible nodes, PostFilter plugins (like the default preemption plugin) get a chance to try to make a node feasible, e.g., by evicting lower-priority Pods.",
+    "difficulty": "hard",
+    "subcategory": "scheduler",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What is 'node cordoning' and how does it relate to scheduling?",
+    "options": [
+      "Marking a node as unschedulable (spec.unschedulable=true via 'kubectl cordon') so the scheduler skips it for new Pods, without affecting already-running Pods",
+      "Removing a node from the cluster entirely",
+      "Automatically draining all Pods off a node immediately",
+      "A taint effect type"
+    ],
+    "answer": "Marking a node as unschedulable (spec.unschedulable=true via 'kubectl cordon') so the scheduler skips it for new Pods, without affecting already-running Pods",
+    "explanation": "Cordoning is a soft, scheduling-only signal \u2014 existing Pods keep running, but the scheduler will not place any new Pods on that node; it's typically the first step before 'kubectl drain' during planned maintenance to gracefully move workloads off.",
+    "difficulty": "easy",
+    "subcategory": "scheduler",
+    "category": "kubernetes"
+  },
+  {
+    "question": "How does 'kubectl drain' differ from 'kubectl cordon'?",
+    "options": [
+      "Drain cordons the node AND evicts/deletes existing Pods (respecting PodDisruptionBudgets) so it can be safely taken out of service",
+      "Drain only cordons without evicting any Pods",
+      "Cordon evicts Pods while drain only marks the node unschedulable",
+      "They are identical commands with different names"
+    ],
+    "answer": "Drain cordons the node AND evicts/deletes existing Pods (respecting PodDisruptionBudgets) so it can be safely taken out of service",
+    "explanation": "'kubectl drain' first cordons the node, then evicts (or deletes, with flags) all evictable Pods, honoring PodDisruptionBudgets and using graceful termination, making it the standard pre-maintenance/pre-node-removal command versus cordon's more limited scheduling-only effect.",
+    "difficulty": "easy",
+    "subcategory": "scheduler",
+    "category": "kubernetes"
+  },
+  {
+    "question": "What scheduling problem can arise from setting overly generous resource requests across many Pods ('overcommitting requests')?",
+    "options": [
+      "Nodes can appear full to the scheduler even when actual utilization is low, causing Pending Pods despite available real capacity ('resource fragmentation')",
+      "The scheduler ignores requests so this has no effect",
+      "It always causes immediate OOM kills across the cluster",
+      "Kubernetes automatically rejects Pods with high requests"
+    ],
+    "answer": "Nodes can appear full to the scheduler even when actual utilization is low, causing Pending Pods despite available real capacity ('resource fragmentation')",
+    "explanation": "Since scheduling decisions are based on requested (not actual used) resources, teams setting requests far above real usage 'reserve' capacity the scheduler thinks is used, leading to Pending Pods and wasted cluster capacity \u2014 addressed via better request tuning, VPA recommendations, or bin-packing scoring strategies.",
+    "difficulty": "hard",
+    "subcategory": "resource-requests",
+    "category": "kubernetes"
+  }
+]
